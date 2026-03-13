@@ -35,7 +35,7 @@ import math
 import random
 import csv
 from dataclasses import dataclass
-from typing import Dict, Set, List, Optional
+from typing import Dict, FrozenSet, List, Optional, Set, Tuple
 
 
 # ---------------------------
@@ -238,6 +238,141 @@ class SimState:
     event_count: int = 0
 
 
+@dataclass(frozen=True)
+class TokenLocalContext:
+    """Snapshot of the radius-2 neighborhood around the traversed edge."""
+    token_index: int
+    source: int
+    destination: int
+    traversed_edge: Tuple[int, int]
+    radius2_nodes: FrozenSet[int]
+    source_neighbors: Tuple[int, ...]
+    destination_neighbors: Tuple[int, ...]
+    destination_step_candidates: Tuple[int, ...]
+
+
+class TokenRule:
+    name = "token_rule"
+    terminal = False
+
+    def probability(self, state: SimState, local_context: TokenLocalContext) -> float:
+        raise NotImplementedError
+
+    def apply(self, state: SimState, local_context: TokenLocalContext) -> bool:
+        raise NotImplementedError
+
+
+@dataclass(frozen=True)
+class DeleteTraversedEdgeRule(TokenRule):
+    probability_value: float
+    name: str = "delete_traversed_edge"
+    terminal: bool = True
+
+    def probability(self, state: SimState, local_context: TokenLocalContext) -> float:
+        return self.probability_value
+
+    def apply(self, state: SimState, local_context: TokenLocalContext) -> bool:
+        state.g.remove_edge(*local_context.traversed_edge)
+        return True
+
+
+@dataclass(frozen=True)
+class TriadicClosureRule(TokenRule):
+    probability_value: float
+    name: str = "triadic_closure"
+    terminal: bool = False
+
+    def probability(self, state: SimState, local_context: TokenLocalContext) -> float:
+        if not local_context.destination_step_candidates:
+            return 0.0
+        return self.probability_value
+
+    def apply(self, state: SimState, local_context: TokenLocalContext) -> bool:
+        if not local_context.destination_step_candidates:
+            return False
+        w = random.choice(local_context.destination_step_candidates)
+        state.g.add_edge(local_context.source, w)
+        return True
+
+
+@dataclass(frozen=True)
+class LocalRewireRule(TokenRule):
+    probability_value: float
+    name: str = "local_rewire"
+    terminal: bool = False
+
+    def probability(self, state: SimState, local_context: TokenLocalContext) -> float:
+        if not local_context.destination_step_candidates:
+            return 0.0
+        return self.probability_value
+
+    def apply(self, state: SimState, local_context: TokenLocalContext) -> bool:
+        if not local_context.destination_step_candidates:
+            return False
+        w = random.choice(local_context.destination_step_candidates)
+        state.g.remove_edge(*local_context.traversed_edge)
+        state.g.add_edge(local_context.source, w)
+        return True
+
+
+@dataclass(frozen=True)
+class TokenRuleEngine:
+    rules: Tuple[TokenRule, ...]
+
+    def execute(self, state: SimState, local_context: TokenLocalContext) -> None:
+        for rule in self.rules:
+            probability = max(0.0, min(1.0, rule.probability(state, local_context)))
+            if probability == 0.0:
+                continue
+            if random.random() < probability:
+                applied = rule.apply(state, local_context)
+                if applied and rule.terminal:
+                    return
+
+
+def _edge_radius_nodes(g: UGraph, a: int, b: int, max_radius: int = 2) -> FrozenSet[int]:
+    visited = {a, b}
+    frontier = {a, b}
+    for _ in range(max_radius):
+        nxt = set()
+        for v in frontier:
+            for u in g.neighbors(v):
+                if u not in visited:
+                    visited.add(u)
+                    nxt.add(u)
+        if not nxt:
+            break
+        frontier = nxt
+    return frozenset(visited)
+
+
+def build_token_local_context(g: UGraph, token_index: int, source: int, destination: int) -> TokenLocalContext:
+    radius2_nodes = _edge_radius_nodes(g, source, destination, max_radius=2)
+    source_neighbors = tuple(sorted(w for w in g.neighbors(source) if w in radius2_nodes))
+    destination_neighbors = tuple(sorted(w for w in g.neighbors(destination) if w in radius2_nodes))
+    destination_step_candidates = tuple(w for w in destination_neighbors if w != source)
+    return TokenLocalContext(
+        token_index=token_index,
+        source=source,
+        destination=destination,
+        traversed_edge=(source, destination),
+        radius2_nodes=radius2_nodes,
+        source_neighbors=source_neighbors,
+        destination_neighbors=destination_neighbors,
+        destination_step_candidates=destination_step_candidates,
+    )
+
+
+def build_token_rule_engine(p: Params) -> TokenRuleEngine:
+    return TokenRuleEngine(
+        rules=(
+            DeleteTraversedEdgeRule(probability_value=p.p_delete_traversed_edge),
+            TriadicClosureRule(probability_value=p.p_triadic_closure),
+            LocalRewireRule(probability_value=p.p_local_rewire),
+        )
+    )
+
+
 def init_state(n0: int = 30, m0: int = 60, tokens0: int = 10) -> SimState:
     g = UGraph()
     for i in range(n0):
@@ -258,7 +393,7 @@ def init_state(n0: int = 30, m0: int = 60, tokens0: int = 10) -> SimState:
     return SimState(g=g, tokens=tokens, next_node_id=n0)
 
 
-def gillespie_step(s: SimState, p: Params) -> None:
+def gillespie_step(s: SimState, p: Params, token_rule_engine: TokenRuleEngine) -> None:
     """
     One stochastic event:
       - token action (move + local rewrite)
@@ -283,7 +418,7 @@ def gillespie_step(s: SimState, p: Params) -> None:
     # choose event
     x = random.random() * R
     if x < R_token:
-        token_event(s, p)
+        token_event(s, token_rule_engine)
     elif x < R_token + R_seed:
         seed_event(s, p)
     elif x < R_token + R_seed + R_birth:
@@ -307,8 +442,8 @@ def gillespie_step(s: SimState, p: Params) -> None:
     s.event_count += 1
 
 
-def token_event(s: SimState, p: Params) -> None:
-    """A token traverses one edge and locally rewrites near that edge."""
+def token_event(s: SimState, token_rule_engine: TokenRuleEngine) -> None:
+    """A token traverses one edge and applies local rules from a radius-2 context."""
     g = s.g
     if not s.tokens or g.num_nodes() == 0:
         return
@@ -332,25 +467,8 @@ def token_event(s: SimState, p: Params) -> None:
     # traverse v -> u
     s.tokens[i] = u
 
-    # (1) delete traversed edge
-    if random.random() < p.p_delete_traversed_edge:
-        g.remove_edge(v, u)
-        return
-
-    # (2) triadic closure: connect v to a neighbor of u
-    if random.random() < p.p_triadic_closure:
-        candidates = [w for w in g.neighbors(u) if w != v]
-        if candidates:
-            w = random.choice(candidates)
-            g.add_edge(v, w)
-
-    # (3) local rewire: replace edge (v,u) by (v,w), w near u
-    if random.random() < p.p_local_rewire:
-        candidates = [w for w in g.neighbors(u) if w != v]
-        if candidates:
-            w = random.choice(candidates)
-            g.remove_edge(v, u)
-            g.add_edge(v, w)
+    local_context = build_token_local_context(g, token_index=i, source=v, destination=u)
+    token_rule_engine.execute(s, local_context)
 
 
 def seed_event(s: SimState, p: Params) -> None:
@@ -399,6 +517,7 @@ def run(
 ) -> None:
     random.seed(seed)
     s = init_state()
+    token_rule_engine = build_token_rule_engine(params)
 
     fieldnames = [
         "event",
@@ -418,7 +537,7 @@ def run(
         writer.writeheader()
 
     for _ in range(steps):
-        gillespie_step(s, params)
+        gillespie_step(s, params, token_rule_engine)
 
         if s.event_count % params.log_every_events == 0:
             g = s.g
