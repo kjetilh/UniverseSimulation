@@ -1,0 +1,41 @@
+[orchestrator]
+# Host path that maps to /data/uploads inside this rag_service instance.
+ingest_root = "/srv/ops/rag_service/uploads/universe"
+ingest_live_subdir = "universe_live"
+
+# UniverseSimulation RAG admin endpoint.
+admin_base_url = "http://127.0.0.1:8000"
+admin_api_key_env = "ADMIN_API_KEY"
+request_timeout_sec = 120
+fetch_coverage_actions = true
+
+include_default = ["**/*.md", "**/*.markdown", "**/*.txt", "**/*.html", "**/*.htm", "**/*.pdf", "**/*.docx"]
+exclude_default = ["**/.git/**", "**/.venv/**", "**/node_modules/**", "**/__pycache__/**", "**/.build/**", "**/.swiftpm/**"]
+
+[[source]]
+name = "UniverseSimulationResearchReport"
+repo_path = "/srv/ops/repos/UniverseSimulation"
+source_type = "universe_argumentation"
+target_subdir = "UniverseSimulation/research_report"
+include = ["Documentation/*.md"]
+
+[[source]]
+name = "UniverseSimulationProjectStatus"
+repo_path = "/srv/ops/repos/UniverseSimulation"
+source_type = "universe_status"
+target_subdir = "UniverseSimulation/status"
+include = ["README.md", "rag_service/docs/UNIVERSE_RAG_STATUS.md", "rag_service/docs/UNIVERSE_CORPUS_PLAN.md"]
+
+[[source]]
+name = "UniverseSimulationToolDocs"
+repo_path = "/srv/ops/repos/UniverseSimulation"
+source_type = "universe_tools"
+target_subdir = "UniverseSimulation/tools"
+include = ["rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md", "rag_service/docs/RAG_SERVICE_API.md"]
+
+[[source]]
+name = "UniverseSimulationPromptProfiles"
+repo_path = "/srv/ops/repos/UniverseSimulation"
+source_type = "universe_prompts"
+target_subdir = "UniverseSimulation/prompts"
+include = ["rag_service/prompts/**/*.md", "rag_service/docs/UNIVERSE_DEEP_RESEARCH_PROMPT.md"]

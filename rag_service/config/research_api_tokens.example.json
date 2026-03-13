@@ -1,0 +1,15 @@
+{
+  "replace-with-long-random-token": {
+    "label": "deep-research-client",
+    "scopes": [
+      "research:read",
+      "research:download"
+    ],
+    "case_ids": [
+      "universe_project",
+      "universe_tools",
+      "universe_argumentation",
+      "universe_prompts"
+    ]
+  }
+}

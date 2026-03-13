@@ -1,0 +1,241 @@
+from pathlib import Path
+
+from fastapi import APIRouter, HTTPException, Query
+from fastapi.responses import FileResponse, StreamingResponse
+from sqlalchemy import text
+
+from app.api.case_browse import CorpusResponse, LinkGraphResponse, _build_link_graph, _corpus_rows
+from app.models.schemas import ChatRequest, ChatResponse, QueryRequest, QueryResponse
+from app.rag.cases.guidance import case_guidance, query_case_guidance
+from app.rag.cases.loader import case_by_id, load_rag_cases
+from app.rag.cases.visibility import visible_case_ids, visible_cases
+from app.rag.generate.llm_provider import ModelProfileError, validate_model_profile
+from app.rag.index.db import engine
+from app.rag.pipeline import answer_question, answer_question_stream
+from app.settings import settings
+
+router = APIRouter()
+
+
+def _is_within(path: Path, root: Path) -> bool:
+    return path == root or root in path.parents
+
+
+def _resolve_download_path(stored_file_path: str) -> Path:
+    root = Path(settings.ingest_root).expanduser().resolve(strict=False)
+    requested = Path(stored_file_path).expanduser()
+    candidate = requested.resolve(strict=False) if requested.is_absolute() else (root / requested).resolve(strict=False)
+
+    if not _is_within(candidate, root):
+        raise HTTPException(status_code=404, detail="Source file not found.")
+
+    if candidate.is_file():
+        return candidate
+
+    rel = candidate.relative_to(root)
+    done_candidate = (root / "done" / rel).resolve(strict=False)
+    if _is_within(done_candidate, root) and done_candidate.is_file():
+        return done_candidate
+
+    failed_candidate = (root / "failed" / rel).resolve(strict=False)
+    if _is_within(failed_candidate, root) and failed_candidate.is_file():
+        return failed_candidate
+
+    raise HTTPException(status_code=404, detail="Source file not found.")
+
+
+def _document_file_path(doc_id: str) -> str:
+    sql = "SELECT file_path FROM documents WHERE doc_id = :doc_id"
+    with engine().begin() as conn:
+        row = conn.execute(text(sql), {"doc_id": doc_id}).fetchone()
+
+    if row is None:
+        raise HTTPException(status_code=404, detail="Document not found.")
+
+    file_path = row[0]
+    if not file_path:
+        raise HTTPException(status_code=404, detail="No file registered for this document.")
+    return str(file_path)
+
+
+def _available_source_types() -> set[str]:
+    sql = "SELECT DISTINCT source_type FROM documents WHERE source_type IS NOT NULL AND source_type <> ''"
+    try:
+        with engine().begin() as conn:
+            rows = conn.execute(text(sql)).fetchall()
+    except Exception:
+        return set()
+    return {str(row[0]).strip() for row in rows if row and str(row[0]).strip()}
+
+
+def _filters_with_case(filters: dict | None, case_id: str | None) -> dict:
+    out = dict(filters or {})
+    if case_id:
+        out["rag_case_id"] = case_id
+    return out
+
+
+def _validate_case_visibility(case_id: str | None, prompt_profile_case_id: str | None) -> None:
+    cfg = load_rag_cases(settings.rag_cases_path)
+    visible_ids = visible_case_ids(cfg)
+    if case_id:
+        if case_id not in visible_ids:
+            raise HTTPException(status_code=404, detail=f"Case is not available on this instance: {case_id}")
+        case_by_id(cfg, case_id)
+    if prompt_profile_case_id:
+        if prompt_profile_case_id not in visible_ids:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Prompt profile case is not available on this instance: {prompt_profile_case_id}",
+            )
+        case_by_id(cfg, prompt_profile_case_id)
+
+
+def _run_query(req: QueryRequest):
+    validate_model_profile(req.model_profile)
+    _validate_case_visibility(req.case_id, req.prompt_profile_case_id)
+    response = answer_question(
+        message=req.query,
+        conversation_id=req.conversation_id,
+        filters=_filters_with_case(req.filters, req.case_id),
+        top_k=req.top_k,
+        model_profile=req.model_profile,
+        prompt_profile_case_id=req.prompt_profile_case_id,
+    )
+    if (
+        req.case_id
+        and response.retrieval_debug
+        and isinstance(response.retrieval_debug, dict)
+        and isinstance(response.retrieval_debug.get("query_plan"), dict)
+    ):
+        guidance = query_case_guidance(req.case_id, req.query)
+        if guidance:
+            response.retrieval_debug["query_plan"]["case_guidance"] = guidance
+    return response
+
+
+@router.get("/v1/cases")
+def list_cases():
+    cfg = load_rag_cases(settings.rag_cases_path)
+    available_source_types = _available_source_types()
+    return {
+        "cases": [
+            {
+                "case_id": case.case_id,
+                "description": case.description,
+                "enabled": case.enabled,
+                **case_guidance(case.case_id),
+            }
+            for case in visible_cases(cfg, available_source_types=available_source_types)
+        ]
+    }
+
+
+@router.get("/v1/cases/{case_id}/corpus", response_model=CorpusResponse)
+def public_case_corpus(
+    case_id: str,
+    q: str | None = Query(default=None, min_length=1, max_length=200),
+    include_tombstones: bool = False,
+    limit: int = Query(default=100, ge=1, le=500),
+    offset: int = Query(default=0, ge=0),
+):
+    _validate_case_visibility(case_id, None)
+    total, rows = _corpus_rows(case_id, q, include_tombstones, limit, offset)
+    return CorpusResponse(case_id=case_id, total=total, limit=limit, offset=offset, items=rows)
+
+
+@router.get("/v1/cases/{case_id}/links", response_model=LinkGraphResponse)
+def public_case_links(
+    case_id: str,
+    limit_docs: int = Query(default=300, ge=1, le=2000),
+):
+    _validate_case_visibility(case_id, None)
+    return _build_link_graph(case_id, only_doc_id=None, limit_docs=limit_docs)
+
+
+@router.get("/v1/cases/{case_id}/documents/{doc_id}/links", response_model=LinkGraphResponse)
+def public_document_links(case_id: str, doc_id: str):
+    _validate_case_visibility(case_id, None)
+    return _build_link_graph(case_id, only_doc_id=doc_id, limit_docs=1)
+
+
+@router.post("/v1/query", response_model=QueryResponse)
+def query(req: QueryRequest):
+    try:
+        resp = _run_query(req)
+        trace = None
+        if resp.retrieval_debug and isinstance(resp.retrieval_debug, dict):
+            trace = resp.retrieval_debug.get("query_plan")
+        return QueryResponse(
+            answer=resp.answer,
+            citations=resp.citations,
+            retrieval_debug=resp.retrieval_debug,
+            trace=trace,
+        )
+    except ModelProfileError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/v1/chat", response_model=ChatResponse)
+def chat(req: ChatRequest):
+    try:
+        query_req = QueryRequest(
+            query=req.message,
+            conversation_id=req.conversation_id,
+            case_id=req.case_id,
+            filters=req.filters or {},
+            top_k=req.top_k,
+            model_profile=req.model_profile,
+            prompt_profile_case_id=req.prompt_profile_case_id,
+        )
+        resp = _run_query(query_req)
+        return ChatResponse(
+            answer=resp.answer,
+            citations=resp.citations,
+            retrieval_debug=resp.retrieval_debug,
+        )
+    except ModelProfileError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/v1/chat/stream")
+def chat_stream(req: ChatRequest):
+    """Server-Sent Events (SSE) streaming endpoint.
+    Events:
+      - query_plan: JSON query plan (sent first)
+      - status: JSON status update for long-running structured answers
+      - citations: JSON citations list (sent first)
+      - delta: incremental answer text chunks
+      - done: indicates completion
+    """
+    try:
+        validate_model_profile(req.model_profile)
+        _validate_case_visibility(req.case_id, req.prompt_profile_case_id)
+        gen = answer_question_stream(
+            message=req.message,
+            conversation_id=req.conversation_id,
+            filters=_filters_with_case(req.filters, req.case_id),
+            top_k=req.top_k,
+            model_profile=req.model_profile,
+            prompt_profile_case_id=req.prompt_profile_case_id,
+        )
+        return StreamingResponse(gen, media_type="text/event-stream")
+    except ModelProfileError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/v1/documents/{doc_id}/download")
+def download_document(doc_id: str):
+    file_path = _document_file_path(doc_id)
+    resolved = _resolve_download_path(file_path)
+    return FileResponse(path=str(resolved), filename=resolved.name)

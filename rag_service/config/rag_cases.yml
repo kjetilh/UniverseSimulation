@@ -1,0 +1,91 @@
+version: 1
+default_case: universe_project
+cases:
+  - case_id: universe_project
+    description: Kombinert prosjektassistent for status, verktøy, teori, argumentasjon og promptbruk i UniverseSimulation.
+    enabled: true
+    planner:
+      docs_source_types: ["universe_status", "universe_tools", "universe_argumentation", "universe_prompts"]
+      prompts_source_types: []
+      docs_keywords: ["status", "prosjekt", "simulering", "simulation", "graf", "graph", "ctmc", "ssa", "parameter", "trajectory", "argumentasjon", "hypotese", "prompt"]
+      prompt_keywords: []
+      default_domain: docs
+    retrieval:
+      top_k_vector: 60
+      top_k_lexical: 60
+      top_k_final: 14
+      max_chunks_per_doc: 4
+    prompt_profile:
+      system_persona_path: "prompts/system_persona_universe_project.md"
+      answer_template_path: "prompts/answer_template_universe_project.md"
+    evaluation:
+      min_citations: 2
+      min_unique_docs: 1
+      min_avg_score: 0.0
+      enforce: false
+  - case_id: universe_tools
+    description: Verktøy- og arbeidsflytassistent for simulator, trajectory-data og drift av prosjektets RAG.
+    enabled: true
+    planner:
+      docs_source_types: ["universe_status", "universe_tools"]
+      prompts_source_types: []
+      docs_keywords: ["kjor", "kjore", "run", "parameter", "csv", "trajectory", "simulator", "simulering", "metric", "metrics", "ssa", "ctmc", "token", "rewire"]
+      prompt_keywords: []
+      default_domain: docs
+    retrieval:
+      top_k_vector: 50
+      top_k_lexical: 50
+      top_k_final: 12
+      max_chunks_per_doc: 4
+    prompt_profile:
+      system_persona_path: "prompts/system_persona_universe_tools.md"
+      answer_template_path: "prompts/answer_template_universe_tools.md"
+    evaluation:
+      min_citations: 2
+      min_unique_docs: 1
+      min_avg_score: 0.0
+      enforce: false
+  - case_id: universe_argumentation
+    description: Teoriassistent for ontologi, minimale rewrite-regler, invariants, metastabilitet og Lorentz-diagnostikk.
+    enabled: true
+    planner:
+      docs_source_types: ["universe_argumentation", "universe_status"]
+      prompts_source_types: []
+      docs_keywords: ["ontologi", "emergent", "spacetime", "romtid", "relativitet", "lorentz", "entanglement", "metastabilitet", "noether", "energi", "invariant", "dpo", "graphity", "coarse-graining"]
+      prompt_keywords: []
+      default_domain: docs
+    retrieval:
+      top_k_vector: 60
+      top_k_lexical: 60
+      top_k_final: 14
+      max_chunks_per_doc: 4
+    prompt_profile:
+      system_persona_path: "prompts/system_persona_universe_argumentation.md"
+      answer_template_path: "prompts/answer_template_universe_argumentation.md"
+    evaluation:
+      min_citations: 2
+      min_unique_docs: 1
+      min_avg_score: 0.0
+      enforce: false
+  - case_id: universe_prompts
+    description: Prompt- og modellinstruksjonsassistent for hvordan språkmodeller skal arbeide med prosjektets korpus og verktøy.
+    enabled: true
+    planner:
+      docs_source_types: ["universe_prompts", "universe_status", "universe_argumentation", "universe_tools"]
+      prompts_source_types: []
+      docs_keywords: ["prompt", "prompts", "persona", "template", "mal", "instruksjon", "instruction", "llm", "modell", "language model", "system prompt"]
+      prompt_keywords: []
+      default_domain: docs
+    retrieval:
+      top_k_vector: 50
+      top_k_lexical: 50
+      top_k_final: 12
+      max_chunks_per_doc: 4
+    prompt_profile:
+      system_persona_path: "prompts/system_persona_universe_prompts.md"
+      answer_template_path: "prompts/answer_template_universe_prompts.md"
+    evaluation:
+      min_citations: 2
+      min_unique_docs: 1
+      min_avg_score: 0.0
+      enforce: false
