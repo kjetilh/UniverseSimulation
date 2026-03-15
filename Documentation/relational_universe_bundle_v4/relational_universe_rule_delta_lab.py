@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """relational_universe_rule_delta_lab.py
 
