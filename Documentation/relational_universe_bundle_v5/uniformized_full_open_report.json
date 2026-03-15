@@ -1,0 +1,140 @@
+{
+  "coupling_summary": {
+    "both_accept_total": 7852,
+    "family": {
+      "birth": {
+        "both_accept": 388,
+        "null": 0,
+        "one_sided": 120,
+        "potential": 508
+      },
+      "death": {
+        "both_accept": 10,
+        "null": 0,
+        "one_sided": 1,
+        "potential": 11
+      },
+      "seed": {
+        "both_accept": 6,
+        "null": 0,
+        "one_sided": 0,
+        "potential": 6
+      },
+      "token": {
+        "both_accept": 7448,
+        "null": 0,
+        "one_sided": 2027,
+        "potential": 9475
+      }
+    },
+    "null_total": 0,
+    "one_sided_total": 2148,
+    "total_potential_events": 10000
+  },
+  "first_row": {
+    "core_l1": 0.0,
+    "damaged_nodes_count": 3,
+    "delta_beta1": 0.0,
+    "delta_clustering": 0.0,
+    "delta_components": 0.0,
+    "delta_dim_proxy": 0.025008165813963368,
+    "delta_nodes": 0.0,
+    "delta_spectral_radius": 0.08965993630731717,
+    "delta_tokens": 0.0,
+    "delta_triangles": 0.0,
+    "edge_diff_count": 2,
+    "nearest_control": 0,
+    "nearest_perturbed": 0,
+    "node_diff_count": 0,
+    "radius_control": 0,
+    "radius_perturbed": 0,
+    "regime_l1": 2.1146681021212803,
+    "step": 0,
+    "t": 0.0,
+    "token_hamming_shared": 0,
+    "token_id_symdiff": 0
+  },
+  "headline_metrics": {
+    "both_accept_total": 7852,
+    "final_core_l1": 120.0,
+    "final_damaged_nodes_count": 14,
+    "final_delta_beta1": -1.0,
+    "final_delta_tokens": 119.0,
+    "final_edge_diff_count": 45,
+    "final_radius_control": 2,
+    "final_radius_perturbed": 2,
+    "final_regime_l1": 351.6246142550703,
+    "final_t": 105.83603119038649,
+    "fit_speed_control": -0.010218178179624981,
+    "max_radius_control": 3,
+    "max_radius_perturbed": 3,
+    "null_total": 0,
+    "one_sided_total": 2148
+  },
+  "label": "full_open_moderate",
+  "last_row": {
+    "core_l1": 120.0,
+    "damaged_nodes_count": 14,
+    "delta_beta1": -1.0,
+    "delta_clustering": -0.009559884559884435,
+    "delta_components": 0.0,
+    "delta_dim_proxy": -0.09022239686339417,
+    "delta_nodes": 0.0,
+    "delta_spectral_radius": -0.5248319736470304,
+    "delta_tokens": 119.0,
+    "delta_triangles": -24.0,
+    "edge_diff_count": 45,
+    "nearest_control": 0,
+    "nearest_perturbed": 0,
+    "node_diff_count": 4,
+    "radius_control": 2,
+    "radius_perturbed": 2,
+    "regime_l1": 351.6246142550703,
+    "step": 10000,
+    "t": 105.83603119038649,
+    "token_hamming_shared": 355,
+    "token_id_symdiff": 121
+  },
+  "params": {
+    "birth_degree_bias": 0.75,
+    "center_token_index": 0,
+    "death_inverse_degree_scale": 1.0,
+    "first_hit_rmax": 8,
+    "full_open": false,
+    "initial_cycle": 8,
+    "initial_tokens": 4,
+    "label": "full_open_moderate",
+    "log_every": 50,
+    "min_tokens": 1,
+    "out_events_csv": "/mnt/data/uniformized_full_open_events.csv",
+    "out_json": "/mnt/data/uniformized_full_open_report.json",
+    "out_lay_md": "/mnt/data/uniformized_full_open_lay.md",
+    "out_log_csv": "/mnt/data/uniformized_full_open_log.csv",
+    "out_summary_md": "/mnt/data/uniformized_full_open_summary.md",
+    "p_del": 0.03,
+    "p_swap": 0.08,
+    "p_triad": 0.05,
+    "perturbation": "local_swap",
+    "r_birth": 0.01,
+    "r_death": 0.009,
+    "r_seed": 0.04,
+    "r_token": 1.0,
+    "seed": 9,
+    "steps": 10000,
+    "token_open_topologically_closed": false
+  },
+  "perturbation_info": {
+    "delta_core": {
+      "beta1": 0,
+      "components": 0,
+      "nodes": 0,
+      "tokens": 0
+    },
+    "support": [
+      0,
+      1,
+      7
+    ],
+    "type": "local_swap"
+  }
+}
