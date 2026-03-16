@@ -1,0 +1,32 @@
+{
+  "candidate_columns": {
+    "missing": [],
+    "ok": true
+  },
+  "formulas": {
+    "alpha_jump_failures": [],
+    "linear_margin_failures": [],
+    "ok": true
+  },
+  "missing_data": {
+    "note": "Handled in regression tests via explicit empty/short input checks.",
+    "ok": true
+  },
+  "ranking": {
+    "best_candidate": "band_best",
+    "ok": true
+  },
+  "size_profile_columns": {
+    "missing": [],
+    "ok": true
+  },
+  "size_profiles": {
+    "counts": {
+      "balanced_pdel": 4,
+      "band_best": 4,
+      "macro_stable": 4,
+      "triad_runner": 4
+    },
+    "ok": true
+  }
+}
