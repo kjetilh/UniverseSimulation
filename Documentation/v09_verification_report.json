@@ -1,0 +1,32 @@
+{
+  "candidate_columns": {
+    "missing": [],
+    "ok": true
+  },
+  "candidate_ranking": {
+    "best_candidate": "balanced_pdel",
+    "best_ci_low": 0.6220505711044712,
+    "ok": true
+  },
+  "group_columns": {
+    "missing": [],
+    "ok": true
+  },
+  "group_coverage": {
+    "burnins": [
+      "deep",
+      "light"
+    ],
+    "ok": true,
+    "rows": 30,
+    "targets": [
+      24,
+      48,
+      96
+    ]
+  },
+  "run_columns": {
+    "missing": [],
+    "ok": true
+  }
+}
