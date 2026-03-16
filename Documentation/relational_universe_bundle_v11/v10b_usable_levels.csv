@@ -1,0 +1,5 @@
+method,burnin_label,usable_nominal_levels,usable_level_count
+adaptive,deep,"24,48,96,192,256",5
+adaptive,light,"24,48,96,192,256",5
+baseline,deep,"24,48,96,192,256",5
+baseline,light,"24,48,96,192,256",5

@@ -1,0 +1,13 @@
+regime,burnin_label,target_a,target_b,gap_q90_to_q10,overlap_fraction,strictly_separated
+fast_balanced,deep,96,192,96.0,0.0,1
+fast_balanced,deep,192,256,64.0,0.0,1
+fast_balanced,light,96,192,102.0,0.0,1
+fast_balanced,light,192,256,64.60000000000002,0.0,1
+fast_push,deep,96,192,96.0,0.0,1
+fast_push,deep,192,256,64.0,0.0,1
+fast_push,light,96,192,98.19999999999999,0.0,1
+fast_push,light,192,256,52.599999999999994,0.0,1
+fast_ref,deep,96,192,96.0,0.0,1
+fast_ref,deep,192,256,64.0,0.0,1
+fast_ref,light,96,192,96.0,0.0,1
+fast_ref,light,192,256,64.0,0.0,1

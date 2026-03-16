@@ -1,0 +1,5 @@
+method,burnin_label,operational_levels,count
+baseline,light,"24,48",2
+baseline,deep,"48,96",2
+adaptive,light,"24,48",2
+adaptive,deep,"24,48,96",3

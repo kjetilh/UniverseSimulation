@@ -36,11 +36,6 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
-try:
-    import numpy as np
-except Exception as exc:  # pragma: no cover
-    raise SystemExit(f"numpy is required: {exc}")
-
 
 # ----------------------------
 # Basic graph
@@ -113,6 +108,21 @@ class UGraph:
 
 def comb2(k: int) -> int:
     return 0 if k < 2 else k * (k - 1) // 2
+
+
+def linear_fit(xs: Sequence[float], ys: Sequence[float]) -> Tuple[float, float]:
+    pts = [(float(x), float(y)) for x, y in zip(xs, ys) if math.isfinite(float(x)) and math.isfinite(float(y))]
+    if len(pts) < 2:
+        return float("nan"), float("nan")
+    xbar = sum(x for x, _ in pts) / len(pts)
+    ybar = sum(y for _, y in pts) / len(pts)
+    sxx = sum((x - xbar) ** 2 for x, _ in pts)
+    if sxx <= 0.0:
+        return float("nan"), float("nan")
+    sxy = sum((x - xbar) * (y - ybar) for x, y in pts)
+    slope = sxy / sxx
+    intercept = ybar - slope * xbar
+    return float(slope), float(intercept)
 
 def count_components(g: UGraph) -> int:
     vs = g.nodes()
@@ -261,8 +271,7 @@ def volume_dimension_proxy(g: UGraph, samples: int = 4, r_max: int = 4, rng: Opt
                 xs.append(math.log(rad + 1.0))
                 ys.append(math.log(float(vols[rad])))
         if len(xs) >= 2:
-            A = np.vstack([xs, np.ones(len(xs))]).T
-            slope, _ = np.linalg.lstsq(A, np.array(ys), rcond=None)[0]
+            slope, _ = linear_fit(xs, ys)
             ds.append(float(slope))
     return float(sum(ds) / len(ds)) if ds else 0.0
 
@@ -981,10 +990,9 @@ def estimate_front_speed(log_rows: List[Dict[str, Any]], key_t: str, key_r: str)
     if len(pairs) < 2:
         return {"max_ratio": float("nan"), "fit_slope": float("nan"), "fit_intercept": float("nan")}
     ratios = [rad / t for t, rad in pairs if t > 0]
-    xs = np.array([p[0] for p in pairs], dtype=float)
-    ys = np.array([p[1] for p in pairs], dtype=float)
-    A = np.vstack([xs, np.ones(len(xs))]).T
-    slope, intercept = np.linalg.lstsq(A, ys, rcond=None)[0]
+    xs = [p[0] for p in pairs]
+    ys = [p[1] for p in pairs]
+    slope, intercept = linear_fit(xs, ys)
     return {"max_ratio": float(max(ratios)), "fit_slope": float(slope), "fit_intercept": float(intercept)}
 
 def first_hit_times(log_rows: List[Dict[str, Any]], key_r: str, key_t: str, r_max: int) -> Dict[int, Optional[float]]:
