@@ -1,0 +1,2 @@
+status,raw_winner,ci_low_winner,pairwise_winner,focused_winner,challenger,note
+resolved,bridge_0010_0000,bridge_0010_0000,bridge_0010_0000,band_zero_del,band_zero_del,"`bridge_0010_0000` er robust nok til a regnes som vinner: raw, CI-low og pairwise peker samme vei, og P(bridge_0010_0000 > band_zero_del) = 0.942."
