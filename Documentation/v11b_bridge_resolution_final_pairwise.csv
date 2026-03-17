@@ -1,0 +1,13 @@
+candidate_a,candidate_b,prob_a_gt_b_mean_composite,bootstrap_comparisons
+band_zero_del,bridge_0025_0000,1.0,80
+band_zero_del,bridge_0025_0000_swap025,0.8625,80
+band_zero_del,bridge_0015_0000,0.525,80
+bridge_0025_0000,band_zero_del,0.0,80
+bridge_0025_0000,bridge_0025_0000_swap025,0.025,80
+bridge_0025_0000,bridge_0015_0000,0.0,80
+bridge_0025_0000_swap025,band_zero_del,0.1375,80
+bridge_0025_0000_swap025,bridge_0025_0000,0.975,80
+bridge_0025_0000_swap025,bridge_0015_0000,0.125,80
+bridge_0015_0000,band_zero_del,0.475,80
+bridge_0015_0000,bridge_0025_0000,1.0,80
+bridge_0015_0000,bridge_0025_0000_swap025,0.875,80

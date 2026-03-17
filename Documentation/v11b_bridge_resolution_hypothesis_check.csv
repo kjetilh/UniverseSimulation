@@ -1,0 +1,2 @@
+supported,raw_winner,focused_winner,p_bridge_gt_band,p_bridge_gt_swap,note,band_mean_composite,bridge_mean_composite,swap_mean_composite
+1,bridge_0025_0000,bridge_0025_0000_swap025,1.0,1.0,On-disk v0.11 files support the bridge-corridor reading.,0.5266772043613803,0.6996599121722514,0.3538661172852612
