@@ -158,34 +158,6 @@ def build_markdown(
     return "\n".join(lines) + "\n"
 
 
-def build_lay_markdown(final_candidate_rows: Sequence[Dict[str, Any]]) -> str:
-    raw = max(final_candidate_rows, key=lambda r: v10e.safe_float(r["mean_composite"], -1.0))
-    focused = max(final_candidate_rows, key=lambda r: v10e.safe_float(r["focused_score"], -1.0))
-    return "\n".join([
-        "# Relasjonell universgraf v0.10f for ikke-spesialister",
-        "",
-        "I denne runden sjekker vi om prosjektet egentlig har én klar beste kandidat, eller om én kandidat er best på rå ytelse mens en annen ser ryddigere ut på de mer disiplinerte samlemålene.",
-        "",
-        f"Råvinneren i denne runden er `{raw['candidate_name']}`.",
-        f"Focused-score-vinneren er `{focused['candidate_name']}`.",
-        "",
-        "Det betyr at prosjektet nå må skille tydelig mellom 'best på rå score' og 'best som balansert kompromiss'.",
-        "",
-    ])
-
-
-def build_recommendation(final_candidate_rows: Sequence[Dict[str, Any]]) -> str:
-    raw = max(final_candidate_rows, key=lambda r: v10e.safe_float(r["mean_composite"], -1.0))
-    focused = max(final_candidate_rows, key=lambda r: v10e.safe_float(r["focused_score"], -1.0))
-    if str(raw["candidate_name"]) == str(focused["candidate_name"]):
-        body = f"Bruk `{raw['candidate_name']}` som operativ standardkandidat i neste runde."
-    else:
-        body = (
-            f"Bruk `{raw['candidate_name']}` som rå standardkandidat, men hold `{focused['candidate_name']}` åpen som asymptotisk/focused kontroll i v0.11."
-        )
-    return "\n".join(["# v0.10f operativ anbefaling", "", body, ""])
-
-
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -198,10 +170,7 @@ def build_argparser() -> argparse.ArgumentParser:
     ap.add_argument("--run-seeds-broad", type=int, default=3)
     ap.add_argument("--run-seeds-final", type=int, default=4)
     ap.add_argument("--bootstrap-reps", type=int, default=350)
-    ap.add_argument("--output-prefix", type=str, default="Documentation/v10f")
-    ap.add_argument("--report-md", type=str, default="Documentation/relasjonell_universgraf_v0_10f_frontier_runde.md")
-    ap.add_argument("--lay-md", type=str, default="Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_10f.md")
-    ap.add_argument("--recommendation-md", type=str, default="Documentation/v0_10f_operativ_anbefaling.md")
+    ap.add_argument("--output-prefix", type=str, default="/mnt/data/v10f")
     return ap
 
 
@@ -270,16 +239,10 @@ def main() -> None:
     v10e.write_csv(f"{prefix}_frontier_final_pairwise.csv", final_pair_rows)
     v10e.write_csv(f"{prefix}_frontier_final_size_profiles.csv", final_profile_rows)
     print("[v10f] writing outputs...", flush=True)
-    report = build_markdown(regime.name, base_summary, broad_candidate_rows, final_candidate_rows, final_pair_rows, final_names)
-    Path(f"{prefix}_frontier_validation.md").write_text(report, encoding="utf-8")
-    for path, content in [
-        (args.report_md, report),
-        (args.lay_md, build_lay_markdown(final_candidate_rows)),
-        (args.recommendation_md, build_recommendation(final_candidate_rows)),
-    ]:
-        out = Path(path)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(content, encoding="utf-8")
+    Path(f"{prefix}_frontier_validation.md").write_text(
+        build_markdown(regime.name, base_summary, broad_candidate_rows, final_candidate_rows, final_pair_rows, final_names),
+        encoding="utf-8",
+    )
     print("[v10f] done", flush=True)
 
 

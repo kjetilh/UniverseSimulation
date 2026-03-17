@@ -1,0 +1,7 @@
+candidate_a,candidate_b,prob_a_gt_b_mean_composite,bootstrap_comparisons
+band_zero_del,frontier_diag_mid,0.7914285714285715,350
+band_zero_del,band_small_triad,1.0,350
+frontier_diag_mid,band_zero_del,0.20857142857142857,350
+frontier_diag_mid,band_small_triad,0.9914285714285714,350
+band_small_triad,band_zero_del,0.0,350
+band_small_triad,frontier_diag_mid,0.008571428571428572,350

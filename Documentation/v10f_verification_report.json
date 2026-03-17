@@ -1,0 +1,20 @@
+{
+  "base_levels": {
+    "ok": true,
+    "targets": [
+      48,
+      96,
+      192,
+      256
+    ],
+    "separated": true,
+    "exact": true
+  },
+  "frontier_order": {
+    "ok": true,
+    "failures": []
+  },
+  "report_text": {
+    "ok": true
+  }
+}

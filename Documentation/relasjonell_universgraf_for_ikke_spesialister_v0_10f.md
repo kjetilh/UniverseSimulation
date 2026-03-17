@@ -1,7 +1,8 @@
-# v0.10f frontier-test for ikke-spesialister
+# Relasjonell universgraf v0.10f for ikke-spesialister
 
-I denne runden sjekker vi om prosjektet egentlig har én ny favorittkandidat, eller om to nesten-like kandidater fortsatt bør holdes åpne.
+I denne runden sjekker vi om prosjektet egentlig har én klar beste kandidat, eller om én kandidat er best på rå ytelse mens en annen ser ryddigere ut på de mer disiplinerte samlemålene.
 
-Fronten smalner inn; `band_zero_del` ser ut til å ha et tydeligere overtak over `band_small_death`.
+Råvinneren i denne runden er `band_zero_del`.
+Focused-score-vinneren er `frontier_triad_only`.
 
-Bruk `band_zero_del` som operativ standardkandidat og `band_small_death` som nær kontroll.
+Det betyr at prosjektet nå må skille tydelig mellom 'best på rå score' og 'best som balansert kompromiss'.
