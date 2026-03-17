@@ -28,6 +28,21 @@ def resolution_candidates() -> List[v09.ScaleCandidate]:
     ]
 
 
+def select_candidates(candidate_names: str | None) -> List[v09.ScaleCandidate]:
+    candidates = resolution_candidates()
+    if not candidate_names:
+        return candidates
+    wanted = [name.strip() for name in candidate_names.split(",") if name.strip()]
+    wanted_set = set(wanted)
+    selected = [cand for cand in candidates if cand.name in wanted_set]
+    missing = [name for name in wanted if name not in {cand.name for cand in selected}]
+    if missing:
+        raise ValueError(f"Unknown candidate names: {', '.join(missing)}")
+    if len(selected) < 2:
+        raise ValueError("Need at least two candidates for frontier resolution.")
+    return selected
+
+
 def candidate_rows_from_group_rows(
     candidates: Sequence[v09.ScaleCandidate],
     group_rows: Sequence[Dict[str, Any]],
@@ -104,6 +119,7 @@ def build_argparser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description="v0.11 frontier resolution")
     ap.add_argument("--growth-regime", default="fast_balanced")
     ap.add_argument("--targets", default="48,96,192,256")
+    ap.add_argument("--candidate-names", default=None, help="Comma-separated subset of resolution candidates.")
     ap.add_argument("--growth-seeds", type=int, default=5)
     ap.add_argument("--run-seeds-broad", type=int, default=3)
     ap.add_argument("--run-seeds-final", type=int, default=4)
@@ -120,16 +136,25 @@ def main() -> None:
     regime = v10e.recommended_regime(args.growth_regime)
     targets = [int(x) for x in args.targets.split(",") if x.strip()]
     ensembles = [e for e in v10b.build_ensembles(targets) if e.burnin_label == "deep"]
-    candidates = resolution_candidates()
+    candidates = select_candidates(args.candidate_names)
     growth_seeds = [12001 + 23 * i for i in range(args.growth_seeds)]
     broad_run_offsets = [3101 + 31 * i for i in range(args.run_seeds_broad)]
     final_run_offsets = [3101 + 31 * i for i in range(args.run_seeds_final)]
 
+    print(
+        f"[v11] regime={regime.name} targets={targets} candidates={[cand.name for cand in candidates]} "
+        f"growth={len(growth_seeds)} broad={len(broad_run_offsets)} final={len(final_run_offsets)}"
+    )
+    print("[v11] building bases...")
     base_states, base_rows = v10e.build_bases(ensembles, regime, growth_seeds)
     base_summary = v10e.summarize_bases(base_rows)
+    print("[v11] bases done")
 
+    print("[v11] broad scan runs...")
     broad_run_rows = v10e.collect_run_rows(candidates, ensembles, base_states, growth_seeds, broad_run_offsets, regime.name)
     broad_group_rows = v10e.summarize_groups(candidates, ensembles, broad_run_rows)
+    print(f"[v11] broad runs done: {len(broad_run_rows)} rows")
+    print("[v11] broad bootstrap...")
     broad_ci_rows, broad_pair_rows, broad_top_rows = v10e.bootstrap_joint(candidates, ensembles, broad_run_rows, reps=int(args.bootstrap_reps), rng_seed=33031)
     broad_candidate_rows = candidate_rows_from_group_rows(candidates, broad_group_rows, broad_ci_rows, broad_top_rows)
 
@@ -139,18 +164,23 @@ def main() -> None:
     seen = set()
     finalist_names = [name for name in finalist_names if not (name in seen or seen.add(name))]
     finalists = [cand for cand in candidates if cand.name in finalist_names]
+    print(f"[v11] finalists: {finalist_names}")
 
     final_run_rows = [r for r in broad_run_rows if str(r["candidate_name"]) in finalist_names]
     extra_offsets = [off for off in final_run_offsets if off not in broad_run_offsets]
     if extra_offsets:
+        print("[v11] finalist extra runs...")
         final_run_rows.extend(v10e.collect_run_rows(finalists, ensembles, base_states, growth_seeds, extra_offsets, regime.name))
     final_group_rows = v10e.summarize_groups(finalists, ensembles, final_run_rows)
+    print(f"[v11] finalist rows now: {len(final_run_rows)}")
+    print("[v11] finalist bootstrap...")
     final_ci_rows, final_pair_rows, final_top_rows = v10e.bootstrap_joint(finalists, ensembles, final_run_rows, reps=int(args.bootstrap_reps), rng_seed=34041)
     final_candidate_rows = candidate_rows_from_group_rows(finalists, final_group_rows, final_ci_rows, final_top_rows)
 
     interpretation = interpret(final_candidate_rows, final_pair_rows)
 
     prefix = args.output_prefix
+    print("[v11] writing outputs...")
     v10e.write_csv(f"{prefix}_frontier_resolution_base_rows.csv", base_rows)
     v10e.write_csv(f"{prefix}_frontier_resolution_broad_candidate_summary.csv", broad_candidate_rows)
     v10e.write_csv(f"{prefix}_frontier_resolution_broad_pairwise.csv", broad_pair_rows)
@@ -165,6 +195,7 @@ def main() -> None:
         out = Path(path)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(content, encoding="utf-8")
+    print("[v11] done")
 
 
 if __name__ == "__main__":
