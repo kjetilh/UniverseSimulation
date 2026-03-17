@@ -1,0 +1,13 @@
+candidate_a,candidate_b,prob_a_gt_b_mean_composite,bootstrap_comparisons
+band_zero_del,band_small_triad,0.9875,80
+band_zero_del,band_best,1.0,80
+band_zero_del,band_small_death,0.9625,80
+band_small_triad,band_zero_del,0.0125,80
+band_small_triad,band_best,0.4375,80
+band_small_triad,band_small_death,0.0375,80
+band_best,band_zero_del,0.0,80
+band_best,band_small_triad,0.5625,80
+band_best,band_small_death,0.075,80
+band_small_death,band_zero_del,0.0375,80
+band_small_death,band_small_triad,0.9625,80
+band_small_death,band_best,0.925,80

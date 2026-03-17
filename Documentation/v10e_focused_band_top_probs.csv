@@ -1,0 +1,6 @@
+candidate_name,top_prob_mean_composite
+band_best,0.064
+band_zero_del,0.4
+band_small_death,0.212
+band_small_triad,0.292
+macro_stable,0.032

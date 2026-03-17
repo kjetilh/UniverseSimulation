@@ -1,0 +1,24 @@
+{
+  "base_separation": {
+    "ok": true,
+    "targets": [
+      48,
+      96,
+      192,
+      256
+    ],
+    "separated": true
+  },
+  "top_candidate": {
+    "ok": true,
+    "top_mean_composite": "band_zero_del"
+  },
+  "pairwise": {
+    "ok": true,
+    "failures": []
+  },
+  "focused_score": {
+    "ok": true,
+    "failures": []
+  }
+}
