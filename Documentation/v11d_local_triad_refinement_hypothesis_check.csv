@@ -1,0 +1,2 @@
+supported,raw_winner,ci_low_winner,pairwise_winner,focused_winner,size_clean,p_bridge0010_gt_band,p_band_gt_bridge0010,bridge_mean_composite,band_mean_composite,note
+1,bridge_0010_0000,bridge_0010_0000,bridge_0010_0000,band_zero_del,1,0.9416666666666667,0.058333333333333334,0.6882444075252947,0.5704280187172602,On-disk v11c files support bridge_0010_0000 as the live operational frontier winner.

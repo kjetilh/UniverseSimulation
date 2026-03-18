@@ -1,0 +1,2 @@
+status,raw_winner,ci_low_winner,pairwise_winner,focused_winner,focused_split,size_clean,strongest_other,strongest_bridge_neighbor,p_raw_gt_band,p_band_gt_raw,p_raw_gt_neighbor,p_neighbor_gt_raw,note
+unresolved,band_zero_del,band_zero_del,bridge_00075_0000,bridge_00075_0000,1,1,bridge_00075_0000,bridge_00075_0000,nan,nan,0.4888888888888889,0.5111111111111111,"Raw, CI-low, pairwise og/eller generator-kontroll gir ikke et rent nok bilde til a kalle dette et robust lokalt optimum."

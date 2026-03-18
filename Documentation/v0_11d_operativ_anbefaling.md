@@ -1,5 +1,3 @@
 # v0.11d operativ anbefaling
 
-Ingen operativ anbefaling er satt ennå.
-
-Denne filen er et skall og skal bare oppdateres av ekte `v11d`-runtimefunn.
+Hold baade den ledende bridge-kandidaten og kontrollsporet apne; repoet stotter fortsatt ikke en helt ren enkeltvinner.
