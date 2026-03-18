@@ -1,0 +1,128 @@
+# PROJECT_HISTORY_INDEX
+
+Dette er en komprimert historikk over de viktigste metodiske vendepunktene frem til dagens live state.
+
+## 1. Generatorproblemet ble eksplisitt
+
+Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
+Det betydde at asymptotiske tolkninger kunne vaere generatorartefakter i stedet for fysikk.
+
+Viktige filer:
+
+- `relational_universe_v10b_ensemble_calibration.py`
+- `Documentation/v0_10b_operativ_anbefaling.md`
+
+## 2. Kalibrert skalarerun ble etablert
+
+Etter generatorrensingen ble fokus flyttet til kalibrerte ensembler og reelt separerte startstorrelser.
+Dette ga et mye tryggere grunnlag for videre frontier-tolkning.
+
+Viktige filer:
+
+- `relational_universe_v10d_calibrated_scale_collapse.py`
+- `Documentation/v10d_calibrated_scale_candidate_summary.csv`
+- `Documentation/v10d_calibrated_scale_size_profiles.csv`
+
+## 3. Focused band-validering innsnevret fronten
+
+Band-familien ble testet mer direkte, og spenningen mellom raw score og focused-score ble tydeligere.
+Her ble det klart at raw dynamikk og focused-score ikke automatisk peker mot samme kandidat.
+
+Viktige filer:
+
+- `relational_universe_v10e_focused_band_validation.py`
+- `Documentation/v10e_focused_band_candidate_summary.csv`
+- `Documentation/v10e_focused_band_pairwise.csv`
+- `Documentation/v10e_focused_band_size_profiles.csv`
+
+## 4. v10f ga siste sikre band-baseline
+
+I `v10f` var:
+
+- raw-vinner: `band_zero_del`
+- focused-vinner: `frontier_triad_only`
+
+Dette er siste sikre baseline før bridge-korridoren ble lokal frontier.
+
+Viktige filer:
+
+- `relational_universe_v10f_frontier_test.py`
+- `Documentation/v10f_frontier_final_candidate_summary.csv`
+- `Documentation/v10f_frontier_final_pairwise.csv`
+- `Documentation/v10f_frontier_final_size_profiles.csv`
+- `Documentation/relasjonell_universgraf_v0_10f_frontier_runde.md`
+
+## 5. Bridge-korridoren dukket opp
+
+I den mellomtunge `v11`-kjeden flyttet raw-fronten seg bort fra ren band-korridor og over mot bridge-varianter.
+Dette var det forste tydelige tegnet pa at den operative fronten ikke lenger bare handlet om `band_zero_del`.
+
+Viktige filer:
+
+- `Documentation/v11_mid_focus_frontier_resolution_final_candidate_summary.csv`
+- `Documentation/v11_mid_focus_frontier_resolution_final_pairwise.csv`
+
+## 6. v11b snevret inn, men løste ikke fronten rent
+
+`v11b` bygget en smal bridge-korridor rundt `bridge_0015_0000`.
+Der fikk vi en ekte mellomkonklusjon:
+
+- `bridge_0015_0000` sa sterk ut pa noen operative mal
+- `band_zero_del` beholdt styrke pa andre
+- dommen var fortsatt `uavklart`
+
+Viktige filer:
+
+- `relational_universe_v11b_bridge_resolution.py`
+- `Documentation/v11b_bridge_resolution.md`
+- `Documentation/v11b_bridge_resolution_final_candidate_summary.csv`
+- `Documentation/v11b_bridge_resolution_final_pairwise.csv`
+- `Documentation/v0_11b_operativ_anbefaling.md`
+
+## 7. v11c overstyrte v11b som live frontier
+
+En renere lokal `p_triad`-akse ved fast `p_swap = 0.02` og `p_del = 0.0` flyttet optimumet videre.
+Resultatet var at `bridge_0015_0000` falt tilbake, og `bridge_0010_0000` ble den sterke operative kandidaten.
+
+I `v11c`:
+
+- raw `mean_composite`: `bridge_0010_0000`
+- `CI low`: `bridge_0010_0000`
+- pairwise: `bridge_0010_0000`
+- focused-score: `band_zero_del`
+
+Dette betyr at splitten na ikke er mellom to like gode operative vinnere, men mellom:
+
+- en operativ dynamisk vinner: `bridge_0010_0000`
+- en focused/local-score-vinner: `band_zero_del`
+
+Viktige filer:
+
+- `relational_universe_v11c_binary_bridge_vs_band.py`
+- `Documentation/v11c_binary_bridge_vs_band.md`
+- `Documentation/v11c_binary_bridge_vs_band_candidate_summary.csv`
+- `Documentation/v11c_binary_bridge_vs_band_pairwise.csv`
+- `Documentation/v11c_binary_bridge_vs_band_target_summary.csv`
+- `Documentation/v0_11c_operativ_anbefaling.md`
+
+## 8. Dagens operative lesning
+
+Det er ikke repo-lojalt lenger a si at fronten er `bridge_0015_0000 vs band_zero_del`.
+Det var en legitim v11b-fortelling, men den er na overstyrt av nyere lokale filer.
+
+Dagens beste korte lesning er:
+
+- standardkandidat: `bridge_0010_0000`
+- focused-score-kontroll: `band_zero_del`
+- apent spørsmål: om `bridge_0010_0000` er et ekte lokalt optimum eller bare beste punkt pa et fortsatt litt grovt triad-grid
+
+## 9. Hva som bor gjores videre
+
+Hvis prosjektet fortsetter lokalt, er det naturlige neste steget en smal `v11d`-runde rundt:
+
+- `bridge_0005_0000`
+- `bridge_0010_0000`
+- `bridge_0015_0000`
+- eventuelt et eller to mellompunkter som `bridge_00075_0000` og `bridge_00125_0000`
+
+Målet er ikke bredere frontier-scan, men a teste om optimumet ved omtrent `p_triad = 0.0010` er reelt.
