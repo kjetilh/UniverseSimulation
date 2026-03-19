@@ -105,24 +105,117 @@ Viktige filer:
 - `Documentation/v11c_binary_bridge_vs_band_target_summary.csv`
 - `Documentation/v0_11c_operativ_anbefaling.md`
 
-## 8. Dagens operative lesning
+## 8. v11d svekket bridge_0010_0000-fortellingen
 
-Det er ikke repo-lojalt lenger a si at fronten er `bridge_0015_0000 vs band_zero_del`.
-Det var en legitim v11b-fortelling, men den er na overstyrt av nyere lokale filer.
+Den smale `v11d`-runden viste at `bridge_0010_0000` ikke holdt som rent lokalt optimum.
+I stedet oppstod en ny, mye smalere splitt:
+
+- raw og CI-low pekte mot `band_zero_del`
+- pairwise og focused-score pekte mot `bridge_00075_0000`
+
+Dette var en ekte lokal tvetydighet, men fortsatt under ren size-separasjon.
+
+Viktige filer:
+
+- `relational_universe_v11d_local_triad_refinement.py`
+- `Documentation/v11d_local_triad_refinement.md`
+- `Documentation/v11d_local_triad_refinement_candidate_summary.csv`
+- `Documentation/v11d_local_triad_refinement_pairwise.csv`
+- `Documentation/v0_11d_operativ_anbefaling.md`
+
+## 9. v11e løste den smale duellen tilbake til band_zero_del
+
+I stedet for en ny bred scan gikk prosjektet videre med en dypere binarrunde:
+
+- `band_zero_del`
+- `bridge_00075_0000`
+
+Denne runden løste konflikten rent til fordel for `band_zero_del`.
+
+I `v11e`:
+
+- raw `mean_composite`: `band_zero_del`
+- `CI low`: `band_zero_del`
+- pairwise: `band_zero_del`
+- focused-score: `band_zero_del`
+
+Den viktigste lesningen her er at `v11d`-splittet ikke holdt under dypere binar diskriminering.
+
+Viktige filer:
+
+- `relational_universe_v11e_band_vs_bridge0075.py`
+- `Documentation/v11e_band_vs_bridge0075.md`
+- `Documentation/v11e_band_vs_bridge0075_candidate_summary.csv`
+- `Documentation/v11e_band_vs_bridge0075_pairwise.csv`
+- `Documentation/v11e_band_vs_bridge0075_target_summary.csv`
+- `Documentation/v0_11e_operativ_anbefaling.md`
+
+## 10. v12 markerte et skifte fra frontier til struktur
+
+Etter at `band_zero_del` vant rent igjen, ble neste fase ikke en ny frontier-runde, men en strukturfase:
+
+- hvilke normaliserte geometrifeatures er stabile pa tvers av størrelse,
+- hvilke storrelser driver tregest,
+- og om en liten geometrisk basis kan predikere viktige dynamiske utfall.
+
+Denne runden er viktig fordi den flytter prosjektet fra "hvem vinner frontieren?" til "finnes det en liten effektiv beskrivelse av dynamikken?".
+
+De mest interessante signalene sa langt er:
+
+- `initial_avg_degree` er den mest stabile normaliserte startstorrelsen
+- `initial_spectral_per_sqrtN` og `initial_dim_proxy` ser relativt stabile ut
+- `initial_spectral_per_sqrtN + initial_clustering` er den beste 2-feature-basisen for `final_radius_control`
+- `abs_delta_nodes_rel` og `abs_delta_beta1_rel` er eksakt null i denne runden, men dette ma ikke tas som ny dyp matematikk uten videre forklaring
+
+Viktige filer:
+
+- `relational_universe_v12_geometry_invariant_lab.py`
+- `Documentation/v12_geometry_invariant_lab.md`
+- `Documentation/v12_geometry_feature_stability.csv`
+- `Documentation/v12_geometry_relative_drift_ranking.csv`
+- `Documentation/v12_geometry_reduced_basis_summary.csv`
+- `Documentation/v0_12_operativ_anbefaling.md`
+
+## 11. v12b testet transfer i stedet for bare anchor-fit
+
+`v12b` tok den lille geometribasen fra `v12` og testet om den bare virker inne i `band_zero_del`, eller om den faktisk transfererer til naerliggende triad-varianter.
+
+Det viktigste resultatet er:
+
+- det finnes et moderat positivt transfer-signal for `final_radius_control`
+- transferen er svak eller negativ for `avg_local_overlap`
+- off-anchor er `spectral_only` svaakt sterkere enn `spectral_plus_clustering`
+- derfor ser det ut som prosjektet har et ekte, men fortsatt smalt radius-/geometrisignal
+
+Viktige filer:
+
+- `relational_universe_v12b_transfer_surrogate_lab.py`
+- `Documentation/v12b_transfer_surrogate_lab.md`
+- `Documentation/v12b_transfer_basis_summary.csv`
+- `Documentation/v12b_transfer_target_summary.csv`
+- `Documentation/v0_12b_operativ_anbefaling.md`
+
+## 12. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
-- standardkandidat: `bridge_0010_0000`
-- focused-score-kontroll: `band_zero_del`
-- apent spørsmål: om `bridge_0010_0000` er et ekte lokalt optimum eller bare beste punkt pa et fortsatt litt grovt triad-grid
+- frontier-standard: `band_zero_del`
+- aktiv forskningsfase: geometri / invariants / redusert basis / transfer
+- mest lovende ikke-trivielle geometrispor: `initial_spectral_per_sqrtN`, `initial_clustering` og `initial_dim_proxy`
+- viktig advarsel: eksakte null-drifter ma skilles fra ekte ny matematikk til de er forklart bedre
+- viktig nyansering: `spectral_plus_clustering` var beste lille basis i `v12`, men `v12b` sier at vi fortsatt ma sammenligne den mot enda enklere alternativer som `spectral_only`
 
-## 9. Hva som bor gjores videre
+## 13. Hva som bor gjores videre
 
-Hvis prosjektet fortsetter lokalt, er det naturlige neste steget en smal `v11d`-runde rundt:
+Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre struktur-/transferarbeid som tester:
 
-- `bridge_0005_0000`
-- `bridge_0010_0000`
-- `bridge_0015_0000`
-- eventuelt et eller to mellompunkter som `bridge_00075_0000` og `bridge_00125_0000`
+- om den reduserte basisen transfererer til flere naerliggende regimer,
+- om de samme feature-kombinasjonene predikerer flere dynamiske mal enn bare radius,
+- og om noen av de langsomme driftstorrelsene kan forklares eller formaliseres bedre.
 
-Målet er ikke bredere frontier-scan, men a teste om optimumet ved omtrent `p_triad = 0.0010` er reelt.
+Etter at `v12b` faktisk er kjort, er den oppdaterte anbefalingen:
+
+- fortsett geometri-/transfersporet heller enn frontier-tuning
+- bruk `band_zero_del` som fast arbeidsregime
+- prioriter `final_radius_control` som primart transfer-mal
+- test om radiussignalet holder pa flere naerliggende regimer og mot enda enklere surrogate-baser
