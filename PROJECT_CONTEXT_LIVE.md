@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12` og `v12b` er de første struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c` og `v12d` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -35,6 +35,16 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12` og `v12b
 - Transfer-basis: `Documentation/v12b_transfer_basis_summary.csv`
 - Transfer-startstorrelser: `Documentation/v12b_transfer_target_summary.csv`
 - Transfer-anbefaling: `Documentation/v0_12b_operativ_anbefaling.md`
+- Radius-transfer-raffinement-script: `relational_universe_v12c_radius_transfer_refinement.py`
+- Radius-transfer-raffinement-rapport: `Documentation/v12c_radius_transfer_refinement.md`
+- Radius-transfer-basis: `Documentation/v12c_radius_basis_summary.csv`
+- Radius-transfer-ranking: `Documentation/v12c_radius_basis_ranking.csv`
+- Radius-transfer-anbefaling: `Documentation/v0_12c_operativ_anbefaling.md`
+- Kryssakse-transfer-script: `relational_universe_v12d_cross_axis_radius_transfer.py`
+- Kryssakse-transfer-rapport: `Documentation/v12d_cross_axis_radius_transfer.md`
+- Kryssakse-basis: `Documentation/v12d_cross_axis_basis_summary.csv`
+- Kryssakse-ranking: `Documentation/v12d_cross_axis_basis_ranking.csv`
+- Kryssakse-anbefaling: `Documentation/v0_12d_operativ_anbefaling.md`
 
 ## Live frontier akkurat na
 
@@ -77,9 +87,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b
+## Viktige signaler fra v12 / v12b / v12c / v12d
 
-`v12` og `v12b` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c` og `v12d` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -89,6 +99,12 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - Den mest interessante reduserte basisen sa langt er `initial_spectral_per_sqrtN + initial_clustering`, som gir best positiv skill for `final_radius_control`.
 - `v12b` viser at transfer-signalet er moderat positivt for `final_radius_control` mot naerliggende regimer, men ikke robust for `avg_local_overlap`.
 - I off-anchor transfer i `v12b` er `spectral_only` faktisk svaakt sterkere enn `spectral_plus_clustering`, sa den lille 2-feature-basisen ma behandles som lovende, men ikke endelig bekreftet.
+- `v12c` tester flere naerliggende triadpunkter og sammenligner sma surrogate-baser direkte for radius.
+- I `v12c` er `spectral_plus_dim` den sterkeste off-anchor radius-basen, men `spectral_only` ligger nesten likt bak.
+- Alle basisene blir svakt negative ved `bridge_0015_0000`, sa radius-transferen ser lokal ut heller enn global.
+- `v12d` flytter testen utenfor ren triad-akse og viser at `spectral_plus_dim` og `spectral_only` fortsatt ligger naermest hverandre som de beste enkle basisene.
+- `full_basis` er fortsatt en nyttig sanity check, men taper pa samlet off-anchor-robusthet mot `spectral_plus_dim`.
+- Den operative lesningen etter `v12d` er derfor et lite arbeidsplateau av `spectral_plus_dim` og `spectral_only`, ikke en hard enkeltrangering.
 
 ## Generatorstatus
 
@@ -101,7 +117,7 @@ I `Documentation/v11e_band_vs_bridge0075_target_summary.csv` er realiserte start
 - 192 -> 192
 - 256 -> 256
 
-Derfor ser baade den naavaerende frontier-lesningen og `v12`-geometrilesningen mer dynamiske enn generator-drevne ut.
+Derfor ser baade den naavaerende frontier-lesningen og strukturlesningen i `v12`-`v12d` mer dynamiske enn generator-drevne ut.
 
 ## Hva som ikke lenger bor brukes som live sannhet
 
@@ -131,3 +147,9 @@ Les i denne rekkefolgen:
 12. `Documentation/v12b_transfer_surrogate_lab.md`
 13. `Documentation/v12b_transfer_basis_summary.csv`
 14. `Documentation/v0_12b_operativ_anbefaling.md`
+15. `Documentation/v12c_radius_transfer_refinement.md`
+16. `Documentation/v12c_radius_basis_ranking.csv`
+17. `Documentation/v0_12c_operativ_anbefaling.md`
+18. `Documentation/v12d_cross_axis_radius_transfer.md`
+19. `Documentation/v12d_cross_axis_basis_ranking.csv`
+20. `Documentation/v0_12d_operativ_anbefaling.md`

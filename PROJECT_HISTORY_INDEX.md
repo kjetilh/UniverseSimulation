@@ -195,17 +195,64 @@ Viktige filer:
 - `Documentation/v12b_transfer_target_summary.csv`
 - `Documentation/v0_12b_operativ_anbefaling.md`
 
-## 12. Dagens operative lesning
+## 12. v12c raffinerte radius-transferen
+
+`v12c` tok transfersporet ett hakk videre:
+
+- flere naerliggende triadpunkter ble testet,
+- bare `final_radius_control` ble holdt som hovedmal,
+- og sma surrogate-baser ble sammenlignet direkte mot hverandre.
+
+Det viktigste resultatet er:
+
+- `spectral_plus_dim` er svaakt best pa mean off-anchor radius-skill
+- `spectral_only` ligger nesten likt og ma beholdes som naer kontroll
+- `spectral_plus_clustering` faller litt tilbake som arbeidsbasis, selv om det fortsatt er positivt
+- alle basisene blir svakt negative ved `bridge_0015_0000`, som peker mot en lokal gyldighetsgrense for radius-transferen
+
+Viktige filer:
+
+- `relational_universe_v12c_radius_transfer_refinement.py`
+- `Documentation/v12c_radius_transfer_refinement.md`
+- `Documentation/v12c_radius_basis_summary.csv`
+- `Documentation/v12c_radius_basis_ranking.csv`
+- `Documentation/v0_12c_operativ_anbefaling.md`
+
+## 13. v12d testet radius-surrogatet pa tvers av lokale akser
+
+`v12d` tok neste naturlige steg etter `v12c`:
+
+- behold `band_zero_del` som fast arbeidsregime,
+- behold radius som hovedmal,
+- men flytt testingen utenfor ren triad-akse til sma delete- og death-avvik.
+
+Det viktigste resultatet er:
+
+- `spectral_plus_dim` er fortsatt best pa kryssakse mean skill
+- `spectral_only` ligger tett nok til a vaere naermeste enkle kontroll
+- `full_basis` er ikke lenger den riktige operative motkandidaten, selv om den nesten matcher pa ren kryssakse-mean
+- derfor bor prosjektet forelopig jobbe med et lite enkelt basis-plateau, ikke med en stor feature-bunt
+
+Viktige filer:
+
+- `relational_universe_v12d_cross_axis_radius_transfer.py`
+- `Documentation/v12d_cross_axis_radius_transfer.md`
+- `Documentation/v12d_cross_axis_basis_summary.csv`
+- `Documentation/v12d_cross_axis_basis_ranking.csv`
+- `Documentation/v0_12d_operativ_anbefaling.md`
+
+## 14. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
 - frontier-standard: `band_zero_del`
 - aktiv forskningsfase: geometri / invariants / redusert basis / transfer
-- mest lovende ikke-trivielle geometrispor: `initial_spectral_per_sqrtN`, `initial_clustering` og `initial_dim_proxy`
+- mest lovende radius-surrogater akkurat na: `initial_spectral_per_sqrtN + initial_dim_proxy` og `initial_spectral_per_sqrtN`
+- mest lovende ikke-trivielle geometrispor ellers: `initial_clustering` og `initial_dim_proxy`
 - viktig advarsel: eksakte null-drifter ma skilles fra ekte ny matematikk til de er forklart bedre
-- viktig nyansering: `spectral_plus_clustering` var beste lille basis i `v12`, men `v12b` sier at vi fortsatt ma sammenligne den mot enda enklere alternativer som `spectral_only`
+- viktig nyansering: radius-transferen ser lokal ut; ved ytre triadpunkt og sterkere delete-avvik blir signalet svakere enn pa de naere regimepunktene
 
-## 13. Hva som bor gjores videre
+## 15. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre struktur-/transferarbeid som tester:
 
@@ -213,9 +260,10 @@ Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer fronti
 - om de samme feature-kombinasjonene predikerer flere dynamiske mal enn bare radius,
 - og om noen av de langsomme driftstorrelsene kan forklares eller formaliseres bedre.
 
-Etter at `v12b` faktisk er kjort, er den oppdaterte anbefalingen:
+Etter `v12b`-`v12d` er den oppdaterte anbefalingen:
 
 - fortsett geometri-/transfersporet heller enn frontier-tuning
 - bruk `band_zero_del` som fast arbeidsregime
 - prioriter `final_radius_control` som primart transfer-mal
-- test om radiussignalet holder pa flere naerliggende regimer og mot enda enklere surrogate-baser
+- hold `spectral_plus_dim` og `spectral_only` som et lite arbeidsplateau heller enn a late som én endelig basis allerede er bevist
+- test neste om dette enkle plateaet ogsa kan brukes til billigere prediksjon eller sortering av starttilstander, ikke bare til ren transfer-score
