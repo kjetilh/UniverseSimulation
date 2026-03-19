@@ -1,0 +1,2 @@
+status,raw_winner,ci_low_winner,pairwise_winner,focused_winner,focused_split,size_clean,p_band_gt_bridge0075,p_bridge0075_gt_band,note
+resolved,band_zero_del,band_zero_del,band_zero_del,band_zero_del,0,1,1.0,0.0,"`band_zero_del` vinner raw, CI-low og pairwise med tydelig margin mot `bridge_00075_0000`."

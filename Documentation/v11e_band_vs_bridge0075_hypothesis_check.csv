@@ -1,0 +1,2 @@
+supported,raw_winner,ci_low_winner,pairwise_winner,focused_winner,size_clean,p_bridge0075_gt_band,p_band_gt_bridge0075,note
+1,band_zero_del,band_zero_del,bridge_00075_0000,bridge_00075_0000,1,0.5111111111111111,0.4888888888888889,On-disk v11d files support a narrow unresolved split between band_zero_del and bridge_00075_0000.
