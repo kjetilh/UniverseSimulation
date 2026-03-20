@@ -333,7 +333,65 @@ Viktige filer:
 - `Documentation/v12h_cost_aware_pipeline_summary.csv`
 - `Documentation/v0_12h_operativ_anbefaling.md`
 
-## 18. Dagens operative lesning
+## 18. v12i malte faktisk workflow-tid i stedet for a anta screeningkostnad
+
+`v12i` tok neste naturlige steg etter `v12h`:
+
+- behold samme referansepolicyer,
+- behold samme aktive regime,
+- men maal na virkelig veggklokketid for screening og oppfolging pa den faktiske lokale kodebanen.
+
+Det viktigste resultatet er:
+
+- oppfolgingstiden dominerer nesten fullstendig ved dagens størrelser
+- screeningtiden blir praktisk neglisjerbar i total workflow
+- `full_basis@0.50` holder seg derfor som maelt arbeidsbenchmark
+- `spectral_only@0.50` er fortsatt riktig same-budget-kandidat, men den gir nesten ingen faktisk total tidsgevinst
+- `spectral_plus_dim@0.667` beholder hoy kvalitet, men blir tydelig tregere fordi den sender flere baser videre til dyre oppfolgingsbundler
+
+Dette er viktig fordi det strammer inn lesningen av `v12e`-`v12h`:
+
+- de kompakte basisene er fortsatt interessante som struktur og forklaring
+- men ved dagens grafstorrelser er det forelopig ikke der den store praktiske arbeidsbesparelsen ligger
+
+Viktige filer:
+
+- `relational_universe_v12i_measured_runtime_pipeline.py`
+- `Documentation/v12i_measured_runtime_pipeline.md`
+- `Documentation/v12i_measured_runtime_pipeline_followup_timing_summary.csv`
+- `Documentation/v12i_measured_runtime_pipeline_summary.csv`
+- `Documentation/v0_12i_operativ_anbefaling.md`
+
+## 19. v12j testet om v12i-holder litt opp i størrelse
+
+`v12j` tok neste naturlige steg etter `v12i`:
+
+- behold samme regime,
+- behold samme policytrio,
+- men flytt workflow-testen til noe større naturlige ensembler.
+
+Det viktigste resultatet er:
+
+- realiserte startstørrelser holder seg fortsatt rent separert
+- screeningandelen er fortsatt praktisk neglisjerbar i total workflow
+- `spectral_only@0.50` svekkes heller enn styrkes i denne større runden
+- `spectral_plus_dim@0.667` er kvalitetsmessig sterkere, men tydelig dyrere
+- `random_baseline@0.50` matcher faktisk referansen pa mean best-hit og recall i denne lille større-runden, som er en klar advarsel om at screening-signalet ikke automatisk blir bedre med litt større grafer
+
+Den riktige lesningen er derfor:
+
+- den praktiske flaskehalsen ligger fortsatt i oppfolgingsdynamikken
+- kompakte basisrom er fortsatt mer interessante som struktur og forklaring enn som maelt arbeidsbesparelse
+
+Viktige filer:
+
+- `relational_universe_v12j_size_stress_runtime_pipeline.py`
+- `Documentation/v12j_size_stress_runtime_pipeline.md`
+- `Documentation/v12j_size_stress_runtime_pipeline_target_summary.csv`
+- `Documentation/v12j_size_stress_runtime_pipeline_summary.csv`
+- `Documentation/v0_12j_operativ_anbefaling.md`
+
+## 20. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
@@ -348,8 +406,10 @@ Dagens beste korte lesning er:
 - ny budsjettadvarsel: `spectral_only` er bare marginalt bedre enn random-baseline pa curve-wide screening-AUC
 - ny pipelineadvarsel: `spectral_only@0.50` er naermest benchmarken, men gir ikke ekstra budsjettgevinst mot `full_basis@0.50`
 - ny kostnadsnyansering: hvis screeningkostnaden faktisk teller, kan `spectral_plus_dim@0.667` vaere mer interessant enn `spectral_only@0.50`
+- ny maelt workflow-dom: ved dagens grafstorrelser dominerer oppfolgingsdynamikken sa sterkt at screeningkostnaden blir praktisk neglisjerbar, og derfor holder `full_basis@0.50` seg som beste maelte arbeidsbenchmark
+- ny storrelsesstresstest-dom: nar vi flytter workflowen opp til `96, 192, 320, 384`, holder denne tidsdominansen fortsatt, og `spectral_only@0.50` svekkes i stedet for a styrkes
 
-## 19. Hva som bor gjores videre
+## 21. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre struktur-/transferarbeid som tester:
 
@@ -365,4 +425,4 @@ Etter `v12b`-`v12h` er den oppdaterte anbefalingen:
 - bruk `full_basis` som screening-benchmark
 - bruk `spectral_only@0.50` som naavaerende kompakt same-budget-kandidat
 - behold `spectral_plus_dim` som viktig strukturkontroll, ikke som automatisk beste policy
-- test neste en enda mer direkte arbeidsflyt med enten virkelig veggklokketid eller eksplisitt valgt kostnadsmodell, der `full_basis@0.50`, `spectral_only@0.50` og `spectral_plus_dim@0.667` sammenlignes som reelle operative valg
+- test na ikke bare større pre-screening, men smartere oppfolgingskontroll: om oppfolgingsbudsjettet selv kan kortes ned eller styres adaptivt bedre enn ved ren pre-screening av startbaser
