@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d` og `v12e` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e` og `v12f` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -49,6 +49,10 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Screening-rapport: `Documentation/v12e_start_state_screening.md`
 - Screening-sammendrag: `Documentation/v12e_screening_summary.csv`
 - Screening-anbefaling: `Documentation/v0_12e_operativ_anbefaling.md`
+- Budsjettscreening-script: `relational_universe_v12f_budget_screening.py`
+- Budsjettscreening-rapport: `Documentation/v12f_budget_screening.md`
+- Budsjettscreening-sammendrag: `Documentation/v12f_budget_summary.csv`
+- Budsjettscreening-anbefaling: `Documentation/v0_12f_operativ_anbefaling.md`
 
 ## Live frontier akkurat na
 
@@ -91,9 +95,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b / v12c / v12d / v12e
+## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f
 
-`v12`, `v12b`, `v12c`, `v12d` og `v12e` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c`, `v12d`, `v12e` og `v12f` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -112,6 +116,10 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - `v12e` tar neste nytte-steg og tester billig sortering av starttilstander.
 - I `v12e` er `full_basis` best pa within-target screening, men `spectral_plus_dim` er fortsatt den beste kompakte basisen.
 - Den operative lesningen etter `v12e` er derfor: bruk `full_basis` som benchmark for screening og `spectral_plus_dim` som den beste lille arbeidsbasisen.
+- `v12f` gjor neste steg mer konkret: en budsjettstyrt screeningpolicy der bare topp-fraksjonen innen hver størrelse far dyre oppfolgingskjoringer.
+- I `v12f` holder `full_basis` seg som budsjettbenchmark, men `spectral_only` slar `spectral_plus_dim` som beste lille policy i selve budsjettoppgaven.
+- Samtidig er dette et smalt signal: `spectral_only` ligger bare hairline foran `random_baseline` pa curve-wide AUC, sa hovedverdien ser ut til a ligge ved medium budsjett heller enn som en sterk universell screeningregel.
+- Den operative lesningen etter `v12f` er derfor: behold `full_basis` som benchmark, test `spectral_only` som kompakt policy i neste pipeline-runde, og ikke overselg gevinsten ennå.
 
 ## Generatorstatus
 
@@ -124,7 +132,7 @@ I `Documentation/v11e_band_vs_bridge0075_target_summary.csv` er realiserte start
 - 192 -> 192
 - 256 -> 256
 
-Derfor ser baade den naavaerende frontier-lesningen og strukturlesningen i `v12`-`v12d` mer dynamiske enn generator-drevne ut.
+Derfor ser baade den naavaerende frontier-lesningen og strukturlesningen i `v12`-`v12f` mer dynamiske enn generator-drevne ut.
 
 ## Hva som ikke lenger bor brukes som live sannhet
 
@@ -163,3 +171,6 @@ Les i denne rekkefolgen:
 21. `Documentation/v12e_start_state_screening.md`
 22. `Documentation/v12e_screening_summary.csv`
 23. `Documentation/v0_12e_operativ_anbefaling.md`
+24. `Documentation/v12f_budget_screening.md`
+25. `Documentation/v12f_budget_summary.csv`
+26. `Documentation/v0_12f_operativ_anbefaling.md`

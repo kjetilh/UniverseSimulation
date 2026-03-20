@@ -262,20 +262,43 @@ Viktige filer:
 - `Documentation/v12e_screening_summary.csv`
 - `Documentation/v0_12e_operativ_anbefaling.md`
 
-## 15. Dagens operative lesning
+## 15. v12f gjorde screening til en eksplisitt budsjettpolicy
+
+`v12f` tok neste naturlige steg etter `v12e`:
+
+- behold `band_zero_del` som fast regime,
+- behold radius som praktisk etikett,
+- men maal na hva som skjer hvis vi faktisk bare lar toppfraksjonen innen hver størrelse gaa videre til dyre oppfolgingskjoringer.
+
+Det viktigste resultatet er:
+
+- `full_basis` holder seg som budsjettbenchmark
+- `spectral_only` slar `spectral_plus_dim` som beste lille policy i denne konkrete oppgaven
+- men denne seieren er smal: `spectral_only` ligger bare hairline foran `random_baseline` pa curve-wide AUC
+- derfor er den riktige lesningen ikke at en liten regel "har losningen", men at `spectral_only` er den beste enkle kandidaten a ta med videre inn i en mer direkte pipeline-test
+
+Viktige filer:
+
+- `relational_universe_v12f_budget_screening.py`
+- `Documentation/v12f_budget_screening.md`
+- `Documentation/v12f_budget_summary.csv`
+- `Documentation/v0_12f_operativ_anbefaling.md`
+
+## 16. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
 - frontier-standard: `band_zero_del`
 - aktiv forskningsfase: geometri / invariants / redusert basis / transfer
 - screening-benchmark akkurat na: `full_basis`
-- beste kompakte arbeidsbasis akkurat na: `initial_spectral_per_sqrtN + initial_dim_proxy`
-- naer kompakt kontroll: `initial_spectral_per_sqrtN`
+- beste kompakte screeningpolicy akkurat na: `initial_spectral_per_sqrtN`
+- naer kompakt strukturkontroll: `initial_spectral_per_sqrtN + initial_dim_proxy`
 - mest lovende ikke-trivielle geometrispor ellers: `initial_clustering` og `initial_dim_proxy`
 - viktig advarsel: eksakte null-drifter ma skilles fra ekte ny matematikk til de er forklart bedre
 - viktig nyansering: radius-transferen ser lokal ut; ved ytre triadpunkt og sterkere delete-avvik blir signalet svakere enn pa de naere regimepunktene
+- ny budsjettadvarsel: `spectral_only` er bare marginalt bedre enn random-baseline pa curve-wide screening-AUC, sa signalet ma verifiseres i en mer direkte kandidatpipeline
 
-## 16. Hva som bor gjores videre
+## 17. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre struktur-/transferarbeid som tester:
 
@@ -283,10 +306,12 @@ Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer fronti
 - om de samme feature-kombinasjonene predikerer flere dynamiske mal enn bare radius,
 - og om noen av de langsomme driftstorrelsene kan forklares eller formaliseres bedre.
 
-Etter `v12b`-`v12d` er den oppdaterte anbefalingen:
+Etter `v12b`-`v12f` er den oppdaterte anbefalingen:
 
 - fortsett geometri-/transfersporet heller enn frontier-tuning
 - bruk `band_zero_del` som fast arbeidsregime
 - prioriter `final_radius_control` som primart transfer-mal
-- bruk `full_basis` som screening-benchmark og `spectral_plus_dim` som kompakt arbeidsbasis
-- test neste om den kompakte basisen faktisk kan spare simuleringsbudsjett i en kandidat-screeningflyt, ikke bare se bra ut pa summary-metrikker
+- bruk `full_basis` som screening-benchmark
+- bruk `spectral_only` som naavaerende kompakt policykandidat
+- behold `spectral_plus_dim` som viktig strukturkontroll, ikke som automatisk beste policy
+- test neste en mer direkte kandidatpipeline som maaler faktiske sparte oppfolgingskjoringer ved samme eller nesten samme treffrate
