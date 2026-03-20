@@ -311,7 +311,29 @@ Viktige filer:
 - `Documentation/v12g_followup_pipeline_summary.csv`
 - `Documentation/v0_12g_operativ_anbefaling.md`
 
-## 17. Dagens operative lesning
+## 17. v12h la et eksplisitt kostnadsregnskap over pipeline-valgene
+
+`v12h` tok neste naturlige steg etter `v12g`:
+
+- behold de samme policyene,
+- behold `full_basis@0.50` som referanse,
+- men la na screeningfasen selv ha en eksplisitt kostnad i arbeidsmodellen.
+
+Det viktigste resultatet er:
+
+- hvis screening er billig eller ukjent, holder `full_basis@0.50` seg som best benchmark
+- `spectral_only@0.50` er fortsatt den enkleste same-budget-kandidaten
+- hvis screeningkostnaden blir tydelig ikke-neglisjerbar, blir `spectral_plus_dim@0.667` den mest interessante kostnadsnoytrale utfordreren
+- derfor er lesningen na betinget av arbeidsmodell, ikke bare av rene oppfolgingskjøringer
+
+Viktige filer:
+
+- `relational_universe_v12h_cost_aware_pipeline.py`
+- `Documentation/v12h_cost_aware_pipeline.md`
+- `Documentation/v12h_cost_aware_pipeline_summary.csv`
+- `Documentation/v0_12h_operativ_anbefaling.md`
+
+## 18. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
@@ -325,8 +347,9 @@ Dagens beste korte lesning er:
 - viktig nyansering: radius-transferen ser lokal ut; ved ytre triadpunkt og sterkere delete-avvik blir signalet svakere enn pa de naere regimepunktene
 - ny budsjettadvarsel: `spectral_only` er bare marginalt bedre enn random-baseline pa curve-wide screening-AUC
 - ny pipelineadvarsel: `spectral_only@0.50` er naermest benchmarken, men gir ikke ekstra budsjettgevinst mot `full_basis@0.50`
+- ny kostnadsnyansering: hvis screeningkostnaden faktisk teller, kan `spectral_plus_dim@0.667` vaere mer interessant enn `spectral_only@0.50`
 
-## 18. Hva som bor gjores videre
+## 19. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre struktur-/transferarbeid som tester:
 
@@ -334,7 +357,7 @@ Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer fronti
 - om de samme feature-kombinasjonene predikerer flere dynamiske mal enn bare radius,
 - og om noen av de langsomme driftstorrelsene kan forklares eller formaliseres bedre.
 
-Etter `v12b`-`v12g` er den oppdaterte anbefalingen:
+Etter `v12b`-`v12h` er den oppdaterte anbefalingen:
 
 - fortsett geometri-/transfersporet heller enn frontier-tuning
 - bruk `band_zero_del` som fast arbeidsregime
@@ -342,4 +365,4 @@ Etter `v12b`-`v12g` er den oppdaterte anbefalingen:
 - bruk `full_basis` som screening-benchmark
 - bruk `spectral_only@0.50` som naavaerende kompakt same-budget-kandidat
 - behold `spectral_plus_dim` som viktig strukturkontroll, ikke som automatisk beste policy
-- test neste en enda mer direkte arbeidsflyt der `spectral_only@0.50` faktisk brukes til a velge hvilke baser som far oppfolgingskjoringer, og maal om enkelheten alene gir praktisk gevinst eller bare metodisk lesbarhet
+- test neste en enda mer direkte arbeidsflyt med enten virkelig veggklokketid eller eksplisitt valgt kostnadsmodell, der `full_basis@0.50`, `spectral_only@0.50` og `spectral_plus_dim@0.667` sammenlignes som reelle operative valg

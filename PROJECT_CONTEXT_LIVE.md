@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f` og `v12g` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g` og `v12h` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -57,6 +57,10 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Oppfolgingspipeline-rapport: `Documentation/v12g_followup_budget_pipeline.md`
 - Oppfolgingspipeline-sammendrag: `Documentation/v12g_followup_pipeline_summary.csv`
 - Oppfolgingspipeline-anbefaling: `Documentation/v0_12g_operativ_anbefaling.md`
+- Kostnadsbevisst pipeline-script: `relational_universe_v12h_cost_aware_pipeline.py`
+- Kostnadsbevisst pipeline-rapport: `Documentation/v12h_cost_aware_pipeline.md`
+- Kostnadsbevisst pipeline-sammendrag: `Documentation/v12h_cost_aware_pipeline_summary.csv`
+- Kostnadsbevisst pipeline-anbefaling: `Documentation/v0_12h_operativ_anbefaling.md`
 
 ## Live frontier akkurat na
 
@@ -99,9 +103,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g
+## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h
 
-`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f` og `v12g` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g` og `v12h` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -128,6 +132,11 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - I `v12g` er `spectral_only@0.50` den naermeste kompakte erstatningen, men den gir ingen ekstra sparing mot benchmarken fordi den bruker samme oppfolgingsbudsjett.
 - `spectral_only@0.333` sparer mer, men taper for mye pa hit og recall. `spectral_only@0.667` matcher lettere, men koster mer.
 - Den operative lesningen etter `v12g` er derfor: vi har en enkel same-budget-substitutt, men ennå ikke en klart billigere kompakt policy med omtrent samme kvalitet.
+- `v12h` legger et eksplisitt kostnadsregnskap oppa denne lesningen.
+- Hvis screeningkostnaden er liten eller ukjent, holder `full_basis@0.50` seg som riktig standardbenchmark.
+- `spectral_only@0.50` er fortsatt den enkleste same-budget-kandidaten.
+- Naar screeningkostnaden blir tydelig ikke-neglisjerbar i arbeidsmodellen, blir `spectral_plus_dim@0.667` den mest interessante kostnadsnoytrale utfordreren.
+- Den operative lesningen etter `v12h` er derfor betinget: ikke én universell kompakt vinner, men ulike arbeidskandidater avhengig av hvor dyr vi antar screeningfasen er.
 
 ## Generatorstatus
 
@@ -140,7 +149,7 @@ I `Documentation/v11e_band_vs_bridge0075_target_summary.csv` er realiserte start
 - 192 -> 192
 - 256 -> 256
 
-Derfor ser baade den naavaerende frontier-lesningen og strukturlesningen i `v12`-`v12g` mer dynamiske enn generator-drevne ut.
+Derfor ser baade den naavaerende frontier-lesningen og strukturlesningen i `v12`-`v12h` mer dynamiske enn generator-drevne ut.
 
 ## Hva som ikke lenger bor brukes som live sannhet
 
@@ -185,3 +194,6 @@ Les i denne rekkefolgen:
 27. `Documentation/v12g_followup_budget_pipeline.md`
 28. `Documentation/v12g_followup_pipeline_summary.csv`
 29. `Documentation/v0_12g_operativ_anbefaling.md`
+30. `Documentation/v12h_cost_aware_pipeline.md`
+31. `Documentation/v12h_cost_aware_pipeline_summary.csv`
+32. `Documentation/v0_12h_operativ_anbefaling.md`

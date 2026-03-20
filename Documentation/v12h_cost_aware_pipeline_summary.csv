@@ -1,0 +1,8 @@
+screen_cost_per_feature,best_policy_name,best_budget_frac,best_cost_neutral_and_near_match_rate,best_near_match_rate_eps_02,best_mean_cost_delta_vs_ref,best_mean_delta_best_hit_vs_ref,best_mean_delta_recall_vs_ref
+0.0,full_basis,0.5,1.0,1.0,0.0,0.0,0.0
+0.01,full_basis,0.5,1.0,1.0,0.0,0.0,0.0
+0.02,full_basis,0.5,1.0,1.0,0.0,0.0,0.0
+0.04,full_basis,0.5,1.0,1.0,0.0,0.0,0.0
+0.06,full_basis,0.5,1.0,1.0,0.0,0.0,0.0
+0.08,full_basis,0.5,1.0,1.0,0.0,0.0,0.0
+0.1,full_basis,0.5,1.0,1.0,0.0,0.0,0.0
