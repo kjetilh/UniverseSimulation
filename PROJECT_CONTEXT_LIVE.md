@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c` og `v12d` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d` og `v12e` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -45,6 +45,10 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Kryssakse-basis: `Documentation/v12d_cross_axis_basis_summary.csv`
 - Kryssakse-ranking: `Documentation/v12d_cross_axis_basis_ranking.csv`
 - Kryssakse-anbefaling: `Documentation/v0_12d_operativ_anbefaling.md`
+- Screening-/sorteringsscript: `relational_universe_v12e_start_state_screening.py`
+- Screening-rapport: `Documentation/v12e_start_state_screening.md`
+- Screening-sammendrag: `Documentation/v12e_screening_summary.csv`
+- Screening-anbefaling: `Documentation/v0_12e_operativ_anbefaling.md`
 
 ## Live frontier akkurat na
 
@@ -87,9 +91,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b / v12c / v12d
+## Viktige signaler fra v12 / v12b / v12c / v12d / v12e
 
-`v12`, `v12b`, `v12c` og `v12d` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c`, `v12d` og `v12e` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -105,6 +109,9 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - `v12d` flytter testen utenfor ren triad-akse og viser at `spectral_plus_dim` og `spectral_only` fortsatt ligger naermest hverandre som de beste enkle basisene.
 - `full_basis` er fortsatt en nyttig sanity check, men taper pa samlet off-anchor-robusthet mot `spectral_plus_dim`.
 - Den operative lesningen etter `v12d` er derfor et lite arbeidsplateau av `spectral_plus_dim` og `spectral_only`, ikke en hard enkeltrangering.
+- `v12e` tar neste nytte-steg og tester billig sortering av starttilstander.
+- I `v12e` er `full_basis` best pa within-target screening, men `spectral_plus_dim` er fortsatt den beste kompakte basisen.
+- Den operative lesningen etter `v12e` er derfor: bruk `full_basis` som benchmark for screening og `spectral_plus_dim` som den beste lille arbeidsbasisen.
 
 ## Generatorstatus
 
@@ -153,3 +160,6 @@ Les i denne rekkefolgen:
 18. `Documentation/v12d_cross_axis_radius_transfer.md`
 19. `Documentation/v12d_cross_axis_basis_ranking.csv`
 20. `Documentation/v0_12d_operativ_anbefaling.md`
+21. `Documentation/v12e_start_state_screening.md`
+22. `Documentation/v12e_screening_summary.csv`
+23. `Documentation/v0_12e_operativ_anbefaling.md`

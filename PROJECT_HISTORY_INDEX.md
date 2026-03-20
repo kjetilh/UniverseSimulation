@@ -241,18 +241,41 @@ Viktige filer:
 - `Documentation/v12d_cross_axis_basis_ranking.csv`
 - `Documentation/v0_12d_operativ_anbefaling.md`
 
-## 14. Dagens operative lesning
+## 14. v12e testet faktisk nytte: screening og sortering
+
+`v12e` spurte ikke lenger bare om transfer virker, men om de samme basisene kan brukes til en konkret oppgave:
+
+- billigere rangering av starttilstander,
+- bedre screening av lovende kandidater,
+- uten a kjore hele dynamikken pa alle mulige baser.
+
+Det viktigste resultatet er:
+
+- `full_basis` er best pa within-target screening i denne runden
+- `spectral_plus_dim` er fortsatt beste kompakte basis
+- derfor er den riktige operative lesningen ikke "den lille basisen vant alt", men "vi har na et benchmark vs kompakt arbeidsbasis-par"
+
+Viktige filer:
+
+- `relational_universe_v12e_start_state_screening.py`
+- `Documentation/v12e_start_state_screening.md`
+- `Documentation/v12e_screening_summary.csv`
+- `Documentation/v0_12e_operativ_anbefaling.md`
+
+## 15. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
 - frontier-standard: `band_zero_del`
 - aktiv forskningsfase: geometri / invariants / redusert basis / transfer
-- mest lovende radius-surrogater akkurat na: `initial_spectral_per_sqrtN + initial_dim_proxy` og `initial_spectral_per_sqrtN`
+- screening-benchmark akkurat na: `full_basis`
+- beste kompakte arbeidsbasis akkurat na: `initial_spectral_per_sqrtN + initial_dim_proxy`
+- naer kompakt kontroll: `initial_spectral_per_sqrtN`
 - mest lovende ikke-trivielle geometrispor ellers: `initial_clustering` og `initial_dim_proxy`
 - viktig advarsel: eksakte null-drifter ma skilles fra ekte ny matematikk til de er forklart bedre
 - viktig nyansering: radius-transferen ser lokal ut; ved ytre triadpunkt og sterkere delete-avvik blir signalet svakere enn pa de naere regimepunktene
 
-## 15. Hva som bor gjores videre
+## 16. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre struktur-/transferarbeid som tester:
 
@@ -265,5 +288,5 @@ Etter `v12b`-`v12d` er den oppdaterte anbefalingen:
 - fortsett geometri-/transfersporet heller enn frontier-tuning
 - bruk `band_zero_del` som fast arbeidsregime
 - prioriter `final_radius_control` som primart transfer-mal
-- hold `spectral_plus_dim` og `spectral_only` som et lite arbeidsplateau heller enn a late som én endelig basis allerede er bevist
-- test neste om dette enkle plateaet ogsa kan brukes til billigere prediksjon eller sortering av starttilstander, ikke bare til ren transfer-score
+- bruk `full_basis` som screening-benchmark og `spectral_plus_dim` som kompakt arbeidsbasis
+- test neste om den kompakte basisen faktisk kan spare simuleringsbudsjett i en kandidat-screeningflyt, ikke bare se bra ut pa summary-metrikker
