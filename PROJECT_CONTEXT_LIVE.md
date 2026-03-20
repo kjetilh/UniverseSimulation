@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i` og `v12j` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j` og `v12k` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -71,6 +71,11 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Storrelses-stresset target-sammendrag: `Documentation/v12j_size_stress_runtime_pipeline_target_summary.csv`
 - Storrelses-stresset runtime-sammendrag: `Documentation/v12j_size_stress_runtime_pipeline_summary.csv`
 - Storrelses-stresset runtime-anbefaling: `Documentation/v0_12j_operativ_anbefaling.md`
+- Adaptiv oppfolgingsscript: `relational_universe_v12k_adaptive_followup_budget.py`
+- Adaptiv oppfolgingsrapport: `Documentation/v12k_adaptive_followup_budget.md`
+- Adaptiv oppfolgings-target-sammendrag: `Documentation/v12k_adaptive_followup_budget_target_summary.csv`
+- Adaptiv oppfolgings-sammendrag: `Documentation/v12k_adaptive_followup_budget_summary.csv`
+- Adaptiv oppfolgings-anbefaling: `Documentation/v0_12k_operativ_anbefaling.md`
 
 ## Live frontier akkurat na
 
@@ -113,9 +118,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j
+## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k
 
-`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i` og `v12j` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j` og `v12k` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -160,6 +165,11 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - `spectral_plus_dim@0.667` er kvalitetsmessig sterkere enn referansen i denne runden, men den er tydelig dyrere i total workflow og blir derfor ikke en ny arbeidsvinner.
 - `random_baseline@0.50` matcher faktisk referansen pa mean best-hit og recall i denne lille større-runden, noe som er en klar advarsel om at screening-signalet ikke automatisk styrker seg med litt større grafer.
 - Den operative lesningen etter `v12j` er derfor: kompakte basisrom er fortsatt interessante som struktur, men de gir fortsatt ikke en robust maelt arbeidsgevinst, og `spectral_only` svekkes snarere enn styrkes i denne moderate størrelsesstresstesten.
+- `v12k` flytter derfor fokuset inn i selve oppfolgingsbudsjettet.
+- Ingen adaptive follow-up-policyer er naer-match mot `full_followup` i denne runden.
+- `probe1_only` er den raske yttergrensen (`time_frac ~= 0.159`), men den faller for mye i kvalitet.
+- `probe2_top_half` er den mest balanserte adaptive kandidaten (`time_frac ~= 0.677`, `best_hit ~= 0.750`, `recall ~= 0.750`), men heller ikke den er sterk nok til a erstatte full oppfolging.
+- Den operative lesningen etter `v12k` er derfor: hvis vi skal hente ekte arbeidsgevinst videre, bor neste steg vaere hybrid eller dypere adaptiv oppfolging heller enn enda mer ren pre-screening.
 
 ## Generatorstatus
 

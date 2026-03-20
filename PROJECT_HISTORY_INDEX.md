@@ -391,7 +391,30 @@ Viktige filer:
 - `Documentation/v12j_size_stress_runtime_pipeline_summary.csv`
 - `Documentation/v0_12j_operativ_anbefaling.md`
 
-## 20. Dagens operative lesning
+## 20. v12k testet adaptiv oppfølging i stedet for mer pre-screening
+
+`v12k` tok neste naturlige steg etter `v12j`:
+
+- behold samme regime,
+- behold samme full-followup som referanse,
+- men bruk de første run-seedene pa hver base som adaptiv beslutning om hvem som far full oppfolging.
+
+Det viktigste resultatet er:
+
+- ingen adaptive policyer er naer-match mot `full_followup`
+- `probe1_only` er den raske yttergrensen, men mister for mye kvalitet
+- `probe2_top_half` er den mest balanserte adaptive kandidaten
+- dette betyr at arbeidsgevinst antagelig finnes mer i smartere oppfølgingsstyring enn i ren pre-screening, men at første adaptive runde ikke er sterk nok til a erstatte full oppfolging
+
+Viktige filer:
+
+- `relational_universe_v12k_adaptive_followup_budget.py`
+- `Documentation/v12k_adaptive_followup_budget.md`
+- `Documentation/v12k_adaptive_followup_budget_target_summary.csv`
+- `Documentation/v12k_adaptive_followup_budget_summary.csv`
+- `Documentation/v0_12k_operativ_anbefaling.md`
+
+## 21. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
@@ -408,8 +431,9 @@ Dagens beste korte lesning er:
 - ny kostnadsnyansering: hvis screeningkostnaden faktisk teller, kan `spectral_plus_dim@0.667` vaere mer interessant enn `spectral_only@0.50`
 - ny maelt workflow-dom: ved dagens grafstorrelser dominerer oppfolgingsdynamikken sa sterkt at screeningkostnaden blir praktisk neglisjerbar, og derfor holder `full_basis@0.50` seg som beste maelte arbeidsbenchmark
 - ny storrelsesstresstest-dom: nar vi flytter workflowen opp til `96, 192, 320, 384`, holder denne tidsdominansen fortsatt, og `spectral_only@0.50` svekkes i stedet for a styrkes
+- ny adaptiv oppfolgingsdom: raske adaptive policyer finnes, men ingen er ennå sterke nok til a erstatte full oppfolging; `probe2_top_half` er den viktigste balanserte kandidaten
 
-## 21. Hva som bor gjores videre
+## 22. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre struktur-/transferarbeid som tester:
 
@@ -425,4 +449,4 @@ Etter `v12b`-`v12h` er den oppdaterte anbefalingen:
 - bruk `full_basis` som screening-benchmark
 - bruk `spectral_only@0.50` som naavaerende kompakt same-budget-kandidat
 - behold `spectral_plus_dim` som viktig strukturkontroll, ikke som automatisk beste policy
-- test na ikke bare større pre-screening, men smartere oppfolgingskontroll: om oppfolgingsbudsjettet selv kan kortes ned eller styres adaptivt bedre enn ved ren pre-screening av startbaser
+- test na hybrid eller dypere adaptiv oppfølging: for eksempel en liten kombinasjon av enkel screening og adaptiv follow-up, eller mer forsiktige oppfølgingsregler rundt `probe2_top_half`
