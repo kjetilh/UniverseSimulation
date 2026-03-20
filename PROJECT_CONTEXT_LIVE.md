@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j` og `v12k` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k` og `v12l` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -76,6 +76,11 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Adaptiv oppfolgings-target-sammendrag: `Documentation/v12k_adaptive_followup_budget_target_summary.csv`
 - Adaptiv oppfolgings-sammendrag: `Documentation/v12k_adaptive_followup_budget_summary.csv`
 - Adaptiv oppfolgings-anbefaling: `Documentation/v0_12k_operativ_anbefaling.md`
+- Hybrid screening+oppfolgingsscript: `relational_universe_v12l_hybrid_screening_followup.py`
+- Hybrid screening+oppfolgingsrapport: `Documentation/v12l_hybrid_screening_followup.md`
+- Hybrid screening+oppfolgings-target-sammendrag: `Documentation/v12l_hybrid_screening_followup_target_summary.csv`
+- Hybrid screening+oppfolgings-sammendrag: `Documentation/v12l_hybrid_screening_followup_summary.csv`
+- Hybrid screening+oppfolgings-anbefaling: `Documentation/v0_12l_operativ_anbefaling.md`
 
 ## Live frontier akkurat na
 
@@ -118,9 +123,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k
+## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k / v12l
 
-`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j` og `v12k` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k` og `v12l` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -170,6 +175,12 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - `probe1_only` er den raske yttergrensen (`time_frac ~= 0.159`), men den faller for mye i kvalitet.
 - `probe2_top_half` er den mest balanserte adaptive kandidaten (`time_frac ~= 0.677`, `best_hit ~= 0.750`, `recall ~= 0.750`), men heller ikke den er sterk nok til a erstatte full oppfolging.
 - Den operative lesningen etter `v12k` er derfor: hvis vi skal hente ekte arbeidsgevinst videre, bor neste steg vaere hybrid eller dypere adaptiv oppfolging heller enn enda mer ren pre-screening.
+- `v12l` gjor denne hybridtesten eksplisitt ved a kombinere screening og adaptiv oppfolging i samme workflow.
+- Referansen i `v12l` er `full_basis__full_followup`.
+- `spectral_only__full_followup` er den naermeste same-budget-utfordreren pa middelverdier: den er litt raskere og litt bedre pa mean hit/recall enn referansen, men splitvis `near_match ~= 0.650` er ikke hoy nok til a kalle den en ny standard.
+- `full_basis__probe2_top_half` er den tydeligste reelle tidsutfordreren: `speedup ~= 1.494`, men `best_hit ~= 0.575` og `recall ~= 0.575` betyr at kvalitetstapet fortsatt er for stort.
+- `spectral_only__probe2_top_half` er den rene kompakt+adaptive hybriden, men den taper enda mer kvalitet enn `full_basis__probe2_top_half`.
+- Den operative lesningen etter `v12l` er derfor: hybridsporet er mer lovende gjennom dypere adaptiv oppfolging enn gjennom enda mer finjustering av screeningbasiser.
 
 ## Generatorstatus
 
@@ -238,3 +249,9 @@ Les i denne rekkefolgen:
 38. `Documentation/v12j_size_stress_runtime_pipeline_target_summary.csv`
 39. `Documentation/v12j_size_stress_runtime_pipeline_summary.csv`
 40. `Documentation/v0_12j_operativ_anbefaling.md`
+41. `Documentation/v12k_adaptive_followup_budget.md`
+42. `Documentation/v12k_adaptive_followup_budget_summary.csv`
+43. `Documentation/v0_12k_operativ_anbefaling.md`
+44. `Documentation/v12l_hybrid_screening_followup.md`
+45. `Documentation/v12l_hybrid_screening_followup_summary.csv`
+46. `Documentation/v0_12l_operativ_anbefaling.md`

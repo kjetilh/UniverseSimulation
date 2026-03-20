@@ -414,6 +414,36 @@ Viktige filer:
 - `Documentation/v12k_adaptive_followup_budget_summary.csv`
 - `Documentation/v0_12k_operativ_anbefaling.md`
 
+## 21. v12l testet en ekte hybrid mellom screening og adaptiv oppfølging
+
+`v12l` tok neste naturlige steg etter `v12k`:
+
+- behold `band_zero_del` som arbeidsregime,
+- behold `full_basis@0.50` som screeningreferanse,
+- behold `probe2_top_half` som den mest balanserte adaptive follow-up-kandidaten,
+- og kombiner dem i én faktisk workflow.
+
+Det viktigste resultatet er:
+
+- `full_basis__full_followup` holder seg som operativ referanse
+- `spectral_only__full_followup` er den nærmeste same-budget-utfordreren på middelverdier
+- men den er ikke robust nok split-for-split til å bli ny standard
+- `full_basis__probe2_top_half` er den tydeligste reelle tidsutfordreren
+- men den taper for mye i `best_hit` og `recall`
+
+Den riktige lesningen er derfor:
+
+- hybridsporet er fortsatt mer lovende enn mer pre-screening
+- men den beste retningen videre er dypere adaptiv oppfølging, ikke mer finjustering av screeningbasiser
+
+Viktige filer:
+
+- `relational_universe_v12l_hybrid_screening_followup.py`
+- `Documentation/v12l_hybrid_screening_followup.md`
+- `Documentation/v12l_hybrid_screening_followup_target_summary.csv`
+- `Documentation/v12l_hybrid_screening_followup_summary.csv`
+- `Documentation/v0_12l_operativ_anbefaling.md`
+
 ## 21. Dagens operative lesning
 
 Dagens beste korte lesning er:
