@@ -1,0 +1,5 @@
+signal_family,status,best_candidate,note
+radius_basis,not_yet,spectral_only,Radius-signalet er for svakt eller for ustabilt til at større validering er førsteprioritet.
+overlap_basis,not_yet,spectral_only,Overlap-signalet er fortsatt for svakt til å forsvare større validering.
+stable_geometry_features,yes_targeted,initial_avg_degree+initial_spectral_per_sqrtN,De mest stabile normaliserte geometriaksene er sterke nok til å brukes som faste kontroller i større validering.
+quasi_invariants,cross_regime_first,mean_abs_delta_nodes_rel+mean_abs_delta_beta1_rel+mean_abs_delta_spectral_radius_rel,"Null- eller nesten-null-drift ser interessant ut, men bør testes på tvers av nærliggende regimer før større validering."

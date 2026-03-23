@@ -1,0 +1,8 @@
+metric,bootstrap_mean_relative_drift,bootstrap_q10_relative_drift,bootstrap_q90_relative_drift,bootstrap_mean_rank,top1_prob,top3_prob,rank
+mean_abs_delta_nodes_rel,0.0,0.0,0.0,1,1.0,1.0,1
+mean_abs_delta_beta1_rel,0.0,0.0,0.0,2,0.0,1.0,2
+mean_abs_delta_spectral_radius_rel,0.013783260488377651,0.011404854228585701,0.01592604035521421,3,0.0,1.0,3
+mean_abs_delta_dim_proxy_rel,0.028132321038583992,0.02456100875026975,0.03184343678670668,4,0.0,0.0,4
+mean_abs_delta_triangles_rel,0.05934214631664632,0.04722037037037037,0.07195371591371592,5.125,0.0,0.0,5
+mean_abs_delta_clustering_rel,0.06703982284052692,0.053553539751514556,0.08106289855126052,5.875,0.0,0.0,6
+mean_abs_delta_tokens_rel,0.4287381028693529,0.32952210012210015,0.5358740842490842,7,0.0,0.0,7

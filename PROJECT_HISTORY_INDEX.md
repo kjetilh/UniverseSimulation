@@ -504,6 +504,38 @@ Viktige filer:
 - `Documentation/v12n_binary_adaptive_validation_summary.csv`
 - `Documentation/v0_12n_operativ_anbefaling.md`
 
+## 24. v13 validerte signalstyrken i stedet for å jage flere policyvarianter
+
+Etter `v12n` tok prosjektet et bevisst steg tilbake fra workflow-optimalisering og spurte:
+
+- hvilke geometriaksjer er faktisk stabile,
+- hvilke langsomme driftstørrelser ser robuste ut,
+- og er radius-/overlap-signalene sterke nok til å forsvare et større valideringssett?
+
+Det viktigste resultatet er:
+
+- `initial_avg_degree` er fortsatt den klart mest stabile normaliserte startfeature
+- `initial_spectral_per_sqrtN` er den tydeligste ikke-trivielle stabile geometriaksen
+- `mean_abs_delta_nodes_rel` og `mean_abs_delta_beta1_rel` er fortsatt eksakt null, men må fortsatt leses som mulige regime-/koblingsartefakter
+- `mean_abs_delta_spectral_radius_rel` er den mest interessante ikke-trivielle quasi-invariant-kandidaten
+- radius-signalet finnes fortsatt, men er ikke sterkt nok til at et større valideringssett er førsteprioritet
+- overlap-signalet er enda svakere og bør ikke skaleres opp ennå
+
+Den riktige lesningen er derfor:
+
+- mer data er ikke første svar på alt
+- større valideringssett er mer naturlig for stabile kontroller og eventuelle kryssregime-tester av quasi-invarianter
+- radius-basisene trenger enten sterkere lokal evidens eller en bedre tverrregime-design før det lønner seg å skalere opp stort
+
+Viktige filer:
+
+- `relational_universe_v13_geometry_signal_validation.py`
+- `Documentation/v13_geometry_signal_validation.md`
+- `Documentation/v13_geometry_signal_stability_summary.csv`
+- `Documentation/v13_quasi_invariant_bootstrap_summary.csv`
+- `Documentation/v13_geometry_signal_validation_summary.csv`
+- `Documentation/v0_13_operativ_anbefaling.md`
+
 ## 21. Dagens operative lesning
 
 Dagens beste korte lesning er:
@@ -511,32 +543,29 @@ Dagens beste korte lesning er:
 - frontier-standard: `band_zero_del`
 - aktiv forskningsfase: geometri / invariants / redusert basis / transfer
 - screening-benchmark akkurat na: `full_basis`
-- beste kompakte screeningpolicy akkurat na: `initial_spectral_per_sqrtN`
+- beste kompakte screeningpolicy akkurat na: `initial_spectral_per_sqrtN`, men arbeidsflytssignalet er fortsatt for svakt til å gjøre den til ny standard
 - naer kompakt strukturkontroll: `initial_spectral_per_sqrtN + initial_dim_proxy`
 - mest lovende ikke-trivielle geometrispor ellers: `initial_clustering` og `initial_dim_proxy`
 - viktig advarsel: eksakte null-drifter ma skilles fra ekte ny matematikk til de er forklart bedre
 - viktig nyansering: radius-transferen ser lokal ut; ved ytre triadpunkt og sterkere delete-avvik blir signalet svakere enn pa de naere regimepunktene
-- ny budsjettadvarsel: `spectral_only` er bare marginalt bedre enn random-baseline pa curve-wide screening-AUC
-- ny pipelineadvarsel: `spectral_only@0.50` er naermest benchmarken, men gir ikke ekstra budsjettgevinst mot `full_basis@0.50`
-- ny kostnadsnyansering: hvis screeningkostnaden faktisk teller, kan `spectral_plus_dim@0.667` vaere mer interessant enn `spectral_only@0.50`
-- ny maelt workflow-dom: ved dagens grafstorrelser dominerer oppfolgingsdynamikken sa sterkt at screeningkostnaden blir praktisk neglisjerbar, og derfor holder `full_basis@0.50` seg som beste maelte arbeidsbenchmark
-- ny storrelsesstresstest-dom: nar vi flytter workflowen opp til `96, 192, 320, 384`, holder denne tidsdominansen fortsatt, og `spectral_only@0.50` svekkes i stedet for a styrkes
-- ny adaptiv oppfolgingsdom: raske adaptive policyer finnes, men ingen er ennå sterke nok til a erstatte full oppfolging; `probe2_top_half` er den viktigste balanserte kandidaten
+- viktig v13-dom: radius-/basis-signalet er fortsatt lovende, men ikke sterkt nok til at større valideringssett er førsteprioritet
+- viktig v13-dom: overlap-/repair-signalet er foreløpig for svakt til å skaleres opp
+- viktig v13-dom: `initial_avg_degree` og `initial_spectral_per_sqrtN` er sterke nok til å brukes som stabile kontroller i videre strukturarbeid
+- viktig v13-dom: `mean_abs_delta_spectral_radius_rel` er den mest interessante ikke-trivielle quasi-invariant-kandidaten akkurat nå
 
 ## 22. Hva som bor gjores videre
 
-Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre struktur-/transferarbeid som tester:
+Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre strukturarbeid som tester:
 
-- om den reduserte basisen transfererer til flere naerliggende regimer,
-- om de samme feature-kombinasjonene predikerer flere dynamiske mal enn bare radius,
-- og om noen av de langsomme driftstorrelsene kan forklares eller formaliseres bedre.
+- om de mest stabile startfeatures fortsatt holder som kontroller i nærliggende regimer,
+- om de tregeste driftstørrelsene holder under små kryssregime-avvik,
+- og om radius-signalet kan styrkes metodisk før vi investerer i et større valideringssett.
 
-Etter `v12b`-`v12h` er den oppdaterte anbefalingen:
+Etter `v13` er den oppdaterte anbefalingen:
 
-- fortsett geometri-/transfersporet heller enn frontier-tuning
+- fortsett geometri-/invariantsporet heller enn frontier-tuning
 - bruk `band_zero_del` som fast arbeidsregime
-- prioriter `final_radius_control` som primart transfer-mal
-- bruk `full_basis` som screening-benchmark
-- bruk `spectral_only@0.50` som naavaerende kompakt same-budget-kandidat
-- behold `spectral_plus_dim` som viktig strukturkontroll, ikke som automatisk beste policy
-- test na hybrid eller dypere adaptiv oppfølging: for eksempel en liten kombinasjon av enkel screening og adaptiv follow-up, eller mer forsiktige oppfølgingsregler rundt `probe2_top_half`
+- bruk `initial_avg_degree` og `initial_spectral_per_sqrtN` som faste strukturkontroller
+- behold `spectral_only` og `spectral_plus_clustering` som liten radius-duo, men ikke anta at større validering er riktig neste kostbare steg
+- prioriter en kryssregime-test av quasi-invariant-kandidatene, spesielt `mean_abs_delta_spectral_radius_rel`
+- ikke skaler opp overlap-/repair-validering før signalet er sterkere
