@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k` og `v12l` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m` og `v12n` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -81,6 +81,16 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Hybrid screening+oppfolgings-target-sammendrag: `Documentation/v12l_hybrid_screening_followup_target_summary.csv`
 - Hybrid screening+oppfolgings-sammendrag: `Documentation/v12l_hybrid_screening_followup_summary.csv`
 - Hybrid screening+oppfolgings-anbefaling: `Documentation/v0_12l_operativ_anbefaling.md`
+- Dypere adaptiv oppfolgingsscript: `relational_universe_v12m_deeper_adaptive_followup.py`
+- Dypere adaptiv oppfolgingsrapport: `Documentation/v12m_deeper_adaptive_followup.md`
+- Dypere adaptiv oppfolgings-target-sammendrag: `Documentation/v12m_deeper_adaptive_followup_target_summary.csv`
+- Dypere adaptiv oppfolgings-sammendrag: `Documentation/v12m_deeper_adaptive_followup_summary.csv`
+- Dypere adaptiv oppfolgings-anbefaling: `Documentation/v0_12m_operativ_anbefaling.md`
+- Binaer adaptiv valideringsscript: `relational_universe_v12n_binary_adaptive_validation.py`
+- Binaer adaptiv valideringsrapport: `Documentation/v12n_binary_adaptive_validation.md`
+- Binaer adaptiv validerings-target-sammendrag: `Documentation/v12n_binary_adaptive_validation_target_summary.csv`
+- Binaer adaptiv validerings-sammendrag: `Documentation/v12n_binary_adaptive_validation_summary.csv`
+- Binaer adaptiv validerings-anbefaling: `Documentation/v0_12n_operativ_anbefaling.md`
 
 ## Live frontier akkurat na
 
@@ -123,9 +133,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k / v12l
+## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k / v12l / v12m / v12n
 
-`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k` og `v12l` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m` og `v12n` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -181,6 +191,17 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - `full_basis__probe2_top_half` er den tydeligste reelle tidsutfordreren: `speedup ~= 1.494`, men `best_hit ~= 0.575` og `recall ~= 0.575` betyr at kvalitetstapet fortsatt er for stort.
 - `spectral_only__probe2_top_half` er den rene kompakt+adaptive hybriden, men den taper enda mer kvalitet enn `full_basis__probe2_top_half`.
 - Den operative lesningen etter `v12l` er derfor: hybridsporet er mer lovende gjennom dypere adaptiv oppfolging enn gjennom enda mer finjustering av screeningbasiser.
+- `v12m` holder screening fast ved `full_basis@0.50` og tester bare dypere adaptive follow-up-policyer.
+- `probe3_top_half` er den viktigste nye kandidaten: den matcher referansen `full_followup` pa mean `best_hit` og `recall`, men bruker bare halvparten av de screenede basene til full forlengelse og blir derfor tydelig raskere (`speedup ~= 1.358`).
+- Pairwise er fortsatt litt svakere for `probe3_top_half` enn for `full_followup`, sa dette er den forste sterke adaptive utfordreren, men ikke en endelig ny standard ennå.
+- `probe2_top_two_thirds` og `probe3_top_two_thirds` kollapser metodisk til `full_followup` i denne settingen, fordi `0.667` av to screenede baser per størrelse betyr at begge blir forlenget. Det er nyttig som kontroll, men ikke som ny arbeidsregel.
+- Den operative lesningen etter `v12m` er derfor: neste riktige steg er en smal valideringsrunde rundt `probe3_top_half` mot `full_followup`, eventuelt med en smartere tie-break- eller forlengelsesregel.
+- `v12n` gjor akkurat denne smale valideringen.
+- `probe3_top_half` holder seg som en rask utfordrer (`speedup ~= 1.356`), men den faller tilbake til `best_hit ~= 0.650`, `recall ~= 0.650` og `pairwise ~= 0.590` mot referansen `full_followup`.
+- `probe3_top_half_screen_tiebreak` forbedrer ikke bildet i det hele tatt.
+- `probe3_guarded_half` bruker mer tid, men forbedrer heller ikke kvaliteten.
+- Den operative lesningen etter `v12n` er derfor mer nøktern enn etter `v12m`: `probe3_top_half` er fortsatt interessant som rask utfordrer, men ikke robust nok til å erstatte `full_followup`.
+- Hvis prosjektet skal videre herfra på arbeidsflytsporet, bør neste steg være en smartere tidlig beslutningsstatistikk eller et større valideringssett, ikke flere nesten-like lokale varianter.
 
 ## Generatorstatus
 
@@ -255,3 +276,9 @@ Les i denne rekkefolgen:
 44. `Documentation/v12l_hybrid_screening_followup.md`
 45. `Documentation/v12l_hybrid_screening_followup_summary.csv`
 46. `Documentation/v0_12l_operativ_anbefaling.md`
+47. `Documentation/v12m_deeper_adaptive_followup.md`
+48. `Documentation/v12m_deeper_adaptive_followup_summary.csv`
+49. `Documentation/v0_12m_operativ_anbefaling.md`
+50. `Documentation/v12n_binary_adaptive_validation.md`
+51. `Documentation/v12n_binary_adaptive_validation_summary.csv`
+52. `Documentation/v0_12n_operativ_anbefaling.md`

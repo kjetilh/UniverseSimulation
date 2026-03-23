@@ -444,6 +444,66 @@ Viktige filer:
 - `Documentation/v12l_hybrid_screening_followup_summary.csv`
 - `Documentation/v0_12l_operativ_anbefaling.md`
 
+## 22. v12m holdt screening fast og gikk dypere i adaptiv oppfølging
+
+`v12m` tok neste naturlige steg etter `v12l`:
+
+- behold `full_basis@0.50` som screeningreferanse,
+- behold `full_followup` som kvalitet/nullpunkt,
+- og test om en dypere adaptiv family kan hente inn mer kvalitet enn `probe2_top_half` uten å miste hele tidsgevinsten.
+
+Det viktigste resultatet er:
+
+- `probe3_top_half` matcher `full_followup` på mean `best_hit` og `recall`
+- samtidig er `probe3_top_half` fortsatt tydelig raskere (`speedup ~= 1.358`)
+- pairwise er fortsatt litt svakere enn referansen
+- `probe2_top_two_thirds` og `probe3_top_two_thirds` kollapser i praksis til `full_followup` fordi de ender med å forlenge alle screenede baser
+
+Den riktige lesningen er derfor:
+
+- prosjektet har nå den første virkelig sterke adaptive utfordreren
+- neste smale steg bør være en binær validering av `probe3_top_half` mot `full_followup`
+- og eventuelt en liten beslutningsregelvariant rundt tie-break eller forlengelse, heller enn en ny bred policyfamilie
+
+Viktige filer:
+
+- `relational_universe_v12m_deeper_adaptive_followup.py`
+- `Documentation/v12m_deeper_adaptive_followup.md`
+- `Documentation/v12m_deeper_adaptive_followup_target_summary.csv`
+- `Documentation/v12m_deeper_adaptive_followup_summary.csv`
+- `Documentation/v0_12m_operativ_anbefaling.md`
+
+## 23. v12n ga en strengere binær validering av probe3_top_half
+
+`v12n` tok neste smale steg etter `v12m`:
+
+- behold `full_basis@0.50` som fast screening,
+- behold `full_followup` som referanse,
+- behold `probe3_top_half` som hovedutfordrer,
+- og test bare to små regelvarianter rundt den.
+
+Det viktigste resultatet er:
+
+- `probe3_top_half` er fortsatt tydelig raskere enn `full_followup`
+- men den holder ikke lenger samme mean `best_hit` og `recall` i den strengere binærrunden
+- tie-break-varianten hjelper ikke
+- guarded-varianten hjelper heller ikke
+
+Den riktige lesningen er derfor:
+
+- optimismen fra `v12m` må dempes
+- `probe3_top_half` er fortsatt en interessant rask utfordrer
+- men den er ikke robust nok til å erstatte `full_followup`
+- neste reelle forbedring må sannsynligvis komme fra en smartere tidlig beslutningsstatistikk eller et større valideringssett, ikke fra flere nesten-like lokale policyvarianter
+
+Viktige filer:
+
+- `relational_universe_v12n_binary_adaptive_validation.py`
+- `Documentation/v12n_binary_adaptive_validation.md`
+- `Documentation/v12n_binary_adaptive_validation_target_summary.csv`
+- `Documentation/v12n_binary_adaptive_validation_summary.csv`
+- `Documentation/v0_12n_operativ_anbefaling.md`
+
 ## 21. Dagens operative lesning
 
 Dagens beste korte lesning er:
