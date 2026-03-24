@@ -565,7 +565,90 @@ Viktige filer:
 - `Documentation/v13b_cross_regime_anchor_delta_summary.csv`
 - `Documentation/v0_13b_operativ_anbefaling.md`
 
-## 21. Dagens operative lesning
+## 26. v13c skalerte opp spektralsporet, men dempet anbefalingen
+
+`v13c` tok det naturlige neste steget etter `v13b`:
+
+- behold `band_zero_del` som fast anker
+- behold `mean_abs_delta_spectral_radius_rel` som hovedsignal
+- behold `dim_proxy` som sekundær kontroll
+- skaler opp med litt bredere lokal familie og litt større budsjett
+
+Det viktigste resultatet er:
+
+- spektral relativ drift er fortsatt det sterkeste ikke-trivielle quasi-invariant-sporet
+- men signalet er ikke skarpt nok til a sta alene som neste store valideringsmaal
+- `dim_proxy` holder seg naer nok i flere regimer til at spektralsporet fortsatt ma leses som lokalt og delvis uavklart
+- null-driftene for `nodes` og `beta1` bryter fortsatt off-anchor og skal fortsatt behandles som artefakter, ikke lover
+
+Den riktige lesningen er derfor:
+
+- `v13b` var nyttig som seleksjon av beste ikke-trivielle kandidat
+- `v13c` er viktig fordi den demper fristelsen til a skalere opp for tidlig
+- storre valideringssett er fortsatt `not_yet` for dette sporet
+
+Viktige filer:
+
+- `relational_universe_v13c_spectral_quasiinvariant_validation.py`
+- `Documentation/v13c_spectral_quasiinvariant_validation.md`
+- `Documentation/v13c_spectral_validation_focus_summary.csv`
+- `Documentation/v13c_spectral_validation_anchor_delta_summary.csv`
+- `Documentation/v0_13c_operativ_anbefaling.md`
+
+## 27. v13d gjorde en ren knife-edge-sjekk av spektralsporet
+
+`v13d` tok et enda smalere steg etter `v13c`:
+
+- ikke bredere familie
+- ikke større valideringssett
+- bare mer lokalt budsjett pa de regimepunktene som fortsatt holdt spektralsporet blandet
+
+Det viktigste resultatet er:
+
+- `band_pdel_0005` er na `strong_local` for spektraldrift mot `dim_proxy`
+- `bridge_00075_0000` og `bridge_0010_0000` er bare `good_but_local`
+- null-driftene bryter fortsatt off-anchor
+- derfor er spektralsporet fortsatt det beste ikke-trivielle sporet, men fortsatt ikke skarpt nok til at storre valideringssett er neste riktige steg
+
+Dette er viktig fordi `v13d` ikke bare repeterer `v13c`; den tester nettopp om mer lokalt diskrimineringsbudsjett losner tvilen. Svaret er forelopig nei.
+
+Viktige filer:
+
+- `relational_universe_v13d_local_spectral_sharpening.py`
+- `Documentation/v13d_local_spectral_sharpening.md`
+- `Documentation/v13d_spectral_validation_local_summary.csv`
+- `Documentation/v13d_spectral_validation_recommendations.csv`
+- `Documentation/v0_13d_operativ_anbefaling.md`
+
+## 28. v13e delte triad-korridoren i skarpe og blandede punkt
+
+`v13e` tok neste naturlige steg etter `v13d`:
+
+- dropp delete- og death-avvik
+- fokuser bare på triad-korridoren
+- legg inn mellompunkter rundt de tidligere triad-kandidatene
+
+Det viktigste resultatet er:
+
+- `bridge_000625_0000` blir `sharp_local`
+- `bridge_000875_0000` blir `sharp_local`
+- `bridge_0010_0000` er `good_but_local`
+- `bridge_00075_0000` er fortsatt `mixed`
+
+Dette er viktig fordi det gjør lesningen mer presis:
+
+- problemet er ikke lenger "hele triad-korridoren er uklar"
+- problemet er at ett smalt punkt fortsatt henger igjen som blandet
+
+Viktige filer:
+
+- `relational_universe_v13e_triad_corridor_sharpening.py`
+- `Documentation/v13e_triad_corridor_sharpening.md`
+- `Documentation/v13e_spectral_validation_corridor_summary.csv`
+- `Documentation/v13e_spectral_validation_recommendations.csv`
+- `Documentation/v0_13e_operativ_anbefaling.md`
+
+## 29. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
@@ -581,21 +664,28 @@ Dagens beste korte lesning er:
 - viktig v13-dom: overlap-/repair-signalet er foreløpig for svakt til å skaleres opp
 - viktig v13-dom: `initial_avg_degree` og `initial_spectral_per_sqrtN` er sterke nok til å brukes som stabile kontroller i videre strukturarbeid
 - viktig v13b-dom: `mean_abs_delta_spectral_radius_rel` er den mest interessante ikke-trivielle quasi-invariant-kandidaten akkurat nå
-- viktig v13b-dom: hvis vi skal bruke større valideringssett, bør det være for spektral quasi-invariant-testing, ikke for radius-basis eller workflow
+- viktig v13c-dom: spektralsporet er fortsatt best, men mer blandet enn `v13b` alene tilsa
+- viktig v13c-dom: større valideringssett er fortsatt ikke førstevalg; vent til spektralsporet er skarpere eller bredere testet
+- viktig v13d-dom: mer lokalt diskrimineringsbudsjett skjerper ikke hele spektralsporet nok; delete-punktet blir sterkt, men triadpunktene er fortsatt bare lokale
+- viktig v13d-dom: større valideringssett er fortsatt `not_yet`
+- viktig v13e-dom: triad-korridoren deler seg; to mellompunkter er skarpe, ett er godt men lokalt, og ett punkt er fortsatt blandet
+- viktig v13e-dom: større valideringssett er fortsatt `not_yet`, men usikkerheten er nå lokalisert til et smalt triadpunkt
 
-## 22. Hva som bor gjores videre
+## 30. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre strukturarbeid som tester:
 
 - om de mest stabile startfeatures fortsatt holder som kontroller i nærliggende regimer,
-- om den spektrale quasi-invarianten holder på et bredere, men fortsatt kontrollert kryssregime-sett,
+- om den spektrale quasi-invarianten kan gjøres skarpere pa et bredere, men fortsatt kontrollert kryssregime-sett,
 - og om radius-signalet kan styrkes metodisk uten å blande det sammen med quasi-invariantsporet.
 
-Etter `v13` er den oppdaterte anbefalingen:
+Etter `v13e` er den oppdaterte anbefalingen:
 
 - fortsett geometri-/invariantsporet heller enn frontier-tuning
 - bruk `band_zero_del` som fast arbeidsregime
 - bruk `initial_avg_degree` og `initial_spectral_per_sqrtN` som faste strukturkontroller
 - behold `spectral_only` og `spectral_plus_clustering` som liten radius-duo, men ikke gjør dem til første mottaker av større valideringssett ennå
-- prioriter målrettet større validering av `mean_abs_delta_spectral_radius_rel`
+- prioriter fortsatt skarpere lokal validering av `mean_abs_delta_spectral_radius_rel` forst
+- hold `dim_proxy` som sekundær kontroll i dette sporet
+- ikke ga til større valideringssett for spektralsporet før `bridge_00075_0000`-området er bedre forklart
 - ikke skaler opp overlap-/repair-validering før signalet er sterkere

@@ -1,0 +1,4 @@
+signal_family,status,best_candidate,note
+zero_drift_sanity,breaks_off_anchor,mean_abs_delta_nodes_rel+mean_abs_delta_beta1_rel,"Null-driftene bryter fortsatt off-anchor og skal behandles som artefakter, ikke lover."
+spectral_quasi_invariant,mixed,mean_abs_delta_spectral_radius_rel,"Spektraldriften er fortsatt interessant, men ikke sterk nok til å stå alene som neste store valideringsmål."
+larger_validation_set,not_yet,spectral_vs_dim_cross_regime,Vent med større valideringssett til spektralsporet er skarpere eller bredere testet.
