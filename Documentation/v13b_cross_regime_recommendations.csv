@@ -1,0 +1,4 @@
+signal_family,status,best_candidate,note
+exact_zero_drifts,breaks_off_anchor,mean_abs_delta_nodes_rel+mean_abs_delta_beta1_rel,"De eksakte null-driftene bryter når vi forlater ankerregimet, og bør derfor leses som regime-/koblingsartefakter."
+spectral_quasi_invariant,promote,mean_abs_delta_spectral_radius_rel,Den relative spektraldriften holder seg lav og top-3 gjennom hele den lokale regimefamilien.
+larger_validation_set,yes_targeted,spectral_quasi_invariant_cross_regime,"Et større valideringssett er mest naturlig for spektral quasi-invariant-testing, ikke for nye basis/workflow-runder."

@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n` og `v13` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13` og `v13b` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -97,6 +97,11 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Geometri-/signalvaliderings-drift: `Documentation/v13_quasi_invariant_bootstrap_summary.csv`
 - Geometri-/signalvaliderings-basis: `Documentation/v13_geometry_signal_validation_summary.csv`
 - Geometri-/signalvaliderings-anbefaling: `Documentation/v0_13_operativ_anbefaling.md`
+- Kryssregime quasi-invariant-script: `relational_universe_v13b_cross_regime_quasiinvariant_test.py`
+- Kryssregime quasi-invariant-rapport: `Documentation/v13b_cross_regime_quasiinvariant_test.md`
+- Kryssregime quasi-invariant-drift: `Documentation/v13b_cross_regime_drift_summary.csv`
+- Kryssregime quasi-invariant-anchor-delta: `Documentation/v13b_cross_regime_anchor_delta_summary.csv`
+- Kryssregime quasi-invariant-anbefaling: `Documentation/v0_13b_operativ_anbefaling.md`
 
 ## Live frontier akkurat na
 
@@ -139,9 +144,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k / v12l / v12m / v12n / v13
+## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k / v12l / v12m / v12n / v13 / v13b
 
-`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n` og `v13` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13` og `v13b` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -215,6 +220,10 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - Radius-signalet overlever i `v13`, men svakere enn ønsket: `spectral_only` er best liten basis for `mean_final_radius_control`, men `q10_skill < 0` og status blir derfor `not_yet`.
 - Overlap-signalet er enda svakere i `v13`; ingen liten basis er sterk nok til å forsvare større validering der.
 - Den operative lesningen etter `v13` er derfor: bruk stabile startfeatures som kontroller, behold `spectral_only` og `spectral_plus_clustering` som liten radius-duo, men ikke bruk større valideringssett som førsteprioritet for radius før signalet er sterkere.
+- `v13b` tar neste naturlige steg og tester quasi-invariant-sporet på tvers av små triad-, delete- og death-avvik.
+- `v13b` viser at de eksakte null-driftene ikke holder gjennom hele den lokale regimefamilien. `mean_abs_delta_nodes_rel` bryter under delete-avvik, og `mean_abs_delta_beta1_rel` bryter enda tydeligere. De skal derfor leses som regime-/koblingsartefakter, ikke som nye bevaringslover.
+- Samtidig holder `mean_abs_delta_spectral_radius_rel` seg lav og top-3 i alle testede regimer, inkludert off-anchor delete- og death-punkter.
+- Den operative lesningen etter `v13b` er derfor skarpere enn etter `v13`: større valideringssett er fortsatt ikke førsteprioritet for radius-basis eller overlap, men det er nå naturlig for målrettet spektral quasi-invariant-testing.
 
 ## Generatorstatus
 
@@ -300,3 +309,7 @@ Les i denne rekkefolgen:
 55. `Documentation/v13_quasi_invariant_bootstrap_summary.csv`
 56. `Documentation/v13_geometry_signal_validation_summary.csv`
 57. `Documentation/v0_13_operativ_anbefaling.md`
+58. `Documentation/v13b_cross_regime_quasiinvariant_test.md`
+59. `Documentation/v13b_cross_regime_drift_summary.csv`
+60. `Documentation/v13b_cross_regime_anchor_delta_summary.csv`
+61. `Documentation/v0_13b_operativ_anbefaling.md`

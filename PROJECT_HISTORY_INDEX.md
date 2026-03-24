@@ -536,6 +536,35 @@ Viktige filer:
 - `Documentation/v13_geometry_signal_validation_summary.csv`
 - `Documentation/v0_13_operativ_anbefaling.md`
 
+## 25. v13b skilte quasi-invariant-sporet fra radius-basis-sporet
+
+`v13b` tok det neste metodisk riktige steget etter `v13`:
+
+- ikke mer workflow-tuning
+- ikke større radiusvalidering ennå
+- men en smal kryssregime-test av de mest interessante driftssignalene
+
+Det viktigste resultatet er:
+
+- de eksakte null-driftene holder ikke gjennom hele den lokale regimefamilien
+- `nodes`-driften bryter under delete-avvik
+- `beta1`-driften bryter tydeligere under triad- og delete-avvik
+- derfor skal disse null-driftene nå leses som regime-/koblingsartefakter, ikke som nye bevaringslover
+
+Samtidig er det en positiv del:
+
+- `mean_abs_delta_spectral_radius_rel` holder seg lav og top-3 i alle testede regimer
+- dette gjør spektraldriften til den sterkeste ikke-trivielle quasi-invariant-kandidaten prosjektet har akkurat nå
+- derfor er større valideringssett nå mest naturlig for målrettet spektral quasi-invariant-testing, ikke for nye radius-basis- eller workflow-runder
+
+Viktige filer:
+
+- `relational_universe_v13b_cross_regime_quasiinvariant_test.py`
+- `Documentation/v13b_cross_regime_quasiinvariant_test.md`
+- `Documentation/v13b_cross_regime_drift_summary.csv`
+- `Documentation/v13b_cross_regime_anchor_delta_summary.csv`
+- `Documentation/v0_13b_operativ_anbefaling.md`
+
 ## 21. Dagens operative lesning
 
 Dagens beste korte lesning er:
@@ -546,26 +575,27 @@ Dagens beste korte lesning er:
 - beste kompakte screeningpolicy akkurat na: `initial_spectral_per_sqrtN`, men arbeidsflytssignalet er fortsatt for svakt til å gjøre den til ny standard
 - naer kompakt strukturkontroll: `initial_spectral_per_sqrtN + initial_dim_proxy`
 - mest lovende ikke-trivielle geometrispor ellers: `initial_clustering` og `initial_dim_proxy`
-- viktig advarsel: eksakte null-drifter ma skilles fra ekte ny matematikk til de er forklart bedre
+- viktig advarsel: de tidligere eksakte null-driftene for `nodes` og `beta1` skal nå leses som regime-/koblingsartefakter, ikke som nye bevaringslover
 - viktig nyansering: radius-transferen ser lokal ut; ved ytre triadpunkt og sterkere delete-avvik blir signalet svakere enn pa de naere regimepunktene
 - viktig v13-dom: radius-/basis-signalet er fortsatt lovende, men ikke sterkt nok til at større valideringssett er førsteprioritet
 - viktig v13-dom: overlap-/repair-signalet er foreløpig for svakt til å skaleres opp
 - viktig v13-dom: `initial_avg_degree` og `initial_spectral_per_sqrtN` er sterke nok til å brukes som stabile kontroller i videre strukturarbeid
-- viktig v13-dom: `mean_abs_delta_spectral_radius_rel` er den mest interessante ikke-trivielle quasi-invariant-kandidaten akkurat nå
+- viktig v13b-dom: `mean_abs_delta_spectral_radius_rel` er den mest interessante ikke-trivielle quasi-invariant-kandidaten akkurat nå
+- viktig v13b-dom: hvis vi skal bruke større valideringssett, bør det være for spektral quasi-invariant-testing, ikke for radius-basis eller workflow
 
 ## 22. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre strukturarbeid som tester:
 
 - om de mest stabile startfeatures fortsatt holder som kontroller i nærliggende regimer,
-- om de tregeste driftstørrelsene holder under små kryssregime-avvik,
-- og om radius-signalet kan styrkes metodisk før vi investerer i et større valideringssett.
+- om den spektrale quasi-invarianten holder på et bredere, men fortsatt kontrollert kryssregime-sett,
+- og om radius-signalet kan styrkes metodisk uten å blande det sammen med quasi-invariantsporet.
 
 Etter `v13` er den oppdaterte anbefalingen:
 
 - fortsett geometri-/invariantsporet heller enn frontier-tuning
 - bruk `band_zero_del` som fast arbeidsregime
 - bruk `initial_avg_degree` og `initial_spectral_per_sqrtN` som faste strukturkontroller
-- behold `spectral_only` og `spectral_plus_clustering` som liten radius-duo, men ikke anta at større validering er riktig neste kostbare steg
-- prioriter en kryssregime-test av quasi-invariant-kandidatene, spesielt `mean_abs_delta_spectral_radius_rel`
+- behold `spectral_only` og `spectral_plus_clustering` som liten radius-duo, men ikke gjør dem til første mottaker av større valideringssett ennå
+- prioriter målrettet større validering av `mean_abs_delta_spectral_radius_rel`
 - ikke skaler opp overlap-/repair-validering før signalet er sterkere
