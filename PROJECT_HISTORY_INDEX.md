@@ -814,6 +814,9 @@ Dagens beste korte lesning er:
 - viktig v13l-dom: `bridge_0008203125_0000` holder fortsatt som sterkt punkt, men ikke som et rent løst pivot
 - viktig v13l-dom: den nedre fine naboen `bridge_00081640625_0000` er ogsa `sharp_local`, mens `bridge_00082421875_0000` faller til `mixed`
 - viktig v13l-dom: området ser derfor asymmetrisk og fortsatt blandet ut, og større valideringssett er fortsatt `not_yet`
+- viktig v13m-dom: `bridge_00082421875_0000` holder ikke som et rent enkelt bruddpunkt
+- viktig v13m-dom: den øvre fine siden `bridge_000826171875_0000` er `sharp_local`, mens både `bridge_000822265625_0000` og `bridge_00082421875_0000` er `mixed`
+- viktig v13m-dom: usikkerheten sitter derfor i en liten lokal drop-sone rundt `0.000822`–`0.000824`, og større valideringssett er fortsatt `not_yet`
 
 ## 34. Hva som bor gjores videre
 
@@ -833,12 +836,16 @@ Etter `v13i` er den oppdaterte anbefalingen:
 - bruk `v13j` som ny lokal ground truth for oversiden; det smale bandet mellom `bridge_0008125_0000` og `bridge_000828125_0000` er na den reneste sonen
 - bruk ikke `v13j` alene som siste sannhet; `v13k` viser at upper-bandet fortsatt er lovende, men blandet under hardere kontroll
 - bruk ikke `v13k` alene som siste sannhet heller; `v13l` viser at sentrum fortsatt er sterkt, men at usikkerheten na sitter i den ovre bruddkanten
+- bruk ikke `v13l` alene som siste sannhet heller; `v13m` viser at den ovre bruddkanten egentlig er en liten drop-sone, ikke bare ett punkt
+- bruk ikke `v13m` alene som siste sannhet heller; `v13n` viser at den nedre drop-kanten heller ikke holder rent som egen knekk
 - hold `dim_proxy` som sekundær kontroll i dette sporet
 - bruk ikke større valideringssett bredt; `v13g` viser at korridoren fortsatt ikke er ren nok
 - bruk heller ikke større valideringssett etter `v13i`; recovery-punktet falt bort under finere bracketing
 - bruk heller ikke bred oppskalering etter `v13j`; neste gyldige steg er et lite, målrettet valideringssett rundt dette bandet
 - bruk heller ikke bred oppskalering etter `v13k`; targeted-valideringen dempet optimismen igjen
 - bruk heller ikke bred oppskalering etter `v13l`; neste gyldige steg er en enda smalere test av den ovre bruddkanten rundt `bridge_00082421875_0000`
+- bruk heller ikke bred oppskalering etter `v13m`; neste gyldige steg er en smal test som skiller den nedre drop-kanten fra den øvre, ikke et større valideringssett
+- bruk heller ikke bred oppskalering etter `v13n`; den nedre drop-kanten ser mer ut som en smal lokal usikkerhetssone enn en ren overgang
 - ikke skaler opp overlap-/repair-validering før signalet er sterkere
 
 ## 35. v13j bekreftet et smalt rent upper-band
@@ -936,3 +943,71 @@ Viktige filer:
 - `Documentation/v13l_spectral_validation_pivot_diagnosis.csv`
 - `Documentation/v13l_spectral_validation_recommendations.csv`
 - `Documentation/v0_13l_operativ_anbefaling.md`
+
+## 38. v13m viste at den øvre bruddkanten egentlig er en liten drop-sone
+
+`v13m` tok neste naturlige steg etter `v13l`:
+
+- behold bare området rundt `bridge_00082421875_0000`
+- legg inn ett finere punkt rett under og ett rett over
+- behold flankepunktene
+- avgjor om det blandede punktet er en ekte lokal bruddkant
+
+Det viktigste resultatet er:
+
+- `bridge_0008203125_0000` er fortsatt `sharp_local`
+- `bridge_000822265625_0000` blir `mixed`
+- `bridge_00082421875_0000` er fortsatt `mixed`
+- `bridge_000826171875_0000` blir `sharp_local`
+- `bridge_000828125_0000` er fortsatt `sharp_local`
+- breakdiagnosen ender pa `sampling_ambiguous`
+
+Dette er viktig fordi det skjerper lesningen av `v13l`:
+
+- den svake sonen er ikke bare ett punkt
+- den ser ut som en liten lokal drop-sone mellom to skarpere flankesoner
+- større valideringssett er derfor fortsatt ikke riktig neste steg
+
+Viktige filer:
+
+- `relational_universe_v13m_upper_break_edge_test.py`
+- `Documentation/v13m_upper_break_edge_test.md`
+- `Documentation/v13m_spectral_validation_refinement_summary.csv`
+- `Documentation/v13m_spectral_validation_break_diagnosis.csv`
+- `Documentation/v13m_spectral_validation_recommendations.csv`
+- `Documentation/v0_13m_operativ_anbefaling.md`
+
+## 39. v13n viste at den nedre drop-kanten heller ikke er rent løst
+
+`v13n` tok neste naturlige steg etter `v13m`:
+
+- behold bare den nedre delen av drop-sonen
+- legg inn ett finere punkt rett under `bridge_000822265625_0000`
+- legg inn ett finere punkt rett over
+- behold flankepunktene
+- avgjor om den nedre kanten er en egen lokal knekk
+
+Det viktigste resultatet er:
+
+- `bridge_0008203125_0000` er fortsatt `sharp_local`
+- `bridge_0008212890625_0000` blir `good_but_local`
+- `bridge_000822265625_0000` er fortsatt `mixed`
+- `bridge_0008232421875_0000` er `mixed`
+- `bridge_00082421875_0000` er fortsatt `mixed`
+- breakdiagnosen ender fortsatt pa `sampling_ambiguous`
+
+Dette er viktig fordi det skjerper lesningen av `v13m`:
+
+- den nedre kanten holder ikke som en egen ren overgang
+- margin- og delta-signalet peker faktisk bort fra en skarp knekk
+- området ser mer ut som et smalt lokalt plateau eller en usikkerhetssone enn som et klart brudd
+- større valideringssett er derfor fortsatt ikke riktig neste steg
+
+Viktige filer:
+
+- `relational_universe_v13n_lower_drop_edge_test.py`
+- `Documentation/v13n_lower_drop_edge_test.md`
+- `Documentation/v13n_spectral_validation_refinement_summary.csv`
+- `Documentation/v13n_spectral_validation_break_diagnosis.csv`
+- `Documentation/v13n_spectral_validation_recommendations.csv`
+- `Documentation/v0_13n_operativ_anbefaling.md`

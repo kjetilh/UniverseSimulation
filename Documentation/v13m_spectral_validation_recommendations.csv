@@ -1,0 +1,4 @@
+signal_family,status,best_candidate,note
+zero_drift_sanity,breaks_off_anchor,mean_abs_delta_nodes_rel+mean_abs_delta_beta1_rel,Den smale upper-break-runden bryter fortsatt `beta1` off-anchor; null-drift skal fortsatt ikke leses som lov.
+spectral_quasi_invariant,mixed,mean_abs_delta_spectral_radius_rel,Bruddkanten er fortsatt ikke ren nok til å kalle spektralsporet målrettet validert.
+larger_validation_set,not_yet,spectral_vs_dim_upper_break_edge,Vent med bredere validering til den øvre bruddkanten er bedre avklart.
