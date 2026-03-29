@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d` og `v13e` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h` og `v13i` er de aktive struktur-/transfer-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -115,6 +115,26 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Triad-korridor-skarpingsrapport: `Documentation/v13e_triad_corridor_sharpening.md`
 - Triad-korridor-skarpingscorridor-summary: `Documentation/v13e_spectral_validation_corridor_summary.csv`
 - Triad-korridor-skarpingsanbefaling: `Documentation/v0_13e_operativ_anbefaling.md`
+- Triad-notch-testscript: `relational_universe_v13f_triad_notch_test.py`
+- Triad-notch-testrapport: `Documentation/v13f_triad_notch_test.md`
+- Triad-notch-local-summary: `Documentation/v13f_spectral_validation_local_summary.csv`
+- Triad-notch-summary: `Documentation/v13f_spectral_validation_notch_summary.csv`
+- Triad-notch-anbefaling: `Documentation/v0_13f_operativ_anbefaling.md`
+- Målrettet triad-valideringsscript: `relational_universe_v13g_targeted_triad_validation.py`
+- Målrettet triad-valideringsrapport: `Documentation/v13g_targeted_triad_validation.md`
+- Målrettet triad-valideringscorridor-summary: `Documentation/v13g_spectral_validation_corridor_summary.csv`
+- Målrettet triad-valideringsanbefaling: `Documentation/v0_13g_operativ_anbefaling.md`
+- Upper-triad-overgangsscript: `relational_universe_v13h_upper_triad_transition.py`
+- Upper-triad-overgangsrapport: `Documentation/v13h_upper_triad_transition.md`
+- Upper-triad-overgangssummary: `Documentation/v13h_spectral_validation_transition_summary.csv`
+- Upper-triad-overgangsdiagnose: `Documentation/v13h_spectral_validation_upper_diagnosis.csv`
+- Upper-triad-overgangsanbefaling: `Documentation/v0_13h_operativ_anbefaling.md`
+- Upper-recovery-raffineringsscript: `relational_universe_v13i_upper_recovery_refinement.py`
+- Upper-recovery-raffineringsrapport: `Documentation/v13i_upper_recovery_refinement.md`
+- Upper-recovery-raffineringssummary: `Documentation/v13i_spectral_validation_refinement_summary.csv`
+- Upper-recovery-diagnose: `Documentation/v13i_spectral_validation_recovery_diagnosis.csv`
+- Upper-recovery-anbefaling: `Documentation/v0_13i_operativ_anbefaling.md`
+- Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 
 ## Live frontier akkurat na
 
@@ -157,9 +177,9 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 - `P(band_zero_del > bridge_00075_0000) = 1.000`
 - `P(bridge_00075_0000 > band_zero_del) = 0.000`
 
-## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k / v12l / v12m / v12n / v13 / v13b / v13c / v13d / v13e
+## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k / v12l / v12m / v12n / v13 / v13b / v13c / v13d / v13e / v13f / v13g / v13h / v13i
 
-`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d` og `v13e` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+`v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h` og `v13i` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
@@ -248,7 +268,19 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - `v13e` flytter hele trykket over på triad-korridoren og legger inn mellompunktene `bridge_000625_0000` og `bridge_000875_0000`.
 - `v13e` viser at triad-korridoren ikke er jevnt blandet: `bridge_000625_0000` og `bridge_000875_0000` blir `sharp_local`, `bridge_0010_0000` er `good_but_local`, mens `bridge_00075_0000` fortsatt er `mixed`.
 - Den operative lesningen etter `v13e` er derfor mer informativ enn etter `v13d`: spektralsporet er fortsatt `mixed`, men blandingen er nå lokalisert til et smalere triadpunkt istedenfor hele korridoren.
-- Større valideringssett er fortsatt `not_yet`; neste riktige steg er å forstå hvorfor `bridge_00075_0000` henger igjen.
+- `v13f` gaar ett hakk smalere og legger inn fine nabopunkt rundt `bridge_00075_0000`.
+- `v13f` viser at det tidligere blandede punktet ikke ser ut til a vaere et ekte lokalt hakk: `bridge_00075_0000` blir `sharp_local`, `bridge_0006875_0000` og `bridge_0008125_0000` blir `good_but_local`, og notch-diagnosen ender pa `notch_not_supported`.
+- Den operative lesningen etter `v13f` er derfor skarpere enn etter `v13e`: den smale triad-korridoren ser renere ut lokalt, selv om `beta1` fortsatt bryter off-anchor og derfor ikke skal leses som lov.
+- `v13g` tar neste naturlige steg og gir den rensede triad-korridoren et større, men fortsatt lokalt budsjett.
+- `v13g` demper optimismen fra `v13f`: `bridge_0006875_0000` og `bridge_00075_0000` holder som `good_but_local`, men `bridge_0008125_0000` og `bridge_000875_0000` faller tilbake til `mixed`.
+- Den operative lesningen etter `v13g` er derfor nøktern igjen: spektralsporet er fortsatt best, men selv den rensede triad-korridoren er ikke ren nok til å kalles målrettet validert, og bredere validering er fortsatt `not_yet`.
+- `v13h` gaar enda smalere og tester bare oversiden av triad-korridoren.
+- `v13h` viser at oversiden ikke degraderes monotont: `bridge_00084375_0000` blir `sharp_local`, mens `bridge_00078125_0000` og `bridge_0008125_0000` fortsatt er `mixed`, og `bridge_000875_0000` holder `good_but_local`.
+- Overgangsdiagnosen i `v13h` blir derfor `upper_recovery_exists`, ikke ren overside-degradering.
+- Den operative lesningen etter `v13h` er fortsatt `mixed`: det finnes et lokalt gjenopprettet oversidepunkt, men ikke et rent nok oversidespor til bredere validering.
+- `v13i` gaar enda smalere og tester bare om det gjenopprettede punktet `bridge_00084375_0000` holder under finere bracketing.
+- `v13i` viser at recovery-punktet ikke holder: `bridge_0008125_0000` og `bridge_000828125_0000` blir `sharp_local`, mens `bridge_00084375_0000` selv bare er `good_but_local`, og recovery-diagnosen ender pa `recovery_not_supported`.
+- Den operative lesningen etter `v13i` er derfor skarpere igjen: oversiden har struktur, men ikke den forventede toppen. Spektralsporet er fortsatt `mixed`, og bredere validering er fortsatt `not_yet`.
 
 ## Generatorstatus
 

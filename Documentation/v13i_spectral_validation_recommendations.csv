@@ -1,0 +1,4 @@
+signal_family,status,best_candidate,note
+zero_drift_sanity,breaks_off_anchor,mean_abs_delta_nodes_rel+mean_abs_delta_beta1_rel,Upper-recovery-runden bryter fortsatt `beta1` off-anchor; null-drift skal fortsatt ikke leses som lov.
+spectral_quasi_invariant,mixed,mean_abs_delta_spectral_radius_rel,Det gjenopprettede oversidepunktet holder ikke under finere bracketing; spektralsporet er fortsatt blandet her.
+larger_validation_set,not_yet,spectral_vs_dim_upper_recovery_refinement,Vent med bredere validering til recovery-området er bedre forstått.

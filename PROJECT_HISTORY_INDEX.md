@@ -648,7 +648,131 @@ Viktige filer:
 - `Documentation/v13e_spectral_validation_recommendations.csv`
 - `Documentation/v0_13e_operativ_anbefaling.md`
 
-## 29. Dagens operative lesning
+## 29. v13f viste at notch-en ved bridge_00075_0000 ikke holder
+
+`v13f` tok neste naturlige steg etter `v13e`:
+
+- hold modellen fast
+- behold bare den smale triad-familien
+- legg inn ett finere punkt rett under og ett rett over `bridge_00075_0000`
+
+Det viktigste resultatet er:
+
+- `bridge_00075_0000` blir `sharp_local`
+- `bridge_0006875_0000` blir `good_but_local`
+- `bridge_0008125_0000` blir `good_but_local`
+- `bridge_000875_0000` holder seg `sharp_local`
+- notch-diagnosen ender pa `notch_not_supported`
+
+Dette er viktig fordi det endrer lesningen av `v13e`:
+
+- det tidligere blandede punktet ser ikke lenger ut som et ekte lokalt hakk
+- den smale triad-korridoren er renere enn `v13e` alene tilsa
+- større valideringssett blir derfor `yes_targeted` for akkurat dette spektralsporet
+
+Viktige filer:
+
+- `relational_universe_v13f_triad_notch_test.py`
+- `Documentation/v13f_triad_notch_test.md`
+- `Documentation/v13f_spectral_validation_local_summary.csv`
+- `Documentation/v13f_spectral_validation_notch_summary.csv`
+- `Documentation/v13f_spectral_validation_recommendations.csv`
+- `Documentation/v0_13f_operativ_anbefaling.md`
+
+## 30. v13g ga en strengere, men mer blandet triad-dom
+
+`v13g` tok neste naturlige steg etter `v13f`:
+
+- behold bare den rensede triad-korridoren
+- bruk litt større lokalt budsjett
+- test om spektralsporet holder i den smale familien uten notch-fortelling
+
+Det viktigste resultatet er:
+
+- `bridge_0006875_0000` holder som `good_but_local`
+- `bridge_00075_0000` holder som `good_but_local`
+- `bridge_0008125_0000` faller tilbake til `mixed`
+- `bridge_000875_0000` faller ogsa tilbake til `mixed`
+
+Dette er viktig fordi det korrigerer lesningen av `v13f`:
+
+- `v13f` ryddet bort notch-fortellingen, men det betydde ikke at hele korridoren var stabil
+- med mer lokalt budsjett spriker korridoren igjen pa oversiden
+- større valideringssett skal derfor fortsatt ikke åpnes bredt
+
+Viktige filer:
+
+- `relational_universe_v13g_targeted_triad_validation.py`
+- `Documentation/v13g_targeted_triad_validation.md`
+- `Documentation/v13g_spectral_validation_corridor_summary.csv`
+- `Documentation/v13g_spectral_validation_recommendations.csv`
+- `Documentation/v0_13g_operativ_anbefaling.md`
+
+## 31. v13h viste et lokalt gjenopprettet punkt pa oversiden
+
+`v13h` tok neste naturlige steg etter `v13g`:
+
+- behold bare sentrum og oversiden av triad-korridoren
+- test finere punkt mellom `bridge_00075_0000` og `bridge_000875_0000`
+- avgjor om oversiden degraderer monotont eller om det finnes et lokalt gjenopprettet punkt
+
+Det viktigste resultatet er:
+
+- `bridge_00075_0000` holder som `good_but_local`
+- `bridge_00078125_0000` er `mixed`
+- `bridge_0008125_0000` er fortsatt `mixed`
+- `bridge_00084375_0000` blir `sharp_local`
+- `bridge_000875_0000` blir `good_but_local`
+- overgangsdiagnosen ender pa `upper_recovery_exists`
+
+Dette er viktig fordi det endrer lesningen av `v13g`:
+
+- oversiden ser ikke ut til a brytes ned jevnt
+- det finnes minst ett lokalt gjenopprettet punkt pa oversiden
+- men den samlede oversiden er fortsatt ikke ren nok til bredere validering
+
+Viktige filer:
+
+- `relational_universe_v13h_upper_triad_transition.py`
+- `Documentation/v13h_upper_triad_transition.md`
+- `Documentation/v13h_spectral_validation_transition_summary.csv`
+- `Documentation/v13h_spectral_validation_upper_diagnosis.csv`
+- `Documentation/v13h_spectral_validation_recommendations.csv`
+- `Documentation/v0_13h_operativ_anbefaling.md`
+
+## 32. v13i viste at recovery-punktet ikke holder
+
+`v13i` tok neste naturlige steg etter `v13h`:
+
+- behold bare recovery-punktet og de naermeste nabopunktene
+- bruk finere bracketing rundt `bridge_00084375_0000`
+- avgjor om det gjenopprettede oversidepunktet er ekte eller bare en lokal fluktuasjon
+
+Det viktigste resultatet er:
+
+- `bridge_0008125_0000` blir `sharp_local`
+- `bridge_000828125_0000` blir `sharp_local`
+- `bridge_00084375_0000` er bare `good_but_local`
+- `bridge_000859375_0000` er `good_but_local`
+- `bridge_000875_0000` er `good_but_local`
+- recovery-diagnosen ender pa `recovery_not_supported`
+
+Dette er viktig fordi det rydder opp i `v13h`:
+
+- det gjenopprettede punktet ser ikke ut til å vaere en ekte topp
+- oversiden har fortsatt struktur, men ikke den toppen vi trodde
+- større valideringssett er derfor fortsatt ikke riktig neste steg
+
+Viktige filer:
+
+- `relational_universe_v13i_upper_recovery_refinement.py`
+- `Documentation/v13i_upper_recovery_refinement.md`
+- `Documentation/v13i_spectral_validation_refinement_summary.csv`
+- `Documentation/v13i_spectral_validation_recovery_diagnosis.csv`
+- `Documentation/v13i_spectral_validation_recommendations.csv`
+- `Documentation/v0_13i_operativ_anbefaling.md`
+
+## 33. Dagens operative lesning
 
 Dagens beste korte lesning er:
 
@@ -670,8 +794,19 @@ Dagens beste korte lesning er:
 - viktig v13d-dom: større valideringssett er fortsatt `not_yet`
 - viktig v13e-dom: triad-korridoren deler seg; to mellompunkter er skarpe, ett er godt men lokalt, og ett punkt er fortsatt blandet
 - viktig v13e-dom: større valideringssett er fortsatt `not_yet`, men usikkerheten er nå lokalisert til et smalt triadpunkt
+- viktig v13f-dom: det tidligere blandede triadpunktet holder ikke som eget notch under finere bracketing
+- viktig v13f-dom: spektralsporet er fortsatt lokalt, men na renere i triad-korridoren enn `v13e` alene viste
+- viktig v13f-dom: den lokale rensingen var reell, men bare som mellomsteg
+- viktig v13g-dom: den rensede triad-korridoren holder ikke fullt ut under storre lokalt budsjett; oversiden faller tilbake til `mixed`
+- viktig v13g-dom: større valideringssett er fortsatt `not_yet`
+- viktig v13h-dom: oversiden degraderer ikke monotont; et lokalt gjenopprettet punkt finnes ved `bridge_00084375_0000`
+- viktig v13h-dom: spektralsporet er fortsatt `mixed`, men blandingen er na mer strukturert enn i `v13g`
+- viktig v13h-dom: større valideringssett er fortsatt `not_yet`
+- viktig v13i-dom: det gjenopprettede oversidepunktet holder ikke under finere bracketing
+- viktig v13i-dom: oversiden har fortsatt lokal struktur, men ikke en ren recovery-topp
+- viktig v13i-dom: større valideringssett er fortsatt `not_yet`
 
-## 30. Hva som bor gjores videre
+## 34. Hva som bor gjores videre
 
 Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer frontier-tuning, men videre strukturarbeid som tester:
 
@@ -679,13 +814,14 @@ Hvis prosjektet fortsetter lokalt, er det naturlige neste steget ikke mer fronti
 - om den spektrale quasi-invarianten kan gjøres skarpere pa et bredere, men fortsatt kontrollert kryssregime-sett,
 - og om radius-signalet kan styrkes metodisk uten å blande det sammen med quasi-invariantsporet.
 
-Etter `v13e` er den oppdaterte anbefalingen:
+Etter `v13i` er den oppdaterte anbefalingen:
 
 - fortsett geometri-/invariantsporet heller enn frontier-tuning
 - bruk `band_zero_del` som fast arbeidsregime
 - bruk `initial_avg_degree` og `initial_spectral_per_sqrtN` som faste strukturkontroller
 - behold `spectral_only` og `spectral_plus_clustering` som liten radius-duo, men ikke gjør dem til første mottaker av større valideringssett ennå
-- prioriter fortsatt skarpere lokal validering av `mean_abs_delta_spectral_radius_rel` forst
+- prioriter fortsatt smal lokal avklaring av `mean_abs_delta_spectral_radius_rel`, na spesielt mellom `bridge_0008125_0000` og `bridge_000828125_0000` der signalet ser renest ut
 - hold `dim_proxy` som sekundær kontroll i dette sporet
-- ikke ga til større valideringssett for spektralsporet før `bridge_00075_0000`-området er bedre forklart
+- bruk ikke større valideringssett bredt; `v13g` viser at korridoren fortsatt ikke er ren nok
+- bruk heller ikke større valideringssett etter `v13i`; recovery-punktet falt bort under finere bracketing
 - ikke skaler opp overlap-/repair-validering før signalet er sterkere

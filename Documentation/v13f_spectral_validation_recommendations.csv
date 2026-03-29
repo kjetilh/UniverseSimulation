@@ -1,0 +1,4 @@
+signal_family,status,best_candidate,note
+zero_drift_sanity,breaks_off_anchor,mean_abs_delta_nodes_rel+mean_abs_delta_beta1_rel,Triad-notch-runden bryter fortsatt `beta1` off-anchor; null-drift skal fortsatt ikke leses som lov.
+spectral_quasi_invariant,good_but_local,mean_abs_delta_spectral_radius_rel,Det tidligere blandede punktet ser ikke lenger ut som et eget hakk; den smale triad-korridoren er lokalt renere.
+larger_validation_set,yes_targeted,spectral_vs_dim_triad_notch,Den smale triad-korridoren er ren nok til en målrettet neste valideringsrunde.
