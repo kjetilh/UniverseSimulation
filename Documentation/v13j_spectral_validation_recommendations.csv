@@ -1,0 +1,4 @@
+signal_family,status,best_candidate,note
+zero_drift_sanity,breaks_off_anchor,mean_abs_delta_nodes_rel+mean_abs_delta_beta1_rel,Den smale upper-band-runden bryter fortsatt `beta1` off-anchor; null-drift skal fortsatt ikke leses som lov.
+spectral_quasi_invariant,good_but_local,mean_abs_delta_spectral_radius_rel,"Det smale bandet mellom `bridge_0008125_0000` og `bridge_000828125_0000` holder som den reneste lokale triad-sonen, men sporet er fortsatt lokalt."
+larger_validation_set,yes_targeted,spectral_vs_dim_upper_clean_band,Et lite målrettet valideringssett rundt dette bandet er nå rimelig.

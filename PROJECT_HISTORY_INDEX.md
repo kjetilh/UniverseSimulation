@@ -805,6 +805,12 @@ Dagens beste korte lesning er:
 - viktig v13i-dom: det gjenopprettede oversidepunktet holder ikke under finere bracketing
 - viktig v13i-dom: oversiden har fortsatt lokal struktur, men ikke en ren recovery-topp
 - viktig v13i-dom: større valideringssett er fortsatt `not_yet`
+- viktig v13j-dom: det smale bandet mellom `bridge_0008125_0000` og `bridge_000828125_0000` holder som den reneste lokale oversidesonen
+- viktig v13j-dom: `bridge_0008203125_0000` kommer inn som nytt `sharp_local` mellompunkt, mens kontrollpunktene over bandet bare er `good_but_local`
+- viktig v13j-dom: større valideringssett er fortsatt ikke bredt riktig, men et lite målrettet valideringssett er na `yes_targeted`
+- viktig v13k-dom: det samme upper-bandet holder ikke rent nok under større lokalt budsjett
+- viktig v13k-dom: bare `bridge_0008203125_0000` forblir `sharp_local`, mens resten av bandet glir tilbake til `good_but_local`
+- viktig v13k-dom: større valideringssett gaar derfor tilbake til `not_yet`
 
 ## 34. Hva som bor gjores videre
 
@@ -821,7 +827,75 @@ Etter `v13i` er den oppdaterte anbefalingen:
 - bruk `initial_avg_degree` og `initial_spectral_per_sqrtN` som faste strukturkontroller
 - behold `spectral_only` og `spectral_plus_clustering` som liten radius-duo, men ikke gjør dem til første mottaker av større valideringssett ennå
 - prioriter fortsatt smal lokal avklaring av `mean_abs_delta_spectral_radius_rel`, na spesielt mellom `bridge_0008125_0000` og `bridge_000828125_0000` der signalet ser renest ut
+- bruk `v13j` som ny lokal ground truth for oversiden; det smale bandet mellom `bridge_0008125_0000` og `bridge_000828125_0000` er na den reneste sonen
+- bruk ikke `v13j` alene som siste sannhet; `v13k` viser at upper-bandet fortsatt er lovende, men blandet under hardere kontroll
 - hold `dim_proxy` som sekundær kontroll i dette sporet
 - bruk ikke større valideringssett bredt; `v13g` viser at korridoren fortsatt ikke er ren nok
 - bruk heller ikke større valideringssett etter `v13i`; recovery-punktet falt bort under finere bracketing
+- bruk heller ikke bred oppskalering etter `v13j`; neste gyldige steg er et lite, målrettet valideringssett rundt dette bandet
+- bruk heller ikke bred oppskalering etter `v13k`; targeted-valideringen dempet optimismen igjen
 - ikke skaler opp overlap-/repair-validering før signalet er sterkere
+
+## 35. v13j bekreftet et smalt rent upper-band
+
+`v13j` tok neste naturlige steg etter `v13i`:
+
+- behold bare den reneste delen av oversiden
+- legg inn ett nytt mellompunkt mellom `bridge_0008125_0000` og `bridge_000828125_0000`
+- bruk to kontrollpunkter over bandet
+- avgjor om det finnes et ekte lite clean band, ikke bare enkeltpunkter
+
+Det viktigste resultatet er:
+
+- `bridge_0008125_0000` er fortsatt `sharp_local`
+- `bridge_0008203125_0000` blir `sharp_local`
+- `bridge_000828125_0000` er fortsatt `sharp_local`
+- `bridge_0008359375_0000` og `bridge_00084375_0000` er bare `good_but_local`
+- banddiagnosen ender pa `clean_band_supported`
+
+Dette er viktig fordi det rydder opp i `v13i`:
+
+- den reneste delen av oversiden er ikke bare to tilfeldige gode punkt
+- det finnes et lite sammenhengende lokalt band der spektraldriften er tydelig bedre enn ved kontrollpunktene rett over
+- bredere validering er fortsatt ikke riktig, men et lite målrettet valideringssett er na metodisk rimelig
+
+Viktige filer:
+
+- `relational_universe_v13j_upper_clean_band_refinement.py`
+- `Documentation/v13j_upper_clean_band_refinement.md`
+- `Documentation/v13j_spectral_validation_refinement_summary.csv`
+- `Documentation/v13j_spectral_validation_band_diagnosis.csv`
+- `Documentation/v13j_spectral_validation_recommendations.csv`
+- `Documentation/v0_13j_operativ_anbefaling.md`
+
+## 36. v13k viste at upper-bandet fortsatt er blandet under hardere kontroll
+
+`v13k` tok neste naturlige steg etter `v13j`:
+
+- behold akkurat samme lille upper-band
+- behold samme kontrollpunkter
+- behold samme målesystem
+- bruk bare et større lokalt budsjett
+
+Det viktigste resultatet er:
+
+- `bridge_0008203125_0000` holder som `sharp_local`
+- `bridge_0008125_0000` glir tilbake til `good_but_local`
+- `bridge_000828125_0000` glir tilbake til `good_but_local`
+- kontrollpunktene over bandet er også `good_but_local`
+- banddiagnosen ender pa `sampling_ambiguous`
+
+Dette er viktig fordi det korrigerer lesningen av `v13j`:
+
+- `v13j` fant et ekte lovende lokalt band
+- men `v13k` viser at bandet ikke er rent nok til å kalles målrettet validert
+- større valideringssett er derfor fortsatt ikke riktig neste steg
+
+Viktige filer:
+
+- `relational_universe_v13k_targeted_upper_band_validation.py`
+- `Documentation/v13k_targeted_upper_band_validation.md`
+- `Documentation/v13k_spectral_validation_refinement_summary.csv`
+- `Documentation/v13k_spectral_validation_band_diagnosis.csv`
+- `Documentation/v13k_spectral_validation_recommendations.csv`
+- `Documentation/v0_13k_operativ_anbefaling.md`
