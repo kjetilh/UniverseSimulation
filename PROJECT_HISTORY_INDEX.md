@@ -811,6 +811,9 @@ Dagens beste korte lesning er:
 - viktig v13k-dom: det samme upper-bandet holder ikke rent nok under større lokalt budsjett
 - viktig v13k-dom: bare `bridge_0008203125_0000` forblir `sharp_local`, mens resten av bandet glir tilbake til `good_but_local`
 - viktig v13k-dom: større valideringssett gaar derfor tilbake til `not_yet`
+- viktig v13l-dom: `bridge_0008203125_0000` holder fortsatt som sterkt punkt, men ikke som et rent løst pivot
+- viktig v13l-dom: den nedre fine naboen `bridge_00081640625_0000` er ogsa `sharp_local`, mens `bridge_00082421875_0000` faller til `mixed`
+- viktig v13l-dom: området ser derfor asymmetrisk og fortsatt blandet ut, og større valideringssett er fortsatt `not_yet`
 
 ## 34. Hva som bor gjores videre
 
@@ -829,11 +832,13 @@ Etter `v13i` er den oppdaterte anbefalingen:
 - prioriter fortsatt smal lokal avklaring av `mean_abs_delta_spectral_radius_rel`, na spesielt mellom `bridge_0008125_0000` og `bridge_000828125_0000` der signalet ser renest ut
 - bruk `v13j` som ny lokal ground truth for oversiden; det smale bandet mellom `bridge_0008125_0000` og `bridge_000828125_0000` er na den reneste sonen
 - bruk ikke `v13j` alene som siste sannhet; `v13k` viser at upper-bandet fortsatt er lovende, men blandet under hardere kontroll
+- bruk ikke `v13k` alene som siste sannhet heller; `v13l` viser at sentrum fortsatt er sterkt, men at usikkerheten na sitter i den ovre bruddkanten
 - hold `dim_proxy` som sekundær kontroll i dette sporet
 - bruk ikke større valideringssett bredt; `v13g` viser at korridoren fortsatt ikke er ren nok
 - bruk heller ikke større valideringssett etter `v13i`; recovery-punktet falt bort under finere bracketing
 - bruk heller ikke bred oppskalering etter `v13j`; neste gyldige steg er et lite, målrettet valideringssett rundt dette bandet
 - bruk heller ikke bred oppskalering etter `v13k`; targeted-valideringen dempet optimismen igjen
+- bruk heller ikke bred oppskalering etter `v13l`; neste gyldige steg er en enda smalere test av den ovre bruddkanten rundt `bridge_00082421875_0000`
 - ikke skaler opp overlap-/repair-validering før signalet er sterkere
 
 ## 35. v13j bekreftet et smalt rent upper-band
@@ -899,3 +904,35 @@ Viktige filer:
 - `Documentation/v13k_spectral_validation_band_diagnosis.csv`
 - `Documentation/v13k_spectral_validation_recommendations.csv`
 - `Documentation/v0_13k_operativ_anbefaling.md`
+
+## 37. v13l viste at upper-området fortsatt er asymmetrisk og blandet
+
+`v13l` tok neste naturlige steg etter `v13k`:
+
+- behold bare området rundt `bridge_0008203125_0000`
+- legg inn ett finere punkt rett under og ett rett over
+- behold de ytre flankepunktene
+- avgjor om sentrum faktisk er et løst pivotpunkt
+
+Det viktigste resultatet er:
+
+- `bridge_00081640625_0000` blir `sharp_local`
+- `bridge_0008203125_0000` blir fortsatt `sharp_local`
+- `bridge_00082421875_0000` faller til `mixed`
+- `bridge_000828125_0000` er fortsatt `sharp_local`
+- pivotdiagnosen ender pa `sampling_ambiguous`
+
+Dette er viktig fordi det skjerper lesningen av `v13k`:
+
+- sentrumspunktet er fortsatt lovende
+- men problemet er ikke bare "for lite budsjett"
+- området rundt ser ut til a ha en tydelig ovre bruddkant, ikke en ren symmetrisk topp
+
+Viktige filer:
+
+- `relational_universe_v13l_local_upper_pivot_refinement.py`
+- `Documentation/v13l_local_upper_pivot_refinement.md`
+- `Documentation/v13l_spectral_validation_refinement_summary.csv`
+- `Documentation/v13l_spectral_validation_pivot_diagnosis.csv`
+- `Documentation/v13l_spectral_validation_recommendations.csv`
+- `Documentation/v0_13l_operativ_anbefaling.md`

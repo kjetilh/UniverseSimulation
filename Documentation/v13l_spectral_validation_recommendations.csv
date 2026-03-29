@@ -1,0 +1,4 @@
+signal_family,status,best_candidate,note
+zero_drift_sanity,breaks_off_anchor,mean_abs_delta_nodes_rel+mean_abs_delta_beta1_rel,Den smale upper-pivot-runden bryter fortsatt `beta1` off-anchor; null-drift skal fortsatt ikke leses som lov.
+spectral_quasi_invariant,mixed,mean_abs_delta_spectral_radius_rel,Pivot-området er fortsatt ikke rent nok til å kalle spektralsporet målrettet validert.
+larger_validation_set,not_yet,spectral_vs_dim_upper_pivot_refinement,Vent med bredere validering til pivot-området er bedre avklart.
