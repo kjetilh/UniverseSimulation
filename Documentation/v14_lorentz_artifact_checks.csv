@@ -1,0 +1,7 @@
+candidate_name,requested_perturbation,n_runs,n_strict_requested_match,fallback_rate,min_support_size,max_support_size,q10_fit_speed_control,q90_fit_speed_control,mean_radius_drop_rate,mean_shared_node_fraction_final,artifact_flag
+band_pdel_0005,add_chord,16,16,0.0,3.0,3.0,0.0855059570965801,0.34603945792218627,0.1125,0.9954852175245098,clean_enough
+band_pdel_0005,local_swap,16,16,0.0,3.0,3.0,0.13458953211105706,0.3479480762689232,0.09375,0.9964956134265162,clean_enough
+band_pdel_0005,token_shift,16,16,0.0,2.0,2.0,0.18693603041468687,0.3149834744484187,0.125,0.9936085564480849,clean_enough
+band_zero_del,add_chord,16,16,0.0,3.0,3.0,-0.006040356310213094,0.3940560917714566,0.1625,0.9975490196078431,clean_enough
+band_zero_del,local_swap,16,16,0.0,3.0,3.0,0.11928025977122025,0.35075935428723193,0.1125,1.0,clean_enough
+band_zero_del,token_shift,16,16,0.0,2.0,2.0,0.16250199487328126,0.32252546189607134,0.1,0.999515503875969,clean_enough

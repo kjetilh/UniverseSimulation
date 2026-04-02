@@ -1,0 +1,3 @@
+candidate_name,within_rel_speed_mean,within_rel_hit_r2_mean,mode_rel_speed_mean,mode_rel_hit_r2_mean,speed_ratio_mode_over_within,hit_ratio_mode_over_within,diagnosis
+band_pdel_0005,0.5264988219671805,0.37456113846923145,0.5102648552866788,0.36422517972445145,0.9691661861277372,0.9724051491646428,placement_noise_competes
+band_zero_del,0.6484200577578394,0.35575556047334783,0.6576799425431609,0.31341682172897956,1.0142806883817583,0.8809892424786424,placement_noise_competes

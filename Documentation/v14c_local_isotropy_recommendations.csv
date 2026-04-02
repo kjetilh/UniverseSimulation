@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er separert og alle local_swap-placement-rader bruker ønsket perturbasjon.
+local_isotropy_probe,weak,"Ingen av de testede støttegeometriene, inkludert `support_ball_3`, forklarer hastighetsvariasjonen særlig godt."
+next_step,pause_lorentz_expansion,Ikke utvid Lorentz-sporet bredt ennå; bruk heller dette til å vurdere om videre isotropitesting er verdt kostnaden.

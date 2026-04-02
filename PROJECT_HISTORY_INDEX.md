@@ -2,6 +2,92 @@
 
 Dette er en komprimert historikk over de viktigste metodiske vendepunktene frem til dagens live state.
 
+## 0. v14 og v14b skilte Lorentz-diagnostikk fra frontier og invariants
+
+Etter `v13n` ble det tydelig at videre hyperlokal spektralraffinering ikke svarer direkte pa relativitets-sporsmalet.
+`v14` tok derfor et smalt, artefaktbevisst sideblikk:
+
+- samme deep startensembler,
+- samme basegrafer,
+- samme run-seeds pa tvers av perturbasjonstyper,
+- eksplisitt logging av faktisk perturbasjonstype etter fallback.
+
+Det viktigste resultatet er:
+
+- size-separasjonen holder fortsatt rent
+- perturbasjonene er faktisk lokale under denne oppsettet
+- men `local_swap` og `add_chord` gir fortsatt for ulike frontfartsestimater til at repoet kan kalle dette Lorentz-likt
+
+Dermed ble statusen pa Lorentz-sporet strammet inn fra "uklar heuristikk" til:
+
+- ikke dominert av aapenbare simulasjonsartefakter i denne runden
+- men fortsatt `mode_dependent_not_yet`
+
+Viktige filer:
+
+- `relational_universe_v14_lorentz_diagnostics.py`
+- `Documentation/v14_lorentz_diagnostics.md`
+- `Documentation/v14_lorentz_artifact_checks.csv`
+- `Documentation/v14_lorentz_pairwise_perturbation_summary.csv`
+- `Documentation/v14_lorentz_regime_gap_summary.csv`
+- `Documentation/v0_14_operativ_anbefaling.md`
+
+`v14b` tok neste naturlige steg etter dette:
+
+- samme type perturbasjon fra flere lokale plasseringer
+- samme basegraf, samme seed, samme regime
+- eksplisitt sammenlikning av within-mode placement-variasjon mot between-mode-gapen fra `v14`
+
+Det viktigste resultatet er at placement-variasjonen konkurrerer med mellom-modus-gapet:
+
+- `band_zero_del`: within `~0.648` vs mode `~0.658`
+- `band_pdel_0005`: within `~0.526` vs mode `~0.510`
+
+Dermed ble Lorentz-sporet strammet inn enda et hakk:
+
+- ikke bare "ikke universell frontfart ennå"
+- men ogsa "den observerte mode-forskjellen kan fortsatt forklares av lokal anisotropi / placement-stoy"
+
+Viktige filer:
+
+- `relational_universe_v14b_lorentz_placement_diagnostics.py`
+- `Documentation/v14b_lorentz_placement_diagnostics.md`
+- `Documentation/v14b_lorentz_placement_summary.csv`
+- `Documentation/v14b_lorentz_within_mode_summary.csv`
+- `Documentation/v14b_lorentz_between_mode_summary.csv`
+- `Documentation/v14b_lorentz_mode_vs_placement_diagnosis.csv`
+- `Documentation/v0_14b_operativ_anbefaling.md`
+
+`v14c` tok deretter den smaleste isotropirunden som fortsatt ga ny informasjon:
+
+- bare ankerregimet `band_zero_del`
+- bare `local_swap`
+- flere placements per base
+- eksplisitt test av om enkel lokal støttegeometri forklarer placement-variansen
+
+Det viktigste resultatet er negativt, men nyttig:
+
+- placement-variansen er fortsatt reell
+- men de enkle lokale feature-ene (`support_ball_2`, `support_ball_3`, `support_shell_2`, `mean_support_degree`) forklarer den nesten ikke
+- beste feature var `support_ball_3`, men fortsatt svakt:
+  - spearman mot fart `~ -0.098`
+  - spearman mot rask hit `~ -0.324`
+- within-base alignment er lav for alle feature-ene
+
+Dermed ble Lorentz-sporet strammet inn enda et hakk:
+
+- vi ser fortsatt ingen ren universell frontfart
+- lokal anisotropi er fortsatt ikke utelukket
+- men heller ikke de enkle støttegeometriene gir en god forklaring
+
+Viktige filer:
+
+- `relational_universe_v14c_local_isotropy_diagnostics.py`
+- `Documentation/v14c_local_isotropy_diagnostics.md`
+- `Documentation/v14c_local_isotropy_feature_signal_summary.csv`
+- `Documentation/v14c_local_isotropy_alignment_summary.csv`
+- `Documentation/v0_14c_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

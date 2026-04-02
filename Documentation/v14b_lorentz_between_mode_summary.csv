@@ -1,0 +1,3 @@
+candidate_name,n_pairs,mean_abs_delta_fit_speed,mean_rel_delta_fit_speed,mean_abs_delta_hit_t_r2,mean_rel_delta_hit_t_r2,mean_abs_delta_hit_t_r3,mean_abs_delta_radius_drop,mean_abs_delta_support
+band_pdel_0005,64,0.10512890368001333,0.5102648552866788,4.413490565123864,0.36422517972445145,5.3730723416577995,0.0921875,0.0
+band_zero_del,64,0.12266175841637952,0.6576799425431609,3.8804692339991056,0.31341682172897956,4.520598597804851,0.1,0.0

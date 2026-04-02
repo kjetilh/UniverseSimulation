@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+generator_size_separation,clean,De dype startstørrelsene er fortsatt rent separert; frontmålingene ser ikke ut som en ren ensemblekollaps.
+perturbation_artifact_control,clean_enough,Fallback-raten er lav nok til at de primære sammenlikningene kan leses som lokale perturbasjoner.
+lorentz_like_front_speed,mode_dependent_not_yet,Frontmålingene varierer fortsatt for mye mellom perturbasjonstyper og/eller nærkontrollregimer til å kalle dette Lorentz-likt.
+next_step,keep_local_and_narrow,"Neste steg bør fortsatt være smalt: enten dypere matched perturbation-runder eller en egen isotropi-diagnostikk, ikke bred oppskalering."

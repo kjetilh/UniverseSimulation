@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+generator_and_placement_artifacts,clean,Startstørrelsene er separert og alle placement-rader bruker ønsket perturbasjonstype.
+mode_vs_placement,anisotropy_not_ruled_out,Plasseringsover variasjon i ankerregimet er naer nok mellom-modus-gapet til at Lorentz-sporet fortsatt er uklart.
+next_step,keep_narrow_same_family,Neste steg bor fortsatt vaere smalt i samme familie; ikke oppskaler til stort valideringssett ennå.

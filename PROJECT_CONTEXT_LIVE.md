@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m` og `v13n` er de aktive struktur-/transfer-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b` og `v14c` er de aktive struktur-/transfer-/Lorentz-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -159,6 +159,27 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Lower-drop-edge-summary: `Documentation/v13n_spectral_validation_refinement_summary.csv`
 - Lower-drop-edge-diagnose: `Documentation/v13n_spectral_validation_break_diagnosis.csv`
 - Lower-drop-edge-anbefaling: `Documentation/v0_13n_operativ_anbefaling.md`
+- Lorentz-diagnostikkscript: `relational_universe_v14_lorentz_diagnostics.py`
+- Lorentz-diagnostikkrapport: `Documentation/v14_lorentz_diagnostics.md`
+- Lorentz-target-sammendrag: `Documentation/v14_lorentz_target_summary.csv`
+- Lorentz-aggregate-sammendrag: `Documentation/v14_lorentz_aggregate_summary.csv`
+- Lorentz-pairwise-perturbasjonssammendrag: `Documentation/v14_lorentz_pairwise_perturbation_summary.csv`
+- Lorentz-artefaktkontroll: `Documentation/v14_lorentz_artifact_checks.csv`
+- Lorentz-regime-gap-sammendrag: `Documentation/v14_lorentz_regime_gap_summary.csv`
+- Lorentz-anbefaling: `Documentation/v0_14_operativ_anbefaling.md`
+- Placement-aware Lorentz-script: `relational_universe_v14b_lorentz_placement_diagnostics.py`
+- Placement-aware Lorentz-rapport: `Documentation/v14b_lorentz_placement_diagnostics.md`
+- Placement-aware Lorentz-placement-summary: `Documentation/v14b_lorentz_placement_summary.csv`
+- Placement-aware Lorentz-within-mode-summary: `Documentation/v14b_lorentz_within_mode_summary.csv`
+- Placement-aware Lorentz-between-mode-summary: `Documentation/v14b_lorentz_between_mode_summary.csv`
+- Placement-aware Lorentz-diagnose: `Documentation/v14b_lorentz_mode_vs_placement_diagnosis.csv`
+- Placement-aware Lorentz-anbefaling: `Documentation/v0_14b_operativ_anbefaling.md`
+- Lokal isotropi-diagnostikkscript: `relational_universe_v14c_local_isotropy_diagnostics.py`
+- Lokal isotropi-diagnostikkrapport: `Documentation/v14c_local_isotropy_diagnostics.md`
+- Lokal isotropi-placement-summary: `Documentation/v14c_local_isotropy_placement_summary.csv`
+- Lokal isotropi-feature-summary: `Documentation/v14c_local_isotropy_feature_signal_summary.csv`
+- Lokal isotropi-alignment-summary: `Documentation/v14c_local_isotropy_alignment_summary.csv`
+- Lokal isotropi-anbefaling: `Documentation/v0_14c_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -210,6 +231,66 @@ Fra `Documentation/v11e_band_vs_bridge0075_pairwise.csv`:
 ## Viktige signaler fra v12 / v12b / v12c / v12d / v12e / v12f / v12g / v12h / v12i / v12j / v12k / v12l / v12m / v12n / v13 / v13b / v13c / v13d / v13e / v13f / v13g / v13h / v13i
 
 `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h` og `v13i` er ikke nye frontier-runder. De fryser `band_zero_del` og ser etter enklere struktur.
+
+Det nye i `v14` er at prosjektet tok et bevisst sideblikk mot Lorentz-likhet uten a blande det inn i frontier-tuning:
+
+- startstorrelsene er fortsatt rent separert
+- fallback-raten for de faktiske lokale perturbasjonene er `0.0`
+- derfor er `v14` ikke artefaktbegrenset av ensemblekollaps eller perturbasjonsfallback
+- men frontfarten er fortsatt tydelig mode-avhengig
+- operativ dom er derfor `mode_dependent_not_yet`, ikke Lorentz-likhet
+
+Det viktigste fra `Documentation/v14_lorentz_diagnostics.md` er:
+
+- `band_zero_del`, `local_swap` vs `add_chord`: `mean_rel_delta_fit_speed ~= 0.712`
+- `band_pdel_0005`, `local_swap` vs `add_chord`: `mean_rel_delta_fit_speed ~= 0.559`
+- naer-regime-gapet i mean fit-speed er lite (`~0.002` for `local_swap`, `~0.018` for `add_chord` og `token_shift`), men ikke nok til a redde universell frontfart
+- derfor peker `v14` mot ekte lokalitet under rene kontroller, men ikke mot noen robust universell `c*` ennå
+
+`v14b` testet deretter om `v14`-gapet kanskje bare var lokal placement-stoy:
+
+- samme perturbasjonstype ble kjort fra flere lokale plasseringer pa samme basegraf og samme seed
+- alle placement-rader holdt fortsatt `strict_match = 1.0`
+- men within-mode placement-variasjonen er omtrent like stor som between-mode-gapen
+
+Det viktigste fra `Documentation/v14b_lorentz_placement_diagnostics.md` er:
+
+- `band_zero_del`: `within_rel_speed_mean ~= 0.648`, `mode_rel_speed_mean ~= 0.658`
+- `band_pdel_0005`: `within_rel_speed_mean ~= 0.526`, `mode_rel_speed_mean ~= 0.510`
+- begge regimer lander derfor pa `placement_noise_competes`
+
+Den riktige live-lesningen na er:
+
+- `v14` fjernet enkle artefaktforklaringer
+- `v14b` viste at lokal anisotropi/placement-stoy fortsatt er en sterk alternativ forklaring
+- Lorentz-sporet er derfor fortsatt `not_yet`, og neste steg ma vaere smalt og isotropi-orientert hvis vi fortsetter den linjen
+
+`v14c` testet deretter om enkel lokal støttegeometri faktisk forklarer placement-variansen i ankerregimet:
+
+- bare `band_zero_del`
+- bare `local_swap`
+- flere placements per base
+
+Det viktigste fra `Documentation/v14c_local_isotropy_diagnostics.md` er:
+
+- alle placement-rader holder fortsatt `strict_match = 1.0`
+- placement-variansen er reell
+- men enkle lokale støttegeometrifeaturer forklarer den nesten ikke
+
+Konkrete signaler:
+
+- `support_ball_3` er best av de testede feature-ene, men fortsatt svakt:
+  - `spearman_vs_fit_speed ~= -0.098`
+  - `spearman_vs_neg_hit_r2 ~= -0.324`
+- within-base alignment er lav for alle feature-ene:
+  - `align_speed_rate <= 0.083`
+  - `align_hit_rate <= 0.167`
+
+Den riktige live-lesningen na er derfor enda strammere:
+
+- Lorentz-sporet er fortsatt `not_yet`
+- placement-stoy konkurrerer fortsatt med mellom-modus-gapen
+- og de enkle lokale geometrifeaturene vi testet gir ikke noen god mikroframe-forklaring ennå
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
