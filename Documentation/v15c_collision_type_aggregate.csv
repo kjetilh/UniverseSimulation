@@ -1,0 +1,4 @@
+collision_class,n_runs,mean_union_jaccard,mean_final_union_jaccard,mean_order_jaccard,mean_control_consistency,mean_final_pair_damage_fraction,mean_final_union_damage_fraction,mean_final_pair_component_count,mean_final_union_component_count
+binding_like,3,0.403482914030512,0.4094540140572432,1.0,1.0,0.5729166666666666,0.5850694444444444,2.6666666666666665,8.0
+mixed_collision,9,0.356890463928937,0.40973839436436355,1.0,1.0,0.47019675925925924,0.5305266203703703,11.555555555555555,12.0
+secondary_split_like,4,0.40638989832457323,0.47182242862622614,1.0,1.0,0.4557291666666667,0.6770833333333334,7.5,3.75

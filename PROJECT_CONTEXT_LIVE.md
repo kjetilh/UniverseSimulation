@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15` og `v15b` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b` og `v15c` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -190,6 +190,11 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add_chord-collision-interactions: `Documentation/v15b_add_chord_collision_interactions.csv`
 - Add_chord-collision-aggregate: `Documentation/v15b_add_chord_collision_aggregate.csv`
 - Add_chord-collision-anbefaling: `Documentation/v0_15b_operativ_anbefaling.md`
+- Add_chord collision-type-script: `relational_universe_v15c_collision_type_lab.py`
+- Add_chord collision-type-rapport: `Documentation/v15c_collision_type_lab.md`
+- Add_chord collision-type-rows: `Documentation/v15c_collision_type_rows.csv`
+- Add_chord collision-type-aggregate: `Documentation/v15c_collision_type_aggregate.csv`
+- Add_chord collision-type-anbefaling: `Documentation/v0_15c_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -341,6 +346,26 @@ Den riktige live-lesningen na er derfor:
 - men det er et klart og artefaktkontrollert kollisjonssignal i `add_chord`-familien
 - pair-runene ser ikke ut som ren superposisjon av to matched single-runs
 - neste naturlige steg er a klassifisere interaksjonstypen direkte: annihilation, pass-through, binding eller secondary split
+
+`v15c` tok akkurat denne smalere klassifiseringen:
+
+- samme `band_zero_del`
+- samme dype, size-separerte ensembler
+- samme matched single/pair-run-oppsett
+- samme AB/BA-kontroll, men med en strammere lesning av sluttgeometrien
+
+Det viktigste fra `Documentation/v15c_collision_type_lab.md` er:
+
+- artifact-control er fortsatt `clean`
+- `binding_like` finnes, men bare i `0.188` av run-ene
+- `secondary_split_like` finnes oftere, men fortsatt bare i `0.250`
+- majoriteten er fortsatt `mixed_collision` (`0.562`)
+
+Den riktige live-lesningen na er derfor:
+
+- kollisjonssignalet fra `v15b` holder
+- men interaksjonstypen er fortsatt ikke skarpt løst
+- den mest sannsynlige retningen er ikke bredere batch, men enda strammere møtesporing rundt selve kollisjonstidspunktet
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

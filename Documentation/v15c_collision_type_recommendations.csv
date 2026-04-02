@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er separert og matched control-grenene holder seg samkjørte på tvers av single/pair/AB/BA.
+collision_type_signal,mixed_collision_family,"Kollisjonsklassene splitter seg fortsatt (`secondary_split_like` 0.250, `binding_like` 0.188, `annihilation_like` 0.000, `pass_through_like` 0.000)."
+next_step,tighten_interaction_type,Neste steg bør være en enda smalere interaksjonstest med flere snapshots og eksplisitt komponentsporing rundt møtet.

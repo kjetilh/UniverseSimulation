@@ -144,6 +144,42 @@ Viktige filer:
 - `Documentation/v15b_add_chord_collision_aggregate.csv`
 - `Documentation/v0_15b_operativ_anbefaling.md`
 
+## 0d. v15c viste at interaksjonstypen fortsatt er blandet
+
+Etter at `v15b` viste et klart og artefaktkontrollert kollisjonssignal, tok `v15c` neste smale steg:
+
+- behold samme `band_zero_del`
+- behold samme deep, size-separerte ensembler
+- behold samme matched single/pair-run-oppsett
+- men klassifiser sluttgeometrien mer direkte som `binding_like`, `secondary_split_like`, `annihilation_like`, `pass_through_like` eller `mixed_collision`
+
+Det viktigste resultatet er todelt:
+
+- artifact-control holder fortsatt rent
+- men interaksjonstypen er fortsatt ikke rent løst
+
+Konkrete signaler:
+
+- `binding_like`: `0.188`
+- `secondary_split_like`: `0.250`
+- `mixed_collision`: `0.562`
+- `annihilation_like`: `0.000`
+- `pass_through_like`: `0.000`
+
+Dermed ble defect-sporet strammet inn enda et hakk:
+
+- kollisjonssignalet fra `v15b` holder
+- men prosjektet kan ennå ikke si at `add_chord`-familien har én tydelig dominant interaksjonstype
+- neste riktige steg er derfor ikke bredere validering, men enda strammere møtesporing rundt selve kollisjonstidspunktet
+
+Viktige filer:
+
+- `relational_universe_v15c_collision_type_lab.py`
+- `Documentation/v15c_collision_type_lab.md`
+- `Documentation/v15c_collision_type_rows.csv`
+- `Documentation/v15c_collision_type_aggregate.csv`
+- `Documentation/v0_15c_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
