@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c` og `v15` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15` og `v15b` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -185,6 +185,11 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Defect lifetime-aggregate: `Documentation/v15_defect_lifetime_aggregate.csv`
 - Defect lifetime-by-target: `Documentation/v15_defect_lifetime_by_target.csv`
 - Defect lifetime-anbefaling: `Documentation/v0_15_operativ_anbefaling.md`
+- Add_chord-collision-script: `relational_universe_v15b_add_chord_collision_lab.py`
+- Add_chord-collision-rapport: `Documentation/v15b_add_chord_collision_lab.md`
+- Add_chord-collision-interactions: `Documentation/v15b_add_chord_collision_interactions.csv`
+- Add_chord-collision-aggregate: `Documentation/v15b_add_chord_collision_aggregate.csv`
+- Add_chord-collision-anbefaling: `Documentation/v0_15b_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -314,6 +319,28 @@ Den riktige live-lesningen na er:
 - vi har fortsatt ikke Lorentz-likhet
 - men vi har na et klart mer interessant mesoskalasignal enn tidligere
 - den mest lovende retningen er ikke bredere validering, men a folge opp `persistent_split`-familien direkte med lengre levetid eller kollisjonstester
+
+`v15b` tok deretter akkurat den kollisjonstesten med et strammere artifact-oppsett:
+
+- samme `band_zero_del`
+- samme dype, size-separerte ensembler
+- matched single-runs og pair-runs pa samme base og seed
+- begge orders (`ab`, `ba`) for a avslore ordresensitivitet
+- eksplisitt kontroll av at matched control-grenene holder seg samkjorte
+
+Det viktigste fra `Documentation/v15b_add_chord_collision_lab.md` er:
+
+- `interaction_supported = 1.000`
+- `mean_pair_union_jaccard` ligger omtrent mellom `0.208` og `0.462`
+- `mean_pair_order_jaccard = 1.000`
+- `mean_control_edge_jaccard_ab_ba = 1.000`
+
+Den riktige live-lesningen na er derfor:
+
+- dette er fortsatt ikke bevis pa partikler
+- men det er et klart og artefaktkontrollert kollisjonssignal i `add_chord`-familien
+- pair-runene ser ikke ut som ren superposisjon av to matched single-runs
+- neste naturlige steg er a klassifisere interaksjonstypen direkte: annihilation, pass-through, binding eller secondary split
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

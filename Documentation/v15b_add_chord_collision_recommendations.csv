@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,"Startstørrelsene er separert, placement-paret er faktisk lokalt separert, og kontrollgrenene holder seg samkjørte mellom AB/BA."
+collision_signal,collision_signal_present,Parvise defects avviker ofte fra unionen av matched single-runs (`interaction_supported` 1.000) uten sterk ordresensitivitet.
+next_step,follow_collision_family,"Neste steg bør være en mer direkte kollisjonsklassifisering: annihilation, pass-through, binding eller secondary split."

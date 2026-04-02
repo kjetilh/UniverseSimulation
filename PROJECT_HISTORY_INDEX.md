@@ -113,6 +113,37 @@ Viktige filer:
 - `Documentation/v15_defect_lifetime_by_target.csv`
 - `Documentation/v0_15_operativ_anbefaling.md`
 
+## 0c. v15b viste at add_chord-defects ikke bare superponerer
+
+Etter at `v15` fant `add_chord` som den sterkeste mesoskalefamilien, tok `v15b` neste smale steg:
+
+- samme `band_zero_del`
+- samme deep, size-separerte ensembler
+- to lokalt separerte `add_chord`-placements pa samme basegraf
+- matched single-runs og pair-runs med samme seed
+- begge orders (`ab`, `ba`) for a skille ekte interaksjon fra ordresensitiv konstruksjon
+- eksplisitt kontroll av at control-grenene for AB og BA holder seg samkjorte
+
+Det viktigste resultatet er det sterkeste interaksjonssignalet sa langt:
+
+- artifact-control holder rent
+- `control_edge_jaccard_ab_ba = 1.0` i alle rader
+- `pair_order_jaccard = 1.0` i alle rader
+- men pair-runene ligger langt fra unionen av matched single-runs
+  - `mean_pair_union_jaccard` ligger omtrent mellom `0.208` og `0.462`
+- alle rader klassifiseres som `interaction_supported`
+
+Dette betyr fortsatt ikke at prosjektet har vist partikler.
+Men det betyr at prosjektet na har et klart, artefaktkontrollert signal om at to lokale `add_chord`-defects kan interagere pa en maate som ikke ser ut som ren superposisjon.
+
+Viktige filer:
+
+- `relational_universe_v15b_add_chord_collision_lab.py`
+- `Documentation/v15b_add_chord_collision_lab.md`
+- `Documentation/v15b_add_chord_collision_interactions.csv`
+- `Documentation/v15b_add_chord_collision_aggregate.csv`
+- `Documentation/v0_15b_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
