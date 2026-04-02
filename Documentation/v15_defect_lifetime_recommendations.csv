@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er separert og alle testede perturbasjoner holder ønsket lokale type i denne runden.
+defect_lifetime_signal,interesting_mesoscale_signal,`add_chord` viser `persistent_split` oftere enn rent tilfeldig transientstøy (0.938).
+next_step,follow_objects,"Neste steg bør være å følge den mest lovende utfallstypen mer direkte, for eksempel med kollisjoner eller lengre levetidsrunder."

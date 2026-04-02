@@ -88,6 +88,31 @@ Viktige filer:
 - `Documentation/v14c_local_isotropy_alignment_summary.csv`
 - `Documentation/v0_14c_operativ_anbefaling.md`
 
+## 0b. v15 fant det første klare mesoskalasignalet
+
+Etter at `v14`-sporet strammet inn Lorentz-lesningen uten å åpne noe klart nytt fysisk signal, skiftet `v15` fokus:
+
+- behold `band_zero_del` som stabilt arbeidsregime
+- behold de rene, dype startensemble-ne
+- men klassifiser lokale perturbasjoner etter levetid og morfologi i stedet for bare frontfart
+
+Det viktigste resultatet er det mest positive i denne fasen:
+
+- `add_chord` gir `persistent_split` i `0.938` av run-ene
+- `local_swap` gir `persistent_split` i `0.688` av run-ene og `persistent_diffuse` i `0.250`
+- `token_shift` gir fortsatt mye `persistent_split`, men også den eneste tydelige `dies_out`-andelen
+
+Det betyr ikke at vi har funnet partikler.
+Men det betyr at prosjektet for første gang har et tydeligere signal om repeterbare mesoskopiske objekt- eller defect-lignende utfall enn bare frontier-score eller Lorentz-diagnostikk.
+
+Viktige filer:
+
+- `relational_universe_v15_defect_lifetime_lab.py`
+- `Documentation/v15_defect_lifetime_lab.md`
+- `Documentation/v15_defect_lifetime_aggregate.csv`
+- `Documentation/v15_defect_lifetime_by_target.csv`
+- `Documentation/v0_15_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

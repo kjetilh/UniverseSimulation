@@ -1,0 +1,13 @@
+requested_perturbation,target_nodes,n_runs,mean_alive_fraction,mean_radius_control,persistent_localized_rate,persistent_split_rate,persistent_diffuse_rate,dies_out_rate
+add_chord,48,4,1.0,3.15,0.0,0.75,0.25,0.0
+add_chord,96,4,1.0,4.9799999999999995,0.0,1.0,0.0,0.0
+add_chord,192,4,1.0,6.9399999999999995,0.0,1.0,0.0,0.0
+add_chord,256,4,1.0,4.759615384615385,0.0,1.0,0.0,0.0
+local_swap,48,4,1.0,3.61,0.0,0.25,0.75,0.0
+local_swap,96,4,1.0,5.33,0.0,0.75,0.25,0.0
+local_swap,192,4,1.0,5.92,0.25,0.75,0.0,0.0
+local_swap,256,4,1.0,6.884615384615385,0.0,1.0,0.0,0.0
+token_shift,48,4,0.77,3.5999999999999996,0.0,0.75,0.0,0.25
+token_shift,96,4,0.76,4.55,0.0,0.5,0.25,0.25
+token_shift,192,4,0.76,5.779999999999999,0.0,0.75,0.0,0.25
+token_shift,256,4,1.0,7.201923076923077,0.0,1.0,0.0,0.0
