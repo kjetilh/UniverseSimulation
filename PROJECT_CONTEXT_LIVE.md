@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d` og `v15e` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e` og `v15f` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -205,6 +205,11 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Pair-family refinement-rows: `Documentation/v15e_pair_family_rows.csv`
 - Pair-family refinement-aggregate: `Documentation/v15e_pair_family_aggregate.csv`
 - Pair-family refinement-anbefaling: `Documentation/v0_15e_operativ_anbefaling.md`
+- Pair 2-3 budget-extension-script: `relational_universe_v15f_pair23_budget_extension.py`
+- Pair 2-3 budget-extension-rapport: `Documentation/v15f_pair23_budget_extension.md`
+- Pair 2-3 budget-extension-rows: `Documentation/v15f_pair23_rows.csv`
+- Pair 2-3 budget-extension-aggregate: `Documentation/v15f_pair23_aggregate.csv`
+- Pair 2-3 budget-extension-anbefaling: `Documentation/v0_15f_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -415,6 +420,25 @@ Den riktige live-lesningen nå er derfor:
 - pair-familiene er fortsatt blandet
 - `2-3` er mer lovende enn `3-4` som videre oppfølgingsfamilie
 - neste naturlige steg er en enda smalere `2-3`-runde med mer budsjett per family, ikke mer bredde
+
+`v15f` tok sa denne rene `2-3`-budsjettutvidelsen:
+
+- bare target `48`
+- bare growth-seed `101`, der pair `2-3` faktisk er stabilt tilgjengelig
+- mange flere run-offsets
+- enda tettere snapshots gjennom møtevinduet
+
+Det viktigste fra `Documentation/v15f_pair23_budget_extension.md` er:
+
+- artifact-control er fortsatt `clean`
+- `compress_then_split` holder seg bare svakt som beste ikke-mixed type (`0.125`)
+- `mixed_window` dominerer nå tydelig (`0.750`)
+
+Den riktige live-lesningen nå er derfor:
+
+- mer budsjett på `2-3` gjorde ikke signalet renere
+- denne mikroraffineringen ser ut til å ha avtagende verdi
+- neste naturlige steg er trolig ikke enda mer av samme type budsjett, men enten lengre enkelttrajektorier eller et nytt defect-spørsmål
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

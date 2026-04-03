@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,"Startstørrelsene er separert, pair 2-3 er faktisk tilgjengelig i denne smale runden, og matched AB/BA-control holder seg samkjørt."
+pair23_signal,compress_then_split_leading_but_mixed,"`compress_then_split` leder for pair 2-3 (0.125), men mixed-andelen er fortsatt for høy (0.750) til en ren dom."
+next_step,increase_budget_or_fix_base,Neste steg bør være enda mer budsjett på samme base eller en enda strammere seed-familie rundt de run-offsettene som støttet signalet.

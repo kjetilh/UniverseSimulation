@@ -242,6 +242,37 @@ Viktige filer:
 - `Documentation/v15e_pair_family_aggregate.csv`
 - `Documentation/v0_15e_operativ_anbefaling.md`
 
+## 0g. v15f viste avtagende verdi i mer budsjett pa bare pair 2-3
+
+Etter at `v15e` pekte ut `2-3` som den mest lovende pair-familien, tok `v15f` neste smale steg:
+
+- bare target `48`
+- bare pair `2-3`
+- mer run-budsjett pa samme base
+- samme matched AB/BA-oppsett og samme vindusklassifisering
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `compress_then_split` overlever, men styrkes ikke (`0.125`)
+- `mixed_window` dominerer tydeligere (`0.750`)
+- signalet blir dermed ikke renere av mer av samme mikrobudsjett
+
+Dette betyr:
+
+- `2-3` er fortsatt den mest informative lokale pair-familien
+- men denne spesifikke raffineringslinjen ser ut til a ha avtagende verdi
+- neste riktige steg er derfor sannsynligvis ikke bare flere offsets, men en annen type defect-oppfolging
+
+Viktige filer:
+
+- `relational_universe_v15f_pair23_budget_extension.py`
+- `Documentation/v15f_pair23_budget_extension.md`
+- `Documentation/v15f_pair23_rows.csv`
+- `Documentation/v15f_pair23_aggregate.csv`
+- `Documentation/v15f_pair23_availability.csv`
+- `Documentation/v0_15f_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
