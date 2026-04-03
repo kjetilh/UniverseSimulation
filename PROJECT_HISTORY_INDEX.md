@@ -180,6 +180,38 @@ Viktige filer:
 - `Documentation/v15c_collision_type_aggregate.csv`
 - `Documentation/v0_15c_operativ_anbefaling.md`
 
+## 0e. v15d gjorde møtevinduet skarpere, men ikke endelig
+
+Etter at `v15c` viste at sluttklassifiseringen fortsatt var blandet, tok `v15d` et smalere og mer tidsoppløst steg:
+
+- bare `48` og `96`
+- samme matched single/pair-run-oppsett
+- tettere snapshots
+- eksplisitt fokus på det snapshotet der pair-runen avviker mest fra unionen av single-runs
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `mixed_window` dominerer fortsatt (`0.750`)
+- men vi ser nå to tydeligere møtevindustyper:
+  - ett `compress_then_split`
+  - ett `persistent_binding_tendency`
+
+Dette betyr:
+
+- kollisjonssignalet fra `v15b` holder fortsatt
+- `v15d` gjør bildet mer informativt enn `v15c`
+- men prosjektet kan fortsatt ikke si at én dominant interaksjonstype styrer `add_chord`-familien
+- neste riktige steg er derfor enda smalere pair-selection i `48`-korridoren
+
+Viktige filer:
+
+- `relational_universe_v15d_collision_window_lab.py`
+- `Documentation/v15d_collision_window_lab.md`
+- `Documentation/v15d_collision_window_rows.csv`
+- `Documentation/v15d_collision_window_aggregate.csv`
+- `Documentation/v0_15d_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

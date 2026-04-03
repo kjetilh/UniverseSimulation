@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er separert og matched AB/BA-control holder seg samkjørt også i den tettere møtesporingen.
+collision_window_signal,mixed_window_family,"Møtevinduet er fortsatt blandet (`persistent_fragmentation_tendency` 0.000, `persistent_binding_tendency` 0.125, `compress_then_split` 0.125, `mixed_window` 0.750)."
+next_step,narrow_pair_selection,Neste steg bør være enda smalere pair-selection eller flere snapshots rundt møtet i én liten størrelseskorridor.
