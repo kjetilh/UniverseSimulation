@@ -1,0 +1,5 @@
+requested_perturbation,target_nodes,n_runs,strict_match_rate,final_alive_rate,extinction_rate,late_extinction_rate,persistent_split_tail_rate,quiet_singleton_tail_rate,persistent_diffuse_tail_rate,mixed_tail_rate,mean_first_zero_step,mean_tail_dual_fraction,mean_tail_mean_component_count,mean_tail_change_count,dominant_tail_label
+add_chord,48,12,1.0,1.0,0.0,0.0,0.3333333333333333,0.08333333333333333,0.5833333333333334,0.0,nan,0.6155913978494624,2.0295698924731185,11.25,persistent_diffuse_tail
+add_chord,96,12,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,nan,1.0,5.663978494623656,16.666666666666668,persistent_split_tail
+token_shift,48,12,1.0,0.8333333333333334,0.16666666666666666,0.0,0.3333333333333333,0.0,0.5,0.0,20.0,0.5483870967741935,1.685483870967742,6.583333333333333,persistent_diffuse_tail
+token_shift,96,12,1.0,0.9166666666666666,0.08333333333333333,0.0,0.8333333333333334,0.08333333333333333,0.0,0.0,280.0,0.8225806451612904,4.279569892473118,14.5,persistent_split_tail

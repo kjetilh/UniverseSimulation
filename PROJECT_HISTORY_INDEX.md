@@ -444,6 +444,71 @@ Viktige filer:
 - `Documentation/v15k_mechanism_holdout_aggregate.csv`
 - `Documentation/v0_15k_operativ_anbefaling.md`
 
+## 0m. v15l gjorde holdout-bruddet mer forklarbart uten a redde generaliseringen
+
+Etter at `v15k` ga et verdifullt negativt resultat, tok `v15l` et rent forklaringssteg:
+
+- ingen ny bred simulering
+- bare direkte sammenlikning mellom `v15j`-mekanismene og `v15k`-holdoutene
+- mal: finne ut om generaliseringsbruddet var helt vilkarlig eller kunne beskrives med noen fa lokale bruddmodi
+
+Det viktigste resultatet er:
+
+- holdout-bruddet er ikke helt ustrukturert
+- to bruddmodi dominerer:
+  - `birth_death_intrusion`
+  - `quiet_suffix_collapse`
+- dette gjør `v15k` mer forklarlig, men ikke mer generaliserbart
+
+Dette betyr:
+
+- `v15j` forblir en nyttig lokal forklaringsrunde
+- `v15k` forblir et ekte negativt generaliseringsresultat
+- `v15l` gir en bedre forklaring pa hvorfor bruddet skjer
+- neste riktige steg er derfor et nytt defect-sporsmal eller en annen observabel, ikke enda mer mekanismegeneralisering av samme type
+
+Viktige filer:
+
+- `relational_universe_v15l_holdout_failure_explainer.py`
+- `Documentation/v15l_holdout_failure_explainer.md`
+- `Documentation/v15l_holdout_failure_comparison.csv`
+- `Documentation/v15l_holdout_failure_aggregate.csv`
+- `Documentation/v0_15l_operativ_anbefaling.md`
+
+## 0n. v15m testet et nytt defect-sporsmal om survival/extinction
+
+Etter at collision-generaliseringssporet begynte a gi avtagende verdi, tok `v15m` et bevisst sideblikk:
+
+- behold `band_zero_del` som arbeidsregime
+- behold dype, size-separerte ensembler
+- bytt fra kollisjon til enkeltdefect
+- test om `token_shift` har en tydelig survival/extinction-signatur, med `add_chord` som levende kontrollfamilie
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `token_shift` viser noe extinction:
+  - `0.167` ved `48`
+  - `0.083` ved `96`
+- `add_chord` holder seg levende i alle runene i denne runden
+- men skillet er fortsatt ikke rent nok til a kalle dette et sterkt survival/extinction-spor
+
+Dette betyr:
+
+- prosjektet har et legitimt nytt defect-sporsmal uten a late som collision-mekanismene allerede er lover
+- `token_shift` er fortsatt interessant som den skjoreste defect-familien
+- men survival/extinction-lesningen ma fortsatt behandles forsiktig
+- neste riktige steg er ikke sterke survival-paastander, men et nytt smalt defect-sporsmal eller en mer disiplinert survival-oppfolging
+
+Viktige filer:
+
+- `relational_universe_v15m_single_defect_survival_lab.py`
+- `Documentation/v15m_single_defect_survival_lab.md`
+- `Documentation/v15m_single_defect_survival_runs.csv`
+- `Documentation/v15m_single_defect_survival_aggregate.csv`
+- `Documentation/v15m_single_defect_survival_target_summary.csv`
+- `Documentation/v0_15m_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

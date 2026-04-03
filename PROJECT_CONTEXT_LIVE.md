@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j` og `v15k` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l` og `v15m` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -243,6 +243,17 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Mechanism-holdout-v15j-summary: `Documentation/v15k_mechanism_holdout_v15j_summary.csv`
 - Mechanism-holdout-aggregate: `Documentation/v15k_mechanism_holdout_aggregate.csv`
 - Mechanism-holdout-anbefaling: `Documentation/v0_15k_operativ_anbefaling.md`
+- Holdout-failure-explainer-script: `relational_universe_v15l_holdout_failure_explainer.py`
+- Holdout-failure-explainer-rapport: `Documentation/v15l_holdout_failure_explainer.md`
+- Holdout-failure-comparison: `Documentation/v15l_holdout_failure_comparison.csv`
+- Holdout-failure-aggregate: `Documentation/v15l_holdout_failure_aggregate.csv`
+- Holdout-failure-anbefaling: `Documentation/v0_15l_operativ_anbefaling.md`
+- Single-defect-survival-script: `relational_universe_v15m_single_defect_survival_lab.py`
+- Single-defect-survival-rapport: `Documentation/v15m_single_defect_survival_lab.md`
+- Single-defect-survival-runs: `Documentation/v15m_single_defect_survival_runs.csv`
+- Single-defect-survival-aggregate: `Documentation/v15m_single_defect_survival_aggregate.csv`
+- Single-defect-survival-target-summary: `Documentation/v15m_single_defect_survival_target_summary.csv`
+- Single-defect-survival-anbefaling: `Documentation/v0_15m_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -588,6 +599,45 @@ Den riktige live-lesningen na er derfor:
 - `v15j` var nyttig som lokal forklaring, men ikke sterk nok som generalisert mekanismelov
 - vi bor ikke overdrive terskel- eller mekanismepaastander pa dette stadiet
 - neste naturlige steg er en mindre og mer forsiktig forklaringsrunde, eller et sideblikk til et annet defect-sporsmal, ikke mer generaliseringsretorikk
+
+`v15l` tok sa akkurat denne forklaringsrunden:
+
+- ingen ny bred simulering
+- bare sammenlikning av `v15j`-mekanismelesningen mot `v15k`-holdoutene
+- mal: forklare hvorfor generaliseringen brot sammen uten a late som signalet var vilkarlig
+
+Det viktigste fra `Documentation/v15l_holdout_failure_explainer.md` er:
+
+- holdout-bruddet kan forklares lokalt med noen fa bruddmodi, ikke bare som ustrukturert stoy
+- de to tydeligste driverne er `birth_death_intrusion` og `quiet_suffix_collapse`
+- dette redder ikke generaliseringspaastanden, men det gjor negative resultatet mer informativt
+
+Den riktige live-lesningen na er derfor:
+
+- `v15j` gir fortsatt nyttig lokal forklaring
+- `v15k` viser at forklaringen ikke generaliserer rent
+- `v15l` viser at dette bruddet likevel har lokal struktur
+- neste naturlige steg kan derfor vaere et nytt defect-sporsmal, ikke bare mer av samme collision-generaliseringslinje
+
+`v15m` tok sa nettopp dette sideblikket:
+
+- behold `band_zero_del` som arbeidsregime
+- bytt bort fra kollisjonssporet
+- test om `token_shift` har en egen survival/extinction-dynamikk, med `add_chord` som levende kontroll
+
+Det viktigste fra `Documentation/v15m_single_defect_survival_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `token_shift` viser noe extinction (`0.167` ved `48`, `0.083` ved `96`)
+- men `token_shift` skiller seg ikke rent nok fra `add_chord` til a bære et eget sterkt survival/extinction-spor ennå
+- `add_chord` holder seg levende i alle runene i denne runden
+
+Den riktige live-lesningen na er derfor:
+
+- dette er et ekte nytt defect-sporsmal, ikke mer kollisjonsretorikk
+- `token_shift` er interessant fordi det fortsatt er den skjoreste familien
+- men survival/extinction-signalet er fortsatt for svakt til sterke paastander
+- neste naturlige steg bor vaere et nytt defect-sporsmal eller en mer forsiktig survival-oppfolging, ikke survival-claiming i bredde
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

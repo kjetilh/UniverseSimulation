@@ -1,0 +1,5 @@
+trace_label,pair_label,prefix_chain_label,anchor_mechanism_label,holdout_mechanism_label,primary_break_driver,break_driver_tokens,delta_segment_count,delta_total_major_events,delta_topology_change_count,delta_quiet_suffix_steps,delta_birth_death_segment_rate
+pair23_compress_split_rebind_holdout,2-3,compress_split_rebind,fragmenting_repair_cycle,mixed_mechanism,quiet_suffix_collapse,"quiet_suffix_collapse,segment_complexity_growth,event_overload,topology_churn_growth",1.0,15.0,6.0,-68.0,0.0
+pair23_merge_hold_split_holdout,2-3,merge_hold_split,balanced_rebound_cycle,mixed_mechanism,birth_death_intrusion,birth_death_intrusion,0.0,-10.0,-12.0,16.0,1.0
+pair23_split_persistent_dual_holdout,2-3,split_persistent_dual,quiet_relaxation_lock,mixed_mechanism,birth_death_intrusion,"birth_death_intrusion,segment_complexity_growth,topology_churn_growth",2.0,6.0,6.0,-152.0,1.0
+pair34_split_persistent_dual_holdout,3-4,split_persistent_dual,fragmenting_repair_cycle,mixed_mechanism,quiet_suffix_collapse,quiet_suffix_collapse,0.0,-9.0,-8.0,-146.0,0.0
