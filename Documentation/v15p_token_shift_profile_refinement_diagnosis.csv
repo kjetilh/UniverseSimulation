@@ -1,0 +1,3 @@
+fragile_role,control_role,token_fragile_extinction_rate,token_control_extinction_rate,token_extinction_gap,add_fragile_extinction_rate,add_control_extinction_rate,add_extinction_gap,status
+fragile_p3,control_ball3_p1,0.1875,0.3125,-0.125,0.0,0.0,0.0,no_clean_gap
+fragile_p3,control_adjacent_p4,0.1875,0.25,-0.0625,0.0,0.0,0.0,no_clean_gap

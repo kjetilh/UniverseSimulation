@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n` og `v15o` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o` og `v15p` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -270,6 +270,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Token-shift-fragility-pair-diagnosis: `Documentation/v15o_token_shift_fragility_pair_diagnosis.csv`
 - Token-shift-fragility-replication-target-summary: `Documentation/v15o_token_shift_fragility_target_summary.csv`
 - Token-shift-fragility-replication-anbefaling: `Documentation/v0_15o_operativ_anbefaling.md`
+- Token-shift-profile-refinement-script: `relational_universe_v15p_token_shift_profile_refinement.py`
+- Token-shift-profile-refinement-rapport: `Documentation/v15p_token_shift_profile_refinement.md`
+- Token-shift-profile-refinement-runs: `Documentation/v15p_token_shift_profile_refinement_runs.csv`
+- Token-shift-profile-refinement-aggregate: `Documentation/v15p_token_shift_profile_refinement_aggregate.csv`
+- Token-shift-profile-refinement-diagnosis: `Documentation/v15p_token_shift_profile_refinement_diagnosis.csv`
+- Token-shift-profile-refinement-target-summary: `Documentation/v15p_token_shift_profile_refinement_target_summary.csv`
+- Token-shift-profile-refinement-anbefaling: `Documentation/v0_15p_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -695,6 +702,25 @@ Den riktige live-lesningen na er derfor:
 - `token_shift`-skjorheten ser delvis replikert ut som lokal profil, ikke bare som enkeltoffset-stoy
 - men bare en av de tre profilene holder som tydelig skjore profil sa langt
 - neste naturlige steg bor vaere en enda smalere profilrunde rundt den sterkeste kandidaten, med bedre lokalt matchede kontroller, ikke brede survival-paastander
+
+`v15p` tok sa denne mikro-raffineringen direkte:
+
+- bare den sterkeste kandidaten fra `v15o`: `target 48`, `growth_seed 101`, `token_shift` pa `p3`
+- to bedre matchede levende kontroller pa samme base: `p1` og `p4`
+- samme replikeringslogikk, men uten a late som en svak lokal profil allerede er generalisert
+
+Det viktigste fra `Documentation/v15p_token_shift_profile_refinement.md` er:
+
+- artifact-control holder fortsatt rent
+- den antatt skjore `p3`-profilen holder ikke extinction-gap mot de bedre matchede kontrollene
+- `token_shift` extinction blir `0.188` for `p3`, men `0.312` for `p1` og `0.250` for `p4`
+- `add_chord` holder fortsatt `0.000` extinction over alle tre profiler
+
+Den riktige live-lesningen na er derfor:
+
+- `v15o` sitt delvise lokale fragility-signal var nyttig, men ikke robust nok til a overleve bedre matchende kontroller
+- den mest lovende token_shift-profilen holder derfor ikke som ren lokal skjorehetsprofil
+- neste naturlige steg bor vaere et annet smalt defect-sporsmal, ikke mer token_shift-fragility langs denne linjen
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

@@ -583,6 +583,46 @@ Viktige filer:
 - `Documentation/v15o_token_shift_fragility_target_summary.csv`
 - `Documentation/v0_15o_operativ_anbefaling.md`
 
+## 0q. v15p viste at den beste token_shift-profilen ikke holder mot bedre kontroller
+
+Etter at `v15o` ga ett tydelig og to svake lokale fragility-profiler, tok `v15p` neste naturlige steg:
+
+- bare den sterkeste kandidaten:
+  - `target 48`
+  - `growth_seed 101`
+  - `token_shift` pa placement `3`
+- to bedre matchede levende kontroller pa samme base:
+  - `p1`, valgt fordi den matcher `support_ball_3`
+  - `p4`, valgt fordi den er lokal og grad-naer
+- samme replikeringslogikk, men enda smalere og mer kontrollert
+
+Det viktigste resultatet er negativt, men nyttig:
+
+- artifact-control holder fortsatt rent
+- den antatt skjore `p3`-profilen holder ikke extinction-gap mot de bedre matchede kontrollene
+- `token_shift` extinction blir:
+  - `0.188` for `p3`
+  - `0.312` for `p1`
+  - `0.250` for `p4`
+- `add_chord` holder fortsatt `0.000` extinction over alle tre profiler
+
+Dette betyr:
+
+- `v15o` sitt delvise lokale fragility-signal var ekte nok til a teste videre
+- men den beste kandidaten overlevde ikke bedre kontrollmatching
+- token_shift-fragility langs denne profillinjen er derfor ikke sterk nok som neste hovedspor
+- neste riktige steg er et nytt smalt defect-sporsmal, ikke mer token_shift-fragility langs samme akse
+
+Viktige filer:
+
+- `relational_universe_v15p_token_shift_profile_refinement.py`
+- `Documentation/v15p_token_shift_profile_refinement.md`
+- `Documentation/v15p_token_shift_profile_refinement_runs.csv`
+- `Documentation/v15p_token_shift_profile_refinement_aggregate.csv`
+- `Documentation/v15p_token_shift_profile_refinement_diagnosis.csv`
+- `Documentation/v15p_token_shift_profile_refinement_target_summary.csv`
+- `Documentation/v0_15p_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

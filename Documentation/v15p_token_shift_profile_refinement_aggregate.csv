@@ -1,0 +1,7 @@
+profile_role,requested_perturbation,n_runs,strict_match_rate,extinction_rate,persistent_split_tail_rate,persistent_diffuse_tail_rate,quiet_singleton_tail_rate,mean_first_zero_step,mean_support_ball_3,mean_support_degree,dominant_tail_label
+control_adjacent_p4,add_chord,16,1.0,0.0,0.4375,0.4375,0.0,nan,38.0,5.333333333333333,persistent_split_tail
+control_adjacent_p4,token_shift,16,1.0,0.25,0.375,0.125,0.0,50.0,31.0,6.0,persistent_split_tail
+control_ball3_p1,add_chord,16,1.0,0.0,0.5625,0.375,0.0,nan,37.0,5.0,persistent_split_tail
+control_ball3_p1,token_shift,16,1.0,0.3125,0.5,0.1875,0.0,32.0,33.0,5.0,persistent_split_tail
+fragile_p3,add_chord,16,1.0,0.0,0.1875,0.5,0.0,nan,35.0,4.333333333333333,persistent_diffuse_tail
+fragile_p3,token_shift,16,1.0,0.1875,0.3125,0.4375,0.0,80.0,33.0,5.5,persistent_diffuse_tail
