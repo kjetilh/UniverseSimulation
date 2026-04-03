@@ -1,0 +1,4 @@
+pair_id,target_nodes,growth_seed,fragile_placement,control_placement,fragile_support_signature,control_support_signature,fragile_support_ball_3,control_support_ball_3,fragile_support_degree,control_support_degree,matching_distance
+t48_g101_p3_vs_p4,48,101,3,4,"2,3","6,7",33.0,31.0,5.5,6.0,4.0
+t48_g202_p0_vs_p3,48,202,0,3,"6,8","6,19",33.0,29.0,7.5,7.0,8.0
+t96_g202_p5_vs_p4,96,202,5,4,"1,43","3,4",36.0,30.0,4.0,4.0,8.0

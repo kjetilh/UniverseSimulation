@@ -546,6 +546,43 @@ Viktige filer:
 - `Documentation/v15n_token_shift_fragility_target_summary.csv`
 - `Documentation/v0_15n_operativ_anbefaling.md`
 
+## 0p. v15o replikerte de skjore token_shift-profilene mer direkte
+
+Etter at `v15n` antydet at `token_shift`-extinction kunne vaere delvis plassering-/stottestruert, tok `v15o` neste naturlige steg:
+
+- behold bare de tre extinct `token_shift`-profilene fra `v15n`
+- match hver av dem mot en levende `token_shift`-kontroll pa samme base
+- rerun begge med flere seeds
+- behold `add_chord` pa de samme plasseringene som levende kontrollfamilie
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- den sterkeste skjore profilen replikerer rent:
+  - `t48_g101_p3_vs_p4`
+  - `token_shift`: `0.250` extinction mot `0.000` for kontrollen
+- de to andre profilene replikerer bare svakt:
+  - `0.250` mot `0.125`
+- `add_chord` holder fortsatt `0.000` extinction i alle de replikerte profilene
+
+Dette betyr:
+
+- `v15n` sitt fragility-spor var ikke bare enkeltoffset-flaks
+- men replikasjonen er fortsatt bare delvis
+- én lokal skjorehetsprofil holder tydelig, to andre holder bare svakt
+- neste riktige steg er derfor en enda smalere profilrunde rundt den beste kandidaten, med bedre lokalt matchede kontroller, ikke brede survival-paastander
+
+Viktige filer:
+
+- `relational_universe_v15o_token_shift_fragility_replication.py`
+- `Documentation/v15o_token_shift_fragility_replication.md`
+- `Documentation/v15o_token_shift_fragility_profile_pairs.csv`
+- `Documentation/v15o_token_shift_fragility_replication_runs.csv`
+- `Documentation/v15o_token_shift_fragility_replication_aggregate.csv`
+- `Documentation/v15o_token_shift_fragility_pair_diagnosis.csv`
+- `Documentation/v15o_token_shift_fragility_target_summary.csv`
+- `Documentation/v0_15o_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

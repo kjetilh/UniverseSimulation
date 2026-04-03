@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m` og `v15n` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n` og `v15o` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -262,6 +262,14 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Token-shift-fragility-placement-contrast: `Documentation/v15n_token_shift_fragility_placement_contrast.csv`
 - Token-shift-fragility-target-summary: `Documentation/v15n_token_shift_fragility_target_summary.csv`
 - Token-shift-fragility-anbefaling: `Documentation/v0_15n_operativ_anbefaling.md`
+- Token-shift-fragility-replication-script: `relational_universe_v15o_token_shift_fragility_replication.py`
+- Token-shift-fragility-replication-rapport: `Documentation/v15o_token_shift_fragility_replication.md`
+- Token-shift-fragility-profile-pairs: `Documentation/v15o_token_shift_fragility_profile_pairs.csv`
+- Token-shift-fragility-replication-runs: `Documentation/v15o_token_shift_fragility_replication_runs.csv`
+- Token-shift-fragility-replication-aggregate: `Documentation/v15o_token_shift_fragility_replication_aggregate.csv`
+- Token-shift-fragility-pair-diagnosis: `Documentation/v15o_token_shift_fragility_pair_diagnosis.csv`
+- Token-shift-fragility-replication-target-summary: `Documentation/v15o_token_shift_fragility_target_summary.csv`
+- Token-shift-fragility-replication-anbefaling: `Documentation/v0_15o_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -667,6 +675,26 @@ Den riktige live-lesningen na er derfor:
 - survival-sporet er fortsatt ikke en ren stor lov
 - men `token_shift`-skjorheten ser na mer lokalt strukturert ut enn i `v15m`
 - det riktige neste steget er en enda smalere token_shift-fragility-runde rundt de skjoreste stotteprofilene, ikke brede survival-paastander
+
+`v15o` tok sa nettopp denne smale replikeringsrunden:
+
+- behold bare de tre extinct `token_shift`-profilene fra `v15n`
+- match hver av dem mot en levende `token_shift`-kontroll pa samme base
+- rerun begge profilene med flere seeds
+- behold `add_chord` pa de samme plasseringene som levende kontrollfamilie
+
+Det viktigste fra `Documentation/v15o_token_shift_fragility_replication.md` er:
+
+- artifact-control holder fortsatt rent
+- den sterkeste skjore profilen (`t48_g101_p3_vs_p4`) replikerer med et rent token_shift-gap: `0.250` mot `0.000`
+- de to andre profilene replikerer bare svakt: `0.250` mot `0.125`
+- `add_chord` holder fortsatt `0.000` extinction i alle de replikerte profilene
+
+Den riktige live-lesningen na er derfor:
+
+- `token_shift`-skjorheten ser delvis replikert ut som lokal profil, ikke bare som enkeltoffset-stoy
+- men bare en av de tre profilene holder som tydelig skjore profil sa langt
+- neste naturlige steg bor vaere en enda smalere profilrunde rundt den sterkeste kandidaten, med bedre lokalt matchede kontroller, ikke brede survival-paastander
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
