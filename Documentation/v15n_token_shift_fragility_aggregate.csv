@@ -1,0 +1,5 @@
+requested_perturbation,target_nodes,n_runs,strict_match_rate,extinction_rate,persistent_split_tail_rate,persistent_diffuse_tail_rate,quiet_singleton_tail_rate,mean_support_ball_3,mean_support_degree,mean_tail_radius,dominant_tail_label
+add_chord,48,14,1.0,0.0,0.42857142857142855,0.5,0.0,31.5,4.785714285714286,5.232718894009217,persistent_diffuse_tail
+add_chord,96,15,1.0,0.0,1.0,0.0,0.0,43.4,5.666666666666667,6.7612903225806456,persistent_split_tail
+token_shift,48,14,1.0,0.14285714285714285,0.42857142857142855,0.42857142857142855,0.0,27.571428571428573,5.0,6.623655913978495,persistent_split_tail
+token_shift,96,15,1.0,0.06666666666666667,0.8666666666666667,0.0,0.06666666666666667,35.6,5.433333333333334,7.221198156682028,persistent_split_tail

@@ -509,6 +509,43 @@ Viktige filer:
 - `Documentation/v15m_single_defect_survival_target_summary.csv`
 - `Documentation/v0_15m_operativ_anbefaling.md`
 
+## 0o. v15n gjorde survival-sporsmalet smalere og mer lokalt
+
+Etter at `v15m` viste at `token_shift` hadde noe extinction, men ikke nok til en ren survival-lov, tok `v15n` neste naturlige steg:
+
+- behold samme `band_zero_del`
+- behold `token_shift` som den skjoreste defect-familien
+- behold `add_chord` som levende kontroll
+- test om `token_shift`-skjorheten folger enkel lokal stottegeometri, i stedet for a late som signalet allerede er en generell family truth
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `token_shift` har fortsatt noe extinction:
+  - `0.143` ved `48`
+  - `0.067` ved `96`
+- `add_chord` holder seg fortsatt levende i hele runden
+- extinct `token_shift`-runs ser ikke helt tilfeldige ut; de har hoyere enkle stottegeometri-mal enn levende `token_shift`-runs
+- tre placements gir `token_shift extinct` samtidig som `add_chord` pa samme plassering fortsatt er levende
+
+Dette betyr:
+
+- `v15m` sitt survival-sporsmal blir ikke loest fullt ut
+- men `v15n` gjor det mer lokalt og mer forklarbart
+- `token_shift` ser na mer ut som en delvis plassering-/stottestruert skjorehetsfamilie enn som ren stoy
+- neste riktige steg er derfor en enda smalere token_shift-fragility-runde rundt de skjoreste stotteprofilene, ikke brede survival-paastander
+
+Viktige filer:
+
+- `relational_universe_v15n_token_shift_fragility_lab.py`
+- `Documentation/v15n_token_shift_fragility_lab.md`
+- `Documentation/v15n_token_shift_fragility_runs.csv`
+- `Documentation/v15n_token_shift_fragility_aggregate.csv`
+- `Documentation/v15n_token_shift_fragility_feature_summary.csv`
+- `Documentation/v15n_token_shift_fragility_placement_contrast.csv`
+- `Documentation/v15n_token_shift_fragility_target_summary.csv`
+- `Documentation/v0_15n_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

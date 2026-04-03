@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l` og `v15m` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m` og `v15n` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -254,6 +254,14 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Single-defect-survival-aggregate: `Documentation/v15m_single_defect_survival_aggregate.csv`
 - Single-defect-survival-target-summary: `Documentation/v15m_single_defect_survival_target_summary.csv`
 - Single-defect-survival-anbefaling: `Documentation/v0_15m_operativ_anbefaling.md`
+- Token-shift-fragility-script: `relational_universe_v15n_token_shift_fragility_lab.py`
+- Token-shift-fragility-rapport: `Documentation/v15n_token_shift_fragility_lab.md`
+- Token-shift-fragility-runs: `Documentation/v15n_token_shift_fragility_runs.csv`
+- Token-shift-fragility-aggregate: `Documentation/v15n_token_shift_fragility_aggregate.csv`
+- Token-shift-fragility-feature-summary: `Documentation/v15n_token_shift_fragility_feature_summary.csv`
+- Token-shift-fragility-placement-contrast: `Documentation/v15n_token_shift_fragility_placement_contrast.csv`
+- Token-shift-fragility-target-summary: `Documentation/v15n_token_shift_fragility_target_summary.csv`
+- Token-shift-fragility-anbefaling: `Documentation/v0_15n_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -638,6 +646,27 @@ Den riktige live-lesningen na er derfor:
 - `token_shift` er interessant fordi det fortsatt er den skjoreste familien
 - men survival/extinction-signalet er fortsatt for svakt til sterke paastander
 - neste naturlige steg bor vaere et nytt defect-sporsmal eller en mer forsiktig survival-oppfolging, ikke survival-claiming i bredde
+
+`v15n` tok sa denne mer forsiktige survival-oppfolgingen:
+
+- behold `band_zero_del`
+- behold `token_shift` som den skjoreste familien fra `v15m`
+- behold `add_chord` som levende kontroll
+- test om den lille extinction-andelen i `token_shift` folger lokal stottegeometri, i stedet for a late som det allerede er en ren familie-lov
+
+Det viktigste fra `Documentation/v15n_token_shift_fragility_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `token_shift` har fortsatt noe extinction (`0.143` ved `48`, `0.067` ved `96`)
+- `add_chord` holder fortsatt `0.000` extinction i denne runden
+- extinct `token_shift`-runs ligger ikke tilfeldig; de har gjennomgaende hoyere enkle stottegeometri-mal enn de levende `token_shift`-runene
+- tre placements gir eksplisitt `token_shift extinct` samtidig som `add_chord` pa samme plassering holder seg levende
+
+Den riktige live-lesningen na er derfor:
+
+- survival-sporet er fortsatt ikke en ren stor lov
+- men `token_shift`-skjorheten ser na mer lokalt strukturert ut enn i `v15m`
+- det riktige neste steget er en enda smalere token_shift-fragility-runde rundt de skjoreste stotteprofilene, ikke brede survival-paastander
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
