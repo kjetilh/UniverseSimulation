@@ -308,6 +308,40 @@ Viktige filer:
 - `Documentation/v15g_collision_genealogy_event_chains.csv`
 - `Documentation/v0_15g_operativ_anbefaling.md`
 
+## 0i. v15h flyttet spørsmalet fra label-miks til representative langtrajektorier
+
+Etter at `v15g` viste at de gamle `mixed_window`-utfallene kunne brytes ned i noen fa genealogy-kjeder, tok `v15h` neste smale steg:
+
+- behold `band_zero_del`
+- behold `add_chord`
+- behold matched single/pair-run-oppsettet
+- velg bare noen fa representative traces fra `v15g`
+- kjor dem mye lenger med de samme genealogy-observablene
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- alle de valgte representative tracene reproduserer forventet `v15g`-chain pa prefix-horisonten
+- de tidlige chain-navnene holder seg ogsa pa full horisont for disse tracene
+- men senfasen kollapser ikke til ett felles tail-mønster
+  - noen traces ender i `rebound_merge_tail`
+  - andre ender i `mixed_tail`
+
+Dette betyr:
+
+- `v15h` styrker at collision-sporet er mer enn bare coarse labels
+- men det sier ogsa at neste informasjonsgevinst trolig ligger i tettere trace-genealogi og senfaseanalyse, ikke i ny bred pair-scan
+- prosjektet bor derfor fortsatt lese defect-sporet som "strukturert men ikke rent artdelt"
+
+Viktige filer:
+
+- `relational_universe_v15h_representative_collision_traces.py`
+- `Documentation/v15h_representative_collision_traces.md`
+- `Documentation/v15h_representative_trace_component_trajectories.csv`
+- `Documentation/v15h_representative_trace_event_log.csv`
+- `Documentation/v15h_representative_trace_summary.csv`
+- `Documentation/v0_15h_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
