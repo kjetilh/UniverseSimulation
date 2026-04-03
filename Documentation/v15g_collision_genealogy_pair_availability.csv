@@ -1,0 +1,5 @@
+ensemble,target_nodes,growth_seed,pair_label,pair_available,min_support_distance,support_a_size,support_b_size
+natural48_deep,48,101,2-3,1,4,3,3
+natural48_deep,48,101,3-4,1,1,3,3
+natural48_deep,48,202,2-3,0,-1,-1,-1
+natural48_deep,48,202,3-4,1,3,3,3

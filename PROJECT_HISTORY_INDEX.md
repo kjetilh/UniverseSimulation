@@ -273,6 +273,41 @@ Viktige filer:
 - `Documentation/v15f_pair23_availability.csv`
 - `Documentation/v0_15f_operativ_anbefaling.md`
 
+## 0h. v15g byttet fra coarse labels til genealogy og event-kjeder
+
+Etter at `v15f` viste avtagende verdi i mer av samme mikrobudsjett, tok `v15g` et smalt, men metodisk viktig skifte:
+
+- behold `band_zero_del`
+- behold `add_chord`
+- behold matched single/pair-run-oppsettet
+- behold den smale `48`-korridoren
+- men la component trajectories, event-logg og event-kjeder vaere hovedproduktet
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- begge pair-familiene finnes pa den delte `101`-basen
+- `order_ambiguous_count = 0` for begge pair-familiene
+- de gamle `mixed_window`-utfallene blir mer strukturert under genealogy-lesning
+  - `2-3`: `compress_split_rebind = 0.333`, `merge_hold_split = 0.333`, `split_persistent_dual = 0.333`
+  - `3-4`: `compress_split_rebind = 0.333`, `split_persistent_dual = 0.667`
+
+Dette betyr:
+
+- defect-sporet blir mer informativt enn i `v15e`/`v15f`
+- men pair-familiene kollapser fortsatt ikke til helt rene arter
+- neste riktige steg er derfor ikke mer pair-offset-sok, men lengre representative trajectories med de samme observablene
+
+Viktige filer:
+
+- `relational_universe_v15g_collision_genealogy_lab.py`
+- `Documentation/v15g_collision_genealogy_lab.md`
+- `Documentation/v15g_collision_genealogy_component_trajectories.csv`
+- `Documentation/v15g_collision_genealogy_event_log.csv`
+- `Documentation/v15g_collision_genealogy_event_aggregate.csv`
+- `Documentation/v15g_collision_genealogy_event_chains.csv`
+- `Documentation/v0_15g_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

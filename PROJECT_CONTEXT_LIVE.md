@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e` og `v15f` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f` og `v15g` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -210,6 +210,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Pair 2-3 budget-extension-rows: `Documentation/v15f_pair23_rows.csv`
 - Pair 2-3 budget-extension-aggregate: `Documentation/v15f_pair23_aggregate.csv`
 - Pair 2-3 budget-extension-anbefaling: `Documentation/v0_15f_operativ_anbefaling.md`
+- Collision genealogy-script: `relational_universe_v15g_collision_genealogy_lab.py`
+- Collision genealogy-rapport: `Documentation/v15g_collision_genealogy_lab.md`
+- Collision genealogy-component-trajectories: `Documentation/v15g_collision_genealogy_component_trajectories.csv`
+- Collision genealogy-event-log: `Documentation/v15g_collision_genealogy_event_log.csv`
+- Collision genealogy-event-aggregate: `Documentation/v15g_collision_genealogy_event_aggregate.csv`
+- Collision genealogy-event-chains: `Documentation/v15g_collision_genealogy_event_chains.csv`
+- Collision genealogy-anbefaling: `Documentation/v0_15g_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -439,6 +446,30 @@ Den riktige live-lesningen nå er derfor:
 - mer budsjett på `2-3` gjorde ikke signalet renere
 - denne mikroraffineringen ser ut til å ha avtagende verdi
 - neste naturlige steg er trolig ikke enda mer av samme type budsjett, men enten lengre enkelttrajektorier eller et nytt defect-spørsmål
+
+`v15g` tok så dette skiftet direkte:
+
+- samme `band_zero_del`
+- samme `add_chord`
+- samme matched single/pair-run-oppsett
+- samme smale `48`-korridor med bare pair `2-3` og `3-4`
+- men genealogy, event-logg og event-kjeder som hovedprodukt i stedet for bare coarse window-klasser
+
+Det viktigste fra `Documentation/v15g_collision_genealogy_lab.md` er:
+
+- artifact-control er fortsatt `clean`
+- begge pair-familiene finnes på den delte `101`-basen
+- `order_ambiguous_count = 0` for begge pair-familiene
+- genealogy-sporingen reduserer faktisk de gamle `mixed_window`-utfallene:
+  - `2-3`: `compress_split_rebind = 0.333`, `merge_hold_split = 0.333`, `split_persistent_dual = 0.333`
+  - `3-4`: `compress_split_rebind = 0.333`, `split_persistent_dual = 0.667`
+- de gamle coarse vindusklassene er fortsatt blandede (`old_window_mixed_rate = 0.500` for begge), men genealogy-bildet er mer strukturert enn før
+
+Den riktige live-lesningen nå er derfor:
+
+- `v15g` reduserer usikkerheten reelt
+- men pair-familiene kollapser fortsatt ikke til helt rene arter
+- det mest informative neste steget er ikke mer pair-offset-søk, men lengre representative trajectories med de samme genealogy-observablene
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

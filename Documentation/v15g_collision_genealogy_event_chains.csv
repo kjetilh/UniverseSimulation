@@ -1,0 +1,11 @@
+pair_label,chain_label,n_runs,rate
+2-3,compress_split_rebind,2,0.3333333333333333
+2-3,merge_hold_split,2,0.3333333333333333
+2-3,split_persistent_dual,2,0.3333333333333333
+2-3,split_fragment,0,0.0
+2-3,heterogeneous,0,0.0
+3-4,compress_split_rebind,2,0.3333333333333333
+3-4,merge_hold_split,0,0.0
+3-4,split_persistent_dual,4,0.6666666666666666
+3-4,split_fragment,0,0.0
+3-4,heterogeneous,0,0.0
