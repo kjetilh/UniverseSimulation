@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er separert og matched AB/BA-control holder seg samkjørt i den smale 48-runden.
+pair_family_signal,pair_families_still_mixed,"`2-3` og `3-4` er fortsatt blandet (2-3 compress_then_split 0.333, 3-4 binding 0.083)."
+next_step,increase_per_pair_budget,"Neste steg bør være mer budsjett per pair eller enda færre, men mer kontrollerte run-seeds."

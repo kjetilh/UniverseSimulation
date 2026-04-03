@@ -1,0 +1,3 @@
+pair_label,n_runs,mean_min_union_jaccard,mean_final_union_jaccard,mean_window_pair_minus_union_components,mean_final_pair_minus_union_components,binding_rate,fragment_rate,compress_then_split_rate,mixed_rate,dominant_window_class
+2-3,6,0.20215018978605936,0.557469470732039,0.8333333333333334,2.0,0.0,0.0,0.3333333333333333,0.5,mixed_window
+3-4,12,0.20300693413028376,0.47611675015618393,1.9166666666666667,0.25,0.08333333333333333,0.08333333333333333,0.0,0.6666666666666666,mixed_window

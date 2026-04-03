@@ -212,6 +212,36 @@ Viktige filer:
 - `Documentation/v15d_collision_window_aggregate.csv`
 - `Documentation/v0_15d_operativ_anbefaling.md`
 
+## 0f. v15e viste at pair-familiene fortsatt er blandet
+
+Etter at `v15d` pekte på to mer interessante 48-pair-familier, tok `v15e` neste smale steg:
+
+- bare target `48`
+- bare pair `2-3` og `3-4`
+- mer budsjett per pair
+- samme matched AB/BA-oppsett og samme vindusklassifisering
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `2-3` heller litt mot `compress_then_split`, men ikke rent nok (`0.333`)
+- `3-4` bekrefter ikke en ren binding-familie (`binding = 0.083`)
+- begge pair-familiene forblir dominert av `mixed_window`
+
+Dermed ble defect-sporet strammet inn enda et hakk:
+
+- `2-3` er fortsatt den mest lovende videre oppfølgingsfamilien
+- `3-4` ser mer heterogen ut enn vi håpet
+- neste riktige steg er derfor enda mer budsjett på `2-3`, ikke mer bredde
+
+Viktige filer:
+
+- `relational_universe_v15e_pair_family_refinement.py`
+- `Documentation/v15e_pair_family_refinement.md`
+- `Documentation/v15e_pair_family_rows.csv`
+- `Documentation/v15e_pair_family_aggregate.csv`
+- `Documentation/v0_15e_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
