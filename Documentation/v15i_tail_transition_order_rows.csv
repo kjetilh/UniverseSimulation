@@ -1,0 +1,9 @@
+trace_label,pair_label,order,expected_prefix_chain,prefix_chain_label,full_chain_label,tail_start_step,tail_snapshot_count,split_count,merge_count,birth_count,death_count,total_major_events,topology_change_count,tail_dual_fraction,final_component_count,final_total_defect_mass,last_major_step,quiet_suffix_steps,tail_transition_label
+pair23_merge_hold_split,2-3,ab,merge_hold_split,merge_hold_split,merge_hold_split,946,158,9,9,0,0,18,16,0.310126582278481,1,44,1204,56,merge_rebound_lock
+pair23_merge_hold_split,2-3,ba,merge_hold_split,merge_hold_split,merge_hold_split,946,158,9,9,0,0,18,16,0.310126582278481,1,44,1204,56,merge_rebound_lock
+pair23_compress_split_rebind,2-3,ab,compress_split_rebind,compress_split_rebind,compress_split_rebind,946,158,4,3,1,2,10,10,0.31645569620253167,1,42,1168,92,fragmenting_lock
+pair23_compress_split_rebind,2-3,ba,compress_split_rebind,compress_split_rebind,compress_split_rebind,946,158,4,3,1,2,10,10,0.31645569620253167,1,42,1168,92,fragmenting_lock
+pair23_split_persistent_dual,2-3,ab,split_persistent_dual,split_persistent_dual,split_persistent_dual,946,158,0,0,0,0,0,0,0.0,1,48,-1,314,quiet_singleton_lock
+pair23_split_persistent_dual,2-3,ba,split_persistent_dual,split_persistent_dual,split_persistent_dual,946,158,0,0,0,0,0,0,0.0,1,48,-1,314,quiet_singleton_lock
+pair34_split_persistent_dual,3-4,ab,split_persistent_dual,split_persistent_dual,split_persistent_dual,946,158,4,4,3,4,15,14,0.45569620253164556,1,47,1112,148,fragmenting_lock
+pair34_split_persistent_dual,3-4,ba,split_persistent_dual,split_persistent_dual,split_persistent_dual,946,158,4,4,3,4,15,14,0.45569620253164556,1,47,1112,148,fragmenting_lock

@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g` og `v15h` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h` og `v15i` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -223,6 +223,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Representative trace-event-log: `Documentation/v15h_representative_trace_event_log.csv`
 - Representative trace-summary: `Documentation/v15h_representative_trace_summary.csv`
 - Representative trace-anbefaling: `Documentation/v0_15h_operativ_anbefaling.md`
+- Tail-transition-script: `relational_universe_v15i_tail_transition_lab.py`
+- Tail-transition-rapport: `Documentation/v15i_tail_transition_lab.md`
+- Tail-transition-order-rows: `Documentation/v15i_tail_transition_order_rows.csv`
+- Tail-transition-segments: `Documentation/v15i_tail_transition_segments.csv`
+- Tail-transition-summary: `Documentation/v15i_tail_transition_summary.csv`
+- Tail-transition-aggregate: `Documentation/v15i_tail_transition_aggregate.csv`
+- Tail-transition-anbefaling: `Documentation/v0_15i_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -498,6 +505,31 @@ Den riktige live-lesningen na er derfor:
 - `v15h` styrker at collision-sporet ikke bare er et coarse label-fenomen
 - men det peker ogsa mot at forskjellen mellom representative forlop ligger mer i sen genealogisk morfologi enn i a lete etter enda flere pair-offsets
 - neste naturlige steg er a folge trace-genealogiene enda mer direkte, ikke starte ny bred pair-scan
+
+`v15i` tok sa dette neste smale steget direkte:
+
+- ikke ny simulering i bredde
+- bare analyse av de representative `v15h`-trace-ne
+- eksplisitt fokus pa senfase-overganger
+- mål: gjore `mixed_tail` og `rebound_merge_tail` mer presise
+
+Det viktigste fra `Documentation/v15i_tail_transition_lab.md` er:
+
+- artifact-control er fortsatt `clean`
+- tail-overgangene er order-stabile
+- `v15h` sine grove tail-typer brytes videre ned i tre repeterbare overgangstyper:
+  - `quiet_singleton_lock`
+  - `merge_rebound_lock`
+  - `fragmenting_lock`
+- `pair23_split_persistent_dual` ender som `quiet_singleton_lock`
+- `pair23_merge_hold_split` ender som `merge_rebound_lock`
+- `pair23_compress_split_rebind` og `pair34_split_persistent_dual` ender som `fragmenting_lock`
+
+Den riktige live-lesningen na er derfor:
+
+- defect-sporet blir mer forklarbart i senfasen enn i `v15h`
+- forskjellen mellom representative traces ser ut til a ligge i repeterbare tail-overganger, ikke bare i tidlige coarse chain-navn
+- neste naturlige steg er a forklare disse overgangene eksplisitt med hendelseskjeder og segmenter, ikke a starte ny pair-scan
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

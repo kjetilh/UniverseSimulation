@@ -1,0 +1,4 @@
+tail_transition_label,n_traces,rate,mean_total_major_events,mean_topology_change_count,mean_tail_dual_fraction,mean_quiet_suffix_steps
+fragmenting_lock,2,0.5,12.5,12.0,0.3860759493670886,120.0
+merge_rebound_lock,1,0.25,18.0,16.0,0.310126582278481,56.0
+quiet_singleton_lock,1,0.25,0.0,0.0,0.0,314.0

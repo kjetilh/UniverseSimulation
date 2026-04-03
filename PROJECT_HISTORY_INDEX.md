@@ -342,6 +342,41 @@ Viktige filer:
 - `Documentation/v15h_representative_trace_summary.csv`
 - `Documentation/v0_15h_operativ_anbefaling.md`
 
+## 0j. v15i gjorde senfasen skarpere enn `mixed_tail` og `rebound_merge_tail`
+
+Etter at `v15h` viste at representative collisions ikke kollapser til én felles senfase, tok `v15i` neste smale steg:
+
+- ingen ny bred simuleringsrunde
+- bare analyse av `v15h`-trace-ne
+- eksplisitt fokus pa tail-overganger og senfase-segmenter
+
+Det viktigste resultatet er:
+
+- tail-overgangene er order-stabile
+- de grove `v15h`-typene brytes videre ned i tre repeterbare senfase-overganger:
+  - `quiet_singleton_lock`
+  - `merge_rebound_lock`
+  - `fragmenting_lock`
+- `pair23_split_persistent_dual` viser en stillere singleton-lock
+- `pair23_merge_hold_split` viser en tydelig merge/rebound-lock
+- `pair23_compress_split_rebind` og `pair34_split_persistent_dual` ender i mer fragmenterende lock-forlop
+
+Dette betyr:
+
+- collision-sporet blir mer forklarbart uten ny bredde
+- senfaseforskjellen mellom representative traces er ikke bare "mixed" mot "rebound", men minst tre repeterbare overgangstyper
+- neste riktige steg er derfor a forklare disse overgangene med eksplisitte hendelsessegmenter og eventuelle terskelmekanismer, ikke flere pair-offset-sok
+
+Viktige filer:
+
+- `relational_universe_v15i_tail_transition_lab.py`
+- `Documentation/v15i_tail_transition_lab.md`
+- `Documentation/v15i_tail_transition_order_rows.csv`
+- `Documentation/v15i_tail_transition_segments.csv`
+- `Documentation/v15i_tail_transition_summary.csv`
+- `Documentation/v15i_tail_transition_aggregate.csv`
+- `Documentation/v0_15i_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
