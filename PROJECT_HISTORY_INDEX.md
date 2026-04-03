@@ -411,6 +411,39 @@ Viktige filer:
 - `Documentation/v15j_tail_mechanism_aggregate.csv`
 - `Documentation/v0_15j_operativ_anbefaling.md`
 
+## 0l. v15k viste at v15j-mekanismene ikke generaliserer rent ennå
+
+Etter at `v15j` ga en pen lokal mekanikk-lesning av de fire representative tracene, tok `v15k` neste smale steg:
+
+- samme lange trace-oppsett
+- samme `band_zero_del`
+- men nye holdout-offsets fra de samme `v15g`-familiene
+- eksplisitt test av om `v15j`-mekanismene holder pa naerliggende eksempler
+
+Det viktigste resultatet er negativt, men verdifullt:
+
+- artifact-control holder fortsatt rent
+- holdout-tracene reproduserer forventet prefix-chain
+- men `v15j`-mekanismene generaliserer ikke rent
+- alle fire holdout-traces ender som `mixed_mechanism`
+- match-rate mot `v15j`-mekanismene er `0.000`
+
+Dette betyr:
+
+- `v15j` var nyttig som lokal forklaringsrunde
+- men repoet stotter ikke at disse mekanismene allerede er stabile "lover" for naerliggende traces
+- neste riktige steg er derfor en mer forsiktig og mindre generaliserende forklaringslinje, eller et nytt defect-sporsmal, ikke mer mekanismepastaand i bredde
+
+Viktige filer:
+
+- `relational_universe_v15k_mechanism_holdout_validation.py`
+- `Documentation/v15k_mechanism_holdout_validation.md`
+- `Documentation/v15k_mechanism_holdout_v15h_summary.csv`
+- `Documentation/v15k_mechanism_holdout_v15i_summary.csv`
+- `Documentation/v15k_mechanism_holdout_v15j_summary.csv`
+- `Documentation/v15k_mechanism_holdout_aggregate.csv`
+- `Documentation/v0_15k_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

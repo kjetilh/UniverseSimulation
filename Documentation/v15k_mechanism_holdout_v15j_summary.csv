@@ -1,0 +1,5 @@
+trace_label,pair_label,run_offset,prefix_chain_label,prefix_matches_expected,v15i_tail_transition_label,order_ambiguous_tail,expected_mechanism_label,observed_mechanism_label,matches_expected_mechanism,order_ambiguous_mechanism,mean_segment_count,mean_total_major_events,mean_topology_change_count,mean_quiet_suffix_steps,birth_death_segment_rate
+pair23_compress_split_rebind_holdout,2-3,23,compress_split_rebind,1,persistent_dual_tail,0,fragmenting_repair_cycle,mixed_mechanism,0,0,3.0,25.0,16.0,24.0,1.0
+pair23_merge_hold_split_holdout,2-3,17,merge_hold_split,1,fragmenting_lock,0,balanced_rebound_cycle,mixed_mechanism,0,0,2.0,8.0,4.0,72.0,1.0
+pair23_split_persistent_dual_holdout,2-3,29,split_persistent_dual,1,fragmenting_lock,0,quiet_relaxation_lock,mixed_mechanism,0,0,2.0,6.0,6.0,162.0,1.0
+pair34_split_persistent_dual_holdout,3-4,11,split_persistent_dual,1,mixed_tail_transition,0,fragmenting_repair_cycle,mixed_mechanism,0,0,1.0,6.0,6.0,2.0,1.0

@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i` og `v15j` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j` og `v15k` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -236,6 +236,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Tail-mechanism-summary: `Documentation/v15j_tail_mechanism_summary.csv`
 - Tail-mechanism-aggregate: `Documentation/v15j_tail_mechanism_aggregate.csv`
 - Tail-mechanism-anbefaling: `Documentation/v0_15j_operativ_anbefaling.md`
+- Mechanism-holdout-script: `relational_universe_v15k_mechanism_holdout_validation.py`
+- Mechanism-holdout-rapport: `Documentation/v15k_mechanism_holdout_validation.md`
+- Mechanism-holdout-v15h-summary: `Documentation/v15k_mechanism_holdout_v15h_summary.csv`
+- Mechanism-holdout-v15i-summary: `Documentation/v15k_mechanism_holdout_v15i_summary.csv`
+- Mechanism-holdout-v15j-summary: `Documentation/v15k_mechanism_holdout_v15j_summary.csv`
+- Mechanism-holdout-aggregate: `Documentation/v15k_mechanism_holdout_aggregate.csv`
+- Mechanism-holdout-anbefaling: `Documentation/v0_15k_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -560,6 +567,27 @@ Den riktige live-lesningen na er derfor:
 - defect-sporet er blitt enklere a forklare uten ny bredde
 - senfasen ser ut til a organiseres av noen fa repeterbare segmentmekanismer
 - neste naturlige steg er a teste hvilke terskler som utloser disse mekanismene, ikke a starte ny pair-scan
+
+`v15k` tok sa denne smale holdout-testen direkte:
+
+- samme `band_zero_del`
+- samme lange trace-oppsett
+- men nye, naerliggende holdout-offsets fra de samme `v15g`-familiene
+- mal: se om `v15j`-mekanismene faktisk generaliserer
+
+Det viktigste fra `Documentation/v15k_mechanism_holdout_validation.md` er:
+
+- artifact-control er fortsatt `clean`
+- holdout-tracene reproduserer forventet prefix-chain
+- men mekanismelesningen generaliserer ikke rent til holdout-tracene
+- alle fire holdout-traces ender som `mixed_mechanism`
+- holdout match-rate mot `v15j`-mekanismene er `0.000`
+
+Den riktige live-lesningen na er derfor:
+
+- `v15j` var nyttig som lokal forklaring, men ikke sterk nok som generalisert mekanismelov
+- vi bor ikke overdrive terskel- eller mekanismepaastander pa dette stadiet
+- neste naturlige steg er en mindre og mer forsiktig forklaringsrunde, eller et sideblikk til et annet defect-sporsmal, ikke mer generaliseringsretorikk
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

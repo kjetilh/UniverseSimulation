@@ -1,0 +1,2 @@
+target_nodes,growth_replicates,mean_initial_nodes,sd_initial_nodes,q10_initial_nodes,q90_initial_nodes,min_initial_nodes,max_initial_nodes,mean_initial_tokens,mean_initial_beta1,mean_initial_triangles,mean_initial_spectral_radius,mean_initial_dim_proxy,mean_initial_clustering,mean_initial_beta1_per_node,mean_initial_triangles_per_node,mean_initial_spectral_per_sqrtN,separated_from_prev
+48,1,48.0,0.0,48.0,48.0,48.0,48.0,7.0,5.0,5.0,3.6624842259740538,2.171680588566963,0.04241071428571428,0.10416666666666667,0.10416666666666667,0.5286340634422195,1
