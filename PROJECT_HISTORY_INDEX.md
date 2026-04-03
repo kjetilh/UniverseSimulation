@@ -377,6 +377,40 @@ Viktige filer:
 - `Documentation/v15i_tail_transition_aggregate.csv`
 - `Documentation/v0_15i_operativ_anbefaling.md`
 
+## 0k. v15j forklarte tail-overgangene med enklere segmentmekanismer
+
+Etter at `v15i` gjorde senfasen skarpere i tre tail-overganger, tok `v15j` neste smale steg:
+
+- ingen nye brede simuleringer
+- bare forklaring av `v15i`-tailene
+- eksplisitt fokus pa segmenter, eventlast og stille suffix
+
+Det viktigste resultatet er:
+
+- mekanismelabelene er order-stabile
+- de tre `v15i`-tail-overgangene kan forklares av tre enklere mekanismer:
+  - `quiet_relaxation_lock`
+  - `balanced_rebound_cycle`
+  - `fragmenting_repair_cycle`
+- `pair23_split_persistent_dual` blir en stille singleton-lock
+- `pair23_merge_hold_split` blir en balansert rebound-syklus uten birth/death
+- `pair23_compress_split_rebind` og `pair34_split_persistent_dual` blir mer fragmenterende repair-sykluser
+
+Dette betyr:
+
+- senfasen blir enklere a forklare enn i `v15i` alene
+- defect-sporet er na mer strukturert i form av noen fa repeterbare mekanismer
+- neste riktige steg er derfor terskeltesting: hva avgjor om et representativt trace havner i den ene eller andre mekanismen?
+
+Viktige filer:
+
+- `relational_universe_v15j_tail_mechanism_lab.py`
+- `Documentation/v15j_tail_mechanism_lab.md`
+- `Documentation/v15j_tail_mechanism_order_rows.csv`
+- `Documentation/v15j_tail_mechanism_summary.csv`
+- `Documentation/v15j_tail_mechanism_aggregate.csv`
+- `Documentation/v0_15j_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

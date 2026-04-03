@@ -1,0 +1,9 @@
+trace_label,pair_label,order,expected_prefix_chain,prefix_chain_label,full_chain_label,tail_transition_label,segment_count,max_segment_event_count,has_birth_death_segment,max_balance_gap,total_major_events,topology_change_count,quiet_suffix_steps,tail_mechanism_label
+pair23_merge_hold_split,2-3,ab,merge_hold_split,merge_hold_split,merge_hold_split,merge_rebound_lock,2,10,0,2,18,16,56,balanced_rebound_cycle
+pair23_merge_hold_split,2-3,ba,merge_hold_split,merge_hold_split,merge_hold_split,merge_rebound_lock,2,10,0,2,18,16,56,balanced_rebound_cycle
+pair23_compress_split_rebind,2-3,ab,compress_split_rebind,compress_split_rebind,compress_split_rebind,fragmenting_lock,2,8,1,1,10,10,92,fragmenting_repair_cycle
+pair23_compress_split_rebind,2-3,ba,compress_split_rebind,compress_split_rebind,compress_split_rebind,fragmenting_lock,2,8,1,1,10,10,92,fragmenting_repair_cycle
+pair23_split_persistent_dual,2-3,ab,split_persistent_dual,split_persistent_dual,split_persistent_dual,quiet_singleton_lock,0,0,0,0,0,0,314,quiet_relaxation_lock
+pair23_split_persistent_dual,2-3,ba,split_persistent_dual,split_persistent_dual,split_persistent_dual,quiet_singleton_lock,0,0,0,0,0,0,314,quiet_relaxation_lock
+pair34_split_persistent_dual,3-4,ab,split_persistent_dual,split_persistent_dual,split_persistent_dual,fragmenting_lock,1,15,1,2,15,14,148,fragmenting_repair_cycle
+pair34_split_persistent_dual,3-4,ba,split_persistent_dual,split_persistent_dual,split_persistent_dual,fragmenting_lock,1,15,1,2,15,14,148,fragmenting_repair_cycle

@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h` og `v15i` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i` og `v15j` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -230,6 +230,12 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Tail-transition-summary: `Documentation/v15i_tail_transition_summary.csv`
 - Tail-transition-aggregate: `Documentation/v15i_tail_transition_aggregate.csv`
 - Tail-transition-anbefaling: `Documentation/v0_15i_operativ_anbefaling.md`
+- Tail-mechanism-script: `relational_universe_v15j_tail_mechanism_lab.py`
+- Tail-mechanism-rapport: `Documentation/v15j_tail_mechanism_lab.md`
+- Tail-mechanism-order-rows: `Documentation/v15j_tail_mechanism_order_rows.csv`
+- Tail-mechanism-summary: `Documentation/v15j_tail_mechanism_summary.csv`
+- Tail-mechanism-aggregate: `Documentation/v15j_tail_mechanism_aggregate.csv`
+- Tail-mechanism-anbefaling: `Documentation/v0_15j_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -530,6 +536,30 @@ Den riktige live-lesningen na er derfor:
 - defect-sporet blir mer forklarbart i senfasen enn i `v15h`
 - forskjellen mellom representative traces ser ut til a ligge i repeterbare tail-overganger, ikke bare i tidlige coarse chain-navn
 - neste naturlige steg er a forklare disse overgangene eksplisitt med hendelseskjeder og segmenter, ikke a starte ny pair-scan
+
+`v15j` tok sa dette neste smale steget direkte:
+
+- ingen nye brede simuleringer
+- bare forklaring av `v15i`-tailene med eksplisitte segmentmekanismer
+- mål: gjore senfasen enklere a lese enn bare overgangsnavn
+
+Det viktigste fra `Documentation/v15j_tail_mechanism_lab.md` er:
+
+- artifact-control er fortsatt `clean`
+- mekanismelabelene er order-stabile
+- de tre `v15i`-tail-overgangene kan forklares av tre enklere segmentmekanismer:
+  - `quiet_relaxation_lock`
+  - `balanced_rebound_cycle`
+  - `fragmenting_repair_cycle`
+- `pair23_split_persistent_dual` leses na som `quiet_relaxation_lock`
+- `pair23_merge_hold_split` leses na som `balanced_rebound_cycle`
+- `pair23_compress_split_rebind` og `pair34_split_persistent_dual` leses na som `fragmenting_repair_cycle`
+
+Den riktige live-lesningen na er derfor:
+
+- defect-sporet er blitt enklere a forklare uten ny bredde
+- senfasen ser ut til a organiseres av noen fa repeterbare segmentmekanismer
+- neste naturlige steg er a teste hvilke terskler som utloser disse mekanismene, ikke a starte ny pair-scan
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

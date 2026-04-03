@@ -1,0 +1,4 @@
+tail_mechanism_label,n_traces,rate,mean_segment_count,mean_total_major_events,mean_topology_change_count,mean_quiet_suffix_steps
+balanced_rebound_cycle,1,0.25,2.0,18.0,16.0,56.0
+fragmenting_repair_cycle,2,0.5,1.5,12.5,12.0,120.0
+quiet_relaxation_lock,1,0.25,0.0,0.0,0.0,314.0
