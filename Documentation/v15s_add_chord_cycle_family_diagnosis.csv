@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er rent separert og alle lokale add_chord-profiler matcher ønsket perturbasjonstype.
+cycle_family_status,local_cycle_band,Det overlevende cycle-signalet sprer seg til minst én umiddelbar naboprofil på samme base.
+strongest_profile,p1,Sterkeste full-horisontprofil er plassering 1 med full_exact_return_rate=1.000.
+next_step,probe_cycle_band,Neste steg bør være en enda smalere kartlegging bare rundt det lokale cycle-båndet.

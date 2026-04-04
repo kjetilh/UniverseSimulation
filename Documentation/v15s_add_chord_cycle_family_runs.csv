@@ -1,0 +1,5 @@
+target_nodes,growth_seed,placement,run_seed,requested_match,support_signature,prefix_label,full_label,transition_label,prefix_exact_return_rate,prefix_coarse_return_rate,prefix_max_exact_return_jaccard,full_exact_return_rate,full_coarse_return_rate,full_max_exact_return_jaccard,full_first_exact_return_step,full_first_coarse_return_step
+48,202,0,5002000,1,"5,6,8",morphology_return,cyclic_return,morphology_tips_to_cycle,0.03076923076923077,0.8461538461538461,0.9545454545454546,0.9767441860465116,0.8837209302325582,1.0,1536.0,1536.0
+48,202,1,5002001,1,"6,8,10",morphology_return,cyclic_return,morphology_tips_to_cycle,0.15384615384615385,0.9230769230769231,0.9777777777777777,1.0,0.9612403100775194,1.0,1536.0,1536.0
+48,202,2,5002002,1,"5,6,14",cyclic_return,cyclic_return,sustained_cyclic_return,0.7230769230769231,1.0,1.0,0.9689922480620154,0.9612403100775194,1.0,1536.0,1536.0
+48,202,3,5002003,1,"5,6,19",morphology_return,cyclic_return,morphology_tips_to_cycle,0.03076923076923077,0.676923076923077,0.9512195121951219,0.6589147286821705,0.9534883720930233,1.0,1568.0,1536.0

@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p` og `v15q` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r` og `v15s` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -283,6 +283,18 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Single-defect-recurrence-aggregate: `Documentation/v15q_single_defect_recurrence_aggregate.csv`
 - Single-defect-recurrence-target-summary: `Documentation/v15q_single_defect_recurrence_target_summary.csv`
 - Single-defect-recurrence-anbefaling: `Documentation/v0_15q_operativ_anbefaling.md`
+- Add-chord-long-horizon-script: `relational_universe_v15r_add_chord_long_horizon_recurrence.py`
+- Add-chord-long-horizon-rapport: `Documentation/v15r_add_chord_long_horizon_recurrence.md`
+- Add-chord-long-horizon-runs: `Documentation/v15r_add_chord_long_horizon_runs.csv`
+- Add-chord-long-horizon-aggregate: `Documentation/v15r_add_chord_long_horizon_aggregate.csv`
+- Add-chord-long-horizon-target-summary: `Documentation/v15r_add_chord_long_horizon_target_summary.csv`
+- Add-chord-long-horizon-anbefaling: `Documentation/v0_15r_operativ_anbefaling.md`
+- Add-chord-cycle-family-script: `relational_universe_v15s_add_chord_cycle_family_map.py`
+- Add-chord-cycle-family-rapport: `Documentation/v15s_add_chord_cycle_family_map.md`
+- Add-chord-cycle-family-runs: `Documentation/v15s_add_chord_cycle_family_runs.csv`
+- Add-chord-cycle-family-diagnosis: `Documentation/v15s_add_chord_cycle_family_diagnosis.csv`
+- Add-chord-cycle-family-target-summary: `Documentation/v15s_add_chord_cycle_family_target_summary.csv`
+- Add-chord-cycle-family-anbefaling: `Documentation/v0_15s_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -748,6 +760,48 @@ Den riktige live-lesningen na er derfor:
 - recurrence/return-sporet er sterkere enn den siste token_shift-fragility-linjen
 - det vi ser er grov morfologisk retur, ikke en robust eksakt sykluslov
 - neste naturlige steg bor vaere en enda smalere retur-/recurrence-runde for `add_chord`, ikke brede defect-paastander
+
+`v15r` tok sa akkurat denne smale `add_chord`-oppfolgingen:
+
+- behold bare representative `add_chord`-profiler fra `v15q`
+- forleng horisonten kraftig i stedet for a aapne flere profiler
+- skil eksplisitt mellom prefix-retur og full-horisont-retur
+- bruk dette til a avgjore om cycle-signalet faktisk overlever
+
+Det viktigste fra `Documentation/v15r_add_chord_long_horizon_recurrence.md` er:
+
+- artifact-control holder fortsatt rent
+- minst en `add_chord`-profil holder ekte `cyclic_return` ogsa pa lang horisont
+- en sekundar syklisk kandidat mykner til `morphology_return`
+- to morfologiske kontrollprofiler tipper faktisk over til `cyclic_return` pa full horisont
+- dette betyr at lang-horisont-retur ikke bare er grov hale-stabilitet; det finnes en smal, ekte cycle-familie
+
+Den riktige live-lesningen na er derfor:
+
+- `add_chord`-recurrence er na det reneste aktive defect-sporet i repoet
+- signalet er fortsatt smalt og lokalt, ikke en generell lov for alle defects
+- neste naturlige steg bor vaere a kartlegge cycle-familien rundt den overlevende `add_chord`-profilen, ikke a gjenapne brede sweeps
+
+`v15s` tok sa nettopp denne family-mapen rundt den overlevende profilen:
+
+- behold bare samme base som i den sterkeste `v15r`-profilen: `target 48`, `growth_seed 202`
+- behold bare de fire lokale `add_chord`-plasseringene `0-3`
+- bruk samme lange horisont som i `v15r`
+- avgjor om `p2` er et enkelt lokalt unntak eller del av et lite cycle-band
+
+Det viktigste fra `Documentation/v15s_add_chord_cycle_family_map.md` er:
+
+- artifact-control holder fortsatt rent
+- alle fire lokale profiler tipper til eller holder `cyclic_return` pa full horisont
+- `p2` holder fortsatt som ekte `sustained_cyclic_return`
+- `p0`, `p1` og `p3` tipper fra `morphology_return` til `cyclic_return` pa full horisont
+- den sterkeste lokale profilen er faktisk `p1`, ikke `p2`
+
+Den riktige live-lesningen na er derfor:
+
+- `add_chord`-cycle-signalet er ikke bare ett enkelt punkt; det ser ut som et lite lokalt cycle-band pa samme base
+- dette er fortsatt en smal lokal familie, ikke en generell cycle-lov for `add_chord`
+- neste naturlige steg bor vaere en enda smalere kartlegging inne i dette lokale cycle-bandet, mest naturlig rundt `p1` og `p2`
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

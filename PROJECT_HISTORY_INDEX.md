@@ -657,6 +657,73 @@ Viktige filer:
 - `Documentation/v15q_single_defect_recurrence_target_summary.csv`
 - `Documentation/v0_15q_operativ_anbefaling.md`
 
+## 0s. v15r viste at en smal add_chord-cyclefamilie faktisk overlever pa lang horisont
+
+Etter at `v15q` fant grov morfologisk retur for alle tre single-defect-familiene, tok `v15r` neste naturlige steg:
+
+- behold bare noen fa representative `add_chord`-profiler fra `v15q`
+- folg dem lenger i tid i stedet for a aapne nye profiler
+- skil eksplisitt mellom prefix-retur og full-horisont-retur
+- avgjor om den beste cycle-kandidaten faktisk holder
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `t48_g202_p2` holder `cyclic_return` ogsa pa full horisont
+- `t96_g202_p3` starter som `cyclic_return`, men mykner til `morphology_return`
+- de to morfologiske kontrollprofilene tipper faktisk over til `cyclic_return` pa full horisont
+- anbefalingen blir derfor `long_horizon_recurrence = cyclic_return_survives`
+
+Dette betyr:
+
+- `v15q` sitt recurrence-spor var ikke bare grov hale-stabilitet
+- repoet har na ett ekte, men smalt, `add_chord`-cycle-signal
+- dette er fortsatt ikke en generell defect-lov eller partikkelpastand
+- neste riktige steg er a kartlegge cycle-familien lokalt rundt den overlevende profilen
+
+Viktige filer:
+
+- `relational_universe_v15r_add_chord_long_horizon_recurrence.py`
+- `Documentation/v15r_add_chord_long_horizon_recurrence.md`
+- `Documentation/v15r_add_chord_long_horizon_runs.csv`
+- `Documentation/v15r_add_chord_long_horizon_aggregate.csv`
+- `Documentation/v15r_add_chord_long_horizon_target_summary.csv`
+- `Documentation/v0_15r_operativ_anbefaling.md`
+
+## 0t. v15s viste at cycle-signalet er et lite lokalt band, ikke bare ett punkt
+
+Etter at `v15r` viste at minst én `add_chord`-profil holdt ekte `cyclic_return` pa lang horisont, tok `v15s` neste naturlige steg:
+
+- behold bare samme base: `target 48`, `growth_seed 202`
+- behold bare de fire lokale `add_chord`-plasseringene `0-3`
+- bruk samme lange horisont som i `v15r`
+- avgjor om `p2` er et enslig lokalt unntak eller del av en liten familie
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- alle fire lokale profiler ender som `cyclic_return` pa full horisont
+- `p2` holder som `sustained_cyclic_return`
+- `p0`, `p1` og `p3` tipper fra `morphology_return` til `cyclic_return`
+- den sterkeste lokale profilen er `p1`, ikke `p2`
+- diagnosen ender pa `local_cycle_band`
+
+Dette betyr:
+
+- `v15r` sitt cycle-signal var ikke bare ett heldig enkeltspor
+- repoet har na et smalt lokalt `add_chord`-cycle-band pa samme base
+- dette er fortsatt en lokal familie, ikke en generell sykluslov
+- neste riktige steg er en enda smalere kartlegging inne i bandet, mest naturlig rundt `p1` og `p2`
+
+Viktige filer:
+
+- `relational_universe_v15s_add_chord_cycle_family_map.py`
+- `Documentation/v15s_add_chord_cycle_family_map.md`
+- `Documentation/v15s_add_chord_cycle_family_runs.csv`
+- `Documentation/v15s_add_chord_cycle_family_diagnosis.csv`
+- `Documentation/v15s_add_chord_cycle_family_target_summary.csv`
+- `Documentation/v0_15s_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
