@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r` og `v15s` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s` og `v15t` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -295,6 +295,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-cycle-family-diagnosis: `Documentation/v15s_add_chord_cycle_family_diagnosis.csv`
 - Add-chord-cycle-family-target-summary: `Documentation/v15s_add_chord_cycle_family_target_summary.csv`
 - Add-chord-cycle-family-anbefaling: `Documentation/v0_15s_operativ_anbefaling.md`
+- Add-chord-cycle-center-script: `relational_universe_v15t_add_chord_cycle_center_holdout.py`
+- Add-chord-cycle-center-rapport: `Documentation/v15t_add_chord_cycle_center_holdout.md`
+- Add-chord-cycle-center-runs: `Documentation/v15t_add_chord_cycle_center_runs.csv`
+- Add-chord-cycle-center-aggregate: `Documentation/v15t_add_chord_cycle_center_aggregate.csv`
+- Add-chord-cycle-center-diagnosis: `Documentation/v15t_add_chord_cycle_center_diagnosis.csv`
+- Add-chord-cycle-center-target-summary: `Documentation/v15t_add_chord_cycle_center_target_summary.csv`
+- Add-chord-cycle-center-anbefaling: `Documentation/v0_15t_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -802,6 +809,28 @@ Den riktige live-lesningen na er derfor:
 - `add_chord`-cycle-signalet er ikke bare ett enkelt punkt; det ser ut som et lite lokalt cycle-band pa samme base
 - dette er fortsatt en smal lokal familie, ikke en generell cycle-lov for `add_chord`
 - neste naturlige steg bor vaere en enda smalere kartlegging inne i dette lokale cycle-bandet, mest naturlig rundt `p1` og `p2`
+
+`v15t` tok sa denne smale holdout-testen inne i bandet:
+
+- behold bare samme base: `target 48`, `growth_seed 202`
+- behold bare `p1` og `p2` som de mest informative lokale profilene
+- bruk noen fa nye dynamikk-seeds i stedet for a apne flere plasseringer
+- avgjor om `p1` faktisk er et sterkere lokalt sentrum enn `p2`
+
+Det viktigste fra `Documentation/v15t_add_chord_cycle_center_holdout.md` er:
+
+- artifact-control holder fortsatt rent
+- `p1` holder `cyclic_return` i alle holdout-kjoringene
+- `p2` holder seg sterk, men glipper en gang til `morphology_return`
+- `p1` har hoyere mean full exact return (`0.897`) enn `p2` (`0.744`)
+- head-to-head pa samme seed_delta ender `p1_wins=4`, `p2_wins=2`
+
+Den riktige live-lesningen na er derfor:
+
+- det lokale cycle-bandet er ekte, men ikke flatt
+- sentrum ser ut til a vaere forskjovet mot `p1`
+- dette er fortsatt en lokal mikrofamilie pa en enkelt base, ikke en generell `add_chord`-lov
+- neste naturlige steg bor vaere en enda smalere mikrotest rundt `p1` som lokalt cycle-sentrum
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

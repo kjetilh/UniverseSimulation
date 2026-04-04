@@ -724,6 +724,42 @@ Viktige filer:
 - `Documentation/v15s_add_chord_cycle_family_target_summary.csv`
 - `Documentation/v0_15s_operativ_anbefaling.md`
 
+## 0u. v15t viste at det lokale cycle-bandet ikke er flatt, men forskyves mot p1
+
+Etter at `v15s` viste et lite lokalt `add_chord`-cycle-band pa samme base, tok `v15t` neste naturlige steg:
+
+- behold bare samme base: `target 48`, `growth_seed 202`
+- behold bare `p1` og `p2`
+- bruk noen fa nye dynamikk-seeds som smale holdouts
+- avgjor om `p1` faktisk er et sterkere lokalt sentrum enn `p2`
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `p1` holder `cyclic_return` i alle seks holdout-kjoringene
+- `p2` holder `cyclic_return` i fem av seks, men glipper en gang til `morphology_return`
+- `p1` far `mean_full_exact_return_rate = 0.897`
+- `p2` far `mean_full_exact_return_rate = 0.744`
+- seed-duellene ender `p1_wins=4`, `p2_wins=2`, `ties=0`
+- diagnosen ender pa `shifted_center_p1`
+
+Dette betyr:
+
+- `v15s` sitt lokale cycle-band holder ogsa under smale holdout-seeds
+- men bandet er ikke flatt; sentrum ser na forskyvet ut mot `p1`
+- dette er fortsatt en lokal mikrofamilie pa en enkelt base, ikke en generell `add_chord`-lov
+- neste riktige steg er en enda smalere mikrotest rundt `p1`, ikke bredere scanning
+
+Viktige filer:
+
+- `relational_universe_v15t_add_chord_cycle_center_holdout.py`
+- `Documentation/v15t_add_chord_cycle_center_holdout.md`
+- `Documentation/v15t_add_chord_cycle_center_runs.csv`
+- `Documentation/v15t_add_chord_cycle_center_aggregate.csv`
+- `Documentation/v15t_add_chord_cycle_center_diagnosis.csv`
+- `Documentation/v15t_add_chord_cycle_center_target_summary.csv`
+- `Documentation/v0_15t_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
