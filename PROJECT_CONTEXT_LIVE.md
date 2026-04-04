@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o` og `v15p` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p` og `v15q` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -277,6 +277,12 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Token-shift-profile-refinement-diagnosis: `Documentation/v15p_token_shift_profile_refinement_diagnosis.csv`
 - Token-shift-profile-refinement-target-summary: `Documentation/v15p_token_shift_profile_refinement_target_summary.csv`
 - Token-shift-profile-refinement-anbefaling: `Documentation/v0_15p_operativ_anbefaling.md`
+- Single-defect-recurrence-script: `relational_universe_v15q_single_defect_recurrence_lab.py`
+- Single-defect-recurrence-rapport: `Documentation/v15q_single_defect_recurrence_lab.md`
+- Single-defect-recurrence-runs: `Documentation/v15q_single_defect_recurrence_runs.csv`
+- Single-defect-recurrence-aggregate: `Documentation/v15q_single_defect_recurrence_aggregate.csv`
+- Single-defect-recurrence-target-summary: `Documentation/v15q_single_defect_recurrence_target_summary.csv`
+- Single-defect-recurrence-anbefaling: `Documentation/v0_15q_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -721,6 +727,27 @@ Den riktige live-lesningen na er derfor:
 - `v15o` sitt delvise lokale fragility-signal var nyttig, men ikke robust nok til a overleve bedre matchende kontroller
 - den mest lovende token_shift-profilen holder derfor ikke som ren lokal skjorehetsprofil
 - neste naturlige steg bor vaere et annet smalt defect-sporsmal, ikke mer token_shift-fragility langs denne linjen
+
+`v15q` tok sa dette nye defect-sporsmalet:
+
+- legg bort token_shift-fragility som hovedspor
+- behold samme `band_zero_del`
+- test om single defects viser senfase-retur til tidligere morfologier, i stedet for bare a drive videre
+- mal baade eksakt retur og grovere morfologisk retur
+
+Det viktigste fra `Documentation/v15q_single_defect_recurrence_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- alle tre perturbasjonstyper viser sterk morfologisk retur i denne smale runden
+- `add_chord` og `local_swap` er renest: `0.875` morphology_return ved `48`, og `0.875-1.000` ved `96`
+- `token_shift` viser ogsa retur, men blandet med `extinct_after_return` ved `48`
+- eksakt syklisk retur er mye svakere enn grov morfologisk retur, sa dette skal ikke leses som ren periodisitet
+
+Den riktige live-lesningen na er derfor:
+
+- recurrence/return-sporet er sterkere enn den siste token_shift-fragility-linjen
+- det vi ser er grov morfologisk retur, ikke en robust eksakt sykluslov
+- neste naturlige steg bor vaere en enda smalere retur-/recurrence-runde for `add_chord`, ikke brede defect-paastander
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

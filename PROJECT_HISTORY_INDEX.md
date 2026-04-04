@@ -623,6 +623,40 @@ Viktige filer:
 - `Documentation/v15p_token_shift_profile_refinement_target_summary.csv`
 - `Documentation/v0_15p_operativ_anbefaling.md`
 
+## 0r. v15q flyttet defect-sporet til senfase-retur og recurrence
+
+Etter at `v15p` svekket token_shift-fragility som hovedspor, tok `v15q` et nytt og smalt defect-sporsmal:
+
+- behold `band_zero_del`
+- behold single defects
+- legg bort fragility og kollisjon som primarsporsmal
+- test om defects i senfasen faktisk vender tilbake til tidligere morfologier, i stedet for bare a drive videre
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- alle tre perturbasjonstyper viser sterk grov morfologisk retur i denne smale runden
+- `add_chord` og `local_swap` er renest:
+  - `0.875` morphology_return ved `48`
+  - `0.875-1.000` ved `96`
+- `token_shift` viser ogsa retur, men blandet med `extinct_after_return` ved `48`
+- eksakt syklisk retur er mye svakere enn den grove morfologiske returen
+
+Dette betyr:
+
+- recurrence/return-sporet er et sterkere nytt defect-spor enn den siste token_shift-fragility-linjen
+- prosjektet ser ikke en ren eksakt sykluslov, men en tydeligere grov morfologisk retur
+- neste riktige steg er derfor en enda smalere recurrence-runde, mest naturlig for `add_chord`, ikke brede defect-paastander
+
+Viktige filer:
+
+- `relational_universe_v15q_single_defect_recurrence_lab.py`
+- `Documentation/v15q_single_defect_recurrence_lab.md`
+- `Documentation/v15q_single_defect_recurrence_runs.csv`
+- `Documentation/v15q_single_defect_recurrence_aggregate.csv`
+- `Documentation/v15q_single_defect_recurrence_target_summary.csv`
+- `Documentation/v0_15q_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

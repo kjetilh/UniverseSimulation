@@ -1,0 +1,7 @@
+requested_perturbation,target_nodes,n_runs,strict_match_rate,cyclic_return_rate,morphology_return_rate,near_return_rate,extinct_after_return_rate,extinct_without_return_rate,drifting_tail_rate,mean_exact_return_rate,mean_coarse_return_rate,mean_max_exact_return_jaccard,dominant_recurrence_label
+add_chord,48,8,1.0,0.125,0.875,0.0,0.0,0.0,0.0,0.14038461538461539,0.8057692307692308,0.9710538632502825,morphology_return
+add_chord,96,8,1.0,0.125,0.875,0.0,0.0,0.0,0.0,0.025,0.6711538461538462,0.8893922999792446,morphology_return
+local_swap,48,8,1.0,0.125,0.875,0.0,0.0,0.0,0.0,0.11346153846153847,0.8884615384615384,0.9767805502767909,morphology_return
+local_swap,96,8,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.007692307692307693,0.6288461538461538,0.884961519733979,morphology_return
+token_shift,48,8,1.0,0.25,0.5,0.0,0.25,0.0,0.0,0.37115384615384617,0.9038461538461539,0.9675491845687527,morphology_return
+token_shift,96,8,1.0,0.125,0.875,0.0,0.0,0.0,0.0,0.125,0.7461538461538462,0.9155391764077425,morphology_return
