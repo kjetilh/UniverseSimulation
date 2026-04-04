@@ -830,6 +830,49 @@ Viktige filer:
 - `Documentation/v15v_add_chord_triplet_mechanism_target_summary.csv`
 - `Documentation/v0_15v_operativ_anbefaling.md`
 
+## 0x. v15w gjorde p0-vs-p1 mer konkret, men fortsatt ikke enkelt forklart
+
+Etter at `v15v` gjorde `p0-p1-p2`-triplet-en mer forklarbar, men lot `p0` vs `p1` sta igjen som hovedusikkerhet, tok `v15w` neste naturlige steg:
+
+- behold bare `p0` og `p1`
+- behold samme smale holdout-dueller
+- apne ingen nye dynamikk-runder
+- sammenlign i stedet lokal stottegeometri mot det observerte duel-bildet
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `p1` sitter i litt tettere lokal støtte enn `p0`
+  - `mean_support_degree`: `6.333` mot `5.667`
+  - `support_ball_1`: `17` mot `15`
+- `p0` har samtidig litt større relativ videre ekspansjon
+  - `ball3_over_ball1`: `2.400` mot `2.294`
+- duel-bildet er fortsatt blandet
+  - `p1_clean_advantage`: `0.333`
+  - `p1_calm_advantage`: `0.167`
+  - `p0_clean_advantage`: `0.167`
+  - `speed_stability_tradeoff`: `0.167`
+  - `mixed_duel`: `0.167`
+- diagnosen ender derfor pa `contrast_still_mixed`
+
+Dette betyr:
+
+- `v15w` gjor p0-vs-p1 mer konkret enn `v15v`
+- men enkel støttegeometri alene forklarer ikke hele forskjellen
+- `p1` ser litt tettere og litt mer lokal ut, men `p0` kompenserer fortsatt i noen dueller
+- neste riktige steg er en enda mindre forklaringsrunde pa de unike nodene (`5` vs `10`) eller pa første tail-segment
+
+Viktige filer:
+
+- `relational_universe_v15w_add_chord_p0_p1_support_contrast.py`
+- `Documentation/v15w_add_chord_p0_p1_support_contrast.md`
+- `Documentation/v15w_add_chord_p0_p1_support_summary.csv`
+- `Documentation/v15w_add_chord_p0_p1_duel_rows.csv`
+- `Documentation/v15w_add_chord_p0_p1_duel_aggregate.csv`
+- `Documentation/v15w_add_chord_p0_p1_support_diagnosis.csv`
+- `Documentation/v15w_add_chord_p0_p1_target_summary.csv`
+- `Documentation/v0_15w_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

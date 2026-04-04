@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u` og `v15v` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v` og `v15w` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -317,6 +317,14 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-triplet-mechanism-diagnosis: `Documentation/v15v_add_chord_triplet_mechanism_diagnosis.csv`
 - Add-chord-triplet-mechanism-target-summary: `Documentation/v15v_add_chord_triplet_mechanism_target_summary.csv`
 - Add-chord-triplet-mechanism-anbefaling: `Documentation/v0_15v_operativ_anbefaling.md`
+- Add-chord-p0-p1-support-contrast-script: `relational_universe_v15w_add_chord_p0_p1_support_contrast.py`
+- Add-chord-p0-p1-support-contrast-rapport: `Documentation/v15w_add_chord_p0_p1_support_contrast.md`
+- Add-chord-p0-p1-support-summary: `Documentation/v15w_add_chord_p0_p1_support_summary.csv`
+- Add-chord-p0-p1-duel-rows: `Documentation/v15w_add_chord_p0_p1_duel_rows.csv`
+- Add-chord-p0-p1-duel-aggregate: `Documentation/v15w_add_chord_p0_p1_duel_aggregate.csv`
+- Add-chord-p0-p1-support-diagnosis: `Documentation/v15w_add_chord_p0_p1_support_diagnosis.csv`
+- Add-chord-p0-p1-target-summary: `Documentation/v15w_add_chord_p0_p1_target_summary.csv`
+- Add-chord-p0-p1-anbefaling: `Documentation/v0_15w_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -890,6 +898,27 @@ Den riktige live-lesningen na er derfor:
 - usikkerheten sitter na mest i forskjellen mellom `p0` og `p1`, ikke i hele bandet
 - `p2` ser tydeligst svakere ut mekanistisk enn de to andre
 - repoet star fortsatt pa `stay_micro`, men med et skarpere neste sporsmal: forklar `p0` vs `p1`
+
+`v15w` tok sa denne smale `p0`-vs-`p1`-stottekontrasten:
+
+- behold samme base og samme smale holdout-dueller
+- apne ingen nye dynamikk-kjoringer
+- sammenlign i stedet lokal stottegeometri for `p0` og `p1`
+- test om den geometriske kontrasten faktisk matcher speed-vs-stability-mønsteret i duellene
+
+Det viktigste fra `Documentation/v15w_add_chord_p0_p1_support_contrast.md` er:
+
+- artifact-control holder fortsatt rent
+- `p1` sitter i litt tettere lokal støtte enn `p0` (`degree_gap=0.667`, `ball1_gap=2.0`)
+- `p0` har samtidig litt større relativ videre ekspansjon (`expansion_gap=-0.106` sett fra `p1-p0`)
+- duel-bildet er ikke rent: to `p1_clean_advantage`, én `p1_calm_advantage`, én `p0_clean_advantage`, én `speed_stability_tradeoff`, én `mixed_duel`
+- støttekontrasten gjør forskjellen mer konkret, men ikke enkel nok til én hard forklaring
+
+Den riktige live-lesningen na er derfor:
+
+- `p1` ser litt tettere og litt mer "lokal" ut geometrisk
+- `p0` holder fortsatt noen dueller roligere eller sterkere enn denne enkle geometrien alene skulle tilsi
+- repoet star fortsatt pa `stay_local`, men med et enda skarpere neste sporsmal: sammenlign den unike noden `5` i `p0` mot den unike noden `10` i `p1`, eller forklar aller første tail-segment direkte
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
