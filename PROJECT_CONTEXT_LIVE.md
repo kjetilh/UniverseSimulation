@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t` og `v15u` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u` og `v15v` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -309,6 +309,14 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-p1-microcenter-diagnosis: `Documentation/v15u_add_chord_p1_microcenter_diagnosis.csv`
 - Add-chord-p1-microcenter-target-summary: `Documentation/v15u_add_chord_p1_microcenter_target_summary.csv`
 - Add-chord-p1-microcenter-anbefaling: `Documentation/v0_15u_operativ_anbefaling.md`
+- Add-chord-triplet-mechanism-script: `relational_universe_v15v_add_chord_triplet_mechanism_lab.py`
+- Add-chord-triplet-mechanism-rapport: `Documentation/v15v_add_chord_triplet_mechanism_lab.md`
+- Add-chord-triplet-mechanism-runs: `Documentation/v15v_add_chord_triplet_mechanism_runs.csv`
+- Add-chord-triplet-mechanism-tail-rows: `Documentation/v15v_add_chord_triplet_mechanism_tail_rows.csv`
+- Add-chord-triplet-mechanism-aggregate: `Documentation/v15v_add_chord_triplet_mechanism_aggregate.csv`
+- Add-chord-triplet-mechanism-diagnosis: `Documentation/v15v_add_chord_triplet_mechanism_diagnosis.csv`
+- Add-chord-triplet-mechanism-target-summary: `Documentation/v15v_add_chord_triplet_mechanism_target_summary.csv`
+- Add-chord-triplet-mechanism-anbefaling: `Documentation/v0_15v_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -860,6 +868,28 @@ Den riktige live-lesningen na er derfor:
 - men `p1` kan ikke enda kalles et sikkert lokalt sentrum over begge flanker
 - repoet star na pa `microcenter_still_mixed`, ikke pa en hard sentrumskonklusjon
 - neste naturlige steg bor vaere en liten mekanistisk forklaringsrunde inne i `p0-p1-p2`-triplet, ikke bredere scanning
+
+`v15v` tok sa nettopp denne mekanistiske forklaringsrunden:
+
+- behold bare samme `p0-p1-p2`-triplet
+- behold samme holdout-seeds som i `v15u`
+- legg ikke til nye profiler
+- mal i stedet hvor tidlig og hvor stabilt hver profil lases inn i senfase exact-return
+
+Det viktigste fra `Documentation/v15v_add_chord_triplet_mechanism_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `p0` domineres av `intermittent_cycle_lock`
+- `p1` domineres ogsa av `intermittent_cycle_lock`, med bare litt mer `early_stable_lock`
+- `p2` er den eneste profilen som far noe tydelig `coarse_cycle_shell`
+- `p1` kommer litt tidligere til første exact return enn flankene, men switcher ogsa mer enn `p0`
+- mekanismelesningen gjor triplet-en mer forklarbar, men ikke ren nok til a lose sentrumssporsmalet
+
+Den riktige live-lesningen na er derfor:
+
+- usikkerheten sitter na mest i forskjellen mellom `p0` og `p1`, ikke i hele bandet
+- `p2` ser tydeligst svakere ut mekanistisk enn de to andre
+- repoet star fortsatt pa `stay_micro`, men med et skarpere neste sporsmal: forklar `p0` vs `p1`
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

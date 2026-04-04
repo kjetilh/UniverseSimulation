@@ -794,6 +794,42 @@ Viktige filer:
 - `Documentation/v15u_add_chord_p1_microcenter_target_summary.csv`
 - `Documentation/v0_15u_operativ_anbefaling.md`
 
+## 0w. v15v gjorde triplet-en mer forklarbar, men fortsatt ikke rent losnet
+
+Etter at `v15u` lot `p0-p1-p2` sta igjen som ekte mikrofamilie, men uten rent sentrum, tok `v15v` neste naturlige steg:
+
+- behold bare samme triplet
+- behold samme holdout-seeds som i `v15u`
+- apne ingen nye profiler
+- mal i stedet tail-lock-mekanismer: hvor tidlig og hvor stabilt hver profil lases inn i exact-return
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `p0` domineres av `intermittent_cycle_lock`
+- `p1` domineres ogsa av `intermittent_cycle_lock`, med bare litt mer `early_stable_lock`
+- `p2` er den eneste profilen som far tydelig `coarse_cycle_shell`
+- `p1` kommer litt tidligere til første exact return enn flankene, men har hoyere switch-count enn `p0`
+- diagnosen ender pa `triplet_mechanism_still_mixed`
+
+Dette betyr:
+
+- `v15v` gjor triplet-en mer forklarbar enn `v15u`, men loser ikke sentrumssporsmalet rent
+- `p2` ser na tydeligst svakere ut mekanistisk enn de to andre
+- den viktigste usikkerheten sitter na mellom `p0` og `p1`
+- neste riktige steg er en enda mindre forklaringsrunde for `p0` vs `p1`, ikke bredere scanning
+
+Viktige filer:
+
+- `relational_universe_v15v_add_chord_triplet_mechanism_lab.py`
+- `Documentation/v15v_add_chord_triplet_mechanism_lab.md`
+- `Documentation/v15v_add_chord_triplet_mechanism_runs.csv`
+- `Documentation/v15v_add_chord_triplet_mechanism_tail_rows.csv`
+- `Documentation/v15v_add_chord_triplet_mechanism_aggregate.csv`
+- `Documentation/v15v_add_chord_triplet_mechanism_diagnosis.csv`
+- `Documentation/v15v_add_chord_triplet_mechanism_target_summary.csv`
+- `Documentation/v0_15v_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

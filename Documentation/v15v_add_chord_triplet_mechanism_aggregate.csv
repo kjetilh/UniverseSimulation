@@ -1,0 +1,4 @@
+placement,n_runs,early_stable_lock_rate,late_stable_lock_rate,intermittent_cycle_lock_rate,coarse_cycle_shell_rate,mixed_tail_lock_rate,mean_first_exact_return_step,mean_exact_lock_fraction,mean_longest_exact_streak,mean_exact_switch_count,dominant_mechanism
+0,6,0.0,0.0,1.0,0.0,0.0,1557.3333333333333,0.8783433457171619,70.0,8.166666666666666,intermittent_cycle_lock
+1,6,0.16666666666666666,0.0,0.8333333333333334,0.0,0.0,1550.6666666666667,0.8580433798925922,72.83333333333333,11.5,intermittent_cycle_lock
+2,6,0.3333333333333333,0.0,0.3333333333333333,0.3333333333333333,0.0,1557.3333333333333,0.7638719169392786,65.83333333333333,11.666666666666666,coarse_cycle_shell
