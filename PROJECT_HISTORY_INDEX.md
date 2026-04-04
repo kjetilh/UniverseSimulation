@@ -760,6 +760,40 @@ Viktige filer:
 - `Documentation/v15t_add_chord_cycle_center_target_summary.csv`
 - `Documentation/v0_15t_operativ_anbefaling.md`
 
+## 0v. v15u viste at p1 fortsatt ikke er et rent losnet sentrum over begge flanker
+
+Etter at `v15t` pekte mot `p1` som forskyvet lokalt sentrum, tok `v15u` neste naturlige steg:
+
+- behold bare samme base: `target 48`, `growth_seed 202`
+- behold bare `p0`, `p1` og `p2`
+- bruk et nytt lite holdout-sett av seeds
+- avgjor om `p1` faktisk holder seg over begge umiddelbare flanker samtidig
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- alle tre plasseringene holder `cyclic_return` i alle seks holdout-kjoringene
+- `p1` slar fortsatt `p2` tydelig, med `p1_wins=4`, `p2_wins=1`, `ties=1`
+- men `p1` slar ikke `p0` rent; seed-duellene ender `p1_wins=3`, `p0_wins=2`, `ties=1`
+- `p0` far faktisk hoyere mean full exact return (`0.859`) enn `p1` (`0.846`)
+- diagnosen ender derfor pa `microcenter_still_mixed`
+
+Dette betyr:
+
+- `v15t` sitt p1-sentrum holder ikke som fullt losnet konklusjon
+- det lokale `add_chord`-bandet er fortsatt ekte, men den indre mikrostrukturen er fortsatt blandet
+- neste riktige steg er en liten mekanistisk forklaringsrunde inne i `p0-p1-p2`, ikke bredere mapping
+
+Viktige filer:
+
+- `relational_universe_v15u_add_chord_p1_microcenter.py`
+- `Documentation/v15u_add_chord_p1_microcenter.md`
+- `Documentation/v15u_add_chord_p1_microcenter_runs.csv`
+- `Documentation/v15u_add_chord_p1_microcenter_aggregate.csv`
+- `Documentation/v15u_add_chord_p1_microcenter_diagnosis.csv`
+- `Documentation/v15u_add_chord_p1_microcenter_target_summary.csv`
+- `Documentation/v0_15u_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

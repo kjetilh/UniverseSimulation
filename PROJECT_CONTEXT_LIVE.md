@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s` og `v15t` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t` og `v15u` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -302,6 +302,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-cycle-center-diagnosis: `Documentation/v15t_add_chord_cycle_center_diagnosis.csv`
 - Add-chord-cycle-center-target-summary: `Documentation/v15t_add_chord_cycle_center_target_summary.csv`
 - Add-chord-cycle-center-anbefaling: `Documentation/v0_15t_operativ_anbefaling.md`
+- Add-chord-p1-microcenter-script: `relational_universe_v15u_add_chord_p1_microcenter.py`
+- Add-chord-p1-microcenter-rapport: `Documentation/v15u_add_chord_p1_microcenter.md`
+- Add-chord-p1-microcenter-runs: `Documentation/v15u_add_chord_p1_microcenter_runs.csv`
+- Add-chord-p1-microcenter-aggregate: `Documentation/v15u_add_chord_p1_microcenter_aggregate.csv`
+- Add-chord-p1-microcenter-diagnosis: `Documentation/v15u_add_chord_p1_microcenter_diagnosis.csv`
+- Add-chord-p1-microcenter-target-summary: `Documentation/v15u_add_chord_p1_microcenter_target_summary.csv`
+- Add-chord-p1-microcenter-anbefaling: `Documentation/v0_15u_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -831,6 +838,28 @@ Den riktige live-lesningen na er derfor:
 - sentrum ser ut til a vaere forskjovet mot `p1`
 - dette er fortsatt en lokal mikrofamilie pa en enkelt base, ikke en generell `add_chord`-lov
 - neste naturlige steg bor vaere en enda smalere mikrotest rundt `p1` som lokalt cycle-sentrum
+
+`v15u` tok sa denne mikrotesten mot begge flanker:
+
+- behold bare samme base: `target 48`, `growth_seed 202`
+- behold bare `p0`, `p1` og `p2`
+- bruk et helt nytt lite holdout-sett av seeds
+- avgjor om `p1` faktisk ligger over begge umiddelbare flanker samtidig
+
+Det viktigste fra `Documentation/v15u_add_chord_p1_microcenter.md` er:
+
+- artifact-control holder fortsatt rent
+- alle tre plasseringene holder `cyclic_return` i alle holdout-kjoringene
+- `p1` slar fortsatt `p2` tydeligere enn for `v15t`
+- men `p0` holder faktisk svaakt hoyere mean full exact return (`0.859`) enn `p1` (`0.846`)
+- `p1` vs `p0` ender bare `3-2-1` i seed-dueller, sa sentrum er ikke rent losnet
+
+Den riktige live-lesningen na er derfor:
+
+- det lokale `add_chord`-bandet holder fortsatt som ekte mikrofamilie
+- men `p1` kan ikke enda kalles et sikkert lokalt sentrum over begge flanker
+- repoet star na pa `microcenter_still_mixed`, ikke pa en hard sentrumskonklusjon
+- neste naturlige steg bor vaere en liten mekanistisk forklaringsrunde inne i `p0-p1-p2`-triplet, ikke bredere scanning
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
