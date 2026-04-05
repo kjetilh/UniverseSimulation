@@ -873,6 +873,45 @@ Viktige filer:
 - `Documentation/v15w_add_chord_p0_p1_target_summary.csv`
 - `Documentation/v0_15w_operativ_anbefaling.md`
 
+## 0y. v15x viste at første tail-segment heller ikke losner p0-vs-p1 rent
+
+Etter at `v15w` viste at enkel støttegeometri ikke forklarte p0-vs-p1 fullt ut, tok `v15x` neste naturlige steg:
+
+- behold bare `p0` og `p1`
+- behold samme base og samme smale holdout-seeds
+- rerun dynamikken
+- mal bare første tail-segment fram til exact-return lock
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- alle seks seed-duellene ender pa `mixed_first_segment`
+- mean onset-bilde er fortsatt svakt og blandet
+  - `p1_minus_p0_first_gap = -6.7`
+  - `p1_minus_p0_component_gap = 0.208`
+  - `p1_minus_p0_largest_gap = -0.004`
+  - `p1_minus_p0_boundary_gap = 0.002`
+  - `p1_minus_p0_post_switch_gap = 3.333`
+  - `p1_minus_p0_exact_gap = -0.013`
+- ingen av de sma onset-labelene blir dominante
+
+Dette betyr:
+
+- første tail-segment gjor p0-vs-p1 mer konkret, men ikke renere
+- onset alene forklarer ikke hvorfor de to sterkeste lokale punktene fortsatt ligger sa tett
+- neste riktige steg er en enda mindre forklaringsrunde pa en eller to konkrete seed-caser, ikke nye aggregate-runder
+
+Viktige filer:
+
+- `relational_universe_v15x_add_chord_p0_p1_first_tail_segment.py`
+- `Documentation/v15x_add_chord_p0_p1_first_tail_segment.md`
+- `Documentation/v15x_add_chord_p0_p1_first_tail_segment_runs.csv`
+- `Documentation/v15x_add_chord_p0_p1_first_tail_segment_duels.csv`
+- `Documentation/v15x_add_chord_p0_p1_first_tail_segment_aggregate.csv`
+- `Documentation/v15x_add_chord_p0_p1_first_tail_segment_diagnosis.csv`
+- `Documentation/v15x_add_chord_p0_p1_first_tail_segment_target_summary.csv`
+- `Documentation/v0_15x_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

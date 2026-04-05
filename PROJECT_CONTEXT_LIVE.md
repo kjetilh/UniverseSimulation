@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v` og `v15w` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w` og `v15x` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -325,6 +325,14 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-p0-p1-support-diagnosis: `Documentation/v15w_add_chord_p0_p1_support_diagnosis.csv`
 - Add-chord-p0-p1-target-summary: `Documentation/v15w_add_chord_p0_p1_target_summary.csv`
 - Add-chord-p0-p1-anbefaling: `Documentation/v0_15w_operativ_anbefaling.md`
+- Add-chord-first-tail-segment-script: `relational_universe_v15x_add_chord_p0_p1_first_tail_segment.py`
+- Add-chord-first-tail-segment-rapport: `Documentation/v15x_add_chord_p0_p1_first_tail_segment.md`
+- Add-chord-first-tail-segment-runs: `Documentation/v15x_add_chord_p0_p1_first_tail_segment_runs.csv`
+- Add-chord-first-tail-segment-duels: `Documentation/v15x_add_chord_p0_p1_first_tail_segment_duels.csv`
+- Add-chord-first-tail-segment-aggregate: `Documentation/v15x_add_chord_p0_p1_first_tail_segment_aggregate.csv`
+- Add-chord-first-tail-segment-diagnosis: `Documentation/v15x_add_chord_p0_p1_first_tail_segment_diagnosis.csv`
+- Add-chord-first-tail-segment-target-summary: `Documentation/v15x_add_chord_p0_p1_first_tail_segment_target_summary.csv`
+- Add-chord-first-tail-segment-anbefaling: `Documentation/v0_15x_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -919,6 +927,26 @@ Den riktige live-lesningen na er derfor:
 - `p1` ser litt tettere og litt mer "lokal" ut geometrisk
 - `p0` holder fortsatt noen dueller roligere eller sterkere enn denne enkle geometrien alene skulle tilsi
 - repoet star fortsatt pa `stay_local`, men med et enda skarpere neste sporsmal: sammenlign den unike noden `5` i `p0` mot den unike noden `10` i `p1`, eller forklar aller første tail-segment direkte
+
+`v15x` tok sa denne første-tail-segment-runden:
+
+- behold bare `p0` og `p1`
+- behold samme base og samme smale holdout-seeds
+- rerun dynamikken, men mal bare det første tail-segmentet fram til exact-return lock
+- avgjor om forskjellen kan forklares som tidligere konsolidering, roligere tail-lock eller en tydelig tradeoff
+
+Det viktigste fra `Documentation/v15x_add_chord_p0_p1_first_tail_segment.md` er:
+
+- artifact-control holder fortsatt rent
+- alle seks seed-duellene ender fortsatt som `mixed_first_segment`
+- mean onset-bilde er svakt og blandet: `p1` kommer bare litt tidligere (`first_gap=-6.7`), men har litt hoyere pre-lock komponenttall og flere post-lock switcher
+- ingen av de smale onset-labelene (`p1_earlier_consolidation`, `speed_stability_tradeoff`, `p0_calmer_tail`) blir dominante
+
+Den riktige live-lesningen na er derfor:
+
+- onset alene rydder ikke opp i `p0` vs `p1`
+- repoet star fortsatt pa `stay_tiny`, ikke fordi signalet er borte, men fordi selv første tail-segment fortsatt er genuint blandet
+- neste naturlige steg bor vaere en enda mindre forklaringsrunde pa én eller to konkrete seed-caser, ikke nye aggregate-runder
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

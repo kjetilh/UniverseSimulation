@@ -1,0 +1,2 @@
+duel_label,n_duels,rate,mean_p1_minus_p0_first_gap,mean_p1_minus_p0_component_gap,mean_p1_minus_p0_largest_gap,mean_p1_minus_p0_boundary_gap,mean_p1_minus_p0_jaccard_gap,mean_p1_minus_p0_post_switch_gap,mean_p1_minus_p0_exact_gap
+mixed_first_segment,6,1.0,-6.666666666666667,0.20833333333333334,-0.003895215465253251,0.0015371495120863818,0.0172781838072385,3.3333333333333335,-0.012919896640826897

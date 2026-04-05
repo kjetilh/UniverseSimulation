@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er rent separert i denne første-tail-segment-runden.
+duel_family_snapshot,p1_early=0.000;p1_soft=0.000;tradeoff=0.000;p0_calm=0.000,Dette oppsummerer hvordan p0 og p1 skiller lag i første tail-segment på de samme små holdout-seedene.
+first_segment_status,first_segment_still_mixed,"Første tail-segment gjør forskjellen mer konkret, men ikke rent nok til én enkel mekanisme."
+next_step,stay_tiny,Neste steg bør være en enda mindre forklaringsrunde på én eller to seed-caser.
