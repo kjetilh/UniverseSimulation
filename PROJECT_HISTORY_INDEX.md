@@ -912,6 +912,46 @@ Viktige filer:
 - `Documentation/v15x_add_chord_p0_p1_first_tail_segment_target_summary.csv`
 - `Documentation/v0_15x_operativ_anbefaling.md`
 
+## 0z. v15y viste at tre små p0-vs-p1-seeds faktisk holder som tre ulike case-typer
+
+Etter at `v15x` viste at første tail-segment fortsatt var blandet i aggregate, tok `v15y` neste naturlige steg:
+
+- behold bare de tre mest informative seedene
+- `151` som sterk `p1`-case
+- `239` som mulig tradeoff-case
+- `271` som sterk `p0`-case
+- avgjor om disse faktisk holder som tre ulike lokale case-typer
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `151` holder som `p1_clean_case`
+- `239` holder som `tradeoff_case`
+- `271` holder som `p0_clean_case`
+- case-aggregatet blir derfor perfekt delt:
+  - `p1_clean_case = 0.333`
+  - `tradeoff_case = 0.333`
+  - `p0_clean_case = 0.333`
+- diagnosen ender pa `three_case_family_supported`
+
+Dette betyr:
+
+- `p0`-vs-`p1`-usikkerheten er ikke bare stoyende mikrovariasjon
+- repoet har na et lite, men ekte, lokalt case-familiebilde
+- neste riktige steg er a forklare hva som utloser hvert case, ikke a samle flere aggregate-runder
+
+Viktige filer:
+
+- `relational_universe_v15y_p0_p1_case_duel_lab.py`
+- `Documentation/v15y_p0_p1_case_duel_lab.md`
+- `Documentation/v15y_p0_p1_case_duel_runs.csv`
+- `Documentation/v15y_p0_p1_case_duel_segments.csv`
+- `Documentation/v15y_p0_p1_case_duel_duels.csv`
+- `Documentation/v15y_p0_p1_case_duel_aggregate.csv`
+- `Documentation/v15y_p0_p1_case_duel_diagnosis.csv`
+- `Documentation/v15y_p0_p1_case_duel_target_summary.csv`
+- `Documentation/v0_15y_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

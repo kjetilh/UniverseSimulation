@@ -1,0 +1,4 @@
+case_label,n_cases,rate,mean_p1_minus_p0_exact_gap,mean_p1_minus_p0_first_gap,mean_p1_minus_p0_component_gap,mean_p1_minus_p0_largest_gap,mean_p1_minus_p0_adjacent_jaccard_gap
+p0_clean_case,1,0.3333333333333333,-0.24031007751937994,24.0,0.25,-0.023884553821528542,nan
+p1_clean_case,1,0.3333333333333333,0.10077519379844957,-40.0,0.0,0.0,0.022315585705964924
+tradeoff_case,1,0.3333333333333333,-0.1472868217054264,-16.0,1.0,-0.022654587669754478,0.012240781908512077

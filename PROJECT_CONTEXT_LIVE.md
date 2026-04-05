@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w` og `v15x` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x` og `v15y` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -333,6 +333,15 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-first-tail-segment-diagnosis: `Documentation/v15x_add_chord_p0_p1_first_tail_segment_diagnosis.csv`
 - Add-chord-first-tail-segment-target-summary: `Documentation/v15x_add_chord_p0_p1_first_tail_segment_target_summary.csv`
 - Add-chord-first-tail-segment-anbefaling: `Documentation/v0_15x_operativ_anbefaling.md`
+- P0-vs-p1-case-duel-script: `relational_universe_v15y_p0_p1_case_duel_lab.py`
+- P0-vs-p1-case-duel-rapport: `Documentation/v15y_p0_p1_case_duel_lab.md`
+- P0-vs-p1-case-duel-runs: `Documentation/v15y_p0_p1_case_duel_runs.csv`
+- P0-vs-p1-case-duel-segments: `Documentation/v15y_p0_p1_case_duel_segments.csv`
+- P0-vs-p1-case-duel-duels: `Documentation/v15y_p0_p1_case_duel_duels.csv`
+- P0-vs-p1-case-duel-aggregate: `Documentation/v15y_p0_p1_case_duel_aggregate.csv`
+- P0-vs-p1-case-duel-diagnosis: `Documentation/v15y_p0_p1_case_duel_diagnosis.csv`
+- P0-vs-p1-case-duel-target-summary: `Documentation/v15y_p0_p1_case_duel_target_summary.csv`
+- P0-vs-p1-case-duel-anbefaling: `Documentation/v0_15y_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -947,6 +956,29 @@ Den riktige live-lesningen na er derfor:
 - onset alene rydder ikke opp i `p0` vs `p1`
 - repoet star fortsatt pa `stay_tiny`, ikke fordi signalet er borte, men fordi selv første tail-segment fortsatt er genuint blandet
 - neste naturlige steg bor vaere en enda mindre forklaringsrunde pa én eller to konkrete seed-caser, ikke nye aggregate-runder
+
+`v15y` tok sa denne rene case-duel-runden:
+
+- behold bare de tre mest informative seedene fra `p0` vs `p1`
+- `151` som sterk `p1`-case
+- `239` som mulig tradeoff-case
+- `271` som sterk `p0`-case
+- avgjor om disse faktisk holder som tre ulike lokale case-typer
+
+Det viktigste fra `Documentation/v15y_p0_p1_case_duel_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- de tre seed-casene kollapser ikke tilbake til én blandet type
+- `151` holder som `p1_clean_case`
+- `239` holder som `tradeoff_case`
+- `271` holder som `p0_clean_case`
+- diagnosen ender pa `three_case_family_supported`
+
+Den riktige live-lesningen na er derfor:
+
+- den lokale `p0`-vs-`p1`-usikkerheten er ikke bare stoy; den deler seg i minst tre repeterbare case-typer
+- det riktige neste sporsmalet er ikke flere aggregate-runder, men hva som faktisk utloser hvert case
+- neste naturlige steg bor vaere en liten trigger-forklaringsrunde for `151`, `239` og `271`, ikke bredere scanning
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

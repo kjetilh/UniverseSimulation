@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er rent separert i denne case-runden.
+case_snapshot,p1_clean=1;tradeoff=1;p0_clean=1;mixed=0,Dette oppsummerer de tre utvalgte seed-casene etter onset-metrikkene.
+case_family_status,three_case_family_supported,"De tre valgte seed-casene holder faktisk som tre ulike lokale case-typer: p1-clean, tradeoff og p0-clean."
+next_step,explain_case_triggers,"Neste steg bør forklare hva som utløser hvert case, ikke samle flere aggregate-runder."
