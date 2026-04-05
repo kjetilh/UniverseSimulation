@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x` og `v15y` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z` og `v15aa` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -342,6 +342,22 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - P0-vs-p1-case-duel-diagnosis: `Documentation/v15y_p0_p1_case_duel_diagnosis.csv`
 - P0-vs-p1-case-duel-target-summary: `Documentation/v15y_p0_p1_case_duel_target_summary.csv`
 - P0-vs-p1-case-duel-anbefaling: `Documentation/v0_15y_operativ_anbefaling.md`
+- P0-vs-p1-case-trigger-script: `relational_universe_v15z_case_trigger_explainer.py`
+- P0-vs-p1-case-trigger-rapport: `Documentation/v15z_case_trigger_explainer.md`
+- P0-vs-p1-case-trigger-rows: `Documentation/v15z_case_trigger_rows.csv`
+- P0-vs-p1-case-trigger-aggregate: `Documentation/v15z_case_trigger_aggregate.csv`
+- P0-vs-p1-case-trigger-diagnosis: `Documentation/v15z_case_trigger_diagnosis.csv`
+- P0-vs-p1-case-trigger-target-summary: `Documentation/v15z_case_trigger_target_summary.csv`
+- P0-vs-p1-case-trigger-anbefaling: `Documentation/v0_15z_operativ_anbefaling.md`
+- P0-vs-p1-case-trigger-holdout-script: `relational_universe_v15aa_case_trigger_holdout.py`
+- P0-vs-p1-case-trigger-holdout-rapport: `Documentation/v15aa_case_trigger_holdout.md`
+- P0-vs-p1-case-trigger-holdout-runs: `Documentation/v15aa_case_trigger_holdout_runs.csv`
+- P0-vs-p1-case-trigger-holdout-segments: `Documentation/v15aa_case_trigger_holdout_segments.csv`
+- P0-vs-p1-case-trigger-holdout-rows: `Documentation/v15aa_case_trigger_holdout_rows.csv`
+- P0-vs-p1-case-trigger-holdout-aggregate: `Documentation/v15aa_case_trigger_holdout_aggregate.csv`
+- P0-vs-p1-case-trigger-holdout-diagnosis: `Documentation/v15aa_case_trigger_holdout_diagnosis.csv`
+- P0-vs-p1-case-trigger-holdout-target-summary: `Documentation/v15aa_case_trigger_holdout_target_summary.csv`
+- P0-vs-p1-case-trigger-holdout-anbefaling: `Documentation/v0_15aa_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -979,6 +995,51 @@ Den riktige live-lesningen na er derfor:
 - den lokale `p0`-vs-`p1`-usikkerheten er ikke bare stoy; den deler seg i minst tre repeterbare case-typer
 - det riktige neste sporsmalet er ikke flere aggregate-runder, men hva som faktisk utloser hvert case
 - neste naturlige steg bor vaere en liten trigger-forklaringsrunde for `151`, `239` og `271`, ikke bredere scanning
+
+`v15z` tok sa den smaleste forklaringsrunden pa toppen av dette:
+
+- ingen nye simuleringer
+- bruk bare `v15w`-stottekontrasten og `v15y`-case-duel-dataene
+- avgjor om `151`, `239` og `271` faktisk kan forklares av et lite sett onset-triggere
+
+Det viktigste fra `Documentation/v15z_case_trigger_explainer.md` er:
+
+- artifact-control holder fortsatt rent
+- `p1` har fortsatt en svak statisk stottefordel, men den realiseres ikke likt i alle seeds
+- `151` holder som `p1_compact_radius_trigger`
+- `239` holder som `fragmented_fast_tradeoff_trigger`
+- `271` holder som `p0_calm_singleton_trigger`
+- diagnosen ender pa `three_local_triggers_supported`
+
+Den riktige live-lesningen na er derfor:
+
+- de tre lokale case-typene fra `v15y` kan forklares mer presist enn før
+- `p1`-fordelen ser ut til a kreve kompakt onset, ikke bare tettere statisk stotte
+- tradeoff- og `p0`-casene ser ut til a oppsta nar `p1` starter mer fragmentert
+- neste naturlige steg bor vaere en liten holdout-test av disse triggerne pa noen fa naerliggende seeds, ikke en bred ny scan
+
+`v15aa` tok sa den lille holdout-testen av akkurat disse triggerne:
+
+- behold samme base, samme `p0`/`p1`-duell og samme `band_zero_del`
+- test bare to naerliggende holdout-seeds rundt hvert av de tre ankercasene
+- avgjor om `v15z`-triggerne baerer lokalt utover `151`, `239` og `271`
+
+Det viktigste fra `Documentation/v15aa_case_trigger_holdout.md` er:
+
+- artifact-control holder fortsatt rent
+- ingen av de tre triggerfamiliene matcher i de naerliggende holdouts
+- alle seks holdout-radene ender som `mixed_trigger`
+- familieaggregatet blir derfor:
+  - `151`-familien: `not_supported`
+  - `239`-familien: `not_supported`
+  - `271`-familien: `not_supported`
+- diagnosen ender pa `trigger_holdout_not_yet`
+
+Den riktige live-lesningen na er derfor:
+
+- `v15z` forklarer de tre ankercasene bedre, men triggerhistorien holder ikke som lokal lov i naerliggende seeds
+- dette er et nyttig negativt resultat: det stanser videre trigger-generalisering tidlig
+- neste naturlige steg bor vaere en ny observabel eller et annet defect-sporsmal, ikke mer arbeid pa samme triggerlinje
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

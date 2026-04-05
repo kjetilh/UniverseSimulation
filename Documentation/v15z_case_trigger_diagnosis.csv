@@ -1,0 +1,6 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er rent separert og alle p0/p1-runene matcher ønsket add_chord-perturbasjon.
+support_bias,p1_denser_support__p0_wider_expansion,"P1 sitter i litt tettere lokal støtte, mens p0 har litt større relativ videre ekspansjon. Dette er bakgrunnsbias, ikke hele forklaringen."
+trigger_snapshot,p1_compact=1;tradeoff=1;p0_calm=1;mixed=0,Dette oppsummerer hvordan de tre case-seedene brytes ned i onset-trigger-typer.
+case_trigger_status,three_local_triggers_supported,"De tre utvalgte case-seedene kan forklares av tre ulike onset-triggere: kompakt p1-lock, fragmentert tradeoff og rolig p0-singleton-lock."
+next_step,targeted_trigger_holdout,"Neste steg bør teste om disse triggerne holder på noen få nærliggende holdout-seeds, ikke åpne en ny bred scan."

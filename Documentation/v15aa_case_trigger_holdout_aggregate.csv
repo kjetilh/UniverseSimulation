@@ -1,0 +1,4 @@
+anchor_seed_delta,expected_trigger_label,n_holdouts,trigger_match_rate,mixed_holdout_rate,trigger_shift_rate,mean_exact_gap,mean_first_gap,mean_first_component_gap,mean_first_boundary_gap,family_status
+151,p1_compact_radius_trigger,2,0.0,1.0,0.0,-0.031007751937984496,20.0,0.0,-0.02159555851326038,not_supported
+239,fragmented_fast_tradeoff_trigger,2,0.0,1.0,0.0,-0.04651162790697677,20.0,-1.0,0.08666707392991581,not_supported
+271,p0_calm_singleton_trigger,2,0.0,1.0,0.0,-0.034883720930232565,44.0,0.5,0.044106887562021704,not_supported

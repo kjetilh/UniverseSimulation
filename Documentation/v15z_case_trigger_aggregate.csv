@@ -1,0 +1,4 @@
+trigger_label,n_cases,rate,mean_exact_gap,mean_first_gap,mean_first_component_gap,mean_first_boundary_gap,mean_first_radius_gap,mean_mean_component_gap
+fragmented_fast_tradeoff_trigger,1,0.3333333333333333,-0.1472868217054264,-16.0,1.0,0.06702898550724637,3.0,1.0
+p0_calm_singleton_trigger,1,0.3333333333333333,-0.24031007751937994,24.0,1.0,0.12159863945578231,-2.0,0.25
+p1_compact_radius_trigger,1,0.3333333333333333,0.10077519379844957,-40.0,0.0,0.05125725338491295,-2.0,0.0

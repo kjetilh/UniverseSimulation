@@ -952,6 +952,84 @@ Viktige filer:
 - `Documentation/v15y_p0_p1_case_duel_target_summary.csv`
 - `Documentation/v0_15y_operativ_anbefaling.md`
 
+## 0za. v15z forklarte de tre case-typene med tre ulike onset-triggere
+
+Etter at `v15y` viste at `151`, `239` og `271` faktisk holder som tre ulike lokale case-typer, tok `v15z` neste naturlige steg:
+
+- ingen nye simuleringer
+- behold den samme smale p0-vs-p1-duellen
+- bruk `v15w` for statisk støttebias
+- bruk `v15y` for onset-segment og case-duel-data
+- avgjor om de tre case-seedene faktisk kan forklares av et lite sett onset-triggere
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- den svake statiske støttefordelen for `p1` holder som bakgrunnsbias
+- men den er ikke hele forklaringen
+- `151` holder som `p1_compact_radius_trigger`
+- `239` holder som `fragmented_fast_tradeoff_trigger`
+- `271` holder som `p0_calm_singleton_trigger`
+- diagnosen ender pa `three_local_triggers_supported`
+
+Dette betyr:
+
+- de tre case-typene fra `v15y` var ikke bare nyttige etiketter; de kan na forklares mer konkret
+- `p1` vinner rent nar den far en kompakt onset med kortere radius og mindre skadesett
+- `p1` taper nar den kommer raskt, men fragmentert
+- `p0` vinner nar den holder en roligere singleton-lock mens `p1` starter mer splittet
+- neste riktige steg er derfor en liten holdout-test av triggerne, ikke en ny bred p0-vs-p1-scan
+
+Viktige filer:
+
+- `relational_universe_v15z_case_trigger_explainer.py`
+- `Documentation/v15z_case_trigger_explainer.md`
+- `Documentation/v15z_case_trigger_rows.csv`
+- `Documentation/v15z_case_trigger_aggregate.csv`
+- `Documentation/v15z_case_trigger_diagnosis.csv`
+- `Documentation/v15z_case_trigger_target_summary.csv`
+- `Documentation/v0_15z_operativ_anbefaling.md`
+
+## 0zb. v15aa viste at triggerhistorien ikke generaliserer rent til nærliggende seeds
+
+Etter at `v15z` ga en klarere forklaring pa `151`, `239` og `271`, tok `v15aa` det smaleste mulige neste steget:
+
+- behold samme basegraf
+- behold samme `p0` vs `p1`
+- behold samme `band_zero_del`
+- test bare to naerliggende holdout-seeds rundt hvert av de tre ankercasene
+- avgjor om triggerhistorien bærer lokalt utover de tre opprinnelige seedene
+
+Det viktigste resultatet er klart og negativt:
+
+- artifact-control holder fortsatt rent
+- ingen av de tre triggerfamiliene matcher i holdoutene
+- alle seks holdout-radene ender som `mixed_trigger`
+- familieaggregatet blir derfor:
+  - `151`-familien: `not_supported`
+  - `239`-familien: `not_supported`
+  - `271`-familien: `not_supported`
+- diagnosen ender pa `trigger_holdout_not_yet`
+
+Dette betyr:
+
+- `v15z` var nyttig som forklaring av ankercasene
+- men forklaringen holder ikke som lokal lov i naerliggende seeds
+- repoet bor derfor ikke bruke mer tid pa a generalisere disse triggerne langs samme linje
+- neste riktige steg er en ny observabel eller et annet defect-sporsmal, ikke mer trigger-generalisering
+
+Viktige filer:
+
+- `relational_universe_v15aa_case_trigger_holdout.py`
+- `Documentation/v15aa_case_trigger_holdout.md`
+- `Documentation/v15aa_case_trigger_holdout_runs.csv`
+- `Documentation/v15aa_case_trigger_holdout_segments.csv`
+- `Documentation/v15aa_case_trigger_holdout_rows.csv`
+- `Documentation/v15aa_case_trigger_holdout_aggregate.csv`
+- `Documentation/v15aa_case_trigger_holdout_diagnosis.csv`
+- `Documentation/v15aa_case_trigger_holdout_target_summary.csv`
+- `Documentation/v0_15aa_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
