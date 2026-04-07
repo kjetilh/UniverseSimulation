@@ -1119,6 +1119,45 @@ Viktige filer:
 - `Documentation/v15ad_add_chord_boundary_shell_diagnosis.csv`
 - `Documentation/v0_15ad_operativ_anbefaling.md`
 
+## 0ze. v15ae viste at den rolige randen er topologisk fragmentert, ikke ett sammenhengende shell-band
+
+Etter at `v15ac-v15ad` gjorde recurrence-bandet mer fysisk lesbart som stabil kjerne + rolig flimrende rand, tok `v15ae` neste smale observabelskift:
+
+- behold samme `t48_g202`-band med `p0`, `p1`, `p2`
+- behold de samme smale holdout-seedene som i `v15ab-v15ad`
+- bytt sporsmal fra randtempo til randtopologi
+- avgjor om shellen vanligvis holder seg sammenhengende, blir fragmentert, eller bærer lokal cycle-rank
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- alle tre plasseringene holder fortsatt `cyclic_rate = 1.0`
+- `p0` og `p1` blir `fragmented_shell_band` i alle seks runene
+- `p2` blir `fragmented_shell_band` i fem av seks og `mixed_shell_topology` i ett
+- mean shell component count ligger hoyt (`~3.35`, `~3.55`, `~4.18`)
+- mean shell connected rate holder seg lav (`~0.090`, `~0.108`, `~0.177`)
+- shell loop rate er `0.0` for alle tre
+- diagnosen ender pa `cycle_band_has_fragmented_shell_zone`
+
+Dette betyr:
+
+- recurrence-bandet er fortsatt reelt
+- men shellen er vanligvis ikke ett sammenhengende band rundt kjernen
+- den rolige randvarianten fra `v15ad` ma derfor leses som rolig fragmentert churn, ikke som en stabil lukket randring
+- lokal cycle-rank i shellen er ikke det som driver signalet
+- neste riktige steg er a lokalisere nar i halevinduet fragmenteringen dannes eller opploses, ikke en bredere scan
+
+Viktige filer:
+
+- `relational_universe_v15ae_add_chord_shell_topology_lab.py`
+- `Documentation/v15ae_add_chord_shell_topology_lab.md`
+- `Documentation/v15ae_add_chord_shell_topology_runs.csv`
+- `Documentation/v15ae_add_chord_shell_topology_snapshots.csv`
+- `Documentation/v15ae_add_chord_shell_topology_aggregate.csv`
+- `Documentation/v15ae_add_chord_shell_topology_diagnosis.csv`
+- `Documentation/v15ae_add_chord_shell_topology_target_summary.csv`
+- `Documentation/v0_15ae_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

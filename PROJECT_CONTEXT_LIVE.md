@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac` og `v15ad` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad` og `v15ae` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -379,6 +379,14 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-boundary-shell-diagnosis: `Documentation/v15ad_add_chord_boundary_shell_diagnosis.csv`
 - Add-chord-boundary-shell-target-summary: `Documentation/v15ad_add_chord_boundary_shell_target_summary.csv`
 - Add-chord-boundary-shell-anbefaling: `Documentation/v0_15ad_operativ_anbefaling.md`
+- Add-chord-shell-topology-script: `relational_universe_v15ae_add_chord_shell_topology_lab.py`
+- Add-chord-shell-topology-rapport: `Documentation/v15ae_add_chord_shell_topology_lab.md`
+- Add-chord-shell-topology-runs: `Documentation/v15ae_add_chord_shell_topology_runs.csv`
+- Add-chord-shell-topology-snapshots: `Documentation/v15ae_add_chord_shell_topology_snapshots.csv`
+- Add-chord-shell-topology-aggregate: `Documentation/v15ae_add_chord_shell_topology_aggregate.csv`
+- Add-chord-shell-topology-diagnosis: `Documentation/v15ae_add_chord_shell_topology_diagnosis.csv`
+- Add-chord-shell-topology-target-summary: `Documentation/v15ae_add_chord_shell_topology_target_summary.csv`
+- Add-chord-shell-topology-anbefaling: `Documentation/v0_15ae_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1124,6 +1132,30 @@ Den riktige live-lesningen na er derfor:
 - det lokale add_chord-signalet ser ikke bare ut som kjerne + rand, men som kjerne + rolig flimrende rand
 - dette er et sterkere mesoskalasignal enn periodehistorien og triggerhistorien ga
 - neste naturlige steg bor vaere randtopologi eller rand-hendelser, ikke mer arbeid pa perioder eller trigger-generalisering
+
+`v15ae` tok sa nettopp dette shell-topologi-steget:
+
+- behold samme lokale `t48_g202`-band med `p0`, `p1` og `p2`
+- behold de samme smale holdout-seedene som i `v15ab-v15ad`
+- bytt sporsmal fra "rolig eller bursty rand?" til "er randen vanligvis sammenhengende, fragmentert eller lokalt loope-preget?"
+
+Det viktigste fra `Documentation/v15ae_add_chord_shell_topology_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- alle tre plasseringene holder fortsatt `cyclic_rate = 1.0`
+- `p0` og `p1` blir `fragmented_shell_band` i alle seks runene
+- `p2` blir `fragmented_shell_band` i fem av seks og `mixed_shell_topology` i ett
+- mean shell component count ligger hoyt (`~3.35`, `~3.55`, `~4.18`)
+- mean shell connected rate holder seg lav (`~0.090`, `~0.108`, `~0.177`)
+- mean shell loop rate er `0.0` for alle tre
+- diagnosen ender pa `cycle_band_has_fragmented_shell_zone`
+
+Den riktige live-lesningen na er derfor:
+
+- recurrence-bandet er fortsatt ekte, men randen ser topologisk fragmentert ut heller enn som ett sammenhengende band
+- den rolige randflimringen fra `v15ad` er ikke det samme som topologisk ro; shellen skifter fortsatt mellom flere separate biter
+- lokal cycle-rank i shellen forklarer ikke signalet her
+- neste naturlige steg bor vaere a lokalisere nar i halen fragmenteringene oppstar, ikke a scanne bredere
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

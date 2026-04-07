@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er rent separert og alle shell-topologiprofilene matcher onsket add_chord-perturbasjon.
+shell_topology_status,cycle_band_has_fragmented_shell_zone,Minst ett av de lokale punktene ser ofte ut til a bryte randen opp i flere separate biter.
+next_step,localize_fragment_events,"Neste steg bør finne hvor i halen disse fragmenteringene oppstar, ikke scanne bredere."
