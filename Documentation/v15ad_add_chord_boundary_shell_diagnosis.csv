@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er rent separert og alle smale boundary-shell-profiler matcher ønsket add_chord-perturbasjon.
+boundary_shell_status,core_shell_variation_is_calm,"Randen ser ut til å flimre ganske rolig og inkrementelt, ikke i store resets eller bursts."
+next_step,probe_shell_topology,"Neste steg bør måle randtopologien mer direkte, siden variasjonen ser reell men rolig ut."

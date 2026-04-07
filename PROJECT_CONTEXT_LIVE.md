@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z` og `v15aa` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac` og `v15ad` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -358,6 +358,27 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - P0-vs-p1-case-trigger-holdout-diagnosis: `Documentation/v15aa_case_trigger_holdout_diagnosis.csv`
 - P0-vs-p1-case-trigger-holdout-target-summary: `Documentation/v15aa_case_trigger_holdout_target_summary.csv`
 - P0-vs-p1-case-trigger-holdout-anbefaling: `Documentation/v0_15aa_operativ_anbefaling.md`
+- Add-chord-cycle-lag-script: `relational_universe_v15ab_add_chord_cycle_lag_lab.py`
+- Add-chord-cycle-lag-rapport: `Documentation/v15ab_add_chord_cycle_lag_lab.md`
+- Add-chord-cycle-lag-runs: `Documentation/v15ab_add_chord_cycle_lag_runs.csv`
+- Add-chord-cycle-lag-aggregate: `Documentation/v15ab_add_chord_cycle_lag_aggregate.csv`
+- Add-chord-cycle-lag-diagnosis: `Documentation/v15ab_add_chord_cycle_lag_diagnosis.csv`
+- Add-chord-cycle-lag-target-summary: `Documentation/v15ab_add_chord_cycle_lag_target_summary.csv`
+- Add-chord-cycle-lag-anbefaling: `Documentation/v0_15ab_operativ_anbefaling.md`
+- Add-chord-core-shell-script: `relational_universe_v15ac_add_chord_core_shell_lab.py`
+- Add-chord-core-shell-rapport: `Documentation/v15ac_add_chord_core_shell_lab.md`
+- Add-chord-core-shell-runs: `Documentation/v15ac_add_chord_core_shell_runs.csv`
+- Add-chord-core-shell-aggregate: `Documentation/v15ac_add_chord_core_shell_aggregate.csv`
+- Add-chord-core-shell-diagnosis: `Documentation/v15ac_add_chord_core_shell_diagnosis.csv`
+- Add-chord-core-shell-target-summary: `Documentation/v15ac_add_chord_core_shell_target_summary.csv`
+- Add-chord-core-shell-anbefaling: `Documentation/v0_15ac_operativ_anbefaling.md`
+- Add-chord-boundary-shell-script: `relational_universe_v15ad_add_chord_boundary_shell_lab.py`
+- Add-chord-boundary-shell-rapport: `Documentation/v15ad_add_chord_boundary_shell_lab.md`
+- Add-chord-boundary-shell-runs: `Documentation/v15ad_add_chord_boundary_shell_runs.csv`
+- Add-chord-boundary-shell-aggregate: `Documentation/v15ad_add_chord_boundary_shell_aggregate.csv`
+- Add-chord-boundary-shell-diagnosis: `Documentation/v15ad_add_chord_boundary_shell_diagnosis.csv`
+- Add-chord-boundary-shell-target-summary: `Documentation/v15ad_add_chord_boundary_shell_target_summary.csv`
+- Add-chord-boundary-shell-anbefaling: `Documentation/v0_15ad_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1040,6 +1061,69 @@ Den riktige live-lesningen na er derfor:
 - `v15z` forklarer de tre ankercasene bedre, men triggerhistorien holder ikke som lokal lov i naerliggende seeds
 - dette er et nyttig negativt resultat: det stanser videre trigger-generalisering tidlig
 - neste naturlige steg bor vaere en ny observabel eller et annet defect-sporsmal, ikke mer arbeid pa samme triggerlinje
+
+`v15ab` tok sa neste naturlige observabel inne i det sterkeste lokale `add_chord`-bandet:
+
+- behold samme `t48_g202`-mikroband med `p0`, `p1` og `p2`
+- behold samme smale holdout-seeds som i `v15u`
+- bytt sporsmal fra "hvem vinner?" til "har retur-signalet en skarp lag/periodestruktur?"
+
+Det viktigste fra `Documentation/v15ab_add_chord_cycle_lag_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- alle tre plasseringene holder fortsatt `cyclic_rate = 1.0`
+- men ingen av dem har `stable_single_lag_cycle` eller `few_lag_cycle_family`
+- alle tre ender som `diffuse_cycle_family`
+- diagnosen ender pa `cycle_band_is_diffuse`
+
+Den riktige live-lesningen na er derfor:
+
+- det lokale `add_chord`-cycle-bandet er reelt som recurrence-signal
+- men signalet ser ikke ut til a komme fra en skarp lokal periode
+- hoy exact-return-rate ser i stedet ut til a komme fra bred multi-lag-retur
+- neste naturlige steg bor derfor vaere en annen observabel enn periodisitet
+
+`v15ac` tok sa den neste observabelen som passer direkte etter dette:
+
+- behold samme `t48_g202`-mikroband med `p0`, `p1` og `p2`
+- behold de samme smale holdout-seedene som i `v15u` og `v15ab`
+- bytt sporsmal fra periode til kjerne/rand-struktur
+
+Det viktigste fra `Documentation/v15ac_add_chord_core_shell_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- alle tre plasseringene holder fortsatt `cyclic_rate = 1.0`
+- alle tre viser hoy `core_share_of_union` (`~0.855` til `~0.892`)
+- alle tre har `support_core_frac = 1.0`
+- ingen av dem er diffuse i denne observabelen
+- diagnosen ender pa `cycle_band_is_core_shell`
+
+Den riktige live-lesningen na er derfor:
+
+- recurrence-bandet ser ut til a vaere drevet av en stabil skadekjerne med variabel rand
+- periodisitet var feil observabel for a forklare signalet
+- neste naturlige steg bor vaere a male randdynamikken direkte
+
+`v15ad` tok sa nettopp denne rand-observabelen:
+
+- behold samme lokale add_chord-band
+- behold samme smale seeds
+- avgjor om den variable randen skifter rolig eller i bursts
+
+Det viktigste fra `Documentation/v15ad_add_chord_boundary_shell_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `p0` holder `calm_shell_rate = 1.0`
+- `p1` og `p2` holder `calm_shell_rate = 0.667`
+- ingen av plasseringene blir `bursty_shell_cycle`
+- mean shell refresh holder seg lav (`~0.080` til `~0.091`)
+- diagnosen ender pa `core_shell_variation_is_calm`
+
+Den riktige live-lesningen na er derfor:
+
+- det lokale add_chord-signalet ser ikke bare ut som kjerne + rand, men som kjerne + rolig flimrende rand
+- dette er et sterkere mesoskalasignal enn periodehistorien og triggerhistorien ga
+- neste naturlige steg bor vaere randtopologi eller rand-hendelser, ikke mer arbeid pa perioder eller trigger-generalisering
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

@@ -1030,6 +1030,95 @@ Viktige filer:
 - `Documentation/v15aa_case_trigger_holdout_target_summary.csv`
 - `Documentation/v0_15aa_operativ_anbefaling.md`
 
+## 0zc. v15ab viste at cycle-båndet er diffust, ikke skarpt periodisk
+
+Etter at `v15aa` stoppet videre trigger-generalisering, tok `v15ab` neste smale steg i det sterkeste gjenværende defect-signalet:
+
+- behold samme lokale `add_chord`-bånd ved `t48_g202`
+- behold de samme smale holdout-seedene som i `v15u`
+- bytt observabel fra "hvem holder best?" til "har retur-signalet en stabil lag/periode?"
+
+Det viktigste resultatet er tydelig:
+
+- artifact-control holder fortsatt rent
+- alle tre plasseringene holder fortsatt `cyclic_rate = 1.0`
+- men ingen av dem får `stable_single_lag_cycle`
+- ingen av dem får heller `few_lag_cycle_family`
+- alle tre ender som `diffuse_cycle_family`
+- mean dominant lag share er bare omtrent `0.106` til `0.147`
+- diagnosen ender pa `cycle_band_is_diffuse`
+
+Dette betyr:
+
+- det lokale `add_chord`-cycle-båndet er fortsatt reelt som recurrence-signal
+- men det ser ikke ut til a være drevet av en skarp lokal periode
+- høy exact-return-rate kommer i stedet fra bred multi-lag-retur
+- repoet bør derfor ikke bruke mer tid pa en periodestory langs denne aksen
+- neste riktige steg er en annen observabel enn periodisitet
+
+Viktige filer:
+
+- `relational_universe_v15ab_add_chord_cycle_lag_lab.py`
+- `Documentation/v15ab_add_chord_cycle_lag_lab.md`
+- `Documentation/v15ab_add_chord_cycle_lag_runs.csv`
+- `Documentation/v15ab_add_chord_cycle_lag_aggregate.csv`
+- `Documentation/v15ab_add_chord_cycle_lag_diagnosis.csv`
+- `Documentation/v15ab_add_chord_cycle_lag_target_summary.csv`
+- `Documentation/v0_15ab_operativ_anbefaling.md`
+
+## 0zd. v15ac-v15ad gjorde recurrence-båndet mer fysisk lesbart: stabil kjerne, rolig rand
+
+Etter at `v15ab` viste at cycle-båndet ikke er skarpt periodisk, tok prosjektet to nye smale observabelskift på samme lokale `add_chord`-band ved `t48_g202`:
+
+- behold samme `p0`, `p1`, `p2`
+- behold de samme smale holdout-seedene
+- bytt først til kjerne/rand-struktur i `v15ac`
+- og deretter til randdynamikk i `v15ad`
+
+Det viktigste resultatet i `v15ac` er:
+
+- artifact-control holder fortsatt rent
+- alle tre plasseringene holder fortsatt `cyclic_rate = 1.0`
+- `core_share_of_union` er høy for alle tre (`~0.855` til `~0.892`)
+- `support_core_frac = 1.0` for alle tre
+- labelene blir en blanding av `stable_core_variable_shell` og `dominant_static_core`
+- diagnosen ender pa `cycle_band_is_core_shell`
+
+Dette betyr:
+
+- recurrence-bandet er bedre forklart som stabil skadekjerne + variabel rand enn som skarp periode
+
+Det viktigste resultatet i `v15ad` er:
+
+- artifact-control holder fortsatt rent
+- randen ser ikke bursty ut
+- `p0` holder `calm_shell_rate = 1.0`
+- `p1` og `p2` holder `calm_shell_rate = 0.667`
+- mean shell refresh er lav (`~0.080` til `~0.091`)
+- diagnosen ender pa `core_shell_variation_is_calm`
+
+Dette betyr:
+
+- det lokale add_chord-signalet ser ikke bare ut som kjerne + rand
+- det ser ut som kjerne + rolig flimrende rand
+- dette er et sterkere og mer fysisk lesbart mesoskalasignal enn periodehistorien eller trigger-generaliseringen
+- neste riktige steg er derfor randtopologi eller rand-hendelser, ikke mer arbeid pa perioder eller triggere
+
+Viktige filer:
+
+- `relational_universe_v15ac_add_chord_core_shell_lab.py`
+- `Documentation/v15ac_add_chord_core_shell_lab.md`
+- `Documentation/v15ac_add_chord_core_shell_runs.csv`
+- `Documentation/v15ac_add_chord_core_shell_aggregate.csv`
+- `Documentation/v15ac_add_chord_core_shell_diagnosis.csv`
+- `Documentation/v0_15ac_operativ_anbefaling.md`
+- `relational_universe_v15ad_add_chord_boundary_shell_lab.py`
+- `Documentation/v15ad_add_chord_boundary_shell_lab.md`
+- `Documentation/v15ad_add_chord_boundary_shell_runs.csv`
+- `Documentation/v15ad_add_chord_boundary_shell_aggregate.csv`
+- `Documentation/v15ad_add_chord_boundary_shell_diagnosis.csv`
+- `Documentation/v0_15ad_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

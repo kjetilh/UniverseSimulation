@@ -1,0 +1,4 @@
+placement,n_runs,cyclic_rate,stable_single_lag_rate,few_lag_cycle_rate,diffuse_cycle_rate,mean_full_exact_return_rate,mean_dominant_lag_share,q10_dominant_lag_share,mean_dominant_lag_steps,q10_dominant_lag_steps,q90_dominant_lag_steps,mean_unique_hit_lag_count
+0,6,1.0,0.0,0.0,1.0,0.8591731266149871,0.1109673764768687,0.06523617511520738,40.0,40.0,40.0,58.666666666666664
+1,6,1.0,0.0,0.0,1.0,0.8462532299741602,0.10625909870521494,0.048602912239275875,40.0,40.0,40.0,52.333333333333336
+2,6,1.0,0.0,0.0,1.0,0.751937984496124,0.1465969515983808,0.050875907953366294,45.333333333333336,40.0,56.0,44.5
