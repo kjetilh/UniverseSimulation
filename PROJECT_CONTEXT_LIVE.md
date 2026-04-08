@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag` og `v15ah` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah` og `v15ai` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -409,6 +409,14 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-shell-exception-holdout-diagnosis: `Documentation/v15ah_shell_exception_holdout_diagnosis.csv`
 - Add-chord-shell-exception-holdout-target-summary: `Documentation/v15ah_shell_exception_holdout_target_summary.csv`
 - Add-chord-shell-exception-holdout-anbefaling: `Documentation/v0_15ah_operativ_anbefaling.md`
+- Add-chord-early-lock-band-script: `relational_universe_v15ai_early_lock_band_lab.py`
+- Add-chord-early-lock-band-rapport: `Documentation/v15ai_early_lock_band_lab.md`
+- Add-chord-early-lock-band-runs: `Documentation/v15ai_early_lock_band_runs.csv`
+- Add-chord-early-lock-band-snapshots: `Documentation/v15ai_early_lock_band_snapshots.csv`
+- Add-chord-early-lock-band-aggregate: `Documentation/v15ai_early_lock_band_aggregate.csv`
+- Add-chord-early-lock-band-diagnosis: `Documentation/v15ai_early_lock_band_diagnosis.csv`
+- Add-chord-early-lock-band-target-summary: `Documentation/v15ai_early_lock_band_target_summary.csv`
+- Add-chord-early-lock-band-anbefaling: `Documentation/v0_15ai_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1246,6 +1254,31 @@ Den riktige live-lesningen na er derfor:
 - de ser best ut som lokale avvik rundt en sterk og robust hovedfamilie `early_fragment_lock`
 - repoet bor derfor ikke bruke mer tid pa bredere unntaks-ekspansjon langs denne aksen
 - hvis vi fortsetter herfra, bor neste steg være en ny observabel inne i hovedfamilien, ikke mer jakt pa unntaksarter
+
+`v15ai` tok sa nettopp dette observabelskiftet inne i hovedfamilien:
+
+- behold samme lokale `t48_g202` add_chord-band
+- behold bare run som faktisk ligger i `early_fragment_lock`
+- bruk ankerrun fra `v15ae-v15af` og holdout-run fra `v15ah` som falt tilbake til hovedfamilien
+- bytt fra eksakt shell-komponenttelling til coarse fragment-load-band: `low = 1..3`, `mid = 4..6`, `high = 7+`
+
+Det viktigste fra `Documentation/v15ai_early_lock_band_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `structured_band_rate = 1.0` for ankerrun og `0.9` for holdout-revert-run
+- kombinert `structured_band_rate = 0.955`
+- kombinert `band_lock_rate = 0.727`, med bare `band_drift_rate = 0.045`
+- `mean_dominant_band_share = 0.687`, mens `mean_dominant_exact_share = 0.365`
+- uplift fra coarse band over eksakt telling er derfor stor: `0.322`
+- ankerrun domineres mest av `mid`, mens holdout-revert-run domineres mest av `low`
+- diagnosen ender pa `early_lock_has_structured_band_ladder`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga ny viten inne i hovedfamilien, ikke bare en ny beskrivelse
+- `early_fragment_lock` ser mye bedre ut som en strukturert low/mid/high band-stige med litt naboband-drift enn som ett eksakt shell-komponenttall
+- dette er fortsatt ikke rene defect-arter eller en lov; det er en mer robust mesoskopisk observabel
+- neste riktige steg er a forklare band-onset og band-skifter, ikke a ga tilbake til unntaksjakt eller eksakt periodestory
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

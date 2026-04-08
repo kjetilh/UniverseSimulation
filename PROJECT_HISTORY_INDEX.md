@@ -1273,6 +1273,45 @@ Viktige filer:
 - `Documentation/v15ah_shell_exception_holdout_target_summary.csv`
 - `Documentation/v0_15ah_operativ_anbefaling.md`
 
+## 0zi. v15ai viste at hovedfamilien er bedre lest som coarse fragment-load-band enn som eksakt shell-telling
+
+Etter at `v15ah` viste at unntaksmekanismene ikke holder som naerliggende lokale familier, tok `v15ai` neste riktige steg:
+
+- behold samme lokale `t48_g202` add_chord-band
+- behold bare run som faktisk ligger i hovedfamilien `early_fragment_lock`
+- bruk ankerrun fra `v15ae-v15af` og holdout-run fra `v15ah` som falt tilbake til hovedfamilien
+- bytt observabel fra eksakt shell-komponenttall til coarse band `low = 1..3`, `mid = 4..6`, `high = 7+`
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- ankerrun har `structured_band_rate = 1.0`
+- holdout-revert-run har `structured_band_rate = 0.9`
+- kombinert `structured_band_rate = 0.955`
+- kombinert `band_lock_rate = 0.727`, med bare `band_drift_rate = 0.045`
+- `mean_dominant_band_share = 0.687`, mot `mean_dominant_exact_share = 0.365`
+- coarse band slar derfor eksakt telling med stor margin: `uplift = 0.322`
+- diagnosen ender pa `early_lock_has_structured_band_ladder`
+
+Dette betyr:
+
+- dette ga ekte ny viten inne i hovedfamilien, ikke bare en ny etikett
+- `early_fragment_lock` ser mye bedre ut som en strukturert low/mid/high band-stige med litt naboband-drift enn som ett eksakt shell-komponenttall
+- hovedfamilien er fortsatt ikke en ren liten liste av defect-arter
+- men vi har na en klart bedre mesoskopisk observabel enn eksakt telling
+- neste riktige steg er a forklare nar run larser seg inn i `low`, `mid` eller `high`, og hvilke run som bare driver mellom to naboband
+
+Viktige filer:
+
+- `relational_universe_v15ai_early_lock_band_lab.py`
+- `Documentation/v15ai_early_lock_band_lab.md`
+- `Documentation/v15ai_early_lock_band_runs.csv`
+- `Documentation/v15ai_early_lock_band_snapshots.csv`
+- `Documentation/v15ai_early_lock_band_aggregate.csv`
+- `Documentation/v15ai_early_lock_band_diagnosis.csv`
+- `Documentation/v15ai_early_lock_band_target_summary.csv`
+- `Documentation/v0_15ai_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

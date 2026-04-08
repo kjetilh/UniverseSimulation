@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er rent separert og alle run i denne runden matcher onsket add_chord-perturbasjon.
+coarse_band_status,early_lock_has_structured_band_ladder,"Hovedfamilien er mye bedre lest som coarse low/mid/high-band med litt naboband-drift enn som ett eksakt shell-komponenttall, og dette holder ogsa pa holdout-run som falt tilbake til hovedfamilien."
+band_mode_note,descriptive,"Ankerrun domineres mest av `mid`, mens holdout-revert-rundene domineres mest av `low`."
+next_step,probe_band_onset_and_switching,"Neste steg bor forklare nar run larser seg inn i low, mid eller high band, og hvilke run som bare driver mellom to naboband."
