@@ -1237,6 +1237,42 @@ Viktige filer:
 - `Documentation/v15ag_shell_exception_target_summary.csv`
 - `Documentation/v0_15ag_operativ_anbefaling.md`
 
+## 0zh. v15ah viste at unntaksmekanismene ikke holder som lokale familier
+
+Etter at `v15ag` gjorde minoritetsavvikene lokalt forklarbare, tok `v15ah` neste riktige steg:
+
+- behold bare de seks unntaksankrene fra `v15ag`
+- behold samme `t48_g202`-base og samme observabler
+- legg inn to naerliggende holdout-seeds rundt hvert unntaksanker
+- avgjor om unntaksmekanismene faktisk replikerer lokalt
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `expected_match_rate = 0.0` for alle seks unntaksankre
+- fire av seks ankre har `main_family_revert_rate = 1.0`
+- de to gjenværende ankre splitter mellom `early_fragment_lock` og `unresolved_holdout`
+- ingen holdouts gaar over i en annen kjent unntaksmekanisme
+- diagnosen ender pa `exceptions_mostly_revert_to_main_family`
+
+Dette betyr:
+
+- `v15ag` ga ekte lokal forklaringsverdi for ankerseedene, men mekanismene holder ikke som naerliggende lokale familier
+- den viktigste nye kunnskapen er derfor negativ, men sterk:
+  - unntakene ser best ut som lokale avvik rundt en robust hovedfamilie `early_fragment_lock`
+- prosjektet bor ikke bruke mer tid pa bredere unntaks-ekspansjon langs denne aksen
+- hvis sporet skal fortsette, bor neste steg vaere en ny observabel inne i hovedfamilien, ikke mer unntaksjakt
+
+Viktige filer:
+
+- `relational_universe_v15ah_shell_exception_holdout.py`
+- `Documentation/v15ah_shell_exception_holdout.md`
+- `Documentation/v15ah_shell_exception_holdout_runs.csv`
+- `Documentation/v15ah_shell_exception_holdout_aggregate.csv`
+- `Documentation/v15ah_shell_exception_holdout_diagnosis.csv`
+- `Documentation/v15ah_shell_exception_holdout_target_summary.csv`
+- `Documentation/v0_15ah_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

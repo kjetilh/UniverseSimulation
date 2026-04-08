@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af` og `v15ag` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag` og `v15ah` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -402,6 +402,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-shell-exception-diagnosis: `Documentation/v15ag_shell_exception_diagnosis.csv`
 - Add-chord-shell-exception-target-summary: `Documentation/v15ag_shell_exception_target_summary.csv`
 - Add-chord-shell-exception-anbefaling: `Documentation/v0_15ag_operativ_anbefaling.md`
+- Add-chord-shell-exception-holdout-script: `relational_universe_v15ah_shell_exception_holdout.py`
+- Add-chord-shell-exception-holdout-rapport: `Documentation/v15ah_shell_exception_holdout.md`
+- Add-chord-shell-exception-holdout-runs: `Documentation/v15ah_shell_exception_holdout_runs.csv`
+- Add-chord-shell-exception-holdout-aggregate: `Documentation/v15ah_shell_exception_holdout_aggregate.csv`
+- Add-chord-shell-exception-holdout-diagnosis: `Documentation/v15ah_shell_exception_holdout_diagnosis.csv`
+- Add-chord-shell-exception-holdout-target-summary: `Documentation/v15ah_shell_exception_holdout_target_summary.csv`
+- Add-chord-shell-exception-holdout-anbefaling: `Documentation/v0_15ah_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1216,6 +1223,29 @@ Den riktige live-lesningen na er derfor:
 - minoritetsavvikene i shell-fragmenteringen ser ikke lenger ut som ren blandet stoy
 - de kollapser til et lite lokalt mekanismesett, med en klar hovedfamilie (`alternating_to_late_lock`) og tre smalere unntaksmekanismer
 - neste naturlige steg bor vaere en liten holdout-test av akkurat disse unntaksmekanismene, ikke en ny bred scan
+
+`v15ah` tok sa nettopp denne holdout-testen av unntaksmekanismene:
+
+- behold samme lokale `t48_g202`-band
+- behold bare de seks unntaksankrene fra `v15ag`
+- legg inn to naerliggende holdout-seeds rundt hvert unntaksanker
+- avgjor om unntaksmekanismene replikerer, eller om de fleste holdouts faller tilbake til `early_fragment_lock`
+
+Det viktigste fra `Documentation/v15ah_shell_exception_holdout.md` er:
+
+- artifact-control holder fortsatt rent
+- `expected_match_rate = 0.0` for alle seks unntaksankrene
+- fire av seks ankre har `main_family_revert_rate = 1.0`
+- de to gjenværende ankerfamiliene splitter mellom `early_fragment_lock` og `unresolved_holdout`
+- ingen holdout går over i en annen kjent unntaksmekanisme
+- diagnosen ender pa `exceptions_mostly_revert_to_main_family`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga faktisk ny viten: unntaksmekanismene fra `v15ag` ser ikke ut til a generalisere lokalt
+- de ser best ut som lokale avvik rundt en sterk og robust hovedfamilie `early_fragment_lock`
+- repoet bor derfor ikke bruke mer tid pa bredere unntaks-ekspansjon langs denne aksen
+- hvis vi fortsetter herfra, bor neste steg være en ny observabel inne i hovedfamilien, ikke mer jakt pa unntaksarter
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

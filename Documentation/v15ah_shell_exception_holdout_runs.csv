@@ -1,0 +1,13 @@
+target_nodes,growth_seed,placement,anchor_seed_delta,holdout_seed_delta,run_seed,expected_mechanism,requested_match,support_signature,full_label,full_exact_return_rate,shell_nodes,first_fragment_step,connected_prefix_steps,fragmented_suffix_rate,state_switch_count,longest_connected_steps,final_fragment_steps,timing_label,holdout_mechanism_label,holdout_outcome_label
+48,202,0,239,231,5002231,alternating_to_late_lock,1,"5,6,8",cyclic_return,0.8604651162790697,8,1536,0,0.937984496124031,4,56.0,704.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,0,239,247,5002247,alternating_to_late_lock,1,"5,6,8",cyclic_return,0.7751937984496124,7,1536,0,1.0,0,0.0,1032.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,1,151,143,5002144,alternating_to_late_lock,1,"6,8,10",cyclic_return,1.0,2,1536,0,0.5309734513274337,7,176.0,0.0,intermittent_fragment_churn,residual_exception,unresolved_holdout
+48,202,1,151,159,5002160,alternating_to_late_lock,1,"6,8,10",cyclic_return,1.0,3,1536,0,0.8914728682170543,12,40.0,216.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,1,179,171,5002172,two_stage_fragment_lock,1,"6,8,10",cyclic_return,1.0,0,-1,0,0.0,0,0.0,0.0,mixed_fragment_timing,residual_exception,unresolved_holdout
+48,202,1,179,187,5002188,two_stage_fragment_lock,1,"6,8,10",cyclic_return,0.7441860465116279,5,1536,0,0.9689922480620154,4,24.0,552.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,1,211,203,5002204,near_lock_boundary_case,1,"6,8,10",cyclic_return,0.9457364341085271,5,1536,0,0.9327731092436975,4,56.0,248.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,1,211,219,5002220,near_lock_boundary_case,1,"6,8,10",cyclic_return,0.7054263565891473,8,1536,0,0.9922480620155039,2,8.0,816.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,2,151,143,5002145,singleton_resistance_case,1,"5,6,14",cyclic_return,0.9069767441860465,4,1536,0,0.9069767441860465,6,72.0,888.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,2,151,159,5002161,singleton_resistance_case,1,"5,6,14",cyclic_return,0.5193798449612403,10,1536,0,1.0,0,0.0,1032.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,2,211,203,5002205,alternating_to_late_lock,1,"5,6,14",cyclic_return,0.5348837209302325,13,1536,0,1.0,0,0.0,1032.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family
+48,202,2,211,219,5002221,alternating_to_late_lock,1,"5,6,14",cyclic_return,0.8837209302325582,8,1536,0,0.9140625,4,72.0,392.0,early_fragment_lock,early_fragment_lock,reverts_to_main_family

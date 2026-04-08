@@ -1,0 +1,7 @@
+placement,anchor_seed_delta,expected_mechanism,n_holdouts,expected_match_rate,main_family_revert_rate,different_exception_rate,unresolved_rate,mean_full_exact_return_rate,mean_fragmented_suffix_rate,mean_state_switch_count
+0,239,alternating_to_late_lock,2,0.0,1.0,0.0,0.0,0.8178294573643411,0.9689922480620154,2.0
+1,151,alternating_to_late_lock,2,0.0,0.5,0.0,0.5,1.0,0.711223159772244,9.5
+1,179,two_stage_fragment_lock,2,0.0,0.5,0.0,0.5,0.872093023255814,0.4844961240310077,2.0
+1,211,near_lock_boundary_case,2,0.0,1.0,0.0,0.0,0.8255813953488372,0.9625105856296007,3.0
+2,151,singleton_resistance_case,2,0.0,1.0,0.0,0.0,0.7131782945736433,0.9534883720930232,3.0
+2,211,alternating_to_late_lock,2,0.0,1.0,0.0,0.0,0.7093023255813953,0.95703125,2.0
