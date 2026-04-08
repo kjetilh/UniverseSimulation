@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah` og `v15ai` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai` og `v15aj` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -417,6 +417,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-early-lock-band-diagnosis: `Documentation/v15ai_early_lock_band_diagnosis.csv`
 - Add-chord-early-lock-band-target-summary: `Documentation/v15ai_early_lock_band_target_summary.csv`
 - Add-chord-early-lock-band-anbefaling: `Documentation/v0_15ai_operativ_anbefaling.md`
+- Add-chord-early-lock-band-onset-script: `relational_universe_v15aj_early_lock_band_onset_lab.py`
+- Add-chord-early-lock-band-onset-rapport: `Documentation/v15aj_early_lock_band_onset_lab.md`
+- Add-chord-early-lock-band-onset-runs: `Documentation/v15aj_early_lock_band_onset_runs.csv`
+- Add-chord-early-lock-band-onset-aggregate: `Documentation/v15aj_early_lock_band_onset_aggregate.csv`
+- Add-chord-early-lock-band-onset-diagnosis: `Documentation/v15aj_early_lock_band_onset_diagnosis.csv`
+- Add-chord-early-lock-band-onset-target-summary: `Documentation/v15aj_early_lock_band_onset_target_summary.csv`
+- Add-chord-early-lock-band-onset-anbefaling: `Documentation/v0_15aj_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1279,6 +1286,30 @@ Den riktige live-lesningen na er derfor:
 - `early_fragment_lock` ser mye bedre ut som en strukturert low/mid/high band-stige med litt naboband-drift enn som ett eksakt shell-komponenttall
 - dette er fortsatt ikke rene defect-arter eller en lov; det er en mer robust mesoskopisk observabel
 - neste riktige steg er a forklare band-onset og band-skifter, ikke a ga tilbake til unntaksjakt eller eksakt periodestory
+
+`v15aj` tok sa nettopp dette onset-steget:
+
+- behold de ekte `v15ai`-snapshottene
+- bruk ingen nye simuleringer
+- finn tidligste suffix der et run holder seg innenfor ett band eller et naboband-par
+- avgjor om run gaar rett inn i `low-mid`, senere glir inn i `mid-high`, eller blir igjen i tre-band-churn
+
+Det viktigste fra `Documentation/v15aj_early_lock_band_onset_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- kombinert `structured_onset_rate = 0.818`
+- kombinert `immediate_structured_rate = 0.591`
+- kombinert `delayed_structured_rate = 0.227`
+- kombinert `persistent_three_band_churn_rate = 0.182`
+- `p0` gaar nesten alltid rett inn i `low-mid`: `immediate_low_mid_ladder_rate = 0.857`
+- `p2` er tyngst pa senere `mid-high`-settling og churn: `delayed_mid_high_ladder_rate = 0.375`, `persistent_three_band_churn_rate = 0.250`
+- diagnosen ender pa `band_onset_structure_supported`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga ny viten utover `v15ai`: onseten er selv strukturert, ikke bare sluttfordelingen
+- `early_fragment_lock` er ikke flatt i halen; placement `0` gaar oftest direkte inn i `low-mid`, mens placement `2` oftere trenger tid for a komme inn i `mid-high` eller blir igjen i bredere churn
+- den neste riktige retningen er derfor ikke ny bred scan, men a forklare inngangstriggerne til disse onset-typene
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

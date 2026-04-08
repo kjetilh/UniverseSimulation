@@ -1312,6 +1312,44 @@ Viktige filer:
 - `Documentation/v15ai_early_lock_band_target_summary.csv`
 - `Documentation/v0_15ai_operativ_anbefaling.md`
 
+## 0zj. v15aj viste at band-onseten er strukturert og placement-skjev
+
+Etter at `v15ai` viste at `early_fragment_lock` er bedre lest som coarse band enn som eksakt shell-telling, tok `v15aj` neste riktige steg:
+
+- behold de ekte `v15ai`-snapshottene
+- bruk ingen nye simuleringer
+- finn tidligste suffix der runet holder seg innenfor ett band eller et naboband-par
+- avgjor om runet gaar rett inn i `low-mid`, senere glir inn i `mid-high`, eller blir igjen i bredere tre-band-churn
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- kombinert `structured_onset_rate = 0.818`
+- kombinert `immediate_structured_rate = 0.591`
+- kombinert `delayed_structured_rate = 0.227`
+- kombinert `persistent_three_band_churn_rate = 0.182`
+- `p0` har `immediate_low_mid_ladder_rate = 0.857`
+- `p2` har `delayed_mid_high_ladder_rate = 0.375` og `persistent_three_band_churn_rate = 0.250`
+- diagnosen ender pa `band_onset_structure_supported`
+
+Dette betyr:
+
+- dette ga ny viten utover `v15ai`: onseten er selv strukturert, ikke bare sluttfordelingen
+- `early_fragment_lock` ser ikke flat ut gjennom hele halevinduet
+- placement `0` gaar oftest direkte inn i `low-mid`
+- placement `2` trenger oftere tid for a komme inn i `mid-high`, eller blir igjen i bredere churn
+- neste riktige steg er derfor a forklare inngangstriggerne til disse onset-typene, ikke en ny bred scan
+
+Viktige filer:
+
+- `relational_universe_v15aj_early_lock_band_onset_lab.py`
+- `Documentation/v15aj_early_lock_band_onset_lab.md`
+- `Documentation/v15aj_early_lock_band_onset_runs.csv`
+- `Documentation/v15aj_early_lock_band_onset_aggregate.csv`
+- `Documentation/v15aj_early_lock_band_onset_diagnosis.csv`
+- `Documentation/v15aj_early_lock_band_onset_target_summary.csv`
+- `Documentation/v0_15aj_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
