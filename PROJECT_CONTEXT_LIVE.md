@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad` og `v15ae` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae` og `v15af` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -387,6 +387,14 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-shell-topology-diagnosis: `Documentation/v15ae_add_chord_shell_topology_diagnosis.csv`
 - Add-chord-shell-topology-target-summary: `Documentation/v15ae_add_chord_shell_topology_target_summary.csv`
 - Add-chord-shell-topology-anbefaling: `Documentation/v0_15ae_operativ_anbefaling.md`
+- Add-chord-shell-fragment-event-script: `relational_universe_v15af_add_chord_shell_fragment_event_lab.py`
+- Add-chord-shell-fragment-event-rapport: `Documentation/v15af_add_chord_shell_fragment_event_lab.md`
+- Add-chord-shell-fragment-event-runs: `Documentation/v15af_add_chord_shell_fragment_runs.csv`
+- Add-chord-shell-fragment-event-segments: `Documentation/v15af_add_chord_shell_fragment_segments.csv`
+- Add-chord-shell-fragment-event-aggregate: `Documentation/v15af_add_chord_shell_fragment_aggregate.csv`
+- Add-chord-shell-fragment-event-diagnosis: `Documentation/v15af_add_chord_shell_fragment_diagnosis.csv`
+- Add-chord-shell-fragment-event-target-summary: `Documentation/v15af_add_chord_shell_fragment_target_summary.csv`
+- Add-chord-shell-fragment-event-anbefaling: `Documentation/v0_15af_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1156,6 +1164,29 @@ Den riktige live-lesningen na er derfor:
 - den rolige randflimringen fra `v15ad` er ikke det samme som topologisk ro; shellen skifter fortsatt mellom flere separate biter
 - lokal cycle-rank i shellen forklarer ikke signalet her
 - neste naturlige steg bor vaere a lokalisere nar i halen fragmenteringene oppstar, ikke a scanne bredere
+
+`v15af` tok sa nettopp denne timing-runden pa `v15ae`-snapshottene:
+
+- behold samme lokale `t48_g202`-band med `p0`, `p1`, `p2`
+- bruk bare de ekte `v15ae`-snapshottene, ikke nye simuleringer
+- lokaliser nar shell-fragmenteringen starter og om den holder som tidlig lock eller bare som sen churn
+
+Det viktigste fra `Documentation/v15af_add_chord_shell_fragment_event_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `p0` har `early_fragment_lock_rate = 0.833`
+- `p1` har `early_fragment_lock_rate = 0.500`, `delayed_fragment_lock_rate = 0.167` og `intermittent_fragment_churn_rate = 0.167`
+- `p2` har `early_fragment_lock_rate = 0.667`, `intermittent_fragment_churn_rate = 0.167` og `connected_resistance_churn_rate = 0.167`
+- mean first fragment step ligger tett pa tail-start for `p0` og `p2` (`~1537.3`) og litt senere for `p1` (`~1549.3`)
+- mean fragmented suffix rate er fortsatt hoy (`~0.912`, `~0.904`, `~0.823`)
+- diagnosen ender pa `fragmentation_is_usually_early_lock`
+
+Den riktige live-lesningen na er derfor:
+
+- shell-fragmenteringen ser oftest ut til a starte tidlig i halevinduet og deretter holde seg som en lokal lock
+- `p1` har et lite minoritetsspor av forsinket onset
+- `p2` har et lite minoritetsspor der connected shell holder igjen lenger for den fragmenterer
+- neste naturlige steg bor forklare disse minoritetsavvikene, ikke bredere scanning
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

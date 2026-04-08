@@ -1158,6 +1158,46 @@ Viktige filer:
 - `Documentation/v15ae_add_chord_shell_topology_target_summary.csv`
 - `Documentation/v0_15ae_operativ_anbefaling.md`
 
+## 0zf. v15af viste at shell-fragmenteringen vanligvis starter tidlig og låser seg i halen
+
+Etter at `v15ae` viste at add_chord-shellen vanligvis er fragmentert, tok `v15af` neste smale steg:
+
+- behold samme `t48_g202`-band med `p0`, `p1`, `p2`
+- behold de samme seks smale seedene
+- bruk bare de ekte `v15ae`-snapshottene, uten nye simuleringer
+- lokaliser nar i halevinduet fragmenteringen starter og om den blir en tidlig lock eller bare senere churn
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `p0` har `early_fragment_lock_rate = 0.833`
+- `p1` har `early_fragment_lock_rate = 0.500`, `delayed_fragment_lock_rate = 0.167` og `intermittent_fragment_churn_rate = 0.167`
+- `p2` har `early_fragment_lock_rate = 0.667`, `intermittent_fragment_churn_rate = 0.167` og `connected_resistance_churn_rate = 0.167`
+- mean first fragment step ligger tett pa tail-start for `p0` og `p2` (`~1537.3`)
+- `p1` ligger litt senere (`~1549.3`), som passer med det lille delayed-onset-sporet
+- fragmented suffix rate holder seg hoy for alle tre plasseringene
+- diagnosen ender pa `fragmentation_is_usually_early_lock`
+
+Dette betyr:
+
+- shell-fragmenteringen i cycle-bandet ser vanligvis ut til a starte tidlig i halevinduet og deretter holde seg som en lokal lock
+- dette skjerper `v15ae`: fragmenteringen er ikke bare topologisk til stede, den etablerer seg ofte nesten med en gang i halen
+- de viktigste avvikene er na ikke brede familier, men minoritetsspor:
+  - et lite delayed-onset-spor i `p1`
+  - et lite connected-resistance-spor i `p2`
+- neste riktige steg er derfor a forklare disse minoritetsavvikene, ikke a scanne bredere
+
+Viktige filer:
+
+- `relational_universe_v15af_add_chord_shell_fragment_event_lab.py`
+- `Documentation/v15af_add_chord_shell_fragment_event_lab.md`
+- `Documentation/v15af_add_chord_shell_fragment_runs.csv`
+- `Documentation/v15af_add_chord_shell_fragment_segments.csv`
+- `Documentation/v15af_add_chord_shell_fragment_aggregate.csv`
+- `Documentation/v15af_add_chord_shell_fragment_diagnosis.csv`
+- `Documentation/v15af_add_chord_shell_fragment_target_summary.csv`
+- `Documentation/v0_15af_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

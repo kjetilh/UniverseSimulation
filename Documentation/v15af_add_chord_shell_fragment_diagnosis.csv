@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er fortsatt rent separert; denne runden bruker bare de ekte v15ae-snapshottene og legger ikke inn ny simulasjonsstoy.
+fragment_timing_status,fragmentation_is_usually_early_lock,Shell-fragmenteringen ser oftest ut til a starte tidlig i halevinduet og deretter holde seg som en lokal lock med minoritetsavvik.
+next_step,inspect_minor_exceptions,"Neste steg bor forklare minoritetsavvikene, spesielt forsinket onset i `p1` og connected-resistance-caset i `p2`."
