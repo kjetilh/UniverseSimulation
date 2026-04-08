@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae` og `v15af` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af` og `v15ag` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -395,6 +395,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-shell-fragment-event-diagnosis: `Documentation/v15af_add_chord_shell_fragment_diagnosis.csv`
 - Add-chord-shell-fragment-event-target-summary: `Documentation/v15af_add_chord_shell_fragment_target_summary.csv`
 - Add-chord-shell-fragment-event-anbefaling: `Documentation/v0_15af_operativ_anbefaling.md`
+- Add-chord-shell-exception-script: `relational_universe_v15ag_shell_exception_explainer.py`
+- Add-chord-shell-exception-rapport: `Documentation/v15ag_shell_exception_explainer.md`
+- Add-chord-shell-exception-rows: `Documentation/v15ag_shell_exception_rows.csv`
+- Add-chord-shell-exception-aggregate: `Documentation/v15ag_shell_exception_aggregate.csv`
+- Add-chord-shell-exception-diagnosis: `Documentation/v15ag_shell_exception_diagnosis.csv`
+- Add-chord-shell-exception-target-summary: `Documentation/v15ag_shell_exception_target_summary.csv`
+- Add-chord-shell-exception-anbefaling: `Documentation/v0_15ag_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1187,6 +1194,28 @@ Den riktige live-lesningen na er derfor:
 - `p1` har et lite minoritetsspor av forsinket onset
 - `p2` har et lite minoritetsspor der connected shell holder igjen lenger for den fragmenterer
 - neste naturlige steg bor forklare disse minoritetsavvikene, ikke bredere scanning
+
+`v15ag` tok sa akkurat denne unntaksforklaringen:
+
+- behold bare minoritetsavvikene fra `v15af`
+- kjør ingen nye simuleringer
+- avgjor om unntakene kollapser til et lite sett lokale mekanismer eller fortsatt er blandet stoy
+
+Det viktigste fra `Documentation/v15ag_shell_exception_explainer.md` er:
+
+- artifact-control holder fortsatt rent
+- de seks minoritetsrunene kollapser til fire lokale mekanismelabels
+- `alternating_to_late_lock` dekker tre av seks unntak
+- `two_stage_fragment_lock` forklarer `p1` sitt delayed-onset-case
+- `singleton_resistance_case` forklarer `p2` sitt connected-resistance-case
+- `near_lock_boundary_case` dekker det gjenværende grensetilfellet i `p1`
+- diagnosen ender pa `minority_exceptions_are_locally_explainable`
+
+Den riktige live-lesningen na er derfor:
+
+- minoritetsavvikene i shell-fragmenteringen ser ikke lenger ut som ren blandet stoy
+- de kollapser til et lite lokalt mekanismesett, med en klar hovedfamilie (`alternating_to_late_lock`) og tre smalere unntaksmekanismer
+- neste naturlige steg bor vaere en liten holdout-test av akkurat disse unntaksmekanismene, ikke en ny bred scan
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

@@ -1198,6 +1198,45 @@ Viktige filer:
 - `Documentation/v15af_add_chord_shell_fragment_target_summary.csv`
 - `Documentation/v0_15af_operativ_anbefaling.md`
 
+## 0zg. v15ag gjorde minoritetsavvikene lokalt forklarbare
+
+Etter at `v15af` viste at shell-fragmenteringen vanligvis låser tidlig, tok `v15ag` neste smale steg:
+
+- behold bare de seks minoritetsavvikene fra `v15af`
+- kjør ingen nye simuleringer
+- bruk bare `v15ae`- og `v15af`-dataene
+- avgjor om unntakene fortsatt er blandet stoy eller kollapser til et lite lokalt mekanismesett
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- de seks minoritetsrunene kollapser til fire mekanismelabels
+- `alternating_to_late_lock` dekker tre av seks unntak
+- `two_stage_fragment_lock` forklarer `p1` sitt delayed-onset-case
+- `singleton_resistance_case` forklarer `p2` sitt connected-resistance-case
+- `near_lock_boundary_case` dekker det siste grensetilfellet
+- diagnosen ender pa `minority_exceptions_are_locally_explainable`
+
+Dette betyr:
+
+- minoritetsavvikene i shell-fragmenteringen ser ikke lenger ut som ren reststoy
+- de danner et lite lokalt mekanismesett:
+  - en liten hovedfamilie med veksling som ender i sen fragment-lock
+  - en totrinns delayed-lock
+  - en singleton-resistensmekanisme
+  - ett boundary-case naer early-lock-familien
+- neste riktige steg er derfor en liten holdout-test av akkurat disse unntaksmekanismene, ikke en ny bred scan
+
+Viktige filer:
+
+- `relational_universe_v15ag_shell_exception_explainer.py`
+- `Documentation/v15ag_shell_exception_explainer.md`
+- `Documentation/v15ag_shell_exception_rows.csv`
+- `Documentation/v15ag_shell_exception_aggregate.csv`
+- `Documentation/v15ag_shell_exception_diagnosis.csv`
+- `Documentation/v15ag_shell_exception_target_summary.csv`
+- `Documentation/v0_15ag_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
