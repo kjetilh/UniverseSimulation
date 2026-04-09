@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai` og `v15aj` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak` og `v15al` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -424,6 +424,20 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-early-lock-band-onset-diagnosis: `Documentation/v15aj_early_lock_band_onset_diagnosis.csv`
 - Add-chord-early-lock-band-onset-target-summary: `Documentation/v15aj_early_lock_band_onset_target_summary.csv`
 - Add-chord-early-lock-band-onset-anbefaling: `Documentation/v0_15aj_operativ_anbefaling.md`
+- Add-chord-band-entry-trigger-script: `relational_universe_v15ak_band_entry_trigger_lab.py`
+- Add-chord-band-entry-trigger-rapport: `Documentation/v15ak_band_entry_trigger_lab.md`
+- Add-chord-band-entry-trigger-runs: `Documentation/v15ak_band_entry_trigger_runs.csv`
+- Add-chord-band-entry-trigger-aggregate: `Documentation/v15ak_band_entry_trigger_aggregate.csv`
+- Add-chord-band-entry-trigger-diagnosis: `Documentation/v15ak_band_entry_trigger_diagnosis.csv`
+- Add-chord-band-entry-trigger-target-summary: `Documentation/v15ak_band_entry_trigger_target_summary.csv`
+- Add-chord-band-entry-trigger-anbefaling: `Documentation/v0_15ak_operativ_anbefaling.md`
+- Add-chord-boundary-zone-split-script: `relational_universe_v15al_boundary_zone_split_lab.py`
+- Add-chord-boundary-zone-split-rapport: `Documentation/v15al_boundary_zone_split_lab.md`
+- Add-chord-boundary-zone-split-runs: `Documentation/v15al_boundary_zone_split_runs.csv`
+- Add-chord-boundary-zone-split-aggregate: `Documentation/v15al_boundary_zone_split_aggregate.csv`
+- Add-chord-boundary-zone-split-diagnosis: `Documentation/v15al_boundary_zone_split_diagnosis.csv`
+- Add-chord-boundary-zone-split-target-summary: `Documentation/v15al_boundary_zone_split_target_summary.csv`
+- Add-chord-boundary-zone-split-anbefaling: `Documentation/v0_15al_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1310,6 +1324,54 @@ Den riktige live-lesningen na er derfor:
 - dette ga ny viten utover `v15ai`: onseten er selv strukturert, ikke bare sluttfordelingen
 - `early_fragment_lock` er ikke flatt i halen; placement `0` gaar oftest direkte inn i `low-mid`, mens placement `2` oftere trenger tid for a komme inn i `mid-high` eller blir igjen i bredere churn
 - den neste riktige retningen er derfor ikke ny bred scan, men a forklare inngangstriggerne til disse onset-typene
+
+`v15ak` tok sa nettopp denne trigger-runden:
+
+- behold de ekte `v15ai`-snapshottene og `v15aj`-onsettypene
+- bruk ingen nye simuleringer
+- maal bare enkle tidlige hale-features i de forste 24 snapshottene
+- avgjor om disse skiller immediate `low-mid`, `mid-high`-entry og vedvarende churn
+
+Det viktigste fra `Documentation/v15ak_band_entry_trigger_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- immediate low-family har `compact_low_entry_rate = 0.917`
+- mid-high-entry-family har `boundary_mixed_rate + heavy_high_pressure_rate = 1.000`
+- persistent churn-family har `boundary_mixed_rate = 1.000`
+- diagnosen ender pa `entry_trigger_map_partly_supported`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga ny viten: tidlig hale skiller immediate `low-mid` ganske rent fra resten
+- immediate `low-mid` ser nesten alltid ut som kompakte low-entry-caser med lav last og rolig switching
+- `mid-high`-entry og vedvarende churn ligger derimot fortsatt i samme boundary/heavy-sone tidlig i halen
+- neste riktige steg er derfor a splitte denne boundary-sonen, ikke a lete etter nye brede familier
+
+`v15al` tok sa nettopp dette boundary-steget:
+
+- behold bare `boundary_mixed_trigger`-runene fra `v15ak`
+- bruk ingen nye simuleringer
+- se litt lenger frem i den tidlige halen, de forste 72 snapshottene
+- avgjor om boundary-sonen deler seg i noen fa senere profiler
+
+Det viktigste fra `Documentation/v15al_boundary_zone_split_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- boundary-sonen er ikke ren, men deler seg i tre lokale profiler:
+  - `late_high_rise_boundary`
+  - `mid_plateau_boundary`
+  - `residual_boundary`
+- `mid_high_entry_family` har `late_high_rise_rate = 0.500`
+- `persistent_churn_family` har `mid_plateau_rate = 0.750`
+- diagnosen ender pa `boundary_zone_partly_split`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga litt ny viten: boundary-sonen er ikke homogen
+- `mid-high`-entry havner oftere i en sen high-rise-gren
+- vedvarende churn havner oftere i en roligere mid-plateau-gren
+- men overlap-caseene er fortsatt viktige, sa dette er fortsatt en delvis og ikke endelig splitting
+- neste riktige steg er derfor a forklare overlap-caseene, ikke a ga bredere med en gang
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

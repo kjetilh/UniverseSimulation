@@ -1350,6 +1350,79 @@ Viktige filer:
 - `Documentation/v15aj_early_lock_band_onset_target_summary.csv`
 - `Documentation/v0_15aj_operativ_anbefaling.md`
 
+## 0zk. v15ak viste at tidlig hale skiller compact low-entry ganske rent, men ikke boundary-sonen
+
+Etter at `v15aj` viste at band-onseten er strukturert, tok `v15ak` neste riktige steg:
+
+- behold de ekte `v15ai`-snapshottene og `v15aj`-onsettypene
+- bruk ingen nye simuleringer
+- mal enkle tidlige hale-features i de forste 24 snapshottene
+- avgjor om disse forklarer immediate `low-mid`, `mid-high`-entry og vedvarende churn
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- immediate low-family har `compact_low_entry_rate = 0.917`
+- mid-high-entry-family har `boundary_mixed_rate + heavy_high_pressure_rate = 1.000`
+- persistent churn-family har `boundary_mixed_rate = 1.000`
+- diagnosen ender pa `entry_trigger_map_partly_supported`
+
+Dette betyr:
+
+- dette ga ny viten: tidlig hale skiller immediate `low-mid` ganske rent fra resten
+- immediate `low-mid` ser nesten alltid ut som kompakte low-entry-caser med lav last og rolig switching
+- `mid-high`-entry og vedvarende churn lever fortsatt i samme boundary/heavy-sone tidlig i halen
+- neste riktige steg er derfor a splitte boundary-sonen, ikke a lete etter nye brede familier
+
+Viktige filer:
+
+- `relational_universe_v15ak_band_entry_trigger_lab.py`
+- `Documentation/v15ak_band_entry_trigger_lab.md`
+- `Documentation/v15ak_band_entry_trigger_runs.csv`
+- `Documentation/v15ak_band_entry_trigger_aggregate.csv`
+- `Documentation/v15ak_band_entry_trigger_diagnosis.csv`
+- `Documentation/v15ak_band_entry_trigger_target_summary.csv`
+- `Documentation/v0_15ak_operativ_anbefaling.md`
+
+## 0zl. v15al viste at boundary-sonen deler seg delvis i high-rise og mid-plateau
+
+Etter at `v15ak` viste at ikke-lave run fortsatt levde i en felles boundary/heavy-sone, tok `v15al` neste riktige steg:
+
+- behold bare `boundary_mixed_trigger`-runene fra `v15ak`
+- bruk ingen nye simuleringer
+- se litt lenger frem i den tidlige halen, de forste 72 snapshottene
+- avgjor om boundary-sonen deler seg i noen fa lokale profiler
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- boundary-sonen deler seg i tre profiler:
+  - `late_high_rise_boundary`
+  - `mid_plateau_boundary`
+  - `residual_boundary`
+- `mid_high_entry_family` har `late_high_rise_rate = 0.500`
+- `persistent_churn_family` har `mid_plateau_rate = 0.750`
+- diagnosen ender pa `boundary_zone_partly_split`
+
+Dette betyr:
+
+- dette ga ny viten, men bare delvis
+- boundary-sonen er ikke homogen
+- `mid-high`-entry havner oftere i en sen high-rise-gren
+- vedvarende churn havner oftere i en roligere mid-plateau-gren
+- overlap-caseene er fortsatt viktige, sa dette er ikke en ren lokal lov
+- neste riktige steg er a forklare overlap-caseene, ikke a ga bredere med en gang
+
+Viktige filer:
+
+- `relational_universe_v15al_boundary_zone_split_lab.py`
+- `Documentation/v15al_boundary_zone_split_lab.md`
+- `Documentation/v15al_boundary_zone_split_runs.csv`
+- `Documentation/v15al_boundary_zone_split_aggregate.csv`
+- `Documentation/v15al_boundary_zone_split_diagnosis.csv`
+- `Documentation/v15al_boundary_zone_split_target_summary.csv`
+- `Documentation/v0_15al_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
