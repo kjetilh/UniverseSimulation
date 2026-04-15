@@ -1737,6 +1737,40 @@ Viktige filer:
 - `Documentation/v15au_post_peak_fade_target_summary.csv`
 - `Documentation/v0_15au_operativ_anbefaling.md`
 
+## 0zv. v15av viste at post-peak-fade best leses som et singleton-overgangspunkt
+
+Etter at `v15au` viste at restsporet er et ekte `post_peak_fade`-forlop, tok `v15av` neste smale steg:
+
+- behold bare placement `2`
+- behold bare den lille overgangen rundt seed `231`
+- rerun bare to nye nedre naboer, `215` og `223`
+- bruk `239` og `247` bare som ovre kontekst
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `231` holder som `post_peak_fade`
+- begge nye nedre nabopunkter, `215` og `223`, blir `no_launch_tail`
+- `239` holder som `post_peak_hold`
+- `247` holder som `no_launch_tail`
+- diagnosen ender pa `fade_singleton_not_supported`
+
+Dette betyr:
+
+- `post_peak_fade` er ekte nok som et lokalt forlop
+- men det holder ikke som et lite naboband rundt `231`
+- det ser best ut som et singleton-aktig overgangspunkt mellom stabilt hold og rent no-launch
+- neste riktige steg bor derfor ikke vaere bredere fade-scan, men et nytt defect-sporsmal eller en annen observabel
+
+Viktige filer:
+
+- `relational_universe_v15av_post_peak_fade_holdout.py`
+- `Documentation/v15av_post_peak_fade_holdout.md`
+- `Documentation/v15av_post_peak_fade_holdout_runs.csv`
+- `Documentation/v15av_post_peak_fade_holdout_diagnosis.csv`
+- `Documentation/v15av_post_peak_fade_holdout_target_summary.csv`
+- `Documentation/v0_15av_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

@@ -1,0 +1,2 @@
+group_type,group_value,n_runs,post_peak_fade_rate,no_launch_tail_rate,post_peak_hold_rate,mean_post_peak_high_rate,mean_post_peak_mid_rate,mean_last12_high_rate
+lower_holdout_summary,seed_231_neighborhood,2,0.0,1.0,0.0,0.0,0.0,0.0

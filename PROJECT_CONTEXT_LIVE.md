@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at` og `v15au` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au` og `v15av` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -500,6 +500,12 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-post-peak-fade-diagnosis: `Documentation/v15au_post_peak_fade_diagnosis.csv`
 - Add-chord-post-peak-fade-target-summary: `Documentation/v15au_post_peak_fade_target_summary.csv`
 - Add-chord-post-peak-fade-anbefaling: `Documentation/v0_15au_operativ_anbefaling.md`
+- Add-chord-post-peak-fade-holdout-script: `relational_universe_v15av_post_peak_fade_holdout.py`
+- Add-chord-post-peak-fade-holdout-rapport: `Documentation/v15av_post_peak_fade_holdout.md`
+- Add-chord-post-peak-fade-holdout-runs: `Documentation/v15av_post_peak_fade_holdout_runs.csv`
+- Add-chord-post-peak-fade-holdout-diagnosis: `Documentation/v15av_post_peak_fade_holdout_diagnosis.csv`
+- Add-chord-post-peak-fade-holdout-target-summary: `Documentation/v15av_post_peak_fade_holdout_target_summary.csv`
+- Add-chord-post-peak-fade-holdout-anbefaling: `Documentation/v0_15av_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1636,6 +1642,29 @@ Den riktige live-lesningen na er derfor:
 - det lille restsporet er ikke bare "mindre hold"; det er et eget post-peak-fade-forlop
 - boundary-familien er na best lest som: rent hold, rent no-high, og et lite mellomforlop der en ekte peak bygges men glipper etterpa
 - neste riktige steg er en minimal holdout rundt `post_peak_fade`, ikke en ny bred scan
+
+`v15av` tok sa nettopp denne minimal-holdouten:
+
+- behold bare placement `2`
+- behold bare overgangen rundt seed `231`
+- rerun to nye nedre naboer, `215` og `223`
+- bruk `239` og `247` bare som ovre kontekst
+
+Det viktigste fra `Documentation/v15av_post_peak_fade_holdout.md` er:
+
+- artifact-control holder fortsatt rent
+- `231` holder som `post_peak_fade`
+- begge nye nedre nabopunkter, `215` og `223`, blir `no_launch_tail`
+- `239` holder som `post_peak_hold`
+- `247` holder som `no_launch_tail`
+- diagnosen ender pa `fade_singleton_not_supported`
+
+Den riktige live-lesningen na er derfor:
+
+- `post_peak_fade` er ekte nok som lokalt forlop
+- men det ser ikke ut til a holde som et lite naboband rundt `231`
+- det er best lest som et singleton-aktig overgangspunkt mellom stabilt hold og rent no-launch
+- neste riktige steg bor derfor ikke vaere bredere fade-scan, men et nytt defect-sporsmal eller en annen observabel
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

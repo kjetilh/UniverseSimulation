@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er rent separert og alle run i denne runden matcher onsket add_chord-perturbasjon.
+fade_holdout_status,fade_singleton_not_supported,"Begge nye nedre nabopunktene faller til `no_launch_tail`, sa fading-sporet ser best ut som et singleton-aktig overgangspunkt mellom hold og no-launch."
+next_step,stop_fade_expansion,Neste steg bor ikke vaere bredere fade-scan; dette er bedre lest som et lokalt overgangspunkt.
