@@ -1,0 +1,3 @@
+diagnostic_family,status,note
+p3_boundary_contrast,p3_boundary_contrast_supported,"P3 skiller seg fra p1 og p2 langs to forskjellige akser: kompresjon mot bred retention, og retention mot dissipativ rare-shell."
+next_step,look_for_shared_trigger_axis,"Neste steg bør lete etter én liten triggerakse som avgjør om samme diffuse regime blir bred retention, komprimert shell-retur eller dissipativ rare-shell."

@@ -1976,6 +1976,42 @@ Viktige filer:
 - `Documentation/v15bb_local_swap_growth202_mode_diagnosis.csv`
 - `Documentation/v0_15bb_operativ_anbefaling.md`
 
+## 10c. v15bc viste at p3 skilles fra p1 og p2 langs to ulike akser
+
+Etter at `v15bb` viste et lite internt moduskart i `growth_seed 202`, tok `v15bc` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `p1`, `p2` og `p3`
+- sammenlign `p3` direkte mot de to mest informative nabomodusene
+- avgjor om `p3` bare er en mellomting, eller om den faktisk skiller seg pa to forskjellige maater
+
+Det viktigste resultatet er:
+
+- `p3_vs_p1` blir `compressed_vs_wide_retention`
+- `p3_vs_p2` blir `retained_vs_dissipative_shell`
+- diagnosen ender pa `p3_boundary_contrast_supported`
+
+Konkret:
+
+- mot `p1` taper `p3` noe coarse return (`-0.215`), men blir samtidig mer komprimert med mindre tail-union (`-37`) og lavere tail-density (`-0.078`)
+- mot `p2` vinner `p3` klart pa retention (`+0.185` coarse gap), har hoyere `core/shell` (`+0.206`) og lavere rare-share (`-0.095`)
+
+Dette betyr:
+
+- `p3` er ikke bare en vag mellomting mellom `p1` og `p2`
+- den skiller seg fra `p1` langs en kompresjon-vs-bred-retention-akse
+- den skiller seg fra `p2` langs en retention-vs-dissipativ-rare-shell-akse
+- neste riktige steg er derfor a lete etter en liten felles triggerakse som avgjor hvilken av disse tre diffuse modusene systemet velger
+
+Viktige filer:
+
+- `relational_universe_v15bc_local_swap_p3_vs_p1_p2_contrast.py`
+- `Documentation/v15bc_local_swap_p3_vs_p1_p2_contrast.md`
+- `Documentation/v15bc_local_swap_p3_vs_p1_p2_rows.csv`
+- `Documentation/v15bc_local_swap_p3_vs_p1_p2_pairs.csv`
+- `Documentation/v15bc_local_swap_p3_vs_p1_p2_diagnosis.csv`
+- `Documentation/v0_15bc_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
