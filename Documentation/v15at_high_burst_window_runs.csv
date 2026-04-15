@@ -1,0 +1,13 @@
+row_role,placement,anchor_run_seed,anchor_seed_delta,seed_delta,run_seed,expected_horizon_label,requested_match,support_signature,full_label,full_exact_return_rate,first_high_index,last_high_index,high_horizon_span,high_retention_rate,total_high_count,total_mid_count,peak_high_window_start,peak_high_window_rate,longest_high_run,last12_high_rate,burst_label,burst_note
+anchor_focus,2,5002241,239,239,5002241,established_hold_horizon,1,"5,6,14",cyclic_return,0.5038759689922481,42,71,30,0.7333333333333333,23,38,61,1.0,11,0.9166666666666666,sustained_hold_burst,Runet bygger en reell high-burst som holder helt inn i tail-slutten.
+anchor_focus,1,5002220,219,219,5002220,terminal_probe_horizon,1,"6,8,10",cyclic_return,0.7054263565891473,69,71,3,1.0,3,39,64,0.375,3,0.25,terminal_compact_burst,"Runet far bare en kort, sen og kompakt high-burst."
+anchor_focus,2,5002221,219,219,5002221,failed_probe_horizon,1,"5,6,14",cyclic_return,0.8837209302325582,9,24,16,0.875,14,31,9,0.875,7,0.0,early_failed_burst,Runet far en tidlig high-burst som glipper og dør ut.
+anchor_focus,1,5002240,239,239,5002240,no_high_presence,1,"6,8,10",cyclic_return,0.751937984496124,72,-1,0,0.0,4,50,28,0.375,2,0.0,no_high_burst,Runet far ingen faktisk high-burst.
+holdout_focus,2,5002241,239,231,5002233,established_hold_horizon,1,"5,6,14",cyclic_return,0.7829457364341085,40,60,21,0.8095238095238095,17,39,51,1.0,10,0.08333333333333333,fading_late_burst,"Runet naermer seg et sent hold, men high-bursten fader ut for tail-slutt."
+holdout_focus,2,5002241,239,247,5002249,established_hold_horizon,1,"5,6,14",cyclic_return,0.9767441860465116,72,-1,0,0.0,0,0,0,0.0,0,0.0,no_high_burst,Runet far ingen faktisk high-burst.
+holdout_focus,1,5002220,219,211,5002212,terminal_probe_horizon,1,"6,8,10",cyclic_return,0.8604651162790697,72,-1,0,0.0,0,5,0,0.0,0,0.0,no_high_burst,Runet far ingen faktisk high-burst.
+holdout_focus,1,5002220,219,227,5002228,terminal_probe_horizon,1,"6,8,10",cyclic_return,0.9147286821705426,72,-1,0,0.0,0,0,0,0.0,0,0.0,no_high_burst,Runet far ingen faktisk high-burst.
+holdout_focus,2,5002221,219,211,5002213,failed_probe_horizon,1,"5,6,14",cyclic_return,1.0,72,-1,0,0.0,0,0,0,0.0,0,0.0,no_high_burst,Runet far ingen faktisk high-burst.
+holdout_focus,2,5002221,219,227,5002229,failed_probe_horizon,1,"5,6,14",cyclic_return,1.0,72,-1,0,0.0,0,0,0,0.0,0,0.0,no_high_burst,Runet far ingen faktisk high-burst.
+holdout_focus,1,5002240,239,231,5002232,no_high_presence,1,"6,8,10",cyclic_return,0.9767441860465116,72,-1,0,0.0,0,0,0,0.0,0,0.0,no_high_burst,Runet far ingen faktisk high-burst.
+holdout_focus,1,5002240,239,247,5002248,no_high_presence,1,"6,8,10",cyclic_return,0.9612403100775194,72,-1,0,0.0,0,0,0,0.0,0,0.0,no_high_burst,Runet far ingen faktisk high-burst.

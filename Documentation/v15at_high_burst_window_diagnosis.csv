@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er rent separert og alle run i denne runden matcher onsket add_chord-perturbasjon.
+burst_map_status,burst_map_sharpens_holdout_collapse,"Burst-observabelen holder ankerkartet rent og viser samtidig at naerliggende holdouts hovedsakelig kollapser til `no_high_burst`, med et lite restspor av `fading_late_burst` i stedet for ekte hold."
+next_step,explain_fading_late_burst,Neste steg bor forklare det lille `fading_late_burst`-sporet i stedet for a presse horisontkartet hardere.

@@ -1671,6 +1671,72 @@ Viktige filer:
 - `Documentation/v15as_horizon_map_holdout_target_summary.csv`
 - `Documentation/v0_15as_operativ_anbefaling.md`
 
+## 0zt. v15at viste at holdout-kollapsen leses renere som et burst-kart
+
+Etter at `v15as` viste at bare `no_high_presence` holder rent lokalt, tok `v15at` neste smale steg:
+
+- behold samme fire anker-run og aatte holdout-run
+- behold samme lokale `t48_g202` add_chord-oppsett
+- les boundary-sonen som et lite burst-kart i stedet for bare horisont-etiketter
+- avgjor om holdout-kollapsen egentlig er manglende high, fading high eller ekte probe
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- anker-runene deler seg rent i `sustained_hold_burst`, `terminal_compact_burst`, `early_failed_burst` og `no_high_burst`
+- holdout-runene er `0.875` `no_high_burst`
+- bare ett holdout-run, `5002233`, holder et lite restspor som `fading_late_burst`
+- diagnosen ender pa `burst_map_sharpens_holdout_collapse`
+
+Dette betyr:
+
+- burst-observabelen er bedre enn horisont alene for a beskrive holdoutene
+- den skjore high-grensen ser mest ut som en no-high-kollaps med ett lite fading-restspor
+- neste riktige steg er derfor a forklare akkurat fading-sporet, ikke a presse holdout-kartet bredere
+
+Viktige filer:
+
+- `relational_universe_v15at_high_burst_window_lab.py`
+- `Documentation/v15at_high_burst_window_lab.md`
+- `Documentation/v15at_high_burst_window_runs.csv`
+- `Documentation/v15at_high_burst_window_aggregate.csv`
+- `Documentation/v15at_high_burst_window_diagnosis.csv`
+- `Documentation/v15at_high_burst_window_target_summary.csv`
+- `Documentation/v0_15at_operativ_anbefaling.md`
+
+## 0zu. v15au viste at restsporet er et eget post-peak-fade-forlop
+
+Etter at `v15at` isolerte ett lite `fading_late_burst`-restspor, tok `v15au` neste smale steg:
+
+- behold bare triplet-en `anchor_hold`, `fading_holdout` og `no_high_holdout`
+- behold samme lokale placement og seed-familie
+- bruk ingen bredere scan
+- les bare hva som skjer etter peak-bursten
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `anchor_hold` blir `post_peak_hold`
+- `fading_holdout` blir `post_peak_fade`
+- `no_high_holdout` blir `no_launch_tail`
+- diagnosen ender pa `post_peak_map_supported`
+
+Dette betyr:
+
+- restsporet er ikke bare "mindre hold"
+- det er et eget lite mellomforlop der en ekte peak bygges, men high glipper raskt tilbake i mid/lav tail
+- boundary-familien er na best lest som rent hold, rent no-high og et lite post-peak-fade-mellomforlop
+- neste riktige steg er derfor en minimal holdout rundt `post_peak_fade`
+
+Viktige filer:
+
+- `relational_universe_v15au_post_peak_fade_explainer.py`
+- `Documentation/v15au_post_peak_fade_explainer.md`
+- `Documentation/v15au_post_peak_fade_runs.csv`
+- `Documentation/v15au_post_peak_fade_diagnosis.csv`
+- `Documentation/v15au_post_peak_fade_target_summary.csv`
+- `Documentation/v0_15au_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

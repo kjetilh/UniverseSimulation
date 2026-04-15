@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er rent separert og alle run i denne runden matcher onsket add_chord-perturbasjon.
+post_peak_status,post_peak_map_supported,"Det lille triplet-caset deler seg rent i post-peak hold, post-peak fade og ingen launch-tail."
+next_step,holdout_post_peak_fade,Neste steg bor teste om `post_peak_fade` holder pa noen fa naerliggende seeds rundt fading-caset.

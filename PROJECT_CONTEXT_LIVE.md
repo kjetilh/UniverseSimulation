@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar` og `v15as` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at` og `v15au` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -487,6 +487,19 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-horizon-holdout-diagnosis: `Documentation/v15as_horizon_map_holdout_diagnosis.csv`
 - Add-chord-horizon-holdout-target-summary: `Documentation/v15as_horizon_map_holdout_target_summary.csv`
 - Add-chord-horizon-holdout-anbefaling: `Documentation/v0_15as_operativ_anbefaling.md`
+- Add-chord-high-burst-window-script: `relational_universe_v15at_high_burst_window_lab.py`
+- Add-chord-high-burst-window-rapport: `Documentation/v15at_high_burst_window_lab.md`
+- Add-chord-high-burst-window-runs: `Documentation/v15at_high_burst_window_runs.csv`
+- Add-chord-high-burst-window-aggregate: `Documentation/v15at_high_burst_window_aggregate.csv`
+- Add-chord-high-burst-window-diagnosis: `Documentation/v15at_high_burst_window_diagnosis.csv`
+- Add-chord-high-burst-window-target-summary: `Documentation/v15at_high_burst_window_target_summary.csv`
+- Add-chord-high-burst-window-anbefaling: `Documentation/v0_15at_operativ_anbefaling.md`
+- Add-chord-post-peak-fade-script: `relational_universe_v15au_post_peak_fade_explainer.py`
+- Add-chord-post-peak-fade-rapport: `Documentation/v15au_post_peak_fade_explainer.md`
+- Add-chord-post-peak-fade-runs: `Documentation/v15au_post_peak_fade_runs.csv`
+- Add-chord-post-peak-fade-diagnosis: `Documentation/v15au_post_peak_fade_diagnosis.csv`
+- Add-chord-post-peak-fade-target-summary: `Documentation/v15au_post_peak_fade_target_summary.csv`
+- Add-chord-post-peak-fade-anbefaling: `Documentation/v0_15au_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1580,6 +1593,49 @@ Den riktige live-lesningen na er derfor:
 - men `v15as` viser at bare `no_high_presence` ser lokalt robust ut sa langt
 - de andre horizon-familiene ligger pa en skjotere grense og kollapser ofte ned til fravaer av high i naerliggende seeds
 - neste riktige steg er derfor en enda smalere observabel rundt failed-probe og terminal-probe-grensen, ikke mer bred horisont-ekspansjon
+
+`v15at` tok sa nettopp dette burst-steget:
+
+- behold samme fire anker-run og aatte holdout-run
+- rerun dem med samme lokale `t48_g202` add_chord-oppsett
+- les grensen gjennom et lite burst-kart i stedet for bare horisont-etiketter
+- avgjor om holdout-kollapsen ser best ut som manglende high-burst, fading burst eller ekte probe
+
+Det viktigste fra `Documentation/v15at_high_burst_window_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- anker-runene deler seg rent i `sustained_hold_burst`, `terminal_compact_burst`, `early_failed_burst` og `no_high_burst`
+- holdout-runene er `0.875` `no_high_burst`
+- bare ett holdout-run, `5002233`, holder et lite restspor som `fading_late_burst`
+- diagnosen ender pa `burst_map_sharpens_holdout_collapse`
+
+Den riktige live-lesningen na er derfor:
+
+- burst-observabelen er bedre enn horisont alene for a beskrive hva holdoutene faktisk gjor
+- den skjore high-grensen ser mest ut som en no-high-kollaps med ett lite fading-restspor, ikke som flere nesten-like horizon-familier
+- neste riktige steg er derfor a forklare akkurat `fading_late_burst`, ikke a presse holdout-kartet bredere
+
+`v15au` tok sa nettopp denne post-peak-forklaringsrunden:
+
+- behold bare triplet-en `anchor_hold`, `fading_holdout` og `no_high_holdout`
+- bruk ingen bredere scan
+- maal bare hva som skjer etter peak-bursten
+- avgjor om fading-sporet faktisk er et eget post-peak-forlop
+
+Det viktigste fra `Documentation/v15au_post_peak_fade_explainer.md` er:
+
+- artifact-control holder fortsatt rent
+- `anchor_hold` blir `post_peak_hold`
+- `fading_holdout` blir `post_peak_fade`
+- `no_high_holdout` blir `no_launch_tail`
+- diagnosen ender pa `post_peak_map_supported`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga ekte ny viten utover `v15at`
+- det lille restsporet er ikke bare "mindre hold"; det er et eget post-peak-fade-forlop
+- boundary-familien er na best lest som: rent hold, rent no-high, og et lite mellomforlop der en ekte peak bygges men glipper etterpa
+- neste riktige steg er en minimal holdout rundt `post_peak_fade`, ikke en ny bred scan
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
