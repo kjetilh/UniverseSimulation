@@ -1,0 +1,5 @@
+group_type,group_value,n_runs,rate,mean_pre_high_count,mean_pre_mid_count,mean_pre_low_count,mean_pre_largest_fraction,mean_pre_component_count,mean_pre_active_minus_components
+launch_label,compact_terminal_launch,1,0.1111111111111111,0.0,8.0,0.0,0.3214285714285714,5.25,1.0
+launch_label,mixed_threshold_launch,3,0.3333333333333333,1.0,6.0,1.0,0.21160714285714285,5.083333333333333,0.0
+launch_label,no_launch_plateau,4,0.4444444444444444,0.0,7.5,0.5,0.21145833333333333,4.6875,0.25
+launch_label,premature_probe_launch,1,0.1111111111111111,0.0,8.0,0.0,0.19583333333333333,5.25,0.0

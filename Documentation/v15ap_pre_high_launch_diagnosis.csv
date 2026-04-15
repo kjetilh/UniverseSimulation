@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er fortsatt rent separert; denne runden bruker bare ekte v15ai- og v15ao-data.
+launch_map_status,pre_high_launch_map_supported,"Pre-high-vinduet deler de fire haleutfallene i et lite launch-kart: blandet threshold-launch, kompakt terminal launch, prematur probe-launch og ingen launch."
+next_step,holdout_launch_map,"Neste steg bor teste om dette launch-kartet holder pa noen fa naerliggende seeds, ikke a scanne bredere."

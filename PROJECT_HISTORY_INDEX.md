@@ -1531,6 +1531,41 @@ Viktige filer:
 - `Documentation/v15ao_terminal_probe_boundary_target_summary.csv`
 - `Documentation/v0_15ao_operativ_anbefaling.md`
 
+## 0zp. v15ap viste at de fire haleutfallene allerede kan leses i pre-high launch-vinduet
+
+Etter at `v15ao` viste at high-grensen deler seg i fire lesbare haleutfall, tok `v15ap` neste smale steg:
+
+- behold det fokuserte `v15ao`-settet
+- bruk ingen nye simuleringer
+- mal bare det lille pre-high-vinduet rett for high enten holder, feiler eller uteblir
+- avgjor om de fire haleutfallene allerede kan leses der
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `established_high_hold` leses som `mixed_threshold_launch`
+- `terminal_high_probe` leses som `compact_terminal_launch`
+- `failed_early_high_probe` leses som `premature_probe_launch`
+- `no_high_hold_plateau` leses som `no_launch_plateau`
+- diagnosen ender pa `pre_high_launch_map_supported`
+
+Dette betyr:
+
+- dette ga ekte ny viten utover `v15ao`
+- forskjellen mellom hold, terminal probe og failed probe ser ut til a vaere synlig allerede i launch-vinduet rett for high-forsoket
+- high-grensen er derfor ikke bare en haleeffekt; den har et lite pre-high launch-kart
+- neste riktige steg er en liten holdout-test av dette launch-kartet, ikke en bredere scan
+
+Viktige filer:
+
+- `relational_universe_v15ap_pre_high_launch_lab.py`
+- `Documentation/v15ap_pre_high_launch_lab.md`
+- `Documentation/v15ap_pre_high_launch_runs.csv`
+- `Documentation/v15ap_pre_high_launch_aggregate.csv`
+- `Documentation/v15ap_pre_high_launch_diagnosis.csv`
+- `Documentation/v15ap_pre_high_launch_target_summary.csv`
+- `Documentation/v0_15ap_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

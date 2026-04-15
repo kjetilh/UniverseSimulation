@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an` og `v15ao` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao` og `v15ap` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -459,6 +459,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-terminal-probe-boundary-diagnosis: `Documentation/v15ao_terminal_probe_boundary_diagnosis.csv`
 - Add-chord-terminal-probe-boundary-target-summary: `Documentation/v15ao_terminal_probe_boundary_target_summary.csv`
 - Add-chord-terminal-probe-boundary-anbefaling: `Documentation/v0_15ao_operativ_anbefaling.md`
+- Add-chord-pre-high-launch-script: `relational_universe_v15ap_pre_high_launch_lab.py`
+- Add-chord-pre-high-launch-rapport: `Documentation/v15ap_pre_high_launch_lab.md`
+- Add-chord-pre-high-launch-runs: `Documentation/v15ap_pre_high_launch_runs.csv`
+- Add-chord-pre-high-launch-aggregate: `Documentation/v15ap_pre_high_launch_aggregate.csv`
+- Add-chord-pre-high-launch-diagnosis: `Documentation/v15ap_pre_high_launch_diagnosis.csv`
+- Add-chord-pre-high-launch-target-summary: `Documentation/v15ap_pre_high_launch_target_summary.csv`
+- Add-chord-pre-high-launch-anbefaling: `Documentation/v0_15ap_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1460,6 +1467,29 @@ Den riktige live-lesningen na er derfor:
 - high-grensen ser ikke lenger ut som bare en diffus residualsone
 - den deler seg i minst fire lesbare haleutfall: ekte high-hold, terminal probe, mislykket tidlig probe og ingen high-hold
 - neste riktige steg er derfor a forklare hva som bestemmer om sen high kommer tidlig nok til a bli hold i stedet for bare terminal probe
+
+`v15ap` tok sa nettopp dette launch-steget:
+
+- behold det fokuserte `v15ao`-settet
+- bruk ingen nye simuleringer
+- maal bare det lille pre-high-vinduet rett for high enten holder, feiler eller uteblir
+- avgjor om de fire haleutfallene allerede kan leses der
+
+Det viktigste fra `Documentation/v15ap_pre_high_launch_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `established_high_hold` leses som `mixed_threshold_launch`
+- `terminal_high_probe` leses som `compact_terminal_launch`
+- `failed_early_high_probe` leses som `premature_probe_launch`
+- `no_high_hold_plateau` leses som `no_launch_plateau`
+- diagnosen ender pa `pre_high_launch_map_supported`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga ekte ny viten utover `v15ao`
+- forskjellen mellom hold, terminal probe og failed probe ser ut til a vaere synlig allerede i launch-vinduet rett for high-forsoket
+- high-grensen er derfor ikke bare en haleeffekt; den har et lite pre-high launch-kart
+- neste riktige steg er en liten holdout-test av dette launch-kartet, ikke en bredere scan
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
