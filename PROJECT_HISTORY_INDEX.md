@@ -1636,6 +1636,41 @@ Viktige filer:
 - `Documentation/v15ar_high_retention_horizon_target_summary.csv`
 - `Documentation/v0_15ar_operativ_anbefaling.md`
 
+## 0zs. v15as viste at bare no-high-presens holder rent i naerliggende horizon-holdouts
+
+Etter at `v15ar` ga ekte ny viten som et lite horisont-kart, tok `v15as` neste naturlige steg:
+
+- behold bare fire representative horisontankre
+- behold samme lokale `t48_g202` add_chord-oppsett
+- rerun bare to naerliggende seeds rundt hvert anker
+- avgjor om horisont-kartet faktisk holder lokalt utover anker-runene
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `no_high_presence` holder rent med `match_rate = 1.000`
+- `established_hold_horizon` holder ikke rent; ett holdout blir `mixed_horizon` og ett faller til `no_high_presence`
+- `terminal_probe_horizon` faller helt til `no_high_presence`
+- `failed_probe_horizon` faller ogsa helt til `no_high_presence`
+- diagnosen ender pa `horizon_map_holdout_mixed`
+
+Dette betyr:
+
+- `v15ar` sitt horisont-kart ga ekte ny ankerkunnskap
+- men `v15as` viser at bare `no_high_presence` ser lokalt robust ut sa langt
+- de andre horizon-familiene ligger pa en skjotere high-grense og kollapser ofte ned til fravaer av high i naerliggende seeds
+- neste riktige steg er derfor en enda smalere observabel rundt failed-probe og terminal-probe-grensen, ikke mer bred horisont-ekspansjon
+
+Viktige filer:
+
+- `relational_universe_v15as_horizon_map_holdout.py`
+- `Documentation/v15as_horizon_map_holdout.md`
+- `Documentation/v15as_horizon_map_holdout_runs.csv`
+- `Documentation/v15as_horizon_map_holdout_aggregate.csv`
+- `Documentation/v15as_horizon_map_holdout_diagnosis.csv`
+- `Documentation/v15as_horizon_map_holdout_target_summary.csv`
+- `Documentation/v0_15as_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

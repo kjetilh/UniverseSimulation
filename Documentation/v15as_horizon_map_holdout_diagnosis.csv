@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er rent separert og alle holdout-runene matcher onsket add_chord-perturbasjon.
+horizon_holdout_status,horizon_map_holdout_mixed,"Horisont-kartet gir fortsatt nyttig struktur pa holdouts, men holder ikke rent nok som lokalt lovmessig kart ennå."
+next_step,tighten_failed_probe_horizon,Neste steg bor vaere en enda smalere observabel eller holdout rundt failed-probe og terminal-probe-grensen.

@@ -1,0 +1,5 @@
+placement,anchor_run_seed,anchor_seed_delta,expected_horizon_label,n_holdouts,match_rate,mixed_holdout_rate,different_horizon_rate,observed_mode,mean_high_start_index,mean_high_horizon_span,mean_high_retention_rate,mean_last12_high_rate,mean_full_exact_return_rate
+2,5002241,239,established_hold_horizon,2,0.0,0.5,0.5,no_high_presence,56.0,10.5,0.40476190476190477,0.041666666666666664,0.8798449612403101
+1,5002220,219,terminal_probe_horizon,2,0.0,0.0,1.0,no_high_presence,72.0,0.0,0.0,0.0,0.8875968992248062
+2,5002221,219,failed_probe_horizon,2,0.0,0.0,1.0,no_high_presence,72.0,0.0,0.0,0.0,1.0
+1,5002240,239,no_high_presence,2,1.0,0.0,0.0,no_high_presence,72.0,0.0,0.0,0.0,0.9689922480620154

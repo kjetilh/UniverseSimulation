@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq` og `v15ar` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar` og `v15as` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -480,6 +480,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-high-retention-horizon-diagnosis: `Documentation/v15ar_high_retention_horizon_diagnosis.csv`
 - Add-chord-high-retention-horizon-target-summary: `Documentation/v15ar_high_retention_horizon_target_summary.csv`
 - Add-chord-high-retention-horizon-anbefaling: `Documentation/v0_15ar_operativ_anbefaling.md`
+- Add-chord-horizon-holdout-script: `relational_universe_v15as_horizon_map_holdout.py`
+- Add-chord-horizon-holdout-rapport: `Documentation/v15as_horizon_map_holdout.md`
+- Add-chord-horizon-holdout-runs: `Documentation/v15as_horizon_map_holdout_runs.csv`
+- Add-chord-horizon-holdout-aggregate: `Documentation/v15as_horizon_map_holdout_aggregate.csv`
+- Add-chord-horizon-holdout-diagnosis: `Documentation/v15as_horizon_map_holdout_diagnosis.csv`
+- Add-chord-horizon-holdout-target-summary: `Documentation/v15as_horizon_map_holdout_target_summary.csv`
+- Add-chord-horizon-holdout-anbefaling: `Documentation/v0_15as_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1550,6 +1557,29 @@ Den riktige live-lesningen na er derfor:
 - high-grensen blir na bedre lest som et lite horisont-kart enn som bare launch-impuls
 - failed-probe-sporet er skarpere her enn i `v15aq`
 - neste riktige steg er en liten holdout-test av horisont-kartet, ikke en bredere scan
+
+`v15as` tok sa nettopp denne holdout-runden:
+
+- behold bare fire representative horisontankre
+- bruk samme lokale `t48_g202` add_chord-oppsett
+- rerun bare to naerliggende seeds rundt hvert anker
+- avgjor om horisont-kartet faktisk har lokal baereevne utover anker-runene
+
+Det viktigste fra `Documentation/v15as_horizon_map_holdout.md` er:
+
+- artifact-control holder fortsatt rent
+- `no_high_presence` holder rent lokalt med `match_rate = 1.000`
+- `established_hold_horizon` holder ikke rent; ett holdout blir `mixed_horizon` og ett faller til `no_high_presence`
+- `terminal_probe_horizon` faller helt til `no_high_presence`
+- `failed_probe_horizon` faller ogsa helt til `no_high_presence`
+- diagnosen ender pa `horizon_map_holdout_mixed`
+
+Den riktige live-lesningen na er derfor:
+
+- `v15ar` sitt horisont-kart ga ekte ankerkunnskap
+- men `v15as` viser at bare `no_high_presence` ser lokalt robust ut sa langt
+- de andre horizon-familiene ligger pa en skjotere grense og kollapser ofte ned til fravaer av high i naerliggende seeds
+- neste riktige steg er derfor en enda smalere observabel rundt failed-probe og terminal-probe-grensen, ikke mer bred horisont-ekspansjon
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 
