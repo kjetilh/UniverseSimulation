@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap` og `v15aq` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq` og `v15ar` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -473,6 +473,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-high-launch-impulse-diagnosis: `Documentation/v15aq_high_launch_impulse_diagnosis.csv`
 - Add-chord-high-launch-impulse-target-summary: `Documentation/v15aq_high_launch_impulse_target_summary.csv`
 - Add-chord-high-launch-impulse-anbefaling: `Documentation/v0_15aq_operativ_anbefaling.md`
+- Add-chord-high-retention-horizon-script: `relational_universe_v15ar_high_retention_horizon_lab.py`
+- Add-chord-high-retention-horizon-rapport: `Documentation/v15ar_high_retention_horizon_lab.md`
+- Add-chord-high-retention-horizon-runs: `Documentation/v15ar_high_retention_horizon_runs.csv`
+- Add-chord-high-retention-horizon-aggregate: `Documentation/v15ar_high_retention_horizon_aggregate.csv`
+- Add-chord-high-retention-horizon-diagnosis: `Documentation/v15ar_high_retention_horizon_diagnosis.csv`
+- Add-chord-high-retention-horizon-target-summary: `Documentation/v15ar_high_retention_horizon_target_summary.csv`
+- Add-chord-high-retention-horizon-anbefaling: `Documentation/v0_15ar_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1520,6 +1527,29 @@ Den riktige live-lesningen na er derfor:
 - det forste impulse-vinduet skiller hold fra sen spike ganske godt
 - men failed-probe-sporet blir fortsatt ikke rent nok lest i samme observabel
 - neste riktige steg er derfor ikke mer press pa impulse-vinduet alene, men en annen liten observabel eller en liten holdout rundt launch-kartet
+
+`v15ar` tok sa nettopp dette horizon-steget:
+
+- behold det fokuserte `v15ap`-settet
+- bruk ingen nye simuleringer
+- les high-grensen gjennom hvor lenge high faktisk holder seg etter start
+- avgjor om hold, terminal probe og failed probe blir skarpere lest som horisont-forlop
+
+Det viktigste fra `Documentation/v15ar_high_retention_horizon_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `5002161`, `5002205` og `5002241` blir `established_hold_horizon`
+- `5002220` blir `terminal_probe_horizon`
+- `5002221` blir `failed_probe_horizon`
+- `5002240`, `5002272`, `5002273` og `5002307` blir `no_high_presence`
+- diagnosen ender pa `horizon_map_supported`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga ekte ny viten utover `v15aq`
+- high-grensen blir na bedre lest som et lite horisont-kart enn som bare launch-impuls
+- failed-probe-sporet er skarpere her enn i `v15aq`
+- neste riktige steg er en liten holdout-test av horisont-kartet, ikke en bredere scan
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er fortsatt rent separert; denne runden bruker bare ekte v15ai- og v15ap-data.
+horizon_map_status,horizon_map_supported,"High-grensen blir na rent lest som et lite horisont-kart: ekte hold-horisont, terminal probe-horisont, failed probe-horisont og ingen high-presens."
+next_step,holdout_horizon_map,"Neste steg bor teste dette horisont-kartet pa noen fa naerliggende seeds, ikke a scanne bredere."

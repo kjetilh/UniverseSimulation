@@ -1,0 +1,5 @@
+group_type,group_value,n_runs,rate,mean_high_start_index,mean_last_high_index,mean_high_horizon_span,mean_high_retention_rate,mean_last12_high_rate
+horizon_label,established_hold_horizon,3,0.3333333333333333,39.0,71.0,33.0,0.8604354354354354,0.9166666666666666
+horizon_label,failed_probe_horizon,1,0.1111111111111111,9.0,24.0,16.0,0.875,0.0
+horizon_label,no_high_presence,4,0.4444444444444444,72.0,-1.0,0.0,0.0,0.0
+horizon_label,terminal_probe_horizon,1,0.1111111111111111,69.0,71.0,3.0,1.0,0.25

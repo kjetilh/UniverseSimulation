@@ -1601,6 +1601,41 @@ Viktige filer:
 - `Documentation/v15aq_high_launch_impulse_target_summary.csv`
 - `Documentation/v0_15aq_operativ_anbefaling.md`
 
+## 0zr. v15ar viste at high-grensen leses skarpere som et horisont-kart
+
+Etter at `v15aq` viste at impulse-vinduet ga litt struktur, men ikke leste failed-probe-sporet rent nok, tok `v15ar` neste smale steg:
+
+- behold det fokuserte `v15ap`-settet
+- bruk ingen nye simuleringer
+- les high-grensen gjennom nar high starter, hvor sent den siste high-opptredenen kommer, og hvor stor faktisk high-retensjon runet har i dette vinduet
+- avgjor om hold, terminal probe, failed probe og no-high-presens skiller lag bedre som horisont-forlop
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `5002161`, `5002205` og `5002241` blir `established_hold_horizon`
+- `5002220` blir `terminal_probe_horizon`
+- `5002221` blir `failed_probe_horizon`
+- `5002240`, `5002272`, `5002273` og `5002307` blir `no_high_presence`
+- diagnosen ender pa `horizon_map_supported`
+
+Dette betyr:
+
+- dette ga ekte ny viten utover `v15aq`
+- high-grensen er bedre lest som et lite horisont-kart enn som bare launch-impuls
+- failed-probe-sporet er na skarpere og mer disiplinert lest
+- neste riktige steg er derfor en liten holdout-test av horisont-kartet, ikke en bredere scan
+
+Viktige filer:
+
+- `relational_universe_v15ar_high_retention_horizon_lab.py`
+- `Documentation/v15ar_high_retention_horizon_lab.md`
+- `Documentation/v15ar_high_retention_horizon_runs.csv`
+- `Documentation/v15ar_high_retention_horizon_aggregate.csv`
+- `Documentation/v15ar_high_retention_horizon_diagnosis.csv`
+- `Documentation/v15ar_high_retention_horizon_target_summary.csv`
+- `Documentation/v0_15ar_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
