@@ -1943,6 +1943,39 @@ Viktige filer:
 - `Documentation/v15ba_local_swap_compressed_shell_diagnosis.csv`
 - `Documentation/v0_15ba_operativ_anbefaling.md`
 
+## 10b. v15bb viste at growth_seed 202 faktisk fyller fire ulike lokale modi
+
+Etter at `v15ba` skilte ut `202/p3` som komprimert shell-retur, tok `v15bb` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `target 96`, `growth_seed 202`
+- behold alle fire plasseringer `p0`-`p3`
+- avgjor om disse bare er grader av samme diffuse restkategori, eller om de faktisk fyller ulike lokale modi
+
+Det viktigste resultatet er:
+
+- `p0` blir `high_core_mixed_mode`
+- `p1` blir `wide_diffuse_retention_mode`
+- `p2` blir `dissipative_rare_shell_mode`
+- `p3` blir `compressed_shell_return_mode`
+- diagnosen ender pa `growth202_mode_map_supported`
+
+Dette betyr:
+
+- `growth_seed 202`-familien kollapser ikke til én diffus restkategori
+- den fyller et lite, strukturert moduskart med fire ulike lokale dynamikkroller
+- dette er ny viten fordi det gjør `p3`-shell-returen til en del av en intern lokal atlaslesning, ikke bare et enkelt isolert unntak
+- neste riktige steg er derfor a forklare hvorfor `p3` velger komprimert shell-retur mens `p1` og `p2` velger andre diffuse modi
+
+Viktige filer:
+
+- `relational_universe_v15bb_local_swap_growth202_mode_map.py`
+- `Documentation/v15bb_local_swap_growth202_mode_map.md`
+- `Documentation/v15bb_local_swap_growth202_mode_rows.csv`
+- `Documentation/v15bb_local_swap_growth202_mode_aggregate.csv`
+- `Documentation/v15bb_local_swap_growth202_mode_diagnosis.csv`
+- `Documentation/v0_15bb_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
