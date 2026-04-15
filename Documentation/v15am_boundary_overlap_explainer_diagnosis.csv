@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er fortsatt rent separert; denne runden bruker bare ekte v15ai- og v15al-data.
+overlap_explainer_status,overlap_cases_still_partly_mixed,"Overlap-caseene er mer lesbare enn i v15al, men kollapser ikke til et lite lokalt forklaringssett ennå."
+next_step,change_overlap_observable,"Neste steg bor bytte observabel inne i overlap-sonen, ikke presse denne forklaringen hardere."

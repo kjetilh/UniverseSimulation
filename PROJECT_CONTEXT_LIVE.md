@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak` og `v15al` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al` og `v15am` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -438,6 +438,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-boundary-zone-split-diagnosis: `Documentation/v15al_boundary_zone_split_diagnosis.csv`
 - Add-chord-boundary-zone-split-target-summary: `Documentation/v15al_boundary_zone_split_target_summary.csv`
 - Add-chord-boundary-zone-split-anbefaling: `Documentation/v0_15al_operativ_anbefaling.md`
+- Add-chord-boundary-overlap-explainer-script: `relational_universe_v15am_boundary_overlap_explainer.py`
+- Add-chord-boundary-overlap-explainer-rapport: `Documentation/v15am_boundary_overlap_explainer.md`
+- Add-chord-boundary-overlap-explainer-runs: `Documentation/v15am_boundary_overlap_explainer_runs.csv`
+- Add-chord-boundary-overlap-explainer-aggregate: `Documentation/v15am_boundary_overlap_explainer_aggregate.csv`
+- Add-chord-boundary-overlap-explainer-diagnosis: `Documentation/v15am_boundary_overlap_explainer_diagnosis.csv`
+- Add-chord-boundary-overlap-explainer-target-summary: `Documentation/v15am_boundary_overlap_explainer_target_summary.csv`
+- Add-chord-boundary-overlap-explainer-anbefaling: `Documentation/v0_15am_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1372,6 +1379,28 @@ Den riktige live-lesningen na er derfor:
 - vedvarende churn havner oftere i en roligere mid-plateau-gren
 - men overlap-caseene er fortsatt viktige, sa dette er fortsatt en delvis og ikke endelig splitting
 - neste riktige steg er derfor a forklare overlap-caseene, ikke a ga bredere med en gang
+
+`v15am` tok sa nettopp denne overlap-forklaringsrunden:
+
+- behold bare de tre overlap-caseene fra `v15al`
+- behold de typiske referanselopene for late high-rise og mid-platå
+- bruk ingen nye simuleringer
+- sammenlign overlap-runene direkte mot familieprofilene i samme 72-snapshot-vindu
+
+Det viktigste fra `Documentation/v15am_boundary_overlap_explainer.md` er:
+
+- artifact-control holder fortsatt rent
+- `5002161` blir godt forklart som `churn_to_high_rise_crossover`
+- `5002240` blir godt forklart som `suppressed_high_rise_plateau`
+- `5002220` blir bare delvis forklart som `residual_tilt_to_mid_plateau`
+- diagnosen ender derfor pa `overlap_cases_still_partly_mixed`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga ny viten, men i smal form
+- to av tre overlap-case er na lokalt mer forklarbare enn i `v15al`
+- residual-caset er fortsatt ikke rent forklart, bare tydeligere lokaliseret
+- neste riktige steg er derfor ikke mer pressing av samme overlap-forklaring, men en ny observabel inne i overlap-sonen
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

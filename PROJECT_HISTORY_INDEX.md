@@ -1423,6 +1423,41 @@ Viktige filer:
 - `Documentation/v15al_boundary_zone_split_target_summary.csv`
 - `Documentation/v0_15al_operativ_anbefaling.md`
 
+## 0zm. v15am gjorde overlap-caseene mer lesbare, men ikke helt løst
+
+Etter at `v15al` delte boundary-sonen i late high-rise, mid-platå og residual, tok `v15am` neste smale steg:
+
+- behold bare de tre overlap-caseene fra `v15al`
+- behold de typiske referanselopene for late high-rise og mid-platå
+- bruk ingen nye simuleringer
+- sammenlign overlap-runene direkte mot disse familieprofilene i samme 72-snapshot-vindu
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `5002161` blir godt forklart som `churn_to_high_rise_crossover`
+- `5002240` blir godt forklart som `suppressed_high_rise_plateau`
+- `5002220` blir bare delvis forklart som `residual_tilt_to_mid_plateau`
+- diagnosen ender pa `overlap_cases_still_partly_mixed`
+
+Dette betyr:
+
+- dette ga ny viten, men i smal form
+- overlap-sonen er ikke bare reststoy; to av tre overlap-case blir lokalt mer forklarbare
+- residual-caset er fortsatt ikke rent lost, bare tydeligere lokaliseret mot mid-platå-siden
+- vi har derfor ikke en liten lokal lov ennå
+- neste riktige steg er a bytte observabel inne i overlap-sonen i stedet for a presse denne forklaringen hardere
+
+Viktige filer:
+
+- `relational_universe_v15am_boundary_overlap_explainer.py`
+- `Documentation/v15am_boundary_overlap_explainer.md`
+- `Documentation/v15am_boundary_overlap_explainer_runs.csv`
+- `Documentation/v15am_boundary_overlap_explainer_aggregate.csv`
+- `Documentation/v15am_boundary_overlap_explainer_diagnosis.csv`
+- `Documentation/v15am_boundary_overlap_explainer_target_summary.csv`
+- `Documentation/v0_15am_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
