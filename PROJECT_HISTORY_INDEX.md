@@ -1839,6 +1839,40 @@ Viktige filer:
 - `Documentation/v15ax_local_swap_size_split_diagnosis.csv`
 - `Documentation/v0_15ax_operativ_anbefaling.md`
 
+## 0zy. v15ay viste at 96-lommen best leses som kompakt støtte med dempet rare-turnover
+
+Etter at `v15ax` viste en ekte `48`-vs-`96` size-splitt i local_swap-sporet, tok `v15ay` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `96`-runene fra `v15aw`
+- forklar den ene `96`-lommen som fortsatt holder `stable_core_variable_shell`
+- sammenlign den med samme placement ved annet growth-seed og noen naere ikke-lommer
+
+Det viktigste resultatet er:
+
+- `artifact_control` arves rent fra `v15aw`
+- `growth_seed 101`, `placement 3` holder som `pocket_anchor`
+- samme placement ved `growth_seed 202` faller tilbake til `diffuse_shell_recurrence`
+- pocket-caset har den mest kompakte relative stotten i `96`-familien (`ball3_over_ball1 = 2.600`)
+- pocket-caset holder ogsa lav `rare_share` (`0.149`) og klart hoyere coarse return (`0.785`) enn kontrollene
+- diagnosen ender pa `compact_low_rare_pocket_supported`
+
+Dette betyr:
+
+- `96`-lommen ser ikke lenger ut som ren reststoy
+- den best leses som et kompakt stottecase med dempet rare-turnover
+- placement alene er ikke forklaringen, siden samme placement ved annet growth-seed ikke holder
+- neste riktige steg er derfor a forklare seed-flippen inne i placement `3`, ikke a scanne bredere igjen
+
+Viktige filer:
+
+- `relational_universe_v15ay_local_swap_96_pocket_explainer.py`
+- `Documentation/v15ay_local_swap_96_pocket_explainer.md`
+- `Documentation/v15ay_local_swap_96_pocket_rows.csv`
+- `Documentation/v15ay_local_swap_96_pocket_aggregate.csv`
+- `Documentation/v15ay_local_swap_96_pocket_diagnosis.csv`
+- `Documentation/v0_15ay_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
