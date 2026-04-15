@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax` og `v15ay` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay` og `v15az` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -525,6 +525,12 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Local-swap-96-pocket-aggregate: `Documentation/v15ay_local_swap_96_pocket_aggregate.csv`
 - Local-swap-96-pocket-diagnosis: `Documentation/v15ay_local_swap_96_pocket_diagnosis.csv`
 - Local-swap-96-pocket-anbefaling: `Documentation/v0_15ay_operativ_anbefaling.md`
+- Local-swap-p3-seed-flip-script: `relational_universe_v15az_local_swap_p3_seed_flip_explainer.py`
+- Local-swap-p3-seed-flip-rapport: `Documentation/v15az_local_swap_p3_seed_flip_explainer.md`
+- Local-swap-p3-seed-flip-rows: `Documentation/v15az_local_swap_p3_seed_flip_rows.csv`
+- Local-swap-p3-seed-flip-summary: `Documentation/v15az_local_swap_p3_seed_flip_summary.csv`
+- Local-swap-p3-seed-flip-diagnosis: `Documentation/v15az_local_swap_p3_seed_flip_diagnosis.csv`
+- Local-swap-p3-seed-flip-anbefaling: `Documentation/v0_15az_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`

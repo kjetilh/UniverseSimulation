@@ -1873,6 +1873,41 @@ Viktige filer:
 - `Documentation/v15ay_local_swap_96_pocket_diagnosis.csv`
 - `Documentation/v0_15ay_operativ_anbefaling.md`
 
+## 0zz. v15az viste at p3-flippen best leses som en kjerneforsterknings-flip, ikke bare en geometri-flip
+
+Etter at `v15ay` viste at `96`-lommen ikke er ren reststoy, tok `v15az` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `target 96`
+- fokuser bare pa `placement 3`
+- sammenlign `growth_seed 101` og `growth_seed 202` direkte
+- bruk noen fa kontroller bare for a holde forklaringen aelig
+
+Det viktigste resultatet er:
+
+- `p3`-casene ligger relativt naert i kompakthetsgeometri (`ball3_over_ball1 = 2.600` vs `2.786`)
+- de skiller lag hardt i kjerneforsterkning og haleomfang
+- `101/p3` har `core/ball1 = 3.267`, `tail/ball1 = 4.047`, `core/shell = 1.960`
+- `202/p3` har bare `core/ball1 = 0.571`, `tail/ball1 = 1.136`, `core/shell = 0.500`
+- diagnosen ender pa `p3_seed_flip_is_core_amplification_flip`
+- men et ikke-pocket-case, `202/p0`, har enda hoyere core-forsterkning, sa denne aksen er ikke en full global lov
+
+Dette betyr:
+
+- seed-flippen i `p3` leses best som et lokalt skifte mellom ekspandert, vedvarende kjerne og komprimert shell-retur
+- placement-geometrien alene er ikke nok til a forklare flippen
+- men ren kjerneforsterkning alene er heller ikke en full forklaring globalt
+- neste riktige steg er derfor a forklare hva som holder `202/p3` komprimert, ikke a scanne bredere
+
+Viktige filer:
+
+- `relational_universe_v15az_local_swap_p3_seed_flip_explainer.py`
+- `Documentation/v15az_local_swap_p3_seed_flip_explainer.md`
+- `Documentation/v15az_local_swap_p3_seed_flip_rows.csv`
+- `Documentation/v15az_local_swap_p3_seed_flip_summary.csv`
+- `Documentation/v15az_local_swap_p3_seed_flip_diagnosis.csv`
+- `Documentation/v0_15az_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

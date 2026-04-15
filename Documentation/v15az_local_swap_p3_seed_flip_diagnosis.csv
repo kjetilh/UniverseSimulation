@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+seed_flip_status,p3_seed_flip_is_core_amplification_flip,"De to p3-casene ligger relativt naert i kompakthetsgeometri, men skiller lag hardt i hvor mye støtteområdet faktisk blåses opp til stor, vedvarende kjerne og hale."
+amplification_scope,amplification_not_sufficient_globally,"Det finnes minst ett ikke-pocket-case med enda høyere core-forsterkning, så forsterkning alene er ikke en full forklaring."
+next_step,explain_why_202_p3_stays_compressed,"Neste steg bør forklare hva som holder `202/p3` komprimert, siden placement-geometrien alene ikke gjør jobben."
