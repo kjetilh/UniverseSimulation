@@ -2012,6 +2012,102 @@ Viktige filer:
 - `Documentation/v15bc_local_swap_p3_vs_p1_p2_diagnosis.csv`
 - `Documentation/v0_15bc_operativ_anbefaling.md`
 
+## 10d. v15bd viste at growth_seed-202-modiene faktisk kan ordnes av en liten dynamisk triggerakse
+
+Etter at `v15bc` skilte `p3` fra `p1` og `p2` langs to forskjellige akser, tok `v15bd` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `target 96`, `growth_seed 202`
+- test et lite sett tolkbare kandidat-akser
+- avgjor om én liten akse faktisk ordner `p1 > p3 > p2`
+
+Det viktigste resultatet er:
+
+- `retention_core_axis = coarse_return + core_to_shell` ordner `p1 > p3 > p2` renest
+- den ordnede marginen er `0.390`
+- alle de beste aksene er dynamiske
+- stotteaksene holder ikke ren ordering
+- diagnosen ender pa `retention_core_axis_supported`
+
+Dette betyr:
+
+- growth_seed-202-splittelsen leses ikke best som en enkel geometriakse
+- den leses best som en liten dynamisk retention+kjerne-akse
+- neste riktige steg er derfor a forklare hva som faktisk driver denne aksen lokalt
+
+Viktige filer:
+
+- `relational_universe_v15bd_local_swap_trigger_axis_lab.py`
+- `Documentation/v15bd_local_swap_trigger_axis_lab.md`
+- `Documentation/v15bd_local_swap_trigger_axis_placements.csv`
+- `Documentation/v15bd_local_swap_trigger_axis_candidates.csv`
+- `Documentation/v15bd_local_swap_trigger_axis_diagnosis.csv`
+- `Documentation/v0_15bd_operativ_anbefaling.md`
+
+## 10e. v15be viste at triggeraksen er en ekte to-komponentsplitt, ikke ett enkelt maal
+
+Etter at `v15bd` fant en liten, ren triggerakse, tok `v15be` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `v15bd`-akseobservablene
+- dekomponer aksedeltaene for `p1_vs_p3`, `p3_vs_p2` og `p1_vs_p2`
+- avgjor om aksen drives av én dominerende komponent eller av en liten blanding
+
+Det viktigste resultatet er:
+
+- `p1_vs_p3` blir `core_amplification_dominant`
+- `p3_vs_p2` blir `balanced_two_component_gap`
+- `p1_vs_p2` blir ogsa `balanced_two_component_gap`
+- mean core-share av aksedelta er `0.591` mot coarse-share `0.409`
+- diagnosen ender pa `two_component_axis_supported`
+
+Dette betyr:
+
+- aksen fra `v15bd` er ikke bare en pen score
+- den bærer faktisk to forskjellige lokale gaptyper
+- `p1 > p3` drives mest av kjerneforsterkning (`core_to_shell`)
+- `p3 > p2` drives av en mer balansert blanding av retention og kjerneforsterkning
+- neste riktige steg er derfor a forklare hvorfor ett gap blir core-dominert mens det andre blir mer balansert
+
+Viktige filer:
+
+- `relational_universe_v15be_local_swap_trigger_axis_component_lab.py`
+- `Documentation/v15be_local_swap_trigger_axis_component_lab.md`
+- `Documentation/v15be_local_swap_trigger_axis_pairs.csv`
+- `Documentation/v15be_local_swap_trigger_axis_aggregate.csv`
+- `Documentation/v0_15be_operativ_anbefaling.md`
+
+## 10f. v15bf viste at de to nabogapene inne i triggeraksen heller ikke er samme type overgang
+
+Etter at `v15be` viste at triggeraksen er en liten to-komponentsplitt, tok `v15bf` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `v15bd`- og `v15be`-observablene
+- sammenlign `p1_vs_p3` direkte mot `p3_vs_p2`
+- avgjor om de to nabogapene bare er svakere/sterkere versjoner av samme overgang
+
+Det viktigste resultatet er:
+
+- `p1_vs_p3` blir `core_shape_separation`
+- `p3_vs_p2` blir `retention_plus_shell_drag`
+- `p1_vs_p2` blir fortsatt bare `mixed_gap_family`
+- diagnosen ender pa `neighbor_gap_asymmetry_supported`
+
+Dette betyr:
+
+- growth_seed-202-splittelsen har mer lokal struktur enn bare én pen akse
+- øvre nabogap leses best som sterkere kjerneform-separasjon
+- nedre nabogap leses best som en blandet overgang der taperen baade mister retention og tar pa seg tyngre shell-byrde
+- neste riktige steg er derfor a forklare shell-drag-siden av den balanserte overgangen
+
+Viktige filer:
+
+- `relational_universe_v15bf_local_swap_gap_asymmetry_explainer.py`
+- `Documentation/v15bf_local_swap_gap_asymmetry_explainer.md`
+- `Documentation/v15bf_local_swap_gap_asymmetry_rows.csv`
+- `Documentation/v15bf_local_swap_gap_asymmetry_diagnosis.csv`
+- `Documentation/v0_15bf_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

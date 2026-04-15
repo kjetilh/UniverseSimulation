@@ -1,0 +1,4 @@
+pair_label,winner,loser,coarse_return_gap,core_to_shell_gap,tail_density_gap,core_share_gap,shell_burden_gap,gap_mode,note
+p1_vs_p3,1,3,0.2153846153846154,0.3928571428571429,0.07782461070132307,0.1202435312024353,0.12024353120243525,core_shape_separation,"Gapet drives mest av sterkere kjerne-forhold, mens tail-densiteten skiller mindre."
+p3_vs_p2,3,2,0.18461538461538457,0.20588235294117646,0.1042180042180042,0.09235209235209235,0.09235209235209241,retention_plus_shell_drag,Gapet leses best som en blanding av svakere retention og tydelig større shell-byrde hos taperen.
+p1_vs_p2,1,2,0.39999999999999997,0.5987394957983194,0.18204261491932727,0.21259562355452766,0.21259562355452766,mixed_gap_family,Gapet er fortsatt for blandet til å få en skarp lokal mekanismelesning.
