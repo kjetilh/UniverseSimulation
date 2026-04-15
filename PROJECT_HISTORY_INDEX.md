@@ -1492,6 +1492,45 @@ Viktige filer:
 - `Documentation/v15an_boundary_high_hold_target_summary.csv`
 - `Documentation/v0_15an_operativ_anbefaling.md`
 
+## 0zo. v15ao viste at high-grensen deler seg i fire lesbare haleutfall
+
+Etter at `v15an` viste at overlap-sonen best leses gjennom high-hold, tok `v15ao` neste smale steg:
+
+- behold det fokuserte `v15an`-settet
+- legg til ett naerliggende delayed-probe-kontrollop
+- bruk ingen nye simuleringer
+- avgjor om high-grensen faktisk deler seg i noen fa lesbare haleutfall
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `5002161` blir `established_high_hold`
+- `5002220` blir `terminal_high_probe`
+- `5002221` blir `failed_early_high_probe`
+- `5002240` og mid-platåreferansene blir `no_high_hold_plateau`
+- diagnosen ender pa `terminal_probe_boundary_is_structured`
+
+Dette betyr:
+
+- dette ga ekte ny viten utover `v15an`
+- residual- og probe-sporene ser ikke lenger ut som generell boundary-mix
+- den smale high-grensen deler seg i minst fire lesbare haleutfall:
+  - ekte high-hold
+  - terminal high-probe
+  - mislykket tidlig high-probe
+  - ingen high-hold
+- neste riktige steg er derfor a forklare hva som bestemmer om sen high starter tidlig nok til a bli hold i stedet for bare terminal probe
+
+Viktige filer:
+
+- `relational_universe_v15ao_terminal_probe_boundary_lab.py`
+- `Documentation/v15ao_terminal_probe_boundary_lab.md`
+- `Documentation/v15ao_terminal_probe_boundary_runs.csv`
+- `Documentation/v15ao_terminal_probe_boundary_aggregate.csv`
+- `Documentation/v15ao_terminal_probe_boundary_diagnosis.csv`
+- `Documentation/v15ao_terminal_probe_boundary_target_summary.csv`
+- `Documentation/v0_15ao_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

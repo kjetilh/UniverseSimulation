@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,"Startstorrelsene er fortsatt rent separert; denne runden bruker bare ekte v15ai-, v15aj- og v15an-data."
+terminal_probe_boundary_status,terminal_probe_boundary_is_structured,"Den smale high-grensen deler seg na i fire lesbare utfall: ekte high-hold, terminal high-probe, mislykket tidlig high-probe og ingen high-hold."
+next_step,probe_terminal_vs_hold_trigger,"Neste steg bor forklare hva som bestemmer om sen high starter tidlig nok til a bli hold, i stedet for a ende som terminal probe."
