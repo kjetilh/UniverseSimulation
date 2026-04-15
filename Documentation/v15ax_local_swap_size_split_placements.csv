@@ -1,0 +1,9 @@
+target_nodes,placement,n_runs,stable_core_variable_shell_rate,diffuse_shell_rate,mean_core_share_of_union,mean_shell_share_of_union,dominant_label
+48,0,2,1.0,0.0,0.7107023411371238,0.27968227424749165,stable_core_variable_shell
+48,1,2,1.0,0.0,0.6833333333333333,0.2868627450980392,stable_core_variable_shell
+48,2,2,1.0,0.0,0.7115221088435374,0.27827380952380953,stable_core_variable_shell
+48,3,2,1.0,0.0,0.6610644257703081,0.3389355742296919,stable_core_variable_shell
+96,0,2,0.0,0.5,0.4342008797653959,0.38825757575757575,mixed_core_shell
+96,1,2,0.0,0.5,0.3723823019996851,0.41591875295229097,mixed_core_shell
+96,2,2,0.0,1.0,0.16082547589396903,0.46050524817648103,diffuse_shell_recurrence
+96,3,2,0.5,0.5,0.39272030651340994,0.36590038314176243,stable_core_variable_shell

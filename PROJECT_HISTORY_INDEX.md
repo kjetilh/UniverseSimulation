@@ -1771,6 +1771,74 @@ Viktige filer:
 - `Documentation/v15av_post_peak_fade_holdout_target_summary.csv`
 - `Documentation/v0_15av_operativ_anbefaling.md`
 
+## 0zw. v15aw viste at local_swap ikke generaliserer rent som add_chord pa core-shell-observabelen
+
+Etter at add_chord-sporet rundt hold/no-high-overgangen var presset langt nok, tok `v15aw` et nytt smalt defect-sporsmal:
+
+- legg add_chord-fade-sporet til side
+- behold samme operative regime `band_zero_del`
+- behold single-defect recurrence-sporet
+- bruk den samme core-shell-observabelen som fungerte godt for add_chord
+- test bare `local_swap` ved `48` og `96`
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- ved `48` er alle 8 run `stable_core_variable_shell`
+- ved `96` er bare 1 av 8 run `stable_core_variable_shell`
+- `96` er i stedet dominert av `diffuse_shell_recurrence` (`0.625`) og litt `mixed_core_shell` (`0.250`)
+- diagnosen ender pa `local_swap_core_shell_mixed`
+
+Dette betyr:
+
+- den nye observabelen generaliserer ikke rent fra add_chord til local_swap
+- `local_swap` har fortsatt sterk sen morfologisk retur, men den holder seg mye renere som kjerne+rand ved `48` enn ved `96`
+- neste riktige steg er derfor ikke en bred ny defect-scan, men a avgjore om dette er en ekte strukturert size-splitt
+
+Viktige filer:
+
+- `relational_universe_v15aw_local_swap_core_shell_lab.py`
+- `Documentation/v15aw_local_swap_core_shell_lab.md`
+- `Documentation/v15aw_local_swap_core_shell_runs.csv`
+- `Documentation/v15aw_local_swap_core_shell_aggregate.csv`
+- `Documentation/v15aw_local_swap_core_shell_diagnosis.csv`
+- `Documentation/v15aw_local_swap_core_shell_target_summary.csv`
+- `Documentation/v0_15aw_operativ_anbefaling.md`
+
+## 0zx. v15ax viste at local_swap faktisk har en strukturert 48-vs-96 size-splitt
+
+Etter at `v15aw` ga et tydelig 48-vs-96-skille, tok `v15ax` neste lille forklaringsrunde:
+
+- kjor ingen nye simuleringer
+- bruk bare `v15aw`-run-radene
+- avgjor om 48-vs-96-forskjellen er sterk nok til a kalles ny viten
+- kartlegg om det fortsatt finnes sma `96`-lommer som holder core+shell lokalt
+
+Det viktigste resultatet er:
+
+- `48` holder rent som `stable_core_variable_shell` i alle 8 run
+- `96` er dominert av `diffuse_shell_recurrence`
+- kjerneandelen faller kraftig fra `0.692` til `0.340`
+- randandelen stiger fra `0.296` til `0.408`
+- det finnes bare en liten `96`-lomme som fortsatt holder `stable_core_variable_shell`
+- diagnosen ender pa `local_swap_size_split_supported`
+
+Dette betyr:
+
+- `local_swap` har na en ekte strukturert size-splitt pa denne observabelen
+- `48` leses best som ren kjerne+rand-recurrence
+- `96` leses best som et mer diffust shell-regime med noen fa resterende core+shell-lommer
+- neste riktige steg er derfor a forklare disse `96`-lommene, ikke a scanne bredere
+
+Viktige filer:
+
+- `relational_universe_v15ax_local_swap_size_split_explainer.py`
+- `Documentation/v15ax_local_swap_size_split_explainer.md`
+- `Documentation/v15ax_local_swap_size_split_aggregate.csv`
+- `Documentation/v15ax_local_swap_size_split_placements.csv`
+- `Documentation/v15ax_local_swap_size_split_diagnosis.csv`
+- `Documentation/v0_15ax_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

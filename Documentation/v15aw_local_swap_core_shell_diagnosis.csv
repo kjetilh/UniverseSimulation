@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstørrelsene er rent separert og alle smale local_swap-profiler matcher ønsket perturbasjon.
+local_swap_core_shell_status,local_swap_core_shell_mixed,"local_swap får en del kjerne/rand-struktur, men ikke rent nok til én enkel generaliserende lesning ennå."
+next_step,stay_local_on_swap,"Neste steg bør være en enda smalere local_swap-observabel, ikke en ny bred defect-scan."

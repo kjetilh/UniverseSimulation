@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au` og `v15av` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw` og `v15ax` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -506,6 +506,19 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-post-peak-fade-holdout-diagnosis: `Documentation/v15av_post_peak_fade_holdout_diagnosis.csv`
 - Add-chord-post-peak-fade-holdout-target-summary: `Documentation/v15av_post_peak_fade_holdout_target_summary.csv`
 - Add-chord-post-peak-fade-holdout-anbefaling: `Documentation/v0_15av_operativ_anbefaling.md`
+- Local-swap-core-shell-script: `relational_universe_v15aw_local_swap_core_shell_lab.py`
+- Local-swap-core-shell-rapport: `Documentation/v15aw_local_swap_core_shell_lab.md`
+- Local-swap-core-shell-runs: `Documentation/v15aw_local_swap_core_shell_runs.csv`
+- Local-swap-core-shell-aggregate: `Documentation/v15aw_local_swap_core_shell_aggregate.csv`
+- Local-swap-core-shell-diagnosis: `Documentation/v15aw_local_swap_core_shell_diagnosis.csv`
+- Local-swap-core-shell-target-summary: `Documentation/v15aw_local_swap_core_shell_target_summary.csv`
+- Local-swap-core-shell-anbefaling: `Documentation/v0_15aw_operativ_anbefaling.md`
+- Local-swap-size-split-script: `relational_universe_v15ax_local_swap_size_split_explainer.py`
+- Local-swap-size-split-rapport: `Documentation/v15ax_local_swap_size_split_explainer.md`
+- Local-swap-size-split-aggregate: `Documentation/v15ax_local_swap_size_split_aggregate.csv`
+- Local-swap-size-split-placements: `Documentation/v15ax_local_swap_size_split_placements.csv`
+- Local-swap-size-split-diagnosis: `Documentation/v15ax_local_swap_size_split_diagnosis.csv`
+- Local-swap-size-split-anbefaling: `Documentation/v0_15ax_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`

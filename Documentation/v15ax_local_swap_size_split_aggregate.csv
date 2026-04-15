@@ -1,0 +1,3 @@
+target_nodes,n_runs,stable_core_variable_shell_rate,mixed_core_shell_rate,diffuse_shell_rate,mean_core_share_of_union,mean_shell_share_of_union,mean_rare_share_of_union,mean_full_coarse_return_rate,dominant_label
+48,8,1.0,0.0,0.0,0.6916555522710757,0.29593860077475803,0.012405846954166282,0.8884615384615384,stable_core_variable_shell
+96,8,0.125,0.25,0.625,0.34003224104311497,0.40764549000702754,0.25232226894985743,0.6288461538461538,diffuse_shell_recurrence
