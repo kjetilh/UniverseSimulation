@@ -1,0 +1,6 @@
+group_type,group_value,n_runs,rate,mean_first8_high_rate,mean_first8_mid_rate,mean_longest_high_run_first8,mean_impulse_active_gain,mean_impulse_component_gain
+impulse_label,compact_late_spike,1,0.1111111111111111,1.0,0.0,3.0,1.416666666666667,1.75
+impulse_label,inactive_mid_plateau,4,0.4444444444444444,0.0,0.0,0.0,-4.9375,-4.6875
+impulse_label,rebounding_hold_impulse,1,0.1111111111111111,0.75,0.25,3.0,2.5,2.5
+impulse_label,soft_failed_impulse,1,0.1111111111111111,0.875,0.125,6.0,1.75,1.75
+impulse_label,sustained_hold_impulse,2,0.2222222222222222,0.9375,0.0625,6.5,2.0625,2.0625

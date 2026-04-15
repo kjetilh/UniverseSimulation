@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao` og `v15ap` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap` og `v15aq` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -466,6 +466,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-pre-high-launch-diagnosis: `Documentation/v15ap_pre_high_launch_diagnosis.csv`
 - Add-chord-pre-high-launch-target-summary: `Documentation/v15ap_pre_high_launch_target_summary.csv`
 - Add-chord-pre-high-launch-anbefaling: `Documentation/v0_15ap_operativ_anbefaling.md`
+- Add-chord-high-launch-impulse-script: `relational_universe_v15aq_high_launch_impulse_lab.py`
+- Add-chord-high-launch-impulse-rapport: `Documentation/v15aq_high_launch_impulse_lab.md`
+- Add-chord-high-launch-impulse-runs: `Documentation/v15aq_high_launch_impulse_runs.csv`
+- Add-chord-high-launch-impulse-aggregate: `Documentation/v15aq_high_launch_impulse_aggregate.csv`
+- Add-chord-high-launch-impulse-diagnosis: `Documentation/v15aq_high_launch_impulse_diagnosis.csv`
+- Add-chord-high-launch-impulse-target-summary: `Documentation/v15aq_high_launch_impulse_target_summary.csv`
+- Add-chord-high-launch-impulse-anbefaling: `Documentation/v0_15aq_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1490,6 +1497,29 @@ Den riktige live-lesningen na er derfor:
 - forskjellen mellom hold, terminal probe og failed probe ser ut til a vaere synlig allerede i launch-vinduet rett for high-forsoket
 - high-grensen er derfor ikke bare en haleeffekt; den har et lite pre-high launch-kart
 - neste riktige steg er en liten holdout-test av dette launch-kartet, ikke en bredere scan
+
+`v15aq` tok sa nettopp dette impulse-steget:
+
+- behold det fokuserte `v15ap`-settet
+- bruk ingen nye simuleringer
+- maal bare det aller forste post-launch-vinduet etter at high begynner eller nesten begynner
+- avgjor om forskjellen mellom hold og probe blir enda skarpere der
+
+Det viktigste fra `Documentation/v15aq_high_launch_impulse_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `5002161` og `5002205` blir `sustained_hold_impulse`
+- `5002241` blir `rebounding_hold_impulse`
+- `5002220` blir `compact_late_spike`
+- `5002221` blir bare `soft_failed_impulse`
+- diagnosen ender pa `launch_impulse_map_still_mixed`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga noe ny struktur, men mindre ny viten enn `v15ap`
+- det forste impulse-vinduet skiller hold fra sen spike ganske godt
+- men failed-probe-sporet blir fortsatt ikke rent nok lest i samme observabel
+- neste riktige steg er derfor ikke mer press pa impulse-vinduet alene, men en annen liten observabel eller en liten holdout rundt launch-kartet
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

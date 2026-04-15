@@ -1566,6 +1566,41 @@ Viktige filer:
 - `Documentation/v15ap_pre_high_launch_target_summary.csv`
 - `Documentation/v0_15ap_operativ_anbefaling.md`
 
+## 0zq. v15aq viste at impulse-vinduet skiller hold fra sen spike, men ikke failed probe rent nok
+
+Etter at `v15ap` viste at de fire haleutfallene allerede kan leses i pre-high launch-vinduet, tok `v15aq` neste smale steg:
+
+- behold det fokuserte `v15ap`-settet
+- bruk ingen nye simuleringer
+- mal bare det aller forste post-launch-vinduet etter at high begynner eller nesten begynner
+- avgjor om forskjellen mellom hold og probe blir enda skarpere der
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `5002161` og `5002205` blir `sustained_hold_impulse`
+- `5002241` blir `rebounding_hold_impulse`
+- `5002220` blir `compact_late_spike`
+- `5002221` blir bare `soft_failed_impulse`
+- diagnosen ender pa `launch_impulse_map_still_mixed`
+
+Dette betyr:
+
+- dette ga noe ny struktur, men mindre ny viten enn `v15ap`
+- impulse-vinduet skiller hold fra sen spike ganske godt
+- men failed-probe-sporet blir fortsatt ikke rent nok lest i samme observabel
+- neste riktige steg er derfor ikke mer press pa impulse-vinduet alene, men en annen liten observabel eller en liten holdout rundt launch-kartet
+
+Viktige filer:
+
+- `relational_universe_v15aq_high_launch_impulse_lab.py`
+- `Documentation/v15aq_high_launch_impulse_lab.md`
+- `Documentation/v15aq_high_launch_impulse_runs.csv`
+- `Documentation/v15aq_high_launch_impulse_aggregate.csv`
+- `Documentation/v15aq_high_launch_impulse_diagnosis.csv`
+- `Documentation/v15aq_high_launch_impulse_target_summary.csv`
+- `Documentation/v0_15aq_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

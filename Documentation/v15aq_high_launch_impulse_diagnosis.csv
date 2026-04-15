@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsene er fortsatt rent separert; denne runden bruker bare ekte v15ai- og v15ap-data.
+impulse_map_status,launch_impulse_map_still_mixed,"Impulsvinduet gir litt mer struktur, men ikke et rent nok kart ennå."
+next_step,change_impulse_observable,Neste steg bor bytte impulsobservabel i stedet for a presse dette kartet hardere.
