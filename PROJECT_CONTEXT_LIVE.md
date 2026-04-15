@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al` og `v15am` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am` og `v15an` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -445,6 +445,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-boundary-overlap-explainer-diagnosis: `Documentation/v15am_boundary_overlap_explainer_diagnosis.csv`
 - Add-chord-boundary-overlap-explainer-target-summary: `Documentation/v15am_boundary_overlap_explainer_target_summary.csv`
 - Add-chord-boundary-overlap-explainer-anbefaling: `Documentation/v0_15am_operativ_anbefaling.md`
+- Add-chord-boundary-high-hold-script: `relational_universe_v15an_boundary_high_hold_lab.py`
+- Add-chord-boundary-high-hold-rapport: `Documentation/v15an_boundary_high_hold_lab.md`
+- Add-chord-boundary-high-hold-runs: `Documentation/v15an_boundary_high_hold_runs.csv`
+- Add-chord-boundary-high-hold-aggregate: `Documentation/v15an_boundary_high_hold_aggregate.csv`
+- Add-chord-boundary-high-hold-diagnosis: `Documentation/v15an_boundary_high_hold_diagnosis.csv`
+- Add-chord-boundary-high-hold-target-summary: `Documentation/v15an_boundary_high_hold_target_summary.csv`
+- Add-chord-boundary-high-hold-anbefaling: `Documentation/v0_15an_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -1401,6 +1408,28 @@ Den riktige live-lesningen na er derfor:
 - to av tre overlap-case er na lokalt mer forklarbare enn i `v15al`
 - residual-caset er fortsatt ikke rent forklart, bare tydeligere lokaliseret
 - neste riktige steg er derfor ikke mer pressing av samme overlap-forklaring, men en ny observabel inne i overlap-sonen
+
+`v15an` tok sa nettopp denne high-hold-runden:
+
+- behold samme fokuserte run-sett fra `v15am`
+- behold de ekte `v15ai`-snapshottene
+- bruk ingen nye simuleringer
+- maal ikke bare om high-band dukker opp, men om det faktisk holder, glipper eller bare blinker til helt pa slutten
+
+Det viktigste fra `Documentation/v15an_boundary_high_hold_lab.md` er:
+
+- artifact-control holder fortsatt rent
+- `5002161` blir skarpt lest som `delayed_high_hold_crossover`
+- `5002240` blir skarpt lest som `no_high_hold_plateau`
+- `5002220` blir skarpt lest som `late_terminal_high_probe`
+- diagnosen ender pa `high_hold_observable_sharpens_overlap_zone`
+
+Den riktige live-lesningen na er derfor:
+
+- dette ga ekte ny viten utover `v15am`
+- overlap-sonen blir bedre forklart av om high-band faktisk holder enn av bare mer generelle familieavstander
+- residual-caset er ikke lenger bare "delvis mid-platå"; det ser ut som en sen terminal high-probe, ikke et ekte high-hold-lop
+- neste riktige steg er derfor a teste grensen mellom ekte sen high-hold og bare terminal high-probe
 
 De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 

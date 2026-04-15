@@ -1458,6 +1458,40 @@ Viktige filer:
 - `Documentation/v15am_boundary_overlap_explainer_target_summary.csv`
 - `Documentation/v0_15am_operativ_anbefaling.md`
 
+## 0zn. v15an viste at overlap-sonen best leses gjennom high-hold, ikke bare familieavstand
+
+Etter at `v15am` gjorde overlap-caseene mer lesbare, men fortsatt ikke helt loste, tok `v15an` neste smale steg:
+
+- behold samme fokuserte run-sett fra `v15am`
+- behold de ekte `v15ai`-snapshottene
+- bruk ingen nye simuleringer
+- mal ikke bare om high-band dukker opp, men om det faktisk holder, glipper eller bare blinker til helt pa slutten
+
+Det viktigste resultatet er:
+
+- artifact-control holder fortsatt rent
+- `5002161` blir skarpt lest som `delayed_high_hold_crossover`
+- `5002240` blir skarpt lest som `no_high_hold_plateau`
+- `5002220` blir skarpt lest som `late_terminal_high_probe`
+- diagnosen ender pa `high_hold_observable_sharpens_overlap_zone`
+
+Dette betyr:
+
+- dette ga ekte ny viten utover `v15am`
+- overlap-sonen er bedre forklart av om high-band faktisk holder enn av bare mer generelle familieavstander
+- residual-caset ser ikke lenger ut som et nesten-high-rise lop; det ser ut som en sen terminal high-probe
+- neste riktige steg er derfor a teste grensen mellom ekte sen high-hold og bare terminal high-probe
+
+Viktige filer:
+
+- `relational_universe_v15an_boundary_high_hold_lab.py`
+- `Documentation/v15an_boundary_high_hold_lab.md`
+- `Documentation/v15an_boundary_high_hold_runs.csv`
+- `Documentation/v15an_boundary_high_hold_aggregate.csv`
+- `Documentation/v15an_boundary_high_hold_diagnosis.csv`
+- `Documentation/v15an_boundary_high_hold_target_summary.csv`
+- `Documentation/v0_15an_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

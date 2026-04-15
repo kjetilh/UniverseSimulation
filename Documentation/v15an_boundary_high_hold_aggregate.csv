@@ -1,0 +1,6 @@
+group_type,group_value,n_runs,rate,mean_high_hold_start_index,mean_high_hold_span_snapshots,mean_high_hold_rate,mean_high_relapse_count,mean_high_regain_count,mean_last12_high_rate
+overlap_high_hold,delayed_high_hold_crossover,1,0.3333333333333333,40.0,32.0,0.875,3.0,3.0,0.8333333333333334
+overlap_high_hold,late_terminal_high_probe,1,0.3333333333333333,69.0,3.0,1.0,0.0,0.0,0.25
+overlap_high_hold,no_high_hold_plateau,1,0.3333333333333333,72.0,0.0,0.0,0.0,0.0,0.0
+reference_role,typical_late_high_rise,2,1.0,38.5,33.5,0.8531531531531531,2.0,2.0,0.9583333333333333
+reference_role,typical_mid_plateau,3,1.0,72.0,0.0,0.0,0.0,0.0,0.0
