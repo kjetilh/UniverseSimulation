@@ -1908,6 +1908,41 @@ Viktige filer:
 - `Documentation/v15az_local_swap_p3_seed_flip_diagnosis.csv`
 - `Documentation/v0_15az_operativ_anbefaling.md`
 
+## 10a. v15ba viste at den diffuse siden av p3-flippen best leses som komprimert shell-retur
+
+Etter at `v15az` viste at `p3`-flippen ikke bare er en geometri-flip, tok `v15ba` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `96`-radene fra `v15aw`
+- behold `pocket_anchor` og `p3_diffuse_flip`
+- legg til noen fa lokale kontroller for a holde lesningen aelig
+- avgjor om `202/p3` best leses som svak pocket eller som en egen komprimert shell-retur
+
+Det viktigste resultatet er:
+
+- `202/p3` holder fortsatt tydelig recurrence (`coarse return = 0.631`)
+- men den er sterkt shell-dominert: `shell+rare = 0.778`
+- den har lav `core/shell = 0.500`
+- den har lav `tail_density = 0.442`
+- pocket-caset `101/p3` er langt mindre shell-dominert (`shell+rare = 0.437`) og langt tettere i tailen (`tail_density = 0.698`)
+- diagnosen ender pa `compressed_shell_return_supported`
+
+Dette betyr:
+
+- `202/p3` ser ikke best ut som en svak eller mislykket pocket
+- den best leses som en komprimert shell-retur: recurrence holder seg i live, men i en liten, rand-/rare-dominert modus
+- dette gir ny viten fordi det skiller den diffuse siden av `p3`-flippen fra bare "lavere kjerneforsterkning"
+- neste riktige steg er derfor a forklare hvorfor akkurat `growth_seed 202` holder `p3` i denne shell-returen, sammenlignet med andre `growth_seed 202`-caser
+
+Viktige filer:
+
+- `relational_universe_v15ba_local_swap_compressed_shell_explainer.py`
+- `Documentation/v15ba_local_swap_compressed_shell_explainer.md`
+- `Documentation/v15ba_local_swap_compressed_shell_rows.csv`
+- `Documentation/v15ba_local_swap_compressed_shell_summary.csv`
+- `Documentation/v15ba_local_swap_compressed_shell_diagnosis.csv`
+- `Documentation/v0_15ba_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
