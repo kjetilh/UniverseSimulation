@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+load_stabilizer_status,load_without_stabilization_supported,"p2 topper alle små last-akser, mens p1 topper alle små stabiliseringsakser. Det støtter at rare-load-flippen ligger i høy last uten tilsvarende stabilisering."
+best_load_axis,ball2_load,Beste lastakse gir margin 5.000.
+best_stabilizer_axis,full_stabilizer,Beste stabiliseringsakse gir margin 0.511.
+next_step,explain_missing_stabilizer,Neste steg bør forklare hva p2 mangler av stabilisering relativt til p1.

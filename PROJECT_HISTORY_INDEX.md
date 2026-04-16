@@ -2172,6 +2172,39 @@ Viktige filer:
 - `Documentation/v15bh_local_swap_rare_load_trigger_diagnosis.csv`
 - `Documentation/v0_15bh_operativ_anbefaling.md`
 
+## 10i. v15bi viste at p2 vs p1 best leses som load-vs-stabilizer-flip
+
+Etter at `v15bh` viste en liten lokal p2-trigger uten å løse hele rare-rangeringen, tok `v15bi` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `p1`, `p2` og `p3` i `target 96`, `growth_seed 202`
+- del kandidataksene i to familier: last og stabilisering
+- avgjor om `p2` og `p1` faktisk skiller lag som høy last vs sterk stabilisering
+
+Det viktigste resultatet er:
+
+- `p2` topper alle sma last-akser
+- `p1` topper alle sma stabiliseringsakser
+- beste lastakse er `ball2_load`
+- beste stabiliseringsakse er `full_stabilizer = coarse_return + core_share + shell2_over_shell1`
+- diagnosen ender pa `load_without_stabilization_supported`
+
+Dette betyr:
+
+- `p2` glir ikke bare mot rare-load fordi den er "mer diffus"
+- den ser ut til a være den tyngste lokale lastretningen uten tilsvarende stabiliseringsbuffer
+- `p1` holder seg ute av rare-load ikke fordi lasten er lav, men fordi stabiliseringspakken er tydelig sterkere
+- neste riktige steg er derfor a forklare hva `p2` konkret mangler av stabilisering relativt til `p1`
+
+Viktige filer:
+
+- `relational_universe_v15bi_local_swap_load_stabilizer_flip.py`
+- `Documentation/v15bi_local_swap_load_stabilizer_flip.md`
+- `Documentation/v15bi_local_swap_load_stabilizer_placements.csv`
+- `Documentation/v15bi_local_swap_load_stabilizer_axes.csv`
+- `Documentation/v15bi_local_swap_load_stabilizer_diagnosis.csv`
+- `Documentation/v0_15bi_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
