@@ -2205,6 +2205,72 @@ Viktige filer:
 - `Documentation/v15bi_local_swap_load_stabilizer_diagnosis.csv`
 - `Documentation/v0_15bi_operativ_anbefaling.md`
 
+## 10j. v15bj viste at p2 sitt stabiliseringsunderskudd er retention-led
+
+Etter at `v15bi` skilte `p2` og `p1` som høy last uten nok buffer vs last med buffer, tok `v15bj` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `p1`-vs-`p2`-stabiliseringssiden
+- dekomponer `full_stabilizer`
+- avgjor om underskuddet primært ligger i retention, i core-stotte eller i shell-lagdeling
+
+Det viktigste resultatet er:
+
+- retention-gapet er `0.400`
+- core-gapet er `0.213`
+- shell-lag-gapen er `0.100`
+- retention dekker `0.561` av total stabiliseringsgap
+- core dekker `0.298`
+- shell-lagdeling dekker `0.140`
+- diagnosen ender pa `retention_led_stabilizer_deficit_supported`
+
+Dette betyr:
+
+- `p2` mangler ikke stabilisering likt pa alle fronter
+- underskuddet er klart retention-led
+- core-stotte er en tydelig sekundarkomponent
+- shell-lagdeling spiller en mindre, men ikke null, rolle
+
+Viktige filer:
+
+- `relational_universe_v15bj_local_swap_stabilizer_component_lab.py`
+- `Documentation/v15bj_local_swap_stabilizer_component_lab.md`
+- `Documentation/v15bj_local_swap_stabilizer_components.csv`
+- `Documentation/v15bj_local_swap_stabilizer_diagnosis.csv`
+- `Documentation/v0_15bj_operativ_anbefaling.md`
+
+## 10k. v15bk samlet local_swap-retningene i et lite load-stabilizer-moduskart
+
+Etter at `v15bj` viste at `p2` sitt stabiliseringsunderskudd er retention-led, tok `v15bk` neste naturlige syntesesteg:
+
+- kjor ingen nye simuleringer
+- behold beste lokale lastakse fra `v15bi`
+- behold beste lokale stabiliseringsakse fra `v15bi`/`v15bj`
+- sentrer dem lokalt og se om `p1`, `p2` og `p3` fyller ulike modi
+
+Det viktigste resultatet er:
+
+- `p1` blir `buffered_heavy_load`
+- `p2` blir `rare_load_risk`
+- `p3` blir `low_load_diffuse`
+- diagnosen ender pa `load_stabilizer_mode_map_supported`
+
+Dette betyr:
+
+- growth_seed-202-kartet leses na ikke bare som tre etiketter
+- det leses som tre ulike lokale roller
+- `p1` bærer tung last men har nok buffer
+- `p2` bærer tung last uten nok buffer og er derfor den klare rare-load-risikoen
+- `p3` er lettere lastet og mer diffust
+
+Viktige filer:
+
+- `relational_universe_v15bk_local_swap_load_stabilizer_mode_map.py`
+- `Documentation/v15bk_local_swap_load_stabilizer_mode_map.md`
+- `Documentation/v15bk_local_swap_load_stabilizer_mode_rows.csv`
+- `Documentation/v15bk_local_swap_load_stabilizer_mode_diagnosis.csv`
+- `Documentation/v0_15bk_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

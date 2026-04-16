@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh` og `v15bi` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj` og `v15bk` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -583,6 +583,16 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Local-swap-load-stabilizer-axes: `Documentation/v15bi_local_swap_load_stabilizer_axes.csv`
 - Local-swap-load-stabilizer-diagnosis: `Documentation/v15bi_local_swap_load_stabilizer_diagnosis.csv`
 - Local-swap-load-stabilizer-anbefaling: `Documentation/v0_15bi_operativ_anbefaling.md`
+- Local-swap-stabilizer-components-script: `relational_universe_v15bj_local_swap_stabilizer_component_lab.py`
+- Local-swap-stabilizer-components-rapport: `Documentation/v15bj_local_swap_stabilizer_component_lab.md`
+- Local-swap-stabilizer-components-csv: `Documentation/v15bj_local_swap_stabilizer_components.csv`
+- Local-swap-stabilizer-components-diagnosis: `Documentation/v15bj_local_swap_stabilizer_diagnosis.csv`
+- Local-swap-stabilizer-components-anbefaling: `Documentation/v0_15bj_operativ_anbefaling.md`
+- Local-swap-load-stabilizer-mode-map-script: `relational_universe_v15bk_local_swap_load_stabilizer_mode_map.py`
+- Local-swap-load-stabilizer-mode-map-rapport: `Documentation/v15bk_local_swap_load_stabilizer_mode_map.md`
+- Local-swap-load-stabilizer-mode-map-rows: `Documentation/v15bk_local_swap_load_stabilizer_mode_rows.csv`
+- Local-swap-load-stabilizer-mode-map-diagnosis: `Documentation/v15bk_local_swap_load_stabilizer_mode_diagnosis.csv`
+- Local-swap-load-stabilizer-mode-map-anbefaling: `Documentation/v0_15bk_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -605,7 +615,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh` og `v15bi` skjerpet local_swap-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj` og `v15bk` skjerpet local_swap-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -623,6 +633,12 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - `v15bi` viser at `p2` og `p1` faktisk skilles av en liten load-vs-stabilizer-flip
 - `p2` topper alle små last-akser
 - `p1` topper alle små stabiliseringsakser
+- `v15bj` viser at stabiliseringsunderskuddet i `p2` er retention-led
+- retention dekker `0.561` av stabiliseringsgapet, core `0.298`, shell-lagdeling `0.140`
+- `v15bk` samler dette til et lite moduskart
+- `p1` blir `buffered_heavy_load`
+- `p2` blir `rare_load_risk`
+- `p3` blir `low_load_diffuse`
 
 Den riktige live-lesningen na er derfor:
 
@@ -632,7 +648,9 @@ Den riktige live-lesningen na er derfor:
 - den balanserte `p3 > p2`-overgangen leses na best som retention pluss rare-loaded shell-drag
 - `p2` ser samtidig ut til a ha en egen lokal støtte-/last-trigger, selv om den ikke alene forklarer hele `p1/p2/p3`-rekkefolgen
 - `p2` og `p1` skilles na best som høy last uten nok stabilisering vs litt lavere last med sterkere stabilisering
-- neste riktige steg er a forklare hva `p2` konkret mangler av stabilisering relativt til `p1`
+- dette stabiliseringsunderskuddet er ikke flatt: det er retention-led, med core som tydelig sekundarkomponent
+- growth_seed-202-kartet leses na best som tre lokale modi: tung last med buffer, tung last uten nok buffer, og lavere last med diffus retur
+- neste riktige steg er enten a forklare risiko-siden enda smalere, eller a bruke dette kartet i en mer direkte local_swap-vs-add_chord-sammenlikning
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 
