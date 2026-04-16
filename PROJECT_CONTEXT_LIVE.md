@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be` og `v15bf` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf` og `v15bg` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -565,6 +565,12 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Local-swap-gap-asymmetry-rows: `Documentation/v15bf_local_swap_gap_asymmetry_rows.csv`
 - Local-swap-gap-asymmetry-diagnosis: `Documentation/v15bf_local_swap_gap_asymmetry_diagnosis.csv`
 - Local-swap-gap-asymmetry-anbefaling: `Documentation/v0_15bf_operativ_anbefaling.md`
+- Local-swap-shell-drag-script: `relational_universe_v15bg_local_swap_shell_drag_decomposition.py`
+- Local-swap-shell-drag-rapport: `Documentation/v15bg_local_swap_shell_drag_decomposition.md`
+- Local-swap-shell-drag-placements: `Documentation/v15bg_local_swap_shell_drag_placements.csv`
+- Local-swap-shell-drag-rows: `Documentation/v15bg_local_swap_shell_drag_rows.csv`
+- Local-swap-shell-drag-diagnosis: `Documentation/v15bg_local_swap_shell_drag_diagnosis.csv`
+- Local-swap-shell-drag-anbefaling: `Documentation/v0_15bg_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -587,7 +593,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be` og `v15bf` skjerpet local_swap-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf` og `v15bg` skjerpet local_swap-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -598,13 +604,16 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - `v15bf` viser at disse to nabogapene heller ikke er samme type overgang
 - `p1 > p3` leses best som `core_shape_separation`
 - `p3 > p2` leses best som `retention_plus_shell_drag`
+- `v15bg` viser at shell-drag-siden i `p3 > p2` nesten helt bæres av `rare`-last, ikke av bredere ordinær shell
+- `p2` har nesten samme shell-share som `p3`, men klart høyere rare-share
 
 Den riktige live-lesningen na er derfor:
 
 - growth_seed-202-splittelsen leses best gjennom en liten dynamisk retention+kjerne-akse
 - men aksen maa fortsatt leses som en to-komponentsplitt, ikke som ett enkelt universelt maal
 - og de to nabogapene inne i aksen er selv asymmetriske, ikke bare svakere/sterkere versjoner av samme overgang
-- neste riktige steg er a forklare shell-drag-siden av den balanserte overgangen
+- den balanserte `p3 > p2`-overgangen leses na best som retention pluss rare-loaded shell-drag
+- neste riktige steg er a forklare hva som trigger rare-last i den dissipative `p2`-retningen
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 

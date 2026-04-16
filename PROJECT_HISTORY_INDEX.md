@@ -2108,6 +2108,37 @@ Viktige filer:
 - `Documentation/v15bf_local_swap_gap_asymmetry_diagnosis.csv`
 - `Documentation/v0_15bf_operativ_anbefaling.md`
 
+## 10g. v15bg viste at shell-drag-siden av p3 > p2 nesten helt er rare-last, ikke bredere shell
+
+Etter at `v15bf` skilte ut `p3 > p2` som en egen `retention_plus_shell_drag`-overgang, tok `v15bg` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `target 96`, `growth_seed 202`
+- dekomponer shell-draget i ordinær shell-share vs rare-share
+- avgjor om taperen egentlig bare har mer shell, eller om den spesielt blåses opp av rare-last
+
+Det viktigste resultatet er:
+
+- `p2` og `p3` har nesten lik shell-share (`0.442` vs `0.444`)
+- men `p2` har klart hoyere rare-share (`0.429` vs `0.333`)
+- rare-andelen dekker i praksis hele shell-draget (`rare_fraction_of_shell_drag ~= 1.031`)
+- diagnosen ender pa `rare_loaded_shell_drag_supported`
+
+Dette betyr:
+
+- den balanserte `p3 > p2`-overgangen er ikke best lest som bredere ordinær shell
+- den leses best som en overgang der taperen bærer tung rare-last samtidig som retentionen er svakere
+- neste riktige steg er derfor a forklare hva som trigger rare-last i den dissipative `p2`-retningen
+
+Viktige filer:
+
+- `relational_universe_v15bg_local_swap_shell_drag_decomposition.py`
+- `Documentation/v15bg_local_swap_shell_drag_decomposition.md`
+- `Documentation/v15bg_local_swap_shell_drag_placements.csv`
+- `Documentation/v15bg_local_swap_shell_drag_rows.csv`
+- `Documentation/v15bg_local_swap_shell_drag_diagnosis.csv`
+- `Documentation/v0_15bg_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

@@ -1,0 +1,3 @@
+diagnostic_family,status,note
+shell_drag_status,rare_loaded_shell_drag_supported,Den balanserte p3 > p2-overgangen ser ikke ut som bredere shell i seg selv; taperen bærer nesten hele shell-draget som oppblåst rare-last.
+next_step,explain_rare_load_trigger,Neste steg bør forklare hva som avgjør om rare-last blåses opp i den dissipative p2-retningen.
