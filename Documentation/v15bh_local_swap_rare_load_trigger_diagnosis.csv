@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+rare_load_trigger_status,p2_rare_load_trigger_supported,"Flere små støtte-/last-akser setter p2 tydelig øverst, men ingen av dem løser samtidig p3 > p1. Det støtter en lokal p2-trigger uten å late som hele rare-rangeringen er løst."
+best_axis,ball2_load,Beste kandidatakse gir p2-margin 5.000.
+next_step,explain_p2_trigger_without_overclaim,"Neste steg bør forklare p2-triggeren lokalt, ikke åpne en bredere scan."

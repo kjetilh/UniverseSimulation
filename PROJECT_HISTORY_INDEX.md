@@ -2139,6 +2139,39 @@ Viktige filer:
 - `Documentation/v15bg_local_swap_shell_drag_diagnosis.csv`
 - `Documentation/v0_15bg_operativ_anbefaling.md`
 
+## 10h. v15bh viste at p2 faktisk har en liten lokal rare-load-trigger, men ikke en full rare-rangering
+
+Etter at `v15bg` viste at `p3 > p2` best leses som retention pluss rare-loaded shell-drag, tok `v15bh` neste smale steg:
+
+- kjor ingen nye simuleringer
+- behold bare `p1`, `p2` og `p3` i `target 96`, `growth_seed 202`
+- test et lite sett støtte-/last-akser
+- avgjor om `p2` kan leses som en egen rare-load-retning uten a late som hele `p1/p2/p3`-rekkefolgen er løst
+
+Det viktigste resultatet er:
+
+- flere sma akser setter `p2` tydelig overst
+- beste kandidater er `ball2_load`, `ball3_load` og `ball1_load`
+- alle holder `p2_top = 1`
+- ingen av dem gjenskaper samtidig hele rare-rangeringen `p2 > p3 > p1`
+- diagnosen ender pa `p2_rare_load_trigger_supported`
+
+Dette betyr:
+
+- `p2` ser ikke bare ut som den svakeste diffuse modusen i ettertid
+- den ser ut til a ha en liten lokal støtte-/last-trigger som peker mot rare-load-inflasjon
+- men vi skal ikke late som denne triggeren allerede forklarer hvorfor `p3` fortsatt holder bedre enn `p1`
+- neste riktige steg er derfor a forklare hvorfor `p2` glir over i rare-load mens `p1` ikke gjør det, selv om begge er relativt tunge lokalt
+
+Viktige filer:
+
+- `relational_universe_v15bh_local_swap_rare_load_trigger_lab.py`
+- `Documentation/v15bh_local_swap_rare_load_trigger_lab.md`
+- `Documentation/v15bh_local_swap_rare_load_trigger_placements.csv`
+- `Documentation/v15bh_local_swap_rare_load_trigger_axes.csv`
+- `Documentation/v15bh_local_swap_rare_load_trigger_diagnosis.csv`
+- `Documentation/v0_15bh_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
