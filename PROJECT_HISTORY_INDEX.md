@@ -2271,6 +2271,40 @@ Viktige filer:
 - `Documentation/v15bk_local_swap_load_stabilizer_mode_diagnosis.csv`
 - `Documentation/v0_15bk_operativ_anbefaling.md`
 
+## 10l. v15bl viste at spektral drift skjerpes igjen nar vi condition-er pa lokale carrier-familier
+
+Etter at `v15bk` samlet `local_swap`-retningene i et lite lokalt moduskart, tok `v15bl` neste naturlige steg tilbake mot quasi-invariant-sporet:
+
+- behold bare den stabile anchor-regimen
+- behold bare de lokale carrier-familiene som faktisk overlevde i defect-sporet
+- rerun et lite `add_chord`-band og et lite `local_swap`-moduskart
+- mal de samme relative driftmetrikkene som i `v12`/`v13`, spesielt spektral drift mot dim-drift
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `nodes` og `beta1` holder fortsatt lavest drift, men bare som sanity-metrikker
+- i add_chord-bandet blir spektral drift skarpere i `cycle_band_p2` enn i pooled add_chord-familie
+- i local_swap-moduskartet blir spektral drift skarpere i `low_load_diffuse` enn i pooled local_swap-familie
+- diagnosen ender pa `shared_family_level_spectral_candidate`
+
+Dette betyr:
+
+- repoet har fortsatt ikke en ny global quasi-invariant-lov
+- men spektral relativ drift ser bedre ut nar vi condition-er pa lokale carrier-familier enn nar vi blander alt sammen
+- den beste nye lesningen er derfor familiespesifikk eller carrier-spesifikk sharpening
+- neste riktige steg er en liten carrier-first sammenlikning, ikke en ny bred global invariant-scan
+
+Viktige filer:
+
+- `relational_universe_v15bl_conditional_quasi_invariant_lab.py`
+- `Documentation/v15bl_conditional_quasi_invariant_lab.md`
+- `Documentation/v15bl_conditional_quasi_invariant_target_summary.csv`
+- `Documentation/v15bl_conditional_quasi_invariant_rows.csv`
+- `Documentation/v15bl_conditional_quasi_invariant_aggregate.csv`
+- `Documentation/v15bl_conditional_quasi_invariant_diagnosis.csv`
+- `Documentation/v0_15bl_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
