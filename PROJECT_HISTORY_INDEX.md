@@ -2305,6 +2305,40 @@ Viktige filer:
 - `Documentation/v15bl_conditional_quasi_invariant_diagnosis.csv`
 - `Documentation/v0_15bl_operativ_anbefaling.md`
 
+## 10m. v15bm viste at carrier-first cross-family-splittelsen ikke holder rent pa holdout-seeds
+
+Etter at `v15bl` fant et delt familiespesifikt spektralt delsignal i bade add_chord og local_swap, tok `v15bm` neste naturlige steg:
+
+- behold bare de to spektrale vinnerlommene fra `v15bl`
+- legg ved naerliggende dim-fargede kontroller i hver familie
+- bruk friske holdout-seeds
+- avgjor om dette holder som en carrier-first cross-family-splittelse
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `cycle_band_p2` holder spectral rank `1`
+- `low_load_diffuse` holder spectral rank `1`
+- men kontrollene `cycle_band_p1` og `buffered_heavy_load` holder ogsa spectral rank `1`
+- candidate-poolen ser derfor ikke skarpere ut enn kontroll-poolen
+- diagnosen ender pa `carrier_first_holdout_not_yet`
+
+Dette betyr:
+
+- `v15bl` var ekte ny viten
+- men den beste lesningen er fortsatt familiespesifikk sharpening, ikke en ren cross-family carrier-lov
+- neste riktige steg bor derfor holde seg innen den sterkeste familien, ikke presse videre pa delt cross-family-portabilitet for tidlig
+
+Viktige filer:
+
+- `relational_universe_v15bm_carrier_first_spectral_holdout.py`
+- `Documentation/v15bm_carrier_first_spectral_holdout.md`
+- `Documentation/v15bm_carrier_first_spectral_target_summary.csv`
+- `Documentation/v15bm_carrier_first_spectral_rows.csv`
+- `Documentation/v15bm_carrier_first_spectral_aggregate.csv`
+- `Documentation/v15bm_carrier_first_spectral_diagnosis.csv`
+- `Documentation/v0_15bm_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

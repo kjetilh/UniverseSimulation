@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk` og `v15bl` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl` og `v15bm` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -600,6 +600,13 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Conditional-quasi-invariant-aggregate: `Documentation/v15bl_conditional_quasi_invariant_aggregate.csv`
 - Conditional-quasi-invariant-diagnosis: `Documentation/v15bl_conditional_quasi_invariant_diagnosis.csv`
 - Conditional-quasi-invariant-anbefaling: `Documentation/v0_15bl_operativ_anbefaling.md`
+- Carrier-first-spectral-holdout-script: `relational_universe_v15bm_carrier_first_spectral_holdout.py`
+- Carrier-first-spectral-holdout-rapport: `Documentation/v15bm_carrier_first_spectral_holdout.md`
+- Carrier-first-spectral-holdout-target-sammendrag: `Documentation/v15bm_carrier_first_spectral_target_summary.csv`
+- Carrier-first-spectral-holdout-rows: `Documentation/v15bm_carrier_first_spectral_rows.csv`
+- Carrier-first-spectral-holdout-aggregate: `Documentation/v15bm_carrier_first_spectral_aggregate.csv`
+- Carrier-first-spectral-holdout-diagnosis: `Documentation/v15bm_carrier_first_spectral_diagnosis.csv`
+- Carrier-first-spectral-holdout-anbefaling: `Documentation/v0_15bm_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -622,7 +629,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk` og `v15bl` skjerpet local_swap-/conditional-quasi-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl` og `v15bm` skjerpet local_swap-/conditional-quasi-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -650,6 +657,10 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - i add_chord-bandet blir spektral drift skarpere i `cycle_band_p2` enn i pooled familie
 - i local_swap-moduskartet blir spektral drift skarpere i `low_load_diffuse` enn i pooled mode-familie
 - dermed har repoet na minst ett delt familiespesifikt spektralt delsignal i bade add_chord og local_swap, uten at dette skal leses som en universell lov ennå
+- `v15bm` tester akkurat denne lesningen pa friske holdout-seeds mot naerliggende kontroller
+- holdouten bekrefter ikke en ren carrier-first splittelse
+- bade vinnerne og de naerliggende kontrollene holder spectral rank 1 i denne lille holdouten
+- dermed maa `v15bl` fortsatt leses som familiespesifikk sharpening, ikke som en ren cross-family-lov
 
 Den riktige live-lesningen na er derfor:
 
@@ -661,6 +672,7 @@ Den riktige live-lesningen na er derfor:
 - `p2` og `p1` skilles na best som høy last uten nok stabilisering vs litt lavere last med sterkere stabilisering
 - `v15bl` viser samtidig at spektral relativ drift blir mer interessant hvis vi condition-er pa disse lokale carrier-familiene
 - den sterkeste nye quasi-invariant-lesningen er fortsatt familiespesifikk sharpening, ikke en ny global invariant
+- `v15bm` svekker ideen om at denne spektrale lommen allerede holder som en ren carrier-first cross-family-splittelse
 - dette stabiliseringsunderskuddet er ikke flatt: det er retention-led, med core som tydelig sekundarkomponent
 - growth_seed-202-kartet leses na best som tre lokale modi: tung last med buffer, tung last uten nok buffer, og lavere last med diffus retur
 - neste riktige steg er enten a forklare risiko-siden enda smalere, eller a bruke dette kartet i en mer direkte local_swap-vs-add_chord-sammenlikning
