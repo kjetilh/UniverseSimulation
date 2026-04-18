@@ -2339,6 +2339,102 @@ Viktige filer:
 - `Documentation/v15bm_carrier_first_spectral_diagnosis.csv`
 - `Documentation/v0_15bm_operativ_anbefaling.md`
 
+## 10n. v15bn viste at add_chord har en svak liten skalahypotese, men ikke mer enn det
+
+Etter at `v15bm` svekket den delte carrier-first-lesningen, tok `v15bn` neste naturlige steg innen den sterkeste add_chord-familien:
+
+- behold bare `growth_seed 202`
+- bruk `48/p2` som anker, siden det var den sterkeste spektrale add_chord-lommen i `v15bl`
+- mal alle `96`-plasseringene mot dette ankeret med samme coarse-geometri- og relative-drift-observabler
+- avgjor om en liten `48 -> 96`-skalaovergang faktisk ser gjenkjennelig ut
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `96/p3` blir beste `96`-kandidat
+- `96/p3` holder spectral rank `1`
+- men combined-distance-gapet til `96/p1` er bare `0.019`
+- diagnosen ender derfor pa `small_scale_jump_match_weak`
+
+Dette betyr:
+
+- repoet har en legitim liten add_chord-skalahypotese
+- men bare som svak kandidat, ikke som etablert skalaovergang
+- neste riktige steg er en ren holdout-tie-break mot den naermeste `96`-rivalen
+
+Viktige filer:
+
+- `relational_universe_v15bn_add_chord_scale_jump_family_map.py`
+- `Documentation/v15bn_add_chord_scale_jump_family_map.md`
+- `Documentation/v15bn_add_chord_scale_jump_target_summary.csv`
+- `Documentation/v15bn_add_chord_scale_jump_rows.csv`
+- `Documentation/v15bn_add_chord_scale_jump_aggregate.csv`
+- `Documentation/v15bn_add_chord_scale_jump_match_rows.csv`
+- `Documentation/v15bn_add_chord_scale_jump_diagnosis.csv`
+- `Documentation/v0_15bn_operativ_anbefaling.md`
+
+## 10o. v15bo viste at den lille add_chord-skalaovergangen ikke holder rent pa holdout
+
+Etter at `v15bn` bare ga en svak ranking-vinner, tok `v15bo` den riktige tie-break-runden:
+
+- behold bare `48/p2` som anker
+- bruk `96/p3` som kandidat
+- bruk `96/p1` som naermeste kontrollrival
+- rerun pa friske holdout-seeds
+- avgjor om kandidaten faktisk holder bedre enn kontrollen
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `96/p3` beholder spectral rank `1`
+- men `96/p1` blir likevel den naermeste profilen til ankeret pa combined coarse+spectral-likhet
+- diagnosen ender pa `scale_jump_pair_not_yet`
+
+Dette betyr:
+
+- `48/p2 -> 96/p3` holder ikke som en ren liten add_chord-skalaovergang
+- den mest interessante delen av resultatet er derfor ikke en ny positiv claim, men at skalabruddet tydeligvis er strukturert nok til a forklares
+
+Viktige filer:
+
+- `relational_universe_v15bo_add_chord_scale_jump_holdout.py`
+- `Documentation/v15bo_add_chord_scale_jump_holdout.md`
+- `Documentation/v15bo_add_chord_scale_jump_holdout_target_summary.csv`
+- `Documentation/v15bo_add_chord_scale_jump_holdout_rows.csv`
+- `Documentation/v15bo_add_chord_scale_jump_holdout_aggregate.csv`
+- `Documentation/v15bo_add_chord_scale_jump_holdout_comparison.csv`
+- `Documentation/v15bo_add_chord_scale_jump_holdout_diagnosis.csv`
+- `Documentation/v0_15bo_operativ_anbefaling.md`
+
+## 10p. v15bp viste at add_chord-skalabruddet splitter mellom spectral-hold og geometry-hold
+
+Etter det negative holdout-resultatet i `v15bo` tok `v15bp` en ren forklaringsrunde:
+
+- bruk bare `v15bo`-aggregatene
+- sammenlikn `96/p3` og `96/p1` direkte mot `48/p2`
+- avgjor om bruddet sitter i spectral-rang, coarse geometri eller begge
+
+Det viktigste resultatet er:
+
+- `96/p3` leses best som `spectral_without_geometry_hold`
+- `96/p1` leses best som `geometry_without_spectral_hold`
+- diagnosen ender pa `split_scale_break_supported`
+
+Dette betyr:
+
+- skalabruddet er ikke bare et tomt nei
+- `96/p3` holder den spektrale siden bedre, men mister for mye coarse geometri
+- `96/p1` holder coarse geometri bedre, men mister spectral-rangen
+- dermed har repoet fortsatt ikke en liten ren scale-transfer-familie, men en strukturert delt breaking av kravene
+
+Viktige filer:
+
+- `relational_universe_v15bp_add_chord_scale_break_explainer.py`
+- `Documentation/v15bp_add_chord_scale_break_explainer.md`
+- `Documentation/v15bp_add_chord_scale_break_rows.csv`
+- `Documentation/v15bp_add_chord_scale_break_diagnosis.csv`
+- `Documentation/v0_15bp_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

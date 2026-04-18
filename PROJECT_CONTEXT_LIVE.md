@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl` og `v15bm` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo` og `v15bp` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -629,7 +629,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl` og `v15bm` skjerpet local_swap-/conditional-quasi-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo` og `v15bp` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -661,6 +661,16 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - holdouten bekrefter ikke en ren carrier-first splittelse
 - bade vinnerne og de naerliggende kontrollene holder spectral rank 1 i denne lille holdouten
 - dermed maa `v15bl` fortsatt leses som familiespesifikk sharpening, ikke som en ren cross-family-lov
+- `v15bn` holder seg innen den sterkeste add_chord-familien og tester om `48/p2` har en liten slektning ved `96`
+- beste 96-kandidat blir `p3`, men bare som `small_scale_jump_match_weak`
+- `96/p3` holder spectral rank `1`, men combined-distance-gapet til `96/p1` er bare `0.019`
+- `v15bo` tar den riktige tie-break-holdouten pa friske seeds
+- der taper `96/p3` mot `96/p1` pa combined coarse+spectral-likhet til `48/p2`
+- `96/p3` beholder spectral rank `1`, men glipper for mye pa coarse geometri
+- `96/p1` holder coarse geometri bedre, men mister spectral-rangen
+- `v15bp` forklarer dermed skalabruddet som en delt breaking
+- `96/p3` leses best som `spectral_without_geometry_hold`
+- `96/p1` leses best som `geometry_without_spectral_hold`
 
 Den riktige live-lesningen na er derfor:
 
@@ -673,9 +683,13 @@ Den riktige live-lesningen na er derfor:
 - `v15bl` viser samtidig at spektral relativ drift blir mer interessant hvis vi condition-er pa disse lokale carrier-familiene
 - den sterkeste nye quasi-invariant-lesningen er fortsatt familiespesifikk sharpening, ikke en ny global invariant
 - `v15bm` svekker ideen om at denne spektrale lommen allerede holder som en ren carrier-first cross-family-splittelse
+- `v15bn` viser at det fortsatt finnes en legitim liten add_chord-skalahypotese rundt `48/p2 -> 96/p3`, men bare som svak kandidat
+- `v15bo` viser at denne hypotesen ikke holder rent pa holdout mot en naer kontroll
+- `v15bp` viser samtidig at dette ikke er et tomt negativt resultat: skalabruddet er strukturert og splitter mellom spectral-bevaring og coarse-geometri-bevaring
 - dette stabiliseringsunderskuddet er ikke flatt: det er retention-led, med core som tydelig sekundarkomponent
 - growth_seed-202-kartet leses na best som tre lokale modi: tung last med buffer, tung last uten nok buffer, og lavere last med diffus retur
-- neste riktige steg er enten a forklare risiko-siden enda smalere, eller a bruke dette kartet i en mer direkte local_swap-vs-add_chord-sammenlikning
+- den sterkeste nye add_chord-lesningen er derfor fortsatt familiespesifikk spectral sharpening ved fast storrelse, ikke en liten ren scale-transfer-familie
+- hvis vi skal videre mot geometri-/Lorentz-sporet, bor neste steg bruke en ny coarse observabel eller et annet carrier-spor, ikke mer press pa akkurat denne `48 -> 96`-overgangen
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 

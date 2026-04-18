@@ -1,0 +1,3 @@
+other_profile,other_role,other_best_nontrivial_metric,other_spectral_rank_nontrivial,exact_gap_vs_anchor,coarse_gap_vs_anchor,core_gap_vs_anchor,shell_gap_vs_anchor,rare_gap_vs_anchor,break_label
+control_96_p1,control,abs_delta_dim_proxy_rel,2,-0.7739018087855297,-0.04134366925064603,-0.26834091026729423,0.2248832693087328,0.04345764095856142,geometry_without_spectral_hold
+candidate_96_p3,candidate,abs_delta_spectral_radius_rel,1,-0.7041343669250646,-0.11240310077519378,-0.34226587367058325,0.23751165217657882,0.10475422149400442,spectral_without_geometry_hold

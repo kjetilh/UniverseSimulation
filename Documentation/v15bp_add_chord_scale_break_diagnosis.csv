@@ -1,0 +1,3 @@
+diagnostic_family,status,note
+scale_break,split_scale_break_supported,"96/p3 holder spectral rang, men glipper geometrisk; 96/p1 holder bedre coarse-geometri, men glipper spectralt. Skalabruddet ser derfor ut som en delt breaking av samme familiekrav."
+next_step,pause_scale_transfer_claim,Neste steg bor ikke presse mer pa samme scale-transfer-claim uten en ny coarse observabel eller et annet carrier-spor.

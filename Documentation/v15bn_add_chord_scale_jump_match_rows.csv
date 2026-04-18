@@ -1,0 +1,5 @@
+anchor_target,anchor_placement,candidate_target,candidate_placement,candidate_best_nontrivial_metric,candidate_spectral_rank_nontrivial,coarse_distance,spectral_margin_gap,combined_distance,candidate_dim_minus_spectral,candidate_structured_core_shell_rate,match_rank
+48,2,96,3,abs_delta_spectral_radius_rel,1,1.2850729908620007,0.00015940542465411878,1.2852323962866548,0.06201541958646294,0.6666666666666666,1
+48,2,96,1,abs_delta_dim_proxy_rel,2,1.230074094737646,0.07412632642936928,1.3042004211670153,-0.011951501418252216,0.5,2
+48,2,96,2,abs_delta_dim_proxy_rel,2,1.312005325275384,0.08684110769882014,1.3988464329742043,-0.02466628268770308,0.5,3
+48,2,96,0,abs_delta_spectral_radius_rel,1,1.7975400639452577,0.04457489715662198,1.8421149611018797,0.017599927854495077,0.16666666666666666,4

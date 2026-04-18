@@ -1,0 +1,3 @@
+anchor_profile,other_profile,other_role,other_best_nontrivial_metric,other_spectral_rank_nontrivial,coarse_distance,spectral_margin_gap,combined_distance,other_dim_minus_spectral,other_structured_core_shell_rate,comparison_rank
+anchor_48_p2,control_96_p1,control,abs_delta_dim_proxy_rel,2,1.362125718454676,0.007705587456452193,1.3698313059111282,-4.705773177349215e-06,0.6666666666666666,1
+anchor_48_p2,candidate_96_p3,candidate,abs_delta_spectral_radius_rel,1,1.5132419132276562,0.019284387614586777,1.532526300842243,0.011574094384957236,0.6666666666666666,2
