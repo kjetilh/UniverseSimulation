@@ -2435,6 +2435,76 @@ Viktige filer:
 - `Documentation/v15bp_add_chord_scale_break_diagnosis.csv`
 - `Documentation/v0_15bp_operativ_anbefaling.md`
 
+## 10q. v15bq viste at en rikere add_chord-coarse-geometri heller ikke redder den lille scale-transfer-hypotesen
+
+Etter at `v15bp` hadde forklart add_chord-skalabruddet som en delt spectral-vs-geometry-breaking, tok `v15bq` neste naturlige steg:
+
+- behold akkurat den samme lille `48/p2 -> 96/p3`-hypotesen
+- behold `96/p1` som naermeste kontroll
+- bytt ut den enkle share-pakken med shell-dynamikk og shell-topologi som alternativ coarse-geometri
+- avgjor om den beste `96`-kandidaten kanskje likevel ligner ankeret pa den mer strukturelle observabelen
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `96/p3` taper ogsa pa alternativ coarse-geometri
+- `96/p1` blir fortsatt naermest ankeret
+- alt-gapet ender pa `-0.100`
+- diagnosen ender pa `alt_coarse_bridge_not_yet`
+
+Dette betyr:
+
+- add_chord-sporet har na blitt testet baade med enkel share-geometri og rikere shell-geometri
+- ingen av dem gir en ren liten `48 -> 96` scale-bridge
+- derfor bor vi ikke bruke mer budsjett pa akkurat denne add_chord-skalaovergangen na
+
+Viktige filer:
+
+- `relational_universe_v15bq_add_chord_alt_coarse_geometry_lab.py`
+- `Documentation/v15bq_add_chord_alt_coarse_geometry_lab.md`
+- `Documentation/v15bq_add_chord_alt_coarse_geometry_target_summary.csv`
+- `Documentation/v15bq_add_chord_alt_coarse_geometry_rows.csv`
+- `Documentation/v15bq_add_chord_alt_coarse_geometry_aggregate.csv`
+- `Documentation/v15bq_add_chord_alt_coarse_geometry_comparison.csv`
+- `Documentation/v15bq_add_chord_alt_coarse_geometry_diagnosis.csv`
+- `Documentation/v0_15bq_operativ_anbefaling.md`
+
+## 10r. v15br viste at local_swap low_load_diffuse holder pa holdout som bade modus og spectral lomme
+
+Etter det hardere negative resultatet for add_chord i `v15bq` pivoterte `v15br` til det andre carrier-sporet:
+
+- behold bare `target 96`, `growth_seed 202`
+- bruk de tre lokale retningene `p1`, `p2`, `p3`
+- rerun `local_swap` pa friske holdout-seeds
+- mal baade moduskartet fra `v15bk` og spectral-vs-dim-sporet fra `v15bl`
+- avgjor om `low_load_diffuse` faktisk holder som bade modus og spectral lomme
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `p1` holder som `buffered_heavy_load`
+- `p2` holder som `rare_load_risk`
+- `p3` holder som `low_load_diffuse`
+- alle tre holder spectral rank `1`
+- men `p3` holder samtidig den forventede modusen og spectral-rangen i samme lomme
+- diagnosen ender pa `mode_plus_spectral_pocket_supported`
+
+Dette betyr:
+
+- `local_swap` er forelopig et sterkere carrier-spor enn add_chord for videre geometri-/quasi-invariant-arbeid
+- spesielt er `96/p3` na en bedre kandidat for videre coarse carrier-geometri enn `48/p2 -> 96/p3` var som liten add_chord-skalaovergang
+- neste riktige steg er derfor en direkte carrier-geometri-sammenlikning mellom add_chord og local_swap
+
+Viktige filer:
+
+- `relational_universe_v15br_local_swap_mode_spectral_holdout.py`
+- `Documentation/v15br_local_swap_mode_spectral_holdout.md`
+- `Documentation/v15br_local_swap_mode_spectral_holdout_target_summary.csv`
+- `Documentation/v15br_local_swap_mode_spectral_holdout_rows.csv`
+- `Documentation/v15br_local_swap_mode_spectral_holdout_aggregate.csv`
+- `Documentation/v15br_local_swap_mode_spectral_holdout_diagnosis.csv`
+- `Documentation/v0_15br_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

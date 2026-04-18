@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo` og `v15bp` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq` og `v15br` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -629,7 +629,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo` og `v15bp` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq` og `v15br` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -671,6 +671,16 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - `v15bp` forklarer dermed skalabruddet som en delt breaking
 - `96/p3` leses best som `spectral_without_geometry_hold`
 - `96/p1` leses best som `geometry_without_spectral_hold`
+- `v15bq` tester om en rikere add_chord-coarse-geometri kan redde den samme lille scale-transfer-hypotesen
+- shell-dynamikk og shell-topologi redder den ikke
+- `96/p3` taper ogsa mot `96/p1` pa alternativ coarse-geometri, med `alt-gap = -0.100`
+- dermed holder ikke akkurat denne add_chord-skalaovergangen selv nar vi bytter coarse observabel
+- `v15br` pivoter deretter til `local_swap` og tester om `low_load_diffuse` holder pa friske seeds som bade modus og spectral lomme
+- denne holdouten holder rent
+- `p1` forblir `buffered_heavy_load`
+- `p2` forblir `rare_load_risk`
+- `p3` forblir `low_load_diffuse`
+- alle tre holder spectral rank `1`, men `p3` holder samtidig den forventede modusen og dermed den beste kombinasjonen av mode + spectral pocket
 
 Den riktige live-lesningen na er derfor:
 
@@ -686,10 +696,14 @@ Den riktige live-lesningen na er derfor:
 - `v15bn` viser at det fortsatt finnes en legitim liten add_chord-skalahypotese rundt `48/p2 -> 96/p3`, men bare som svak kandidat
 - `v15bo` viser at denne hypotesen ikke holder rent pa holdout mot en naer kontroll
 - `v15bp` viser samtidig at dette ikke er et tomt negativt resultat: skalabruddet er strukturert og splitter mellom spectral-bevaring og coarse-geometri-bevaring
+- `v15bq` gjor add_chord-neiet hardere: heller ikke shell-dynamikk/topologi gir `48/p2 -> 96/p3` en ren liten scale-bridge
+- dermed bor add_chord forelopig leses som familiespesifikk spectral sharpening ved fast storrelse, ikke som beste neste skritt for carrier-geometri over skala
 - dette stabiliseringsunderskuddet er ikke flatt: det er retention-led, med core som tydelig sekundarkomponent
 - growth_seed-202-kartet leses na best som tre lokale modi: tung last med buffer, tung last uten nok buffer, og lavere last med diffus retur
 - den sterkeste nye add_chord-lesningen er derfor fortsatt familiespesifikk spectral sharpening ved fast storrelse, ikke en liten ren scale-transfer-familie
-- hvis vi skal videre mot geometri-/Lorentz-sporet, bor neste steg bruke en ny coarse observabel eller et annet carrier-spor, ikke mer press pa akkurat denne `48 -> 96`-overgangen
+- `v15br` styrker samtidig local_swap som neste carrier-spor for geometri-/quasi-invariant-arbeid
+- den viktigste lokale lommen er na `low_load_diffuse` ved `96/p3`: den holder pa holdout som bade modus og spectral lomme
+- hvis vi skal videre mot geometri-/Lorentz-sporet, bor neste steg derfor sammenligne carrier-geometri direkte mellom add_chord og local_swap, ikke presse mer pa akkurat denne `48 -> 96`-overgangen
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 

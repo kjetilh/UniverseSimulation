@@ -1,0 +1,3 @@
+anchor_profile,other_profile,other_role,alt_coarse_distance,share_distance,mean_shell_refresh,mean_shell_connected_rate,mean_shell_fragmented_rate,mean_attachment_node_frac,alt_rank
+anchor_48_p2,control_96_p1,control,1.2418982047055735,0.5366818205345885,0.09285071407979995,0.0,1.0,0.8824847640313599,1
+anchor_48_p2,candidate_96_p3,candidate,1.3416623092980915,0.6845317473411664,0.09659105627682321,0.0,1.0,0.8577114241800053,2
