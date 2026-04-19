@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br` og `v15bs` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt` og `v15bu` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -629,7 +629,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br` og `v15bs` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt` og `v15bu` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -686,6 +686,14 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - add_chord holder litt sterkere coarse return og litt sterkere kjerneandel
 - local_swap holder litt lavere spectral drift og litt bedre dim-minus-spectral-margin
 - men alle gapene er sma, og ingen ren delt arbeidsdeling holder ved akkurat samme locus
+- `v15bt` prover sa en timingobservabel pa samme `96/p3`-duell
+- heller ikke timingteksturen splitter carrierne rent
+- begge gar tidlig inn i fragment-lock
+- add_chord er bare litt oftere `anchored_early_fragment_lock`, mens local_swap bare litt oftere er `looser_early_fragment_lock`
+- `v15bu` prover deretter en helt ny observabelklasse: occupancy-spekteret i halen
+- heller ikke denne splitter carrierne rent ved samme locus
+- haleunion, entropi og top-k-masseandeler er nesten like
+- diagnosen ender pa `pause_same_locus_duels`
 
 Den riktige live-lesningen na er derfor:
 
@@ -709,7 +717,9 @@ Den riktige live-lesningen na er derfor:
 - `v15br` styrker samtidig local_swap som neste carrier-spor for geometri-/quasi-invariant-arbeid
 - den viktigste lokale lommen er na `low_load_diffuse` ved `96/p3`: den holder pa holdout som bade modus og spectral lomme
 - `v15bs` viser samtidig at en ren carrier-dualitet heller ikke bor overdrives: ved samme locus er add_chord og local_swap mye naermere hverandre enn historiene deres hver for seg kunne tyde pa
-- hvis vi skal videre mot geometri-/Lorentz-sporet, bor neste steg derfor bruke en ny carrier-observabel, ikke bare mer av den samme `p3`-sammenlikningen og ikke mer press pa akkurat `48 -> 96`-overgangen
+- `v15bt` og `v15bu` gjor denne lesningen hardere: det er ikke bare én svak metrikk som holder same-locus-duellen tilbake
+- timing og occupancy-spekter bekrefter begge at carrierne fortsatt ligger for naert hverandre ved akkurat `96/p3`
+- hvis vi skal videre mot geometri-/Lorentz-sporet, bor neste steg derfor forlate same-locus-duellene og heller lete etter en ny familiestruktur eller et nytt skalahopp
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 

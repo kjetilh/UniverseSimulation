@@ -1,0 +1,2 @@
+compare_label,anchored_lock_gap_add_minus_swap,looser_lock_gap_add_minus_swap,delayed_lock_gap_add_minus_swap,churn_gap_swap_minus_add,first_fragment_step_gap_swap_minus_add,attachment_gap_add_minus_swap,switch_gap_swap_minus_add
+carrier_timing_add_chord_vs_local_swap_at_96_p3,0.16666666666666669,-0.16666666666666663,0.0,0.0,0.0,0.017198767945217353,0.0

@@ -1,0 +1,13 @@
+perturbation,target_nodes,growth_seed,placement,seed_delta,run_seed,support_signature,first_fragment_local_index,first_fragment_step,fragmented_suffix_rate,state_switch_count,segment_count,first_fragment_attachment,max_connected_segment_snapshots,final_shell_state,timing_label,requested_match
+add_chord,96,202,3,719,9803019,"0,13,39",0,1536,1.0,0,1,0.8937975381702745,0,fragmented,anchored_early_fragment_lock,1
+add_chord,96,202,3,751,9803051,"0,13,39",0,1536,1.0,0,1,0.8391309512240606,0,fragmented,looser_early_fragment_lock,1
+add_chord,96,202,3,787,9803087,"0,13,39",0,1536,1.0,0,1,0.6751629981965139,0,fragmented,looser_early_fragment_lock,1
+add_chord,96,202,3,823,9803123,"0,13,39",0,1536,1.0,0,1,0.7111978835565733,0,fragmented,looser_early_fragment_lock,1
+add_chord,96,202,3,859,9803159,"0,13,39",0,1536,1.0,0,1,0.8625929355027718,0,fragmented,anchored_early_fragment_lock,1
+add_chord,96,202,3,887,9803187,"0,13,39",0,1536,1.0,0,1,0.8801009607711426,0,fragmented,anchored_early_fragment_lock,1
+local_swap,96,202,3,719,9803026,"0,13,39",0,1536,1.0,0,1,0.5899832022544896,0,fragmented,looser_early_fragment_lock,1
+local_swap,96,202,3,751,9803058,"0,13,39",0,1536,1.0,0,1,0.7867007610035012,0,fragmented,looser_early_fragment_lock,1
+local_swap,96,202,3,787,9803094,"0,13,39",0,1536,1.0,0,1,0.8056648511513873,0,fragmented,looser_early_fragment_lock,1
+local_swap,96,202,3,823,9803130,"0,13,39",0,1536,1.0,0,1,0.9016711045164176,0,fragmented,anchored_early_fragment_lock,1
+local_swap,96,202,3,859,9803166,"0,13,39",0,1536,1.0,0,1,0.9401697097590312,0,fragmented,anchored_early_fragment_lock,1
+local_swap,96,202,3,887,9803194,"0,13,39",0,1536,1.0,0,1,0.7346010310652059,0,fragmented,looser_early_fragment_lock,1

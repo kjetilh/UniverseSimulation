@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle occupancy-runs matcher onsket perturbasjon.
+carrier_occupancy_compare,occupancy_spectrum_still_mixed,Heller ikke occupancy-spekteret splitter carrierne rent ved samme locus.
+next_step,pause_same_locus_duels,Neste steg bor forlate samme-locus-duellene og heller lete etter en ny familiestruktur eller et nytt skalahopp.

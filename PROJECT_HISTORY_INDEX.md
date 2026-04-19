@@ -2540,6 +2540,77 @@ Viktige filer:
 - `Documentation/v15bs_add_chord_vs_local_swap_p3_diagnosis.csv`
 - `Documentation/v0_15bs_operativ_anbefaling.md`
 
+## 10t. v15bt viste at timingteksturen heller ikke splitter carrierne rent ved samme locus
+
+Etter at `v15bs` viste at de statiske carrier-snittene fortsatt var blandede, tok `v15bt` neste naturlige observabelsteg:
+
+- behold samme base, target `96`, growth_seed `202` og placement `3`
+- behold de samme holdout-seedene
+- sammenlikn add_chord og local_swap i hvordan de gaar inn i sin sene fragmenterte hale
+- mal first-fragment-step, suffix-lock, attachment i forste fragmentsegment og state-switching
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- begge carrierne gaar tidlig inn i fragment-lock
+- add_chord er `anchored_early_fragment_lock` i `0.500` av runene
+- local_swap er `anchored_early_fragment_lock` i `0.333`
+- resten hos local_swap er mest `looser_early_fragment_lock`
+- men gapene er sma, og diagnosen ender pa `carrier_timing_still_mixed`
+
+Dette betyr:
+
+- timingteksturen er ikke den observabelen som renser same-locus-duellen
+- vi bor derfor ikke bruke mer budsjett pa flere sma timingvarianter av samme sammenlikning
+
+Viktige filer:
+
+- `relational_universe_v15bt_same_locus_carrier_timing_lab.py`
+- `Documentation/v15bt_same_locus_carrier_timing_lab.md`
+- `Documentation/v15bt_same_locus_carrier_timing_target_summary.csv`
+- `Documentation/v15bt_same_locus_carrier_timing_runs.csv`
+- `Documentation/v15bt_same_locus_carrier_timing_segments.csv`
+- `Documentation/v15bt_same_locus_carrier_timing_aggregate.csv`
+- `Documentation/v15bt_same_locus_carrier_timing_compare.csv`
+- `Documentation/v15bt_same_locus_carrier_timing_diagnosis.csv`
+- `Documentation/v0_15bt_operativ_anbefaling.md`
+
+## 10u. v15bu viste at occupancy-spekteret heller ikke splitter same-locus-duellen
+
+Etter det blandede timingresultatet i `v15bt` tok `v15bu` en helt annen observabelklasse:
+
+- behold samme base, samme `96/p3`-locus og samme holdout-seeds
+- mal tail-union, normalisert occupancy-entropi og top-k-masseandeler
+- avgjor om add_chord og local_swap egentlig skiller lag i konsentrasjonsgeometri selv om de ser like ut i andre snitt
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- haleunionen er naer (`91.3` vs `95.0`)
+- entropien er naer (`0.974` vs `0.970`)
+- top3-masseandelen er nesten identisk (`0.0493` vs `0.0487`)
+- diagnosen ender pa `occupancy_spectrum_still_mixed`
+
+Dette betyr:
+
+- heller ikke occupancy-spekteret gir en ren same-locus-splittelse
+- dermed er same-locus-duellen mellom add_chord og local_swap na testet med minst tre observabelklasser:
+  - statiske carrier-snitt
+  - timingtekstur
+  - occupancy-konsentrasjon
+- den riktige neste retningen er derfor a forlate akkurat denne duellformen og lete etter ny familiestruktur eller et nytt skalahopp
+
+Viktige filer:
+
+- `relational_universe_v15bu_same_locus_carrier_occupancy_spectrum_lab.py`
+- `Documentation/v15bu_same_locus_carrier_occupancy_spectrum_lab.md`
+- `Documentation/v15bu_same_locus_carrier_occupancy_target_summary.csv`
+- `Documentation/v15bu_same_locus_carrier_occupancy_runs.csv`
+- `Documentation/v15bu_same_locus_carrier_occupancy_aggregate.csv`
+- `Documentation/v15bu_same_locus_carrier_occupancy_compare.csv`
+- `Documentation/v15bu_same_locus_carrier_occupancy_diagnosis.csv`
+- `Documentation/v0_15bu_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
