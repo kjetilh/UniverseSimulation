@@ -2505,6 +2505,41 @@ Viktige filer:
 - `Documentation/v15br_local_swap_mode_spectral_holdout_diagnosis.csv`
 - `Documentation/v0_15br_operativ_anbefaling.md`
 
+## 10s. v15bs viste at add_chord og local_swap ligger naermere hverandre ved samme locus enn historiene deres hver for seg tilsier
+
+Etter at `v15bq` svekket add_chord-sporet og `v15br` styrket local_swap-sporet, tok `v15bs` det naturlige sammenlikningssteget:
+
+- behold samme base
+- behold samme target `96`, growth_seed `202` og placement `3`
+- rerun `add_chord` og `local_swap` pa de samme holdout-seedene
+- avgjor om carrier-fordelen splitter rent mellom geometri og spectral renhet ved akkurat samme locus
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- begge perturbasjoner holder spectral rank `1`
+- add_chord holder litt sterkere coarse return og litt sterkere kjerneandel
+- local_swap holder litt lavere spectral drift og litt bedre dim-minus-spectral-margin
+- men alle gapene er sma
+- diagnosen ender pa `carrier_compare_still_mixed`
+
+Dette betyr:
+
+- vi bor ikke overtolke `add_chord` og `local_swap` som to rent komplementaere carrier-typer ved samme locus
+- den sterke forskjellen mellom dem sitter mer i hvilke lommer som holder hver for seg enn i en enkel lokal side-ved-side-duell
+- neste riktige steg bor derfor bruke en ny carrier-observabel, ikke mer av samme `p3`-sammenlikning
+
+Viktige filer:
+
+- `relational_universe_v15bs_add_chord_vs_local_swap_p3_carrier_compare.py`
+- `Documentation/v15bs_add_chord_vs_local_swap_p3_carrier_compare.md`
+- `Documentation/v15bs_add_chord_vs_local_swap_p3_target_summary.csv`
+- `Documentation/v15bs_add_chord_vs_local_swap_p3_rows.csv`
+- `Documentation/v15bs_add_chord_vs_local_swap_p3_aggregate.csv`
+- `Documentation/v15bs_add_chord_vs_local_swap_p3_compare.csv`
+- `Documentation/v15bs_add_chord_vs_local_swap_p3_diagnosis.csv`
+- `Documentation/v0_15bs_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

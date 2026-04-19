@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle p3-runs matcher onsket perturbasjon.
+carrier_compare,carrier_compare_still_mixed,Carrier-sammenlikningen ved samme locus er fortsatt for blandet til en ren delt arbeidsdeling.
+next_step,new_carrier_observable,"Neste steg bor bruke en ny carrier-observabel, ikke mer av samme p3-sammenlikning."
