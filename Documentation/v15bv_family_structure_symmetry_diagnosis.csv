@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+family_structure,family_structure_without_symmetry_supported,"1 ikke-trivielle family-labels gjentas, men ingen profilpar er naere pa bade support og carrier."
+symmetry_scope,feature_level_only,"Symmetri her betyr bare lav normalisert avstand i valgte support/carrier-features, ikke automorfier eller fysisk symmetri."
+next_step,holdout_repeated_families,Neste steg bor teste om de repeterte family-labelene holder under flere seeds for samme placements.

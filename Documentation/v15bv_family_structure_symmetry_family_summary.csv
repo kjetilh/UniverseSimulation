@@ -1,0 +1,4 @@
+family_label,n_profiles,profiles,perturbations,placements,mean_coarse_return,mean_core_share,mean_rare_share,mean_spectral_rel
+geometry_core_family,6,add_chord_p0;add_chord_p2;add_chord_p3;local_swap_p0;local_swap_p1;local_swap_p2,add_chord;local_swap,0;2;3;0;1;2,0.8559431524547804,0.6413016231616402,0.06138553291980659,0.05902432637765379
+expanded_shell_family,1,add_chord_p1,add_chord,1,0.7732558139534884,0.4647641909730953,0.12049558398290168,0.027919008303716547
+spectral_core_family,1,local_swap_p3,local_swap,3,0.8178294573643411,0.4761709197235513,0.09131446039340776,0.04454514369950242

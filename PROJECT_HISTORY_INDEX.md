@@ -2611,6 +2611,45 @@ Viktige filer:
 - `Documentation/v15bu_same_locus_carrier_occupancy_diagnosis.csv`
 - `Documentation/v0_15bu_operativ_anbefaling.md`
 
+## 10v. v15bv fant svak familiestruktur, men ingen felles feature-symmetri
+
+Etter at `v15bs`, `v15bt` og `v15bu` viste at add_chord/local_swap ikke lar seg splitte rent ved samme `96/p3`-locus, tok `v15bv` et smalt skritt ut av samme-locus-duellen:
+
+- behold target `96` og growth_seed `202`
+- test placements `0..3`
+- sammenlikn `add_chord` og `local_swap`
+- bruk nye holdout-seeds
+- mål support-geometri, core/shell/rare carrier-geometri, recurrence og relativ spectral/dim-drift
+- let etter repeterte family-labels og feature-level near-symmetry-par
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- seks av åtte profiler faller i en bred `geometry_core_family`
+- `add_chord_p1` skiller seg ut som `expanded_shell_family`
+- `local_swap_p3` skiller seg ut som `spectral_core_family`
+- beste pairwise-par er support-only near-symmetries ved samme placement, ikke felles support+carrier-symmetrier
+- diagnosen ender på `family_structure_without_symmetry_supported`
+
+Dette betyr:
+
+- samme-locus-duellen var for smal, men det finnes en repeterbar geometry-core-plateau-struktur ved target `96`
+- symmetry-signalet er ikke sterkt: ingen par er nærme både i support- og carrier-feature-rom
+- `symmetry` i denne runden er bare feature-level avstand, ikke automorfi eller fysisk symmetri
+- neste riktige smale steg er en holdout av familieinndelingen på friske seeds; hvis den ikke holder, bør prosjektet ta et nytt skalahopp i stedet for mer terskelfiksing ved target `96`
+
+Viktige filer:
+
+- `relational_universe_v15bv_family_structure_symmetry_lab.py`
+- `Documentation/v15bv_family_structure_symmetry_lab.md`
+- `Documentation/v15bv_family_structure_symmetry_target_summary.csv`
+- `Documentation/v15bv_family_structure_symmetry_rows.csv`
+- `Documentation/v15bv_family_structure_symmetry_aggregate.csv`
+- `Documentation/v15bv_family_structure_symmetry_family_summary.csv`
+- `Documentation/v15bv_family_structure_symmetry_pairwise.csv`
+- `Documentation/v15bv_family_structure_symmetry_diagnosis.csv`
+- `Documentation/v0_15bv_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
