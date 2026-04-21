@@ -2650,6 +2650,84 @@ Viktige filer:
 - `Documentation/v15bv_family_structure_symmetry_diagnosis.csv`
 - `Documentation/v0_15bv_operativ_anbefaling.md`
 
+## 10w. v15bw viste at target-96 family-map ikke replikerer rent
+
+Etter `v15bv` tok `v15bw` den nødvendige holdouten:
+
+- behold target `96`, growth_seed `202`, placements `0..3`
+- behold `add_chord` og `local_swap`
+- bruk nye seeds
+- bruk samme support-/carrier-/recurrence-/spectral-observabler
+- behandle `v15bv` sin family-map som en falsifiserbar forventning
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- total match-rate mot `v15bv` er bare `0.375`
+- forventet geometry-core-retention er `0.500`
+- outlier-retention er `0.000`
+- observerte geometry-core-medlemmer blir `add_chord_p1`, `add_chord_p2`, `local_swap_p1`, `local_swap_p2`, `local_swap_p3`
+- det finnes to full feature-level near-symmetry-kandidater i holdouten, men de redder ikke family-map-en
+- diagnosen ender på `family_structure_not_replicated`
+
+Dette betyr:
+
+- `v15bv` ga et nyttig signal, men ikke en stabil target-96 family-map
+- mer terskelfiksing ved target `96` ville sannsynligvis overfitte
+- neste riktige steg er et nytt skalahopp med samme observabler, ikke et bredere target-96-søk
+
+Viktige filer:
+
+- `relational_universe_v15bw_family_structure_holdout.py`
+- `Documentation/v15bw_family_structure_holdout_lab.md`
+- `Documentation/v15bw_family_structure_holdout_target_summary.csv`
+- `Documentation/v15bw_family_structure_holdout_rows.csv`
+- `Documentation/v15bw_family_structure_holdout_aggregate.csv`
+- `Documentation/v15bw_family_structure_holdout_summary.csv`
+- `Documentation/v15bw_family_structure_holdout_pairwise.csv`
+- `Documentation/v15bw_family_structure_holdout_diagnosis.csv`
+- `Documentation/v0_15bw_operativ_anbefaling.md`
+
+## 10x. v15bx viste et mer ordnet target-192 plateau
+
+Etter at `v15bw` svekket target-96 family-map-en, tok `v15bx` det smale skalahoppet:
+
+- flytt fra target `96` til target `192`
+- behold growth_seed `202`
+- behold placements `0..3`
+- behold `add_chord` og `local_swap`
+- behold samme observabler og samme feature-level near-symmetry-apparat
+- bruk family-labels bare som sonder, ikke som etablert struktur
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- seks av åtte profiler faller i `spectral_diffuse_rare_family`
+- de seks er `add_chord_p0`, `add_chord_p1`, `add_chord_p3`, `local_swap_p0`, `local_swap_p1`, `local_swap_p3`
+- begge p2-profiler blir `mixed_family`
+- dette gir en ny tverr-perturbasjonssplitt: p2 skiller seg ut ved target `192`
+- det finnes ingen full support+carrier near-symmetry-kandidater, bare support-only nærhet
+- diagnosen ender på `scale_jump_family_plateau_supported`
+
+Dette betyr:
+
+- skalahoppet ga faktisk ny viten: target `192` ser mer ordnet ut enn target `96` i denne observabelpakken
+- plateauet er spectral/diffuse/rare-preget, ikke geometry-core-preget slik `v15bv` antydet ved target `96`
+- p2-avviket er nå mer interessant enn individuelle add_chord/local_swap-avvikere
+- neste riktige steg er en holdout av target-192 plateauet på friske seeds før noen ny større tolkning
+
+Viktige filer:
+
+- `relational_universe_v15bx_scale_jump_family_probe.py`
+- `Documentation/v15bx_scale_jump_family_probe_lab.md`
+- `Documentation/v15bx_scale_jump_family_probe_target_summary.csv`
+- `Documentation/v15bx_scale_jump_family_probe_rows.csv`
+- `Documentation/v15bx_scale_jump_family_probe_aggregate.csv`
+- `Documentation/v15bx_scale_jump_family_probe_family_summary.csv`
+- `Documentation/v15bx_scale_jump_family_probe_pairwise.csv`
+- `Documentation/v15bx_scale_jump_family_probe_diagnosis.csv`
+- `Documentation/v0_15bx_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

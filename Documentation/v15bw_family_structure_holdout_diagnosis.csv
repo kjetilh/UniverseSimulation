@@ -1,0 +1,6 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+family_holdout,family_structure_not_replicated,Family-map replikerer ikke rent i holdout (0.375).
+geometry_core_members,observed,add_chord_p1;add_chord_p2;local_swap_p1;local_swap_p2;local_swap_p3
+symmetry_holdout,full_near_symmetry_candidate,2 profilpar er full feature-level near-symmetry-kandidater i holdouten.
+next_step,new_scale_jump,Neste steg bor vaere nytt skalahopp heller enn mer family-threshold-tuning ved target 96.
