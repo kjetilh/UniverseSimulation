@@ -1,0 +1,4 @@
+summary_family,n_profiles,match_rate,plateau_retention_rate,p2_outlier_retention_rate,mean_plateau_margin,mean_p2_mixed_rare_margin,full_near_symmetry_count
+all_profiles,8,0.625,0.8333333333333334,0.0,0.054794231247363254,-0.04424383287451178,1
+expected_plateau,6,0.8333333333333334,0.8333333333333334,nan,0.054794231247363254,nan,1
+expected_p2_outliers,2,0.0,nan,0.0,nan,-0.04424383287451178,1

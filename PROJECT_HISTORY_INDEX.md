@@ -2728,6 +2728,46 @@ Viktige filer:
 - `Documentation/v15bx_scale_jump_family_probe_diagnosis.csv`
 - `Documentation/v0_15bx_operativ_anbefaling.md`
 
+## 10y. v15by svekket p2-splittelsen, men styrket bredt target-192 plateau
+
+Etter `v15bx` tok `v15by` den nødvendige target-192 holdouten:
+
+- behold target `192` og growth_seed `202`
+- behold placements `0..3`
+- behold `add_chord` og `local_swap`
+- bruk friske seeds
+- test forventningen fra `v15bx`: seks `spectral_diffuse_rare_family`-profiler og to p2-profiler som `mixed_family`
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- eksakt match-rate mot `v15bx` er `0.625`
+- forventet plateau-retention er `0.833`
+- p2-outlier-retention er `0.000`
+- observert plateau er bredere enn forventet: syv av åtte profiler blir `spectral_diffuse_rare_family`
+- bare `local_swap_p1` faller ut som `mixed_family`
+- det finnes ett full feature-level near-symmetry-par: `add_chord_p3` / `local_swap_p3`
+- diagnosen ender på `target192_plateau_weak_holdout`
+
+Dette betyr:
+
+- `v15bx` sin rene p2-splittelse holder ikke
+- men target `192` ser fortsatt mer ordnet ut enn target `96`: det brede spectral/diffuse/rare-plateauet blir snarere bredere enn borte
+- mer target-192 label-tuning er derfor ikke riktig
+- neste steg bør enten være target `384` med samme observabler eller en mekanismeobservabel som forklarer hvorfor target `192` blir så spectral/diffuse/rare
+
+Viktige filer:
+
+- `relational_universe_v15by_target192_plateau_holdout.py`
+- `Documentation/v15by_target192_plateau_holdout_lab.md`
+- `Documentation/v15by_target192_plateau_holdout_target_summary.csv`
+- `Documentation/v15by_target192_plateau_holdout_rows.csv`
+- `Documentation/v15by_target192_plateau_holdout_aggregate.csv`
+- `Documentation/v15by_target192_plateau_holdout_summary.csv`
+- `Documentation/v15by_target192_plateau_holdout_pairwise.csv`
+- `Documentation/v15by_target192_plateau_holdout_diagnosis.csv`
+- `Documentation/v0_15by_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

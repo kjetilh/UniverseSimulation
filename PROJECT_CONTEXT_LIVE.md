@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ah`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw` og `v15bx` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx` og `v15by` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -634,6 +634,15 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Scale-jump-family-probe-pairwise: `Documentation/v15bx_scale_jump_family_probe_pairwise.csv`
 - Scale-jump-family-probe-diagnosis: `Documentation/v15bx_scale_jump_family_probe_diagnosis.csv`
 - Scale-jump-family-probe-anbefaling: `Documentation/v0_15bx_operativ_anbefaling.md`
+- Target192-plateau-holdout-script: `relational_universe_v15by_target192_plateau_holdout.py`
+- Target192-plateau-holdout-rapport: `Documentation/v15by_target192_plateau_holdout_lab.md`
+- Target192-plateau-holdout-target: `Documentation/v15by_target192_plateau_holdout_target_summary.csv`
+- Target192-plateau-holdout-rows: `Documentation/v15by_target192_plateau_holdout_rows.csv`
+- Target192-plateau-holdout-aggregate: `Documentation/v15by_target192_plateau_holdout_aggregate.csv`
+- Target192-plateau-holdout-summary: `Documentation/v15by_target192_plateau_holdout_summary.csv`
+- Target192-plateau-holdout-pairwise: `Documentation/v15by_target192_plateau_holdout_pairwise.csv`
+- Target192-plateau-holdout-diagnosis: `Documentation/v15by_target192_plateau_holdout_diagnosis.csv`
+- Target192-plateau-holdout-anbefaling: `Documentation/v0_15by_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -656,7 +665,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw` og `v15bx` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx` og `v15by` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -738,6 +747,13 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - begge p2-profiler (`add_chord_p2`, `local_swap_p2`) blir `mixed_family`, altsa skiller p2 seg ut pa tvers av perturbasjonstype
 - det finnes ingen full support+carrier near-symmetry-kandidater ved target `192`, bare support-only naerhet
 - diagnosen ender pa `scale_jump_family_plateau_supported`
+- `v15by` holder ut target-192 plateauet pa friske seeds
+- eksakt `v15bx`-map holder bare delvis: match-rate `0.625`
+- forventet plateau-retention er `0.833`, mens p2-outlier-retention er `0.000`
+- observert plateau er bredere enn forventet: syv av atte profiler blir `spectral_diffuse_rare_family`
+- `local_swap_p1` faller ut som `mixed_family`, mens begge p2-profiler ikke lenger holder som `mixed_family`
+- det finnes ett full feature-level near-symmetry-par i holdouten (`add_chord_p3` / `local_swap_p3`)
+- diagnosen ender pa `target192_plateau_weak_holdout`
 
 Den riktige live-lesningen na er derfor:
 
@@ -765,7 +781,8 @@ Den riktige live-lesningen na er derfor:
 - timing og occupancy-spekter bekrefter begge at carrierne fortsatt ligger for naert hverandre ved akkurat `96/p3`
 - `v15bv` gir et svakt positivt svar pa familiestruktur-sporsmalet, men `v15bw` viser at akkurat den target-96 family-map-en ikke holder rent
 - `v15bx` viser derimot at skalahoppet til target `192` kan gi et mer ordnet plateau: `spectral_diffuse_rare_family` dominerer seks av atte profiler, mens p2 skiller seg ut i begge perturbasjonstyper
-- neste naturlige smale steg er derfor ikke nytt skalahopp med en gang, men holdout av target-192 plateauet pa friske seeds
+- `v15by` bekrefter ikke den rene p2-splittelsen, men styrker ideen om et bredt spectral/diffuse/rare-plateau ved target `192`
+- neste naturlige steg bor derfor ikke vaere mer target-192 label-tuning; enten hopp til target `384` med samme observabler, eller bytt til en mekanismeobservabel som forklarer hvorfor target `192` blir saa bredt spectral/diffuse/rare
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 
