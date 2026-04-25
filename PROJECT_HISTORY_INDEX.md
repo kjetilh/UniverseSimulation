@@ -2768,6 +2768,81 @@ Viktige filer:
 - `Documentation/v15by_target192_plateau_holdout_diagnosis.csv`
 - `Documentation/v0_15by_operativ_anbefaling.md`
 
+## 10z. v15bz fant nytt target-384 familiesignal og to near-symmetry-kandidater
+
+Etter at `v15by` gjorde target-192-bildet bredere, men fortsatt litt uklart, tok `v15bz` neste skalahopp:
+
+- flytt til target `384`
+- behold growth_seed `202`
+- behold placements `0..3`
+- behold `add_chord` og `local_swap`
+- behold samme family-observabler og feature-level near-symmetry-apparat
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `spectral_diffuse_rare_family` samler fire profiler
+- `rare_diffuse_family` samler begge p2-profiler
+- `add_chord_p3` blir `spectral_core_family`
+- `local_swap_p1` blir `mixed_family`
+- det finnes to full feature-level near-symmetry-kandidater
+- diagnosen ender på `target384_family_plus_symmetry_candidate`
+
+Dette betyr:
+
+- target `384` gir faktisk ny struktur, ikke bare mer av den uklare target-192-bredden
+- p2 ser igjen særpreget ut, nå som en delt `rare_diffuse_family`
+- dette er fortsatt bare feature-level struktur, men sterkt nok til at neste naturlige steg er en holdout av de konkrete target-384 kandidatene
+
+Viktige filer:
+
+- `relational_universe_v15bz_target384_family_probe.py`
+- `Documentation/v15bz_target384_family_probe_lab.md`
+- `Documentation/v15bz_target384_family_probe_target_summary.csv`
+- `Documentation/v15bz_target384_family_probe_rows.csv`
+- `Documentation/v15bz_target384_family_probe_aggregate.csv`
+- `Documentation/v15bz_target384_family_probe_family_summary.csv`
+- `Documentation/v15bz_target384_family_probe_pairwise.csv`
+- `Documentation/v15bz_target384_family_probe_diagnosis.csv`
+- `Documentation/v0_15bz_operativ_anbefaling.md`
+
+## 10aa. v15ca viste at radial occupancy ikke forklarer p1/p2-grensen rent
+
+Etter at target-192 holdouten fortsatt var litt uklar, tok `v15ca` den andre halvdelen av arbeidet: en ny mekanismeobservabel.
+
+Oppsett:
+
+- behold target `192`
+- behold growth_seed `202`
+- behold bare placements `1` og `2`
+- behold `add_chord` og `local_swap`
+- mal radial occupancy-fordeling rundt support, occupancy-deltakelse, shell4+-masse og rare-masse
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- etter korrigert avstandsmåling er weighted mean distance tolkbar
+- p2 ligger ikke konsistent lenger ute enn p1
+- shell4+- og rare-massegap peker heller ikke mot en ren p2-uteovergang
+- diagnosen ender på `radial_diffuse_boundary_not_yet`
+
+Dette betyr:
+
+- den brede spectral/diffuse/rare-lesningen ved target `192` er ikke forklart av denne enkle radial occupancy-aksen
+- det er derfor ikke riktig å presse mer target-192 mekanisme-tuning langs samme akse
+- neste steg bør heller gå til target-384-holdout eller en annen mekanismeobservabel enn radial occupancy
+
+Viktige filer:
+
+- `relational_universe_v15ca_target192_radial_occupancy_mechanism_lab.py`
+- `Documentation/v15ca_target192_radial_occupancy_mechanism_lab.md`
+- `Documentation/v15ca_target192_radial_occupancy_target_summary.csv`
+- `Documentation/v15ca_target192_radial_occupancy_rows.csv`
+- `Documentation/v15ca_target192_radial_occupancy_aggregate.csv`
+- `Documentation/v15ca_target192_radial_occupancy_compare.csv`
+- `Documentation/v15ca_target192_radial_occupancy_diagnosis.csv`
+- `Documentation/v0_15ca_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

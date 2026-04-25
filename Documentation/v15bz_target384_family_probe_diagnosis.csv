@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+target384_family_probe,target384_family_plus_symmetry_candidate,Target 384 har repeterte family-labels og 2 full near-symmetry-kandidater.
+symmetry_scope,feature_level_only,"Near-symmetry betyr bare lav normalisert support/carrier-avstand, ikke automorfi eller fysisk symmetri."
+next_step,holdout_target384_candidates,"Neste steg bor holde ut de konkrete target-384 kandidatene, ikke utvide søket."

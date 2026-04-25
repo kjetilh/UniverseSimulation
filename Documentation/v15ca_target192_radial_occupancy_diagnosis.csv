@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+radial_mechanism,radial_diffuse_boundary_not_yet,Den nye radial occupancy-observabelen forklarer ikke p1/p2-grensen rent.
+next_step,target384_or_new_mechanism,"Neste steg bor vaere target 384 eller en annen mekanismeobservabel, ikke mer av samme p1/p2-runde."
