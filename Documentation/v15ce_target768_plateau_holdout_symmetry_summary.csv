@@ -1,0 +1,3 @@
+profile_a,profile_b,retained_full_near,support_distance,carrier_distance,combined_distance,combined_rank,observed_symmetry_label
+add_chord_p1,add_chord_p2,0,0.11168671700601708,0.2512606594372353,0.18147368822162618,2,support_only_near_symmetry
+add_chord_p2,local_swap_p2,1,0.0,0.1871794687488026,0.0935897343744013,1,support_and_carrier_near_symmetry

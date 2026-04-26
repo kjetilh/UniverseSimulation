@@ -2882,6 +2882,118 @@ Viktige filer:
 - `Documentation/v15cb_target384_candidate_holdout_diagnosis.csv`
 - `Documentation/v0_15cb_operativ_anbefaling.md`
 
+## 10ac. v15cc viste at shell-turnover ikke redder target-384-familiene
+
+Etter at `v15cb` svekket troen pa det konkrete target-384-kartet, prover `v15cc` en ny observabel i stedet for mer labeltuning:
+
+- behold target `384`
+- behold growth_seed `202`
+- behold placements `0..3`
+- behold `add_chord` og `local_swap`
+- maal tidsopplost shell-turnover rundt support i tail-fasen
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- quartet-majoriteten blir bare `2/4`
+- p2-paret samler seg ikke i én turnover-familie
+- quartet->p2-turnover-avstand er ikke storre enn quartet-intern avstand
+- diagnosen ender pa `turnover_structure_not_yet`
+
+Dette betyr:
+
+- target `384` fikk ikke en ren ny familiestruktur bare ved a bytte til turnover-observabel
+- det er derfor riktig a ga til ny skalaavgjorelse heller enn mer target-384 tuning pa samme nivå
+
+Viktige filer:
+
+- `relational_universe_v15cc_target384_shell_turnover_observable.py`
+- `Documentation/v15cc_target384_shell_turnover_observable.md`
+- `Documentation/v15cc_target384_shell_turnover_target_summary.csv`
+- `Documentation/v15cc_target384_shell_turnover_rows.csv`
+- `Documentation/v15cc_target384_shell_turnover_aggregate.csv`
+- `Documentation/v15cc_target384_shell_turnover_pairwise.csv`
+- `Documentation/v15cc_target384_shell_turnover_summary.csv`
+- `Documentation/v15cc_target384_shell_turnover_diagnosis.csv`
+- `Documentation/v0_15cc_operativ_anbefaling.md`
+
+## 10ad. v15cd fant et sterkere target-768-plateau
+
+Etter at `v15cc` ga et negativt observabelsvar, tok `v15cd` neste skalahopp:
+
+- behold growth_seed `202`
+- behold placements `0..3`
+- behold `add_chord` og `local_swap`
+- behold samme family-/symmetry-observabler som i de tidligere scale-jump-rundene
+- test target `768` smalt, med friske seeds
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- sju av atte profiler faller i `rare_diffuse_family`
+- `add_chord_p0` blir eneste `spectral_diffuse_rare_family`-outlier
+- det finnes to full feature-level near-symmetry-kandidater:
+  - `add_chord_p1` / `add_chord_p2`
+  - `add_chord_p2` / `local_swap_p2`
+- diagnosen ender pa `target768_family_plateau_supported`
+
+Dette betyr:
+
+- target `768` er sa langt den mest lovende nye skalaen i denne observable-stakken
+- men signalet ma holdes ut før det kan brukes som mekanismeinngang
+
+Viktige filer:
+
+- `relational_universe_v15cd_target768_family_probe.py`
+- `Documentation/v15cd_target768_family_probe_lab.md`
+- `Documentation/v15cd_target768_family_probe_target_summary.csv`
+- `Documentation/v15cd_target768_family_probe_rows.csv`
+- `Documentation/v15cd_target768_family_probe_aggregate.csv`
+- `Documentation/v15cd_target768_family_probe_family_summary.csv`
+- `Documentation/v15cd_target768_family_probe_pairwise.csv`
+- `Documentation/v15cd_target768_family_probe_diagnosis.csv`
+- `Documentation/v0_15cd_operativ_anbefaling.md`
+
+## 10ae. v15ce viste at target-768-plateauet holder bare delvis pa holdout
+
+Etter det positive `v15cd`-signalet tok `v15ce` den smale falsifiseringen:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold placements `0..3`
+- behold `add_chord` og `local_swap`
+- bruk friske seeds
+- test baade 7-profils `rare_diffuse`-plateauet, `add_chord_p0`-outlieren og de to full near-symmetry-parene
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- total match-rate mot `v15cd` er `0.750`
+- plateau-retention er `0.714`
+- outlier-retention er `1.000`
+- full near-symmetry-retention er `0.500`
+- `add_chord_p2` / `local_swap_p2` holder som full near-symmetry, mens `add_chord_p1` / `add_chord_p2` glir til support-only
+- `local_swap_p0` og `local_swap_p3` glir ut av plateauet og blir `spectral_diffuse_rare_family`
+- diagnosen ender pa `target768_plateau_weak_holdout`
+
+Dette betyr:
+
+- target `768` er mer lovende enn target `384`, men fortsatt ikke rent nok til en bred mekanismefortelling
+- det riktige neste steget er smalere: enten mekanisme rundt den stabile resten eller en enda smalere holdout, ikke mer family-label-tuning over hele kartet
+
+Viktige filer:
+
+- `relational_universe_v15ce_target768_plateau_holdout.py`
+- `Documentation/v15ce_target768_plateau_holdout_lab.md`
+- `Documentation/v15ce_target768_plateau_holdout_target_summary.csv`
+- `Documentation/v15ce_target768_plateau_holdout_rows.csv`
+- `Documentation/v15ce_target768_plateau_holdout_aggregate.csv`
+- `Documentation/v15ce_target768_plateau_holdout_summary.csv`
+- `Documentation/v15ce_target768_plateau_holdout_pairwise.csv`
+- `Documentation/v15ce_target768_plateau_holdout_symmetry_summary.csv`
+- `Documentation/v15ce_target768_plateau_holdout_diagnosis.csv`
+- `Documentation/v0_15ce_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

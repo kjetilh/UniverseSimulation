@@ -1,0 +1,4 @@
+summary_family,n_profiles,match_rate,plateau_retention_rate,outlier_retention_rate,full_near_retention_rate
+all_profiles,8,0.75,0.7142857142857143,1.0,0.5
+expected_plateau,7,0.7142857142857143,0.7142857142857143,nan,0.5
+expected_outlier,1,1.0,nan,1.0,0.5

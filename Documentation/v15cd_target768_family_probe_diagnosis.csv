@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+target768_family_probe,target768_family_plateau_supported,Target 768 viser en dominerende familie med 7 av 8 profiler; 2 full near-symmetry-kandidater.
+symmetry_scope,feature_level_only,"Near-symmetry betyr bare lav normalisert support/carrier-avstand, ikke automorfi eller fysisk symmetri."
+next_step,holdout_target768_plateau,Neste steg bor holde ut target-768 plateauet pa friske seeds.

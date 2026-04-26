@@ -16,7 +16,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca` og `v15cb` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd` og `v15ce` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -669,6 +669,34 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Target384-candidate-holdout-symmetry: `Documentation/v15cb_target384_candidate_holdout_symmetry_summary.csv`
 - Target384-candidate-holdout-diagnosis: `Documentation/v15cb_target384_candidate_holdout_diagnosis.csv`
 - Target384-candidate-holdout-anbefaling: `Documentation/v0_15cb_operativ_anbefaling.md`
+- Target384-shell-turnover-script: `relational_universe_v15cc_target384_shell_turnover_observable.py`
+- Target384-shell-turnover-rapport: `Documentation/v15cc_target384_shell_turnover_observable.md`
+- Target384-shell-turnover-target: `Documentation/v15cc_target384_shell_turnover_target_summary.csv`
+- Target384-shell-turnover-rows: `Documentation/v15cc_target384_shell_turnover_rows.csv`
+- Target384-shell-turnover-aggregate: `Documentation/v15cc_target384_shell_turnover_aggregate.csv`
+- Target384-shell-turnover-pairwise: `Documentation/v15cc_target384_shell_turnover_pairwise.csv`
+- Target384-shell-turnover-summary: `Documentation/v15cc_target384_shell_turnover_summary.csv`
+- Target384-shell-turnover-diagnosis: `Documentation/v15cc_target384_shell_turnover_diagnosis.csv`
+- Target384-shell-turnover-anbefaling: `Documentation/v0_15cc_operativ_anbefaling.md`
+- Target768-family-probe-script: `relational_universe_v15cd_target768_family_probe.py`
+- Target768-family-probe-rapport: `Documentation/v15cd_target768_family_probe_lab.md`
+- Target768-family-probe-target: `Documentation/v15cd_target768_family_probe_target_summary.csv`
+- Target768-family-probe-rows: `Documentation/v15cd_target768_family_probe_rows.csv`
+- Target768-family-probe-aggregate: `Documentation/v15cd_target768_family_probe_aggregate.csv`
+- Target768-family-probe-family-summary: `Documentation/v15cd_target768_family_probe_family_summary.csv`
+- Target768-family-probe-pairwise: `Documentation/v15cd_target768_family_probe_pairwise.csv`
+- Target768-family-probe-diagnosis: `Documentation/v15cd_target768_family_probe_diagnosis.csv`
+- Target768-family-probe-anbefaling: `Documentation/v0_15cd_operativ_anbefaling.md`
+- Target768-plateau-holdout-script: `relational_universe_v15ce_target768_plateau_holdout.py`
+- Target768-plateau-holdout-rapport: `Documentation/v15ce_target768_plateau_holdout_lab.md`
+- Target768-plateau-holdout-target: `Documentation/v15ce_target768_plateau_holdout_target_summary.csv`
+- Target768-plateau-holdout-rows: `Documentation/v15ce_target768_plateau_holdout_rows.csv`
+- Target768-plateau-holdout-aggregate: `Documentation/v15ce_target768_plateau_holdout_aggregate.csv`
+- Target768-plateau-holdout-summary: `Documentation/v15ce_target768_plateau_holdout_summary.csv`
+- Target768-plateau-holdout-pairwise: `Documentation/v15ce_target768_plateau_holdout_pairwise.csv`
+- Target768-plateau-holdout-symmetry: `Documentation/v15ce_target768_plateau_holdout_symmetry_summary.csv`
+- Target768-plateau-holdout-diagnosis: `Documentation/v15ce_target768_plateau_holdout_diagnosis.csv`
+- Target768-plateau-holdout-anbefaling: `Documentation/v0_15ce_operativ_anbefaling.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -691,7 +719,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca` og `v15cb` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd` og `v15ce` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -798,6 +826,20 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - ingen av de to full near-symmetry-kandidatene holder som full near-symmetry i holdouten
 - observert quartet blir `add_chord_p0`, `add_chord_p1`, `add_chord_p2`, `local_swap_p3`
 - diagnosen ender pa `target384_candidates_not_replicated`
+- `v15cc` prover deretter en ny target-384-observabel: tidsopplost shell-turnover rundt support
+- artifact-control holder fortsatt rent, men turnover-observabelen splitter ikke target-384-profiler rent
+- quartet-majoritet blir bare `2/4`, p2-paret splitter seg selv, og quartet->p2-avstanden er ikke storre enn quartet-intern avstand
+- diagnosen ender pa `turnover_structure_not_yet`
+- `v15cd` tar derfor et nytt skalahopp til target `768` med samme family-/symmetry-observabler som ved `192` og `384`
+- target `768` gir et langt sterkere forstesignal: sju av atte profiler faller i `rare_diffuse_family`
+- `add_chord_p0` blir eneste `spectral_diffuse_rare_family`-outlier
+- det finnes to full feature-level near-symmetry-kandidater: `add_chord_p1` / `add_chord_p2` og `add_chord_p2` / `local_swap_p2`
+- diagnosen ender pa `target768_family_plateau_supported`
+- `v15ce` holder deretter ut target-768-plateauet pa friske seeds
+- holdouten holder bare delvis: match-rate `0.750`, plateau-retention `0.714`, outlier-retention `1.000`, full-near-retention `0.500`
+- `add_chord_p0` holder som spectral outlier, og `add_chord_p2` / `local_swap_p2` holder som full near-symmetry-par
+- men `local_swap_p0` og `local_swap_p3` glir ut av plateauet og blir `spectral_diffuse_rare_family`
+- diagnosen ender pa `target768_plateau_weak_holdout`
 
 Den riktige live-lesningen na er derfor:
 
@@ -829,7 +871,10 @@ Den riktige live-lesningen na er derfor:
 - `v15bz` viser at et nytt skalahopp faktisk gir ny struktur: ved target `384` dukker baade repeterte familier og to full near-symmetry-kandidater opp
 - `v15ca` viser samtidig at en enkel radial occupancy-forklaring ikke loser target-192 p1/p2-grensen
 - `v15cb` viser deretter at akkurat denne target-384-kandidatmappen ikke holder rent pa holdout
-- neste naturlige steg bor derfor ikke vaere mer target-384 family-label-tuning, men en ny observabel eller en ny skalaavgjorelse
+- `v15cc` viser at mer target-384 observabeltuning alene ikke ga ren familieseparasjon
+- `v15cd` viser at target `768` er den mest lovende nye skalaen i denne observable-stakken sa langt
+- `v15ce` viser samtidig at plateauet ved `768` ennå ikke holder rent nok til mekanismeforklaring pa hele kartet
+- neste naturlige steg bor derfor vaere en smal mekanismeobservabel eller en enda smalere holdout rundt den stabile resten (`add_chord_p0` og `add_chord_p2` / `local_swap_p2`), ikke mer bred family-label-tuning
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 
