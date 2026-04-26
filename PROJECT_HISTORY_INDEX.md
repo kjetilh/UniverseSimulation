@@ -2843,6 +2843,45 @@ Viktige filer:
 - `Documentation/v15ca_target192_radial_occupancy_diagnosis.csv`
 - `Documentation/v0_15ca_operativ_anbefaling.md`
 
+## 10ab. v15cb viste at den konkrete target-384-mappen ikke holder rent pa holdout
+
+Etter at `v15bz` fant et lovende target-384-kart, tok `v15cb` den smale holdouten:
+
+- behold target `384`
+- behold growth_seed `202`
+- behold placements `0..3`
+- behold `add_chord` og `local_swap`
+- bruk friske seeds
+- test både family-map-en og de to full feature-level near-symmetry-kandidatene fra `v15bz`
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- total match-rate mot `v15bz` er `0.500`
+- spectral_diffuse_rare-kvartetten holder delvis (`0.750`)
+- rare_diffuse-paret holder delvis (`0.500`)
+- ingen av de to full near-symmetry-kandidatene holder som full near-symmetry i holdouten
+- observert quartet blir `add_chord_p0`, `add_chord_p1`, `add_chord_p2`, `local_swap_p3`
+- diagnosen ender på `target384_candidates_not_replicated`
+
+Dette betyr:
+
+- target `384` ga et ekte interessant førstesignal i `v15bz`, men ikke en ren og stabil kandidatmap
+- det er derfor ikke riktig å presse videre på akkurat disse target-384-labelene
+- neste steg bør være ny observabel eller ny skalaavgjørelse, ikke enda en family-holdout av samme map
+
+Viktige filer:
+
+- `relational_universe_v15cb_target384_candidate_holdout.py`
+- `Documentation/v15cb_target384_candidate_holdout_lab.md`
+- `Documentation/v15cb_target384_candidate_holdout_target_summary.csv`
+- `Documentation/v15cb_target384_candidate_holdout_rows.csv`
+- `Documentation/v15cb_target384_candidate_holdout_aggregate.csv`
+- `Documentation/v15cb_target384_candidate_holdout_summary.csv`
+- `Documentation/v15cb_target384_candidate_holdout_symmetry_summary.csv`
+- `Documentation/v15cb_target384_candidate_holdout_diagnosis.csv`
+- `Documentation/v0_15cb_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

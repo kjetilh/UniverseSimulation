@@ -1,0 +1,4 @@
+summary_family,n_profiles,match_rate,quartet_retention_rate,rare_pair_retention_rate,full_near_retention_rate
+all_profiles,8,0.5,0.75,0.5,0.0
+spectral_diffuse_rare_quartet,4,0.75,0.75,nan,0.0
+rare_diffuse_pair,2,0.5,nan,0.5,0.0

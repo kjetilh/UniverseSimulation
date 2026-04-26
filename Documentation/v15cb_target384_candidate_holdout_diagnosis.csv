@@ -1,0 +1,6 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+target384_holdout,target384_candidates_not_replicated,Target-384-kandidatene replikerer ikke rent (0.500).
+observed_quartet,observed,add_chord_p0;add_chord_p1;add_chord_p2;local_swap_p3
+retained_full_near_pairs,observed,none
+next_step,new_observable_or_scale_decision,Neste steg bor bytte observabel eller ta en ny skalaavgjorelse.
