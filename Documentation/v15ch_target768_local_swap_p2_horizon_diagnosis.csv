@@ -1,0 +1,6 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+local_swap_p2_horizon_holdout,local_swap_p2_horizon_holdout_supported,"local_swap_p2 holder pa holdout ved baseline og 3 av 3 terskelkonfigurasjoner; baseline established-rate er 0.500 mot 0.000 for p0-kontrollen, og add_chord_p2 holder samtidig 0.667 ved baseline."
+carrier_scope,shared_p2_candidate,"Begge carrierne viser minst noe p2-horisont i 3 terskelkonfigurasjoner; dette er fortsatt feature-level evidens, ikke en arts-paastand."
+baseline_control,observed,baseline p0 no-horizon=1.000; baseline local support score=6/6.
+next_step,probe_shared_p2_horizon_mechanism,"Neste steg bor forklare hvorfor p2 bygger halehorisont pa tvers av carrier, ikke gjenapne bred target-768 family-tuning."

@@ -1,0 +1,4 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle target-768 support-locus-runs matcher onsket perturbasjon.
+support_locus_mechanism,support_locus_split_not_yet,Heller ikke denne smale p0/p2-observabelen skiller target-768-resten rent.
+next_step,new_target768_observable,"Neste steg bor vaere en ny target-768-observabel, ikke mer av samme support-locus-lesning."

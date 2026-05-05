@@ -1,0 +1,5 @@
+compare_label,perturbation,established_rate_gap,high_retention_gap,last12_high_gap,high_horizon_gap,total_high_gap,far_share_gap,q90_far_share_gap,distance_gap,spectral_gap,abs_established_rate_gap,abs_high_retention_gap,abs_last12_high_gap,abs_high_horizon_gap,abs_total_high_gap,abs_far_share_gap,abs_distance_gap,abs_spectral_gap
+add_chord_p2_minus_p0,add_chord,0.5,0.5,0.5,64.5,64.5,-0.09727214427650943,-0.08371199934208673,0.5002420351533923,-0.008334849709689514,,,,,,,,
+local_swap_p2_minus_p0,local_swap,0.75,0.75,0.75,96.75,96.75,0.2047514822020564,0.20357712496810687,3.3206156967652642,0.003582666543205609,,,,,,,,
+carrier_gap_at_p0,mixed,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.00011072931578015588,0.24911943446562468,0.005418989100469715
+carrier_gap_at_p2,mixed,,,,,,,,,,0.25,0.25,0.25,32.25,32.25,0.3019128971627857,2.5712542271462473,0.006498527152425408

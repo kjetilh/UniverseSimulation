@@ -1,12 +1,20 @@
 from pathlib import Path
 import secrets
 from datetime import datetime
+from typing import Any, Literal
 
 from fastapi import APIRouter, Depends, Header, HTTPException, status
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.rag.audit.coverage_report import build_coverage_actions, build_coverage_report
+from app.rag.catalog_ingestion import (
+    catalog_status,
+    media_status,
+    publish_catalog,
+    publish_media,
+    reindex_catalog,
+)
 from app.rag.cases.loader import case_by_id, load_rag_cases
 from app.rag.cases.visibility import visible_case_ids, visible_cases
 from app.rag.generate.prompt_config_store import (
@@ -113,6 +121,115 @@ def admin_sync(req: SyncRequest):
         anti_thrash_batch_size=req.anti_thrash_batch_size,
     )
     return {"ok": len(summary.get("errors", [])) == 0, "summary": summary}
+
+
+class CatalogChunkRequest(BaseModel):
+    chunk_id: str = Field(..., min_length=1)
+    title: str = Field(..., min_length=1)
+    content: str = Field(..., min_length=1)
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class CatalogPublishRequest(BaseModel):
+    case_id: str = Field(..., min_length=1, max_length=80)
+    source_repo: str = Field(..., min_length=1, max_length=120)
+    source_commit: str = Field(default="working-tree", min_length=1, max_length=160)
+    source_type: str = Field(..., min_length=1, max_length=120)
+    replace_source: bool = True
+    dry_run: bool = False
+    chunks: list[CatalogChunkRequest] = Field(..., min_length=1)
+
+
+class CatalogReindexRequest(BaseModel):
+    case_id: str = Field(..., min_length=1, max_length=80)
+    source_repo: str = Field(..., min_length=1, max_length=120)
+    source_type: str = Field(..., min_length=1, max_length=120)
+
+
+class InlineMediaDelivery(BaseModel):
+    mode: Literal["inlineBase64"]
+    bytes_base64: str = Field(..., min_length=1)
+
+
+class MediaPublishRecord(BaseModel):
+    media_id: str | None = None
+    filename: str = Field(..., min_length=1)
+    mime_type: str | None = None
+    size_bytes: int | None = Field(default=None, ge=0)
+    sha256: str | None = None
+    delivery: InlineMediaDelivery
+
+
+class MediaPublishRequest(BaseModel):
+    case_id: str = Field(..., min_length=1, max_length=80)
+    source_type: str = Field(..., min_length=1, max_length=120)
+    media: MediaPublishRecord
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+def _actor_from_header(x_cell_user_id: str | None) -> str | None:
+    value = (x_cell_user_id or "").strip()
+    return value or None
+
+
+@router.post("/v1/admin/catalog/publish", dependencies=[Depends(_require_admin_api_key)])
+def admin_catalog_publish(
+    req: CatalogPublishRequest,
+    x_cell_user_id: str | None = Header(default=None, alias="X-Cell-User-Id"),
+):
+    try:
+        return publish_catalog(req.model_dump(), actor=_actor_from_header(x_cell_user_id))
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/v1/admin/catalog/reindex", dependencies=[Depends(_require_admin_api_key)])
+def admin_catalog_reindex(req: CatalogReindexRequest):
+    try:
+        return reindex_catalog(
+            case_id=req.case_id,
+            source_repo=req.source_repo,
+            source_type=req.source_type,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/v1/admin/catalog/status", dependencies=[Depends(_require_admin_api_key)])
+def admin_catalog_status(case_id: str, source_repo: str, source_type: str):
+    try:
+        return catalog_status(case_id=case_id, source_repo=source_repo, source_type=source_type)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/v1/admin/media/publish", dependencies=[Depends(_require_admin_api_key)])
+def admin_media_publish(
+    req: MediaPublishRequest,
+    x_cell_user_id: str | None = Header(default=None, alias="X-Cell-User-Id"),
+):
+    try:
+        return publish_media(req.model_dump(), actor=_actor_from_header(x_cell_user_id))
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/v1/admin/media/status", dependencies=[Depends(_require_admin_api_key)])
+def admin_media_status(case_id: str, source_type: str, source_repo: str | None = None):
+    try:
+        return media_status(case_id=case_id, source_repo=source_repo, source_type=source_type)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.get("/v1/admin/coverage-report", dependencies=[Depends(_require_admin_api_key)])

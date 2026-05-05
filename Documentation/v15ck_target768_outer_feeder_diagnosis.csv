@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+shared_p2_feeder_flux,feeder_flux_not_yet,Feeder-fluxen skiller ikke p2 fra p0 rent i begge carrierne.
+carrier_alignment,aligned,Carrier-alignment her betyr bare at p2-vs-p0-feeder-gapen peker samme vei i begge carrierne.
+next_step,different_mechanism_axis,Neste steg bor vaere en annen mekanismeakse enn outer-flux.

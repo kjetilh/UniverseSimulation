@@ -14,9 +14,27 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
   - scoringartefakter,
   - dynamiske simulasjonsresultater.
 
+## Handoff context for next agent (2026-04-28)
+
+Denne seksjonen er lagt inn for aa kunne fortsette i ny traad uten aa miste siste operative retning.
+
+- Sjekk alltid `git status -sb` forst. Da denne handoffen ble oppdatert, fantes det lokale, ikke-stage-de endringer i `PROJECT_CONTEXT_LIVE.md`, `PROJECT_HISTORY_INDEX.md` og nye `v15cf`-`v15cn`-skript/dokumentasjons-/CSV-filer. Ikke anta at de er commit-et selv om de er live ground truth pa disk.
+- `band_zero_del` er fortsatt operativt frontier-regime fra `v11e`. Ikke gjenapne frontier-tuning med mindre nye filer eksplisitt krever det.
+- Lorentz-/spacetime-sporet er fortsatt `not_yet`: tidligere kontroller er nyttige, men mode-dependence, placement-sensitivity og lokal anisotropi er ikke ryddet bort.
+- Den ferskeste aktive signalretningen er target-768 family-/p2-horizon-sporet etter `v15cd`-`v15cn`, ikke tidlig v15 pair-collision alene.
+- `v15cd` fant et sterkt target-768 family-foerstesignal; `v15ce` holdt det bare delvis paa friske seeds. Les dette som lovende skala, ikke som loest family-map.
+- `v15ch` er siste klare positive p2-anker: target-768 p2-horisonten holder paa holdout, med `local_swap_p2` mot p0 og samtidig `add_chord_p2` som delt feature-level p2-kandidat. Dette er ikke en partikkelpaastand.
+- `v15ci`, `v15cj` og `v15ck` testet deretter rimelige outer-tail-mekanismer. Outer-genealogi ble for generisk, outer-occupancy var bare svakt og carrier-splittet, og outer-feeder-flux endte `feeder_flux_not_yet`.
+- `v15cl` flyttet observabelaksen innover mot shell2/3-gate og global-budget-lignende redistribusjon. Den bekrefter ikke en ren indre gate- eller global-budget-forklaring: `shared_p2_inner_gate = inner_gate_not_yet`, `global_budget_coupling = global_budget_coupling_not_yet`.
+- `v15cm` testet en renere lokal triggerforklaring med tidlig supportnaer launch-dynamikk. P2-horisonten lever videre, saerlig `local_swap_p2`, men p2 er ikke tidligere/raskere/sterkere enn p0 i tidlig launch; diagnosen er `local_trigger_not_yet` og `support_geometry_not_explanatory`.
+- `v15cn` tok en smal skala-holdout: fresh target-768 anchor pluss target `1024` under samme absolute step budget. Anchor replikerer delvis (`local_swap_p2` stottes, `add_chord_p2` svakere), men target 1024 stotter ikke p2-horisonten; diagnosen er `target768_specific_under_current_budget`.
+- Arbeidskonklusjon akkurat naa: target-768 p2-lommen er reell nok til aa beholde, men den ser ikke automatisk skalerbar ut under samme absolutte budsjett. Ikke oppgrader global invariant-sprak her. Neste naturlige valg er `target1024_budget_extension_or_intermediate_scale`.
+- Les foer ny implementering: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`, `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`, `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`, `Documentation/v15ck_target768_outer_feeder_flux_lab.md`, `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`, `Documentation/v15cm_target768_local_trigger_lab.md`, `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`, og de tilhorende `v0_15ch`-`v0_15cn` anbefalingene.
+- Ikke fabriker nye runtime-resultater. Hvis du ikke kjorer en ny lab, lag bare skjelett/plan/schema og skriv eksplisitt at CSV-resultater ikke finnes ennaa.
+
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd` og `v15ce` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm` og `v15cn` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -697,6 +715,89 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Target768-plateau-holdout-symmetry: `Documentation/v15ce_target768_plateau_holdout_symmetry_summary.csv`
 - Target768-plateau-holdout-diagnosis: `Documentation/v15ce_target768_plateau_holdout_diagnosis.csv`
 - Target768-plateau-holdout-anbefaling: `Documentation/v0_15ce_operativ_anbefaling.md`
+- Target768-support-locus-script: `relational_universe_v15cf_target768_support_locus_mechanism_lab.py`
+- Target768-support-locus-rapport: `Documentation/v15cf_target768_support_locus_mechanism_lab.md`
+- Target768-support-locus-target: `Documentation/v15cf_target768_support_locus_target_summary.csv`
+- Target768-support-locus-runs: `Documentation/v15cf_target768_support_locus_runs.csv`
+- Target768-support-locus-aggregate: `Documentation/v15cf_target768_support_locus_aggregate.csv`
+- Target768-support-locus-locus-summary: `Documentation/v15cf_target768_support_locus_locus_summary.csv`
+- Target768-support-locus-compare: `Documentation/v15cf_target768_support_locus_compare.csv`
+- Target768-support-locus-diagnosis: `Documentation/v15cf_target768_support_locus_diagnosis.csv`
+- Target768-support-locus-anbefaling: `Documentation/v0_15cf_operativ_anbefaling.md`
+- Target768-far-shell-horizon-script: `relational_universe_v15cg_target768_far_shell_horizon_lab.py`
+- Target768-far-shell-horizon-rapport: `Documentation/v15cg_target768_far_shell_horizon_lab.md`
+- Target768-far-shell-horizon-target: `Documentation/v15cg_target768_far_shell_horizon_target_summary.csv`
+- Target768-far-shell-horizon-runs: `Documentation/v15cg_target768_far_shell_horizon_runs.csv`
+- Target768-far-shell-horizon-aggregate: `Documentation/v15cg_target768_far_shell_horizon_aggregate.csv`
+- Target768-far-shell-horizon-compare: `Documentation/v15cg_target768_far_shell_horizon_compare.csv`
+- Target768-far-shell-horizon-diagnosis: `Documentation/v15cg_target768_far_shell_horizon_diagnosis.csv`
+- Target768-far-shell-horizon-anbefaling: `Documentation/v0_15cg_operativ_anbefaling.md`
+- Target768-p2-horizon-holdout-script: `relational_universe_v15ch_target768_local_swap_p2_horizon_holdout.py`
+- Target768-p2-horizon-holdout-rapport: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`
+- Target768-p2-horizon-holdout-target: `Documentation/v15ch_target768_local_swap_p2_horizon_target_summary.csv`
+- Target768-p2-horizon-holdout-runs: `Documentation/v15ch_target768_local_swap_p2_horizon_runs.csv`
+- Target768-p2-horizon-holdout-threshold-rows: `Documentation/v15ch_target768_local_swap_p2_horizon_threshold_rows.csv`
+- Target768-p2-horizon-holdout-aggregate: `Documentation/v15ch_target768_local_swap_p2_horizon_aggregate.csv`
+- Target768-p2-horizon-holdout-compare: `Documentation/v15ch_target768_local_swap_p2_horizon_compare.csv`
+- Target768-p2-horizon-holdout-robustness: `Documentation/v15ch_target768_local_swap_p2_horizon_robustness.csv`
+- Target768-p2-horizon-holdout-diagnosis: `Documentation/v15ch_target768_local_swap_p2_horizon_diagnosis.csv`
+- Target768-p2-horizon-holdout-anbefaling: `Documentation/v0_15ch_operativ_anbefaling.md`
+- Target768-p2-horizon-genealogy-script: `relational_universe_v15ci_target768_p2_horizon_genealogy_mechanism_lab.py`
+- Target768-p2-horizon-genealogy-rapport: `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`
+- Target768-p2-horizon-genealogy-target: `Documentation/v15ci_target768_p2_horizon_genealogy_target_summary.csv`
+- Target768-p2-horizon-genealogy-runs: `Documentation/v15ci_target768_p2_horizon_genealogy_runs.csv`
+- Target768-p2-horizon-genealogy-components: `Documentation/v15ci_target768_p2_horizon_genealogy_component_rows.csv`
+- Target768-p2-horizon-genealogy-events: `Documentation/v15ci_target768_p2_horizon_genealogy_event_rows.csv`
+- Target768-p2-horizon-genealogy-aggregate: `Documentation/v15ci_target768_p2_horizon_genealogy_aggregate.csv`
+- Target768-p2-horizon-genealogy-compare: `Documentation/v15ci_target768_p2_horizon_genealogy_compare.csv`
+- Target768-p2-horizon-genealogy-diagnosis: `Documentation/v15ci_target768_p2_horizon_genealogy_diagnosis.csv`
+- Target768-p2-horizon-genealogy-anbefaling: `Documentation/v0_15ci_operativ_anbefaling.md`
+- Target768-outer-occupancy-script: `relational_universe_v15cj_target768_outer_occupancy_concentration_lab.py`
+- Target768-outer-occupancy-rapport: `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`
+- Target768-outer-occupancy-target: `Documentation/v15cj_target768_outer_occupancy_target_summary.csv`
+- Target768-outer-occupancy-runs: `Documentation/v15cj_target768_outer_occupancy_runs.csv`
+- Target768-outer-occupancy-aggregate: `Documentation/v15cj_target768_outer_occupancy_aggregate.csv`
+- Target768-outer-occupancy-compare: `Documentation/v15cj_target768_outer_occupancy_compare.csv`
+- Target768-outer-occupancy-diagnosis: `Documentation/v15cj_target768_outer_occupancy_diagnosis.csv`
+- Target768-outer-occupancy-anbefaling: `Documentation/v0_15cj_operativ_anbefaling.md`
+- Target768-outer-feeder-script: `relational_universe_v15ck_target768_outer_feeder_flux_lab.py`
+- Target768-outer-feeder-rapport: `Documentation/v15ck_target768_outer_feeder_flux_lab.md`
+- Target768-outer-feeder-target: `Documentation/v15ck_target768_outer_feeder_target_summary.csv`
+- Target768-outer-feeder-runs: `Documentation/v15ck_target768_outer_feeder_runs.csv`
+- Target768-outer-feeder-snapshots: `Documentation/v15ck_target768_outer_feeder_snapshot_rows.csv`
+- Target768-outer-feeder-aggregate: `Documentation/v15ck_target768_outer_feeder_aggregate.csv`
+- Target768-outer-feeder-compare: `Documentation/v15ck_target768_outer_feeder_compare.csv`
+- Target768-outer-feeder-diagnosis: `Documentation/v15ck_target768_outer_feeder_diagnosis.csv`
+- Target768-outer-feeder-anbefaling: `Documentation/v0_15ck_operativ_anbefaling.md`
+- Target768-inner-gate-global-budget-script: `relational_universe_v15cl_target768_inner_gate_global_budget_lab.py`
+- Target768-inner-gate-global-budget-rapport: `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`
+- Target768-inner-gate-global-budget-target: `Documentation/v15cl_target768_inner_gate_global_budget_target_summary.csv`
+- Target768-inner-gate-global-budget-runs: `Documentation/v15cl_target768_inner_gate_global_budget_runs.csv`
+- Target768-inner-gate-global-budget-snapshots: `Documentation/v15cl_target768_inner_gate_global_budget_snapshot_rows.csv`
+- Target768-inner-gate-global-budget-aggregate: `Documentation/v15cl_target768_inner_gate_global_budget_aggregate.csv`
+- Target768-inner-gate-global-budget-compare: `Documentation/v15cl_target768_inner_gate_global_budget_compare.csv`
+- Target768-inner-gate-global-budget-diagnosis: `Documentation/v15cl_target768_inner_gate_global_budget_diagnosis.csv`
+- Target768-inner-gate-global-budget-anbefaling: `Documentation/v0_15cl_operativ_anbefaling.md`
+- Target768-local-trigger-script: `relational_universe_v15cm_target768_local_trigger_lab.py`
+- Target768-local-trigger-rapport: `Documentation/v15cm_target768_local_trigger_lab.md`
+- Target768-local-trigger-target: `Documentation/v15cm_target768_local_trigger_target_summary.csv`
+- Target768-local-trigger-runs: `Documentation/v15cm_target768_local_trigger_runs.csv`
+- Target768-local-trigger-snapshots: `Documentation/v15cm_target768_local_trigger_snapshot_rows.csv`
+- Target768-local-trigger-aggregate: `Documentation/v15cm_target768_local_trigger_aggregate.csv`
+- Target768-local-trigger-compare: `Documentation/v15cm_target768_local_trigger_compare.csv`
+- Target768-local-trigger-diagnosis: `Documentation/v15cm_target768_local_trigger_diagnosis.csv`
+- Target768-local-trigger-anbefaling: `Documentation/v0_15cm_operativ_anbefaling.md`
+- Target768-local-trigger-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cm.md`
+- P2-horizon-scale-holdout-script: `relational_universe_v15cn_p2_horizon_scale_holdout.py`
+- P2-horizon-scale-holdout-rapport: `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`
+- P2-horizon-scale-holdout-target: `Documentation/v15cn_p2_horizon_scale_holdout_target_summary.csv`
+- P2-horizon-scale-holdout-runs: `Documentation/v15cn_p2_horizon_scale_holdout_runs.csv`
+- P2-horizon-scale-holdout-aggregate: `Documentation/v15cn_p2_horizon_scale_holdout_aggregate.csv`
+- P2-horizon-scale-holdout-compare: `Documentation/v15cn_p2_horizon_scale_holdout_compare.csv`
+- P2-horizon-scale-holdout-scale-summary: `Documentation/v15cn_p2_horizon_scale_holdout_scale_summary.csv`
+- P2-horizon-scale-holdout-diagnosis: `Documentation/v15cn_p2_horizon_scale_holdout_diagnosis.csv`
+- P2-horizon-scale-holdout-anbefaling: `Documentation/v0_15cn_operativ_anbefaling.md`
+- P2-horizon-scale-holdout-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cn.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -719,7 +820,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd` og `v15ce` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm` og `v15cn` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -840,6 +941,11 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 - `add_chord_p0` holder som spectral outlier, og `add_chord_p2` / `local_swap_p2` holder som full near-symmetry-par
 - men `local_swap_p0` og `local_swap_p3` glir ut av plateauet og blir `spectral_diffuse_rare_family`
 - diagnosen ender pa `target768_plateau_weak_holdout`
+- `v15cf` tester deretter en smal support-locus-lesning ved target `768`: bare placement `0` og `2`, bare den stabile resten fra `v15ce`
+- artifact-control holder fortsatt rent
+- p2 ligger riktignok lenger ute enn p0 i weighted distance, men rare/core- og occupancy-signalet er ikke konsistent nok pa tvers av carrier
+- pooled p2->p0-gap gir mer outer/rare-masse, men occupancy-entropy gaar faktisk svakere feil vei og support-core-fraksjonen splitter ikke
+- diagnosen ender pa `support_locus_split_not_yet`
 
 Den riktige live-lesningen na er derfor:
 
@@ -874,7 +980,35 @@ Den riktige live-lesningen na er derfor:
 - `v15cc` viser at mer target-384 observabeltuning alene ikke ga ren familieseparasjon
 - `v15cd` viser at target `768` er den mest lovende nye skalaen i denne observable-stakken sa langt
 - `v15ce` viser samtidig at plateauet ved `768` ennå ikke holder rent nok til mekanismeforklaring pa hele kartet
-- neste naturlige steg bor derfor vaere en smal mekanismeobservabel eller en enda smalere holdout rundt den stabile resten (`add_chord_p0` og `add_chord_p2` / `local_swap_p2`), ikke mer bred family-label-tuning
+- `v15cf` viser deretter at en grov support-locus-lesning heller ikke er ren nok til a forklare den stabile resten ved `768`
+- `v15cg` viser deretter at en far-shell-horisont faktisk gir et svakere, men ekte p2-signal: `local_swap_p2` er sterkest, `add_chord_p2` holder delvis, og p0-kontrollene holder seg rene
+- diagnosen i `v15cg` ender likevel bare pa `far_shell_horizon_weak` fordi carrier-gapet ved p2 fortsatt er for stort til en ren carrier-robust lesning
+- `v15ch` holder sa ut den sterkeste resten fra `v15cg` pa friske seeds og et lite nabolag av terskler
+- denne holdouten holder overraskende rent: `local_swap_p2` holder i baseline og `3/3` terskelkonfigurasjoner mot p0-kontrollen, og `add_chord_p2` holder samtidig i alle `3/3` terskelkonfigurasjoner og litt sterkere ved baseline
+- diagnosen ender derfor pa `local_swap_p2_horizon_holdout_supported`, men med viktig scope-presisering: dette leses na best som en delt feature-level `p2`-kandidat pa tvers av carrier, ikke som en local_swap-spesifikk anomalitet og ikke som en partikkelpaastand
+- `v15ci` prover sa den mest direkte mekanikkforklaringen: outer-genealogi i halen
+- den gir et nyttig negativt svar: alle fire profiler leses som `reseeded_outer_horizon`, og outer-aktivitet alene er derfor for generisk til aa forklare p2-lommen
+- p2 har riktignok lavere turnover og høyere dominant mass enn p0, men ikke en ren ny mekanikk-label
+- `v15cj` prover deretter outer-occupancy-konsentrasjon
+- denne peker bare svakt mot p2: `local_swap_p2` er tydelig mer konsentrert enn `local_swap_p0`, men `add_chord_p2` holder ikke samme konsentrasjonsgap
+- diagnosen ender pa `shared_p2_outer_concentration_weak`
+- `v15ck` prover sa om ny outer-masse mates gjennom noen fa indre feeder-soner
+- heller ikke denne aksen holder rent: `add_chord_p2` har lav birth-intensity og litt mer concentrated-feeder-rate enn `add_chord_p0`, mens `local_swap_p2` ser mer self-propagating ut enn mer feeder-konsentrert
+- diagnosen ender pa `feeder_flux_not_yet`
+- `v15cl` flytter derfor mekanismeaksen innover mot shell2/3-gate og global-budget-lignende redistribusjon
+- p2-horisonten dukker fortsatt opp i denne nye seed-runden, spesielt `local_swap_p2` (`established_far_shell_rate = 0.750`) og svakere `add_chord_p2` (`0.250`)
+- men shell2/3-gate skiller ikke p2 fra p0 rent: p2 har lavere pre-gate peak, lavere gate release og lavere opposite shell23/outer motion enn p0 i begge carrierne
+- p2 har lavere spektral drift enn p0, men dette er ikke nok til aa kalle global-budget-kobling; diagnosen ender pa `inner_gate_not_yet` og `global_budget_coupling_not_yet`
+- `v15cm` prover deretter den renere lokale triggerforklaringen: tidlig supportnaer launch, supportgeometri og downstream far-shell-horisont i samme smale target-768 oppsett
+- p2-horisonten lever fortsatt (`local_swap_p2 = 0.750`, `add_chord_p2 = 0.250`), men p2 er ikke tidligere eller sterkere i tidlig launch enn p0
+- konkret er p2 senere til first outer enn p0 i begge carrierne (`add_chord` gap `+512.0`, `local_swap` gap `+234.0`) og har lavere early radius slope og lavere early peak damage
+- diagnosen ender derfor pa `local_trigger_not_yet` og `support_geometry_not_explanatory`
+- `v15cn` holder sa p2-horisonten ut paa ett moderat skalahopp: fresh target-768 anchor pluss target `1024`, samme p0/p2-profiler og samme absolute step budget
+- target-768 anchor replikerer bare delvis: `local_swap_p2` er stottet (`support_score = 5`, `established = 0.500`) mens `add_chord_p2` er svakere (`support_score = 3`)
+- target `1024` stotter ikke p2-horisonten i noen carrier under samme budsjett: begge p2 established-rates er `0.000`, og support scores er `0`
+- diagnosen ender pa `target768_specific_under_current_budget`, med eksplisitt budsjettforbehold: fravaer ved 1024 er ikke alene bevis mot skalaeffekt fordi tidsbudsjettet ikke er skalanormalisert
+- den riktige live-lesningen na er derfor at target-768 p2-lommen er reell nok til aa beholdes, men ikke automatisk skalerbar under samme absolute step budget
+- neste naturlige steg bor ikke oppgradere globale invarianter; test `target1024_budget_extension_or_intermediate_scale`
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 

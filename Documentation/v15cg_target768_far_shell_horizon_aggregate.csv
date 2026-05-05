@@ -1,0 +1,5 @@
+profile_label,perturbation,placement,n_runs,established_far_shell_rate,late_probe_rate,failed_far_shell_rate,no_far_shell_rate,mean_full_coarse_return_rate,mean_high_horizon_span,mean_high_retention_rate,mean_last12_high_rate,mean_total_high_count,mean_longest_high_run,mean_far_shell_share,mean_q90_far_shell_share,mean_weighted_mean_distance,mean_abs_delta_spectral_radius_rel
+add_chord_p0,add_chord,0,4,0.0,0.0,0.0,1.0,0.8817829457364341,0.0,0.0,0.0,0.0,0.0,0.5768931321939634,0.6299634549936943,4.430168924168729,0.01220513542188897
+add_chord_p2,add_chord,2,4,0.5,0.0,0.0,0.5,0.8410852713178294,64.5,0.5,0.5,64.5,64.5,0.479620987917454,0.5462514556516076,4.9304109593221215,0.0038702857121994563
+local_swap_p0,local_swap,0,4,0.0,0.0,0.0,1.0,0.7732558139534884,0.0,0.0,0.0,0.0,0.0,0.5767824028781833,0.6333954384183835,4.1810494897031045,0.006786146321419256
+local_swap_p2,local_swap,2,4,0.75,0.0,0.0,0.25,0.9476744186046512,96.75,0.75,0.75,96.75,96.75,0.7815338850802397,0.8369725633864904,7.501665186468369,0.010368812864624865

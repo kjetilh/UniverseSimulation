@@ -2994,6 +2994,344 @@ Viktige filer:
 - `Documentation/v15ce_target768_plateau_holdout_diagnosis.csv`
 - `Documentation/v0_15ce_operativ_anbefaling.md`
 
+## 10af. v15cf viste at en grov support-locus-lesning ved target-768 fortsatt er for svak
+
+Etter at `v15ce` pekte pa den stabile resten ved `768`, tok `v15cf` neste smale mekanismesteg:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold bare placements `0` og `2`
+- behold `add_chord` og `local_swap`
+- maal radial occupancy, occupancy-spekter og core/rare-fordeling samtidig
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- p2 ligger lenger ute enn p0 i weighted distance i begge carrierne
+- men rare/core- og occupancy-entropi-signalet er ikke konsistent nok til en ren locus-lesning
+- support-core-fraksjonen splitter ikke i det hele tatt
+- carrier-gapet er mindre ved p2 enn ved p0 pa noen metrikker, men ikke med sterk nok total struktur
+- diagnosen ender pa `support_locus_split_not_yet`
+
+Dette betyr:
+
+- target `768` er fortsatt den mest interessante skalaen i denne observable-stakken
+- men p0/p2-splittelsen kan ikke ennå leses som en ren support-locus-mekanisme
+- neste riktige steg er en ny, enda smalere target-768-observabel rundt p2-lommen eller spectral-outlieren, ikke mer grov locus- eller family-tuning
+
+Viktige filer:
+
+- `relational_universe_v15cf_target768_support_locus_mechanism_lab.py`
+- `Documentation/v15cf_target768_support_locus_mechanism_lab.md`
+- `Documentation/v15cf_target768_support_locus_target_summary.csv`
+- `Documentation/v15cf_target768_support_locus_runs.csv`
+- `Documentation/v15cf_target768_support_locus_aggregate.csv`
+- `Documentation/v15cf_target768_support_locus_locus_summary.csv`
+- `Documentation/v15cf_target768_support_locus_compare.csv`
+- `Documentation/v15cf_target768_support_locus_diagnosis.csv`
+- `Documentation/v0_15cf_operativ_anbefaling.md`
+
+## 10ag. v15cg viste at far-shell-horisonten gir et svakt, men ekte p2-signal ved target-768
+
+Etter at `v15cf` ikke klarte a lese target-768-resten som en grov support-locus-splitt, tok `v15cg` neste smale observabelsteg:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold bare placements `0` og `2`
+- behold `add_chord` og `local_swap`
+- maal om shell4+-tung, langtrekkende skade faktisk holder ut gjennom halen som en far-shell-horisont
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- p0-kontrollene bygger ingen faktisk far-shell-horisont
+- `local_swap_p2` viser den sterkeste p2-horisonten
+- `add_chord_p2` viser ogsa noe p2-horisont, men ikke sterkt nok til en ren carrier-robust lesning
+- diagnosen ender pa `far_shell_horizon_weak`
+
+Dette betyr:
+
+- target `768` har mer struktur i p2-lommen enn `v15cf` kunne fange
+- men repoet kan fortsatt ikke lese dette som en ren carrieruavhengig lov
+- neste riktige steg er derfor en smal holdout av den sterkeste p2-lommen, ikke bred ny family-tuning
+
+Viktige filer:
+
+- `relational_universe_v15cg_target768_far_shell_horizon_lab.py`
+- `Documentation/v15cg_target768_far_shell_horizon_lab.md`
+- `Documentation/v15cg_target768_far_shell_horizon_target_summary.csv`
+- `Documentation/v15cg_target768_far_shell_horizon_runs.csv`
+- `Documentation/v15cg_target768_far_shell_horizon_aggregate.csv`
+- `Documentation/v15cg_target768_far_shell_horizon_compare.csv`
+- `Documentation/v15cg_target768_far_shell_horizon_diagnosis.csv`
+- `Documentation/v0_15cg_operativ_anbefaling.md`
+
+## 10ah. v15ch holdt ut p2-horisonten og oppgraderte den til en delt p2-kandidat
+
+Etter at `v15cg` fant den sterkeste resten i `local_swap_p2`, tok `v15ch` neste smale falsifisering:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold bare `local_swap_p0`, `local_swap_p2` og `add_chord_p2`
+- bruk friske run-seeds
+- bruk et lite nabolag av horisont-terskler (`loose`, `baseline`, `tight`)
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `local_swap_p2` holder i baseline og `3/3` terskelkonfigurasjoner mot p0-kontrollen
+- p0-kontrollen holder seg ren (`baseline no-horizon = 1.000`)
+- `add_chord_p2` holder samtidig i alle `3/3` terskelkonfigurasjoner og er faktisk litt sterkere enn `local_swap_p2`
+- diagnosen ender pa `local_swap_p2_horizon_holdout_supported`, men carrier-scope leses som `shared_p2_candidate`
+
+Dette betyr:
+
+- `v15cg` traff ikke bare et skjort local_swap-spesifikt cutoff
+- den riktige lesningen er smalere og samtidig sterkere: target `768` har na en delt feature-level p2-lomme pa tvers av carrier
+- dette er fortsatt ikke en partikkelpaastand eller en universell geometri
+- neste riktige steg er derfor en delt p2-mekanismeobservabel, ikke mer bred target-768 family-tuning
+
+Viktige filer:
+
+- `relational_universe_v15ch_target768_local_swap_p2_horizon_holdout.py`
+- `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`
+- `Documentation/v15ch_target768_local_swap_p2_horizon_target_summary.csv`
+- `Documentation/v15ch_target768_local_swap_p2_horizon_runs.csv`
+- `Documentation/v15ch_target768_local_swap_p2_horizon_threshold_rows.csv`
+- `Documentation/v15ch_target768_local_swap_p2_horizon_aggregate.csv`
+- `Documentation/v15ch_target768_local_swap_p2_horizon_compare.csv`
+- `Documentation/v15ch_target768_local_swap_p2_horizon_robustness.csv`
+- `Documentation/v15ch_target768_local_swap_p2_horizon_diagnosis.csv`
+- `Documentation/v0_15ch_operativ_anbefaling.md`
+
+## 10ai. v15ci viste at outer-genealogi alene er for generisk til aa forklare p2-lommen
+
+Etter at `v15ch` holdt ut p2-horisonten som delt feature-level kandidat, tok `v15ci` den mest direkte mekanikkerunden:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold bare placements `0` og `2`
+- behold `add_chord` og `local_swap`
+- spor genealogi bare for outer `shell4+`-delen i halen
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- alle fire profiler leses som `reseeded_outer_horizon`
+- p2 har lavere turnover og høyere dominant mass enn p0
+- men selve outer-genealogien skiller ikke p2 fra p0 rent nok
+- diagnosen ender pa `shared_p2_horizon_mechanism_not_yet`
+
+Dette betyr:
+
+- outer-aktivitet er reell, men for generisk som mekanikkforklaring alene
+- p2-lommen finnes fortsatt, men den ligger ikke rent i en enkel genealogiklasse
+- neste riktige steg er derfor en annen p2-observabel, ikke mer av samme genealogiklasse
+
+Viktige filer:
+
+- `relational_universe_v15ci_target768_p2_horizon_genealogy_mechanism_lab.py`
+- `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`
+- `Documentation/v15ci_target768_p2_horizon_genealogy_target_summary.csv`
+- `Documentation/v15ci_target768_p2_horizon_genealogy_runs.csv`
+- `Documentation/v15ci_target768_p2_horizon_genealogy_component_rows.csv`
+- `Documentation/v15ci_target768_p2_horizon_genealogy_event_rows.csv`
+- `Documentation/v15ci_target768_p2_horizon_genealogy_aggregate.csv`
+- `Documentation/v15ci_target768_p2_horizon_genealogy_compare.csv`
+- `Documentation/v15ci_target768_p2_horizon_genealogy_diagnosis.csv`
+- `Documentation/v0_15ci_operativ_anbefaling.md`
+
+## 10aj. v15cj ga bare et svakt outer-occupancy-signal for p2
+
+Etter at `v15ci` viste at outer-genealogi er for grov, tok `v15cj` neste smale akseskifte:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold bare placements `0` og `2`
+- behold `add_chord` og `local_swap`
+- maal hvor konsentrert outer-occupancy er i halen
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `local_swap_p2` er tydelig mer konsentrert enn `local_swap_p0`
+- `add_chord_p2` holder derimot ikke samme klare konsentrasjonsgap mot `add_chord_p0`
+- diagnosen ender pa `shared_p2_outer_concentration_weak`
+
+Dette betyr:
+
+- konsentrasjon kan vaere en del av p2-historien, men ikke som ren delt carrier-lov
+- den riktige neste testen bor vaere mer mekanisk enn enda en ny ren tail-oppsummering
+
+Viktige filer:
+
+- `relational_universe_v15cj_target768_outer_occupancy_concentration_lab.py`
+- `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`
+- `Documentation/v15cj_target768_outer_occupancy_target_summary.csv`
+- `Documentation/v15cj_target768_outer_occupancy_runs.csv`
+- `Documentation/v15cj_target768_outer_occupancy_aggregate.csv`
+- `Documentation/v15cj_target768_outer_occupancy_compare.csv`
+- `Documentation/v15cj_target768_outer_occupancy_diagnosis.csv`
+- `Documentation/v0_15cj_operativ_anbefaling.md`
+
+## 10ak. v15ck viste at outer-feeder-flux heller ikke holder rent som delt p2-mekanisme
+
+Etter at `v15cj` pekte mot en mulig, men svak konsentrasjonsfortelling, tok `v15ck` neste smale mekanikkerunde:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold bare placements `0` og `2`
+- behold `add_chord` og `local_swap`
+- maal om ny outer-masse mates gjennom fa inner-shell-3 feeder-soner
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- `add_chord_p2` viser litt mer concentrated-feeder-rate enn `add_chord_p0`, men med langt lavere birth-intensity
+- `local_swap_p2` ser derimot mer self-propagating ut enn mer feeder-konsentrert enn `local_swap_p0`
+- diagnosen ender pa `feeder_flux_not_yet`
+
+Dette betyr:
+
+- de rimeligste outer-tail-mekanismene ved target `768` er na testet uten a gi en ren delt p2-forklaring
+- p2-lommen er fortsatt reell nok til videre arbeid
+- men neste riktige steg bor flytte mekanismeaksen innover mot trigger-/gate- eller boundary-observabler rundt shell2/3 eller supportnaer lansering
+
+Viktige filer:
+
+- `relational_universe_v15ck_target768_outer_feeder_flux_lab.py`
+- `Documentation/v15ck_target768_outer_feeder_flux_lab.md`
+- `Documentation/v15ck_target768_outer_feeder_target_summary.csv`
+- `Documentation/v15ck_target768_outer_feeder_runs.csv`
+- `Documentation/v15ck_target768_outer_feeder_snapshot_rows.csv`
+- `Documentation/v15ck_target768_outer_feeder_aggregate.csv`
+- `Documentation/v15ck_target768_outer_feeder_compare.csv`
+- `Documentation/v15ck_target768_outer_feeder_diagnosis.csv`
+- `Documentation/v0_15ck_operativ_anbefaling.md`
+
+## 10al. v15cl viste at shell2/3-gate og global-budget-kobling ikke forklarer p2-horisonten rent
+
+Etter at `v15ck` viste at outer-feeder-flux ikke holdt som delt p2-mekanisme, tok `v15cl` neste indre mekanikksteg:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold bare placements `0` og `2`
+- behold `add_chord` og `local_swap`
+- maal shell2/3-gate, outer-horizon, shell23/outer-kompensasjon og globale driftbudsjett i samme run
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- p2-horisonten dukker fortsatt opp i denne nye seed-runden
+- `local_swap_p2` er sterkest (`established_far_shell_rate = 0.750`)
+- `add_chord_p2` holder svakere (`0.250`)
+- men shell2/3-gate skiller ikke p2 fra p0 rent
+- p2 har lavere pre-gate peak, lavere gate release og lavere opposite shell23/outer motion enn p0 i begge carrierne
+- p2 har lavere spektral drift enn p0, men ikke med nok shell-redistribusjonsstruktur til aa kalle dette global-budget-kobling
+- diagnosene ender pa `inner_gate_not_yet` og `global_budget_coupling_not_yet`
+
+Dette betyr:
+
+- p2-lommen ved target `768` er fortsatt reell nok til videre smal testing
+- men den bor ikke forklares som global invariant-kobling basert paa denne observabelen
+- neste riktige steg er enten en renere lokal trigger-observabel eller en forsiktig p2-horizon holdout/skala-test
+
+Viktige filer:
+
+- `relational_universe_v15cl_target768_inner_gate_global_budget_lab.py`
+- `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`
+- `Documentation/v15cl_target768_inner_gate_global_budget_target_summary.csv`
+- `Documentation/v15cl_target768_inner_gate_global_budget_runs.csv`
+- `Documentation/v15cl_target768_inner_gate_global_budget_snapshot_rows.csv`
+- `Documentation/v15cl_target768_inner_gate_global_budget_aggregate.csv`
+- `Documentation/v15cl_target768_inner_gate_global_budget_compare.csv`
+- `Documentation/v15cl_target768_inner_gate_global_budget_diagnosis.csv`
+- `Documentation/v0_15cl_operativ_anbefaling.md`
+
+## 10am. v15cm viste at p2-horisonten ikke starter som en ren tidlig lokal trigger
+
+Etter at `v15cl` avviste en ren shell2/3-gate og global-budget-forklaring, tok `v15cm` den mest lokale gjenværende mekanismelesningen:
+
+- behold target `768`
+- behold growth_seed `202`
+- behold placements `0` og `2`
+- behold `add_chord` og `local_swap`
+- bruk samme seed-deltaer som `v15cl` for direkte sammenligning
+- maal tidlig supportnaer launch, supportgeometri, first shell/outer-hit, tidlig radiusvekst og downstream far-shell-horisont
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- p2-horisonten dukker fortsatt opp: `local_swap_p2 = 0.750`, `add_chord_p2 = 0.250`
+- men p2 er ikke tidligere, raskere eller sterkere enn p0 i tidlig launch
+- `add_chord_p2` har first-outer-gap `+512.0` mot p0, lavere early radius slope og lavere early peak damage
+- `local_swap_p2` har first-outer-gap `+234.0` mot p0, lavere early radius slope og lavere early peak damage
+- static support geometry forklarer heller ikke p2 rent
+- diagnosene ender pa `local_trigger_not_yet` og `support_geometry_not_explanatory`
+
+Dette betyr:
+
+- target-768 p2-lommen er fortsatt reell nok til videre testing
+- men den bor ikke forklares som en enkel lokal trigger uten ny observabel
+- etter outer-tail, inner-gate/global-budget og local-trigger negative mekanismesvar er neste riktige steg en smal `p2_horizon_scale_holdout`
+
+Viktige filer:
+
+- `relational_universe_v15cm_target768_local_trigger_lab.py`
+- `Documentation/v15cm_target768_local_trigger_lab.md`
+- `Documentation/v15cm_target768_local_trigger_target_summary.csv`
+- `Documentation/v15cm_target768_local_trigger_runs.csv`
+- `Documentation/v15cm_target768_local_trigger_snapshot_rows.csv`
+- `Documentation/v15cm_target768_local_trigger_aggregate.csv`
+- `Documentation/v15cm_target768_local_trigger_compare.csv`
+- `Documentation/v15cm_target768_local_trigger_diagnosis.csv`
+- `Documentation/v0_15cm_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cm.md`
+
+## 10an. v15cn viste at p2-horisonten ikke skalerer rent til target 1024 under samme budsjett
+
+Etter at `v15cm` avviste en enkel lokal triggerforklaring, tok `v15cn` den neste smale skala-testen:
+
+- behold `band_zero_del`
+- behold growth_seed `202`
+- behold `add_chord` og `local_swap`
+- behold bare placements `0` og `2`
+- inkluder fresh target-768 anchor
+- legg til target `1024` som moderat skala-holdout
+- bruk samme absolute step budget (`2560`) for begge targets
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- startstorrelser er rene og separerte: target `768` og `1024`
+- fresh target-768 anchor replikerer delvis
+- ved target `768` er `local_swap_p2` stottet (`support_score = 5`, `established_far_shell_rate = 0.500`)
+- ved target `768` er `add_chord_p2` svakere (`support_score = 3`, `established_far_shell_rate = 0.500`)
+- ved target `1024` stottes ingen p2-carrier
+- `add_chord_p2` ved target `1024` har `established_far_shell_rate = 0.000` og `support_score = 0`
+- `local_swap_p2` ved target `1024` har `established_far_shell_rate = 0.000` og `support_score = 0`
+- diagnosen ender pa `target768_specific_under_current_budget`
+
+Dette betyr:
+
+- target-768 p2-lommen er fortsatt reell nok til videre arbeid
+- men signalet skalerer ikke automatisk til target `1024` under samme absolute step budget
+- dette er ikke et endelig skala-avslag, fordi fravaer ved `1024` kan skyldes utilstrekkelig tidsbudsjett
+- neste riktige steg er `target1024_budget_extension_or_intermediate_scale`
+
+Viktige filer:
+
+- `relational_universe_v15cn_p2_horizon_scale_holdout.py`
+- `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`
+- `Documentation/v15cn_p2_horizon_scale_holdout_target_summary.csv`
+- `Documentation/v15cn_p2_horizon_scale_holdout_runs.csv`
+- `Documentation/v15cn_p2_horizon_scale_holdout_aggregate.csv`
+- `Documentation/v15cn_p2_horizon_scale_holdout_compare.csv`
+- `Documentation/v15cn_p2_horizon_scale_holdout_scale_summary.csv`
+- `Documentation/v15cn_p2_horizon_scale_holdout_diagnosis.csv`
+- `Documentation/v0_15cn_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cn.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

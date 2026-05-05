@@ -1,0 +1,5 @@
+target_nodes,compare_label,perturbation,established_rate_gap,no_horizon_control_gap,high_retention_gap,last12_high_gap,high_horizon_gap,total_high_gap,far_share_gap,q90_far_share_gap,distance_gap,spectral_gap,p2_established_rate,p0_no_horizon_rate,support_score,candidate_supported
+768,add_chord_p2_minus_p0,add_chord,0.5,0.0,0.0,0.5,62.5,62.5,-0.2694897606105429,-0.3148540155576579,-0.45870050217513114,0.022399718829787627,0.5,0.5,3,0
+768,local_swap_p2_minus_p0,local_swap,0.5,0.5,0.46511627906976744,0.5,64.5,59.5,-0.33734441645870306,-0.35539374958861064,-1.3369053027997615,-0.0015042494984092304,0.5,1.0,5,1
+1024,add_chord_p2_minus_p0,add_chord,-0.5,-0.5,-0.3208955223880597,-0.5,-33.5,-22.5,-0.1281305938267907,-0.0002324198623463447,-2.419873897241266,-0.006698821737776828,0.0,0.5,0,0
+1024,local_swap_p2_minus_p0,local_swap,0.0,0.0,0.0,0.0,0.0,0.0,-0.49750031465038613,-0.4185760706040337,-4.260392052888893,-0.0045385983757312235,0.0,1.0,0,0

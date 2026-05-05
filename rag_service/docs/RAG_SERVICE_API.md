@@ -64,3 +64,33 @@ Bruk `sync` for repo-filer og dokumenter som skal bli liggende pa plass.
 ### Nar bruke `/v1/admin/ingest`
 
 Bruk `ingest` for drop-foldere under `uploads/` der det er riktig at filer flyttes til `done/` eller `failed/`.
+
+
+### Nar bruke `/v1/admin/catalog/publish`
+
+Bruk `catalog.publish` for strukturerte CellProtocol/CellScaffold chunks som
+allerede er ferdig segmentert av en celle, for eksempel
+`ServiceCatalogCell.ragChunks`.
+
+Endepunkter:
+
+- `POST /v1/admin/catalog/publish`
+- `POST /v1/admin/catalog/reindex`
+- `GET /v1/admin/catalog/status`
+
+Dette er ikke en erstatning for filbasert sync. Det er en eksplisitt,
+admin-beskyttet RAG-katalogkontrakt for dokumentasjonschunks med metadata som
+`repo`, `serviceID`, `cell`, `contract` og `status`.
+
+### Nar bruke `/v1/admin/media/publish`
+
+Bruk `media.publish` nar en CellProtocol-klient skal levere et dokument eller
+en mediafil som bytes over JSON. V1 stotter bare:
+
+- `delivery.mode = inlineBase64`
+- maks 2 MB
+- `.md`, `.markdown`, `.txt`, `.html`, `.htm`, `.pdf`, `.docx`
+
+Ikke send ra `ValueType.data` som ekstern wire-kontrakt. Bruk eksplisitt
+`bytes_base64`, `sha256`, `mime_type`, `filename` og `size_bytes`, slik at
+payloaden kan valideres deterministisk pa begge sider.

@@ -1,0 +1,4 @@
+compare_label,established_far_shell_rate_gap,mean_pre_horizon_peak_shell23_share_gap,mean_gate_release_after_peak_gap,mean_outer_after_gate_gain_gap,mean_opposite_shell23_outer_motion_rate_gap,mean_gate_boundary_to_volume_gap,mean_abs_delta_spectral_radius_rel_tail_gap,mean_abs_delta_beta1_rel_tail_gap
+add_chord_p2_minus_p0,0.25,-0.04683552935976851,-0.001271827536572831,-0.022115335925708593,-0.4368668754934694,-1.1168899603841163,-0.006136758512294027,0.0
+local_swap_p2_minus_p0,0.75,-0.10555296012044527,-0.040658305143225486,-0.11540133078320933,-0.187086247086247,-1.7543806178615808,-0.010439839995219904,0.0
+local_swap_p2_minus_add_chord_p2,0.5,-0.03535554924506831,-0.011855881542637385,0.018584894024865087,0.2742170110591164,-0.5556031885161503,0.0022097025794867,-0.00980392156862745

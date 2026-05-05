@@ -1,6 +1,28 @@
 version: 1
 default_case: universe_project
 cases:
+  - case_id: haven_project
+    description: HAVEN servicekatalog, CellProtocol-kontrakter, prosjektoperasjoner og RAG-ingestion status.
+    enabled: true
+    planner:
+      docs_source_types: ["haven_service_catalog", "haven_media"]
+      prompts_source_types: []
+      docs_keywords: ["haven", "cellprotocol", "cellscaffold", "service", "contract", "keypath", "vault", "graphstore", "rag", "ingestion", "media"]
+      prompt_keywords: []
+      default_domain: docs
+    retrieval:
+      top_k_vector: 60
+      top_k_lexical: 60
+      top_k_final: 14
+      max_chunks_per_doc: 4
+    prompt_profile:
+      system_persona_path: "prompts/system_persona_haven_project.md"
+      answer_template_path: "prompts/answer_template_haven_project.md"
+    evaluation:
+      min_citations: 2
+      min_unique_docs: 1
+      min_avg_score: 0.0
+      enforce: false
   - case_id: universe_project
     description: Kombinert prosjektassistent for status, verktøy, teori, argumentasjon og promptbruk i UniverseSimulation.
     enabled: true

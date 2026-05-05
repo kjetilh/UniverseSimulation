@@ -1,0 +1,8 @@
+# Operativ anbefaling v0.15cm
+
+- `artifact_control`: `clean` fordi Startstorrelsen er ren og alle requested perturbations matcher faktisk perturbasjon.
+- `shared_p2_local_trigger`: `local_trigger_not_yet` fordi Tidlig supportnaer trigger skiller ikke p2 rent fra p0 (scores add=1/6, swap=1/6).
+- `support_geometry_alignment`: `support_geometry_not_explanatory` fordi Static support geometry forklarer ikke p2-trigger rent (scores add=1/4, swap=1/4).
+- `next_step`: `p2_horizon_scale_holdout` fordi Neste steg bor teste om p2-horisonten er target-768-spesifikk eller holder paa ny skala.
+
+- Les dette som en tidlig lokal trigger-test, ikke som bevis for partikler eller universell geometri.
