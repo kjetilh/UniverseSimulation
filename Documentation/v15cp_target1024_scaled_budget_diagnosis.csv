@@ -1,0 +1,6 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelse er ren og alle requested perturbations matcher faktisk perturbasjon.
+budget_scope,scaled_from_target768,"Target 1024 bruker step_budget=3414, skalert fra 2560 ved target 768."
+budget_effect,p0_budget_response_without_p2,Samlet horizon-span delta er p0=52.500 og p2=0.000 mot v15cn same-absolute-budget.
+target1024_scaled_budget_p2,scaled_budget_p2_not_supported,Budget scaling from target 768 to 1024 did not revive p2 under the existing support criteria.
+next_step,intermediate_scale_or_retire_p2_as_scale_selector,Neste steg bor enten teste ett mellomtarget eller nedgradere p2 som skala-selector.

@@ -3332,6 +3332,88 @@ Viktige filer:
 - `Documentation/v0_15cn_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cn.md`
 
+## 10ao. v15co gjorde univers-inspirerte valgheuristikker eksplisitte
+
+Etter at `v15cn` viste at p2-horisonten ikke automatisk skalerer til target `1024` under samme absolute step budget, tok `v15co` et metodisk syntesesteg i stedet for aa kjoere enda en dynamisk runde:
+
+- oversett univers-inspirerte egenskaper til repo-lokale observabler
+- skill eksplisitt mellom inspirasjon, heuristikk og faktisk simulasjonsevidens
+- lag hard gate for artifact hygiene
+- ranger defect non-superposition/genealogy som beste positive signalakse
+- behold conditional spectral quasi-invariant som sekundar, begrenset akse
+- hold Lorentz som diagnostikk/negativt filter, ikke positiv selector
+- hold globale regler som instrumentering, ikke lovspraak
+- forby entanglement-claims utover en svak pair-non-superposition-proxy
+
+Det viktigste resultatet er en beslutningspolicy, ikke nye runtime-tall:
+
+- `configuration_heuristic = possible_but_weak`
+- `hard_gate = artifact_hygiene_first`
+- `best_positive_axis = defect_nonseparability_and_genealogy`
+- `conditional_invariant_axis = spectral_candidate_capped`
+- `lorentz_axis = diagnostic_only_not_selector`
+- `entanglement_axis = proxy_only`
+- `scale_gate = target1024_budget_extension_or_intermediate_scale`
+
+Dette betyr:
+
+- det er mulig aa bruke trekk fra vaart univers som soekeheuristikk, men bare etter streng repo-lokal oversettelse
+- Lorentz-likhet, globale invarianter og entanglement skal ikke brukes som direkte positive claims i dagens repo
+- target-768 p2-lommen er fortsatt live, men den maa gjennom budsjett-/skalagater foer den kan bli en sterkere universe-like selector
+- neste naturlige dynamiske steg er `target1024_scaled_budget_p2_horizon_or_intermediate_target`
+
+Viktige filer:
+
+- `relational_universe_v15co_configuration_heuristic_assessment.py`
+- `Documentation/v15co_configuration_heuristic_assessment.md`
+- `Documentation/v15co_configuration_heuristic_axes.csv`
+- `Documentation/v15co_configuration_candidate_rules.csv`
+- `Documentation/v15co_configuration_decision_table.csv`
+- `Documentation/v15co_configuration_physics_anchor_notes.csv`
+- `Documentation/v0_15co_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15co.md`
+
+## 10ap. v15cp viste at target-1024 p2 ikke bare manglet skalert budsjett
+
+Etter at `v15co` gjorde budsjett-/skalagaten eksplisitt, tok `v15cp` den smaleste dynamiske oppfolgingen:
+
+- behold target `1024`
+- behold growth_seed `202`
+- behold `add_chord` og `local_swap`
+- behold bare placements `0` og `2`
+- behold samme seed-deltaer som `v15cn`
+- endre bare step budget fra same-absolute `2560` til skalert `3414`
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- target `1024` p2 gjenopplives ikke av skalert budsjett
+- `add_chord_p2` har fortsatt `established_far_shell_rate = 0.000`, `support_score = 0`, `candidate_supported = 0`
+- `local_swap_p2` har fortsatt `established_far_shell_rate = 0.000`, `support_score = 0`, `candidate_supported = 0`
+- den tydeligste budsjettresponsen gaar i stedet til `add_chord_p0`: horizon-span oker fra `33.500` til `86.000`
+- samlet horizon-span-delta mot `v15cn` er p0=`52.500`, p2=`0.000`
+- diagnosen ender pa `scaled_budget_p2_not_supported` og `p0_budget_response_without_p2`
+
+Dette betyr:
+
+- `1024`-negativen i `v15cn` kan ikke enkelt forklares med bare skalanormalisert tidsbudsjett
+- target-768 p2-lommen er fortsatt interessant som lokal lomme/kontrast, men svekket som skala-selector
+- neste naturlige valg er enten ett mellomtarget eller aa nedgradere p2 som skala-selector
+- ikke oppgrader global invariant-, Lorentz- eller entanglement-sprak fra dette
+
+Viktige filer:
+
+- `relational_universe_v15cp_target1024_scaled_budget_p2_horizon.py`
+- `Documentation/v15cp_target1024_scaled_budget_p2_horizon_lab.md`
+- `Documentation/v15cp_target1024_scaled_budget_target_summary.csv`
+- `Documentation/v15cp_target1024_scaled_budget_runs.csv`
+- `Documentation/v15cp_target1024_scaled_budget_aggregate.csv`
+- `Documentation/v15cp_target1024_scaled_budget_compare.csv`
+- `Documentation/v15cp_target1024_scaled_budget_budget_compare.csv`
+- `Documentation/v15cp_target1024_scaled_budget_diagnosis.csv`
+- `Documentation/v0_15cp_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cp.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

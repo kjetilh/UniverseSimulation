@@ -28,13 +28,15 @@ Denne seksjonen er lagt inn for aa kunne fortsette i ny traad uten aa miste sist
 - `v15cl` flyttet observabelaksen innover mot shell2/3-gate og global-budget-lignende redistribusjon. Den bekrefter ikke en ren indre gate- eller global-budget-forklaring: `shared_p2_inner_gate = inner_gate_not_yet`, `global_budget_coupling = global_budget_coupling_not_yet`.
 - `v15cm` testet en renere lokal triggerforklaring med tidlig supportnaer launch-dynamikk. P2-horisonten lever videre, saerlig `local_swap_p2`, men p2 er ikke tidligere/raskere/sterkere enn p0 i tidlig launch; diagnosen er `local_trigger_not_yet` og `support_geometry_not_explanatory`.
 - `v15cn` tok en smal skala-holdout: fresh target-768 anchor pluss target `1024` under samme absolute step budget. Anchor replikerer delvis (`local_swap_p2` stottes, `add_chord_p2` svakere), men target 1024 stotter ikke p2-horisonten; diagnosen er `target768_specific_under_current_budget`.
-- Arbeidskonklusjon akkurat naa: target-768 p2-lommen er reell nok til aa beholde, men den ser ikke automatisk skalerbar ut under samme absolutte budsjett. Ikke oppgrader global invariant-sprak her. Neste naturlige valg er `target1024_budget_extension_or_intermediate_scale`.
-- Les foer ny implementering: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`, `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`, `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`, `Documentation/v15ck_target768_outer_feeder_flux_lab.md`, `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`, `Documentation/v15cm_target768_local_trigger_lab.md`, `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`, og de tilhorende `v0_15ch`-`v0_15cn` anbefalingene.
+- `v15co` er en syntese-/beslutningsrunde, ikke ny dynamikk. Den konkluderer at univers-inspirerte egenskaper kan brukes som svak heuristikk bare etter repo-lokal oversettelse: artifact hygiene som hard gate, defect non-superposition/genealogy som beste positive akse, conditional spectral quasi-invariant som sekundar akse, Lorentz som diagnostikk/negativt filter, globale regler som instrumentering, og entanglement bare som forbudt claim/weak proxy.
+- `v15cp` testet akkurat budsjettforklaringen: target `1024`, samme carriers/p0/p2/seeds som `v15cn`, men step budget skalert fra 768-budsjettet (`2560 -> 3414`). P2 ble ikke gjenopplivet; derimot fikk `add_chord_p0` lengre far-shell-horisont. Diagnosen er `scaled_budget_p2_not_supported` og `p0_budget_response_without_p2`.
+- Arbeidskonklusjon akkurat naa: target-768 p2-lommen er reell nok til aa beholdes som lokal lomme/kontrast, men svekket som skala-selector. Ikke oppgrader global invariant-, Lorentz- eller entanglement-sprak. Neste naturlige valg er `intermediate_scale_or_retire_p2_as_scale_selector`.
+- Les foer ny implementering: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`, `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`, `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`, `Documentation/v15ck_target768_outer_feeder_flux_lab.md`, `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`, `Documentation/v15cm_target768_local_trigger_lab.md`, `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`, `Documentation/v15co_configuration_heuristic_assessment.md`, `Documentation/v15cp_target1024_scaled_budget_p2_horizon_lab.md`, og de tilhorende `v0_15ch`-`v0_15cp` anbefalingene.
 - Ikke fabriker nye runtime-resultater. Hvis du ikke kjorer en ny lab, lag bare skjelett/plan/schema og skriv eksplisitt at CSV-resultater ikke finnes ennaa.
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm` og `v15cn` er de aktive struktur-/transfer-/Lorentz-/defect-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co` og `v15cp` er de aktive struktur-/transfer-/Lorentz-/defect-/heuristikk-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -798,6 +800,24 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - P2-horizon-scale-holdout-diagnosis: `Documentation/v15cn_p2_horizon_scale_holdout_diagnosis.csv`
 - P2-horizon-scale-holdout-anbefaling: `Documentation/v0_15cn_operativ_anbefaling.md`
 - P2-horizon-scale-holdout-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cn.md`
+- Configuration-heuristic-script: `relational_universe_v15co_configuration_heuristic_assessment.py`
+- Configuration-heuristic-rapport: `Documentation/v15co_configuration_heuristic_assessment.md`
+- Configuration-heuristic-axes: `Documentation/v15co_configuration_heuristic_axes.csv`
+- Configuration-heuristic-rules: `Documentation/v15co_configuration_candidate_rules.csv`
+- Configuration-heuristic-decision-table: `Documentation/v15co_configuration_decision_table.csv`
+- Configuration-heuristic-physics-anchors: `Documentation/v15co_configuration_physics_anchor_notes.csv`
+- Configuration-heuristic-anbefaling: `Documentation/v0_15co_operativ_anbefaling.md`
+- Configuration-heuristic-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15co.md`
+- Target1024-scaled-budget-script: `relational_universe_v15cp_target1024_scaled_budget_p2_horizon.py`
+- Target1024-scaled-budget-rapport: `Documentation/v15cp_target1024_scaled_budget_p2_horizon_lab.md`
+- Target1024-scaled-budget-target: `Documentation/v15cp_target1024_scaled_budget_target_summary.csv`
+- Target1024-scaled-budget-runs: `Documentation/v15cp_target1024_scaled_budget_runs.csv`
+- Target1024-scaled-budget-aggregate: `Documentation/v15cp_target1024_scaled_budget_aggregate.csv`
+- Target1024-scaled-budget-compare: `Documentation/v15cp_target1024_scaled_budget_compare.csv`
+- Target1024-scaled-budget-budget-compare: `Documentation/v15cp_target1024_scaled_budget_budget_compare.csv`
+- Target1024-scaled-budget-diagnosis: `Documentation/v15cp_target1024_scaled_budget_diagnosis.csv`
+- Target1024-scaled-budget-anbefaling: `Documentation/v0_15cp_operativ_anbefaling.md`
+- Target1024-scaled-budget-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cp.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -820,7 +840,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm` og `v15cn` skjerpet local_swap-/conditional-quasi-/add_chord-scale-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co` og `v15cp` skjerpet local_swap-/conditional-quasi-/add_chord-scale-/heuristikk-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -1008,7 +1028,15 @@ Den riktige live-lesningen na er derfor:
 - target `1024` stotter ikke p2-horisonten i noen carrier under samme budsjett: begge p2 established-rates er `0.000`, og support scores er `0`
 - diagnosen ender pa `target768_specific_under_current_budget`, med eksplisitt budsjettforbehold: fravaer ved 1024 er ikke alene bevis mot skalaeffekt fordi tidsbudsjettet ikke er skalanormalisert
 - den riktige live-lesningen na er derfor at target-768 p2-lommen er reell nok til aa beholdes, men ikke automatisk skalerbar under samme absolute step budget
-- neste naturlige steg bor ikke oppgradere globale invarianter; test `target1024_budget_extension_or_intermediate_scale`
+- `v15co` gjor saa en beslutnings-/heuristikksyntese uten ny dynamikk
+- konklusjonen er at univers-inspirerte egenskaper kan brukes som svak prioriteringsheuristikk bare etter oversettelse til repo-observabler
+- beste positive akse er fortsatt defect non-superposition/genealogy; conditional spectral quasi-invariant er sekundar akse; artifact hygiene er hard gate
+- Lorentz-likhet skal forelopig brukes som diagnostikk/negativt filter, globale regler som instrumentering, og entanglement-sprak er ikke tillatt utover en svak pair-non-superposition-proxy
+- `v15cp` tester den minste budsjettforklaringen ved target `1024`: samme setup som `v15cn`, men step_budget skalert fra target 768 (`2560 -> 3414`)
+- resultatet gjenoppliver ikke p2: begge p2-profiler ved 1024 har fortsatt `established_far_shell_rate = 0.000`, `support_score = 0` og `candidate_supported = 0`
+- den eneste tydelige budsjettresponsen er motsatt av p2-hypotesen: `add_chord_p0` horizon-span oker fra `33.500` til `86.000`, mens p2 samlet horizon-span delta er `0.000`
+- diagnosen blir `scaled_budget_p2_not_supported` og `p0_budget_response_without_p2`
+- neste naturlige dynamiske steg bor ikke oppgradere globale invarianter; test ett mellomtarget eller nedgrader p2 som skala-selector (`intermediate_scale_or_retire_p2_as_scale_selector`)
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 
