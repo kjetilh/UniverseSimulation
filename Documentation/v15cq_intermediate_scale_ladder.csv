@@ -1,0 +1,7 @@
+target_nodes,budget_label,perturbation,p0_established_rate,p2_established_rate,p0_horizon_span,p2_horizon_span,p0_no_horizon_rate,p2_no_horizon_rate,p2_minus_p0_established_gap,p2_minus_p0_horizon_gap,p2_support_score,p2_candidate_supported
+768,v15cn_same_absolute_2560,add_chord,0.0,0.5,2.0,64.5,0.5,0.5,0.5,62.5,3,0
+768,v15cn_same_absolute_2560,local_swap,0.0,0.5,0.0,64.5,1.0,0.5,0.5,64.5,5,1
+896,v15cq_scaled_from_768,add_chord,0.5,0.5,75.0,49.5,0.5,0.5,0.0,-25.5,1,0
+896,v15cq_scaled_from_768,local_swap,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,1,0
+1024,v15cp_scaled_from_768,add_chord,0.5,0.0,86.0,0.0,0.5,1.0,-0.5,-86.0,0,0
+1024,v15cp_scaled_from_768,local_swap,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0,0

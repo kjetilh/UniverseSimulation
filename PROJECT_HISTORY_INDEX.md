@@ -3414,6 +3414,49 @@ Viktige filer:
 - `Documentation/v0_15cp_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cp.md`
 
+## 10aq. v15cq gjorde midpoint-testen og svekket p2 som skala-selector
+
+Etter at `v15cp` viste at skalert target-1024-budsjett ikke gjenopplivet p2, tok `v15cq` den minste mellomskala-avgjorelsen:
+
+- behold `band_zero_del`
+- behold growth_seed `202`
+- test bare target `896`, midt mellom `768` og `1024`
+- behold `add_chord` og `local_swap`
+- behold placements `0` og `2`
+- behold seed-deltaene fra `v15cn`/`v15cp`
+- skaler step budget fra target 768: `2560 -> 2987`
+
+Det viktigste resultatet er:
+
+- artifact-control holder rent
+- target 896 gir ikke p2-support etter kriteriene i noen carrier
+- `add_chord_p2` har noe far-shell-aktivitet (`established_far_shell_rate = 0.500`, horizon `49.500`), men `add_chord_p0` er like etablert og har lengre horizon (`75.000`)
+- dermed blir `add_chord_p2_minus_p0` bare support-score `1` og `candidate_supported = 0`
+- `local_swap_p2` etableres ikke ved target 896 (`established = 0.000`, horizon `0.000`, support-score `1`)
+- scale-ladderen er dermed: target 768 local_swap-p2 supported, target 896 partial/not-supported, target 1024 not-supported
+- diagnosen ender pa `intermediate_p2_partial_not_supported`
+
+Dette betyr:
+
+- p2 er svekket som skala-selector
+- p2 kan fortsatt beholdes som target-768 lokal lomme/kontrast
+- hvis man vil vaere ekstra konservativ, kan midpoint replikeres med litt mer seed-budget
+- ellers er neste riktige steg aa nedgradere p2-scale-sporet og lete etter ny observabel/retning
+- dette gir fortsatt ingen grunn til aa oppgradere global invariant-, Lorentz- eller entanglement-sprak
+
+Viktige filer:
+
+- `relational_universe_v15cq_intermediate_scale_p2_horizon.py`
+- `Documentation/v15cq_intermediate_scale_p2_horizon_lab.md`
+- `Documentation/v15cq_intermediate_scale_target_summary.csv`
+- `Documentation/v15cq_intermediate_scale_runs.csv`
+- `Documentation/v15cq_intermediate_scale_aggregate.csv`
+- `Documentation/v15cq_intermediate_scale_compare.csv`
+- `Documentation/v15cq_intermediate_scale_ladder.csv`
+- `Documentation/v15cq_intermediate_scale_diagnosis.csv`
+- `Documentation/v0_15cq_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cq.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

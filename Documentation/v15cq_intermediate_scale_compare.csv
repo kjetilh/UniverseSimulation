@@ -1,0 +1,3 @@
+budget_label,target_nodes,reference_target_nodes,compare_label,perturbation,step_budget,established_rate_gap,no_horizon_control_gap,high_retention_gap,last12_high_gap,high_horizon_gap,total_high_gap,far_share_gap,q90_far_share_gap,distance_gap,spectral_gap,p2_established_rate,p0_no_horizon_rate,support_score,candidate_supported
+scaled_from_768,896,768,add_chord_p2_minus_p0,add_chord,2987,0.0,0.0,-0.08585858585858586,0.0,-25.5,-34.0,0.4253084482613944,0.4391217429192387,2.453160448825293,0.01338371022290771,0.5,0.5,1,0
+scaled_from_768,896,768,local_swap_p2_minus_p0,local_swap,2987,0.0,0.0,0.0,0.0,0.0,0.0,0.6463024000425178,0.6846153846153845,4.029259632662696,0.006343979669907397,0.0,1.0,1,0
