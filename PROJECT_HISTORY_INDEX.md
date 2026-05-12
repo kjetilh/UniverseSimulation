@@ -3457,6 +3457,46 @@ Viktige filer:
 - `Documentation/v0_15cq_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cq.md`
 
+## 10ar. v15cr pensjonerte p2 som primar skala-selector og valgte p0-holdout som neste retning
+
+Etter `v15cq` var p2-bildet tydelig nok til at neste steg burde vaere en beslutningsvurdering, ikke enda en p2-run:
+
+- target `768`: local_swap-p2 er stottet, add_chord-p2 er delvis
+- target `896`: add_chord-p2 er aktiv, men ikke sterkere enn p0; local_swap-p2 faller bort
+- target `1024`: p2 er ikke stottet, heller ikke med skalert budsjett
+
+`v15cr` kjorer ingen ny dynamikk. Den sammenlikner rimelige nestevalg:
+
+- replikere midpoint-p2
+- gi target-1024 enda mer p2-budsjett
+- pensjonere p2 som skala-selector
+- folge den nye add_chord-p0 skalaresponsen
+- gaa tilbake til conditional quasi-invariant
+- gjenapne Lorentz/global-regel-spor
+- gjore bred skala-sweep
+
+Det viktigste resultatet er:
+
+- `p2_scale_selector = retire_as_primary_selector`
+- `p2_status = keep_as_target768_local_contrast`
+- `new_best_candidate = add_chord_p0_scale_response`
+- `next_step = v15cs_add_chord_p0_scale_response_holdout`
+
+Begrunnelsen er at `add_chord_p0` var kontrollprofilen som faktisk fikk sterkere far-shell-horisont med skala:
+
+- target `768`: horizon `2.000`
+- target `896`: horizon `75.000`
+- target `1024`: horizon `86.000`
+
+Dette betyr ikke at p0 er en lov, partikkel eller invariant. Det betyr bare at den marginale informasjonsverdien na er bedre i en fresh-seed p0-holdout enn i mer p2-budsjett.
+
+Viktige filer:
+
+- `Documentation/v15cr_next_direction_assessment.md`
+- `Documentation/v15cr_next_direction_decision_matrix.csv`
+- `Documentation/v0_15cr_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cr.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
