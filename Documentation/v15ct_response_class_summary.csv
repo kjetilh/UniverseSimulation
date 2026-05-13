@@ -1,0 +1,13 @@
+target_nodes,perturbation,profile_label,n_observations,labs,seed_scopes,response_classes,dominant_response_class,class_stable,mean_strength_score,mean_established_rate,mean_horizon_span
+768,add_chord,add_chord_p0,1,v15cn,old_seed_deltas,transient_or_partial_horizon:1,transient_or_partial_horizon,1,3.0,0.0,2.0
+768,add_chord,add_chord_p2,1,v15cn,old_seed_deltas,strong_persistent_far_shell:1,strong_persistent_far_shell,1,5.0,0.5,64.5
+768,local_swap,local_swap_p0,1,v15cn,old_seed_deltas,diffuse_far_mass_no_horizon:1,diffuse_far_mass_no_horizon,1,2.0,0.0,0.0
+768,local_swap,local_swap_p2,1,v15cn,old_seed_deltas,moderate_persistent_far_shell:1,moderate_persistent_far_shell,1,4.0,0.5,64.5
+896,add_chord,add_chord_p0,2,v15cq;v15cs,fresh_seed_deltas;old_seed_deltas,moderate_persistent_far_shell:1;strong_persistent_far_shell:1,moderate_persistent_far_shell,0,5.0,0.75,105.5
+896,add_chord,add_chord_p2,2,v15cq;v15cs,fresh_seed_deltas;old_seed_deltas,moderate_persistent_far_shell:2,moderate_persistent_far_shell,1,6.0,0.5,47.5
+896,local_swap,local_swap_p0,2,v15cq;v15cs,fresh_seed_deltas;old_seed_deltas,no_horizon:1;strong_persistent_far_shell:1,no_horizon,0,3.0,0.25,43.25
+896,local_swap,local_swap_p2,1,v15cq,old_seed_deltas,diffuse_far_mass_no_horizon:1,diffuse_far_mass_no_horizon,1,2.0,0.0,0.0
+1024,add_chord,add_chord_p0,3,v15cn;v15cp;v15cs,fresh_seed_deltas;old_seed_deltas,moderate_persistent_far_shell:1;no_horizon:1;strong_persistent_far_shell:1,moderate_persistent_far_shell,0,4.0,0.3333333333333333,39.833333333333336
+1024,add_chord,add_chord_p2,3,v15cn;v15cp;v15cs,fresh_seed_deltas;old_seed_deltas,diffuse_far_mass_no_horizon:1;no_horizon:1;strong_persistent_far_shell:1,no_horizon,0,2.3333333333333335,0.16666666666666666,27.5
+1024,local_swap,local_swap_p0,3,v15cn;v15cp;v15cs,fresh_seed_deltas;old_seed_deltas,diffuse_far_mass_no_horizon:3,diffuse_far_mass_no_horizon,1,2.0,0.0,0.0
+1024,local_swap,local_swap_p2,2,v15cn;v15cp,old_seed_deltas,no_horizon:2,no_horizon,1,0.0,0.0,0.0

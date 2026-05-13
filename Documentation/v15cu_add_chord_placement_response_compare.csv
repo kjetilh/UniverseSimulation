@@ -1,0 +1,9 @@
+target_nodes,rank,winner_flag,profile_label,placement,response_class,response_strength_score,established_far_shell_rate,mean_high_horizon_span,mean_high_retention_rate,mean_last12_high_rate,mean_far_shell_share,mean_weighted_mean_distance,score_gap_to_best,horizon_gap_to_best,class_rank_gap_to_best
+896,1,1,add_chord_p1,1,strong_persistent_far_shell,6,0.5,75.0,0.5,0.5,0.5948092304225313,4.804199506980191,0,0.0,0
+896,2,0,add_chord_p2,2,moderate_persistent_far_shell,6,0.5,57.5,0.5,0.5,0.7696599101993903,5.58669124662908,0,-17.5,-1
+896,3,0,add_chord_p3,3,no_horizon,0,0.0,0.0,0.0,0.0,0.2901505256741853,3.056065865486393,-6,-75.0,-4
+896,4,0,add_chord_p0,0,no_horizon,0,0.0,0.0,0.0,0.0,0.0,0.0,-6,-75.0,-4
+1024,1,1,add_chord_p3,3,strong_persistent_far_shell,6,1.0,172.0,1.0,1.0,0.7915163366016047,7.307944272371081,0,0.0,0
+1024,2,0,add_chord_p1,1,strong_persistent_far_shell,6,0.5,86.0,0.5,0.5,0.5692463061412024,5.7717371429823565,0,-86.0,0
+1024,3,0,add_chord_p0,0,no_horizon,1,0.0,0.0,0.0,0.0,0.4732832668372432,4.03094543581728,-5,-172.0,-4
+1024,4,0,add_chord_p2,2,no_horizon,0,0.0,0.0,0.0,0.0,0.40176189515415484,2.6032774520911772,-6,-172.0,-4

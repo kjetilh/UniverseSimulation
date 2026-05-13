@@ -1,0 +1,5 @@
+placement,profile_label,target896_class,target1024_class,class_changed,target896_score,target1024_score,score_delta_1024_minus_896,target896_established_rate,target1024_established_rate,established_delta_1024_minus_896,target896_horizon_span,target1024_horizon_span,horizon_delta_1024_minus_896
+0,add_chord_p0,no_horizon,no_horizon,0,0,1,1,0.0,0.0,0.0,0.0,0.0,0.0
+1,add_chord_p1,strong_persistent_far_shell,strong_persistent_far_shell,0,6,6,0,0.5,0.5,0.0,75.0,86.0,11.0
+2,add_chord_p2,moderate_persistent_far_shell,no_horizon,1,6,0,-6,0.5,0.0,-0.5,57.5,0.0,-57.5
+3,add_chord_p3,no_horizon,strong_persistent_far_shell,1,0,6,6,0.0,1.0,1.0,0.0,172.0,172.0

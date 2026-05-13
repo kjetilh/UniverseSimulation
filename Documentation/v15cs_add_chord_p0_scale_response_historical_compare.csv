@@ -1,0 +1,3 @@
+target_nodes,old_budget_label,fresh_budget_label,old_p0_established_rate,fresh_p0_established_rate,p0_established_delta,old_p0_horizon_span,fresh_p0_horizon_span,p0_horizon_delta,fresh_max_control_horizon_span,fresh_p0_response_score,fresh_p0_supported
+896,v15cq_scaled_from_768,v15cs_fresh_seed_scaled,0.5,1.0,0.5,75.0,136.0,61.0,86.5,6,1
+1024,v15cp_scaled_from_768,v15cs_fresh_seed_scaled,0.5,0.0,-0.5,86.0,0.0,-86.0,82.5,0,0

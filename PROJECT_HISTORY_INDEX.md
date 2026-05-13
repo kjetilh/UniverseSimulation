@@ -3497,6 +3497,156 @@ Viktige filer:
 - `Documentation/v0_15cr_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cr.md`
 
+## 10as. v15cs viste at p0-responsen er target-spesifikk, ikke 896/1024-skalerende
+
+Etter at `v15cr` valgte `add_chord_p0_scale_response` som beste neste kandidat, tok `v15cs` en fresh-seed holdout:
+
+- behold `band_zero_del`
+- behold growth_seed `202`
+- test targets `896` og `1024`
+- bruk budsjetter skalert fra target 768: `2987` og `3414`
+- primarprofil: `add_chord_p0`
+- kontroller: `add_chord_p2` og `local_swap_p0`
+- friske seed-deltaer: `6203` og `6269`
+
+Det viktigste resultatet er target-spesifikt:
+
+- artifact-control holder rent
+- ved target `896` holder `add_chord_p0` sterkt:
+  - `established_far_shell_rate = 1.000`
+  - `mean_high_horizon_span = 136.000`
+  - `p0_response_score = 6`
+  - kontroller er svakere
+- ved target `1024` kollapser `add_chord_p0`:
+  - `established_far_shell_rate = 0.000`
+  - `mean_high_horizon_span = 0.000`
+  - `p0_response_score = 0`
+- ved target `1024` er det i stedet `add_chord_p2` som etablerer far-shell-horizon:
+  - `established_far_shell_rate = 0.500`
+  - `mean_high_horizon_span = 82.500`
+
+Dette betyr:
+
+- p0-responsen fra `v15cq` er ikke en enkel 896/1024-skalerende kandidat
+- men 896-p0 ser reell nok ut til aa vaere en target-spesifikk lomme
+- 1024-p2 dukker opp paa friske seeds selv om tidligere p2-scale-linje var negativ; dette peker mer mot target-/placement-spesifikk carrier-veksling enn mot en enkel p0- eller p2-lov
+- diagnosen ender pa `p0_scale_response_target_specific`
+- neste steg boer enten bracket/replikere p0-responsen rundt 896/1024 eller skifte fra label-budget til response-fingerprint-syntese
+
+Viktige filer:
+
+- `relational_universe_v15cs_add_chord_p0_scale_response_holdout.py`
+- `Documentation/v15cs_add_chord_p0_scale_response_holdout.md`
+- `Documentation/v15cs_add_chord_p0_scale_response_target_summary.csv`
+- `Documentation/v15cs_add_chord_p0_scale_response_runs.csv`
+- `Documentation/v15cs_add_chord_p0_scale_response_aggregate.csv`
+- `Documentation/v15cs_add_chord_p0_scale_response_control_compare.csv`
+- `Documentation/v15cs_add_chord_p0_scale_response_summary.csv`
+- `Documentation/v15cs_add_chord_p0_scale_response_historical_compare.csv`
+- `Documentation/v15cs_add_chord_p0_scale_response_diagnosis.csv`
+- `Documentation/v0_15cs_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cs.md`
+
+## 10at. v15ct viste at response-fingerprint er mer informativt enn p0/p2-label akkurat naa
+
+Etter at `v15cs` gjorde p0-responsen target-spesifikk, tok `v15ct` en synteserunde uten ny dynamikk:
+
+- les eksisterende CSV-er fra `v15cn`, `v15cp`, `v15cq` og `v15cs`
+- klassifiser hver profile/target/seed-scope etter response fingerprint heller enn etter p0/p2-label
+- sammenlign old-vs-fresh seed scopes ved target `896` og `1024`
+- skriv eksplisitte beslutningsrader for p0-label, p2-label, carrier-signal, seed-stabilitet og neste steg
+
+Det viktigste resultatet er at labelen ikke er stabil nok:
+
+- 4/6 old-vs-fresh scaled-profile-sammenligninger skifter response-class
+- `add_chord_p0` er sterk ved target `896` paa friske seeds, men kollapser ved `1024`
+- `add_chord_p2` er ikke target-768-supported, er delvis ved `896`, absent/diffuse ved gammel `1024`, men aktiv ved frisk `1024`
+- `p0_label_stability = not_stable`
+- `p2_label_stability = not_stable`
+
+Carrier-lesningen er likevel ikke død:
+
+- `add_chord` har 8 persistent-far-shell-observasjoner mot 2 for `local_swap`
+- men hvilken placement/seed-lomme som svarer skifter
+- diagnosen blir derfor `add_chord_placement_sensitive_live`
+- dette er et dynamisk responsmønster, ikke en invariant-, partikkel- eller Lorentz-paastand
+
+Neste naturlige dynamiske steg er:
+
+- `v15cu_add_chord_placement_response_map`
+- smalt kart over add_chord placements ved target `896` og `1024`
+- maal: teste om responsen ligger i et lite placement-landskap foer vi bruker mer budsjett paa p0/p2-labeler
+
+Viktige filer:
+
+- `relational_universe_v15ct_response_fingerprint_synthesis.py`
+- `Documentation/v15ct_response_fingerprint_synthesis.md`
+- `Documentation/v15ct_response_fingerprints.csv`
+- `Documentation/v15ct_response_class_summary.csv`
+- `Documentation/v15ct_response_seed_stability.csv`
+- `Documentation/v15ct_response_decisions.csv`
+- `Documentation/v0_15ct_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15ct.md`
+
+## 10au. v15cu viste at add_chord-responsen er et placement-landskap, ikke en p0/p2-label
+
+Etter at `v15ct` pekte paa `add_chord_placement_sensitive_live`, kjorer `v15cu` en smal dynamisk placement-map:
+
+- behold `band_zero_del`
+- behold growth_seed `202`
+- test targets `896` og `1024`
+- bruk budsjetter skalert fra target 768: `2987` og `3414`
+- perturbation: `add_chord` only
+- placements: `p0`, `p1`, `p2`, `p3`
+- friske seed-deltaer: `7307` og `7351`
+
+Artifact-kontroll er ren:
+
+- startstorrelser er separert
+- alle requested `add_chord`-perturbations matcher faktisk perturbasjon
+
+Det viktigste resultatet er at responsen ikke følger p0/p2-labelene:
+
+- ved target `896`:
+  - `p1` er `strong_persistent_far_shell`, score `6`, horizon `75.000`
+  - `p2` er `moderate_persistent_far_shell`, score `6`, horizon `57.500`
+  - `p0` og `p3` har `no_horizon`
+- ved target `1024`:
+  - `p3` er dominant `strong_persistent_far_shell`, score `6`, established `1.000`, horizon `172.000`
+  - `p1` er ogsaa `strong_persistent_far_shell`, score `6`, horizon `86.000`
+  - `p0` og `p2` har `no_horizon`
+
+Dette gir ny viten:
+
+- `p0` faller ut ved begge target paa nye seed-deltaer
+- `p1` er den eneste placementen som er strong persistent ved begge target
+- `p2` er en 896-lomme, ikke en stabil 1024-lomme
+- `p3` dukker opp som sterk 1024-lomme
+- beste placement skifter fra p1 ved 896 til p3 ved 1024
+
+Diagnosen blir:
+
+- `add_chord_carrier = add_chord_carrier_live`
+- `placement_landscape = target_specific_placement_switch`
+- `target_stability = placement_classes_shift_across_targets`
+- neste steg: `mechanism_probe_for_winning_placements`
+
+Dette betyr ikke at p1 eller p3 er partikler, invarianter eller Lorentz-struktur. Det betyr at p0/p2 er feil primar leseakse akkurat naa. Den bedre hypotesen er at `add_chord` skaper et target- og supportavhengig responslandskap som maa forklares mekanistisk.
+
+Viktige filer:
+
+- `relational_universe_v15cu_add_chord_placement_response_map.py`
+- `Documentation/v15cu_add_chord_placement_response_map.md`
+- `Documentation/v15cu_add_chord_placement_response_target_summary.csv`
+- `Documentation/v15cu_add_chord_placement_response_runs.csv`
+- `Documentation/v15cu_add_chord_placement_response_aggregate.csv`
+- `Documentation/v15cu_add_chord_placement_response_compare.csv`
+- `Documentation/v15cu_add_chord_placement_response_target_patterns.csv`
+- `Documentation/v15cu_add_chord_placement_response_stability.csv`
+- `Documentation/v15cu_add_chord_placement_response_diagnosis.csv`
+- `Documentation/v0_15cu_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cu.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

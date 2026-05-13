@@ -32,13 +32,16 @@ Denne seksjonen er lagt inn for aa kunne fortsette i ny traad uten aa miste sist
 - `v15cp` testet akkurat budsjettforklaringen: target `1024`, samme carriers/p0/p2/seeds som `v15cn`, men step budget skalert fra 768-budsjettet (`2560 -> 3414`). P2 ble ikke gjenopplivet; derimot fikk `add_chord_p0` lengre far-shell-horisont. Diagnosen er `scaled_budget_p2_not_supported` og `p0_budget_response_without_p2`.
 - `v15cq` testet midpoint target `896` med skalert budsjett (`2987`). Det gir `intermediate_p2_partial_not_supported`: `add_chord_p2` har noe far-shell-aktivitet (`established = 0.500`, horizon `49.500`) men `add_chord_p0` er like etablert og sterkere i horizon (`75.000`), mens `local_swap_p2` ikke etableres. Ingen carrier passerer support-kriteriet.
 - `v15cr` er en beslutningsvurdering uten ny dynamikk. Den nedgraderer p2 som primar skala-selector og peker ut `add_chord_p0_scale_response` som beste neste kandidat, fordi add_chord_p0 horizon gaar `2.000 -> 75.000 -> 86.000` over target `768 -> 896 -> 1024`.
-- Arbeidskonklusjon akkurat naa: p2 bor behandles som target-768 lokal lomme/kontrast, ikke som skalerende struktur. Ikke oppgrader global invariant-, Lorentz- eller entanglement-sprak. Neste naturlige valg er `v15cs_add_chord_p0_scale_response_holdout` med friske seed-deltaer ved 896/1024 og p2/local_swap-kontroller.
-- Les foer ny implementering: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`, `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`, `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`, `Documentation/v15ck_target768_outer_feeder_flux_lab.md`, `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`, `Documentation/v15cm_target768_local_trigger_lab.md`, `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`, `Documentation/v15co_configuration_heuristic_assessment.md`, `Documentation/v15cp_target1024_scaled_budget_p2_horizon_lab.md`, `Documentation/v15cq_intermediate_scale_p2_horizon_lab.md`, `Documentation/v15cr_next_direction_assessment.md`, og de tilhorende `v0_15ch`-`v0_15cr` anbefalingene.
+- `v15cs` gjorde fresh-seed holdout av `add_chord_p0` ved 896/1024 med kontroller `add_chord_p2` og `local_swap_p0`. P0 holder sterkt ved 896 (`established = 1.000`, horizon `136.000`, score `6`), men kollapser ved 1024 (`established = 0.000`, horizon `0.000`, score `0`); ved 1024 er `add_chord_p2` kontrollen som etablerer horizon (`0.500`, `82.500`).
+- `v15ct` er en respons-fingerprint-syntese uten ny dynamikk. Den samler `v15cn`/`v15cp`/`v15cq`/`v15cs` og klassifiserer response etter dynamisk fingerprint heller enn p0/p2-label. Den finner at 4/6 old-vs-fresh scaled-profile-sammenligninger skifter klasse; `p0_label_stability = not_stable`, `p2_label_stability = not_stable`, mens `carrier_level_signal = add_chord_placement_sensitive_live`.
+- `v15cu` kjorer det anbefalte placement-kartet: `add_chord` only, target `896/1024`, placements `0..3`, friske seed-deltaer `7307/7351`. Artifact-control er clean. P0 faller ut ved begge target; p1 er strong persistent ved begge target (`75.000`/`86.000` horizon); p2 er bare persistent ved 896; p3 er strong og dominant ved 1024 (`established = 1.000`, horizon `172.000`). Diagnosen er `target_specific_placement_switch` med `add_chord_carrier_live`.
+- Arbeidskonklusjon akkurat naa: p0/p2-labeler er ikke riktig primar forklaring. `add_chord`-carrieren er fortsatt live, men responsen ser ut som et target-/placement-landskap med en stabil p1-bro og en 1024-p3-dominans. Ikke oppgrader global invariant-, Lorentz- eller entanglement-sprak. Neste naturlige steg er `mechanism_probe_for_winning_placements`: sammenlign supportgeometri og tidlig launch for p1/p3, ikke mer label-budget.
+- Les foer ny implementering: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`, `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`, `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`, `Documentation/v15ck_target768_outer_feeder_flux_lab.md`, `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`, `Documentation/v15cm_target768_local_trigger_lab.md`, `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`, `Documentation/v15co_configuration_heuristic_assessment.md`, `Documentation/v15cp_target1024_scaled_budget_p2_horizon_lab.md`, `Documentation/v15cq_intermediate_scale_p2_horizon_lab.md`, `Documentation/v15cr_next_direction_assessment.md`, `Documentation/v15cs_add_chord_p0_scale_response_holdout.md`, `Documentation/v15ct_response_fingerprint_synthesis.md`, `Documentation/v15cu_add_chord_placement_response_map.md`, og de tilhorende `v0_15ch`-`v0_15cu` anbefalingene.
 - Ikke fabriker nye runtime-resultater. Hvis du ikke kjorer en ny lab, lag bare skjelett/plan/schema og skriv eksplisitt at CSV-resultater ikke finnes ennaa.
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq` og `v15cr` er de aktive struktur-/transfer-/Lorentz-/defect-/heuristikk-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq`, `v15cr`, `v15cs`, `v15ct` og `v15cu` er de aktive struktur-/transfer-/Lorentz-/defect-/heuristikk-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -834,6 +837,36 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Next-direction-decision-matrix: `Documentation/v15cr_next_direction_decision_matrix.csv`
 - Next-direction-anbefaling: `Documentation/v0_15cr_operativ_anbefaling.md`
 - Next-direction-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cr.md`
+- Add-chord-p0-scale-response-script: `relational_universe_v15cs_add_chord_p0_scale_response_holdout.py`
+- Add-chord-p0-scale-response-rapport: `Documentation/v15cs_add_chord_p0_scale_response_holdout.md`
+- Add-chord-p0-scale-response-target: `Documentation/v15cs_add_chord_p0_scale_response_target_summary.csv`
+- Add-chord-p0-scale-response-runs: `Documentation/v15cs_add_chord_p0_scale_response_runs.csv`
+- Add-chord-p0-scale-response-aggregate: `Documentation/v15cs_add_chord_p0_scale_response_aggregate.csv`
+- Add-chord-p0-scale-response-control-compare: `Documentation/v15cs_add_chord_p0_scale_response_control_compare.csv`
+- Add-chord-p0-scale-response-summary: `Documentation/v15cs_add_chord_p0_scale_response_summary.csv`
+- Add-chord-p0-scale-response-historical-compare: `Documentation/v15cs_add_chord_p0_scale_response_historical_compare.csv`
+- Add-chord-p0-scale-response-diagnosis: `Documentation/v15cs_add_chord_p0_scale_response_diagnosis.csv`
+- Add-chord-p0-scale-response-anbefaling: `Documentation/v0_15cs_operativ_anbefaling.md`
+- Add-chord-p0-scale-response-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cs.md`
+- Response-fingerprint-synthesis-script: `relational_universe_v15ct_response_fingerprint_synthesis.py`
+- Response-fingerprint-synthesis-rapport: `Documentation/v15ct_response_fingerprint_synthesis.md`
+- Response-fingerprint-synthesis-fingerprints: `Documentation/v15ct_response_fingerprints.csv`
+- Response-fingerprint-synthesis-class-summary: `Documentation/v15ct_response_class_summary.csv`
+- Response-fingerprint-synthesis-seed-stability: `Documentation/v15ct_response_seed_stability.csv`
+- Response-fingerprint-synthesis-decisions: `Documentation/v15ct_response_decisions.csv`
+- Response-fingerprint-synthesis-anbefaling: `Documentation/v0_15ct_operativ_anbefaling.md`
+- Response-fingerprint-synthesis-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15ct.md`
+- Add-chord-placement-response-script: `relational_universe_v15cu_add_chord_placement_response_map.py`
+- Add-chord-placement-response-rapport: `Documentation/v15cu_add_chord_placement_response_map.md`
+- Add-chord-placement-response-target: `Documentation/v15cu_add_chord_placement_response_target_summary.csv`
+- Add-chord-placement-response-runs: `Documentation/v15cu_add_chord_placement_response_runs.csv`
+- Add-chord-placement-response-aggregate: `Documentation/v15cu_add_chord_placement_response_aggregate.csv`
+- Add-chord-placement-response-compare: `Documentation/v15cu_add_chord_placement_response_compare.csv`
+- Add-chord-placement-response-target-patterns: `Documentation/v15cu_add_chord_placement_response_target_patterns.csv`
+- Add-chord-placement-response-stability: `Documentation/v15cu_add_chord_placement_response_stability.csv`
+- Add-chord-placement-response-diagnosis: `Documentation/v15cu_add_chord_placement_response_diagnosis.csv`
+- Add-chord-placement-response-anbefaling: `Documentation/v0_15cu_operativ_anbefaling.md`
+- Add-chord-placement-response-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cu.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -856,7 +889,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq` og `v15cr` skjerpet local_swap-/conditional-quasi-/add_chord-scale-/heuristikk-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq`, `v15cr`, `v15cs`, `v15ct` og `v15cu` skjerpet local_swap-/conditional-quasi-/add_chord-scale-/heuristikk-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -1061,7 +1094,26 @@ Den riktige live-lesningen na er derfor:
 - den anbefaler aa pensjonere p2 som primar skala-selector, men beholde p2 som target-768 lokal kontrast
 - viktigste nye kandidat er `add_chord_p0_scale_response`: add_chord_p0 horizon gaar `2.000 -> 75.000 -> 86.000` over target `768 -> 896 -> 1024`
 - fordi p0-signalet ble oppdaget som kontroll og bare har to seed-deltaer per target, maa neste steg vaere en fresh-seed holdout, ikke claim
-- neste naturlige dynamiske steg er `v15cs_add_chord_p0_scale_response_holdout`
+- `v15cs` gjor fresh-seed holdout av p0-responsen med seed-deltaer `6203` og `6269`
+- p0 holder sterkt ved target 896 (`established = 1.000`, horizon `136.000`, score `6`), men ikke ved target 1024 (`established = 0.000`, horizon `0.000`, score `0`)
+- ved 1024 er `add_chord_p2` kontrollen som etablerer horizon (`established = 0.500`, horizon `82.500`)
+- diagnosen blir `p0_scale_response_target_specific`, ikke scale-response-supported
+- neste naturlige dynamiske steg er `replicate_or_bracket_p0_response` hvis vi vil fortsette dette sporet; alternativt er `response_fingerprint_synthesis` bedre enn mer ren label-budget
+- `v15ct` tar derfor response-fingerprint-syntesen uten ny dynamikk
+- syntesen klassifiserer `v15cn`/`v15cp`/`v15cq`/`v15cs` etter response-class heller enn etter p0/p2-label
+- 4/6 old-vs-fresh scaled-profile-sammenligninger skifter response-class
+- `p0_label_stability = not_stable` og `p2_label_stability = not_stable`
+- `add_chord` har flest persistent-far-shell-observasjoner, men plassering/seed-identitet skifter
+- diagnosen blir `add_chord_placement_sensitive_live`
+- neste naturlige dynamiske steg er `v15cu_add_chord_placement_response_map`, ikke mer budsjett paa en enkelt p0/p2-label
+- `v15cu` kjorer saa et smalt add_chord-placement-kart ved target `896/1024`
+- placements `p0..p3` testes paa friske seed-deltaer `7307/7351`
+- artifact-control holder rent
+- ved target `896` er `p1` strong persistent og `p2` moderate persistent, mens `p0` og `p3` ikke har horizon
+- ved target `1024` er `p3` dominant strong persistent (`established = 1.000`, horizon `172.000`) og `p1` er ogsaa strong persistent, mens `p0` og `p2` ikke har horizon
+- p1 er dermed den eneste stabile strong placement over begge target, men beste placement skifter fra p1 til p3
+- diagnosen blir `target_specific_placement_switch` og `add_chord_carrier_live`
+- neste naturlige steg er `mechanism_probe_for_winning_placements`: supportgeometri og tidlig launch for p1/p3
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 
