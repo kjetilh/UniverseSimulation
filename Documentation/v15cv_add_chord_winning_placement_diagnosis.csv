@@ -1,0 +1,8 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelser er rene og alle requested add_chord-perturbations matcher faktisk perturbasjon.
+p1_bridge,p1_stable_persistent_bridge,p1 er persistent ved baade 896 og 1024 under samme fresh-seed scope.
+p3_switch,p3_target_switch_confirmed,"p3 er ikke persistent ved 896, men er persistent ved 1024."
+early_launch_axis,early_launch_not_sufficient,Tidlig launch forklarer ikke p3-switchen rent (score 0/6).
+support_geometry_axis,support_geometry_not_sufficient,Static support geometry forklarer ikke p3-switchen rent (score 0/5).
+p1_target_shift,p1_launch_relatively_stable,p1 1024-minus-896 early-launch shift score er 0/3.
+next_step,add_genealogy_to_p1_p3_seed_splits,"P1/p3-landskapet holder, men mekanismen er ikke forklart; neste steg bor legge til per-run genealogi."

@@ -35,13 +35,15 @@ Denne seksjonen er lagt inn for aa kunne fortsette i ny traad uten aa miste sist
 - `v15cs` gjorde fresh-seed holdout av `add_chord_p0` ved 896/1024 med kontroller `add_chord_p2` og `local_swap_p0`. P0 holder sterkt ved 896 (`established = 1.000`, horizon `136.000`, score `6`), men kollapser ved 1024 (`established = 0.000`, horizon `0.000`, score `0`); ved 1024 er `add_chord_p2` kontrollen som etablerer horizon (`0.500`, `82.500`).
 - `v15ct` er en respons-fingerprint-syntese uten ny dynamikk. Den samler `v15cn`/`v15cp`/`v15cq`/`v15cs` og klassifiserer response etter dynamisk fingerprint heller enn p0/p2-label. Den finner at 4/6 old-vs-fresh scaled-profile-sammenligninger skifter klasse; `p0_label_stability = not_stable`, `p2_label_stability = not_stable`, mens `carrier_level_signal = add_chord_placement_sensitive_live`.
 - `v15cu` kjorer det anbefalte placement-kartet: `add_chord` only, target `896/1024`, placements `0..3`, friske seed-deltaer `7307/7351`. Artifact-control er clean. P0 faller ut ved begge target; p1 er strong persistent ved begge target (`75.000`/`86.000` horizon); p2 er bare persistent ved 896; p3 er strong og dominant ved 1024 (`established = 1.000`, horizon `172.000`). Diagnosen er `target_specific_placement_switch` med `add_chord_carrier_live`.
-- Arbeidskonklusjon akkurat naa: p0/p2-labeler er ikke riktig primar forklaring. `add_chord`-carrieren er fortsatt live, men responsen ser ut som et target-/placement-landskap med en stabil p1-bro og en 1024-p3-dominans. Ikke oppgrader global invariant-, Lorentz- eller entanglement-sprak. Neste naturlige steg er `mechanism_probe_for_winning_placements`: sammenlign supportgeometri og tidlig launch for p1/p3, ikke mer label-budget.
-- Les foer ny implementering: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`, `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`, `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`, `Documentation/v15ck_target768_outer_feeder_flux_lab.md`, `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`, `Documentation/v15cm_target768_local_trigger_lab.md`, `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`, `Documentation/v15co_configuration_heuristic_assessment.md`, `Documentation/v15cp_target1024_scaled_budget_p2_horizon_lab.md`, `Documentation/v15cq_intermediate_scale_p2_horizon_lab.md`, `Documentation/v15cr_next_direction_assessment.md`, `Documentation/v15cs_add_chord_p0_scale_response_holdout.md`, `Documentation/v15ct_response_fingerprint_synthesis.md`, `Documentation/v15cu_add_chord_placement_response_map.md`, og de tilhorende `v0_15ch`-`v0_15cu` anbefalingene.
+- `v15cv` rerunner bare `v15cu` sine p1/p3-cases med rikere supportgeometri og tidlig-launch snapshots. P1-broen holder (`strong_persistent_far_shell` ved 896 og 1024), p3-switchen holder (`no_horizon` ved 896, `strong_persistent_far_shell` ved 1024), men enkel tidlig launch og statisk supportgeometri forklarer ikke switchen (`early_launch_not_sufficient`, `support_geometry_not_sufficient`).
+- `v15cw` legger komponentgenealogi paa samme p1/p3 seed-split. Landskapet reproduseres (`p1_bridge=1`, `p3_switch=1`). Genealogi skiller bare en begrenset seed-split rent: `1024:p1` har `birth_death_churn` uten horizon og `split_fragment` med horizon. `split_persistent_dual` er derimot blandet globalt, saa ikke overgeneraliser.
+- Arbeidskonklusjon akkurat naa: p0/p2-labeler er ikke riktig primar forklaring. `add_chord`-carrieren er live som target-/placement-landskap, med p1 som stabil bro og p3 som 1024-spesifikk dominant lomme. Genealogi er mer informativ enn naive supportgeometri/tidlig launch, men signalet er forelopig begrenset til p1/1024 seed-splitten. Ikke oppgrader global invariant-, Lorentz- eller entanglement-sprak. Neste naturlige steg er `holdout_p1_1024_genealogy_split_axis` paa nye seeds foer generalisering.
+- Les foer ny implementering: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`, `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`, `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`, `Documentation/v15ck_target768_outer_feeder_flux_lab.md`, `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`, `Documentation/v15cm_target768_local_trigger_lab.md`, `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`, `Documentation/v15co_configuration_heuristic_assessment.md`, `Documentation/v15cp_target1024_scaled_budget_p2_horizon_lab.md`, `Documentation/v15cq_intermediate_scale_p2_horizon_lab.md`, `Documentation/v15cr_next_direction_assessment.md`, `Documentation/v15cs_add_chord_p0_scale_response_holdout.md`, `Documentation/v15ct_response_fingerprint_synthesis.md`, `Documentation/v15cu_add_chord_placement_response_map.md`, `Documentation/v15cv_add_chord_winning_placement_mechanism_probe.md`, `Documentation/v15cw_add_chord_p1_p3_genealogy_seed_split.md`, og de tilhorende `v0_15ch`-`v0_15cw` anbefalingene.
 - Ikke fabriker nye runtime-resultater. Hvis du ikke kjorer en ny lab, lag bare skjelett/plan/schema og skriv eksplisitt at CSV-resultater ikke finnes ennaa.
 
 ## Siste sikre live status
 
-Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq`, `v15cr`, `v15cs`, `v15ct` og `v15cu` er de aktive struktur-/transfer-/Lorentz-/defect-/heuristikk-rundene bygget pa den.
+Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq`, `v15cr`, `v15cs`, `v15ct`, `v15cu`, `v15cv` og `v15cw` er de aktive struktur-/transfer-/Lorentz-/defect-/heuristikk-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
@@ -867,6 +869,28 @@ Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`,
 - Add-chord-placement-response-diagnosis: `Documentation/v15cu_add_chord_placement_response_diagnosis.csv`
 - Add-chord-placement-response-anbefaling: `Documentation/v0_15cu_operativ_anbefaling.md`
 - Add-chord-placement-response-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cu.md`
+- Add-chord-winning-placement-mechanism-script: `relational_universe_v15cv_add_chord_winning_placement_mechanism_probe.py`
+- Add-chord-winning-placement-mechanism-rapport: `Documentation/v15cv_add_chord_winning_placement_mechanism_probe.md`
+- Add-chord-winning-placement-mechanism-target: `Documentation/v15cv_add_chord_winning_placement_target_summary.csv`
+- Add-chord-winning-placement-mechanism-support: `Documentation/v15cv_add_chord_winning_placement_support_geometry.csv`
+- Add-chord-winning-placement-mechanism-snapshots: `Documentation/v15cv_add_chord_winning_placement_snapshot_rows.csv`
+- Add-chord-winning-placement-mechanism-runs: `Documentation/v15cv_add_chord_winning_placement_runs.csv`
+- Add-chord-winning-placement-mechanism-aggregate: `Documentation/v15cv_add_chord_winning_placement_aggregate.csv`
+- Add-chord-winning-placement-mechanism-compare: `Documentation/v15cv_add_chord_winning_placement_compare.csv`
+- Add-chord-winning-placement-mechanism-diagnosis: `Documentation/v15cv_add_chord_winning_placement_diagnosis.csv`
+- Add-chord-winning-placement-mechanism-anbefaling: `Documentation/v0_15cv_operativ_anbefaling.md`
+- Add-chord-winning-placement-mechanism-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cv.md`
+- Add-chord-p1-p3-genealogy-script: `relational_universe_v15cw_add_chord_p1_p3_genealogy_seed_split.py`
+- Add-chord-p1-p3-genealogy-rapport: `Documentation/v15cw_add_chord_p1_p3_genealogy_seed_split.md`
+- Add-chord-p1-p3-genealogy-target: `Documentation/v15cw_add_chord_p1_p3_genealogy_target_summary.csv`
+- Add-chord-p1-p3-genealogy-components: `Documentation/v15cw_add_chord_p1_p3_genealogy_component_trajectories.csv`
+- Add-chord-p1-p3-genealogy-events: `Documentation/v15cw_add_chord_p1_p3_genealogy_event_log.csv`
+- Add-chord-p1-p3-genealogy-runs: `Documentation/v15cw_add_chord_p1_p3_genealogy_runs.csv`
+- Add-chord-p1-p3-genealogy-aggregate: `Documentation/v15cw_add_chord_p1_p3_genealogy_aggregate.csv`
+- Add-chord-p1-p3-genealogy-chain-summary: `Documentation/v15cw_add_chord_p1_p3_genealogy_chain_summary.csv`
+- Add-chord-p1-p3-genealogy-diagnosis: `Documentation/v15cw_add_chord_p1_p3_genealogy_diagnosis.csv`
+- Add-chord-p1-p3-genealogy-anbefaling: `Documentation/v0_15cw_operativ_anbefaling.md`
+- Add-chord-p1-p3-genealogy-for-ikke-spesialister: `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cw.md`
 - Samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13i.md`
 - Oppdatert samlet status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13j.md`
 - Nyeste samlede status for ikke-spesialister: `Documentation/relasjonell_universgraf_status_for_ikke_spesialister_v0_13k.md`
@@ -889,7 +913,7 @@ Dette er fordi `v11e` viser at `band_zero_del` vinner pa:
 
 ## Nyeste local_swap-live state
 
-`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq`, `v15cr`, `v15cs`, `v15ct` og `v15cu` skjerpet local_swap-/conditional-quasi-/add_chord-scale-/heuristikk-sporet uten a aapne nye brede scans:
+`v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq`, `v15cr`, `v15cs`, `v15ct`, `v15cu`, `v15cv` og `v15cw` skjerpet local_swap-/conditional-quasi-/add_chord-scale-/heuristikk-sporet uten a aapne nye brede scans:
 
 - `v15bd` viser at den reneste lille triggeraksen for `growth_seed 202`-modiene er dynamisk, ikke geometrisk
 - den beste aksen er `retention_core_axis = coarse_return + core_to_shell`
@@ -1114,6 +1138,18 @@ Den riktige live-lesningen na er derfor:
 - p1 er dermed den eneste stabile strong placement over begge target, men beste placement skifter fra p1 til p3
 - diagnosen blir `target_specific_placement_switch` og `add_chord_carrier_live`
 - neste naturlige steg er `mechanism_probe_for_winning_placements`: supportgeometri og tidlig launch for p1/p3
+- `v15cv` kjorer mekanismeproben for p1/p3 med samme seed-deltaer som `v15cu`
+- p1-broen holder: p1 er `strong_persistent_far_shell` ved baade 896 og 1024
+- p3-switchen holder: p3 er `no_horizon` ved 896 og `strong_persistent_far_shell` ved 1024
+- enkel tidlig launch forklarer ikke switchen rent (`early_launch_not_sufficient`, score `0/6`)
+- statisk supportgeometri forklarer heller ikke switchen rent (`support_geometry_not_sufficient`, score `0/5`)
+- neste naturlige steg er `add_genealogy_to_p1_p3_seed_splits`, fordi landskapet holder men mekanismen ikke er forklart
+- `v15cw` legger til komponentgenealogi og event chains for samme p1/p3-seed-scope
+- landskapet reproduseres: `p1_bridge_p3_switch_reproduced`
+- bare p1/1024 seed-splitten separeres rent av genealogy pattern: `birth_death_churn` gir no-horizon, mens `split_fragment` gir horizon
+- `split_persistent_dual` er blandet globalt (`established_far_shell_rate = 0.500`), saa genealogy-aksen er ikke generell ennaa
+- diagnosen blir `genealogy_separates_limited_seed_splits`
+- neste naturlige steg er `holdout_p1_1024_genealogy_split_axis`, ikke generalisert genealogy-claim
 
 og slar den siste smale utfordreren `bridge_00075_0000` rent:
 

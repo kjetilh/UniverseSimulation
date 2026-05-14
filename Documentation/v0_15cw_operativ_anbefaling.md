@@ -1,0 +1,8 @@
+# Operativ anbefaling v0.15cw
+
+- `artifact_control`: `clean` fordi Startstorrelser er rene og alle requested add_chord-perturbations matcher faktisk perturbasjon.
+- `landscape_reproduction`: `p1_bridge_p3_switch_reproduced` fordi p1_bridge=1, p3_switch=1 under genealogy rerun.
+- `genealogy_axis`: `genealogy_separates_limited_seed_splits` fordi 1 target/placement-grupper (1024:p1) har disjunkte genealogy patterns for horizon vs no-horizon.
+- `next_step`: `holdout_p1_1024_genealogy_split_axis` fordi Neste steg bor holde ut den konkrete p1/1024 genealogy-splitten paa nye seeds foer generalisering.
+
+- Dette er en smal add_chord-genealogy-probe, ikke en Lorentz-, invariant- eller partikkelpaastand.

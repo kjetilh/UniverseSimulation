@@ -1,0 +1,5 @@
+target_nodes,profile_label,placement,n_runs,established_far_shell_rate,mean_high_horizon_span,dominant_genealogy_pattern,genealogy_patterns,mean_split_count,mean_merge_count,mean_birth_count,mean_death_count,mean_churn_event_count,mean_max_component_count,mean_max_total_defect_mass,mean_final_total_defect_mass,horizon_patterns,no_horizon_patterns,pattern_separates_outcome
+896,add_chord_p1,1,2,0.5,75.0,split_persistent_dual,split_persistent_dual:2,46.0,51.0,120.5,98.5,316.0,24.5,91.0,89.0,split_persistent_dual,split_persistent_dual,0
+896,add_chord_p3,3,2,0.0,0.0,split_persistent_dual,split_persistent_dual:2,88.5,97.0,328.0,280.5,794.0,29.0,160.0,159.5,,split_persistent_dual,0
+1024,add_chord_p1,1,2,0.5,86.0,birth_death_churn,birth_death_churn:1;split_fragment:1,23.5,29.5,108.0,82.5,243.5,21.5,83.5,82.0,split_fragment,birth_death_churn,1
+1024,add_chord_p3,3,2,1.0,172.0,split_persistent_dual,split_persistent_dual:2,124.0,138.0,389.5,332.0,983.5,48.0,220.0,216.0,split_persistent_dual,,0

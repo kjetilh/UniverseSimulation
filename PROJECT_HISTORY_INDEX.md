@@ -3647,6 +3647,140 @@ Viktige filer:
 - `Documentation/v0_15cu_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cu.md`
 
+## 10av. v15cv bekreftet p1/p3-landskapet, men ikke en enkel support/launch-mekanisme
+
+Etter at `v15cu` viste et add_chord-placement-landskap, kjorer `v15cv` en mekanismeprobe:
+
+- rerun bare p1 og p3 fra `v15cu`
+- behold targets `896` og `1024`
+- behold growth_seed `202`
+- behold seed-deltaer `7307` og `7351`
+- legg til supportgeometri, supporttopologi og tidlig-launch snapshots
+- ikke legg til mer p0/p2-labelbudget
+
+Artifact-kontroll er ren:
+
+- startstorrelser er separert
+- alle requested `add_chord`-perturbations matcher faktisk perturbasjon
+
+Det viktigste resultatet er todelt.
+
+Forst: selve placement-landskapet holder:
+
+- p1 er `strong_persistent_far_shell` ved target `896`
+  - `established = 0.500`
+  - horizon `75.000`
+- p1 er ogsaa `strong_persistent_far_shell` ved target `1024`
+  - `established = 0.500`
+  - horizon `86.000`
+- p3 er `no_horizon` ved target `896`
+- p3 er `strong_persistent_far_shell` ved target `1024`
+  - `established = 1.000`
+  - horizon `172.000`
+
+Deretter: de enkle mekanismeforklaringene holder ikke:
+
+- `early_launch_axis = early_launch_not_sufficient`
+- p3 1024-vs-896 early-launch score er `0/6`
+- `support_geometry_axis = support_geometry_not_sufficient`
+- p3 1024-vs-896 support-geometry score er `0/5`
+
+Dette er nyttig negativ viten:
+
+- P1 ser ut som en stabil bro over 896/1024.
+- P3 ser ut som en target-spesifikk 1024-lomme.
+- Men hverken tidlig outer launch eller enkle statiske supportgeometri-tall forklarer hvorfor p3 bare blir dominant ved 1024.
+- Mekanismen maa sannsynligvis ligge i per-run genealogisk utvikling, seed-split eller senere komponentdynamikk, ikke i bare initial support-lokalitet.
+
+Neste naturlige steg:
+
+- `add_genealogy_to_p1_p3_seed_splits`
+- bruk p1/p3, targets `896/1024`, seed-deltaer `7307/7351`
+- spor komponentgenealogi og event chains per run
+- maal: forklare hvorfor noen p1/p3-runs etablerer far-shell horizon og andre ikke
+
+Dette betyr fortsatt ikke partikler, Lorentz-likhet eller global invariant. Det er en smal mekanismeavklaring for add_chord placement-landskapet.
+
+Viktige filer:
+
+- `relational_universe_v15cv_add_chord_winning_placement_mechanism_probe.py`
+- `Documentation/v15cv_add_chord_winning_placement_mechanism_probe.md`
+- `Documentation/v15cv_add_chord_winning_placement_target_summary.csv`
+- `Documentation/v15cv_add_chord_winning_placement_support_geometry.csv`
+- `Documentation/v15cv_add_chord_winning_placement_snapshot_rows.csv`
+- `Documentation/v15cv_add_chord_winning_placement_runs.csv`
+- `Documentation/v15cv_add_chord_winning_placement_aggregate.csv`
+- `Documentation/v15cv_add_chord_winning_placement_compare.csv`
+- `Documentation/v15cv_add_chord_winning_placement_diagnosis.csv`
+- `Documentation/v0_15cv_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cv.md`
+
+## 10aw. v15cw fant en begrenset p1/1024 genealogy-separasjon
+
+Etter at `v15cv` bekreftet p1/p3-landskapet, men ikke fant en enkel support- eller early-launch-mekanisme, kjorer `v15cw` en genealogy-runde:
+
+- behold targets `896` og `1024`
+- behold placements `p1` og `p3`
+- behold growth_seed `202`
+- behold seed-deltaer `7307` og `7351`
+- bruk component trajectories og event logs som primaerdata
+- la far-shell horizon vaere downstream outcome
+
+Artifact-kontroll er ren:
+
+- startstorrelser er separert
+- alle requested `add_chord`-perturbations matcher faktisk perturbasjon
+
+Landskapet reproduseres:
+
+- `p1_bridge=1`
+- `p3_switch=1`
+- diagnosen er `p1_bridge_p3_switch_reproduced`
+
+Per-run resultater:
+
+- `896/p1/7307`: `established_far_shell_horizon`, `split_persistent_dual`
+- `896/p1/7351`: `no_far_shell_horizon`, `split_persistent_dual`
+- `896/p3/7307`: `no_far_shell_horizon`, `split_persistent_dual`
+- `896/p3/7351`: `no_far_shell_horizon`, `split_persistent_dual`
+- `1024/p1/7307`: `no_far_shell_horizon`, `birth_death_churn`
+- `1024/p1/7351`: `established_far_shell_horizon`, `split_fragment`
+- `1024/p3/7307`: `established_far_shell_horizon`, `split_persistent_dual`
+- `1024/p3/7351`: `established_far_shell_horizon`, `split_persistent_dual`
+
+Det viktige er begrenset, men ekte:
+
+- `1024/p1` har disjunkte genealogy patterns for no-horizon og horizon.
+- `birth_death_churn` gir no-horizon i denne lille n.
+- `split_fragment` gir horizon i denne lille n.
+- Men `split_persistent_dual` er blandet globalt: samme pattern opptrer baade med og uten horizon.
+
+Diagnosen blir derfor:
+
+- `genealogy_axis = genealogy_separates_limited_seed_splits`
+- ikke en generell genealogy-lov
+- neste steg: `holdout_p1_1024_genealogy_split_axis`
+
+Dette betyr:
+
+- Genealogi er mer informativ enn de naive supportgeometri-/early-launch-observablene fra `v15cv`.
+- Men funnet maa holdes smalt: det er en konkret `1024/p1` seed-split-hypotese, ikke en generell add_chord-mekanisme.
+- Ikke oppgrader til partikkel-, Lorentz-, invariant- eller universell geometry-claim.
+
+Viktige filer:
+
+- `relational_universe_v15cw_add_chord_p1_p3_genealogy_seed_split.py`
+- `Documentation/v15cw_add_chord_p1_p3_genealogy_seed_split.md`
+- `Documentation/v15cw_add_chord_p1_p3_genealogy_target_summary.csv`
+- `Documentation/v15cw_add_chord_p1_p3_genealogy_component_trajectories.csv`
+- `Documentation/v15cw_add_chord_p1_p3_genealogy_event_log.csv`
+- `Documentation/v15cw_add_chord_p1_p3_genealogy_runs.csv`
+- `Documentation/v15cw_add_chord_p1_p3_genealogy_aggregate.csv`
+- `Documentation/v15cw_add_chord_p1_p3_genealogy_chain_summary.csv`
+- `Documentation/v15cw_add_chord_p1_p3_genealogy_diagnosis.csv`
+- `Documentation/v0_15cw_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cw.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
