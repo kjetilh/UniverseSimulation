@@ -1,0 +1,2 @@
+target_nodes,profile_label,placement,n_runs,holdout_seed_deltas,established_far_shell_rate,mean_high_horizon_span,genealogy_patterns,horizon_patterns,no_horizon_patterns,pattern_separates_outcome,known_mapping_n,known_mapping_rate,known_mapping_match_rate,mean_split_count,mean_birth_count,mean_death_count,mean_churn_event_count,mean_max_component_count,mean_max_total_defect_mass
+1024,add_chord_p1,1,4,7411;7477;7541;7603,0.75,126.0,split_persistent_dual:4,split_persistent_dual,split_persistent_dual,0,0,0.0,nan,164.75,550.0,486.0,1381.0,42.75,235.25

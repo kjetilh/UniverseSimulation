@@ -3781,6 +3781,69 @@ Viktige filer:
 - `Documentation/v0_15cw_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cw.md`
 
+## 10ax. v15cx svekket den konkrete p1/1024 genealogy-mappingen paa holdout
+
+Etter at `v15cw` fant en liten, ren `1024/p1` seed-splitt, tok `v15cx` den riktige holdouten foer generalisering:
+
+- behold target `1024`
+- behold placement `p1`
+- behold growth_seed `202`
+- bruk fire nye seed-deltaer: `7411`, `7477`, `7541`, `7603`
+- test bare den konkrete v15cw-kalibreringen:
+- `birth_death_churn -> no_far_shell_horizon`
+- `split_fragment -> established_far_shell_horizon`
+- behold component trajectories og event logs som primaerdata
+- la far-shell horizon vaere downstream outcome
+
+Artifact-kontroll er ren:
+
+- startstorrelse er ren og separert
+- alle requested `add_chord`-perturbations matcher faktisk perturbasjon
+
+Holdout-resultatet er ikke positivt for den kategoriske mappingen:
+
+- `7411`: `established_far_shell_horizon`, `split_persistent_dual`
+- `7477`: `mixed_far_shell_horizon`, `split_persistent_dual`
+- `7541`: `established_far_shell_horizon`, `split_persistent_dual`
+- `7603`: `established_far_shell_horizon`, `split_persistent_dual`
+
+Aggregert:
+
+- `established_far_shell_rate = 0.750`
+- `mean_high_horizon_span = 126.000`
+- `genealogy_patterns = split_persistent_dual:4`
+- `known_mapping_n = 0`
+- `pattern_separates_outcome = 0`
+- `mean_churn_event_count = 1381.000`
+- `mean_max_component_count = 42.750`
+- `mean_max_total_defect_mass = 235.250`
+
+Diagnosen blir derfor:
+
+- `p1_1024_specific_genealogy_axis_not_reproduced`
+- den konkrete `birth_death_churn`/`split_fragment`-mappingen fra `v15cw` skal ikke brukes som selector
+- `split_persistent_dual` er ikke en ren klasse, men det ser ut som et bredere high-intensity genealogy-regime med sterkere horizon-tilboyelighet i denne holdouten
+
+Dette betyr:
+
+- Genealogy er fortsatt nyttig, men de grove event-chain labels er for grove som mekanismeforklaring.
+- Neste riktige steg er en kontinuerlig genealogy-intensitetsobservabel: churn, split-timing, post-split dual-duration, max mass og event-rate mot horizon.
+- Ikke oppgrader dette til partikkel-, Lorentz-, invariant- eller universell geometry-claim.
+
+Viktige filer:
+
+- `relational_universe_v15cx_p1_1024_genealogy_holdout.py`
+- `Documentation/v15cx_p1_1024_genealogy_holdout.md`
+- `Documentation/v15cx_p1_1024_genealogy_holdout_target_summary.csv`
+- `Documentation/v15cx_p1_1024_genealogy_holdout_component_trajectories.csv`
+- `Documentation/v15cx_p1_1024_genealogy_holdout_event_log.csv`
+- `Documentation/v15cx_p1_1024_genealogy_holdout_runs.csv`
+- `Documentation/v15cx_p1_1024_genealogy_holdout_aggregate.csv`
+- `Documentation/v15cx_p1_1024_genealogy_holdout_chain_summary.csv`
+- `Documentation/v15cx_p1_1024_genealogy_holdout_diagnosis.csv`
+- `Documentation/v0_15cx_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cx.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

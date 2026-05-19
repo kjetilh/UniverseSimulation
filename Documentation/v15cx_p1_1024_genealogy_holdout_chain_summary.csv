@@ -1,0 +1,2 @@
+genealogy_pattern,n_runs,seed_deltas,v15cw_expected_from_genealogy,known_mapping_match_rate,established_far_shell_rate,mean_high_horizon_span,mean_churn_event_count,mean_max_component_count,mean_max_total_defect_mass
+split_persistent_dual,4,7411;7477;7541;7603,ambiguous_from_v15cw_calibration,nan,0.75,126.0,1381.0,42.75,235.25
