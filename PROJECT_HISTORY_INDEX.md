@@ -3844,6 +3844,70 @@ Viktige filer:
 - `Documentation/v0_15cx_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cx.md`
 
+## 10ay. v15cy fant at kontinuerlig genealogy-intensitet er bedre enn grove labels
+
+Etter at `v15cx` svekket den konkrete `birth_death_churn`/`split_fragment`-mappingen, tok `v15cy` det riktige billige steget foer ny dynamikk:
+
+- ingen ny dynamisk kjøring
+- les `v15cw` og `v15cx` sine run-level genealogy-tabeller
+- bygg kontinuerlige genealogy-features uten aa bruke horizon som input
+- evaluer mot downstream `far_shell_horizon_label` og `high_horizon_span`
+- sammenlign med de grove event-chain labels
+
+Score-inputene er genealogy-/event-/mass-felter:
+
+- `churn_per_step`
+- `split_per_step`
+- `birth_death_per_step`
+- `max_component_count_per_target`
+- `max_total_defect_mass_fraction`
+- `mean_total_defect_mass_fraction`
+- `post_split_dual_fraction`
+- `first_split_earliness`
+
+Hovedresultatet:
+
+- coarse event-chain labels er ikke nok
+- kontinuerlig intensity-index er lovende, men fortsatt post-hoc og liten n
+
+Scope-resultater:
+
+- `all_runs`: intensity AUC `0.800`, Spearman mot horizon-span `0.521`
+- `v15cw_all`: intensity AUC `0.750`, Spearman `0.443`
+- `p1_1024_all`: intensity AUC `0.875`, Spearman `0.638`
+- `p1_1024_holdout_only`: intensity AUC `1.000`, Spearman `0.949`
+
+Top-metrikker:
+
+- globalt er `max_component_count_per_target` sterkest: AUC `0.943`, Spearman `0.783`
+- for `p1/1024` er `compress_per_step` sterkest: AUC `1.000`, Spearman `0.893`
+- i holdout-only er intensity-index/churn/birth-death alle AUC `1.000`, men dette er bare fire runs
+
+Diagnosen blir:
+
+- `continuous_genealogy_intensity_promising_small_n`
+- dette er sterkere enn grove genealogy labels
+- men fordi scoren er post-hoc, maa den fryses foer ny dynamikk
+
+Neste riktige steg:
+
+- `pre_register_continuous_intensity_holdout`
+- frys intensity-score/top-metrikker
+- test paa nye dynamiske runs foer scorevekter eller observabler endres
+- ikke oppgrader til partikkel-, Lorentz-, invariant- eller entanglement-claim
+
+Viktige filer:
+
+- `relational_universe_v15cy_continuous_genealogy_intensity_synthesis.py`
+- `Documentation/v15cy_continuous_genealogy_intensity_synthesis.md`
+- `Documentation/v15cy_continuous_genealogy_intensity_runs.csv`
+- `Documentation/v15cy_continuous_genealogy_intensity_metric_scores.csv`
+- `Documentation/v15cy_continuous_genealogy_intensity_scope_summary.csv`
+- `Documentation/v15cy_continuous_genealogy_intensity_top_metrics.csv`
+- `Documentation/v15cy_continuous_genealogy_intensity_diagnosis.csv`
+- `Documentation/v0_15cy_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cy.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

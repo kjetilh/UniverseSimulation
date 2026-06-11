@@ -1,0 +1,5 @@
+scope,n_runs,n_established,n_non_established,established_rate,mean_horizon_span,genealogy_patterns,intensity_auc,intensity_spearman_span,mean_intensity_established,mean_intensity_non_established,mean_churn_established,mean_churn_non_established,mean_max_mass_established,mean_max_mass_non_established
+all_runs,12,7,5,0.5833333333333334,97.5,birth_death_churn:1;split_fragment:1;split_persistent_dual:10,0.8,0.521094048965379,0.728409662071663,0.3747262127881541,1091.857142857143,511.0,215.0,109.0
+v15cw_all,8,4,4,0.5,83.25,birth_death_churn:1;split_fragment:1;split_persistent_dual:6,0.75,0.4433944513137059,0.5949862415467059,0.3058587268024041,750.5,418.0,186.75,90.5
+p1_1024_all,6,4,2,0.6666666666666666,112.66666666666667,birth_death_churn:1;split_fragment:1;split_persistent_dual:4,0.875,0.6375355777548621,0.7740520896860477,0.3285674458807656,1269.25,467.0,225.25,103.5
+p1_1024_holdout_only,4,3,1,0.75,126.0,split_persistent_dual:4,1.0,0.9486832980505138,0.906307556104939,0.650196156731154,1547.0,883.0,252.66666666666666,183.0
