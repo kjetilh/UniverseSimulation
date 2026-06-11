@@ -1,0 +1,5 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelse er ren og alle requested add_chord-perturbations matcher faktisk perturbasjon.
+pre_registration_control,frozen_score_applied,Score-spec er fit paa v15cw/v15cx calibration rows og brukt uten refit paa v15cz holdout.
+primary_test,pre_registered_intensity_inconclusive_balance,"Ikke nok balansert decisive data for confirmatory test: decisive=23, established=22, no_horizon=1, mixed=1; AUC=1.000, p=0.043."
+next_step,run_pre_registered_extension_or_report_inconclusive,Forleng bare etter den pre-registrerte balanse-regelen; ikke endre score eller metric.

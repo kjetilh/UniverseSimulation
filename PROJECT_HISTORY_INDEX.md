@@ -3908,6 +3908,82 @@ Viktige filer:
 - `Documentation/v0_15cy_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cy.md`
 
+## 10az. v15cz gjorde pre-registered holdout, men selector-testen ble ubalansert
+
+Etter `v15cy` var det riktige steget aa ikke justere mer paa scoren, men aa fryse den og teste paa ny dynamikk:
+
+- behold `1024:p1/add_chord` som smal holdout-lomme
+- bruk `growth_seed = 202`
+- kjor 24 nye seed-deltaer
+- fit score-spec bare paa kalibreringsdata fra `v15cw`/`v15cx`
+- skriv holdout-score blindt foer horizon-label/fasitering
+- ekskluder `mixed` fra primaer AUC og rapporter den separat
+
+Den frosne `genealogy_intensity_index` bruker fortsatt bare pre-horizon genealogy-/event-/mass-felter:
+
+- `churn_per_step`
+- `split_per_step`
+- `birth_death_per_step`
+- `max_component_count_per_target`
+- `max_total_defect_mass_fraction`
+- `mean_total_defect_mass_fraction`
+- `post_split_dual_fraction`
+- `first_split_earliness`
+
+Hovedresultatet er todelt:
+
+- artifact-control holder rent
+- `1024:p1` viser seg mye sterkere som far-shell-horizon-lomme enn tidligere antatt
+
+Holdout-labelene ble:
+
+- `established_far_shell_horizon`: 22
+- `no_far_shell_horizon`: 1
+- `mixed_far_shell_horizon`: 1
+
+Primaerscoren bestod den smale retningssjekken:
+
+- decisive runs: 23
+- AUC: `1.000`
+- exact one-sided p: `0.043`
+- den ene no-horizon-runnen fikk lavest score
+
+Men dette er ikke en balansert confirmatory selector-validering:
+
+- negativklassen har bare ett decisive eksempel
+- diagnosen blir derfor `pre_registered_intensity_inconclusive_balance`
+- riktig tolkning er "lovende frossen score under ubalansert holdout", ikke "validert selector"
+
+En viktig korreksjon fra holdouten er at den post-hoc sterkeste enkeltmetrikken fra `v15cy` ikke holdt:
+
+- `compress_per_step` faller til AUC `0.114`
+- dette svekker en ren kompresjonsforklaring
+- de mer sammensatte intensitets-/churn-/birth-death-signalene er fortsatt mer interessante, men krever balansert kontrast
+
+Neste riktige steg:
+
+- ikke refit `v15cz`-scoren paa holdouten
+- ikke oppgrader til invariant-, Lorentz-, entanglement- eller partikkelclaim
+- hvis scoren skal testes videre, pre-registrer en kontrast-/balanseringsrunde mot svakere/negative placements
+- hvis ikke, rapporter `v15cz` som en ubalansert men informativ positiv retningssjekk for `1024:p1`
+
+Viktige filer:
+
+- `relational_universe_v15cz_pre_registered_continuous_intensity_holdout.py`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout.md`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_score_spec.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_calibration_manifest.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_target_summary.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_component_trajectories.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_event_log.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_blind_scores.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_runs.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_metric_scores.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_scope_summary.csv`
+- `Documentation/v15cz_pre_registered_continuous_intensity_holdout_diagnosis.csv`
+- `Documentation/v0_15cz_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cz.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
