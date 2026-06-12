@@ -3984,6 +3984,88 @@ Viktige filer:
 - `Documentation/v0_15cz_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15cz.md`
 
+## 10ba. v15da balanserte selector-testen og felte frozen genealogy-intensity som selector
+
+Etter `v15cz` var primaerproblemet ikke mer p1-budsjett, men mangel paa negative/weak-control outcomes.
+Raadgiverpanelet ble derfor brukt til aa velge neste smale runde:
+
+- Claude CLI ble forsokt, men svarte `Not logged in`
+- to remote Codex-subagenter anbefalte fresh frozen-score placement-kontrast
+- lokale modeller ble ikke brukt, for aa unngaa aa forstyrre laptop-jobber
+
+Designet ble:
+
+- target `1024`
+- `growth_seed = 202`
+- perturbasjon `add_chord`
+- placements `p0`, `p1`, `p2`
+- 12 friske seed-deltaer per placement: `9341/9391/9433/9479/9533/9587/9631/9677/9733/9781/9833/9887`
+- samme scaled budget som v15cz
+- v15cz `genealogy_intensity_index` score-spec lastet fra artefakt og brukt uten refit
+- primaer outcome er `established_far_shell_horizon` vs `no_far_shell_horizon`; `mixed` og `failed` er ikke-decisive
+
+Artifact-control holder rent:
+
+- startstorrelse er ren
+- requested perturbation matcher faktisk `add_chord`
+- score-spec er frosset fra v15cz
+
+Kontrasten balanserer testen godt nok:
+
+- decisive rows: `34`
+- established: `11`
+- no_horizon: `23`
+- mixed: `1`
+- failed: `1`
+
+Placement-resultatet er det viktigste:
+
+- `p1`: `10/12 established`, `1 no_horizon`, `1 mixed`, mean horizon `144.417`, mean score `0.678`
+- `p2`: `0/12 established`, `12 no_horizon`, mean horizon `0.000`, mean score `0.343`
+- `p0`: `1 established`, `10 no_horizon`, `1 failed`, mean horizon `13.917`, mean score `0.618`
+
+Dette skjerper bildet:
+
+- `p1/1024` replikerer som en robust far-shell-horizon-lomme
+- `p2/1024` er en ren negativ placement-kontroll i denne runden
+- `p0/1024` er ikke bare svak; den er en falsk-positiv intensity-kontroll, fordi den ofte scorer hoyt uten horizon
+
+Primaerscoren feiler derfor som selector under raadgiverkriteriene:
+
+- `genealogy_intensity_index` AUC: `0.711`
+- exact rank-DP one-sided p: `0.025`
+- median established-minus-no delta: `0.282`
+- p-verdien og deltaen er positive, men AUC er under terskel og falsk-positive p0-runs gjor scoren utilstrekkelig som selector
+
+Diagnosen blir:
+
+- `frozen_intensity_placement_contrast_failed`
+
+Operativ konsekvens:
+
+- ikke refit v15cz-scoren paa v15da
+- ikke oppgrader til partikkel-, Lorentz-, entanglement-, invariant- eller universell-geometri-claim
+- genealogy-intensity bor nedgraderes fra selector til deskriptiv observabel
+- neste naturlige observabel bor skille `p0` false-positive intensity fra `p1` horizon, sannsynligvis timing/phase/band-entry eller support-to-far-shell routing
+
+Viktige filer:
+
+- `relational_universe_v15da_frozen_intensity_placement_contrast.py`
+- `Documentation/v15da_frozen_intensity_placement_contrast.md`
+- `Documentation/v15da_frozen_intensity_placement_contrast_target_summary.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_component_trajectories.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_event_log.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_blind_scores.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_runs.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_placement_summary.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_matched_seed_compare.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_metric_scores.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_scope_summary.csv`
+- `Documentation/v15da_frozen_intensity_placement_contrast_diagnosis.csv`
+- `Documentation/v15da_advisor_panel_notes.csv`
+- `Documentation/v0_15da_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15da.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

@@ -1,0 +1,4 @@
+placement,role,source_scope,n_runs,n_established,n_no_horizon,n_mixed,horizon_labels,genealogy_patterns,mean_primary_score,median_primary_score,mean_horizon_span,mean_churn_event_count,mean_max_component_count,mean_max_total_defect_mass
+p0,fresh_weak_control,v15da_fresh_p0,12,1,10,0,established_far_shell_horizon:1;failed_far_shell_horizon:1;no_far_shell_horizon:10,split_fragment:1;split_persistent_dual:11,0.6178199181073505,0.5810230138751928,13.916666666666666,908.8333333333334,41.25,183.08333333333334
+p1,fresh_positive_anchor,v15da_fresh_p1,12,10,1,1,established_far_shell_horizon:10;mixed_far_shell_horizon:1;no_far_shell_horizon:1,split_persistent_dual:12,0.6784868315706842,0.7038658540417437,144.41666666666666,947.5833333333334,43.166666666666664,196.16666666666666
+p2,fresh_weak_control,v15da_fresh_p2,12,0,12,0,no_far_shell_horizon:12,heterogeneous_genealogy:2;split_persistent_dual:10,0.3431777367249709,0.2753917478207076,0.0,419.25,23.25,91.0

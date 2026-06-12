@@ -1,0 +1,6 @@
+diagnostic_family,status,note
+advisor_panel,remote_codex_panel_used_claude_unavailable,Claude CLI svarte Not logged in; to remote Codex sub-agents anbefalte frozen-score placement-kontrast. Lokale modeller ble unngatt.
+artifact_control,clean,Startstorrelse er ren og alle requested add_chord-perturbations matcher faktisk perturbasjon.
+pre_registration_control,frozen_v15cz_score_no_refit,Score-spec er lastet fra v15cz-artefakten og brukt uten refit paa fresh p0/p1/p2-runs.
+primary_contrast,frozen_intensity_placement_contrast_failed,"Balansen er nok, men primarscoren holder ikke: AUC=0.711, p=0.025, median_delta=0.282."
+next_step,downgrade_score_to_descriptive_observable,"Genealogy-intensity bor da brukes deskriptivt, ikke som selector."
