@@ -4066,6 +4066,68 @@ Viktige filer:
 - `Documentation/v0_15da_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15da.md`
 
+## 10bb. v15db viste at routing forklarer p0-falskpositiver, men ikke som tidlig selector
+
+Etter `v15da` var den viktigste mekanistiske spenningen:
+
+- p1 etablerer far-shell horizon robust
+- p2 er en ren negativ kontroll
+- p0 kan ha hoy frozen genealogy-intensity uten horizon
+
+`v15db` tok derfor et no-new-dynamics steg:
+
+- les bare `v15da` run-tabellen og komponenttrajectory-tabellen
+- ikke refit v15cz-score
+- test candidate-observabler som kan skille p0 high-score no-horizon fra p1 established
+- skill eksplisitt mellom early/pre-entry features og downstream routing/retention
+
+Hovedfunn:
+
+- p0 high-score no-horizon false positives har median `genealogy_intensity_index = 0.816`
+- p1 established har median `genealogy_intensity_index = 0.768`
+- baseline-intensity er derfor direkte misledende for akkurat denne kontrasten
+
+Downstream routing skiller derimot rent:
+
+- `tail_route_index`: AUC `1.000` for p1 established vs p0 high-score no-horizon
+- `entry_timing_index`: AUC `1.000` for samme kontrast
+- `intensity_without_route_pressure`: AUC `1.000` for samme kontrast naar lavere er bedre for established
+
+Men dette er ikke nok som predictor:
+
+- `tail_route_index` og `entry_timing_index` bruker downstream/entry-nare informasjon
+- de forklarer false positives, men er ikke legitim pre-horizon selector
+
+Beste early/pre-entry kandidat er bare moderat:
+
+- `component_early_far8_mass_fraction` AUC `0.720` for p1 established vs p0 false-positive
+- samme feature har AUC `0.783` for established vs no-horizon
+- `phase_entry_index` ligger lavere (`0.700` for p1-vs-p0 false-positive)
+
+Diagnosen blir:
+
+- `downstream_routing_separates_but_not_pre_entry`
+
+Operativ konsekvens:
+
+- genealogy-intensity forblir deskriptiv, ikke selector
+- downstream routing/entry forklarer p0-falskpositivene
+- neste riktige steg er aa instrumentere en tidligere route-entry/retention precursor
+- ikke bruk tail/first-high downstream-felter som om de var pre-horizon predictors
+- ikke oppgrader til partikkel-, Lorentz-, entanglement-, invariant- eller universell-geometri-claim
+
+Viktige filer:
+
+- `relational_universe_v15db_routing_phase_observable_synthesis.py`
+- `Documentation/v15db_routing_phase_observable_synthesis.md`
+- `Documentation/v15db_routing_phase_run_features.csv`
+- `Documentation/v15db_routing_phase_group_summary.csv`
+- `Documentation/v15db_routing_phase_metric_scores.csv`
+- `Documentation/v15db_routing_phase_false_positive_cases.csv`
+- `Documentation/v15db_routing_phase_diagnosis.csv`
+- `Documentation/v0_15db_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15db.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
