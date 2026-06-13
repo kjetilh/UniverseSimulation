@@ -4128,6 +4128,60 @@ Viktige filer:
 - `Documentation/v0_15db_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15db.md`
 
+## 10bc. v15dc testet strengere pre-horizon routing og fant bare svakt/moderat signal
+
+`v15db` forklarte p0-falskpositivene med downstream routing, men det var ikke godt nok som predictor.
+
+`v15dc` tok derfor en strengere no-new-dynamics runde:
+
+- les bare `v15da` run-tabellen og komponenttrajectory-tabellen
+- bruk ingen nye simuleringer
+- ikke refit v15cz-score
+- sensurer etablerte runs foer `first_high_step`
+- bruk `early_step_limit` for no-high-runs
+- hold downstream tail/retention som evaluering, ikke som feature
+
+Hovedresultat:
+
+- diagnosen er `pre_horizon_route_precursor_weak`
+- beste censored feature er `pre_far8_slope_per_100`
+- `pre_far8_slope_per_100` har AUC `0.780` for p1 established vs p0 high-score no-horizon
+- samme feature har AUC `0.794` for established vs no-horizon
+- dette er nyttig, men ikke sterkt nok for en selector-claim
+
+Gruppeavlesning:
+
+- p1 established median `pre_route_coherence_index = 0.339`
+- p0 high-score no-horizon median `pre_route_coherence_index = 0.125`
+- p1 established median `pre_mean_far8_fraction = 0.166`
+- p0 high-score no-horizon median `pre_mean_far8_fraction = 0.066`
+
+Viktig negativ kontroll:
+
+- baseline `genealogy_intensity_index` har fortsatt AUC `0.280` for p1 established vs p0 false positives
+- `pre_route_coherence_index` er bedre, men fortsatt bare `0.620`
+- eksisterende komponentproxyer gir altsaa ikke en ren pre-horizon selector
+
+Operativ konsekvens:
+
+- downstream routing forklarer false positives, men maa ikke brukes som predictor
+- censored komponentproxyer gir bare svakt/moderat tidlig signal
+- neste riktige steg er direkte per-snapshot route-entry/retention logging
+- ikke press eksisterende pre-horizon komponentproxyer videre uten ny instrumentering
+- ikke oppgrader til partikkel-, Lorentz-, entanglement-, invariant- eller universell-geometri-claim
+
+Viktige filer:
+
+- `relational_universe_v15dc_pre_horizon_routing_precursor_lab.py`
+- `Documentation/v15dc_pre_horizon_routing_precursor.md`
+- `Documentation/v15dc_pre_horizon_run_features.csv`
+- `Documentation/v15dc_pre_horizon_group_summary.csv`
+- `Documentation/v15dc_pre_horizon_metric_scores.csv`
+- `Documentation/v15dc_pre_horizon_false_positive_cases.csv`
+- `Documentation/v15dc_pre_horizon_diagnosis.csv`
+- `Documentation/v0_15dc_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dc.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
