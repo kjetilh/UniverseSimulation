@@ -1,0 +1,7 @@
+window_step,window_class,n_metrics,best_metric,best_auc_p1_vs_p0_false,best_auc_established_vs_no,best_direction
+64,strict_pre_entry,20,w64_component_count_slope_per_100,0.55,0.5454545454545454,higher_is_established
+96,strict_pre_entry,20,w96_mean_outer_share,0.56,0.616600790513834,higher_is_established
+128,entry_risk_window,22,w128_largest_component_slope_per_100,0.62,0.466403162055336,higher_is_established
+256,entry_risk_window,22,w256_positive_distance_margin_rate,0.75,0.7272727272727273,higher_is_established
+512,entry_risk_window,22,w512_positive_distance_margin_rate,0.8,0.7727272727272727,higher_is_established
+640,entry_risk_window,22,w640_ready_both_rate,0.8,0.83399209486166,higher_is_established

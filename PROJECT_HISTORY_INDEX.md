@@ -4253,6 +4253,54 @@ Viktige filer:
 - `Documentation/v0_15dd_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dd.md`
 
+## 10be. v15de testet route-prefix som strict pre-entry selector og fant ikke signalet
+
+`v15dd` forklarte p0-falskpositivene mekanistisk, men route-entry-feltene var outcome-naere.
+
+`v15de` gjorde derfor en no-new-dynamics syntese:
+
+- leser bare `v15dd_direct_route_snapshot_log.csv` og `v15dd_direct_route_run_summary.csv`
+- ingen ny simulasjonsdynamikk
+- faste tidlige vinduer: `64`, `96`, `128`, `256`, `512`, `640`
+- tidligste p1-established sustained high3-entry i v15dd er step `104`
+- derfor er bare vinduer `<=96` strict pre-entry
+- senere vinduer rapporteres som entry-risk, ikke som selector-claim
+
+Hovedfunn:
+
+- diagnosen er `pre_entry_feature_not_found`
+- beste strict pre-entry feature er `w96_mean_outer_share`
+- `w96_mean_outer_share` har AUC `0.560` for p1-established vs p0 high-score/no-horizon false positives
+- samme feature har AUC `0.617` for established vs no-horizon
+- beste strict `64`-vindu er `w64_component_count_slope_per_100`, AUC `0.550` mot p0 false positives
+- baseline `genealogy_intensity_index` er fortsatt ikke selector i denne kontrasten, AUC `0.280`
+
+Entry-risk-funn:
+
+- senere vinduer blir mer informative, men er for naer entry/outcome
+- beste entry-risk feature er `w640_ready_both_rate`
+- `w640_ready_both_rate` har AUC `0.800` mot p0 false positives og `0.834` for established vs no-horizon
+- `w512_positive_distance_margin_rate` og `w640_positive_distance_margin_rate` har ogsaa AUC `0.800` mot p0 false positives
+
+Tolkning:
+
+- route-loggen forklarer false positives, men gir ikke en legitim tidlig selector under strict pre-entry-vindu
+- bedre route-prefix squeezing er trolig avtagende avkastning
+- neste riktige retning er en ikke-route pre-entry observabel
+- mest plausible kandidatomraader er support-geometri, lokal gate/topologi, eller annen pre-entry struktur som ikke er direkte route-entry/retention
+- ikke bruk entry-risk-vinduene som evidence for invariant, Lorentz-likhet, entanglement, partikler eller universell geometri
+
+Viktige filer:
+
+- `relational_universe_v15de_pre_entry_feature_synthesis.py`
+- `Documentation/v15de_pre_entry_feature_synthesis.md`
+- `Documentation/v15de_pre_entry_run_features.csv`
+- `Documentation/v15de_pre_entry_metric_scores.csv`
+- `Documentation/v15de_pre_entry_window_summary.csv`
+- `Documentation/v15de_pre_entry_diagnosis.csv`
+- `Documentation/v0_15de_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15de.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
