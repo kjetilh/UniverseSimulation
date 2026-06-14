@@ -1,0 +1,6 @@
+analysis_group,n_runs,placements,labels,median_boundary_mass,median_static_support_degree,median_genealogy_intensity,mean_horizon_span
+non_decisive,2,p2:2,mixed_far_shell_horizon:2,7.4366666666666665,8.666666666666666,0.757199494677682,30.5
+other_no_horizon,1,p1:1,no_far_shell_horizon:1,13.5,10.0,0.37919595555260965,0.0
+p0_high_score_no_horizon,8,p0:8,no_far_shell_horizon:8,11.125,9.333333333333334,0.7400941115246612,0.0
+p1_established,7,p1:7,established_far_shell_horizon:7,13.5,10.0,0.8785684254075629,156.28571428571428
+p2_no_horizon,6,p2:6,no_far_shell_horizon:6,8.5,8.666666666666666,0.11574838616115177,0.0

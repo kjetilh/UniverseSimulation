@@ -1,0 +1,9 @@
+diagnostic_family,status,note
+artifact_control,clean,Startstorrelse er ren og requested add_chord-perturbations matcher faktisk perturbasjon.
+pre_registration,frozen_w32_boundary_mass_no_refit,Primarmetric er frosset til `w32_mean_boundary_per_mass` fra v15df; seed-deltaer er fresh og route-entry brukes ikke som feature.
+outcome_balance,holdout_label_balance,"Labels: established_far_shell_horizon:7;mixed_far_shell_horizon:2;no_far_shell_horizon:15; p1-established=7, p0-high-score/no-horizon=8, no_horizon=15."
+primary_result,boundary_mass_holdout_supported,"`w32_mean_boundary_per_mass` har AUC=0.821 mot p0 false positives, AUC=0.857 established-vs-no, median p1-p0false delta=2.375."
+static_confound_audit,static_support_reported_not_primary,"`static_mean_support_degree` har AUC=1.000 mot p0 false positives og rapporteres som placement/support-audit, ikke dynamisk selector."
+group_reading,p1_vs_p0_false_positive_boundary_mass,p1 median boundary/mass=13.500; p0 false-positive median=11.125; p1 static support degree=10.000; p0 static support degree=9.333.
+baseline_check,genealogy_intensity_control,Baseline genealogy-intensity har AUC=0.679 mot p0 false positives.
+next_step,scale_or_second_growth_seed_with_frozen_boundary_mass,Kandidaten overlever fresh holdout; neste test bor bruke samme frosne metric paa ny growth seed eller naboskala.

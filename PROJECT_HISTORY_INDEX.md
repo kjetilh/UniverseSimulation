@@ -4357,6 +4357,70 @@ Viktige filer:
 - `Documentation/v0_15df_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15df.md`
 
+## 10bg. v15dg holdt ut boundary/mass-kandidaten paa friske seeds
+
+`v15df` fant en lovende strict pre-entry ikke-route observabel, men statisk supportgeometri var en confound.
+
+`v15dg` gjorde derfor en pre-registrert fresh holdout:
+
+- target `1024`
+- growth seed `202`
+- perturbation `add_chord`
+- placements `p0,p1,p2`
+- fresh seed-deltaer `10091,10133,10177,10223,10271,10331,10391,10453`
+- primarmetric frosset til `w32_mean_boundary_per_mass`
+- retning frosset til `higher_is_established`
+- route-entry/retention brukes ikke som feature
+- statisk `static_mean_support_degree` rapporteres bare som support-/placement-audit
+
+Artifact og balanse:
+
+- artifact-control er `clean`
+- labels: `established_far_shell_horizon:7`, `no_far_shell_horizon:15`, `mixed_far_shell_horizon:2`
+- p1-established: `7`
+- p0 high-score/no-horizon false positives: `8`
+- p2 no-horizon: `6`
+
+Primarfunn:
+
+- diagnosen er `boundary_mass_holdout_supported`
+- `w32_mean_boundary_per_mass` har AUC `0.821` for p1-established vs p0 high-score/no-horizon false positives
+- samme metric har AUC `0.857` for established vs no-horizon
+- p1 median boundary/mass er `13.500`
+- p0 false-positive median boundary/mass er `11.125`
+- median p1-p0false delta er `2.375`
+- p2 no-horizon median boundary/mass er `8.500`
+
+Audit og begrensning:
+
+- `static_mean_support_degree` har AUC `1.000` mot p0 false positives
+- dette er placement-/support-informasjon og maa ikke behandles som dynamisk selector
+- baseline `genealogy_intensity_index` har AUC `0.679` mot p0 false positives
+- boundary/mass er dermed bedre enn genealogy-intensity i denne holdouten, men support-confound er fortsatt live
+
+Tolkning:
+
+- dette er den sterkeste repo-lokale stotten saa langt for en strict pre-entry dynamisk observabel
+- det er fortsatt bare en lokal, placement-betinget defect/response-observabel
+- ikke oppgrader til invariant, Lorentz-likhet, entanglement, partikler eller universell geometri
+- neste riktige steg er samme frosne boundary/mass-metric paa ny growth seed eller naboskala, med statisk supportgeometri eksplisitt rapportert som confound/audit
+
+Viktige filer:
+
+- `relational_universe_v15dg_boundary_mass_holdout.py`
+- `Documentation/v15dg_boundary_mass_holdout.md`
+- `Documentation/v15dg_boundary_mass_target_summary.csv`
+- `Documentation/v15dg_boundary_mass_component_trajectories.csv`
+- `Documentation/v15dg_boundary_mass_event_log.csv`
+- `Documentation/v15dg_boundary_mass_blind_scores.csv`
+- `Documentation/v15dg_boundary_mass_run_features.csv`
+- `Documentation/v15dg_boundary_mass_group_summary.csv`
+- `Documentation/v15dg_boundary_mass_matched_seed_compare.csv`
+- `Documentation/v15dg_boundary_mass_metric_scores.csv`
+- `Documentation/v15dg_boundary_mass_diagnosis.csv`
+- `Documentation/v0_15dg_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dg.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
