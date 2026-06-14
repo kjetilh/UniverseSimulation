@@ -1,0 +1,5 @@
+metric_family,window_step,n_metrics,best_metric,best_direction,best_auc_p1_vs_p0_false,best_auc_established_vs_no,median_p1_raw,median_p0_false_raw
+static_support_geometry,0,9,static_mean_support_degree,higher_is_established,1.0,0.9565217391304348,10.0,9.333333333333334
+strict_pre_entry_component_topology,32,34,w32_mean_boundary_per_mass,higher_is_established,0.96,0.8636363636363636,13.5,11.2
+strict_pre_entry_component_topology,64,34,w64_mean_boundary_per_mass,higher_is_established,0.88,0.8003952569169961,13.5,8.71111111111111
+strict_pre_entry_component_topology,96,34,w96_mean_boundary_per_mass,higher_is_established,0.8,0.7015810276679841,13.121794871794872,8.487179487179487

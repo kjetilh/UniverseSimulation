@@ -4301,6 +4301,62 @@ Viktige filer:
 - `Documentation/v0_15de_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15de.md`
 
+## 10bf. v15df fant en lovende strict ikke-route pre-entry observabel, men statisk support er en confound
+
+`v15de` fant ikke en legitim strict pre-entry selector i route-prefix-loggen.
+
+`v15df` gjorde derfor neste smale observabelsyntese uten ny dynamikk:
+
+- leser `v15da_frozen_intensity_placement_contrast_component_trajectories.csv`
+- leser `v15dd_direct_route_run_summary.csv` for labels, analysis groups og statisk supportgeometri
+- bruker strict vinduer `<=32`, `<=64`, `<=96`
+- route-entry/retention-felt brukes ikke som kandidatfeatures
+- downstream horizon/direct-route labels brukes bare som evalueringsfasit
+
+Primarfunn:
+
+- diagnosen er `pre_entry_support_topology_promising`
+- primarresultatet styres av strict dynamisk komponent/topologi, ikke statisk support
+- beste strict dynamiske ikke-route metric er `w32_mean_boundary_per_mass`
+- `w32_mean_boundary_per_mass` har AUC `0.960` for p1-established vs p0 high-score/no-horizon false positives
+- samme metric har AUC `0.864` for established vs no-horizon
+- ved `<=64` faller samme boundary/mass-signal til AUC `0.880` mot p0 false positives
+- ved `<=96` faller det til AUC `0.800` mot p0 false positives
+
+Confound-vakt:
+
+- beste statiske supportmetric er `static_mean_support_degree`
+- `static_mean_support_degree` har AUC `1.000` mot p0 false positives og AUC `0.957` established-vs-no
+- dette er statisk support-/placement-informasjon
+- derfor skal det rapporteres som placement-confound/audit, ikke som dynamisk selector
+
+Gruppeavlesning:
+
+- p1-established median `w96_gate_tension = 0.205`
+- p0 high-score/no-horizon median `w96_gate_tension = 0.156`
+- p1-established median `w96_trapped_core = 0.968`
+- p0 high-score/no-horizon median `w96_trapped_core = 0.694`
+- baseline `genealogy_intensity_index` har fortsatt AUC `0.280` mot p0 false positives
+
+Tolkning:
+
+- dette er det sterkeste repo-lokale pre-entry observabelsporet etter at route-prefix feilet
+- men signalet kan delvis vaere statisk placement/support-geometri
+- neste steg maa derfor fryse `w32_mean_boundary_per_mass` og rapportere statisk support som eksplisitt confound/audit
+- ikke oppgrader dette til invariant, Lorentz-likhet, entanglement, partikler eller universell geometri
+
+Viktige filer:
+
+- `relational_universe_v15df_pre_entry_support_topology_synthesis.py`
+- `Documentation/v15df_pre_entry_support_topology_synthesis.md`
+- `Documentation/v15df_pre_entry_support_topology_run_features.csv`
+- `Documentation/v15df_pre_entry_support_topology_family_summary.csv`
+- `Documentation/v15df_pre_entry_support_topology_group_summary.csv`
+- `Documentation/v15df_pre_entry_support_topology_metric_scores.csv`
+- `Documentation/v15df_pre_entry_support_topology_diagnosis.csv`
+- `Documentation/v0_15df_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15df.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
