@@ -1,0 +1,10 @@
+metric,direction,metric_family,n_established,n_no_horizon,n_p1_established,n_p0_high_score_no_horizon,auc_established_vs_no,auc_p1_established_vs_p0_false_positive,median_established_raw,median_no_horizon_raw,median_p1_established_raw,median_p0_false_positive_raw,median_p1_minus_p0_false_raw
+first_sustained_high3_earliness,higher_is_established,direct_entry,11,23,10,5,1.0,1.0,0.7984768599882835,0.0,0.8488576449912126,0.0,0.8488576449912126
+direct_retention_rate_after_entry,higher_is_established,direct_retention,11,23,10,5,1.0,1.0,0.9682926829268292,0.0,0.9781583175113189,0.0,0.9781583175113189
+last12_high_rate_direct,higher_is_established,direct_retention,11,23,10,5,1.0,1.0,1.0,0.0,1.0,0.0,1.0
+sustained_high3_rate,higher_is_established,direct_retention,11,23,10,5,1.0,1.0,0.7990654205607477,0.0,0.8329439252336448,0.0,0.8329439252336448
+direct_high_rate,higher_is_established,direct_entry,11,23,10,5,1.0,1.0,0.7990654205607477,0.0,0.8329439252336448,0.0,0.8329439252336448
+longest_high_run_direct,higher_is_established,direct_entry,11,23,10,5,1.0,1.0,318.0,0.0,330.0,0.0,330.0
+outer_pressure_without_high_rate,lower_is_established,failed_route_pressure,11,23,10,5,0.8379446640316206,1.0,0.1261682242990654,0.8014018691588785,0.08761682242990654,0.9369158878504673,-0.8492990654205608
+genealogy_intensity_index,higher_is_established,baseline_failed_selector,11,23,10,5,0.7114624505928854,0.28,0.750760486386797,0.4689840169479883,0.7676459205632665,0.8159207490599736,-0.048274828496707056
+direct_dropout_count_after_entry,lower_is_established,failed_retention,11,23,10,5,0.13636363636363635,0.15,1.0,0.0,1.0,0.0,1.0

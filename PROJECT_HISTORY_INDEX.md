@@ -4182,6 +4182,77 @@ Viktige filer:
 - `Documentation/v0_15dc_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dc.md`
 
+## 10bd. v15dd logget route-entry direkte og forklarte p0-falskpositivene mekanistisk
+
+`v15dc` viste at eksisterende sensurerte komponentproxyer bare gir svakt/moderat pre-horizon-signal.
+
+`v15dd` tok derfor det neste instrumenteringssteget:
+
+- rerun samme smale v15da-scope
+- target `1024`
+- `add_chord`
+- placements `p0,p1,p2`
+- seed-deltaer `9341..9887`
+- frossen v15da/v15cz genealogy-score gjenbrukes kun som sammenligningskolonne, ikke refittes
+- primarproduktet er `v15dd_direct_route_snapshot_log.csv`
+
+Per snapshot logger v15dd:
+
+- route phase: `near_field`, `outer_probe`, `mid_route`, `high_route`
+- high/mid/outer flags
+- `outer_pressure_without_high`
+- contiguous high-run id og lengde
+- `sustained_high3_flag`
+- retention-window
+- dropout og reentry etter sustained entry
+- mid-to-high transitions
+
+Hovedfunn:
+
+- diagnosen er `direct_route_entry_retention_separates_false_positives`
+- p1 established er `sustained_high_retention:10`
+- p0 high-score/no-horizon false positives er `outer_pressure_no_high_entry:5`
+- median direct retention er p1 `0.978` og p0 false-positive `0.000`
+- median outer-pressure-without-high er p1 `0.088` og p0 false-positive `0.937`
+
+Metrikker:
+
+- `first_sustained_high3_earliness`: AUC `1.000` for p1 established vs p0 false-positive
+- `direct_retention_rate_after_entry`: AUC `1.000`
+- `last12_high_rate_direct`: AUC `1.000`
+- `sustained_high3_rate`: AUC `1.000`
+- `direct_high_rate`: AUC `1.000`
+- `outer_pressure_without_high_rate`: AUC `1.000` for samme kontrast naar lavere er bedre
+- baseline `genealogy_intensity_index`: AUC `0.280`
+
+Tolkning:
+
+- dette er sterk mekanistisk separasjon av false positives
+- p0 kan ha hoy genealogy-intensity og mye outer pressure uten aa konvertere til sustained high-route entry
+- p1-established-runs gaar faktisk inn i high-route og holder retention
+- direct-route-feltene er outcome-naere og maa ikke brukes som om de var en pre-entry selector
+
+Operativ konsekvens:
+
+- neste riktige steg er aa avlede tidligere pre-entry features fra snapshot-loggen
+- ny selector-kandidat maa fryses foer ny kjøring
+- direct route outcome skal brukes som fasit/instrumentering, ikke som predictor
+- ikke oppgrader til partikkel-, Lorentz-, entanglement-, invariant- eller universell-geometri-claim
+
+Viktige filer:
+
+- `relational_universe_v15dd_direct_route_entry_retention_lab.py`
+- `Documentation/v15dd_direct_route_entry_retention.md`
+- `Documentation/v15dd_direct_route_target_summary.csv`
+- `Documentation/v15dd_direct_route_snapshot_log.csv`
+- `Documentation/v15dd_direct_route_run_summary.csv`
+- `Documentation/v15dd_direct_route_group_summary.csv`
+- `Documentation/v15dd_direct_route_label_crosstab.csv`
+- `Documentation/v15dd_direct_route_metric_scores.csv`
+- `Documentation/v15dd_direct_route_diagnosis.csv`
+- `Documentation/v0_15dd_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dd.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

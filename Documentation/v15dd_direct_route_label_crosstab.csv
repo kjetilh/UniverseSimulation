@@ -1,0 +1,6 @@
+far_shell_horizon_label,direct_route_entry_label,n_runs,placements,median_genealogy_intensity,median_outer_pressure_without_high_rate,median_retention_rate
+established_far_shell_horizon,sustained_high_retention,11,p0;p1,0.750760486386797,0.1261682242990654,0.9682926829268292
+failed_far_shell_horizon,entry_then_dropout,1,p0,0.4455948524864326,0.822429906542056,0.3577981651376147
+mixed_far_shell_horizon,entry_then_dropout,1,p1,0.4606915125582328,0.7079439252336449,0.5
+no_far_shell_horizon,no_route_entry,4,p2,0.026992310984354645,0.0,0.0
+no_far_shell_horizon,outer_pressure_no_high_entry,19,p0;p1;p2,0.5663438823996769,0.8504672897196262,0.0

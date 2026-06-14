@@ -1,0 +1,11 @@
+# Operativ anbefaling v0.15dd
+
+- `artifact_control`: `clean` fordi Startstorrelse er ren og alle requested add_chord-perturbations matcher faktisk perturbasjon.
+- `instrumentation_scope`: `direct_snapshot_route_logging` fordi v15dd rerunner v15da-scope og logger route_phase, sustained high3, retention, dropout og outer-pressure-without-high per snapshot.
+- `primary_result`: `direct_route_entry_retention_separates_false_positives` fordi `first_sustained_high3_earliness` skiller p1 established fra p0 false positives med AUC=1.000. Dette er mekanistisk instrumentering, ikke en pre-entry selector.
+- `group_reading`: `p1_vs_p0_false_positive_direct_route` fordi p1 established route labels `sustained_high_retention:10`; p0 high-score/no-horizon route labels `outer_pressure_no_high_entry:5`. Median retention p1=0.978, p0=0.000; outer-pressure-without-high p1=0.088, p0=0.937.
+- `baseline_check`: `genealogy_intensity_still_not_selector` fordi Baseline genealogy-intensity AUC mot p0 false positives er 0.280.
+- `next_step`: `derive_pre_entry_features_from_direct_route_log` fordi Bruk snapshot-loggen til aa lage eksplisitte pre-entry kandidater; ikke bruk direct route outcome som predictor.
+
+- Bruk direct-route-loggen som mekanistisk instrumentering, ikke som selector direkte.
+- Neste selector-kandidat maa vaere tidligere enn sustained high-entry og pre-registreres separat.
