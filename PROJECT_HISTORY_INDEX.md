@@ -4528,6 +4528,43 @@ Viktige filer:
 - `Documentation/v0_15di_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15di.md`
 
+## 10bj. v15dj gjorde support-kondisjonert pre-run audit foer mer dynamikk
+
+`v15dj` fulgte v15di sin anbefaling uten aa lage nye dynamiske resultater.
+
+Den leste `Documentation/v15di_growth_seed_placement_summary.csv` og testet om billige support-/base-features kunne brukes som pre-run prior for hvilke `1024/add_chord` placements som er verdt aa teste paa en ny growth seed.
+
+Aktive placements ble definert bare for audit-scoring som `established_rate >= 0.50`:
+
+- growth seed `202`: p1 aktiv (`0.875`)
+- growth seed `303`: p0 aktiv (`0.500`)
+- growth seed `303`: p2 aktiv (`0.500`)
+
+Hovedfunn:
+
+- en liten klasse `low local support volume/gap`-regler treffer minst en aktiv placement i begge kjente growth seeds
+- `low_ball2_minus_ball1`, `low_ball3_minus_ball1`, `low_ball3_minus_ball2`, `low_static_support_ball_2` og `low_static_support_ball_3` har alle `top1_hit_rate = 1.000`
+- men total top1-capture er bare `2/3` aktive placements (`0.667`)
+- seed-303 har baade p0 og p2 aktive, mens low-volume-reglene typisk peker paa p2 og mister p0
+
+Tolkning:
+
+- supportgeometri er nyttig som pre-run prior, ikke som validert selector
+- dette er en scout-kandidat, ikke en universell supportlov
+- det gir likevel en bedre neste dynamikkrunde enn blind fixed-placement label-budget
+- neste riktige steg er en pre-registrert fresh growth-seed holdout der support-rangering velger top1/top2 pluss kontrast foer dynamikken kjores
+
+Viktige filer:
+
+- `relational_universe_v15dj_support_conditioned_pre_run_audit.py`
+- `Documentation/v15dj_support_conditioned_pre_run_audit.md`
+- `Documentation/v15dj_support_conditioned_placement_features.csv`
+- `Documentation/v15dj_support_conditioned_rule_predictions.csv`
+- `Documentation/v15dj_support_conditioned_rule_scores.csv`
+- `Documentation/v15dj_support_conditioned_diagnosis.csv`
+- `Documentation/v0_15dj_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dj.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

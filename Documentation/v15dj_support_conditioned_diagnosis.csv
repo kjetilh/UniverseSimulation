@@ -1,0 +1,8 @@
+key,value,evidence
+artifact_scope,no_new_dynamics,read Documentation/v15di_growth_seed_placement_summary.csv
+active_definition,established_rate_ge_0.50,active placements are label-derived only for evaluating pre-run support rules
+best_scout_rule,low_ball2_minus_ball1,top1_hit_rate=1.000; total_capture_top1=0.667; status=scout_candidate_top1_hits_each_seed_but_incomplete
+scout_candidate,found_sparse_candidate,low_ball2_minus_ball1;low_ball3_minus_ball1;low_ball3_minus_ball2;low_static_support_ball_2;low_static_support_ball_3
+selector_validation,not_validated,only two growth seeds and six placement summaries; at least one active placement remains missed by top1 scout rules
+static_direction,not_universal,v15di already showed static degree direction changed across growth seeds; v15dj only ranks cheap base support features
+next_step,pre_register_low_local_support_volume_holdout,run fresh growth seed with support-only ranking before dynamics; test top1/top2 scout placements plus a contrast
