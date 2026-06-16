@@ -4421,6 +4421,113 @@ Viktige filer:
 - `Documentation/v0_15dg_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dg.md`
 
+## 10bh. v15dh viste at boundary/mass ikke transferer som p1-anchor over growth seed
+
+`v15dg` gjorde `w32_mean_boundary_per_mass` til den sterkeste lokale pre-entry-kandidaten saa langt, men den testen laa fortsatt paa growth seed `202`.
+
+`v15dh` holdt alt annet fast og flyttet bare base/growth seed:
+
+- target `1024`
+- growth seed `303`
+- perturbation `add_chord`
+- placements `p0,p1,p2`
+- fresh seed-deltaer `11003,11057,11113,11171,11239,11311,11383,11447`
+- primarmetric fortsatt frosset til `w32_mean_boundary_per_mass`
+- retning fortsatt `higher_is_established`
+- route-entry/retention brukes ikke som feature
+- statisk `static_mean_support_degree` rapporteres bare som support-/placement-audit
+
+Artifact og balanse:
+
+- artifact-control er `clean`
+- labels: `established_far_shell_horizon:8`, `no_far_shell_horizon:15`, `mixed_far_shell_horizon:1`
+- p1-established: `0`
+- p1 no-horizon: `8`
+- p0 established: `4`
+- p2 established: `4`
+
+Primarfunn:
+
+- diagnosen er `boundary_mass_not_growth_seed_transferable_under_original_anchor`
+- growth-seed-303 endrer placement-landskapet: p1 er ikke lenger positiv anchor
+- `w32_mean_boundary_per_mass` har AUC `0.463` for established vs no-horizon
+- den opprinnelige p1-vs-p0-false-positive-kontrasten finnes ikke paa denne growth seed-en
+
+Audit og begrensning:
+
+- `static_mean_support_degree` har AUC `0.217` established-vs-no
+- supportgeometrien er fortsatt viktig som audit, men retningen fra v15dg transferer ikke som selector
+- baseline `genealogy_intensity_index` har AUC `0.858` established-vs-no
+- genealogy-intensity korrelerer overall her, men er ikke primary og skal ikke refittes til claim
+
+Tolkning:
+
+- v15dg sin boundary/mass-kandidat maa nedgraderes fra mulig generell pre-entry selector til base-/placement-betinget observabel
+- `p1/1024` er ikke growth-seed-general
+- dette svekker universaliserende spraak og styrker behovet for aa forstaa base/support-signaturer
+- neste riktige steg er no-new-dynamics syntese av v15dg/v15dh for aa sammenligne base/support-signaturer og placement-respons foer mer label-budget brukes
+
+Viktige filer:
+
+- `relational_universe_v15dh_boundary_mass_growth_seed_holdout.py`
+- `Documentation/v15dh_boundary_mass_growth_seed_holdout.md`
+- `Documentation/v15dh_boundary_mass_target_summary.csv`
+- `Documentation/v15dh_boundary_mass_component_trajectories.csv`
+- `Documentation/v15dh_boundary_mass_event_log.csv`
+- `Documentation/v15dh_boundary_mass_blind_scores.csv`
+- `Documentation/v15dh_boundary_mass_run_features.csv`
+- `Documentation/v15dh_boundary_mass_group_summary.csv`
+- `Documentation/v15dh_boundary_mass_matched_seed_compare.csv`
+- `Documentation/v15dh_boundary_mass_metric_scores.csv`
+- `Documentation/v15dh_boundary_mass_diagnosis.csv`
+- `Documentation/v0_15dh_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dh.md`
+
+## 10bi. v15di viste at neste steg maa kondisjonere paa base/support foer mer dynamikk
+
+`v15di` var en no-new-dynamics syntese av `v15dg` og `v15dh`.
+
+Den sammenlignet growth seed `202` og `303` med samme target `1024`, perturbation `add_chord`, placements `p0,p1,p2`, og frossen boundary/mass-lesning.
+
+Hovedfunn:
+
+- artifact-control er `clean`
+- placement-landskapet er ikke growth-seed-stabilt
+- p1 established-rate endres `0.875 -> 0.000`
+- p0 established-rate endres `0.000 -> 0.500`
+- p2 established-rate endres `0.000 -> 0.500`
+
+Support-signaturer endres samtidig:
+
+- p0: `13,72,343 -> 3,4,827`
+- p1: `1,58,537 -> 12,13,22`
+- p2: `6,8,9 -> 25,177,430`
+
+Metric-audit:
+
+- `w32_mean_boundary_per_mass` AUC er `0.857` paa seed 202, `0.463` paa seed 303, og `0.563` samlet
+- `static_mean_support_degree` AUC er `0.967` paa seed 202, `0.217` paa seed 303, og `0.517` samlet
+- `genealogy_intensity_index` er deskriptivt interessant (`0.858` paa seed 303, `0.769` samlet), men ikke primary og skal ikke refittes til claim
+
+Tolkning:
+
+- v15dg sin positive boundary/mass-lesning var reell i seed-202-landskapet, men ikke growth-seed-general
+- fixed placement-labels er ikke nok; support-/base-signatur maa inn foer neste dynamikkvalg
+- dette svekker enhver retning mot universell selector akkurat naa
+- neste riktige steg er en billig support-/base-kondisjonert pre-run audit/selector som predikerer plausible placements foer mer dynamikk brukes
+
+Viktige filer:
+
+- `relational_universe_v15di_growth_seed_signature_synthesis.py`
+- `Documentation/v15di_growth_seed_signature_synthesis.md`
+- `Documentation/v15di_growth_seed_placement_summary.csv`
+- `Documentation/v15di_growth_seed_support_delta.csv`
+- `Documentation/v15di_growth_seed_outcome_matrix.csv`
+- `Documentation/v15di_growth_seed_metric_audit.csv`
+- `Documentation/v15di_growth_seed_diagnosis.csv`
+- `Documentation/v0_15di_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15di.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

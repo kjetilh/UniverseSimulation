@@ -1,0 +1,7 @@
+growth_seed,placement,n_runs,established,no_horizon,mixed,dominant_label
+202,0,8,0,8,0,no_far_shell_horizon
+202,1,8,7,1,0,established_far_shell_horizon
+202,2,8,0,6,2,no_far_shell_horizon
+303,0,8,4,4,0,established_far_shell_horizon
+303,1,8,0,8,0,no_far_shell_horizon
+303,2,8,4,3,1,established_far_shell_horizon
