@@ -4669,6 +4669,60 @@ Viktige filer:
 - `Documentation/v0_15dl_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dl.md`
 
+## 10bm. v15dm testet return-probability-scouten paa fresh seed og fikk bare partial capture
+
+`v15dm` var en liten pre-registrert fresh holdout av v15dl sin beste morfologi-scout.
+
+Disiplinen var:
+
+- target `1024`
+- growth seed `505`
+- perturbation `add_chord`
+- placements `p0,p1,p2`
+- 4 friske seed-deltaer per placement
+- pre-run ranking skrevet til `v15dm_frozen_return_pre_run_ranking.csv` foer dynamikk-loop
+- frossen rank-metric: `delta_return_t2`, high-is-better, med `delta_return_t4` som tiebreak
+
+Pre-run ranking:
+
+- rank 1: p0, support `5,98,599`, `delta_return_t2 = -0.020`
+- rank 2: p1, support `7,8,9`, `delta_return_t2 = -0.025`
+- rank 3: p2, support `13,14,263`, `delta_return_t2 = -0.033`
+
+Dynamisk resultat:
+
+- p0: `established_far_shell_horizon:3; no_far_shell_horizon:1`, established-rate `0.750`
+- p1: `established_far_shell_horizon:1; no_far_shell_horizon:3`, established-rate `0.250`
+- p2: `established_far_shell_horizon:3; no_far_shell_horizon:1`, established-rate `0.750`
+
+Hovedfunn:
+
+- active placements = `p0;p2`
+- top1 capture = `0.500`
+- top2 capture = `0.500`
+- return-scout-status = `return_scout_weak_partial_capture`
+- `w32_mean_boundary_per_mass` er svak/feilrettet som audit (`AUC = 0.300` established-vs-no)
+- genealogy-intensity er deskriptivt sterkt i denne lille runden (`AUC = 1.000`), men er ikke pre-run selector og skal ikke refittes til claim
+
+Tolkning:
+
+- `delta_return_t2` er mer interessant enn low-support-rank, men overlever ikke som ren selector
+- viktigere lærdom er at flere placements kan vaere aktive paa samme base
+- neste retning bor vaere multi-active/base-landscape observabeldesign, ikke mer top1-rangering eller post-hoc refit av `delta_return_t2`
+- dette er ikke evidens for Lorentz-likhet, global invariant, entanglement, partikler eller universell emergent geometri
+
+Viktige filer:
+
+- `relational_universe_v15dm_frozen_return_probability_holdout.py`
+- `Documentation/v15dm_frozen_return_probability_holdout.md`
+- `Documentation/v15dm_frozen_return_pre_run_ranking.csv`
+- `Documentation/v15dm_frozen_return_placement_summary.csv`
+- `Documentation/v15dm_frozen_return_evaluation.csv`
+- `Documentation/v15dm_frozen_return_metric_scores.csv`
+- `Documentation/v15dm_frozen_return_diagnosis.csv`
+- `Documentation/v0_15dm_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dm.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

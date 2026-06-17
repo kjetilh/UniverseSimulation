@@ -1,0 +1,11 @@
+key,value,evidence
+primary_rank_metric,delta_return_t2,direction=higher_is_better; tiebreak=delta_return_t4
+pre_registration,morphology_rank_written_before_dynamics,pre-run ranking CSV is written before defect run loop
+active_threshold,established_rate_ge_0.50,"active placement is evaluated after dynamics, not used in morphology ranking"
+top1_placements,p0,p0:est=0.750
+top2_placements,p0;p1,p0:est=0.750;p1:est=0.250
+contrast_placements,p2,p2:est=0.750
+active_placements,p0;p2,active_total=2
+top1_capture_fraction,0.500,captured=1; active_total=2
+top2_capture_fraction,0.500,captured=1; active_total=2
+return_scout_status,return_scout_weak_partial_capture,fresh growth-seed evaluation of the frozen v15dl morphology scout

@@ -1,0 +1,9 @@
+metric,role,direction,n_established,n_no_horizon,n_p1_established,n_p0_high_score_no_horizon,n_p2_no_horizon,auc_established_vs_no,auc_p1_established_vs_p0_false_positive,auc_p1_established_vs_p2_no_horizon,median_established_raw,median_no_horizon_raw,median_p1_established_raw,median_p0_false_positive_raw,median_p2_no_horizon_raw,median_p1_minus_p0_false_raw,median_p1_minus_p2_no_raw
+w32_mean_boundary_per_mass,primary_frozen_dynamic,higher_is_established,7,5,1,0,1,0.3,nan,1.0,4.0,6.0,6.0,nan,4.0,nan,2.0
+w32_mean_boundary_to_volume,secondary_same_snapshot,higher_is_established,7,5,1,0,1,0.3,nan,1.0,4.0,6.0,6.0,nan,4.0,nan,2.0
+w32_mean_total_boundary_edges,secondary_same_snapshot,higher_is_established,7,5,1,0,1,0.35714285714285715,nan,1.0,9.2,12.0,12.0,nan,8.0,nan,4.0
+w64_mean_boundary_per_mass,secondary_later_strict,higher_is_established,7,5,1,0,1,0.3,nan,1.0,4.0,6.0,6.0,nan,4.0,nan,2.0
+w96_mean_boundary_per_mass,secondary_later_strict,higher_is_established,7,5,1,0,1,0.3,nan,1.0,4.0,6.0,6.0,nan,4.0,nan,2.0
+static_mean_support_degree,static_support_audit,higher_is_established,7,5,1,0,1,0.2714285714285714,nan,1.0,8.666666666666666,9.666666666666666,9.666666666666666,nan,8.666666666666666,nan,1.0
+static_support_ball_1,static_support_audit,higher_is_established,7,5,1,0,1,0.2714285714285714,nan,1.0,24.0,28.0,28.0,nan,24.0,nan,4.0
+genealogy_intensity_index,baseline_failed_selector,higher_is_established,7,5,1,0,1,1.0,nan,1.0,0.6846637956110929,0.0,0.6122110475892677,nan,0.0,nan,0.6122110475892677

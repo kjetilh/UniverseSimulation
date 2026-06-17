@@ -1,0 +1,4 @@
+growth_seed,placement,pre_run_primary_rank,pre_run_top1,pre_run_top2,support_signature,rank_metric,rank_metric_value,rank_tiebreak,rank_tiebreak_value,n_runs,label_counts,established_rate,active_placement,mixed_rate,no_horizon_rate,mean_horizon_span,median_boundary_mass,median_genealogy_intensity
+505,0,1,1,1,"5,98,599",delta_return_t2,-0.020093222474174888,delta_return_t4,-0.010663633927297855,4,established_far_shell_horizon:3;no_far_shell_horizon:1,0.75,1,0.0,0.25,129.0,4.0,0.699892896370915
+505,1,2,0,1,"7,8,9",delta_return_t2,-0.025359133552410873,delta_return_t4,-0.02676693972667732,4,established_far_shell_horizon:1;no_far_shell_horizon:3,0.25,0,0.0,0.75,43.0,6.0,0.23842099156050944
+505,2,3,0,0,"13,14,263",delta_return_t2,-0.03256172839506177,delta_return_t4,-0.025134816529492454,4,established_far_shell_horizon:3;no_far_shell_horizon:1,0.75,1,0.0,0.25,129.0,4.116666666666667,0.5854807797227211
