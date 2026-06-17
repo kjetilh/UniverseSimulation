@@ -4565,6 +4565,110 @@ Viktige filer:
 - `Documentation/v0_15dj_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dj.md`
 
+## 10bk. v15dk falsifiserte low-volume support-rank som fresh selector
+
+`v15dk` gjorde den pre-registrerte fresh growth-seed-holdouten som v15dj anbefalte.
+
+Disiplinen var:
+
+- target `1024`
+- growth seed `404`
+- perturbation `add_chord`
+- placements `p0,p1,p2`
+- 8 friske seed-deltaer per placement
+- support-ranking skrevet til `v15dk_support_rank_pre_run_ranking.csv` foer dynamikk-loop
+
+Pre-run ranking:
+
+- rank 1: p0, support `3,27,434`, `support_ball2_minus_ball1 = 35`, `support_ball_3 = 107`
+- rank 2: p2, support `5,159,1003`, `support_ball2_minus_ball1 = 40`, `support_ball_3 = 112`
+- rank 3: p1, support `12,14,465`, `support_ball2_minus_ball1 = 56`, `support_ball_3 = 175`
+
+Dynamisk resultat:
+
+- p0: `no_far_shell_horizon:8`, established-rate `0.000`
+- p2: `no_far_shell_horizon:8`, established-rate `0.000`
+- p1: `established_far_shell_horizon:4; mixed_far_shell_horizon:1; no_far_shell_horizon:3`, established-rate `0.500`
+
+Hovedfunn:
+
+- top1 capture = `0.000`
+- top2 capture = `0.000`
+- support-rank-status = `support_rank_not_supported`
+- `w32_mean_boundary_per_mass` er svak som audit (`AUC = 0.526` established-vs-no)
+
+Tolkning:
+
+- v15dj sin low local support volume/gap-regel skal pensjoneres som selector-kandidat
+- p1/1024 er ikke universell, men den kan reaktiveres paa ny base etter aa ha feilet paa growth seed 303
+- add_chord-landskapet er fortsatt live, men enkelt statisk support-volume forklarer ikke placement-switchene
+- neste retning bor vaere ny observabeldesign eller skala-/landskapsanalyse, ikke mer blind low-volume support-rank holdout
+
+Viktige filer:
+
+- `relational_universe_v15dk_pre_registered_support_rank_holdout.py`
+- `Documentation/v15dk_pre_registered_support_rank_holdout.md`
+- `Documentation/v15dk_support_rank_pre_run_ranking.csv`
+- `Documentation/v15dk_support_rank_placement_summary.csv`
+- `Documentation/v15dk_support_rank_evaluation.csv`
+- `Documentation/v15dk_support_rank_metric_scores.csv`
+- `Documentation/v15dk_support_rank_diagnosis.csv`
+- `Documentation/v0_15dk_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dk.md`
+
+## 10bl. v15dl fant en svak return-probability-morfologi-scout etter support-rank-feilen
+
+`v15dl` var en no-new-dynamics syntese etter v15dk.
+
+Den gjorde ikke nye defect-runs. Den leste eksisterende `1024/add_chord/p0,p1,p2`-resultater fra:
+
+- v15dg: growth seed `202`
+- v15dh: growth seed `303`
+- v15dk: growth seed `404`
+
+I tillegg rekonstruerte den basegrafene og add_chord-proben for hvert `(growth_seed, placement)` og la til billige pre-run morfologiobservabler:
+
+- lokal volumvekst rundt support
+- shortcut/local-efficiency-endring
+- return-probability og spectral-dimension proxy
+- enkel Forman-style curvature rundt support/chord-endepunkt
+
+Landskapsresultatet er konkret:
+
+- seed 202: aktiv `p1`, established-rate `0.875`
+- seed 303: aktive `p0;p2`, begge established-rate `0.500`
+- seed 404: aktiv `p1`, established-rate `0.500`
+
+Hovedfunn:
+
+- artifact-control er clean
+- v15dk sin low-volume support-rank er fortsatt pensjonert
+- beste nye placement-level post-hoc metric er `delta_return_t2`, AUC `0.900`
+- beste regel er `delta_return_t2`/high, men bare som `weak_posthoc_top2_scout`
+- top1 capture = `0.750`
+- top2 capture = `0.750`
+
+Tolkning:
+
+- return-probability-endring er mer interessant enn den pensjonerte low-support-rankingen
+- men dette er fortsatt post-hoc og svakt, ikke en validert selector
+- hvis vi bruker mer dynamisk budsjett, maa `delta_return_t2`/high fryses foer en liten v15dm-holdout
+- dette er ikke evidens for Lorentz-likhet, global invariant, entanglement, partikler eller universell emergent geometri
+
+Viktige filer:
+
+- `relational_universe_v15dl_base_landscape_morphology_synthesis.py`
+- `Documentation/v15dl_base_landscape_morphology_synthesis.md`
+- `Documentation/v15dl_base_landscape_target_summary.csv`
+- `Documentation/v15dl_base_landscape_morphology_features.csv`
+- `Documentation/v15dl_base_landscape_placement_summary.csv`
+- `Documentation/v15dl_base_landscape_seed_summary.csv`
+- `Documentation/v15dl_base_landscape_metric_scores.csv`
+- `Documentation/v15dl_base_landscape_rule_scores.csv`
+- `Documentation/v15dl_base_landscape_diagnosis.csv`
+- `Documentation/v0_15dl_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dl.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

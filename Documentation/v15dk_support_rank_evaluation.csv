@@ -1,0 +1,10 @@
+key,value,evidence
+primary_rank_metric,support_ball2_minus_ball1,direction=lower_is_better; tiebreak=support_ball_3
+active_threshold,established_rate_ge_0.50,"active placement is evaluated after dynamics, not used in support ranking"
+top1_placements,p0,p0:est=0.000
+top2_placements,p0;p2,p0:est=0.000;p2:est=0.000
+contrast_placements,p1,p1:est=0.500
+active_placements,p1,active_total=1
+top1_capture_fraction,0.000,captured=0; active_total=1
+top2_capture_fraction,0.000,captured=0; active_total=1
+support_rank_status,support_rank_not_supported,fresh growth-seed evaluation of the pre-run ranking

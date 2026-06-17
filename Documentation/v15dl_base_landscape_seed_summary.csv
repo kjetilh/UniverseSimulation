@@ -1,0 +1,4 @@
+growth_seed,active_placements,strongest_placement,strongest_established_rate,landscape_class,placement_rates,support_signatures
+202,p1,p1,0.875,single_active_p1,p0:0.000;p1:0.875;p2:0.000,"p0:13,72,343;p1:1,58,537;p2:6,8,9"
+303,p0;p2,p0,0.5,multi_active_p0_p2,p0:0.500;p1:0.000;p2:0.500,"p0:3,4,827;p1:12,13,22;p2:25,177,430"
+404,p1,p1,0.5,single_active_p1,p0:0.000;p1:0.500;p2:0.000,"p0:3,27,434;p1:12,14,465;p2:5,159,1003"
