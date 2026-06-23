@@ -1,0 +1,7 @@
+diagnostic_family,status,note
+input_scope,no_new_dynamics_synthesis,Combined v15dl seeds 202/303/404 and v15dm seed 505; old dynamic outputs are reused only as response labels.
+landscape_state,multi_active_base_conditioned_landscape,Active sets by seed: 202:p1; 303:p0;p2; 404:p1; 505:p0;p2. Unique active patterns=2; active count range=1-2.
+placement_selector_language,single_winner_selector_deprioritized,v15dm showed active p0;p2 while frozen top1/top2 return ranking captured only one active placement.
+metric_screen,posthoc_metric_audit_only,Best placement-level metric is delta_return_t4/high with AUC=0.861; this is descriptive because it is screened after outcomes.
+set_rule_screen,posthoc_full_coverage_nontrivial_but_false_positive_set_rule,Best nontrivial full-coverage rule still has false positives: 202:pred=p0;p1/active=p1/miss=none/fp=p0 | 303:pred=p0;p2/active=p0;p2/miss=none/fp=none | 404:pred=p0;p1/active=p1/miss=none/fp=p0 | 505:pred=p0;p2/active=p0;p2/miss=none/fp=none.
+next_step,treat_as_observable_design_not_selector; require_fresh_holdout_if_used,Do not promote any set rule without a fresh pre-registered holdout over at least two new growth seeds.

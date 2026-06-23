@@ -1,0 +1,5 @@
+growth_seed,source,placement_count,active_count,active_placements,landscape_class,strongest_placement,strongest_established_rate,placement_rates,support_signatures
+202,v15dl,3,1,p1,single_active_p1,p1,0.875,p0:0.000;p1:0.875;p2:0.000,"p0:13,72,343;p1:1,58,537;p2:6,8,9"
+303,v15dl,3,2,p0;p2,multi_active_p0_p2,p0,0.5,p0:0.500;p1:0.000;p2:0.500,"p0:3,4,827;p1:12,13,22;p2:25,177,430"
+404,v15dl,3,1,p1,single_active_p1,p1,0.5,p0:0.000;p1:0.500;p2:0.000,"p0:3,27,434;p1:12,14,465;p2:5,159,1003"
+505,v15dm,3,2,p0;p2,multi_active_p0_p2,p0,0.75,p0:0.750;p1:0.250;p2:0.750,"p0:5,98,599;p1:7,8,9;p2:13,14,263"

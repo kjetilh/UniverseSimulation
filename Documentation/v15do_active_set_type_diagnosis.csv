@@ -1,0 +1,6 @@
+diagnostic_family,status,note
+input_scope,no_new_dynamics_synthesis,Reads v15dn placement rows and derives seed-level pre-run contrasts only.
+type_scope,observed_two_type_landscape_only,Only observed classes are p1_only and p0_p2 across four seeds; this is too small for validation.
+multiplicity_guard,underdetermined,Exact compact rules=110; exact metrics=ball3_over_ball1;base_return_t2;base_return_t4;base_return_t6;delta_ball3_efficiency;delta_return_t2;delta_return_t4;delta_return_t6;local_ball3_beta1;local_ball3_boundary_to_volume;new_edge_mean_forman;new_edge_min_forman;post_return_spectral_dim_proxy;post_return_t2;post_return_t4;post_return_t6;support_ball_2.
+type_discriminator_screen,many_posthoc_exact_type_discriminators_found_underdetermined,"Found 110 exact compact rules across 17 metrics (ball3_over_ball1;base_return_t2;base_return_t4;base_return_t6;delta_ball3_efficiency;delta_return_t2;delta_return_t4;delta_return_t6;local_ball3_beta1;local_ball3_boundary_to_volume;new_edge_mean_forman;new_edge_min_forman;post_return_spectral_dim_proxy;post_return_t2;post_return_t4;post_return_t6;support_ball_2). Best sorted rule is delta_return_t2/p0_ge_p1, but the screen is underdetermined."
+next_step,choose_one_pre_registered_guard_then_v15dp_two_seed_holdout,Do not claim a selector before a fresh pre-registered holdout over at least two new growth seeds.

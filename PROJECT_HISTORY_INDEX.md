@@ -4723,6 +4723,100 @@ Viktige filer:
 - `Documentation/v0_15dm_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dm.md`
 
+## 10bn. v15dn flyttet add_chord-sporet fra single-winner til aktivt-sett-landskap
+
+`v15dn` var en no-new-dynamics syntese etter v15dm.
+Den brukte eksisterende dynamikk fra v15dl og v15dm, og innforte en mer passende responsform:
+ikke "hvilken placement vinner?", men "hvilket lite sett av placements er aktivt paa denne basegrafen?"
+
+Scope:
+
+- target `1024`
+- perturbation `add_chord`
+- placements `p0,p1,p2`
+- growth seeds `202/303/404/505`
+- ingen ny dynamikk
+- eksisterende dynamiske labels brukes bare som responsekolonner
+
+Seed-landskap:
+
+- seed 202: aktivt sett `p1`
+- seed 303: aktivt sett `p0;p2`
+- seed 404: aktivt sett `p1`
+- seed 505: aktivt sett `p0;p2`
+
+Hovedfunn:
+
+- single-winner-framing er feil modell for dette sporet, fordi flere placements kan vaere aktive paa samme base
+- beste placement-level post-hoc audit er `delta_return_t4`/high med AUC `0.861`
+- `delta_return_t2` blir dermed ikke reddet som selector; return-observabler er fortsatt audit/observabeldesign
+- beste ikke-trivielle aktivt-sett-screen er `local_ball3_beta1`/low/top2
+- denne screenen har coverage `1.000`, precision `0.750`, burden `0.667`, exact-set-match `0.500`
+- den har falske positive `p0` paa single-active seeds `202` og `404`
+
+Tolkning:
+
+- v15dn gir ny viten fordi problemet bor modelleres som et base-betinget aktivt-sett-landskap
+- v15dn gir ikke en validert selector, fordi den beste full-coverage-regelen fortsatt har falske positive og er post-hoc
+- en eventuell neste dynamiske runde maa fryse en aktivt-sett-regel foer run og teste minst to nye growth seeds
+- alternativt bor vi bygge en ny pre-run observabel som spesielt prover aa skille `p1`-only seeds fra `p0;p2` seeds foer mer dynamikk
+- dette er ikke evidens for Lorentz-likhet, global invariant, entanglement, partikler eller universell emergent geometri
+
+Viktige filer:
+
+- `relational_universe_v15dn_multi_active_landscape_synthesis.py`
+- `Documentation/v15dn_multi_active_landscape_synthesis.md`
+- `Documentation/v15dn_multi_active_landscape_placement_rows.csv`
+- `Documentation/v15dn_multi_active_landscape_seed_summary.csv`
+- `Documentation/v15dn_multi_active_landscape_set_rule_scores.csv`
+- `Documentation/v15dn_multi_active_landscape_metric_scores.csv`
+- `Documentation/v15dn_multi_active_landscape_diagnosis.csv`
+- `Documentation/v0_15dn_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dn.md`
+
+## 10bo. v15do fant mange perfekte aktivt-sett-type-screens, som betyr underbestemmelse
+
+`v15do` var en no-new-dynamics syntese etter v15dn.
+Den brukte v15dn sine placement-rader og laget seed-level pre-run kontraster for aa teste om de to observerte aktivt-sett-landskapene kunne skilles:
+
+- `p1_only`: seeds `202` og `404`
+- `p0_p2`: seeds `303` og `505`
+
+Scope:
+
+- target `1024`
+- perturbation `add_chord`
+- placements `p0,p1,p2`
+- growth seeds `202/303/404/505`
+- ingen ny dynamikk
+- response er aktivt sett fra eksisterende v15dn/v15dl/v15dm-rader
+
+Hovedfunn:
+
+- det finnes perfekte kompakte post-hoc type-regler paa de fire eksisterende seedene
+- best sorterte comparison-regel er `delta_return_t2/p0_ge_p1 -> p0_p2 else p1_only`
+- denne regelen har exact-set-match `1.000`, coverage `1.000`, precision `1.000`, burden `0.500`
+- men det finnes `110` perfekte kompakte regler over `17` metrikker
+- dette er ikke robusthet; det er underbestemmelse fra for lite n og for stort feature-rom
+
+Tolkning:
+
+- v15do gir nyttig ny viten ved aa vise at aktivt-sett-type kan beskrives mer kompakt enn v15dn sin top2-screen
+- samtidig svekker v15do selector-claimet, fordi altfor mange post-hoc regler forklarer de samme fire seedene
+- neste dynamiske runde maa velge og fryse en enkel type-guard foer run, helst paa minst to nye growth seeds
+- ikke refit `delta_return_t2`, `local_ball3_beta1` eller terskler etter holdout
+- dette er ikke evidens for Lorentz-likhet, global invariant, entanglement, partikler eller universell emergent geometri
+
+Viktige filer:
+
+- `relational_universe_v15do_active_set_type_discriminator_synthesis.py`
+- `Documentation/v15do_active_set_type_discriminator_synthesis.md`
+- `Documentation/v15do_active_set_type_seed_features.csv`
+- `Documentation/v15do_active_set_type_comparison_rules.csv`
+- `Documentation/v15do_active_set_type_threshold_rules.csv`
+- `Documentation/v15do_active_set_type_diagnosis.csv`
+- `Documentation/v0_15do_operativ_anbefaling.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
