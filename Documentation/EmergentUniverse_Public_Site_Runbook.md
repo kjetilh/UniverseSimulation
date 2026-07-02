@@ -44,6 +44,16 @@ Expose a public RAG endpoint only after a separate hardening pass covers:
 - prompt/output claim boundaries
 - no admin or ingestion endpoints on the public host
 
+The first implementation target for that hardening is the token-scoped
+`/v1/research/*` surface in `rag_service/`, not the open local developer
+endpoints under `/v1/query` and `/v1/chat`. See
+`rag_service/docs/RAG_SERVICE_API.md` for the current research hardening
+settings.
+
+Production deployments should use `RESEARCH_RATE_LIMIT_BACKEND=postgres` after
+running `python -m scripts.apply_migrations`. The in-memory limiter is only a
+local/dev fallback and must not be treated as enough for public traffic.
+
 ## Deployment target
 
 The staging VPS already hosts `staging.haven.digipomps.org` and related nginx

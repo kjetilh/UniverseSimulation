@@ -30,6 +30,48 @@ For lesende klienter som ikke skal ha admin-tilgang:
 - `GET /v1/research/cases/{case_id}/documents/{doc_id}/links`
 - `GET /v1/research/documents/{doc_id}/download`
 
+Krever `Authorization: Bearer <token>` fra `RESEARCH_API_TOKENS_JSON`.
+`access_token` i query string er deaktivert som default fordi slike tokens lett
+havner i logger og nettleserhistorikk. Signerte nedlastingslenker bruker egne
+`exp`/`sig`/`cases`-parametre og er fortsatt korte, avgrensede grants.
+
+### Research hardening
+
+`/v1/research/query` legger `research_hardening` inn i `retrieval_debug`:
+
+- `auth`: token-label, token-fingeravtrykk, scopes og om tokenet er case-scoped
+- `rate_limit`: brukt/igjen innen gjeldende minuttvindu
+- `citation_audit`: antall citations, unike dokumenter og eventuelle brudd
+- `freshness`: aktivt dokumentantall, tombstone-pending og corpus-alder
+
+Default policy:
+
+- `RESEARCH_ALLOW_QUERY_ACCESS_TOKEN=false`
+- `RESEARCH_RATE_LIMIT_BACKEND=memory`
+- `RESEARCH_RATE_LIMIT_PER_MINUTE=60`
+- `RESEARCH_RATE_LIMIT_BURST=120`
+- `RESEARCH_MIN_CITATIONS=2`
+- `RESEARCH_MIN_UNIQUE_DOCS=1`
+- `RESEARCH_ENFORCE_RESPONSE_AUDIT=true`
+- `RESEARCH_FRESHNESS_MAX_AGE_SECONDS=0`
+- `RESEARCH_ENFORCE_FRESHNESS=false`
+
+`RESEARCH_ENFORCE_FRESHNESS=false` betyr at freshness rapporteres, men ikke
+blokkerer svar. Sett `RESEARCH_FRESHNESS_MAX_AGE_SECONDS` og
+`RESEARCH_ENFORCE_FRESHNESS=true` for en public deployment der stale corpus skal
+feile lukket.
+
+For produksjon med flere workers eller flere instanser skal
+`RESEARCH_RATE_LIMIT_BACKEND=postgres` brukes. Den backenden bruker tabellen
+`rag_research_rate_limits`, opprettet av migrasjonen
+`app/rag/index/migrations/0001_research_rate_limits.sql`, og gir delt
+rate-limit state på tvers av prosesser. Kjør `python -m scripts.apply_migrations`
+eller `python -m scripts.rebuild_index` før research-API-et startes med denne
+backenden.
+
+For `emergentuniverse.haven.digipomps.org` bor dynamisk RAG ikke eksponeres for
+allmennheten for denne policyen er konfigurert og verifisert mot live corpus.
+
 ## Admin-endepunkter
 
 Krever `X-API-Key`.

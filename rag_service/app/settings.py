@@ -26,6 +26,15 @@ class Settings(BaseSettings):
     research_api_tokens_json: str = ""
     research_download_signing_key: str = ""
     research_download_ttl_seconds: int = 300
+    research_allow_query_access_token: bool = False
+    research_rate_limit_backend: str = "memory"
+    research_rate_limit_per_minute: int = 60
+    research_rate_limit_burst: int = 120
+    research_min_citations: int = 2
+    research_min_unique_docs: int = 1
+    research_freshness_max_age_seconds: int = 0
+    research_enforce_response_audit: bool = True
+    research_enforce_freshness: bool = False
     query_router_enabled: bool = False
     query_router_docs_source_types_json: str = ""
     query_router_prompts_source_types_json: str = ""

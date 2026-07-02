@@ -32,6 +32,10 @@ from app.rag.cases.loader import load_rag_cases
 from app.rag.cases.visibility import visible_case_ids
 from app.rag.generate.llm_provider import ModelProfileError
 from app.rag.index.db import engine
+from app.api.research_hardening import (
+    attach_research_hardening_audit,
+    enforce_research_rate_limit,
+)
 from app.settings import settings
 
 router = APIRouter()
@@ -104,6 +108,11 @@ def _extract_presented_token(authorization: str | None, access_token: str | None
     token = header_token or query_token
     if not token:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Missing research access token.")
+    if query_token and not settings.research_allow_query_access_token:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Research access_token query parameters are disabled; use Authorization: Bearer.",
+        )
     return token
 
 
@@ -347,6 +356,7 @@ def _require_signed_download_access(doc_id: str, grant: SignedDownloadGrant) -> 
 
 @router.get("/v1/research/cases", response_model=CasesResponse)
 def research_cases(identity: ResearchIdentity = Depends(_resolve_research_identity)):
+    enforce_research_rate_limit(identity)
     _require_scope(identity, "research:read")
     cfg = load_rag_cases(settings.rag_cases_path)
     allowed_case_ids = _allowed_case_ids(identity)
@@ -366,6 +376,7 @@ def research_cases(identity: ResearchIdentity = Depends(_resolve_research_identi
 
 @router.post("/v1/research/query", response_model=QueryResponse)
 def research_query(req: ResearchQueryRequest, identity: ResearchIdentity = Depends(_resolve_research_identity)):
+    rate_limit = enforce_research_rate_limit(identity)
     _require_scope(identity, "research:read")
     _require_case_access(req.case_id, identity)
     query_req = QueryRequest(
@@ -385,7 +396,13 @@ def research_query(req: ResearchQueryRequest, identity: ResearchIdentity = Depen
                 guidance = query_case_guidance(req.case_id, req.query)
                 if guidance:
                     query_plan["case_guidance"] = guidance
-        return _rewrite_query_response_for_research(response, identity)
+        rewritten = _rewrite_query_response_for_research(response, identity)
+        return attach_research_hardening_audit(
+            rewritten,
+            identity=identity,
+            rate_limit=rate_limit,
+            case_id=req.case_id,
+        )
     except ModelProfileError as exc:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)) from exc
     except HTTPException:
@@ -403,6 +420,7 @@ def research_corpus(
     limit: int = Query(default=100, ge=1, le=500),
     offset: int = Query(default=0, ge=0),
 ):
+    enforce_research_rate_limit(identity)
     _require_scope(identity, "research:read")
     _require_case_access(case_id, identity)
     total, rows = _corpus_rows(case_id, q, include_tombstones, limit, offset)
@@ -415,6 +433,7 @@ def research_case_links(
     identity: ResearchIdentity = Depends(_resolve_research_identity),
     limit_docs: int = Query(default=300, ge=1, le=2000),
 ):
+    enforce_research_rate_limit(identity)
     _require_scope(identity, "research:read")
     _require_case_access(case_id, identity)
     return _build_link_graph(case_id, only_doc_id=None, limit_docs=limit_docs)
@@ -426,6 +445,7 @@ def research_document_links(
     doc_id: str,
     identity: ResearchIdentity = Depends(_resolve_research_identity),
 ):
+    enforce_research_rate_limit(identity)
     _require_scope(identity, "research:read")
     _require_case_access(case_id, identity)
     return _build_link_graph(case_id, only_doc_id=doc_id, limit_docs=1)
@@ -440,6 +460,7 @@ def research_download_document(
     identity: ResearchIdentity | None = Depends(_optional_research_identity),
 ):
     if identity is not None:
+        enforce_research_rate_limit(identity)
         _require_scope(identity, "research:download")
         _require_document_access(doc_id, identity)
     else:

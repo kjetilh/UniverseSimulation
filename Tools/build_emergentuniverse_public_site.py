@@ -54,6 +54,12 @@ DATASET_SPECS: list[dict[str, str]] = [
         "description": "Status of the project-specific RAG service and corpus.",
     },
     {
+        "source": "rag_service/docs/RAG_SERVICE_API.md",
+        "category": "rag_corpus",
+        "title": "RAG service API and hardening",
+        "description": "Research API, auth, rate-limit, citation-audit, and freshness-hardening notes.",
+    },
+    {
         "source": "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md",
         "category": "rag_corpus",
         "title": "Argumentation map",
