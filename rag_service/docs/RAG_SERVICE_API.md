@@ -72,6 +72,36 @@ backenden.
 For `emergentuniverse.haven.digipomps.org` bor dynamisk RAG ikke eksponeres for
 allmennheten for denne policyen er konfigurert og verifisert mot live corpus.
 
+### Produksjons-smoke for research-hardening
+
+For staging eller en loopback-only produksjonskandidat, kjør først migrasjoner
+og start API-et med minst:
+
+```bash
+RESEARCH_API_TOKENS_JSON='{"<token>":{"label":"staging-smoke","scopes":["research:read"],"case_ids":["universe_project"]}}'
+RESEARCH_DOWNLOAD_SIGNING_KEY='<long-random-secret>'
+RESEARCH_RATE_LIMIT_BACKEND=postgres
+RESEARCH_ENFORCE_RESPONSE_AUDIT=true
+```
+
+Deretter kjører du smoke-skriptet fra `rag_service/`:
+
+```bash
+RESEARCH_API_TOKEN='<token>' \
+RESEARCH_BASE_URL='http://127.0.0.1:8000' \
+RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
+python -m scripts.research_hardening_smoke \
+  --case-id universe_project
+```
+
+Smoken feiler hvis anonym research-tilgang ikke avvises, tokenet ikke kan se
+`case_id`, `/v1/research/query` mangler `retrieval_debug.research_hardening`,
+rate-limit backenden ikke er `postgres`, eller bearer-tokenet lekker tilbake i
+JSON-svaret. Bruk `--skip-query` bare for en smal auth/case-sjekk; den er ikke
+tilstrekkelig for å eksponere dynamisk RAG. Bruk `--allow-audit-fail-closed`
+når målet er å bekrefte at citation/freshness-policyen stopper svake svar,
+ikke når målet er å bekrefte en fungerende public query-opplevelse.
+
 ## Admin-endepunkter
 
 Krever `X-API-Key`.

@@ -54,6 +54,25 @@ Production deployments should use `RESEARCH_RATE_LIMIT_BACKEND=postgres` after
 running `python -m scripts.apply_migrations`. The in-memory limiter is only a
 local/dev fallback and must not be treated as enough for public traffic.
 
+Before any dynamic RAG endpoint is routed from the public host, verify a
+loopback-only or staging instance with the dedicated hardening smoke:
+
+```bash
+cd rag_service
+RESEARCH_API_TOKEN='<token>' \
+RESEARCH_BASE_URL='http://127.0.0.1:8000' \
+RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
+python -m scripts.research_hardening_smoke \
+  --case-id universe_project
+```
+
+The smoke must prove that anonymous research access is rejected, token-scoped
+case listing works, `/v1/research/query` emits `research_hardening` with
+`rate_limit.backend=postgres`, citation audit and freshness metadata are
+present, and the bearer token is not echoed in response JSON. Do not expose
+dynamic RAG publicly from a run that only used `--skip-query`; that option is
+for auth/case diagnostics, not production readiness.
+
 ## Deployment target
 
 The staging VPS already hosts `staging.haven.digipomps.org` and related nginx

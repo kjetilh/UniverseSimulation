@@ -149,6 +149,30 @@ Docker-instansen mapper `uploads/` til `/data/uploads`.
 For admin-batch-ingest i Docker ma filer ligge under `uploads/`.
 For repo-filer og dokumenter du vil la ligge i ro, bruk i stedet `sync_folder.py` lokalt eller tilpass `config/sync_orchestrator.example.toml`.
 
+## Research API hardening smoke
+
+For staging eller en loopback-only produksjonskandidat skal research-API-et
+kjores med token-scope, signerte nedlastingslenker og delt rate-limit state:
+
+```bash
+RESEARCH_API_TOKENS_JSON='{"<token>":{"label":"staging-smoke","scopes":["research:read"],"case_ids":["universe_project"]}}'
+RESEARCH_DOWNLOAD_SIGNING_KEY='<long-random-secret>'
+RESEARCH_RATE_LIMIT_BACKEND=postgres
+```
+
+Kjor deretter:
+
+```bash
+RESEARCH_API_TOKEN='<token>' \
+RESEARCH_BASE_URL='http://127.0.0.1:8000' \
+RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
+python -m scripts.research_hardening_smoke --case-id universe_project
+```
+
+Dette er sterkere enn en healthcheck: det verifiserer at anonym tilgang avvises,
+at token-scoped cases fungerer, at query-svaret inneholder citation/freshness
+audit, og at rate-limit backenden faktisk er `postgres`.
+
 ## Hva denne instansen ikke later som
 
 - Den later ikke som dagens toy-simulator er identisk med rapportens formelle DPO/CTMC-modell.
