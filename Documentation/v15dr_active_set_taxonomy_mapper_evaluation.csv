@@ -1,0 +1,12 @@
+key,value,evidence
+mapper_source,v15dq_repeated_class_contrasts_family_diverse_fixed_before_v15dr,new_edge_mean_forman_p2_minus_p1;local_ball3_beta1_p2;base_return_t2_p1;base_return_t2_p0_minus_p1;support_ball_3_p2;local_ball3_boundary_to_volume_p0_minus_p1
+seed_count,4,808;909;1001;1103
+known_class_seed_count,0,none
+ood_seed_count,4,808;909;1001;1103
+known_class_type_accuracy,nan,known_hits=0; known_rows=0; known_false_ood=0
+ood_abstain_accuracy,0.000,ood_correct_abstain=0; ood_rows=4; ood_false_known=4
+overall_exact_set_match_rate,0.000,exact_matches=0; seed_count=4
+coverage_fraction,0.750,captured=3; active=4; missed=1
+precision_fraction,0.429,captured=3; predicted=7; false_positive=4
+burden_fraction,0.583,predicted=7; possible=12
+mapper_status,taxonomy_mapper_not_supported,fresh active-set taxonomy mapper holdout; no refit after dynamics

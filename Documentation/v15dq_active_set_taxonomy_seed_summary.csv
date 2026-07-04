@@ -1,0 +1,7 @@
+growth_seed,source_inputs,active_count,active_placements,landscape_class,covered_by_v15do_two_type_space,new_after_v15dp_type,strongest_placement,strongest_established_rate,p0_established_rate,p1_established_rate,p2_established_rate,placement_rates,support_signatures
+202,v15dn,1,p1,single_active_p1,1,0,p1,0.875,0.0,0.875,0.0,p0:0.000;p1:0.875;p2:0.000,"p0:13,72,343;p1:1,58,537;p2:6,8,9"
+303,v15dn,2,p0;p2,multi_active_p0_p2,1,0,p0,0.5,0.5,0.0,0.5,p0:0.500;p1:0.000;p2:0.500,"p0:3,4,827;p1:12,13,22;p2:25,177,430"
+404,v15dn,1,p1,single_active_p1,1,0,p1,0.5,0.0,0.5,0.0,p0:0.000;p1:0.500;p2:0.000,"p0:3,27,434;p1:12,14,465;p2:5,159,1003"
+505,v15dn,2,p0;p2,multi_active_p0_p2,1,0,p0,0.75,0.75,0.25,0.75,p0:0.750;p1:0.250;p2:0.750,"p0:5,98,599;p1:7,8,9;p2:13,14,263"
+606,v15dp,0,none,no_active,0,1,p0,0.0,0.0,0.0,0.0,p0:0.000;p1:0.000;p2:0.000,"p0:12,14,30;p1:15,16,458;p2:7,8,707"
+707,v15dp,1,p0,single_active_p0,0,1,p0,0.75,0.75,0.0,0.0,p0:0.750;p1:0.000;p2:0.000,"p0:151,795,884;p1:12,13,15;p2:13,15,186"

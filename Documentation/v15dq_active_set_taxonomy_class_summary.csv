@@ -1,0 +1,5 @@
+landscape_class,n_seeds,growth_seeds,old_v15do_type_space,mean_active_count,median_p0_established_rate,median_p1_established_rate,median_p2_established_rate
+multi_active_p0_p2,2,303;505,1,2.0,0.625,0.125,0.625
+single_active_p1,2,202;404,1,1.0,0.0,0.6875,0.0
+no_active,1,606,0,0.0,0.0,0.0,0.0
+single_active_p0,1,707,0,1.0,0.75,0.0,0.0

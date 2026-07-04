@@ -1,0 +1,7 @@
+growth_seed,placement,support_signature,guard_metric,guard_metric_value,guard_predicted_type,guard_predicted_active_placements,guard_placement_predicted_active,n_runs,label_counts,established_rate,active_placement,mixed_rate,no_horizon_rate,mean_horizon_span,median_boundary_mass,median_genealogy_intensity
+606,0,"12,14,30",delta_return_t2,-0.010703920724624671,p1_only,p1,0,4,no_far_shell_horizon:4,0.0,0,0.0,1.0,0.0,21.0,0.6463878115518635
+606,1,"15,16,458",delta_return_t2,-0.009876543209876576,p1_only,p1,1,4,no_far_shell_horizon:4,0.0,0,0.0,1.0,0.0,3.5,0.22047896179838486
+606,2,"7,8,707",delta_return_t2,-0.03097222222222218,p1_only,p1,0,4,no_far_shell_horizon:4,0.0,0,0.0,1.0,0.0,6.5,0.5644536575954167
+707,0,"151,795,884",delta_return_t2,-0.09206349206349207,p1_only,p1,0,4,established_far_shell_horizon:3;mixed_far_shell_horizon:1,0.75,1,0.25,0.0,123.0,3.5,0.3288396992075257
+707,1,"12,13,15",delta_return_t2,-0.020666072387086842,p1_only,p1,1,4,no_far_shell_horizon:4,0.0,0,0.0,1.0,0.0,15.5,0.6286382446449394
+707,2,"13,15,186",delta_return_t2,-0.016986584269192972,p1_only,p1,0,4,no_far_shell_horizon:4,0.0,0,0.0,1.0,0.0,8.0,0.62316942679016

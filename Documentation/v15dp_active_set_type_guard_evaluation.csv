@@ -1,0 +1,9 @@
+key,value,evidence
+guard_rule,delta_return_t2/p0_ge_p1->true=p0_p2;false=p1_only,v15do_best_sorted_posthoc_rule_pre_registered_for_v15dp
+seed_count,2,606;707
+type_accuracy,0.000,type_hits=0; seed_count=2
+exact_set_match_rate,0.000,exact_matches=0; seed_count=2
+coverage_fraction,0.000,captured=0; active=1; missed=1
+precision_fraction,0.000,captured=0; predicted=2; false_positive=2
+burden_fraction,0.333,predicted=2; possible=6
+guard_status,guard_inconclusive_unobserved_active_set_type,fresh two-growth-seed active-set type holdout; no refit after dynamics

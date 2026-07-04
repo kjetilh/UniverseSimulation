@@ -1,0 +1,13 @@
+growth_seed,placement,support_signature,mapper_predicted_type,mapper_predicted_active_placements,mapper_reason,mapper_placement_predicted_active,n_runs,label_counts,established_rate,active_placement,mixed_rate,no_horizon_rate,mean_horizon_span,median_boundary_mass,median_genealogy_intensity
+808,0,"15,24,264",multi_active_p0_p2,p0;p2,known_class_decisive,1,4,established_far_shell_horizon:1;no_far_shell_horizon:3,0.25,0,0.0,0.75,43.0,10.0,0.6333691936570995
+808,1,"11,475,575",multi_active_p0_p2,p0;p2,known_class_decisive,0,4,no_far_shell_horizon:4,0.0,0,0.0,1.0,0.0,12.5,0.6736005699787719
+808,2,"23,318,546",multi_active_p0_p2,p0;p2,known_class_decisive,1,4,established_far_shell_horizon:2;no_far_shell_horizon:2,0.5,1,0.0,0.5,65.75,8.0,0.7786304690232722
+909,0,"13,14,139",single_active_p1,p1,known_class_decisive,0,4,mixed_far_shell_horizon:1;no_far_shell_horizon:3,0.0,0,0.25,0.75,24.5,12.0,0.43122170011423444
+909,1,"0,2,129",single_active_p1,p1,known_class_decisive,1,4,mixed_far_shell_horizon:2;no_far_shell_horizon:2,0.0,0,0.5,0.5,7.5,7.5,0.6467196451287245
+909,2,"12,13,209",single_active_p1,p1,known_class_decisive,0,4,mixed_far_shell_horizon:1;no_far_shell_horizon:3,0.0,0,0.25,0.75,33.25,7.5,0.1655565051660789
+1001,0,"16,36,42",multi_active_p0_p2,p0;p2,known_class_decisive,1,4,failed_far_shell_horizon:1;no_far_shell_horizon:3,0.0,0,0.0,0.75,6.75,5.5,0.24432857844962025
+1001,1,"9,10,11",multi_active_p0_p2,p0;p2,known_class_decisive,0,4,no_far_shell_horizon:4,0.0,0,0.0,1.0,0.0,12.0,0.46262570019079474
+1001,2,"436,438,836",multi_active_p0_p2,p0;p2,known_class_decisive,1,4,established_far_shell_horizon:3;no_far_shell_horizon:1,0.75,1,0.0,0.25,129.0,3.0,0.47636834526956395
+1103,0,"0,20,27",multi_active_p0_p2,p0;p2,known_class_decisive,1,4,established_far_shell_horizon:2;no_far_shell_horizon:2,0.5,1,0.0,0.5,86.0,8.5,0.431557588817805
+1103,1,"93,167,541",multi_active_p0_p2,p0;p2,known_class_decisive,0,4,established_far_shell_horizon:3;no_far_shell_horizon:1,0.75,1,0.0,0.25,129.0,8.0,0.827886485769048
+1103,2,"59,260,930",multi_active_p0_p2,p0;p2,known_class_decisive,1,4,no_far_shell_horizon:4,0.0,0,0.0,1.0,0.0,5.5,0.22888292091227713

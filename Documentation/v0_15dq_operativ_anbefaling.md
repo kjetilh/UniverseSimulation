@@ -1,0 +1,12 @@
+# Operativ anbefaling v0.15dq
+
+- `input_scope`: `no_new_dynamics` fordi v15dq leser v15dn og v15dp placement/morphology CSV-er; ingen nye defect-runs er kjoert.
+- `taxonomy_scope`: `expanded_beyond_v15do_two_type_space` fordi Observed classes: multi_active_p0_p2:2;no_active:1;single_active_p0:1;single_active_p1:2. Old v15do type-space covers 4/6 seeds; new classes cover 2/6.
+- `repetition_balance`: `mixed_repeated_and_singleton_classes` fordi Repeated classes: multi_active_p0_p2;single_active_p1. Singleton classes: no_active;single_active_p0.
+- `v15dp_guard_reading`: `guard_inconclusive_unobserved_active_set_type` fordi Frozen delta_return_t2 guard is retained only as a failed candidate, not refit.
+- `pre_run_contrasts`: `descriptive_leads_only` fordi Repeated-pair clean contrasts in current sample: 65. Because n is tiny and two classes are singletons, these are leads, not selector validation.
+- `next_step`: `build_taxonomy_mapper_before_new_selector` fordi Neste dynamiske budsjett bor brukes til aa kartlegge flere fresh seeds eller teste en taxonomy-mapper; ikke til aa refitte den gamle two-type-guarden.
+
+- Ikke refit v15do/v15dp-guarden.
+- Ikke tren selector paa singleton-klassene.
+- Neste dynamiske budsjett bor vaere taxonomy-mapping eller flere fresh seeds, ikke ny single-guard finpuss.

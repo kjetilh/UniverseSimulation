@@ -4817,6 +4817,126 @@ Viktige filer:
 - `Documentation/v15do_active_set_type_diagnosis.csv`
 - `Documentation/v0_15do_operativ_anbefaling.md`
 
+## 10bp. v15dp pensjonerte den beste v15do-guarden paa fresh seeds
+
+`v15dp` tok den anbefalte holdout-runden etter v15do:
+
+- velg en enkelt type-guard foer dynamikk
+- skriv pre-run guard/morfologi til CSV foer run-loop
+- test paa minst to nye growth seeds
+- ikke refit terskler eller metrikker etter outcome
+
+Frossen guard:
+
+- `delta_return_t2/p0_ge_p1 -> p0_p2 else p1_only`
+- kilde: beste sorterte v15do post-hoc comparison-regel
+- target `1024`
+- perturbation `add_chord`
+- placements `p0,p1,p2`
+- growth seeds `606/707`
+- seed-deltaer `15007/15061/15121/15187`
+
+Pre-run:
+
+- seed `606`: `delta_return_t2(p0)=-0.011`, `delta_return_t2(p1)=-0.010`, predikert `p1_only`
+- seed `707`: `delta_return_t2(p0)=-0.092`, `delta_return_t2(p1)=-0.021`, predikert `p1_only`
+
+Faktisk dynamikk:
+
+- seed `606`: ingen aktive placements; p0/p1/p2 alle `0.000` established-rate
+- seed `707`: `p0_only`; p0 established-rate `0.750`, p1/p2 `0.000`
+- samlet run-labels: `established_far_shell_horizon:3`, `mixed_far_shell_horizon:1`, `no_far_shell_horizon:20`
+
+Score:
+
+- type accuracy `0.000`
+- exact-set-match `0.000`
+- coverage `0.000`
+- precision `0.000`
+- guard-status `guard_inconclusive_unobserved_active_set_type`
+
+Tolkning:
+
+- dette er ikke bare svak selector-ytelse; fresh seeds introduserer aktivt-sett-typer utenfor v15do sitt to-type-rom (`none`, `p0_only`)
+- den konkrete v15do-guarden skal pensjoneres som selector-kandidat
+- ikke refit `delta_return_t2/p0_ge_p1` etter outcome
+- neste interessante steg er aktivt-sett-taksonomi/landskapsstruktur over flere seeds, ikke mer single-guard-refinement
+- dette er fortsatt lokal defect/response-struktur, ikke evidens for Lorentz-likhet, global invariant, entanglement, partikler eller universell emergent geometri
+
+Viktige filer:
+
+- `relational_universe_v15dp_active_set_type_guard_holdout.py`
+- `Documentation/v15dp_active_set_type_guard_holdout.md`
+- `Documentation/v15dp_active_set_type_guard_pre_run_guard.csv`
+- `Documentation/v15dp_active_set_type_guard_pre_run_morphology.csv`
+- `Documentation/v15dp_active_set_type_guard_placement_summary.csv`
+- `Documentation/v15dp_active_set_type_guard_seed_evaluation.csv`
+- `Documentation/v15dp_active_set_type_guard_evaluation.csv`
+- `Documentation/v15dp_active_set_type_guard_diagnosis.csv`
+- `Documentation/v0_15dp_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dp.md`
+
+## 10bq. v15dq gjorde type-rommet eksplisitt foer mer dynamikk
+
+`v15dq` tok neste smarte steg etter v15dp:
+
+- ingen ny dynamikk
+- les v15dn og v15dp placement/morphology CSV-er
+- samle alle kjente `1024/add_chord/p0,p1,p2` growth-seed-landskap
+- formaliser aktivt-sett-taksonomien foer nye selector-forsok
+- sjekk pre-run contrasts med lekkasjevakt, altsaa uten outcome-felter som features
+
+Hvorfor dette var smart:
+
+- v15dp feilet ikke bare som guard; den viste at v15do sitt to-type-rom var for smalt
+- aa refitte `delta_return_t2/p0_ge_p1` ville optimalisert en regel for feil taksonomi
+- en no-new-dynamics syntese er billigere og mer epistemisk ryddig enn aa bruke mer runtime foer vi vet hvilke responsklasser som finnes
+
+Observert taksonomi over seks seeds:
+
+- `single_active_p1`: seeds `202/404`
+- `multi_active_p0_p2`: seeds `303/505`
+- `no_active`: seed `606`
+- `single_active_p0`: seed `707`
+
+Hovedresultat:
+
+- gammel v15do two-type-space dekker bare `4/6` seeds
+- nye v15dp-klasser dekker `2/6` seeds
+- repeated classes er `single_active_p1` og `multi_active_p0_p2`
+- singleton classes er `no_active` og `single_active_p0`
+
+Pre-run contrast audit etter lekkasjevakt:
+
+- `65` rene repeated-pair contrasts finnes i dagens tiny sample
+- return-probability-familien har `33`
+- curvature/shortcut har `11`
+- local-volume/topology har `8`
+- support-volume/topology har `9`
+- shortcut/reach har `4`
+
+Tolkning:
+
+- contrastene er leads, ikke validerte selectors
+- singleton-klassene er taksonomisk viktige, men kan ikke laere en robust mapper alene
+- neste dynamiske budsjett bor brukes paa taxonomy-mapping eller flere fresh seeds for klassefrekvens
+- ikke refit v15do/v15dp-guarden
+- ikke oppgrader til Lorentz-likhet, global invariant, entanglement, partikler eller universell emergent geometri
+
+Viktige filer:
+
+- `relational_universe_v15dq_active_set_taxonomy_synthesis.py`
+- `Documentation/v15dq_active_set_taxonomy_synthesis.md`
+- `Documentation/v15dq_active_set_taxonomy_placement_rows.csv`
+- `Documentation/v15dq_active_set_taxonomy_seed_summary.csv`
+- `Documentation/v15dq_active_set_taxonomy_class_summary.csv`
+- `Documentation/v15dq_active_set_taxonomy_seed_features.csv`
+- `Documentation/v15dq_active_set_taxonomy_pairwise_type_contrasts.csv`
+- `Documentation/v15dq_active_set_taxonomy_feature_family_summary.csv`
+- `Documentation/v15dq_active_set_taxonomy_diagnosis.csv`
+- `Documentation/v0_15dq_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dq.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

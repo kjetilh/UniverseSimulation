@@ -1,0 +1,5 @@
+growth_seed,actual_type,actual_active_placements,actual_known_repeated_class,predicted_type,predicted_active_placements,mapper_reason,mapper_abstained,known_class_type_hit,known_class_false_ood,ood_correct_abstain,ood_false_known_prediction,exact_set_match,captured_placements,missed_placements,false_positive_placements,coverage_fraction,precision_fraction,burden_fraction,placement_rates,multi_active_p0_p2_votes,single_active_p1_votes,known_envelope_hits,outside_envelope_count
+808,single_active_p2,p2,0,multi_active_p0_p2,p0;p2,known_class_decisive,0,0,0,0,1,0,p2,none,p0,1.0,0.5,0.6666666666666666,p0:0.250;p1:0.000;p2:0.500,4,2,5,1
+909,no_active,none,0,single_active_p1,p1,known_class_decisive,0,0,0,0,1,0,none,none,p1,nan,0.0,0.3333333333333333,p0:0.000;p1:0.000;p2:0.000,1,5,6,0
+1001,single_active_p2,p2,0,multi_active_p0_p2,p0;p2,known_class_decisive,0,0,0,0,1,0,p2,none,p0,1.0,0.5,0.6666666666666666,p0:0.000;p1:0.000;p2:0.750,4,2,4,2
+1103,multi_active_p0_p1,p0;p1,0,multi_active_p0_p2,p0;p2,known_class_decisive,0,0,0,0,1,0,p0,p1,p2,0.5,0.5,0.6666666666666666,p0:0.500;p1:0.750;p2:0.000,4,2,6,0

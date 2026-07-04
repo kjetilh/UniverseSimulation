@@ -1,0 +1,9 @@
+growth_seed,seed_delta,guard_predicted_type,guard_predicted_active_placements,p0_label,p1_label,p2_label,p0_analysis_group,p1_analysis_group,p2_analysis_group,p0_boundary_mass,p1_boundary_mass,p2_boundary_mass,p0_genealogy_intensity,p1_genealogy_intensity,p2_genealogy_intensity
+606,15007,p1_only,p1,no_far_shell_horizon,no_far_shell_horizon,no_far_shell_horizon,p0_high_score_no_horizon,other_no_horizon,p2_no_horizon,21.0,3.5,6.5,0.7141734042994291,0.10186808288378595,0.16619390173899118
+606,15061,p1_only,p1,no_far_shell_horizon,no_far_shell_horizon,no_far_shell_horizon,p0_no_horizon_other,other_no_horizon,p2_no_horizon,21.0,3.5,6.5,0.578602218804298,0.0,0.6065635713536391
+606,15121,p1_only,p1,no_far_shell_horizon,no_far_shell_horizon,no_far_shell_horizon,p0_no_horizon_other,other_no_horizon,p2_no_horizon,21.0,3.5,6.5,0.47105332342821615,0.5593684048384264,0.8911890270926341
+606,15187,p1_only,p1,no_far_shell_horizon,no_far_shell_horizon,no_far_shell_horizon,p0_high_score_no_horizon,other_no_horizon,p2_no_horizon,21.0,3.5,6.5,0.8720183749211149,0.33908984071298376,0.5223437438371943
+707,15007,p1_only,p1,established_far_shell_horizon,no_far_shell_horizon,no_far_shell_horizon,other_established,other_no_horizon,p2_no_horizon,2.3,15.5,8.25,0.5657526751971278,0.5055078480092343,0.641480689296059
+707,15061,p1_only,p1,established_far_shell_horizon,no_far_shell_horizon,no_far_shell_horizon,other_established,other_no_horizon,p2_no_horizon,3.5,15.5,8.0,0.24322618854071404,0.6211728794416754,0.6640707292146532
+707,15121,p1_only,p1,mixed_far_shell_horizon,no_far_shell_horizon,no_far_shell_horizon,non_decisive,other_no_horizon,p2_no_horizon,3.5,15.5,8.0,0.18144798527307254,0.6835165582915576,0.604858164284261
+707,15187,p1_only,p1,established_far_shell_horizon,no_far_shell_horizon,no_far_shell_horizon,other_established,other_no_horizon,p2_no_horizon,3.5,15.5,8.0,0.41445320987433737,0.6361036098482035,0.38365585742149066
