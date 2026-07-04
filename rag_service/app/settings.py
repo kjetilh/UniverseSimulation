@@ -23,6 +23,9 @@ class Settings(BaseSettings):
     cell_access_control_enabled: bool = False
     cell_gateway_shared_secret: str = ""
     cell_owner_user_ids_json: str = "[]"
+    cellprotocol_enabled: bool = False
+    cellprotocol_allow_insecure_ws: bool = False
+    cellprotocol_owner_context: str = "rag-service"
     research_api_tokens_json: str = ""
     research_download_signing_key: str = ""
     research_download_ttl_seconds: int = 300

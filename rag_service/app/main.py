@@ -6,6 +6,7 @@ from app.api.routes_admin import router as admin_router
 from app.api.routes_cell import router as cell_router
 from app.api.routes_interviews import router as interviews_router
 from app.api.routes_research import router as research_router
+from app.settings import settings
 
 app = FastAPI(title="UniverseSimulation RAG Service", version="0.1.0")
 
@@ -18,6 +19,11 @@ app.include_router(admin_router)
 app.include_router(cell_router)
 app.include_router(interviews_router)
 app.include_router(research_router)
+
+if settings.cellprotocol_enabled:
+    from app.cellprotocol_bridge import create_cellprotocol_router
+
+    app.include_router(create_cellprotocol_router())
 
 @app.get("/health")
 def health():
