@@ -4937,6 +4937,69 @@ Viktige filer:
 - `Documentation/v0_15dq_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dq.md`
 
+## 10br. v15dr viste at repeated-class mapperen ikke holder
+
+`v15dr` tok neste naturlige steg etter v15dq:
+
+- bruk v15dq sine repeated-class contrasts som treningsgrunnlag
+- bygg en liten deterministic taxonomy-mapper foer ny dynamikk
+- la mapperen svare `unknown` hvis fresh morphology faller utenfor known repeated-class envelope
+- kjor fresh holdout paa target `1024`, `add_chord`, placements `p0,p1,p2`
+- bruk growth seeds `808/909/1001/1103` og seed-deltaer `17011/17053/17107/17167`
+- evaluer active-set type etter dynamikk uten refit
+
+Hvorfor dette var smart:
+
+- v15dq viste at to-type-rommet var for smalt, men repeated classes fantes fortsatt
+- en mapper med eksplisitt `unknown` er strengere enn en ny single-feature guard
+- hvis mapperen traff known classes eller abstained paa OOD, kunne vi ha testet en mer moden configuration heuristic
+
+Pre-run mapper:
+
+- seed `808`: predikerte `multi_active_p0_p2`
+- seed `909`: predikerte `single_active_p1`
+- seed `1001`: predikerte `multi_active_p0_p2`
+- seed `1103`: predikerte `multi_active_p0_p2`
+
+Faktisk fresh taxonomy:
+
+- seed `808`: `single_active_p2`
+- seed `909`: `no_active`
+- seed `1001`: `single_active_p2`
+- seed `1103`: `multi_active_p0_p1`
+
+Hovedresultat:
+
+- alle fire fresh seeds var OOD relativt til repeated-class-rommet fra v15dq
+- mapperen abstained ikke paa noen av dem
+- `overall_exact_set_match_rate = 0.000`
+- `ood_abstain_accuracy = 0.000`
+- `coverage_fraction = 0.750`, men bare med mange falske positive (`precision_fraction = 0.429`)
+- diagnosen er `taxonomy_mapper_not_supported`
+
+Tolkning:
+
+- det var riktig aa teste mapperen, men den feilet rent som selector
+- v15dr utvider taksonomien med `single_active_p2` og `multi_active_p0_p1`
+- neste gevinst bor komme fra klassefrekvens-/landskapsatlas eller OOD-foerst design
+- ikke refit samme repeated-class mapper etter outcome
+- ikke oppgrader til Lorentz-likhet, global invariant, entanglement, partikler eller universell emergent geometri
+
+Viktige filer:
+
+- `relational_universe_v15dr_active_set_taxonomy_mapper_holdout.py`
+- `Documentation/v15dr_active_set_taxonomy_mapper_holdout.md`
+- `Documentation/v15dr_active_set_taxonomy_mapper_spec.csv`
+- `Documentation/v15dr_active_set_taxonomy_mapper_pre_run_mapper.csv`
+- `Documentation/v15dr_active_set_taxonomy_mapper_pre_run_morphology.csv`
+- `Documentation/v15dr_active_set_taxonomy_mapper_run_features.csv`
+- `Documentation/v15dr_active_set_taxonomy_mapper_placement_summary.csv`
+- `Documentation/v15dr_active_set_taxonomy_mapper_seed_evaluation.csv`
+- `Documentation/v15dr_active_set_taxonomy_mapper_evaluation.csv`
+- `Documentation/v15dr_active_set_taxonomy_mapper_diagnosis.csv`
+- `Documentation/v0_15dr_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dr.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.
