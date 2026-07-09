@@ -1,0 +1,7 @@
+landscape_class,n_seeds,seed_fraction,growth_seeds,sources,active_placements_examples,selector_role
+multi_active_p0_p2,4,0.25,303;505;1511;1601,v15dq;v15ds,p0;p2,repeated_trainable
+single_active_p2,4,0.25,808;1001;1201;1301,v15dr;v15ds,p2,repeated_trainable
+no_active,3,0.1875,606;909;1409,v15dq;v15dr;v15ds,none,repeated_trainable
+single_active_p1,3,0.1875,202;404;1709,v15dq;v15ds,p1,repeated_trainable
+multi_active_p0_p1,1,0.0625,1103,v15dr,p0;p1,singleton_ood
+single_active_p0,1,0.0625,707,v15dq,p0,singleton_ood

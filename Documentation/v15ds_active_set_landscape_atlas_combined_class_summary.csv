@@ -1,0 +1,7 @@
+source,landscape_class,n_seeds,seed_fraction,growth_seeds,active_placements_examples,mean_active_count,median_p0_established_rate,median_p1_established_rate,median_p2_established_rate
+v15dq_plus_v15dr_plus_v15ds,multi_active_p0_p2,4,0.25,303;505;1511;1601,p0;p2,2.0,nan,nan,nan
+v15dq_plus_v15dr_plus_v15ds,single_active_p2,4,0.25,808;1001;1201;1301,p2,1.0,nan,nan,nan
+v15dq_plus_v15dr_plus_v15ds,no_active,3,0.1875,606;909;1409,none,0.0,nan,nan,nan
+v15dq_plus_v15dr_plus_v15ds,single_active_p1,3,0.1875,202;404;1709,p1,1.0,nan,nan,nan
+v15dq_plus_v15dr_plus_v15ds,multi_active_p0_p1,1,0.0625,1103,p0;p1,2.0,nan,nan,nan
+v15dq_plus_v15dr_plus_v15ds,single_active_p0,1,0.0625,707,p0,1.0,nan,nan,nan

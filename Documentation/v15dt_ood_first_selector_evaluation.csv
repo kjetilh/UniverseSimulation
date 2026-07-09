@@ -1,0 +1,8 @@
+key,value,evidence
+synthesis_source,v15dt_ood_first_stratified_selector_from_v15dq_v15dr_v15ds,no-new-dynamics OOD-first class-stratified selector synthesis
+train_classes,multi_active_p0_p2;no_active;single_active_p1;single_active_p2,min_seed_count=3
+selected_features,delta_return_t4_p0;support_boundary_to_volume_p1;mean_support_degree_p1;delta_return_t2_p0;post_mean_forman_incident_support_p1;base_mean_forman_incident_support_p1;local_ball3_boundary_to_volume_p1;local_ball3_beta1_p0,max_features=8; max_per_family=2
+repeated_leave_one_out_accuracy,0.214,hits=3; repeated=14; abstain=10; miss=1
+singleton_ood_abstain_accuracy,1.000,abstain=2; singleton=2; false_known=0
+repeated_abstain_fraction,0.714,abstention on trainable repeated classes
+selector_candidate_status,ood_guard_ok_but_class_prediction_weak,leave-one-seed-out repeated classes plus singleton OOD abstention

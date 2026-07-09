@@ -1,0 +1,8 @@
+analysis_group,n_runs,growth_seeds,placements,labels,median_boundary_mass,median_static_support_degree,median_genealogy_intensity,mean_horizon_span
+non_decisive,3,1409:1;1511:1;1601:1,p0:2;p2:1,mixed_far_shell_horizon:3,4.2,5.333333333333333,0.4227192884121023,61.333333333333336
+other_established,17,1201:5;1301:2;1511:6;1601:4,p0:5;p2:12,established_far_shell_horizon:17,6.0,6.333333333333333,0.5713666119687397,154.94117647058823
+other_no_horizon,20,1201:3;1301:4;1409:4;1511:3;1601:4;1709:2,p1:20,no_far_shell_horizon:20,8.5,9.666666666666666,0.49630537226555504,0.0
+p0_high_score_no_horizon,7,1301:1;1409:2;1709:4,p0:7,no_far_shell_horizon:7,6.0,9.0,0.7027683176772389,0.0
+p0_no_horizon_other,10,1201:3;1301:3;1409:2;1511:1;1601:1,p0:10,no_far_shell_horizon:10,5.7,9.0,0.33004537841051007,0.0
+p1_established,4,1201:1;1511:1;1709:2,p1:4,established_far_shell_horizon:4,6.75,6.166666666666667,0.8200705137610758,172.0
+p2_no_horizon,11,1301:2;1409:3;1601:2;1709:4,p2:11,no_far_shell_horizon:11,7.0,8.0,0.37852725300752954,0.0

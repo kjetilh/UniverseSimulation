@@ -1,0 +1,11 @@
+key,value,evidence
+atlas_source,v15ds_fresh_active_set_landscape_atlas_after_failed_v15dr_mapper,fresh growth-seed class-frequency atlas; no selector prediction
+seed_count,6,1201;1301;1409;1511;1601;1709
+prior_class_count,6,multi_active_p0_p1;multi_active_p0_p2;no_active;single_active_p0;single_active_p1;single_active_p2
+v15ds_class_count,4,multi_active_p0_p2;no_active;single_active_p1;single_active_p2
+new_class_count,0,none
+new_seed_fraction,0.000,new_seed_count=0; known_seed_count=6
+active_seed_fraction,0.833,active_seed_count=5; no_active_seed_count=1
+repeated_classes_within_v15ds,multi_active_p0_p2;single_active_p2,classes with at least two v15ds growth seeds
+combined_repeated_classes,multi_active_p0_p2;single_active_p2;no_active;single_active_p1,classes with at least two seeds across v15dq+v15dr+v15ds
+atlas_status,class_frequency_atlas_stabilizing,class-frequency atlas status; not a selector metric

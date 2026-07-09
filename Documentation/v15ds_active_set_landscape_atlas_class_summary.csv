@@ -1,0 +1,5 @@
+source,landscape_class,n_seeds,seed_fraction,growth_seeds,active_placements_examples,mean_active_count,median_p0_established_rate,median_p1_established_rate,median_p2_established_rate
+v15ds,multi_active_p0_p2,2,0.3333333333333333,1511;1601,p0;p2,2.0,0.5,0.125,0.75
+v15ds,single_active_p2,2,0.3333333333333333,1201;1301,p2,1.0,0.125,0.125,0.75
+v15ds,no_active,1,0.16666666666666666,1409,none,0.0,0.0,0.0,0.0
+v15ds,single_active_p1,1,0.16666666666666666,1709,p1,1.0,0.0,0.5,0.0

@@ -5000,6 +5000,133 @@ Viktige filer:
 - `Documentation/v0_15dr_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dr.md`
 
+## 10bs. v15ds viste at active-set-atlaset begynner aa stabilisere
+
+`v15ds` tok neste smarte steg etter v15dr:
+
+- ikke refit den feilede repeated-class mapperen
+- bruk fresh growth seeds til klassefrekvens/landskapsatlas
+- hold scope smalt: target `1024`, `add_chord`, placements `p0,p1,p2`
+- bruk growth seeds `1201/1301/1409/1511/1601/1709`
+- bruk seed-deltaer `18107/18161/18223/18289`
+- skriv pre-run morphology foer dynamikk, men ikke bruk den som prediksjon
+
+Hvorfor dette var smart:
+
+- v15dr viste at selector/refit-linjen var for tidlig
+- v15dr introduserte nye klasser, saa vi trengte base-rate/klassefrekvens foer mer mapping
+- atlaset tester om active-set-rommet fortsetter aa ekspandere, eller om det finnes et repeterbart klassekart
+
+Fresh seed taxonomy:
+
+- seed `1201`: `single_active_p2`
+- seed `1301`: `single_active_p2`
+- seed `1409`: `no_active`
+- seed `1511`: `multi_active_p0_p2`
+- seed `1601`: `multi_active_p0_p2`
+- seed `1709`: `single_active_p1`
+
+Hovedresultat:
+
+- `new_class_count = 0`
+- `new_seed_fraction = 0.000`
+- `active_seed_fraction = 0.833`
+- repeterte v15ds-klasser: `multi_active_p0_p2` og `single_active_p2`
+- combined repeated classes over v15dq+v15dr+v15ds: `multi_active_p0_p2`, `single_active_p2`, `no_active`, `single_active_p1`
+- diagnosen er `class_frequency_atlas_stabilizing`
+
+Viktig negativ/audit:
+
+- boundary/mass er ikke selector-grade her: `w32_mean_boundary_per_mass` AUC established-vs-no `0.483`
+- genealogy-intensity er ogsaa bare deskriptiv i denne runden (`AUC = 0.595`)
+- ingen av disse skal refittes til physics-/invariant-/Lorentz-claim
+
+Tolkning:
+
+- v15ds er ekte ny viten: etter v15dr saa taksonomien ut til aa ekspandere, men seks fresh seeds ga ingen nye active-set-klasser
+- dette gjor en OOD-foerst, klasse-stratifisert selector mer rimelig enn enda en blind atlasutvidelse
+- likevel er n fortsatt liten, og klassene er response-landskapstyper, ikke partikler eller universelle arter
+
+Viktige filer:
+
+- `relational_universe_v15ds_active_set_landscape_atlas.py`
+- `Documentation/v15ds_active_set_landscape_atlas.md`
+- `Documentation/v15ds_active_set_landscape_atlas_pre_run_morphology.csv`
+- `Documentation/v15ds_active_set_landscape_atlas_run_features.csv`
+- `Documentation/v15ds_active_set_landscape_atlas_placement_summary.csv`
+- `Documentation/v15ds_active_set_landscape_atlas_seed_summary.csv`
+- `Documentation/v15ds_active_set_landscape_atlas_class_summary.csv`
+- `Documentation/v15ds_active_set_landscape_atlas_combined_class_summary.csv`
+- `Documentation/v15ds_active_set_landscape_atlas_evaluation.csv`
+- `Documentation/v15ds_active_set_landscape_atlas_metric_scores.csv`
+- `Documentation/v15ds_active_set_landscape_atlas_diagnosis.csv`
+- `Documentation/v0_15ds_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15ds.md`
+
+## 10bt. v15dt testet OOD-first selector-disiplin, men klasseprofilene er for svake
+
+`v15dt` tok neste naturlige steg etter v15ds:
+
+- ingen ny dynamikk
+- kombiner v15dq+v15dr+v15ds til ett seed-feature-sett
+- bruk bare pre-run morphology
+- tren bare repeated classes med minst tre seeds
+- behandle singleton-klasser som OOD/unknown
+- evaluer med leave-one-seed-out heller enn aa refitte etter outcome
+
+Trainable repeated classes:
+
+- `multi_active_p0_p2`: 4 seeds
+- `single_active_p2`: 4 seeds
+- `no_active`: 3 seeds
+- `single_active_p1`: 3 seeds
+
+Singleton/OOD classes:
+
+- `single_active_p0`: 1 seed
+- `multi_active_p0_p1`: 1 seed
+
+Valgte kandidatfeatures:
+
+- `delta_return_t4_p0`
+- `support_boundary_to_volume_p1`
+- `mean_support_degree_p1`
+- `delta_return_t2_p0`
+- `post_mean_forman_incident_support_p1`
+- `base_mean_forman_incident_support_p1`
+- `local_ball3_boundary_to_volume_p1`
+- `local_ball3_beta1_p0`
+
+Hovedresultat:
+
+- `singleton_ood_abstain_accuracy = 1.000`
+- `repeated_leave_one_out_accuracy = 0.214`
+- `repeated_abstain_fraction = 0.714`
+- diagnosen er `ood_guard_ok_but_class_prediction_weak`
+
+Tolkning:
+
+- OOD-first-disiplinen er riktig: singletonklassene ble ikke feilaktig presset inn i kjente klasser
+- men klasseprofilene er altfor svake til aa rettferdiggjoere fresh selector-holdout
+- problemet er ikke lenger bare "taxonomy ekspanderer"; problemet er at pre-run morphology-rommet ikke skiller repeated classes robust nok
+- neste steg bor vaere bedre klasseprofiler eller en liten ekstra atlasrunde, ikke runtime paa v15dt-selectoren
+- ikke oppgrader til Lorentz-likhet, global invariant, entanglement, partikler eller universell emergent geometri
+
+Viktige filer:
+
+- `relational_universe_v15dt_ood_first_stratified_selector_synthesis.py`
+- `Documentation/v15dt_ood_first_stratified_selector_synthesis.md`
+- `Documentation/v15dt_ood_first_selector_seed_features.csv`
+- `Documentation/v15dt_ood_first_selector_class_roles.csv`
+- `Documentation/v15dt_ood_first_selector_feature_scores.csv`
+- `Documentation/v15dt_ood_first_selector_selected_features.csv`
+- `Documentation/v15dt_ood_first_selector_class_profiles.csv`
+- `Documentation/v15dt_ood_first_selector_leave_one_out.csv`
+- `Documentation/v15dt_ood_first_selector_evaluation.csv`
+- `Documentation/v15dt_ood_first_selector_diagnosis.csv`
+- `Documentation/v0_15dt_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_15dt.md`
+
 ## 1. Generatorproblemet ble eksplisitt
 
 Tidlige stor-skala-runder viste at nominelle storrelser ikke alltid ble realisert som faktisk storre startensembler.

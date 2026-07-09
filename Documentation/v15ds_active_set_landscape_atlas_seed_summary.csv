@@ -1,0 +1,7 @@
+target_nodes,growth_seed,perturbation,active_count,active_placements,landscape_class,class_seen_before_v15ds,new_class_in_v15ds,strongest_placement,strongest_established_rate,p0_established_rate,p1_established_rate,p2_established_rate,placement_rates,support_signatures,atlas_source
+1024,1201,add_chord,1,p2,single_active_p2,1,0,p2,1.0,0.25,0.25,1.0,p0:0.250;p1:0.250;p2:1.000,"p0:152,674,970;p1:6,7,107;p2:34,160,289",v15ds_fresh_active_set_landscape_atlas_after_failed_v15dr_mapper
+1024,1301,add_chord,1,p2,single_active_p2,1,0,p2,0.5,0.0,0.0,0.5,p0:0.000;p1:0.000;p2:0.500,"p0:2,3,21;p1:0,19,97;p2:40,67,510",v15ds_fresh_active_set_landscape_atlas_after_failed_v15dr_mapper
+1024,1409,add_chord,0,none,no_active,1,0,p0,0.0,0.0,0.0,0.0,p0:0.000;p1:0.000;p2:0.000,"p0:12,13,14;p1:14,35,48;p2:83,97,371",v15ds_fresh_active_set_landscape_atlas_after_failed_v15dr_mapper
+1024,1511,add_chord,2,p0;p2,multi_active_p0_p2,1,0,p2,1.0,0.5,0.25,1.0,p0:0.500;p1:0.250;p2:1.000,"p0:59,570,921;p1:19,198,580;p2:161,591,912",v15ds_fresh_active_set_landscape_atlas_after_failed_v15dr_mapper
+1024,1601,add_chord,2,p0;p2,multi_active_p0_p2,1,0,p0,0.5,0.5,0.0,0.5,p0:0.500;p1:0.000;p2:0.500,"p0:24,59,68;p1:14,15,502;p2:6,105,287",v15ds_fresh_active_set_landscape_atlas_after_failed_v15dr_mapper
+1024,1709,add_chord,1,p1,single_active_p1,1,0,p1,0.5,0.0,0.5,0.0,p0:0.000;p1:0.500;p2:0.000,"p0:0,20,50;p1:42,59,999;p2:0,1,2",v15ds_fresh_active_set_landscape_atlas_after_failed_v15dr_mapper
