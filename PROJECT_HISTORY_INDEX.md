@@ -6260,3 +6260,55 @@ Viktige filer:
 - `Documentation/v15dw_factorial_claim_ledger.csv`
 - `Documentation/v15dw_target_summary.csv`
 - `Documentation/v0_15dw_operativ_anbefaling.md`
+
+## 10bx. v15dx fant en eksakt, men regelbetinget beta1-sektor
+
+`v15dx` fulgte v15dw sin negative far-shell-dom med en kontrolluavhengig marginal gate:
+
+- hver gren utvikles alene med egen RNG og egen ID-allokator
+- primary observable er eventwise `beta1 = E - N + C`, ikke damage eller far-shell
+- perturbed branches bruker uniform relabel-invariant `add_chord`
+- anchor-scope er target `1024`, growth seeds `202/303`, placements `p0/p1/p2` og to ferske dynamiske seeds
+- minimale `triad_002`- og `delete_002`-sonder tester om anchor-resultatet kan generaliseres
+- alle `32` runs ble preregistrert foer dynamikk
+
+Runtime-auditen omfatter `109248` hendelser. Anchor-regimet har `81936` hendelser:
+
+- `5070` birth-events med `delta_beta1=0`
+- `75668` move-events med `delta_beta1=0`
+- `39` seed-events med `delta_beta1=0`
+- `1159` swap-events med `delta_beta1=0`
+- null component-tracker- eller expected-delta-avvik
+
+Dette gir to rene anchor-funn:
+
+- alle observerte tillatte anchor-overganger bevarer beta1 eksakt
+- uniform `add_chord` oppretter en initial beta1-offset `+1`, og offsetten er fortsatt `+1` finalt i alle `12/12` uavhengige branch-par
+
+Deformasjonskontrollene avgrenser funnet:
+
+- alle `188` triad-events har `delta_beta1=+1`
+- delete-proben har `182` delete-events: `86` med `delta_beta1=-1`, `96` med `0`
+- universal beta1-invarians for den bredere regelfamilien er dermed motsagt
+
+Den riktige diagnosen er `conditional_exact_beta1_sector_invariant_not_universal`:
+
+- beta1 er en ekte global sektorvariabel innen `band_zero_del`, i betydningen at alle tillatte lokale anchor-regler respekterer den
+- bevaringen foelger algebraisk av hvilke overgangstyper anchor-regimet tillater, og runtime bekrefter implementasjonen
+- dette er ikke emergent fysikk, Lorentz-likhet eller en universell lov
+- neste smale dynamiske sporsmaal er om sektor `+0` og `+1` har repeterbart ulike marginale responser utover den trivielle topologiske offsetten
+
+Viktige filer:
+
+- `relational_universe_v15dx_eventwise_beta1_invariant_gate.py`
+- `Documentation/v15dx_eventwise_beta1_invariant_gate.md`
+- `Documentation/v15dx_pre_registration.csv`
+- `Documentation/v15dx_transition_algebra.csv`
+- `Documentation/v15dx_event_log.csv`
+- `Documentation/v15dx_run_summary.csv`
+- `Documentation/v15dx_regime_summary.csv`
+- `Documentation/v15dx_transition_delta_summary.csv`
+- `Documentation/v15dx_sector_offsets.csv`
+- `Documentation/v15dx_gate_evaluation.csv`
+- `Documentation/v15dx_claim_ledger.csv`
+- `Documentation/v0_15dx_operativ_anbefaling.md`

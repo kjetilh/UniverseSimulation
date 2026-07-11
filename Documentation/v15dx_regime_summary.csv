@@ -1,0 +1,4 @@
+regime,n_runs,n_control,n_perturbed,zero_drift_run_rate,total_nonzero_beta1_events,total_triad_events,total_delete_events,expected_delta_violation_count,component_tracker_violation_count
+band_zero_del,24,12,12,1.0,0,0,0,0,0
+delete_002,4,2,2,0.0,86,0,182,0,0
+triad_002,4,2,2,0.0,188,188,0,0,0

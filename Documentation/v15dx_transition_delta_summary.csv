@@ -1,0 +1,15 @@
+regime,event_type,n_events,delta_beta1_counts,nonzero_rate,expected_delta_match_rate,component_tracker_match_rate
+band_zero_del,birth,5070,0:5070,0.0,1.0,1.0
+band_zero_del,move,75668,0:75668,0.0,1.0,1.0
+band_zero_del,seed,39,0:39,0.0,1.0,1.0
+band_zero_del,swap,1159,0:1159,0.0,1.0,1.0
+delete_002,birth,807,0:807,0.0,1.0,1.0
+delete_002,delete,182,-1:86;0:96,0.4725274725274725,1.0,1.0
+delete_002,move,12463,0:12463,0.0,1.0,1.0
+delete_002,seed,8,0:8,0.0,1.0,1.0
+delete_002,swap,196,0:196,0.0,1.0,1.0
+triad_002,birth,793,0:793,0.0,1.0,1.0
+triad_002,move,12517,0:12517,0.0,1.0,1.0
+triad_002,seed,4,0:4,0.0,1.0,1.0
+triad_002,swap,154,0:154,0.0,1.0,1.0
+triad_002,triad,188,1:188,1.0,1.0,1.0

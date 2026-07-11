@@ -1,0 +1,5 @@
+claim_id,claim_type,strength,statement,evaluation,evidence_ref
+claim.v15dx.anchor-beta1-invariant,factual,assertive,Every observed independent-branch transition in band_zero_del preserves beta1 exactly.,supported,v15dx_transition_delta_summary.csv:band_zero_del
+claim.v15dx.add-chord-sector,factual,assertive,The uniform add_chord perturbation creates a beta1 sector offset of exactly one that is preserved by anchor dynamics.,supported,v15dx_sector_offsets.csv
+claim.v15dx.universal-beta1-invariant,project_capability,moderated,Beta1 is invariant across the broader local rule family.,contradicted,v15dx_transition_delta_summary.csv:triad_002;delete_002
+claim.v15dx.emergent-physics,project_capability,moderated,The observed beta1 conservation is evidence of emergent universe-like physics.,unsupported,v15dx_gate_evaluation.csv:diagnosis

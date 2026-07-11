@@ -1,0 +1,6 @@
+event_type,delta_nodes,delta_edges,delta_components,allowed_delta_beta1,status
+seed,1,1,0,0,implementation_fact
+birth/death/move/stuck,0,0,0,0,implementation_fact
+swap,0,0,0,0,implementation_fact_runtime_audited
+triad,0,1,0,+1,implementation_fact_runtime_audited
+delete,0_or_-1,-1,0_or_+1,-1_or_0,implementation_fact_runtime_audited
