@@ -6312,3 +6312,54 @@ Viktige filer:
 - `Documentation/v15dx_gate_evaluation.csv`
 - `Documentation/v15dx_claim_ledger.csv`
 - `Documentation/v0_15dx_operativ_anbefaling.md`
+
+## 10by. v15dy fant ingen global marginal dynamikk som skiller beta1-sektorene
+
+`v15dy` tok den direkte konsekvensen av v15dx og testet en ny root claim: om beta1-sektor `+1` endrer marginal dynamikk utover den trivielle beta1-/edge-offsetten.
+
+Designet var ferskt og preregistrert:
+
+- target `1024`, growth seeds `202/303`, placements `p0/p1/p2`
+- fire nye seed-deltaer per growth-seed/placement
+- `24` matched contexts og `48` enkeltgren-runs
+- base- og +1-sektor bruker separate RNG-strommer og ID-allokatorer
+- uniform relabel-invariant `add_chord` oppretter +1-sektoren
+- `3414` events per run og fire faste loggvinduer
+- beta1, raw edge-offset, far-shell og damage-observabler var eksplisitt utelatt fra primary metric set
+
+Fem observabler var frosset foer dynamikk:
+
+- early birth-rate
+- full birth-rate
+- early swap-rate
+- full swap-rate
+- mean event-time
+
+En observabel maatte samtidig ha Holm-korrigert `p<=0.05`, AUC-separasjon `>=0.70`, relativ mediangap `>=0.10`, lik retning paa begge growth seeds og samme retning paa minst to placements.
+
+Resultatet er negativt og rent:
+
+- artifact-control er clean
+- beta1-bevaringen holder fortsatt eventwise og finalt i alle `48` runs
+- ingen av de fem observablene passerer gaten
+- early birth-rate er den stoerste svake forskjellen, men bare `AUC=0.615`, raw sign-test `p=0.405`, Holm `p=1.000` og relativ mediangap `0.057`
+- de andre AUC-separasjonene ligger mellom `0.500` og `0.568`
+
+Diagnosen er `no_beta1_sector_response_detected_in_frozen_marginals`:
+
+- beta1 er fortsatt en eksakt anchor-sektorlabel
+- dagens globale marginaler gir ikke evidens for at sektorene er dynamiske arter
+- dette motsier ikke mulige lokale effekter rundt den ekstra syklusen
+- neste observabel, hvis sporet fortsetter, boer vaere lokal cycle-neighborhood-/sektorgrense-dynamikk med de globale v15dy-metrikkene som negative kontroller
+
+Viktige filer:
+
+- `relational_universe_v15dy_sector_conditioned_marginal_response_gate.py`
+- `Documentation/v15dy_sector_conditioned_marginal_response_gate.md`
+- `Documentation/v15dy_pre_registration.csv`
+- `Documentation/v15dy_marginal_windows.csv`
+- `Documentation/v15dy_run_summary.csv`
+- `Documentation/v15dy_observable_comparisons.csv`
+- `Documentation/v15dy_gate_evaluation.csv`
+- `Documentation/v15dy_claim_ledger.csv`
+- `Documentation/v0_15dy_operativ_anbefaling.md`

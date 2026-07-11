@@ -1,0 +1,7 @@
+key,value,evidence
+scope,fresh_independent_sector_response,runs=48; pairs=24; steps_per_run=3414
+artifact_control,clean,48 preregistered unique independent sector runs
+anchor_beta1_conservation,pass,eventwise and final beta1 drift must remain zero
+primary_metric_gate,fail,passing_metrics=none
+diagnosis,no_beta1_sector_response_detected_in_frozen_marginals,beta1 itself and edge-count identities excluded from primary metrics
+next_step,retain_beta1_as_sector_label_only_and_test_local_sector_boundary_observable,deduced from frozen multi-metric gate without refit

@@ -1,0 +1,4 @@
+claim_id,claim_type,strength,statement,evaluation,evidence_ref
+claim.v15dy.sector-marginal-response,statistical,moderated,The beta1 +1 sector changes at least one frozen beta1-free marginal dynamics observable under band_zero_del.,unsupported,v15dy_observable_comparisons.csv
+claim.v15dy.sector-dynamical-species,project_capability,moderated,The beta1 sectors constitute distinct physical species.,unsupported,v15dy_gate_evaluation.csv:diagnosis
+claim.v15dy.emergent-symmetry,project_capability,moderated,A sector-conditioned marginal response would establish emergent physical symmetry.,unsupported,v15dy_gate_evaluation.csv:diagnosis
