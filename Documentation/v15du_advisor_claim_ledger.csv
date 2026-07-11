@@ -1,0 +1,5 @@
+claim_id,claim_type,strength,statement,status_before_v15du,counter_or_qualifier
+claim.v15du.nontrivial-response,factual,moderated,"The repo contains reproducible, nontrivial local add_chord response signals in a narrow target-1024 regime.",partly_supported,"Damage and horizon are coupling-defined and remain seed, scale, and placement sensitive."
+claim.v15du.universe-like-law,project_capability,assertive,The current model has demonstrated universe-like effective law structure.,contradicted,"Lorentz, global invariants, universality, and predictive effective laws are not validated."
+claim.v15du.symmetry-next,normative,moderated,A relabel and marked-local-isomorphism gate should precede another feature-level symmetry holdout.,supported,"If the gate passes without local witnesses, symmetry is clean but not dynamically testable in this observable."
+claim.v15du.impossibility,factual,moderated,Finite failed experiments cannot prove that no universe-like model exists in the broad starting idea.,supported,"They can falsify a frozen selector, mechanism, rule class, or parameter-domain claim; a scoped no-go theorem could prove more."

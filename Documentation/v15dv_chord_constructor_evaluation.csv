@@ -1,0 +1,8 @@
+key,value,evidence
+scope,no_new_dynamics_constructor_instrumentation,growth_seeds=16; placements=3; relabel_trials=192
+distributional_relabel_equivariance,1.000,candidate probability tolerance=1.0e-12
+transported_candidate_set_equality,1.000,all transported valid chords must equal the relabelled valid-chord set
+selected_token_root_coverage,1.000,"fallback is reported, not hidden"
+legacy_candidate_coverage,1.000,legacy first-sorted candidate is contained in the uniform candidate distribution
+diagnosis,distributionally_relabel_invariant_constructor_ready,instrumentation readiness only; no dynamic effect has been measured
+next_step,small_constructor_by_coupling_factorial_holdout,factor constructor policy and stochastic coupling before interpreting damage observables

@@ -1,0 +1,7 @@
+radius,match_mode,isomorphic_pair_count,cross_seed_isomorphic_pair_count,repeated_equivalence_class_count,max_equivalence_class_size,cross_seed_active_agreement,cross_seed_median_absolute_rate_gap
+1,structural,0,0,0,1,nan,nan
+1,boundary_aware,0,0,0,1,nan,nan
+2,structural,0,0,0,1,nan,nan
+2,boundary_aware,0,0,0,1,nan,nan
+3,structural,0,0,0,1,nan,nan
+3,boundary_aware,0,0,0,1,nan,nan

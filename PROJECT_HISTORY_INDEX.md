@@ -6136,3 +6136,127 @@ Viktige filer:
 - `Documentation/v13n_spectral_validation_break_diagnosis.csv`
 - `Documentation/v13n_spectral_validation_recommendations.csv`
 - `Documentation/v0_13n_operativ_anbefaling.md`
+
+## 10bu. v15du skilte kernel-symmetri fra constructor-artefakt
+
+`v15du` tok et premiss-steg etter den svake v15dt-selectoren:
+
+- samlet de 16 growth seedene fra v15dq+v15dr+v15ds
+- beholdt target `1024`, `add_chord` og placements `p0,p1,p2`
+- kjoerte ingen ny defect-dynamikk
+- testet node-relabel covariance separat for transition kernel og perturbation constructor
+- testet exact marked local graph isomorphism ved radius `1/2/3`
+- la inn en eksplisitt evidensstige fra kjoerbar modell til mulig universe-builder claim
+- brukte et tre-rolle raadgiverpanel med skeptic, steelman og evidence adjudicator
+
+Det skarpe resultatet er:
+
+- transition-kjernen er relabel-equivariant i `192/192` trials (`1.000`)
+- legacy `add_chord` first-sorted constructor er bare relabel-equivariant i `0.172` av trials
+- transported post-perturbation graph matcher i `0.214`
+- strict marked local isomorphism finner ingen exact par ved radius `1`, `2` eller `3`
+- p0/p2 exchange-auditen er ikke decisive (`exact sign-flip p = 0.453`)
+
+Dette er viktig ny viten:
+
+- node-ID-invarians finnes i selve stokastiske transition-kjernen
+- en betydelig del av placement-landskapet kan samtidig vaere paavirket av hvordan legacy-constructor velger laveste sorterte node-ID
+- tidligere feature-level near-symmetry kan ikke oppgraderes til graph automorphism eller fysisk symmetri
+- neste steg maa reparere instrumenteringen foer nye symmetry-sensitive dynamics
+
+Viktige filer:
+
+- `relational_universe_v15du_relabel_symmetry_gate.py`
+- `Documentation/v15du_relabel_symmetry_gate.md`
+- `Documentation/v15du_relabel_symmetry_trials.csv`
+- `Documentation/v15du_marked_local_contexts.csv`
+- `Documentation/v15du_marked_local_isomorphism_pairs.csv`
+- `Documentation/v15du_marked_local_equivalence_classes.csv`
+- `Documentation/v15du_marked_local_isomorphism_summary.csv`
+- `Documentation/v15du_placement_exchange_audit.csv`
+- `Documentation/v15du_symmetry_gate_evaluation.csv`
+- `Documentation/v15du_advisor_claim_ledger.csv`
+- `Documentation/v0_15du_operativ_anbefaling.md`
+
+## 10bv. v15dv bygget en distributionally relabel-invariant chord-constructor
+
+`v15dv` fulgte den konkrete v15du-diagnosen uten aa endre legacy-koden:
+
+- valgt placement peker paa en bestemt token-ID
+- alle gyldige lokale chords rooted ved dette tokenet enumereres
+- candidate-fordelingen er uniform
+- fallback til alle token-roots er eksplisitt, men ble ikke brukt i denne runden
+- symmetry-gaten sammenligner hele transported probability measure, ikke samme list-index under samme RNG-tall
+
+Resultatet er rent paa instrumenteringsnivaa:
+
+- distributional relabel equivariance: `1.000`
+- transported candidate-set equality: `1.000`
+- selected-token-root coverage: `1.000`
+- legacy candidate coverage i den nye candidate-fordelingen: `1.000`
+- median candidate-count p0/p1/p2: `12.5/15.5/10.5`
+
+Tolkningen skal holdes smal:
+
+- dette validerer en relabel-invariant perturbation-instrumentering
+- det validerer ingen defect-effekt, physical symmetry, invariant, Lorentz-likhet eller universality
+- legacy constructor beholdes som historisk kontroll slik at tidligere resultater fortsatt er reproducerbare
+- neste dynamiske gate er en liten frozen `constructor x coupling`-faktorial: legacy vs uniform og maximal vs rank
+
+Viktige filer:
+
+- `relational_universe_v15dv_relabel_invariant_chord_constructor.py`
+- `Documentation/v15dv_relabel_invariant_chord_constructor.md`
+- `Documentation/v15dv_chord_candidate_contexts.csv`
+- `Documentation/v15dv_chord_distribution_relabel_trials.csv`
+- `Documentation/v15dv_chord_candidate_summary.csv`
+- `Documentation/v15dv_chord_constructor_evaluation.csv`
+- `Documentation/v0_15dv_operativ_anbefaling.md`
+
+## 10bw. v15dw avviste far-shell-responsen som faktor-robust fysikksignal
+
+`v15dw` gjennomfoerte den dynamiske artifact/coupling-gaten som v15dv gjorde mulig:
+
+- target `1024`, growth seeds `202/303` og placements `p0/p1/p2`
+- fire ferske seed-deltaer per growth-seed/placement
+- `legacy_first_sorted` mot `uniform_relabel_invariant` constructor
+- `maximal` mot `rank` stochastic coupling
+- samme dynamiske seed i alle fire faktorcellene for hvert preregistrert oppsett
+- `96` runs og `41088` snapshots totalt
+- frosne grenser: cell agreement `>=0.80`, median established-rate-gap `<=0.20`, median normalized-horizon-gap `<=0.15`
+
+Artifact-kontrollen er clean:
+
+- target-size er separert
+- requested perturbation matcher i alle runs
+- alle 24 oppsett ble preregistrert foer dynamikk
+- uniform constructor valgte samme chord som legacy i bare `0.167`, saa constructor-kontrasten var materiell
+
+Begge faktorgatene feilet:
+
+- under maximal coupling var constructor-kontrasten stabil (`agreement=1.000`, established-gap `0.000`, horizon-gap `0.011`)
+- under rank coupling var den constructor-sensitiv (`agreement=0.833`, established-gap `0.250`, horizon-gap `0.245`)
+- coupling-kontrasten var akseptabel under legacy constructor (`agreement=0.833`, established-gap `0.000`, horizon-gap `0.029`)
+- coupling-kontrasten feilet tydelig under uniform constructor (`agreement=0.667`, established-gap `0.375`, horizon-gap `0.406`)
+
+Den presise diagnosen er `response_not_factorially_robust`. Det betyr:
+
+- dagens joint-damage/far-shell-klassifikasjon er for avhengig av constructor- og coupling-valg til aa brukes som physics-facing signal
+- det er ikke et bevis for at all lokal dynamikk er trivial
+- marginale globale drifter er langt mer stabile i de samme kontrastene, men de er ikke dermed validerte invariants
+- neste gate maa bruke en preregistrert marginal grenobservabel som ikke defineres via kontrollkoblingen
+- placement-selectors og far-shell-labels skal ikke refittes fra denne runden
+
+Viktige filer:
+
+- `relational_universe_v15dw_constructor_coupling_factorial_gate.py`
+- `Documentation/v15dw_constructor_coupling_factorial_gate.md`
+- `Documentation/v15dw_constructor_coupling_pre_registration.csv`
+- `Documentation/v15dw_constructor_coupling_snapshots.csv`
+- `Documentation/v15dw_constructor_coupling_runs.csv`
+- `Documentation/v15dw_constructor_coupling_cells.csv`
+- `Documentation/v15dw_factor_comparisons.csv`
+- `Documentation/v15dw_factorial_evaluation.csv`
+- `Documentation/v15dw_factorial_claim_ledger.csv`
+- `Documentation/v15dw_target_summary.csv`
+- `Documentation/v0_15dw_operativ_anbefaling.md`

@@ -1,0 +1,5 @@
+effect,fixed_factor,fixed_level,level_a,level_b,n_paired_cells,cell_label_agreement,majority_flip_count,median_absolute_established_rate_gap,max_absolute_established_rate_gap,median_absolute_normalized_horizon_gap,max_absolute_normalized_horizon_gap,median_absolute_perturbed_node_drift_gap,median_absolute_perturbed_beta1_drift_gap,factor_gate_pass,factor_status
+constructor_effect,coupling,maximal,legacy_first_sorted,uniform_relabel_invariant,6,1.0,0,0.0,0.0,0.010901162790697694,0.15988372093023256,0.000244140625,0.0,1,stable_under_factor
+constructor_effect,coupling,rank,legacy_first_sorted,uniform_relabel_invariant,6,0.8333333333333334,1,0.25,1.0,0.2449127906976744,0.9156976744186046,0.0,0.0,0,factor_sensitive
+coupling_effect,constructor,legacy_first_sorted,maximal,rank,6,0.8333333333333334,1,0.0,0.5,0.029069767441860468,0.5406976744186046,0.0006103515625,0.0,1,stable_under_factor
+coupling_effect,constructor,uniform_relabel_invariant,maximal,rank,6,0.6666666666666666,2,0.375,1.0,0.40625,0.943313953488372,0.00048828125,0.0,0,factor_sensitive

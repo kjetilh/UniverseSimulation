@@ -1,0 +1,4 @@
+placement,n_growth_seeds,selected_token_root_fraction,min_candidate_count,median_candidate_count,max_candidate_count,legacy_candidate_coverage,median_candidate_entropy_bits,median_sampled_candidate_fraction
+0,16,1.0,1,12.5,44,1.0,3.633393270347451,0.6038961038961039
+1,16,1.0,3,15.5,56,1.0,3.9474088816539714,0.49159663865546216
+2,16,1.0,1,10.5,36,1.0,3.39067985676233,0.6363636363636364

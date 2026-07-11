@@ -1,0 +1,8 @@
+key,value,evidence
+scope,fresh_constructor_by_coupling_factorial,runs=96; growth_seeds=2; placements=3; seed_deltas=4
+artifact_control,clean,target_separated=1; requested_match=1
+uniform_matches_legacy_assignment_rate,0.167,constructor effect is informative only when uniform sampling often selects a different valid chord
+constructor_gate,fail,"maximal:agree=1.000,est_gap=0.000,horizon_gap=0.011;rank:agree=0.833,est_gap=0.250,horizon_gap=0.245"
+coupling_gate,fail,"legacy_first_sorted:agree=0.833,est_gap=0.000,horizon_gap=0.029;uniform_relabel_invariant:agree=0.667,est_gap=0.375,horizon_gap=0.406"
+diagnosis,response_not_factorially_robust,"allOf(constructor robustness, coupling robustness) with fixed thresholds"
+next_step,stop_far_shell_physics_interpretation_and_return_to_marginal_observables,deduced from failed or satisfied factor gates; no selector refit

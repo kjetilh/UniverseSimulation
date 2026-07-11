@@ -1,0 +1,9 @@
+key,value,evidence
+scope,v15dq_plus_v15dr_plus_v15ds_no_new_dynamics,growth_seeds=16; placements=3; relabel_trials=192
+transition_kernel_relabel_equivariance,1.000,tolerance=1.0e-12
+add_chord_constructor_relabel_equivariance,0.172,transported candidate must equal candidate found after node relabel
+post_perturbation_graph_relabel_equivariance,0.214,transported post-edge-set equality
+radius3_boundary_aware_cross_seed_witnesses,0,active_agreement=nan; median_rate_gap=nan
+p0_p2_exchange_audit,0.453,paired_active_agreement=0.625; mean_rate_difference=-0.094
+diagnosis,kernel_equivariant_but_constructor_breaks_relabel_symmetry,implementation gate precedes physical symmetry language
+next_step,replace_constructor_with_distributionally_relabel_invariant_candidate_sampling,no fresh dynamics unless representation and local-witness gates justify them

@@ -1,0 +1,4 @@
+claim_id,claim_type,strength,statement,evaluation,evidence_ref
+claim.v15dw.constructor-robust,statistical,moderated,The target-1024 add_chord response is robust to legacy versus uniform relabel-invariant constructor policy.,contradicted,v15dw_factor_comparisons.csv:constructor_effect
+claim.v15dw.coupling-robust,statistical,moderated,The target-1024 add_chord damage/horizon response is robust to maximal versus rank coupling.,contradicted,v15dw_factor_comparisons.csv:coupling_effect
+claim.v15dw.factorially-robust-response,project_capability,moderated,The current far-shell response is robust enough to justify the next physics-facing gate.,unsupported,v15dw_factorial_evaluation.csv:diagnosis
