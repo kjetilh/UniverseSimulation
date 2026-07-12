@@ -1,0 +1,4 @@
+claim_id,claim_type,strength,statement,evaluation,evidence_ref
+claim.v15dz.local-sector-response,statistical,moderated,The beta1 +1 sector changes adjusted local cycle-neighborhood dynamics under band_zero_del.,unsupported,v15dz_local_observable_comparisons.csv
+claim.v15dz.transport-beyond-chord,causal,moderated,Any local sector response persists beyond the original chord edge.,unsupported,v15dz_sector_diagnostics.csv
+claim.v15dz.physical-topological-charge,project_capability,moderated,The beta1 sector is a physical topological charge analogous to a particle property.,unsupported,v15dz_gate_evaluation.csv:diagnosis

@@ -1,0 +1,3 @@
+sector,n_runs,plus1_chord_loss_rate,mean_tail_candidate_edge_presence_rate,mean_tail_local_event_rate_fixed_r2,mean_tail_delta_local_token_fraction_r2,global_beta1_clean_rate
+beta1_base,24,nan,0.041666666666666664,0.22432593254865849,-0.020266866844129518,1.0
+beta1_plus1,24,0.041666666666666664,0.9583333333333334,0.2300506312176265,-0.030224147630178763,1.0

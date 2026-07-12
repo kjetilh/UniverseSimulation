@@ -1,0 +1,8 @@
+key,value,evidence
+scope,fresh_local_cycle_neighborhood_response,runs=48; pairs=24; snapshots_per_run=215
+artifact_control,clean,48 preregistered unique independent runs
+global_beta1_conservation,pass,zero eventwise and final beta1 drift required
+local_primary_gate,fail,passing_metrics=none
+plus1_chord_loss_coverage,0.042,minimum_for_transport_claim=0.25
+diagnosis,no_adjusted_local_beta1_sector_response_detected,raw initial +1 offset excluded; global v15dy metrics remain negative controls
+next_step,retire_beta1_as_dynamic_track_keep_as_conditional_sector_label,predeclared stop rule; no metric refit

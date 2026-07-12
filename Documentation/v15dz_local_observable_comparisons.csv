@@ -1,0 +1,5 @@
+metric,n_pairs,median_beta1_base,median_beta1_plus1,median_paired_difference,relative_median_gap,positive_pair_count,negative_pair_count,zero_pair_count,sign_consistency,sign_test_p,auc_plus1_vs_base,auc_separation,global_direction,growth_seed_direction_match,placement_direction_match,holm_p,metric_gate_pass,metric_status
+tail_delta_local_beta1_r1,24,0.0,0.0,0.0,0.0,8,7,9,0.5333333333333333,1.0,0.5407986111111112,0.5407986111111112,0,0.0,0.0,1.0,0,not_supported
+tail_delta_local_beta1_r2,24,-0.3611111111111111,0.0,0.0,1.0,11,8,5,0.5789473684210527,0.6476058959960938,0.4921875,0.5078125,0,0.0,0.0,1.0,0,not_supported
+tail_delta_local_beta1_r3,24,0.0,0.0,0.0,0.0,6,9,9,0.6,0.60723876953125,0.4375,0.5625,0,0.0,0.0,1.0,0,not_supported
+tail_delta_cycle_density_r2,24,-0.004192518183992466,-0.002630040911747511,0.008222379751128049,0.37268228870435904,14,9,1,0.6086956521739131,0.4048728942871094,0.5416666666666666,0.5416666666666666,1,0.5,1.0,1.0,0,not_supported

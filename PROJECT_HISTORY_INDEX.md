@@ -6363,3 +6363,55 @@ Viktige filer:
 - `Documentation/v15dy_gate_evaluation.csv`
 - `Documentation/v15dy_claim_ledger.csv`
 - `Documentation/v0_15dy_operativ_anbefaling.md`
+
+## 10bz. v15dz aktiverte stoppregelen for beta1 som dynamisk spor
+
+`v15dz` testet den siste koherente beta1-dynamikkhypotesen etter v15dy: at sektor `+1` kan ha lokal cycle-neighborhood-dynamikk selv om globale marginaler er negative.
+
+Den preregistrerte fresh-base-gaten brukte:
+
+- target `1024`, growth seeds `404/505`, placements `p0/p1/p2`
+- fire nye seed-deltaer og `24` uavhengige sektorpar (`48` runs)
+- uniform relabel-invariant add_chord
+- `3414` events per run og `10320` lokale snapshots
+- dynamiske radiusballer rundt initial chord-support
+- within-branch endring fra egen t0, slik at raw initial `+1` ikke kunne telle som respons
+
+Fire primary metrics var frosset:
+
+- tail delta local beta1 ved radius `1`
+- tail delta local beta1 ved radius `2`
+- tail delta local beta1 ved radius `3`
+- tail delta cycle-density ved radius `2`
+
+Resultatet er negativt:
+
+- artifact-control er clean og global beta1 holder eksakt i alle runs
+- ingen local primary metric passerer
+- AUC-separasjonene ligger bare paa `0.508-0.562`
+- alle Holm-p er `1.000`
+- observerte retninger transfererer ikke mellom begge growth seeds og placements
+- originalchorden forsvinner i bare `1/24` +1-runs (`0.042`), men dette utloeser ikke mer budsjett fordi primary gate allerede feilet
+
+Diagnosen er `no_adjusted_local_beta1_sector_response_detected`, og den preregistrerte stoppregelen gir `retire_beta1_as_dynamic_track_keep_as_conditional_sector_label`.
+
+Evidensstatusen maa holdes presis:
+
+- v15dx sin eksakte, regelbetingede beta1-invarians staar ved lag
+- v15dy/v15dz finner ingen robust global eller justert lokal dynamisk konsekvens av sektoren
+- beta1 skal beholdes som algebraisk sektorlabel, ikke som dynamisk art, partikkel eller fysisk topologisk charge
+- mer chord-survival-/beta1-budsjett krever en ny uavhengig mekanismehypotese, ikke enda en observabelvariant
+
+Viktige filer:
+
+- `relational_universe_v15dz_local_sector_transport_gate.py`
+- `Documentation/v15dz_local_sector_transport_gate.md`
+- `Documentation/v15dz_pre_registration.csv`
+- `Documentation/v15dz_local_snapshots.csv`
+- `Documentation/v15dz_run_summary.csv`
+- `Documentation/v15dz_local_observable_comparisons.csv`
+- `Documentation/v15dz_sector_diagnostics.csv`
+- `Documentation/v15dz_gate_evaluation.csv`
+- `Documentation/v15dz_claim_ledger.csv`
+- `Documentation/v15dz_target_summary.csv`
+- `Documentation/v0_15dz_operativ_anbefaling.md`
