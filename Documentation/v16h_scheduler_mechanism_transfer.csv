@@ -1,0 +1,7 @@
+group_field,group_value,clock_bins,n_runs,median_rate_explained_fraction,conditionally_nonsurprising_fraction,min_group_nonsurprising_fraction,group_mechanism_pass
+arm,current_global,128,6,0.9340357645291053,0.8333333333333334,0.5,1
+arm,exposure_matched_local,128,6,1.0221180097498106,1.0,0.5,1
+arm,current_global,64,6,0.9272246708495078,1.0,0.5,1
+arm,exposure_matched_local,64,6,0.9815671375359127,1.0,0.5,1
+arm,current_global,32,6,0.9086098068236342,0.6666666666666666,0.5,1
+arm,exposure_matched_local,32,6,0.9678228893534389,0.8333333333333334,0.5,1

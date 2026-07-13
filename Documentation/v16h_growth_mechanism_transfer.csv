@@ -1,0 +1,7 @@
+group_field,group_value,clock_bins,n_runs,median_rate_explained_fraction,conditionally_nonsurprising_fraction,min_group_nonsurprising_fraction,group_mechanism_pass
+growth_seed,4001,128,6,0.960649547613627,1.0,0.5,1
+growth_seed,4127,128,6,0.9836776893550709,0.8333333333333334,0.5,1
+growth_seed,4001,64,6,0.9461154954008366,1.0,0.5,1
+growth_seed,4127,64,6,0.9584807414460714,1.0,0.5,1
+growth_seed,4001,32,6,0.9346258974561068,0.6666666666666666,0.5,1
+growth_seed,4127,32,6,0.9454352735031702,0.8333333333333334,0.5,1

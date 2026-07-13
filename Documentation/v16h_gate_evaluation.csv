@@ -1,0 +1,13 @@
+gate,status,observed,required,decision
+v16g_source_contract,pass,1,1,continue
+fresh_target_hygiene,pass,1536.0,1536,continue
+fresh_run_and_dag_integrity,pass,runs=12;invalid=0,runs=12;invalid=0,continue
+topological_replay,pass,replays=24;failures=0,replays=24;failures=0,continue
+relabel_and_depth_map,pass,relabel=12/12;maps=12/12,12/12;12/12,continue
+direct_rate_log_parity,pass,passes=12/12;max_error=0.000e+00,12/12;max_error<=1e-12,continue
+v16f_relation_fresh_reproduction,pass,positive_gap=36/36,36/36,continue
+fresh_total_rate_mechanism,pass,passing_bins=3/3,3/3,retire_common_geometry
+v16g_to_v16h_gap_transfer,pass,128:1.285763;64:1.350161;32:1.205295,"each in [0.5,2.0]",continue
+fresh_growth_transfer,pass,passing_groups=6/6,6/6,continue
+fresh_scheduler_transfer,pass,passing_groups=6/6,6/6,continue
+v16h_overall,total_rate_mechanism_validated_retire_clock_depth_common_geometry,instrumentation=1;mechanism=1,instrumentation=1;mechanism=1,total_rate_mechanism_validated_retire_clock_depth_common_geometry

@@ -7095,3 +7095,43 @@ Viktige filer:
 - `Documentation/v16g_claim_ledger.csv`
 - `Documentation/v0_16g_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16g.md`
+
+## 10cl. v16h validerte totalrate-mekanismen paa fersk dynamikk og lukket common-geometry-syntesen
+
+`v16h` gjennomforte den preregistrerte ferske valideringen av v16g-mekanismen uten refit. Designet holdt target `1536`, to events per initial node, depth-window `16`, clock bins `128/64/32`, begge scheduler-armer og `64` nulltrekk per familie fast. Nye growth seeds `4001/4127` og offsets `81013/81047/81091` ga `12` runs, `36864` events og `9216` nullrader. Spec-digest var `0971020c6986a8419a07358620e121a0b2497b25815d078a188472b6444ed9fd`.
+
+I motsetning til v16g ble alle fire pre-event familierater, valgt familierate, descriptor-sannsynlighet, konkret descriptor-hazard og `dt * totalrate` logget direkte foer hver mutasjon. En uavhengig post-run replay rekonstruerte de samme storrelsene. Alle `12/12` audits passerte med `0` reconstruction-feil, `0` diskrete parity-feil og maksimal numerisk feil `0.0`. Residual-mean var `0.964935-1.032539` og residual-SD `0.943323-1.036675`. Alle `24/24` topologiske replays, `12/12` relabel-audits og `12/12` depth-map-audits passerte.
+
+Den frosne v16f-retningen ble reprodusert i `36/36` run/opplosningsceller. Lokale resultater for bins `128/64/32`:
+
+- median waiting-minus-observed NMI `0.023856/0.022504/0.016575`
+- median totalrate-forklart andel `1.022118/0.981567/0.967823`
+- conditionally nonsurprising run-andel `1.000/1.000/0.833`
+- v16h/v16g gap-ratio `1.285763/1.350161/1.205295`, alle innen frossen `[0.5,2.0]`
+
+Event-family og descriptor-hazard ga fortsatt ingen robust ekstra mekanisme utover totalraten. Median family-rate-inkrement var `-0.007782/-0.000034/0.003549`; median hazard-inkrement `-0.006216/-0.005787/0.012267`. Alle tre lokale primary-celler, `6/6` growth-grupper og `6/6` scheduler-grupper passerte. Samlet status er `total_rate_mechanism_validated_retire_clock_depth_common_geometry`.
+
+Execution-auditen dokumenterer tre pre-output restarter. En helper ble kalt i feil namespace; deretter maatte in-memory heltalls-ID-er normaliseres til CSV-strenger ved v16g-replay-grensen; til slutt fullforte alle runs i memory, men forste filskriving stoppet paa `ENOSPC`. Bare instrumentering/representasjon og regenererbar lokal cache ble korrigert. Ingen data, seeds, statistikk, nuller eller terskler ble endret, ingen resultatfiler var skrevet, og ingen primary mekanismeverdi var observert foer den endelige fullrestarten.
+
+Resultatet er avgrensende, ikke en ny fysikkclaim. Clock/depth-relasjonen er repeterbar i den deklarerte simulatoren, men den forklares av schedulerens totale pre-event rateprofil paa ferske histories. Depth-kartet kan beholdes som arkitekturartefakt og clock-kartet som scheduler-sensitiv diagnostikk; relasjonen mellom dem er ikke uavhengig geometri-evidens. Dette etablerer ikke fysisk tid, Lorentz-symmetri, metric spacetime, continuum, partikler, entanglement eller universell kausalitet.
+
+Common-geometry-syntesen avsluttes derfor. Neste forskningstrinn skal ikke vaere et tredje kart, mer clock/depth-NMI eller bare storre target. Det krever forst en ny og uavhengig fysisk motivert observabel med egen nullmodell og preregistrert gate.
+
+Viktige filer:
+
+- `relational_universe_v16h_fresh_rate_logged_mechanism_holdout.py`
+- `Documentation/v16h_fresh_rate_logged_mechanism_holdout.md`
+- `Documentation/v16h_pre_registration.csv`
+- `Documentation/v16h_execution_audit.csv`
+- `Documentation/v16h_direct_rate_event_log.csv`
+- `Documentation/v16h_direct_rate_audit.csv`
+- `Documentation/v16h_mechanism_run_summary.csv`
+- `Documentation/v16h_conditional_null_distribution.csv`
+- `Documentation/v16h_local_mechanism_gate.csv`
+- `Documentation/v16h_baseline_transfer.csv`
+- `Documentation/v16h_growth_mechanism_transfer.csv`
+- `Documentation/v16h_scheduler_mechanism_transfer.csv`
+- `Documentation/v16h_gate_evaluation.csv`
+- `Documentation/v16h_claim_ledger.csv`
+- `Documentation/v0_16h_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16h.md`

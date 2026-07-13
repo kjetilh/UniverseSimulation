@@ -1,0 +1,13 @@
+growth_seed,run_offset,arm,run_seed,events,support_mismatch_events,context_failures,edge_set_equal,depth_sequence_equal,final_structure_equal,relabel_pass,coarse_map_transport_pass
+4001,81013,current_global,1840091013,3072,0,0,1,1,1,1,1
+4001,81013,exposure_matched_local,1940091013,3072,0,0,1,1,1,1,1
+4001,81047,current_global,1840091047,3072,0,0,1,1,1,1,1
+4001,81047,exposure_matched_local,1940091047,3072,0,0,1,1,1,1,1
+4001,81091,current_global,1840091091,3072,0,0,1,1,1,1,1
+4001,81091,exposure_matched_local,1940091091,3072,0,0,1,1,1,1,1
+4127,81013,current_global,1841351013,3072,0,0,1,1,1,1,1
+4127,81013,exposure_matched_local,1941351013,3072,0,0,1,1,1,1,1
+4127,81047,current_global,1841351047,3072,0,0,1,1,1,1,1
+4127,81047,exposure_matched_local,1941351047,3072,0,0,1,1,1,1,1
+4127,81091,current_global,1841351091,3072,0,0,1,1,1,1,1
+4127,81091,exposure_matched_local,1941351091,3072,0,0,1,1,1,1,1

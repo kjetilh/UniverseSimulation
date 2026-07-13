@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,Fresh v16h events carry complete direct pre-event rate logs that match exact post-run reconstruction.,supported,v16h_direct_rate_audit.csv;v16h_direct_rate_event_log.csv,"declared simulator, fresh finite histories"
+C2,The pre-event total-rate profile explains the v16f clock/depth anti-alignment on fresh dynamics.,supported,v16h_local_mechanism_gate.csv;v16h_baseline_transfer.csv,"target 1536, two growth seeds, two scheduler arms, three clock resolutions"
+C3,Clock and depth maps provide independent evidence for one common emergent geometry.,unsupported,v16h_mechanism_run_summary.csv,the observed relation is accounted for by scheduler total-rate structure
+C4,Event-family or concrete descriptor hazards define additional physical species or local laws.,unsupported,v16h_mechanism_run_summary.csv,secondary conditioning only; heuristic simulator observables
+C5,"The result establishes physical time, Lorentz symmetry, spacetime, continuum, particles, entanglement, or universal causality.",unsupported,none,not tested
