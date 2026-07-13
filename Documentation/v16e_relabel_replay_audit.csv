@@ -1,0 +1,13 @@
+growth_seed,run_offset,arm,run_seed,events,support_mismatch_events,context_failures,edge_set_equal,depth_sequence_equal,final_structure_equal,relabel_pass,clock_map_transport_pass
+3701,71003,current_global,1573097008,3072,0,0,1,1,1,1,1
+3701,71003,exposure_matched_local,1673097008,3072,0,0,1,1,1,1,1
+3701,71047,current_global,1573097052,3072,0,0,1,1,1,1,1
+3701,71047,exposure_matched_local,1673097052,3072,0,0,1,1,1,1,1
+3701,71089,current_global,1573097094,3072,0,0,1,1,1,1,1
+3701,71089,exposure_matched_local,1673097094,3072,0,0,1,1,1,1,1
+3803,71003,current_global,1574117008,3072,0,0,1,1,1,1,1
+3803,71003,exposure_matched_local,1674117008,3072,0,0,1,1,1,1,1
+3803,71047,current_global,1574117052,3072,0,0,1,1,1,1,1
+3803,71047,exposure_matched_local,1674117052,3072,0,0,1,1,1,1,1
+3803,71089,current_global,1574117094,3072,0,0,1,1,1,1,1
+3803,71089,exposure_matched_local,1674117094,3072,0,0,1,1,1,1,1

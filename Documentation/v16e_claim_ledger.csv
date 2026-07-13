@@ -1,0 +1,7 @@
+claim_id,statement,status,evidence,scope_limit
+C1,Equal simulation-time slabs define relabel-invariant witnessed acyclic quotient DAGs on fresh histories.,supported,v16e_map_audit.csv;v16e_primary_control_coarse_edges.csv,clock map depends on executed event order and simulation time
+C2,Actual clock slabs retain fewer dependency edges than shuffled-waiting-time and equal-event-count controls at all three frozen resolutions.,supported,v16e_local_effect_gate.csv;v16e_null_effects.csv,"target 1536, six fresh local runs, preregistered effect bounds"
+C3,Clock-aligned dependency clustering transfers across fresh growth seeds and the scheduler diagnostic.,supported,v16e_growth_effect_transfer.csv;v16e_scheduler_effect_transfer.csv,two growth seeds and broad magnitude-ratio bounds
+C4,The clock-slab result independently proves the same structure as the causal-depth map.,unsupported,none,v16e tests a different clock-alignment property; cross-map relation remains untested
+C5,"Clock-slab clustering establishes Lorentz symmetry, proper time, or emergent spacetime.",unsupported,none,"simulation time is an implementation clock, not a validated physical metric"
+C6,"The finite quotient results establish continuum, particles, entanglement, or universal causal laws.",unsupported,none,not tested by v16e

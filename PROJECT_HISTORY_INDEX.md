@@ -6872,3 +6872,78 @@ Viktige filer:
 - `Documentation/v16d_claim_ledger.csv`
 - `Documentation/v0_16d_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16d.md`
+
+## 10ci. v16e fant et uavhengig clock-alignment-signal paa fersk holdout
+
+`v16e` fulgte stoppregelen etter v16d og skalerte ikke causal-depth-kartet videre. I stedet ble et uavhengig, relabel-invariant clock-slab-kart definert fra faktisk simuleringstid: hvert event ble plassert etter midtpunktet i sin ventetid i like intervaller av normalisert run-tid. Kartet bruker ikke causal depth, men er fortsatt avhengig av realisert scheduler-rekkefolge.
+
+Designfasen brukte bare gamle v16c/v16d-historier. To kandidatfamilier `128/32/8` og `64/16/4` ble kontrollert mot equal-event-count slabs og `16` deterministiske shuffled-waiting-time-kart. Opplosningene `128/64/32` hadde materiell og stabil negativ clock-minus-null-retning, mens `16/8/4` ble svake eller degenererte. Derfor ble bare `128/64/32` frosset foer fersk dynamikk. Design-selection-hash var `6ba19c245110e66c132758e76c7179416257bfb4648703bd67f259e9803befa3`.
+
+Den ferske spesifikasjonen ble preregistrert med digest `3c06109cc2da91851dc883ea022dc78bdef1e2a28630be3430b6281243544302`:
+
+- target `1536`, med eksakt `3072` events per run
+- nye growth seeds `3701/3803`
+- offsets `71003/71047/71089`
+- scheduler-armene `current_global` og `exposure_matched_local`
+- to topologiske replays per run
+- `32` shuffled-waiting-time-nuller per run og opplosning
+- equal-event-count slabs som separat kronologisk kontroll
+- frosne lokale terskler for effekt, null-z, fortegnskonsistens og discovery/holdout-magnituderatio
+
+Faktiske fresh resultater:
+
+- `12` runs og `36864` events
+- `1224` quotient-map-sammendrag og audits
+- `221184` primary/control membership-rader
+- alle `12/12` fine DAG-er asykliske og witness-komplette
+- alle `24/24` topologiske replays endte eksakt likt etter minst `99.6745%` omplassering
+- alle `12/12` relabel-replays og clock-map-transporter passerte
+- alle `1224/1224` primary-, control- og nullkart passerte integritetsgatene
+- alle primary/control quotient-kanter hadde konkrete fine-edge witnesses
+
+I den preregistrerte lokale primary-gaten var clock-kartets median edge retention lavere enn begge kontrollene ved alle tre opplosninger:
+
+- bins `128`: clock-minus-shuffle `-0.055172`, clock-minus-event-count `-0.064436`, null-z `-15.035`, holdout/discovery-ratio `1.017`
+- bins `64`: clock-minus-shuffle `-0.026102`, clock-minus-event-count `-0.028578`, null-z `-13.052`, holdout/discovery-ratio `0.930`
+- bins `32`: clock-minus-shuffle `-0.009089`, clock-minus-event-count `-0.009610`, null-z `-7.115`, holdout/discovery-ratio `0.744`
+- alle `18/18` lokale run/opplosningskombinasjoner hadde negativ clock-minus-shuffle-retning
+
+Effekten transfererte innen de brede, frosne pilotgrensene:
+
+- growth-seed magnituderatio `1.211/1.350/1.324` for bins `128/64/32`
+- local/global scheduler-magnituderatio `0.849/0.811/0.750`
+- non-seed event-TV `0.000976`
+
+Status er `pass_to_v16f_cross_map_relation_gate`. Det nye evidensnivaaet er avgrenset, men reelt: faktisk simuleringstid grupperer direkte dependency-kanter sterkere enn baade en ren event-count-kronologi og shufflet waiting-time ved tre frosne opplosninger, paa ferske histories og to scheduler-armer. Dette er en uavhengig map-observabel i forhold til v16c/v16d sitt causal-depth-kart.
+
+Det er ikke vist at clock-kartet og causal-depth-kartet representerer samme struktur. Clock-kartet er scheduler-order-dependent, simuleringsklokken er ikke proper time, og resultatet etablerer ikke Lorentz-symmetri, metric geometry, spacetime, continuum, partikler, entanglement eller universell kausal orden.
+
+Neste gate er derfor ett preregistrert `v16f` cross-map relation-test paa samme ferske historier: maal om clock-slab- og causal-depth-quotientene har mer relasjon enn size-/order-matchede nullkart. Ikke legg til et tredje kart og ikke oek target foer denne relasjonen er testet.
+
+Viktige filer:
+
+- `relational_universe_v16e_clock_slab_map_gate.py`
+- `Documentation/v16e_clock_slab_map_gate.md`
+- `Documentation/v16e_design_calibration_map_summary.csv`
+- `Documentation/v16e_design_calibration_null_effects.csv`
+- `Documentation/v16e_design_selection.csv`
+- `Documentation/v16e_pre_registration.csv`
+- `Documentation/v16e_source_chain.csv`
+- `Documentation/v16e_target_summary.csv`
+- `Documentation/v16e_event_log.csv`
+- `Documentation/v16e_fine_dependency_edges.csv`
+- `Documentation/v16e_run_summary.csv`
+- `Documentation/v16e_map_summary.csv`
+- `Documentation/v16e_map_audit.csv`
+- `Documentation/v16e_null_effects.csv`
+- `Documentation/v16e_primary_control_membership.csv`
+- `Documentation/v16e_primary_control_coarse_edges.csv`
+- `Documentation/v16e_topological_replay_audit.csv`
+- `Documentation/v16e_relabel_replay_audit.csv`
+- `Documentation/v16e_local_effect_gate.csv`
+- `Documentation/v16e_growth_effect_transfer.csv`
+- `Documentation/v16e_scheduler_effect_transfer.csv`
+- `Documentation/v16e_gate_evaluation.csv`
+- `Documentation/v16e_claim_ledger.csv`
+- `Documentation/v0_16e_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16e.md`

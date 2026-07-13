@@ -1,0 +1,14 @@
+gate,status,observed,required,decision
+v16d_source_contract,pass,1,1,continue
+fresh_target_hygiene,pass,1536.0,1536,continue
+fresh_run_integrity,pass,runs=12;invalid=0,runs=12;invalid=0,continue
+fine_dag_integrity,pass,acyclic=12;witness_errors=0,acyclic=12;witness_errors=0,continue
+fresh_topological_replay,pass,replays=24;min_reorder=0.996745;failures=0,replays=24;failures=0,continue
+relabel_and_clock_map_transport,pass,12,12,continue
+all_map_integrity,pass,passes=1224/1224,1224,continue
+primary_control_bin_coverage,pass,1,1,continue
+effect_row_integrity,pass,36,36,continue
+local_clock_null_effect,pass,128:-0.055172:z=-15.035:neg=1.000:ratio=1.017;64:-0.026102:z=-13.052:neg=1.000:ratio=0.930;32:-0.009089:z=-7.115:neg=1.000:ratio=0.744,"delta<=-0.005;count_delta<=-0.005;z<=-2.0;negative>=0.833;discovery_ratio in (0.5, 2.0)",continue
+growth_effect_transfer,pass,128=1.211080;64=1.350214;32=1.323893,"each in (0.6, 1.67)",continue
+scheduler_effect_diagnostic,pass,128=0.849000;64=0.810815;32=0.750015;tv=0.000976,"ratios in (0.6, 1.67);tv<=0.05",continue
+v16e_overall,pass_to_v16f_cross_map_relation_gate,1,1,design_cross_map_relation
