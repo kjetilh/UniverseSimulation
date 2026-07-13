@@ -687,7 +687,7 @@ def run() -> None:
         member_rows, coarse_edge_rows, map_summary, map_audit = v16c.coarse_grain(
             dag, DEPTH_WINDOW, prefix
         )
-        depth = v16g.assignments_from_membership(member_rows, STEPS, "coarse_event_id")
+        depth = v16g.depth_assignments(member_rows, STEPS)
         for clock_bins in CLOCK_BINS:
             mechanism_prefix = {
                 "stage": "v16h_fresh_dynamics_holdout",
