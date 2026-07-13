@@ -1,0 +1,13 @@
+growth_seed,run_offset,arm,run_seed,events,support_mismatch_events,context_failures,edge_set_equal,depth_sequence_equal,final_structure_equal,relabel_pass
+2801,41011,current_global,1052067013,2048,0,0,1,1,1,1
+2801,41011,exposure_matched_local,1152067013,2048,0,0,1,1,1,1
+2801,41047,current_global,1052067049,2048,0,0,1,1,1,1
+2801,41047,exposure_matched_local,1152067049,2048,0,0,1,1,1,1
+2801,41081,current_global,1052067083,2048,0,0,1,1,1,1
+2801,41081,exposure_matched_local,1152067083,2048,0,0,1,1,1,1
+2903,41011,current_global,1053087013,2048,0,0,1,1,1,1
+2903,41011,exposure_matched_local,1153087013,2048,0,0,1,1,1,1
+2903,41047,current_global,1053087049,2048,0,0,1,1,1,1
+2903,41047,exposure_matched_local,1153087049,2048,0,0,1,1,1,1
+2903,41081,current_global,1053087083,2048,0,0,1,1,1,1
+2903,41081,exposure_matched_local,1153087083,2048,0,0,1,1,1,1

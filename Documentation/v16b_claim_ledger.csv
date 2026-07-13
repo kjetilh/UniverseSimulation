@@ -1,0 +1,7 @@
+claim_id,statement,status,evidence,scope_limit
+C1,Declared read/write conflicts define an acyclic dependency DAG for every fresh trace.,supported,v16b_dependency_edges.csv;v16b_run_summary.csv,fresh finite histories under the declared support schema
+C2,Different topological orders of each event DAG reproduce the exact final graph and token placement.,supported,v16b_topological_replay_audit.csv,"4 sampled orders per run, not every linear extension"
+C3,Concrete trace support and DAG structure transport under deterministic node relabeling.,supported,v16b_relabel_replay_audit.csv,same event histories replayed after a deterministic bijection
+C4,Coarse DAG fingerprints are stable enough across fresh bases and scheduler variants to justify a small v16c pilot.,supported,v16b_growth_stability.csv;v16b_scheduler_fingerprint.csv;v16b_gate_evaluation.csv,"broad preregistered bounds, two growth seeds and six runs per arm"
+C5,The event DAG is a universal causal order or emergent spacetime.,unsupported,none,history-intrinsic implementation structure is not a universal physics result
+C6,"Lorentz symmetry, particles, or entanglement follow from the event-DAG pass.",unsupported,none,not tested by v16b

@@ -1,0 +1,13 @@
+growth_seed,run_offset,arm,run_seed,candidate_indices,declared_disjoint_tested,commutation_failures,invalid_or_unavailable_candidates,sequential_replay_final_equal,commutation_pass
+2801,41011,current_global,1052067013,512,128,0,0,1,1
+2801,41011,exposure_matched_local,1152067013,512,128,0,0,1,1
+2801,41047,current_global,1052067049,512,128,0,0,1,1
+2801,41047,exposure_matched_local,1152067049,512,128,0,0,1,1
+2801,41081,current_global,1052067083,512,128,0,0,1,1
+2801,41081,exposure_matched_local,1152067083,512,128,0,0,1,1
+2903,41011,current_global,1053087013,512,128,0,0,1,1
+2903,41011,exposure_matched_local,1153087013,512,128,0,0,1,1
+2903,41047,current_global,1053087049,512,128,0,0,1,1
+2903,41047,exposure_matched_local,1153087049,512,128,0,0,1,1
+2903,41081,current_global,1053087083,512,128,0,1,1,1
+2903,41081,exposure_matched_local,1153087083,512,128,0,0,1,1

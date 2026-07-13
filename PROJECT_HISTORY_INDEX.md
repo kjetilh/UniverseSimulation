@@ -6642,3 +6642,78 @@ Viktige filer:
 - `Documentation/v16ac_claim_ledger.csv`
 - `Documentation/v0_16ac_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16ac.md`
+
+## 10cf. v16b etablerte en replay-stabil event-DAG i ferske historikker
+
+`v16b` fulgte `pass_adapter_to_v16b` med en ny preregistrert dynamisk gate. Preregistreringen ble skrevet i en separat prepare-only-kjoering med digest `26748eee56aff6723e943697ff04d87bc66d7681faa6b0f4d7adeb6a482fb18d` foer de ferske historikkene ble generert.
+
+Designet var:
+
+- target `1024`
+- nye growth seeds `2801/2903`
+- tre run-offsets `41011/41047/41081`
+- scheduler-armene `current_global` og frosset `exposure_matched_local`
+- separate RNG-stroemmer og ID-allokatorer per arm
+- `2048` konkrete events per run, `12` runs totalt
+- fire tilfeldige topologiske replays per event-DAG
+- konkret relabel-replay av hele historikken
+- inntil `128` testede disjunkte nabopar per run
+
+Hver event ble instrumentert med konkret read/write-support fra v16a-skjemaet. DAG-kanten `u -> v` ble lagt inn ved:
+
+- RAW: `v` leser en ressurs sist skrevet av `u`
+- WAW: `v` skriver en ressurs sist skrevet av `u`
+- WAR: `v` skriver en ressurs lest av `u` siden siste write
+
+Read/read-par forble uordnede. Dette gav en history-intrinsic konflikt-DAG under det deklarerte supportskjemaet, ikke en paastand om fundamental kausalitet.
+
+Faktiske resultater:
+
+- `24576` events
+- `27931` direkte avhengighetskanter
+- alle `12/12` DAG-er asykliske med `0` edge-witness-feil
+- kausal dybde `41-64` over `2048` events
+- maksimal depth-layer-antichain-andel `0.031250-0.048828`
+- comparable-pair-andel `0.019975-0.035194`
+
+Den sterkeste kontrollen var topologisk replay. Fire tilfeldige linear extensions per run, `48` totalt, flyttet minst `0.995605` av eventposisjonene. Alle hadde gyldig topologisk orden, `0` context-feil og eksakt samme endelige graf/tokenplassering som originalhistorikken.
+
+Re-label- og kommutasjonskontrollene var ogsaa rene:
+
+- alle `12/12` relabel-replays hadde `0` support-mismatches, `0` context-feil, identisk DAG-kantsett, identisk dybdesekvens og transportert sluttstruktur
+- `1536` deklarert disjunkte nabopar ble testet, `128` per run
+- `0` kommutasjonsfeil
+- ett tilfeldig kandidatpar var utilgjengelig i pre-left-state og ble ikke telt som test; alle runs naaede likevel den frosne kvoten `128`
+
+De tre preregistrerte grove DAG-fingerprintene var normalized causal depth, max depth-layer width og comparable-pair fraction. De passerte brede stabilitetsgrenser:
+
+- lokal run-CV `0.166648/0.148061/0.135330`, alle under `0.35`
+- growth `2903/2801` medianratio `0.840000/0.977778/0.841835`, alle innen `[0.60,1.67]`
+- local/global medianratio `1.063830/1.085366/0.903512`, alle innen `[0.60,1.67]`
+- non-seed event-TV `0.001572`, under `0.05`
+
+Status er `pass_to_v16c_coarse_graining_pilot`. Evidensstatusen er bevisst smal: passet viser at deklarert event-support er operasjonelt tilstrekkelig for flere sterke replay-kontroller i ferske endelige historikker, og at tre normaliserte DAG-observabler er stabile nok under brede grenser til aa forsvare en liten neste pilot. Fire linear extensions per run er ikke alle mulige rekkefolger; to growth seeds er ikke universell skalaoverfoering; DAG-en er ikke emergent spacetime eller Lorentz-symmetri.
+
+Neste gate er en liten preregistrert v16c tre-skala coarse-graining-pilot. Coarse-graining-kartet og ratio-observablene skal fryses foer dynamikk. Den lokale adapteren forblir isolert, og current-global beholdes som diagnostisk kontroll.
+
+Viktige filer:
+
+- `relational_universe_v16b_intrinsic_event_dag_gate.py`
+- `Documentation/v16b_intrinsic_event_dag_gate.md`
+- `Documentation/v16b_pre_registration.csv`
+- `Documentation/v16b_source_chain.csv`
+- `Documentation/v16b_target_summary.csv`
+- `Documentation/v16b_event_log.csv`
+- `Documentation/v16b_dependency_edges.csv`
+- `Documentation/v16b_run_summary.csv`
+- `Documentation/v16b_arm_summary.csv`
+- `Documentation/v16b_topological_replay_audit.csv`
+- `Documentation/v16b_relabel_replay_audit.csv`
+- `Documentation/v16b_adjacent_commutation_audit.csv`
+- `Documentation/v16b_growth_stability.csv`
+- `Documentation/v16b_scheduler_fingerprint.csv`
+- `Documentation/v16b_matched_scheduler_comparison.csv`
+- `Documentation/v16b_gate_evaluation.csv`
+- `Documentation/v16b_claim_ledger.csv`
+- `Documentation/v0_16b_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16b.md`

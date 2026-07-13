@@ -1,0 +1,13 @@
+gate,status,observed,required,decision
+v16ac_source_contract,pass,1,1,continue
+target_hygiene,pass,1,1,continue
+run_integrity,pass,runs=12;invalid=0,runs=12;invalid=0,continue
+dag_acyclic_witnessed,pass,runs=12;witness_errors=0,runs=12;witness_errors=0,continue
+topological_replay_invariance,pass,replays=48;failures=0;min_reorder=0.995605,replays=48;failures=0;min_reorder>=0.1,continue
+concrete_relabel_replay,pass,12,12,continue
+adjacent_disjoint_commutation,pass,min_tests=128;failures=0,min_tests>=64;failures=0,continue
+nontrivial_partial_order,pass,depth=41-64;width_fraction=0.031250-0.048828,1<depth<steps;nonzero antichain and comparability,continue
+local_dag_metric_cv,pass,causal_depth_fraction=0.166648;max_layer_width_fraction=0.148061;comparable_pair_fraction=0.135330,each<=0.35,continue
+growth_seed_transfer,pass,causal_depth_fraction=0.840000;max_layer_width_fraction=0.977778;comparable_pair_fraction=0.841835,"each in [0.6,1.67]",continue
+scheduler_coarse_fingerprint,pass,causal_depth_fraction=1.063830;max_layer_width_fraction=1.085366;comparable_pair_fraction=0.903512;tv=0.001572,"ratios in [0.6,1.67];tv<=0.05",continue
+v16b_overall,pass_to_v16c_coarse_graining_pilot,1,1,design_v16c_three_scale_pilot

@@ -1,0 +1,4 @@
+metric,current_global_median,local_median,local_over_global_ratio,ratio_low,ratio_high,scheduler_metric_pass,nonseed_event_tv,nonseed_tv_pass
+causal_depth_fraction,0.02294921875,0.0244140625,1.0638297872340425,0.6,1.67,1,0.0015721907198788182,1
+max_layer_width_fraction,0.0400390625,0.04345703125,1.0853658536585367,0.6,1.67,1,0.0015721907198788182,1
+comparable_pair_fraction,0.03057589994504152,0.02762569843063019,0.9035121935997255,0.6,1.67,1,0.0015721907198788182,1

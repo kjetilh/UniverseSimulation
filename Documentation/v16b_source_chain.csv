@@ -1,0 +1,6 @@
+check,observed,required,status
+v16ac_overall,pass_adapter_to_v16b,pass_adapter_to_v16b,pass
+v16ac_target_status,pass_adapter_to_v16b,pass_adapter_to_v16b,pass
+v16ac_frozen_rate,0.0005039538147742117,0.0005039538147742117,pass
+core_anchor_not_promoted,0,0,pass
+v16ac_all_subgates,0,0,pass
