@@ -1,0 +1,4 @@
+arm,n_runs,mean_initial_tokens,mean_final_tokens,median_final_tokens,mean_node_growth,max_node_growth,total_seed_events,total_birth_events,total_move_events,total_swap_events,total_invalid_events,total_integrated_seed_hazard,mean_total_time,median_total_time,max_seed_formula_error,max_abs_beta1_drift
+current_global,16,14.5,208.0,208.0,2.0625,5,33,3096,50686,809,0,28.768776365453732,44.95121307102147,45.19058391338008,0.0,0
+preparation_only,16,14.5,203.0,199.5,0.0,0,0,3016,50786,822,0,0.0,45.07896357280457,44.18968590450861,0.0,0
+exposure_matched_local,16,14.5,201.75,207.0,1.625,3,26,2996,50786,816,0,26.02996873081169,46.46964667950978,48.093241116746256,0.0,0

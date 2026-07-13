@@ -1,0 +1,2 @@
+purpose_ref,source_event_file,source_initial_token_file,anchor_runs,anchor_events,observed_seed_events,total_time,token_time_integral,effective_tokens,initial_reference_tokens,selected_candidate,selected_local_rate,fresh_dynamics_runs,relabel_graphs
+purpose://prompt.unknown,Documentation/v15dx_event_log.csv,Documentation/v15dy_run_summary.csv,24,81936,39,967.6144173247668,76801.8329424327,79.37235283737529,16.0,exposure_matched_local,0.0005039538147742117,0,992

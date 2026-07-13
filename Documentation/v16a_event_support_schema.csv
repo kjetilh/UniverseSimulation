@@ -1,0 +1,9 @@
+event_kind,anchor_active,action_read,action_write,selection_read,id_input,algebraic_delta,bounded_local_clock
+seed,1,host node; host token entry for seed_tid,new node; host/new adjacency,global token count or global node count,preallocated node id,"N+1,E+1,beta1+0",0
+birth,1,host node; parent token entry,new token entry,parent degree,preallocated token id,tokens+1,1
+death,0,target token entry,target token removal,host degree plus global min_tokens guard,none,tokens-1,0
+stuck,1,token entry; host adjacency,none,host degree,none,zero,1
+move,1,token entry; traversed edge,token location,radius-2 neighborhood,none,zero,1
+delete,0,token; traversed edge; source adjacency,token; edge; optional source node/tokens,radius-2 neighborhood,none,E-1; optional N-1,1
+triad,0,token; path v-u-w; absent v-w,token; edge v-w,radius-2 neighborhood,none,"E+1,beta1+1",1
+swap,1,token; path v-u-w; absent v-w,token; remove v-u; add v-w,radius-2 neighborhood,none,"E+0,beta1+0",1

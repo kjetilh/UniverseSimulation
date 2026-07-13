@@ -1,0 +1,2 @@
+adapter,local_rate,connected_unlabeled_graphs,states,descriptor_comparisons,max_abs_error,failures,relabel_pass
+exposure_matched_local_seed_clock,0.0005039538147742117,992,33385,59999,0.0,0,1

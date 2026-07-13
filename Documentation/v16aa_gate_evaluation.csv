@@ -1,0 +1,8 @@
+gate,status,observed,required,decision
+input_integrity,pass,runs=24;events=81936,runs=24;events=81936,continue
+global_clock_reconstruction,pass,1.007632774525676,"observed/expected in [0.5,1.5]",continue
+selected_remote_invariance,pass,0.0,<=1e-12,continue
+selected_relabel_covariance,pass,0.0,<=1e-12,continue
+unique_architecture_candidate,pass,exposure_matched_local,exactly one,freeze_for_fresh_holdout
+fresh_validation,not_run,none,fresh growth seeds; no refit,do_not_start_v16b
+v16aa_overall,candidate_selected_not_validated,exposure_matched_local,fresh holdout before architecture adoption,run_fresh_seed_clock_holdout

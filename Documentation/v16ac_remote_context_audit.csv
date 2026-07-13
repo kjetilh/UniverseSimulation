@@ -1,0 +1,9 @@
+context,event_kind,local_descriptor,base_nodes,remote_nodes,base_tokens,remote_tokens,base_intensity,remote_intensity,absolute_difference,remote_invariant,required_for_active_anchor_gate
+seed_tid,seed,"('seed_tid', 0)",4,4,1,2,0.0005039538147742117,0.0005039538147742117,0.0,1,1
+seed_node,seed,"('seed_node', 0)",4,5,0,0,0.0005039538147742117,0.0005039538147742117,0.0,1,1
+birth_tid,birth,"('birth_tid', 0)",4,4,1,2,0.02,0.02,0.0,1,1
+stuck,stuck,"('stuck', 0, 0)",1,2,1,2,1.0,1.0,0.0,1,1
+move,move,"('move', 0, 0, 1)",4,4,1,2,0.3999999999999999,0.3999999999999999,0.0,1,1
+delete,delete,"('delete', 0, 0, 1)",4,4,1,2,0.2,0.2,0.0,1,0
+triad,triad,"('triad', 0, 0, 1, 2)",4,4,1,2,0.2,0.2,0.0,1,0
+swap,swap,"('swap', 0, 0, 1, 2)",4,4,1,2,0.2,0.2,0.0,1,1

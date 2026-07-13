@@ -1,0 +1,7 @@
+candidate,mode,global_rate,local_rate_per_host,calibration,bounded_local,hidden_global_population_dependency,retains_node_growth,whole_system_intrinsic_eligible,relabel_pass,expected_seed_exposure_total,aggregate_ratio_vs_current,min_run_ratio_vs_current,median_run_ratio_vs_current,max_run_ratio_vs_current,rate_shock_control_pass,selection_pass,evidence_status
+current_global,global,0.04,0.0,current_anchor,0,1,1,0,1,38.70457669299068,1.0,1.0,1.0,1.0,1,0,architecture_control_or_rejected_candidate
+naive_local_per_token,local,0.0,0.04,reuse_global_rate_as_per_token_rate,1,0,1,1,1,3072.0733176973076,79.37235283737527,61.73381890440299,80.78611286804788,98.57019626673302,0,0,architecture_control_or_rejected_candidate
+initial_median_local,local,0.0,0.0025,fixed_initial_Kref=16,1,0,1,1,1,192.00458235608173,4.960772052335955,3.8583636815251867,5.0491320542529925,6.160637266670814,0,0,architecture_control_or_rejected_candidate
+exposure_matched_local,local,0.0,0.0005039538147742117,fit_v15dx_time_weighted_K=79.3723528374,1,0,1,1,1,38.70457669299067,0.9999999999999998,0.7777748384363558,1.0178117440158188,1.2418706607915715,1,1,fit_candidate_requires_fresh_holdout
+preparation_only,frozen,0.0,0.0,r_seed_zero_during_observation,1,0,0,1,1,0.0,0.0,0.0,0.0,0.0,0,0,architecture_control_or_rejected_candidate
+explicit_global_background,global,0.04,0.0,current_anchor_but_excluded_from_intrinsic_event_system,0,1,1,0,1,38.70457669299068,1.0,1.0,1.0,1.0,1,0,architecture_control_or_rejected_candidate

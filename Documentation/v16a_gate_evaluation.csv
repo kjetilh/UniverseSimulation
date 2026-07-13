@@ -1,0 +1,8 @@
+gate,status,observed,required,decision
+support_schema_coverage,pass,8,8,continue
+nontrivial_disjoint_coverage,pass,7123450,>=1000 pairs and >=3 active pair kinds,continue
+exact_disjoint_commutation,pass,0,0 failures,continue
+relabel_transport,pass,0,0 failures,continue
+runtime_hazard_formula,pass,1.1102230246251565e-16,<=1e-12,continue
+bounded_local_clock_anchor,fail,seed,all active anchor kinds local,redesign_seed_clock_or_declare_global_background
+v16a_overall,fail_architecture_revision_required,0,1,do_not_start_v16b

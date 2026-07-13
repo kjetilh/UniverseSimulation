@@ -6415,3 +6415,230 @@ Viktige filer:
 - `Documentation/v15dz_claim_ledger.csv`
 - `Documentation/v15dz_target_summary.csv`
 - `Documentation/v0_15dz_operativ_anbefaling.md`
+
+## 10ca. v15ea avsluttet observabelprogrammet og valgte en eksakt regeladekvans-gate
+
+`v15ea` er en no-new-dynamics retningsvurdering etter v15dz. Den skiller eksplisitt mellom det repoet har vist, arkitekturkrav som fortsatt mangler, eksterne analogier og raadgivernes forslag.
+
+Tre faktiske fjernraadgivere ble brukt som argumentkilder, ikke som avstemning. De var enige om hovedrekkefolgen:
+
+- regel-/symmetriadekvans foer intrinsic causal structure
+- intrinsic causal structure foer coarse-graining og ny geometritesting
+- pivot bort fra dagens anchor dersom den eksakte mikrogaten feiler
+
+Fabel 5 ble forsoekt via Claude CLI og NanoGPT-panelet, men ga ingen respons fordi autentisering/noekkel manglet. Vurderingen tilskriver derfor ikke Fabel en mening.
+
+Repo-auditen viser en asymmetrisk status:
+
+- overgangskjernen og den nye uniform-constructoren har sterk relabel-equivariance
+- eventenes read/write-stoette og lokale hazard-faktorisering er ikke formalisert
+- disjoint-event commutation, intrinsic event-poset og scheduler-uavhengighet er ukjent eller fravaerende
+- dagens target-sammenligninger har ingen eksplisitt coarse-graining-map
+- v15 sine far-shell-, placement- og beta1-dynamikkspor er pensjonert av egne transfer-/stoppregler
+
+Neste konkrete steg er derfor `v16a_disjoint_event_commutation_gate`:
+
+- deklarer read-set, write-set, ID-allokering, tilfeldige input og algebraiske deltaer for alle eventtyper
+- vis at globale family rates enten faktoriserer som summer av bounded-support lokale hazards, eller merk scheduler/lokalitet som fail
+- enumerer kanoniske supportmoenstre og korrekt deklarert disjunkte eventpar
+- sammenlign `e1;e2` og `e2;e1` med samme pre-drawn input, opp til konsistent node-relabeling
+- tillat maksimalt en dokumentert support-schema-korreksjon
+- ett genuint disjunkt ikke-kommuterende par etter korreksjonen utloeser pivot bort fra dagens anchor for kausal-/Lorentz-/coarse-graining-formaal
+
+Bare ved v16a-pass bygges intrinsic event-DAG og scheduler-invariance i v16b. Bare ved v16b-pass forsvares en liten tre-skala coarse-graining-pilot i v16c. Dette er en beslutning om metode og arkitektur, ikke et nytt simulasjonsresultat.
+
+Viktige filer:
+
+- `Documentation/v15ea_post_beta1_direction_assessment.md`
+- `Documentation/v15ea_direction_panel_spec.json`
+- `Documentation/v15ea_rule_adequacy_matrix.csv`
+- `Documentation/v15ea_direction_options.csv`
+- `Documentation/v15ea_advisor_panel_notes.csv`
+- `Documentation/v15ea_direction_claim_ledger.csv`
+- `Documentation/v0_15ea_operativ_anbefaling.md`
+
+## 10cb. v16a fant eksakt kommutasjon, men avdekket en global seed-klokke
+
+`v16a` er den foerste regeladekvans-gaten etter v15-serien. Den kjoerer ingen stor dynamisk ensemble. I stedet formaliserer den action read/write-support for `seed`, `birth`, `death`, `stuck`, `move`, `delete`, `triad` og `swap`, holder descriptors og ID-allokering faste, og tester begge eventrekkefolger.
+
+Den endelige censusen omfatter:
+
+- alle `992` sammenhengende umerkede graph-atlas-grafer med `4-7` noder
+- alle 1-/2-tokenplasseringer uten ytterligere automorfi-kvotientering
+- egne fixtures for `seed_node`/`birth_node` og `stuck`
+- totalt `33385` mikrostater og `7123450` deklarert disjunkte eventpar
+
+Transformasjonsresultatet er positivt og eksakt innen censusen:
+
+- `0` kommutasjonsfeil
+- `0` relabel-transportfeil
+- event-spesifikke node-/token-ID-er var preallokert foer rekkefolgen ble variert
+- overlappende support-par var ekskluderte kontroller og kunne ikke bidra til pass
+
+Scheduler-resultatet er derimot en eksakt arkitekturfeil for sterke lokalitetsclaims. Runtime-intensitetene matcher de algebraiske hazard-formlene med maksimal absoluttfeil `1.11e-16`, men aktiv seed-hazard per token er `r_seed/K`. I en eksplisitt remote-context-kontroll endres samme lokale `seed_tid`-intensitet fra `0.04` til `0.02` naar ett fjernt token legges til. Seed-transformasjonen er lokal, men klokken som velger den er globalt normalisert.
+
+Totalstatus er derfor `fail_architecture_revision_required`:
+
+- behold kommutasjonspasset som implementasjonsevidens
+- ikke bygg v16b event-DAG paa uendret anchor
+- sammenlign lokal per-token seed-hazard med en eksplisitt global-background-modell i neste gate
+- lokal redesign er en ny regelvariant og krever rerun/recalibration
+- global-background-modellen kan ikke brukes som skjult grunnlag for observer-uavhengig lokal kausalitet
+
+Dette er ikke bevis for eller mot Lorentz-invarians eller emergent spacetime. Det er en presis avgrensning av hva dagens scheduler kan underbygge.
+
+Viktige filer:
+
+- `relational_universe_v16a_disjoint_event_commutation_gate.py`
+- `Documentation/v16a_disjoint_event_commutation_gate.md`
+- `Documentation/v16a_event_support_schema.csv`
+- `Documentation/v16a_local_hazard_factorization.csv`
+- `Documentation/v16a_remote_context_audit.csv`
+- `Documentation/v16a_commutation_summary.csv`
+- `Documentation/v16a_commutation_counterexamples.csv`
+- `Documentation/v16a_gate_evaluation.csv`
+- `Documentation/v16a_target_summary.csv`
+- `Documentation/v16a_claim_ledger.csv`
+- `Documentation/v0_16a_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16a.md`
+
+## 10cc. v16aa valgte en lokal seed-clock-kandidat uten aa validere den
+
+`v16aa` fulgte v16a sin eksakte scheduler-feil med en no-new-dynamics arkitekturgate. Den endrer ikke core-koden og kjoerer ingen fresh dynamikk. I stedet rekonstruerer den kontinuerlig token-exposure fra eksisterende v15dx eventtimelines og sammenligner seks eksplisitte clock-modeller.
+
+Inputgrunnlaget er:
+
+- `24` uavhengige v15dx anchor-runs
+- `81936` loggede events
+- `967.614417` total kontinuerlig tid
+- `76801.832942` integrert token-time
+- time-weighted effektivt tokenantall `79.372353`
+- `39` observerte seed-events mot `38.704577` forventet under dagens globale rate
+
+Kandidatbildet er skarpt:
+
+- `current_global` bevarer budsjettet, men feiler locality fordi per-host rate er `r_seed/K`
+- `naive_local_per_token` med rate `0.04` gir `79.37x` exposure og avvises som rate shock
+- `initial_median_local` med rate `0.0025` gir `4.96x` exposure og avvises
+- `preparation_only` er lokal kontroll, men fjerner fysisk nodevekst fra observasjonsdynamikken
+- `explicit_global_background` er bare koherent for en betinget lokal subdynamikk, ikke whole-system intrinsic causality
+- `exposure_matched_local` med fast `rho_seed=0.0005039538147742117` er bounded-local, beholder nodevekst og matcher gammel aggregate exposure i foerste orden
+
+Den valgte kandidaten har per-run exposure-ratio `0.778-1.242`, passerer remote-context-kontrollen eksakt for baade token- og node-host, og har `0` relabel-feil over `1984` trials paa `992` graph-atlas-grafer.
+
+Evidensstatusen er bevisst begrenset:
+
+- lokalitet og relabel covariance for en fast per-host-rate er arkitekturfakta
+- selve rateverdien er fittet paa v15dx
+- exposure-match inkluderer ikke dynamisk feedback fra ekstra seed-noder
+- status er `candidate_selected_not_validated`, ikke ny anchor
+
+Neste gate er en fresh matched scheduler-holdout med tre armer: `current_global`, `preparation_only` og den frosne `exposure_matched_local`-raten. Ingen refit er tillatt. `v16b` event-DAG forblir blokkert til fresh holdout og ny v16a-locality-gate passerer.
+
+Viktige filer:
+
+- `relational_universe_v16aa_seed_clock_architecture_gate.py`
+- `Documentation/v16aa_seed_clock_architecture_gate.md`
+- `Documentation/v16aa_candidate_comparison.csv`
+- `Documentation/v16aa_trajectory_exposure.csv`
+- `Documentation/v16aa_remote_context_audit.csv`
+- `Documentation/v16aa_relabel_audit.csv`
+- `Documentation/v16aa_gate_evaluation.csv`
+- `Documentation/v16aa_target_summary.csv`
+- `Documentation/v16aa_claim_ledger.csv`
+- `Documentation/v0_16aa_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16aa.md`
+
+## 10cd. v16ab lot den lokale seed-klokken passere fresh scheduler-holdout
+
+`v16ab` testet den frosne v16aa-kandidaten uten refit paa helt nye growth seeds `1801/1901`. Pre-registreringen ble skrevet i en separat prepare-only-kjoering med digest `371ed15f495f76429f6a9e568032d4f45d1e1a6cf51b3704de021a7cae98c49e` foer fresh dynamikk.
+
+Designet var:
+
+- target `1024`, deep bases og `3414` events per run
+- aatte uavhengige run-offsets per growth seed og arm
+- `current_global`, `preparation_only` og `exposure_matched_local`
+- `48` runs totalt med separate RNG-stroemmer og ID-allokatorer
+- integrert seed-hazard som primaermaal; faktiske seed-events som sekundar telling
+- nodevekst, tokenvekst, total tid, non-seed family TV, invalid events og beta1 som kontroller
+
+Alle frosne gater passerte:
+
+- aggregate local/global integrated-hazard ratio `0.904799` innen `[0.75,1.25]`
+- per-growth ratios `0.873599/0.938264` innen `[0.5,2.0]`
+- median total-time ratio `1.056431`
+- median final-token ratio `1.002439`
+- non-seed family TV `0.001839`
+- maksimal lokal nodevekst `3`, langt under runaway-grensen `51`
+- preparation-only hadde eksakt `0` seed-events og `0` nodevekst
+- ingen invalid events, ingen beta1-drift og eksakt lokal seed-formel
+
+Faktiske seed-events var `33` for current-global, `0` for preparation-only og `26` for local. Disse tellingene er stoyende og var ikke primary gate.
+
+Status er `promote_local_seed_clock_to_v16a_rerun`. Dette betyr ikke at kandidaten er ny anchor. Neste steg er en isolert regeladapter og en ny v16a support/locality-gate med seed aktiv. `v16b` event-DAG forblir blokkert til dette passerer.
+
+Viktige filer:
+
+- `relational_universe_v16ab_fresh_seed_clock_holdout.py`
+- `Documentation/v16ab_pre_registration.csv`
+- `Documentation/v16ab_target_summary.csv`
+- `Documentation/v16ab_run_summary.csv`
+- `Documentation/v16ab_window_trajectories.csv`
+- `Documentation/v16ab_arm_summary.csv`
+- `Documentation/v16ab_matched_comparisons.csv`
+- `Documentation/v16ab_gate_evaluation.csv`
+- `Documentation/v16ab_claim_ledger.csv`
+- `Documentation/v16ab_fresh_seed_clock_holdout.md`
+- `Documentation/v0_16ab_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16ab.md`
+
+## 10ce. v16ac fjernet seed-locality-blokkeringen for den isolerte adaptervarianten
+
+`v16ac` implementerte den frosne `exposure_matched_local`-raten i en separat `LocalSeedClockAdapter`. Core-filen `relational_universe_local_max_coupling_lab.py` ble ikke endret. Adapteren delegerer de eksisterende eventkjernene og konkrete transformasjonene, men erstatter seed-familiens totalrate med:
+
+`R_seed(state) = rho_seed * H(state)`
+
+der `H=K` naar tokens finnes og `H=N` i tokenfrie tilstander. Fordi den eksisterende seed-kjernen er uniform over de samme `H` vertene, blir intensiteten for hver konkret `seed_tid` eller `seed_node` eksakt `rho_seed=0.0005039538147742117`, uavhengig av fjernt token-/nodeantall.
+
+Kildekjeden ble laast foer census:
+
+- v16aa-kandidaten maatte vaere `exposure_matched_local` med den eksakte frosne raten
+- v16ab maatte ha alle undergater paa `pass`
+- v16ab-status maatte vaere `promote_local_seed_clock_to_v16a_rerun`
+- preregistreringen maatte ha `48` rader og digest `371ed15f495f76429f6a9e568032d4f45d1e1a6cf51b3704de021a7cae98c49e`
+
+Deretter ble hele v16a-porten kjoert paa nytt gjennom adapteren, ikke bare gjenlest fra gamle CSV-er:
+
+- `992` sammenhengende umerkede graph-atlas-grafer med `4-7` noder
+- `33385` mikrotilstander
+- `7123450` deklarert disjunkte eventpar
+- `0` kommutasjonsfeil
+- `0` transformasjons-relabel-feil
+- maksimal runtime-hazard-formelfeil `1.11e-16`; seed-formelfeil eksakt `0`
+- `0` seed-rate-relabel-feil over `59999` descriptor-sammenligninger
+- eksakt fjernkontekstinvarians for alle aktive prober, inkludert baade `seed_tid` og tokenfri `seed_node`
+- `30/30` eventpar-aggregater i eksakt parity med original v16a
+
+Den inaktive death-familien beholder sin globale `min_tokens`-guard, men er ikke del av aktiv `band_zero_del`-gate. Alle aktive eventfamilier er bounded-local under adapterens stoetteskjema.
+
+Status er `pass_adapter_to_v16b`. Dette betyr at den konkrete v16a-arkitekturblokkeringen er fjernet for adaptervarianten, og at en smal intrinsic event-DAG-gate kan startes. Det betyr ikke at adapteren er ny core-anchor: `core_anchor_promoted=0`, raten ble opprinnelig kalibrert paa eldre trajectories, og senere rekalibrering/skalaoverfoering er fortsatt noedvendig. Resultatet er heller ikke evidens for Lorentz-symmetri, spacetime, partikler eller universell lokal kausalitet.
+
+Neste gate er v16b med adapteren isolert og gammel global scheduler som diagnostisk kontroll. Event-DAG-en skal bygges fra konkrete events og deklarert read/write-avhengighet, og teste relabel covariance, antichain/independence-struktur, disjoint-order invariance og stabilitet i grov kausal dybde.
+
+Viktige filer:
+
+- `relational_universe_v16ac_local_seed_adapter_gate.py`
+- `Documentation/v16ac_local_seed_adapter_gate.md`
+- `Documentation/v16ac_source_chain.csv`
+- `Documentation/v16ac_event_support_schema.csv`
+- `Documentation/v16ac_local_hazard_factorization.csv`
+- `Documentation/v16ac_remote_context_audit.csv`
+- `Documentation/v16ac_seed_rate_relabel_audit.csv`
+- `Documentation/v16ac_commutation_summary.csv`
+- `Documentation/v16ac_commutation_counterexamples.csv`
+- `Documentation/v16ac_v16a_parity.csv`
+- `Documentation/v16ac_gate_evaluation.csv`
+- `Documentation/v16ac_target_summary.csv`
+- `Documentation/v16ac_claim_ledger.csv`
+- `Documentation/v0_16ac_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16ac.md`

@@ -1,0 +1,7 @@
+rank,direction,information_gain,compute_cost,self_deception_risk,prerequisite,recommendation
+1,symmetry_first_plus_causal_rule_adequacy,very_high,low,low,explicit event read_write schema,start_now
+2,causal_event_poset_and_scheduler_invariance,very_high,low_to_medium,medium,disjoint commutation gate,conditional_next
+3,coarse_graining_and_universality_flow,high,high,medium,causal observables and two explicit scale maps,do_after_rule_gate
+4,architecture_pivot_or_stop,current_decision_value,medium,low,rule adequacy outcome,pivot_if_current_rules_fail
+5,property_guided_rule_search,medium,very_high,very_high,hard symmetry filters plus nested rule_and_scale holdouts,defer
+6,defect_mechanism_reset,low_to_medium,medium,high,new causal observables,defer_or_drop

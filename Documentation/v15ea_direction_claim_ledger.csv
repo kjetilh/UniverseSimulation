@@ -1,0 +1,7 @@
+claim_id,claim_type,strength,statement,evaluation,evidence_ref
+claim.v15ea.current-architecture-ready,project_capability,moderated,The current anchor architecture is ready for another large physics-facing dynamics campaign.,unsupported,v15ea_rule_adequacy_matrix.csv
+claim.v15ea.commutation-next,factual,moderated,Disjoint-event commutation is the smallest load-bearing next gate for intrinsic causal work.,supported,v15ea_advisor_panel_notes.csv;v15ea_rule_adequacy_matrix.csv
+claim.v15ea.coarse-graining-now,project_capability,moderated,Coarse-graining should begin before event locality and scheduler semantics are formalized.,undercut,v15ea_rule_adequacy_matrix.csv:coarse_graining_map
+claim.v15ea.rule-search-now,project_capability,moderated,Property-guided rule search is currently a safe high-information strategy.,contradicted,PROJECT_CONTEXT_LIVE.md:v15dt-v15dz;v15ea_direction_options.csv
+claim.v15ea.possibility-proved,project_capability,assertive,The project has shown that this model class contains a universe-like construction.,unsupported,v15ea_evidence_ladder_in_report
+claim.v15ea.broad-program-open,project_capability,speculative,A broader relational-rule class may still contain a universe-like construction.,open,requires_v16a-v16d

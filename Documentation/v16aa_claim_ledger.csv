@@ -1,0 +1,6 @@
+claim_id,statement,status,evidence,scope_limit
+C1,The v15dx timelines permit exact reconstruction of continuous-time token exposure.,supported,v16aa_trajectory_exposure.csv,anchor runs only; initial K imported from matching v15dy bases
+C2,A fixed per-host seed rate removes the remote population dependency and preserves relabel covariance.,supported,v16aa_remote_context_audit.csv;v16aa_relabel_audit.csv,"seed scheduler architecture, not full dynamics"
+C3,exposure_matched_local is dynamically validated.,unsupported,candidate fitted on v15dx exposure,requires fresh holdout
+C4,The current observed seed count is compatible with the reconstructed global-clock exposure.,descriptive_support,observed=39;baseline_expected=38.704576693,not a formal Poisson goodness-of-fit test
+C5,v16b intrinsic event-DAG work may begin now.,unsupported,v16aa selects only a fitted candidate,fresh scheduler holdout and v16a locality rerun required first

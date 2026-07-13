@@ -1,0 +1,6 @@
+claim_id,statement,status,evidence,scope_limit
+C1,All declared-disjoint concrete event transformations commute in the finite v16a census.,supported,v16a_commutation_summary.csv,finite graph-atlas census plus explicit fixtures; support schema is conservative
+C2,The same declared-disjoint transformations are covariant under deterministic node relabeling.,supported,v16a_commutation_summary.csv:relabel_pass,same finite census
+C3,Every active anchor event family factors into bounded-support local clocks.,contradicted,v16a_local_hazard_factorization.csv;v16a_remote_context_audit.csv,current band_zero_del scheduler
+C4,v16b intrinsic event-DAG work may proceed on the current anchor unchanged.,contradicted,v16a_gate_evaluation.csv,requires all v16a gates
+C5,The broader relational-universe idea is impossible.,unsupported,none,a scheduler/seed-clock failure only diagnoses the current architecture

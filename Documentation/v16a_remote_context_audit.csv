@@ -1,0 +1,8 @@
+event_kind,local_descriptor,base_token_count,remote_token_count,base_intensity,remote_intensity,absolute_difference,remote_invariant,interpretation
+seed,"('seed_tid', 0)",1,2,0.04,0.02,0.02,0,global_normalization_detected
+birth,"('birth_tid', 0)",1,2,0.02,0.02,0.0,1,bounded_local_intensity
+death,"('death_tid', 0)",1,2,0.0,0.015,0.015,0,global_min_tokens_guard_detected
+move,"('move', 0, 0, 1)",1,2,0.3999999999999999,0.3999999999999999,0.0,1,bounded_local_intensity
+delete,"('delete', 0, 0, 1)",1,2,0.2,0.2,0.0,1,bounded_local_intensity
+triad,"('triad', 0, 0, 1, 2)",1,2,0.2,0.2,0.0,1,bounded_local_intensity
+swap,"('swap', 0, 0, 1, 2)",1,2,0.2,0.2,0.0,1,bounded_local_intensity

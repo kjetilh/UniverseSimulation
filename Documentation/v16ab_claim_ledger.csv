@@ -1,0 +1,6 @@
+claim_id,statement,status,evidence,scope_limit
+C1,The frozen exposure-matched local seed clock avoids the preregistered fresh rate/growth shock.,supported,v16ab_gate_evaluation.csv,target 1024; growth seeds 1801/1901; 16 local runs
+C2,The preparation-only arm produces no observation-phase node growth.,supported,v16ab_arm_summary.csv,mechanism control
+C3,The local seed clock is now the validated project anchor.,unsupported,fresh scheduler holdout only,requires v16a locality rerun and later recalibration
+C4,v16b event-DAG may start immediately.,unsupported,v16ab decision requires v16a rerun,do not skip formal locality gate
+C5,The holdout demonstrates Lorentz-like or spacetime geometry.,unsupported,scheduler metrics only,no geometry observable in v16ab

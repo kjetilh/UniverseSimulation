@@ -1,0 +1,7 @@
+claim_id,statement,status,evidence,scope_limit
+C1,The frozen adapter gives every available seed host a rate independent of remote token or node population.,supported,v16ac_local_hazard_factorization.csv;v16ac_remote_context_audit.csv,exact adapter algebra plus finite runtime-kernel audit
+C2,Seed descriptor intensities are covariant under deterministic node relabeling in the finite graph-atlas census.,supported,v16ac_seed_rate_relabel_audit.csv,connected unlabeled graphs with 4-7 nodes plus fixtures
+C3,All declared-disjoint concrete transformations still commute under the adapter variant in the finite v16a census.,supported,v16ac_commutation_summary.csv;v16ac_v16a_parity.csv,finite census and conservative declared support
+C4,The isolated adapter variant is architecture-ready for a narrow v16b intrinsic event-DAG gate.,supported,v16ac_gate_evaluation.csv,"permission to test the next gate, not final anchor adoption"
+C5,The core band_zero_del anchor has been globally replaced by the local seed clock.,unsupported,adapter remains isolated in relational_universe_v16ac_local_seed_adapter_gate.py,later recalibration and scale validation are still required
+C6,"The adapter proves Lorentz symmetry, spacetime geometry, particles, or universal local causality.",unsupported,none,"v16ac is an architecture gate, not a physics validation"

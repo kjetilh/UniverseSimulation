@@ -1,0 +1,13 @@
+gate,status,observed,required,decision
+frozen_source_chain,pass,7,7,continue
+support_schema_coverage,pass,8,8,continue
+nontrivial_disjoint_coverage,pass,pairs=7123450;active_pair_kinds=11,>=1000 pairs;>=3 active pair kinds,continue
+exact_disjoint_commutation,pass,0,0,continue
+transformation_relabel_transport,pass,0,0,continue
+runtime_hazard_formula,pass,1.1102230246251565e-16,<=1e-12,continue
+bounded_local_clock_active_anchor,pass,,none,continue
+active_remote_context_invariance,pass,0.0,<=1e-12,continue
+seed_rate_relabel_covariance,pass,0,0,continue
+v16a_target_parity,pass,graphs=992;states=33385;pairs=7123450,graphs=992;states=33385;pairs=7123450,continue
+v16a_pair_aggregate_parity,pass,30,30,continue
+v16ac_overall,pass_adapter_to_v16b,1,1,design_v16b_with_isolated_adapter

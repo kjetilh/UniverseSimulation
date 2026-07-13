@@ -1,0 +1,7 @@
+candidate,graph_count,trials,max_abs_error,failures,relabel_pass
+current_global,992,1984,0.0,0,1
+naive_local_per_token,992,1984,0.0,0,1
+initial_median_local,992,1984,0.0,0,1
+exposure_matched_local,992,1984,0.0,0,1
+preparation_only,992,1984,0.0,0,1
+explicit_global_background,992,1984,0.0,0,1

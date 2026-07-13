@@ -1,0 +1,9 @@
+event_kind,anchor_active,runtime_formula_samples,formula_max_abs_error,formula_exact,bounded_local_clock,status
+seed,1,59999,0.0,1,1,pass_bounded_local
+birth,1,59999,1.3877787807814457e-17,1,1,pass_bounded_local
+death,0,53222,1.734723475976807e-18,1,0,inactive_anchor_global_guard
+stuck,1,1,0.0,1,1,pass_bounded_local
+move,1,189272,1.1102230246251565e-16,1,1,pass_bounded_local
+delete,0,183759,2.7755575615628914e-17,1,1,pass_bounded_local
+triad,0,231514,2.7755575615628914e-17,1,1,pass_bounded_local
+swap,1,231514,2.7755575615628914e-17,1,1,pass_bounded_local

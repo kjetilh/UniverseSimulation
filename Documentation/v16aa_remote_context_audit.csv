@@ -1,0 +1,13 @@
+candidate,context,descriptor,base_intensity,remote_intensity,absolute_difference,remote_invariant,bounded_local
+current_global,token_host,"('seed_tid', 0)",0.04,0.02,0.02,0,0
+current_global,node_host_no_tokens,"('seed_node', 0)",0.01,0.008,0.002,0,0
+naive_local_per_token,token_host,"('seed_tid', 0)",0.04,0.04,0.0,1,1
+naive_local_per_token,node_host_no_tokens,"('seed_node', 0)",0.04,0.04,0.0,1,1
+initial_median_local,token_host,"('seed_tid', 0)",0.0025,0.0025,0.0,1,1
+initial_median_local,node_host_no_tokens,"('seed_node', 0)",0.0025,0.0025,0.0,1,1
+exposure_matched_local,token_host,"('seed_tid', 0)",0.0005039538147742117,0.0005039538147742117,0.0,1,1
+exposure_matched_local,node_host_no_tokens,"('seed_node', 0)",0.0005039538147742117,0.0005039538147742117,0.0,1,1
+preparation_only,token_host,"('seed_tid', 0)",0.0,0.0,0.0,1,1
+preparation_only,node_host_no_tokens,"('seed_node', 0)",0.0,0.0,0.0,1,1
+explicit_global_background,token_host,"('seed_tid', 0)",0.04,0.02,0.02,0,0
+explicit_global_background,node_host_no_tokens,"('seed_node', 0)",0.01,0.008,0.002,0,0

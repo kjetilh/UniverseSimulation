@@ -1,0 +1,6 @@
+advisor,model_or_surface,status,role,central_recommendation,strongest_undercut
+Fabel 5,claude-fable-5,blocked_auth,theoretical strategist,no_response_used,"Claude CLI returned 401; NanoGPT route lacked NANOGPT_API_KEY"
+Banach,gpt-5.5,completed,theoretical model-building adviser,symmetry-derived causal coarse-graining program,current architecture lacks explicit causal covariance reversibility and coarse-graining closure
+Einstein,gpt-5.6-terra,completed,evidence adjudicator,run exhaustive disjoint-event commutation gate before simulation scale-up,relabel equivariance does not imply scheduler robustness or intrinsic causality
+Pasteur,gpt-5.6-sol,completed,computational experimental-design adviser,run symmetry-constrained causal-kernel feasibility program with static census before holdouts,global family clocks and serial execution can masquerade as causal locality
+Codex,gpt-5.6-sol,completed,repo-grounded synthesis,stage A then C then B with architecture pivot on first exact failure,large rule search now would optimize unstable proxies

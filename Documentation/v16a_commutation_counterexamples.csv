@@ -1,0 +1,1 @@
+state_id,scope,pair_kind,left_descriptor,right_descriptor,conflicts,ab_context,ba_context,valid_execution,exact_commutation,isomorphic_commutation,relabel_pass,initial_state,ab_state,ba_state

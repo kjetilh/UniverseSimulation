@@ -1,0 +1,13 @@
+gate,status,observed,required,decision
+run_integrity,pass,48,48,continue
+local_seed_formula,pass,0.0,<=1e-12,continue
+aggregate_hazard_ratio,pass,0.9047993004690018,"[0.75,1.25]",continue
+per_growth_hazard_ratio,pass,0.873599;0.938264,"each in [0.5,2.0]",continue
+median_total_time_ratio,pass,1.0564310468203972,"[0.75,1.25]",continue
+median_final_token_ratio,pass,1.002439024390244,"[0.75,1.25]",continue
+nonseed_family_tv,pass,0.0018388400401954568,<=0.05,continue
+local_runaway_control,pass,3,<=51,continue
+preparation_only_hygiene,pass,seeds=0;max_node_growth=0,seeds=0;max_node_growth=0,continue
+invalid_event_control,pass,0,0,continue
+beta1_anchor_control,pass,0,0,continue
+v16ab_overall,promote_local_seed_clock_to_v16a_rerun,rho_seed=0.000503953814774212,all frozen gates pass,rerun_v16a_locality
