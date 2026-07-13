@@ -414,6 +414,11 @@ def run_assignment(
     return event_rows, dependency_rows, direct_rates, run_row, replay_rows, relabel_row, dag
 
 
+def csv_string_rows(rows: Sequence[Mapping[str, Any]]) -> List[Dict[str, str]]:
+    """Match the representation produced by csv.DictReader for v16g replay."""
+    return [{key: str(value) for key, value in row.items()} for row in rows]
+
+
 def direct_rate_audit(
     base: v7.State,
     event_rows: Sequence[Mapping[str, Any]],
@@ -421,8 +426,10 @@ def direct_rate_audit(
     run_row: Mapping[str, Any],
     local_rate: float,
 ) -> Dict[str, Any]:
+    csv_events = csv_string_rows(event_rows)
+    csv_run_row = csv_string_rows([run_row])[0]
     reconstructed, reconstruction = v16g.reconstruct_run_rates(
-        base, event_rows, run_row, local_rate, "v16h_direct_log_reconstruction"
+        base, csv_events, csv_run_row, local_rate, "v16h_direct_log_reconstruction"
     )
     direct_by_id = {int(row["event_id"]): row for row in direct_rows}
     reconstructed_by_id = {int(row["event_id"]): row for row in reconstructed}
@@ -818,6 +825,8 @@ def self_test() -> None:
     assert NULL_REPLICATES == v16g.HOLDOUT_NULL_REPLICATES
     assert v16g.PRIMARY_NULL_FAMILY == "total_rate_profile"
     assert len({run_seed(growth, offset, arm) for growth in GROWTH_SEEDS for offset in RUN_OFFSETS for arm in ARMS}) == 12
+    normalized = csv_string_rows([{"new_node_id": 7, "new_token_id": ""}])
+    assert normalized == [{"new_node_id": "7", "new_token_id": ""}]
     fake_local = [
         {"clock_bins": bins, "median_waiting_minus_observed_nmi": 0.01 * (index + 1)}
         for index, bins in enumerate(CLOCK_BINS)
