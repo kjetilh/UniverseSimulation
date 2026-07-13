@@ -1,0 +1,16 @@
+gate,status,observed,required,decision
+v16c_source_contract,pass,1,1,continue
+target_1536_hygiene,pass,mean=1536.0;separated=1,mean=1536;separated=1,continue
+fresh_run_integrity,pass,runs=12;invalid=0,runs=12;invalid=0,continue
+fine_dag_integrity,pass,acyclic=12;witness_errors=0,acyclic=12;witness_errors=0,continue
+fresh_topological_replay,pass,replays=24;min_reorder=0.996419;failures=0,replays=24;failures=0,continue
+relabel_and_map_transport,pass,12,12,continue
+quotient_map_integrity,pass,passes=36/36,36,continue
+scale1_identity,pass,1,1,continue
+strict_three_scale_compression,pass,1,1,continue
+scale16_nondegenerate,pass,nodes=144-189;retention=0.046875-0.061523,"nodes>=16;retention in [0.01,0.9]",continue
+local_transition_cv,pass,1_to_4:causal_depth_retention=0.017751;1_to_4:antichain_width_retention=0.013015;1_to_4:dependency_density_retention=0.053957;4_to_16:causal_depth_retention=0.060133;4_to_16:antichain_width_retention=0.166531;4_to_16:dependency_density_retention=0.042331,each<=0.4,continue
+growth_seed_transfer,pass,1_to_4:causal_depth_retention=0.968750;1_to_4:antichain_width_retention=0.987271;1_to_4:dependency_density_retention=0.899464;4_to_16:causal_depth_retention=0.900000;4_to_16:antichain_width_retention=0.998235;4_to_16:dependency_density_retention=0.980209,"each in [0.6,1.67]",continue
+target_1024_to_1536_transfer,pass,1_to_4:causal_depth_retention=0.962910;1_to_4:antichain_width_retention=1.007397;1_to_4:dependency_density_retention=1.044788;4_to_16:causal_depth_retention=0.904167;4_to_16:antichain_width_retention=1.121537;4_to_16:dependency_density_retention=1.096155,"each in [0.6,1.67]",continue
+scheduler_diagnostic_transfer,pass,1_to_4:causal_depth_retention=0.969436;1_to_4:antichain_width_retention=1.048908;1_to_4:dependency_density_retention=0.999173;4_to_16:causal_depth_retention=0.968750;4_to_16:antichain_width_retention=1.230099;4_to_16:dependency_density_retention=1.031374;tv=0.000814,"ratios in [0.6,1.67];tv<=0.05",continue
+v16d_overall,pass_to_v16e_independent_coarse_map_gate,1,1,design_independent_map_gate

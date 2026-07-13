@@ -1,0 +1,7 @@
+claim_id,statement,status,evidence,scope_limit
+C1,The unchanged v16c map produces witnessed acyclic quotient DAGs on fresh target-1536 histories.,supported,v16d_map_audit.csv;v16d_coarse_dependency_edges.csv,finite target 1536 under the declared event support schema
+C2,Local transition-ratio medians transfer from target 1024 to 1536 within the frozen bounds.,supported,v16d_target_transfer.csv;v16d_gate_evaluation.csv,"one target step, equal two-events-per-target-node exposure, broad pilot bounds"
+C3,The target-1536 quotients remain stable across fresh growth seeds and the scheduler diagnostic.,supported,v16d_growth_transfer.csv;v16d_scheduler_transfer.csv,two growth seeds and six runs per arm
+C4,The imported quotient map remains invariant under concrete node relabeling.,supported,v16d_relabel_replay_audit.csv,preserved event edge sets and depth sequences
+C5,"Target transfer establishes a continuum limit, Lorentz symmetry, or emergent spacetime.",unsupported,none,not tested by v16d
+C6,The depth-window map is independent physical evidence rather than a chosen coarse-graining convention.,unsupported,none,v16d deliberately reuses the same construction; an independent map is still required

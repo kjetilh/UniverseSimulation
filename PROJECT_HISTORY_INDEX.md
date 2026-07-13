@@ -6788,3 +6788,87 @@ Viktige filer:
 - `Documentation/v16c_claim_ledger.csv`
 - `Documentation/v0_16c_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16c.md`
+
+## 10ch. v16d holdt det frosne tre-skala-kartet ut paa target 1536
+
+`v16d` testet den anbefalte target-aksen uten aa endre v16c-kartet. Foer ny dynamikk ble seks lokale target-1024-medianer kopiert fra `v16c_transition_ratios.csv` til en egen fil merket `frozen_v16c_local_baseline_not_v16d_evidence`. Source transition-hash var `ad9725127d83262e8c37646467bf166f3fc96c607a2c719c63cb667f3024b2b0`, og baselinefilens hash var `3c8b9de8c44ace77925b9552503fcd57f7945a8f9b7ee062295012eec9315264`.
+
+Holdouten laaste og re-verifiserte:
+
+- v16c-status `pass_to_v16d_scale_holdout` og alle v16c-undergater
+- v16c-preregistreringen
+- source-script-hash `c143b58862e3fa82c0ba012e3a14224b7c5135226f92b6f15c4bca14cbaca7ef`
+- samme depth-window-map og scale-vinduer `1/4/16`
+- samme tre transition-observabler
+- samme CV-, growth-, scheduler-, replay- og non-collapse-grenser
+- samme frosne lokale seed-rate
+
+Deretter ble `12` assignments skrevet med digest `c0410d6ac75daa208dbd12ebf9dafe1754d896ef988be09a88f773ba29f16d37`:
+
+- source target `1024`, fresh holdout target `1536`
+- fresh growth seeds `3407/3511`
+- offsets `61001/61043/61091`
+- scheduler-armene `current_global` og `exposure_matched_local`
+- `3072` events per run, mekanisk `2` events per initial target-node
+- to topologiske replays per run
+
+Faktiske fresh resultater:
+
+- target `1536` realiserte eksakt `1536` initialnoder paa begge growth seeds og var rent separert fra target `1024`
+- `36864` events og `42858` fine dependency-kanter
+- alle `12/12` fine DAG-er asykliske med `0` witness-feil
+- alle `24/24` topologiske replays gyldige, uten context- eller sluttstrukturfeil
+- minste omplasserte eventandel `0.996419`
+- alle `12/12` relabel-replays bevarte support, kantsett, dybdesekvens og sluttstruktur
+- alle `36/36` quotient-map-audits passerte
+- scale 1 var eksakt fine-DAG-identitet
+- scale 4 hadde `751-775` noder og `866-1030` quotient-kanter
+- scale 16 hadde `144-189` noder og `163-251` quotient-kanter
+- alle quotient-kanter hadde minst en konkret fine-edge witness
+
+Primaergaten sammenlignet target-1536 lokale medianer mot de frosne target-1024-medianene. Alle seks ratioer passerte den uendrede brede `[0.60,1.67]`-grensen:
+
+- `1->4` causal-depth-retention `0.962910`
+- `1->4` antichain-width-retention `1.007397`
+- `1->4` dependency-density-retention `1.044788`
+- `4->16` causal-depth-retention `0.904167`
+- `4->16` antichain-width-retention `1.121537`
+- `4->16` dependency-density-retention `1.096155`
+
+De oevrige robusthetskontrollene passerte ogsaa:
+
+- lokal CV `0.013015-0.166531`, under `0.40`
+- growth-seed medianratio `0.899464-0.998235`
+- local/global scheduler-ratio `0.968750-1.230099`
+- non-seed event-TV `0.000814`
+
+Status er `pass_to_v16e_independent_coarse_map_gate`. Dette er sterkere finite-size-evidens enn v16c alene: samme eksplisitte map og mindre konstruksjonsnaere bredde-/density-observabler holder paa et ferskt stoerrelseshopp med lik eventtetthet. Men det er fortsatt bare to target-stoerrelser, seks lokale runs per target, brede pilotgrenser og ett map som selv bruker causal depth. Resultatet etablerer ikke konvergens, continuum, metric geometry, Lorentz-symmetri, spacetime, partikler, entanglement eller universell kausal orden.
+
+Neste gate skal derfor ikke bare skalere samme map videre. `v16e` boer preregistrere en uavhengig relabel-invariant coarse-map-kontrast som ikke defineres av causal-depth-vinduer, krever konkrete fine-edge witnesses og sammenlignes med null-/coarsening-kontroller.
+
+Viktige filer:
+
+- `relational_universe_v16d_target_scale_holdout.py`
+- `Documentation/v16d_target_scale_holdout.md`
+- `Documentation/v16d_frozen_v16c_baseline.csv`
+- `Documentation/v16d_pre_registration.csv`
+- `Documentation/v16d_source_chain.csv`
+- `Documentation/v16d_target_summary.csv`
+- `Documentation/v16d_event_log.csv`
+- `Documentation/v16d_fine_dependency_edges.csv`
+- `Documentation/v16d_run_summary.csv`
+- `Documentation/v16d_coarse_membership.csv`
+- `Documentation/v16d_coarse_dependency_edges.csv`
+- `Documentation/v16d_scale_summary.csv`
+- `Documentation/v16d_transition_ratios.csv`
+- `Documentation/v16d_map_audit.csv`
+- `Documentation/v16d_topological_replay_audit.csv`
+- `Documentation/v16d_relabel_replay_audit.csv`
+- `Documentation/v16d_local_stability.csv`
+- `Documentation/v16d_growth_transfer.csv`
+- `Documentation/v16d_scheduler_transfer.csv`
+- `Documentation/v16d_target_transfer.csv`
+- `Documentation/v16d_gate_evaluation.csv`
+- `Documentation/v16d_claim_ledger.csv`
+- `Documentation/v0_16d_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16d.md`
