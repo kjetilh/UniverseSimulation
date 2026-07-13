@@ -1,0 +1,10 @@
+gate,status,observed,required,decision
+v16e_source_contract,pass,1,1,continue
+v16f_preregistration,pass,1,1,continue
+depth16_map_integrity,pass,passes=12/12,12,continue
+relation_row_integrity,pass,36,36,continue
+null_row_integrity,pass,4608,4608,continue
+local_relative_anti_alignment,pass,128:-0.018448/-0.011497/-0.020443;64:-0.016538/-0.013421/-0.017068;32:-0.013648/-0.014159/-0.014033,all medians<=-0.005;null_z<=-2.0;negative>=0.833,continue
+growth_relation_transfer,pass,128:1.128/1.085/1.154;64:1.148/1.138/1.052;32:1.258/1.193/1.237,"each in (0.6, 1.67)",continue
+scheduler_relation_diagnostic,pass,128:0.905/0.995/0.952;64:0.904/0.924/0.945;32:0.939/0.980/0.993,"each in (0.6, 1.67)",continue
+v16f_overall,pass_to_v16g_clock_depth_boundary_mechanism_gate,1,1,test_boundary_mechanism

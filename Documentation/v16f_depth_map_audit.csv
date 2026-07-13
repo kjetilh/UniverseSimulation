@@ -1,0 +1,13 @@
+growth_seed,run_offset,arm,run_seed,scale_window,membership_rows,unique_fine_events,coarse_nodes,event_coverage_errors,duplicate_membership_errors,depth_bin_errors,quotient_edges,quotient_witness_errors,self_edges,quotient_invalid_edges,quotient_acyclic,identity_membership_pass,identity_edge_pass,map_integrity_pass
+3701,71003,current_global,1573097008,16,3072,3072,183,0,0,0,212,0,0,0,1,1,1,1
+3701,71003,exposure_matched_local,1673097008,16,3072,3072,154,0,0,0,196,0,0,0,1,1,1,1
+3701,71047,current_global,1573097052,16,3072,3072,172,0,0,0,215,0,0,0,1,1,1,1
+3701,71047,exposure_matched_local,1673097052,16,3072,3072,149,0,0,0,188,0,0,0,1,1,1,1
+3701,71089,current_global,1573097094,16,3072,3072,160,0,0,0,187,0,0,0,1,1,1,1
+3701,71089,exposure_matched_local,1673097094,16,3072,3072,160,0,0,0,190,0,0,0,1,1,1,1
+3803,71003,current_global,1574117008,16,3072,3072,182,0,0,0,198,0,0,0,1,1,1,1
+3803,71003,exposure_matched_local,1674117008,16,3072,3072,179,0,0,0,193,0,0,0,1,1,1,1
+3803,71047,current_global,1574117052,16,3072,3072,177,0,0,0,184,0,0,0,1,1,1,1
+3803,71047,exposure_matched_local,1674117052,16,3072,3072,178,0,0,0,182,0,0,0,1,1,1,1
+3803,71089,current_global,1574117094,16,3072,3072,188,0,0,0,204,0,0,0,1,1,1,1
+3803,71089,exposure_matched_local,1674117094,16,3072,3072,155,0,0,0,167,0,0,0,1,1,1,1

@@ -1,0 +1,7 @@
+claim_id,statement,status,evidence,scope_limit
+C1,The validated depth-window-16 map can be reconstructed on all frozen v16e histories with complete memberships and witnessed quotient edges.,supported,v16f_depth_map_audit.csv;v16f_depth_coarse_edges.csv,existing finite v16e histories under the declared support schema
+C2,"Clock/depth partition NMI is lower than equal-count, shuffled-waiting-time, and exact-size/order controls at all three frozen clock resolutions.",supported,v16f_local_relation_gate.csv;v16f_relation_run_summary.csv;v16f_relation_null_distribution.csv,"analysis holdout on existing v16e histories, expected direction calibrated on v16c/v16d"
+C3,The relative anti-alignment transfers across two v16e growth seeds and the scheduler diagnostic within frozen broad bounds.,supported,v16f_growth_relation_transfer.csv;v16f_scheduler_relation_transfer.csv,"two growth seeds, two scheduler arms, broad magnitude-ratio gates"
+C4,Clock slabs and causal-depth quotients are validated as two views of one common emergent geometry.,unsupported,none,v16f expected and tests relative anti-alignment rather than common-map equivalence
+C5,"The cross-map result establishes physical time, Lorentz symmetry, spacetime, or a continuum limit.",unsupported,none,simulation clock remains scheduler-order-dependent and no observer transformation or metric is tested
+C6,"The finite partition relation establishes particles, entanglement, or universal causal laws.",unsupported,none,not tested by v16f

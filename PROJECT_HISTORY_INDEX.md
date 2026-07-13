@@ -6947,3 +6947,72 @@ Viktige filer:
 - `Documentation/v16e_claim_ledger.csv`
 - `Documentation/v0_16e_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16e.md`
+
+## 10cj. v16f fant stabil relativ anti-alignment mellom clock- og depth-kartet
+
+`v16f` testet relasjonen mellom de to uavhengige map-signalene uten aa legge til ny dynamikk eller et tredje kart. Dette var en frosset-data analyse-holdout: v16e-historiene eksisterte allerede, men cross-map-relasjonen var ikke brukt til aa velge statistikk, retning, nuller eller terskler.
+
+Designkalibreringen brukte bare v16c/v16d-historiene. Den sammenlignet depth-window `16` med clock bins `128/64/32` ved hjelp av sqrt-entropy-normalisert mutual information. Tre kontroller ble frosset:
+
+- equal-event-count slabs, som ren kronologisk baseline
+- `64` shuffled-waiting-time-kart per run/opplosning
+- `64` monotone contiguous slabs som bevarte det eksakte clock-bin-storrelsesmultisettet, men permuterte grenselengdene
+
+Den gamle-data-forventede retningen var overraskende, men konsistent: faktisk clock/depth-NMI var lavere enn alle tre kontrollene. Alle seks lokale runs i baade v16c og v16d hadde denne retningen ved alle tre opplosninger. v16d/v16c-magnituderatios var `1.215-1.591`, innen den frosne `[0.50,2.00]`-grensen. Design-selection-hash var `832640b8c903d8b9e035281406d7cffe5faaa44cb7d300d68c0cf32fa197362e`.
+
+Deretter ble de eksisterende v16e-sourcefilene hashet og `12` analyseassignments preregistrert med digest `02bcdd5214545264ceaad7f34634cfb57836b01b83d86abe959fca9fe203ebc8`. Dette er analyse-holdout paa eksisterende data, ikke en ny dynamisk holdout.
+
+Faktiske analyse-resultater:
+
+- alle `12/12` depth-window-16-rekonstruksjoner passerte map-integritet
+- `36864` depth-membership-rader og `2316` witness-belagte quotient-kanter
+- `36` primary run/opplosningsrader og `4608` nullrader
+- alle `36/36` clock-minus-waiting-effekter hadde den frosne negative retningen
+- negativ andel var `1.000` i alle tre lokale opplosninger
+
+Lokale medianer for bins `128/64/32`:
+
+- clock-minus-waiting NMI `-0.018448/-0.016538/-0.013648`
+- clock-minus-exact-size/order NMI `-0.011497/-0.013421/-0.014159`
+- clock-minus-event-count NMI `-0.020443/-0.017068/-0.014033`
+- waiting-null-z `-14.376/-13.259/-9.574`
+- exact-size/order-null-z `-5.923/-5.728/-4.548`
+- holdout/v16d-magnituderatio `0.767-0.875`
+
+Relasjonen transfererte innen de brede, frosne grensene:
+
+- growth-seed magnituderatioer `1.052-1.258` paa tvers av alle kontroller og opplosninger
+- local/global scheduler-magnituderatioer `0.904-0.995`
+
+Dependency-edge internalization phi ble rapportert som sekundar diagnostikk, men ikke gatet. Den var svakere og delvis fortegnsskiftende: ved 32 bins var lokal median clock-minus-waiting-phi svakt positiv, mens exact-size/order-kontrasten fortsatt var negativ. Dette bekrefter at den ikke skal oppgraderes post hoc til primary.
+
+Foerste fullinvokasjon fullforte de 36 relasjonsberegningene, men stoppet foer artefaktskriving fordi growth-transfer-helperen forventet seks lokale runs per seed, mens preregistreringen korrekt hadde tre offsets per seed. Bare dekningsasserten ble rettet til `3` per growth seed og `6` per scheduler-arm. Source data, statistikk, nuller, seeds, terskler og retning ble ikke endret; hele analysen ble kjoert paa nytt. Reparasjonen er eksplisitt logget i `v16f_execution_audit.csv`.
+
+Status er `pass_to_v16g_clock_depth_boundary_mechanism_gate`. Evidensen stotter en repeterbar relativ cross-map-relasjon, men ikke common-geometry-hypotesen i dens enkleste form: den faktiske clock-partisjonen er mindre lik depth-16-partisjonen enn tre kronologiske kontroller. Lavere relativ NMI er ikke negativ mutual information og viser ikke at to fysiske geometrier er inkompatible. Scheduler/rate-struktur kan fortsatt forklare hele effekten.
+
+Neste gate er derfor ett preregistrert v16g-mekanismetest som spoer om event-family og lokal rate forklarer hvor faktiske clock-grenser kutter depth-komponenter. Ikke legg til et tredje kart eller oek target foer denne mekanismen er testet.
+
+Viktige filer:
+
+- `relational_universe_v16f_cross_map_relation_gate.py`
+- `Documentation/v16f_cross_map_relation_gate.md`
+- `Documentation/v16f_design_calibration_relation_runs.csv`
+- `Documentation/v16f_design_calibration_null_distribution.csv`
+- `Documentation/v16f_design_selection.csv`
+- `Documentation/v16f_pre_registration.csv`
+- `Documentation/v16f_source_chain.csv`
+- `Documentation/v16f_depth_membership.csv`
+- `Documentation/v16f_depth_coarse_edges.csv`
+- `Documentation/v16f_depth_map_summary.csv`
+- `Documentation/v16f_depth_map_audit.csv`
+- `Documentation/v16f_relation_run_summary.csv`
+- `Documentation/v16f_relation_null_distribution.csv`
+- `Documentation/v16f_edge_agreement_diagnostic.csv`
+- `Documentation/v16f_execution_audit.csv`
+- `Documentation/v16f_local_relation_gate.csv`
+- `Documentation/v16f_growth_relation_transfer.csv`
+- `Documentation/v16f_scheduler_relation_transfer.csv`
+- `Documentation/v16f_gate_evaluation.csv`
+- `Documentation/v16f_claim_ledger.csv`
+- `Documentation/v0_16f_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16f.md`
