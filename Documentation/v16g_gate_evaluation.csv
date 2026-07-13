@@ -1,0 +1,7 @@
+gate,status,observed,required,decision
+exact_rate_reconstruction,pass,audits=12;failures=0,12 audits;failures=0,continue
+v16f_relation_reproduction,pass,positive_waiting_minus_observed=36/36,36/36,continue
+total_rate_profile_mechanism,pass,passing_bins=3/3,3/3,fresh_holdout
+growth_transfer,pass,passing_groups=6/6,6/6,continue
+scheduler_transfer,pass,passing_groups=6/6,6/6,continue
+v16g_overall,pass_to_v16h_fresh_rate_logged_mechanism_holdout,reconstruction=1;relation=1;local=1;growth=1;scheduler=1,all five gates pass for fresh rate-logged holdout,pass_to_v16h_fresh_rate_logged_mechanism_holdout

@@ -1,0 +1,4 @@
+clock_bins,primary_arm,n_runs,median_waiting_minus_observed_nmi,negative_relation_fraction,median_rate_explained_fraction,median_family_rate_explained_fraction,median_family_hazard_explained_fraction,median_primary_explained_fraction,median_family_rate_increment_over_rate,median_family_hazard_increment_over_rate,conditionally_nonsurprising_fraction,local_mechanism_pass
+128,exposure_matched_local,6,0.01855380875309276,1.0,1.000673251865062,1.0028826456996938,1.0217783488146939,1.000673251865062,0.004332187526577824,0.009140217831249353,1.0,1
+64,exposure_matched_local,6,0.016667664074464045,1.0,1.0145111362369479,1.0185310715415499,1.0110540616286607,1.0145111362369479,0.0020985342123391315,0.0038433983364232205,1.0,1
+32,exposure_matched_local,6,0.013751882450822095,1.0,0.9818911413027029,0.9751011444679518,0.9736896117972225,0.9818911413027029,-0.0030323253422738228,-0.010176331299550201,0.8333333333333334,1

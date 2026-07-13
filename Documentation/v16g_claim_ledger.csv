@@ -1,0 +1,7 @@
+claim_id,claim,status,evidence,scope_limit
+C1,"Pre-event total rates, selected family rates, and concrete descriptor hazards are exactly reconstructable for all frozen v16e events.",supported,v16g_rate_reconstruction_audit.csv,declared simulator and frozen v16e event histories
+C2,Pre-event total-rate conditioning explains a material share of the v16f clock/depth anti-alignment.,supported,v16g_local_mechanism_gate.csv;v16g_mechanism_run_summary.csv,finite analysis holdout; mechanism requires a fresh dynamical holdout
+C3,Event-family and concrete descriptor-hazard conditioning add a material explanation beyond the total-rate profile.,unsupported,v16g_local_mechanism_gate.csv;v16g_mechanism_run_summary.csv,secondary median increments are near zero; not a separately gated mechanism
+C4,The clock/depth relation is an independent common emergent geometry after scheduler conditioning.,unsupported,none,"v16g tests a scheduler mechanism, not geometric equivalence"
+C5,The simulation clock is physical proper time or supports Lorentz symmetry or spacetime.,unsupported,none,"no observer transformations, metric, light cones, or continuum limit are tested"
+C6,"The result establishes particles, entanglement, or universal causal laws.",unsupported,none,not tested

@@ -7016,3 +7016,82 @@ Viktige filer:
 - `Documentation/v16f_claim_ledger.csv`
 - `Documentation/v0_16f_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16f.md`
+
+## 10ck. v16g identifiserte total scheduler-rate som den parsimoniske cross-map-mekanismen
+
+`v16g` testet den smaleste mekanismehypotesen etter v16f: om clock/depth-anti-aligneringen oppstaar fordi den faktiske clock-partisjonen integrerer en varierende pre-event totalrate, heller enn fordi clock- og depth-kartene er uavhengige koordinatiseringer av en felles geometri. Dette var en frosset-data analyse-holdout paa de eksisterende v16e-historiene, ikke ny dynamikk.
+
+Instrumenteringen rekonstruerer den eksakte tilstanden foer hver lagret hendelse og beregner:
+
+- pre-event totalrate over `seed/token/birth/death`
+- valgt familierate og dens andel av totalraten
+- descriptor-sannsynlighet i den faktiske family-kjernen
+- konkret descriptor-hazard som `familierate * descriptor-sannsynlighet`
+- unit-rate waiting-residual som `dt * totalrate`
+
+Replay-auditen krever samtidig parity for descriptor-support, eventtype, allokerte node-/token-ID-er, read/write-support, direkte DAG-predecessors, causal depth, eventtall, sluttcensus og total simuleringstid. En rateverdi godtas derfor ikke bare fordi den kan beregnes algebraisk; den maa komme fra en replay som passer hele den lagrede history-kontrakten.
+
+Designkalibreringen brukte bare v16c/v16d:
+
+- `24/24` eksakte replay-audits passerte
+- `72` run/opplosningsceller for depth-window `16` og clock bins `128/64/32`
+- fire nullfamilier med `64` trekk hver, totalt `18432` nullrader
+- unconditional shuffled waiting time som v16f-baseline
+- totalrateprofil-null: shuffle unit-rate residualer globalt og rekonstruer `dt_i = residual_perm_i / totalrate_i`
+- event-family-null: samme residualshuffle begrenset til event-family
+- family+descriptor-hazard-null: samme shuffle begrenset til innen-family hazard-rankkvantiler
+
+Den gamle-data parsimoniske modellen var tydelig. Totalrateprofilen forklarte median `0.9436-1.0612` av det unconditional clock/depth-gapet i de seks lokale stage/opplosningscellene. Event-family og descriptor-hazard ga bare smaa, fortegnsskiftende inkrementer utover totalraten. Derfor ble totalrateprofilen valgt og frosset som primary foer v16e-mekanismeverdiene ble beregnet; de rikere nullene ble beholdt som sekundare inkrementdiagnostikker. Frozen spec-digest var `13db516eaceb203d141f3238c6000ede5d6345e8a69946dcdee94689b42f94d0`.
+
+Den frosne v16e-analyseholdouten ga:
+
+- `12/12` eksakte rate-rekonstruksjoner over `36864` events
+- `0` replay-/support-/ID-/DAG-/census-/time-feil
+- normalized waiting-residual run-mean `0.954118-1.016816` og SD `0.956288-1.019547`
+- `36` run/opplosningsrader og `9216` nullrader
+- minst `99.80%` permuterte verdier i totalrate-nullene; den betingede nullen var ikke en nesten-identisk kopi av observasjonen
+- v16f-retningen reprodusert i `36/36` run/opplosningsceller
+
+Lokale primary-resultater for bins `128/64/32`:
+
+- median waiting-minus-observed NMI `0.018554/0.016668/0.013752`
+- median totalrate-forklart andel `1.000673/1.014511/0.981891`
+- conditionally nonsurprising run-andel `1.000/1.000/0.833`
+- alle `3/3` frosne primary-celler passerte
+
+Den sekundare inkrementanalysen var negativ som arts-/lokalmekanismeevidens:
+
+- median event-family-inkrement utover totalrate `-0.003032` til `0.004332`
+- median descriptor-hazard-inkrement utover totalrate `-0.010176` til `0.009140`
+- ingen separat event-family- eller konkret-hazard-mekanisme oppgraderes
+
+Growth-diagnostikken passerte `6/6` seed/opplosningsgrupper, og scheduler-diagnostikken passerte `6/6` arm/opplosningsgrupper. Status er `pass_to_v16h_fresh_rate_logged_mechanism_holdout`.
+
+En etterfolgende manifest-audit fant at growth/scheduler-diagnostikkens `0.50` conditional-nonsurprise-grense stod eksplisitt i den frosne pre-holdout-koden, men ikke i den serialiserte spec-digest-payloaden. Dette ble dokumentert uten aa endre terskel, data, statistikk, seed eller resultat. Primary local-mekanismegaten er digest-laast; growth/scheduler-transfer er derfor stottende diagnostikk med svakere manifestbevis, ikke selvstendig avgjorende evidens.
+
+Dette er ny, men avgrensende kunnskap. v16f-relasjonen var repeterbar, men v16g viser at den forelopig best forstaas som indusert av schedulerens totale rateprofil. Det svekker common-geometry-tolkningen: clock-kartet er ikke en uavhengig struktur etter at den mekanismen tas hensyn til. Resultatet er heller ikke et bevis paa fysisk tid, Lorentz-symmetri, metric spacetime, continuum, partikler, entanglement eller universell kausal orden.
+
+Neste gate er ett ferskt dynamisk `v16h`-holdout med nye growth seeds/offsets som logger pre-event totalrate direkte under runnen og gjenbruker den frosne residual-nulltesten uten refit. Ikke legg til et tredje kart og ikke oek target foer denne direkte mekanismevalideringen.
+
+Viktige filer:
+
+- `relational_universe_v16g_clock_depth_boundary_mechanism_gate.py`
+- `Documentation/v16g_clock_depth_boundary_mechanism_gate.md`
+- `Documentation/v16g_design_calibration_rate_audit.csv`
+- `Documentation/v16g_design_calibration_mechanism_runs.csv`
+- `Documentation/v16g_design_calibration_conditional_nulls.csv`
+- `Documentation/v16g_design_selection.csv`
+- `Documentation/v16g_pre_registration.csv`
+- `Documentation/v16g_source_chain.csv`
+- `Documentation/v16g_rate_reconstruction_event_log.csv`
+- `Documentation/v16g_rate_reconstruction_audit.csv`
+- `Documentation/v16g_mechanism_run_summary.csv`
+- `Documentation/v16g_conditional_null_distribution.csv`
+- `Documentation/v16g_local_mechanism_gate.csv`
+- `Documentation/v16g_growth_mechanism_transfer.csv`
+- `Documentation/v16g_scheduler_mechanism_transfer.csv`
+- `Documentation/v16g_execution_audit.csv`
+- `Documentation/v16g_gate_evaluation.csv`
+- `Documentation/v16g_claim_ledger.csv`
+- `Documentation/v0_16g_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16g.md`
