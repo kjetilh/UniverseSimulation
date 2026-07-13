@@ -1,0 +1,7 @@
+claim_id,statement,status,evidence,scope_limit
+C1,The frozen depth-window map produces witnessed acyclic quotient DAGs at all three scales.,supported,v16c_map_audit.csv;v16c_coarse_dependency_edges.csv,fresh finite event histories under the declared v16a support schema
+C2,The scale-1 map is the exact fine DAG and the 1/4/16 sequence compresses strictly without collapse.,supported,v16c_scale_summary.csv;v16c_gate_evaluation.csv,three selected depth windows at target 1024
+C3,Primary transition ratios are stable enough across fresh bases and scheduler arms for a separate scale holdout.,supported,v16c_local_stability.csv;v16c_growth_transfer.csv;v16c_scheduler_transfer.csv,"broad pilot thresholds, two growth seeds and six runs per arm"
+C4,The quotient map is invariant under concrete node relabeling.,supported,v16c_relabel_replay_audit.csv,follows from preserved event edge set and depth sequence
+C5,"The three quotients establish a continuum limit, emergent spacetime, or Lorentz symmetry.",unsupported,none,not tested by v16c
+C6,The event DAG is a universal physical causal order.,unsupported,none,implementation-level conflict order under a declared event vocabulary

@@ -1,0 +1,15 @@
+gate,status,observed,required,decision
+v16b_source_contract,pass,1,1,continue
+target_hygiene,pass,1,1,continue
+fresh_run_integrity,pass,runs=12;invalid=0,runs=12;invalid=0,continue
+fine_dag_integrity,pass,acyclic=12;witness_errors=0,acyclic=12;witness_errors=0,continue
+fresh_topological_replay,pass,replays=24;min_reorder=0.996094;failures=0,replays=24;failures=0,continue
+relabel_and_map_transport,pass,12,12,continue
+quotient_map_integrity,pass,passes=36/36,36,continue
+scale1_identity,pass,1,1,continue
+strict_three_scale_compression,pass,1,1,continue
+scale16_nondegenerate,pass,nodes=101-128;retention=0.049316-0.062500,"nodes>=16;retention in [0.01,0.9]",continue
+local_transition_cv,pass,1_to_4:causal_depth_retention=0.016475;1_to_4:antichain_width_retention=0.034984;1_to_4:dependency_density_retention=0.040240;4_to_16:causal_depth_retention=0.070326;4_to_16:antichain_width_retention=0.105828;4_to_16:dependency_density_retention=0.076654,each<=0.4,continue
+growth_seed_transfer,pass,1_to_4:causal_depth_retention=0.994695;1_to_4:antichain_width_retention=0.974531;1_to_4:dependency_density_retention=0.976906;4_to_16:causal_depth_retention=1.000000;4_to_16:antichain_width_retention=1.035409;4_to_16:dependency_density_retention=0.958631,"each in [0.6,1.67]",continue
+scheduler_transfer,pass,1_to_4:causal_depth_retention=0.989027;1_to_4:antichain_width_retention=1.042737;1_to_4:dependency_density_retention=1.006914;4_to_16:causal_depth_retention=1.105991;4_to_16:antichain_width_retention=0.985603;4_to_16:dependency_density_retention=0.991286;tv=0.007593,"ratios in [0.6,1.67];tv<=0.05",continue
+v16c_overall,pass_to_v16d_scale_holdout,1,1,design_fresh_scale_holdout

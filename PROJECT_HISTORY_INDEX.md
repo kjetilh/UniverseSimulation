@@ -6717,3 +6717,74 @@ Viktige filer:
 - `Documentation/v16b_claim_ledger.csv`
 - `Documentation/v0_16b_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16b.md`
+
+## 10cg. v16c etablerte ett witnessed tre-skala quotient-kart paa fresh holdout
+
+`v16c` fulgte `pass_to_v16c_coarse_graining_pilot` med en eksplisitt todelt prosess. Foerst ble scale-vinduene `1/4/16` kontrollert paa de eksisterende v16b-DAG-ene. Denne filen er merket `design_calibration_from_v16b_not_fresh_evidence`; den ble bare brukt til aa avvise teknisk degenererte skalaer. Kalibreringen viste streng kompresjon fra `2048` fine events til `498-518` noder ved scale 4 og `103-130` ved scale 16.
+
+Kartet ble deretter laast foer ny dynamikk:
+
+- hvert event faar depth-bin `floor(fine_causal_depth / scale_window)`
+- direkte fine DAG-kanter behandles som urettede bare for aa finne komponenter innen samme depth-bin
+- hver slik komponent kontraheres til ett coarse event
+- en quotient-kant krever minst en konkret fine-edge witness mellom komponentene
+- kartet leser verken grafnode-ID-er eller original scheduler-rekkefolge utover dependency-DAG-en
+
+En scale-1-ID-kanoniseringsfeil ble funnet og rettet under designkalibreringen, foer preregistrering og foer ferske histories. Deretter ble `12` assignments laast med digest `04af20a18f0feef88f59d908bdb6b5f39cad5a3056c064f6d25bc44b4ad8f3a2`:
+
+- target `1024`
+- fresh growth seeds `3109/3203`
+- offsets `51017/51059/51091`
+- `2048` events per run
+- scheduler-armene `current_global` og frosset `exposure_matched_local`
+- to tilfeldige topologiske replays per run
+
+Faktiske fresh resultater:
+
+- `24576` events og `27987` fine RAW/WAR/WAW-kanter
+- alle `12/12` fine DAG-er asykliske med `0` witness-feil
+- alle `24/24` topologiske replays gyldige, uten context- eller sluttstrukturfeil
+- minste omplasserte eventandel `0.996094`
+- alle `12/12` konkrete relabel-replays bevarte support, kantsett, dybdesekvens og sluttstruktur
+- alle `36/36` quotient-map-audits passerte
+- scale 1 var eksakt fine-DAG-identitet
+- scale 4 hadde `500-521` noder og `576-681` quotient-kanter
+- scale 16 hadde `101-128` noder og `101-143` quotient-kanter
+- alle lagrede quotient-kanter hadde minst en konkret fine-edge witness
+
+De seks preregistrerte transition-ratioene var causal-depth-, antichain-width- og dependency-density-retention for `1->4` og `4->16`. Alle passerte brede pilotgrenser:
+
+- lokal CV `0.016475-0.105828`, under `0.40`
+- growth-seed medianratio `0.958631-1.035409`, innen `[0.60,1.67]`
+- local/global scheduler-ratio `0.985603-1.105991`, innen `[0.60,1.67]`
+- non-seed event-TV `0.007593`, under `0.05`
+
+Status er `pass_to_v16d_scale_holdout`. Evidensgrensen er viktig: causal-depth-retention er delvis konstruksjonsnaer fordi kartet bruker depth-vinduer. Antichain-width og dependency-density er mindre direkte, men ogsaa de beskriver bare dette ene endelige quotient-kartet. Resultatet viser en repeterbar tre-skala arkitektur under fresh smal transfer; det viser ikke continuum, metric geometry, Lorentz-symmetri, spacetime, partikler, entanglement eller universell kausal orden.
+
+Neste gate er ett preregistrert v16d scale-holdout paa en ny target- eller event-budget-akse. Kart, scale-vinduer, transition-ratioer og terskler skal forbli uendret. Den lokale adapteren er primary arkitekturarm; current-global beholdes bare som diagnostisk kontroll.
+
+Viktige filer:
+
+- `relational_universe_v16c_three_scale_coarse_graining_pilot.py`
+- `Documentation/v16c_three_scale_coarse_graining_pilot.md`
+- `Documentation/v16c_design_calibration.csv`
+- `Documentation/v16c_pre_registration.csv`
+- `Documentation/v16c_source_chain.csv`
+- `Documentation/v16c_target_summary.csv`
+- `Documentation/v16c_event_log.csv`
+- `Documentation/v16c_fine_dependency_edges.csv`
+- `Documentation/v16c_run_summary.csv`
+- `Documentation/v16c_coarse_membership.csv`
+- `Documentation/v16c_coarse_dependency_edges.csv`
+- `Documentation/v16c_scale_summary.csv`
+- `Documentation/v16c_transition_ratios.csv`
+- `Documentation/v16c_map_audit.csv`
+- `Documentation/v16c_topological_replay_audit.csv`
+- `Documentation/v16c_relabel_replay_audit.csv`
+- `Documentation/v16c_local_stability.csv`
+- `Documentation/v16c_growth_transfer.csv`
+- `Documentation/v16c_scheduler_transfer.csv`
+- `Documentation/v16c_gate_evaluation.csv`
+- `Documentation/v16c_claim_ledger.csv`
+- `Documentation/v0_16c_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16c.md`
