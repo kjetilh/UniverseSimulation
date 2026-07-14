@@ -1,0 +1,6 @@
+gate,status,observed,required,decision
+exact_within_footprint_enumeration,pass,runs=6;candidate_pairs=21332967,runs=6;all_within_bucket_pairs_exact,continue
+all_run_reachability,pass,legal_pairs=35535;runs_with_moves=6/6,runs_with_moves=6/6,continue
+all_run_static_support,pass,0.616811920157436,>=0.1,qualify_sampler_next
+spectrum_and_rewiring_exclusion,pass,spectrum=0;rewires=0,0;0,diagnostic_only
+v16p_overall,v16p_event_footprint_static_support_promising,reachable=1;promising=1;min_legal_edge_fraction=0.616811920157,diagnostic_branch,v16p_event_footprint_static_support_promising

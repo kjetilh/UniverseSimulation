@@ -2858,6 +2858,21 @@ does not evaluate the v16m spectrum contrast. The next admissible candidate is
 the weaker event-side footprint null proposed by the panel, starting with a
 reachability-only audit.
 
+`v16p` completed that effect-blind reachability audit. It grouped direct edges
+by source event family/write-namespace set and target event family/read-
+namespace set, without requiring a concrete shared resource ID on proposed
+null edges. Across the six frozen v16n DAGs it exactly enumerated `21,332,967`
+within-footprint edge pairs and found `35,535` legal static swaps.
+
+Every run was reachable. Legal swaps touched between `61.681%` and `68.125%`
+of all direct edges per run, comfortably above the preregistered `10%` support
+threshold. Status is `v16p_event_footprint_static_support_promising`.
+
+This is only a static support result. It establishes neither Markov-chain
+connectivity nor mixing, convergence, stationarity, representativeness, or
+uniformity. No interval spectrum was computed. The next admissible step is an
+effect-blind sampler qualification gate using this frozen footprint rule.
+
 ## Generatorstatus
 
 Den eldre generator-/storrelseskrisen ser ut til a vaere ryddet bort i den aktive kjeden.

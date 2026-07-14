@@ -7474,3 +7474,35 @@ Viktige filer:
 - `Documentation/v16o_rejection_counts.csv`
 - `Documentation/v16o_gate_evaluation.csv`
 - `Documentation/v16o_claim_ledger.csv`
+
+## 10cu. v16p fant bred statisk stoette for event-footprint-nullen
+
+`v16p` froes med digest
+`6acf5c65e86f0d493a949474b25a65f9529b1798f04b8ebea79b7d16f01ce656`.
+Den brukte de samme seks v16n-DAGene, men erstattet konkret ressurskonflikt med
+et grovere kantfotavtrykk: forelderfamilie + write-namespace-sett og
+barnfamilie + read-namespace-sett. Ingen rewiring eller intervallspektra ble
+beregnet.
+
+Den eksakte enumereringen ga:
+
+- `21,332,967` kandidatpar innen samme footprint-bucket
+- `35,535` lovlige statiske swaps
+- minst ett lovlig swap i `6/6` runs
+- legal edge fraction fra `0.616812` til `0.681246`
+- minimumsstoetten passerte den frosne `0.10`-terskelen i `6/6` runs
+
+Status er `v16p_event_footprint_static_support_promising`. Dette kvalifiserer
+kun kandidaten for en effect-blind sampler-kalibrering. Det viser ikke at en
+Markov-kjede er connected, mixed, converged, representativ eller uniform, og
+det sier ennaa ingenting om v16m-spektrumkontrasten under footprint-kontroll.
+
+Viktige filer:
+
+- `relational_universe_v16p_event_footprint_reachability_audit.py`
+- `Documentation/v16p_event_footprint_reachability_audit.md`
+- `Documentation/v16p_reachability_run_summary.csv`
+- `Documentation/v16p_footprint_bucket_summary.csv`
+- `Documentation/v16p_rejection_counts.csv`
+- `Documentation/v16p_gate_evaluation.csv`
+- `Documentation/v16p_claim_ledger.csv`

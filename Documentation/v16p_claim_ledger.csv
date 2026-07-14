@@ -1,0 +1,5 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The event-footprint proposal has at least one legal static transition in every audited DAG.,supported,v16p_reachability_run_summary.csv;v16p_rejection_counts.csv,exact static enumeration on six finite calibration DAGs
+C2,The event-footprint proposal has at least 10 percent legal edge coverage in every audited DAG.,supported,v16p_reachability_run_summary.csv,threshold qualifies only a later sampler calibration attempt
+C3,"The event-footprint proposal is mixed, converged, representative, or uniform.",unsupported,none,no Markov chain was run
+C4,The v16m interval-spectrum contrast survives event-footprint conditioning.,not_evaluated,none,no interval spectrum computed
