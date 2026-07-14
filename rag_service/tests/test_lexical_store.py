@@ -12,11 +12,15 @@ def test_websearch_query_keeps_version_and_drops_question_stopwords():
 def test_lexical_search_uses_parameterized_or_query(monkeypatch):
     seen = {}
 
+    class FakeResult:
+        def fetchall(self):
+            return []
+
     class FakeConnection:
         def execute(self, sql, params):
             seen["sql"] = str(sql)
             seen["params"] = params
-            return []
+            return FakeResult()
 
     class FakeBegin:
         def __enter__(self):
