@@ -1,0 +1,5 @@
+gate,status,observed,required,decision
+frozen_source_and_footprint_support,pass,runs=6;v16p=promising,runs=6;v16p=promising,continue
+effect_blind_attempt_ceiling_qualification,pass,60,lowest_frozen_ceiling_with_all_288_perturbations_valid,qualify
+spectrum_exclusion,pass,0,0,calibration_only
+v16q_overall,v16q_event_footprint_sampler_qualified,ceiling=60,ceiling=qualified,v16q_event_footprint_sampler_qualified

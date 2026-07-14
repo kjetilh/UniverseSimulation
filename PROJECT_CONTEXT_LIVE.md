@@ -2873,6 +2873,20 @@ connectivity nor mixing, convergence, stationarity, representativeness, or
 uniformity. No interval spectrum was computed. The next admissible step is an
 effect-blind sampler qualification gate using this frozen footprint rule.
 
+`v16q` completed that effect-blind sampler qualification. The frozen ladder
+started at `60` attempts per edge and required `192` primary plus `96` longer
+perturbations. All `288/288` perturbations passed at the first ceiling, all
+were unique within run/family, and the minimum changed-edge fraction was
+`0.100057`.
+
+Status is `v16q_event_footprint_sampler_qualified`. This is a procedural
+qualification on six calibration DAGs, not evidence of irreducibility,
+mixing, convergence, stationarity, representativeness, or uniform sampling.
+The coarse footprint deliberately does not preserve concrete resource
+conflict: the minimum retained actual-conflict edge fraction was `0.899509`.
+No spectrum was computed. The next admissible step is a frozen posthoc v16m
+sensitivity gate under this qualified procedure.
+
 ## Generatorstatus
 
 Den eldre generator-/storrelseskrisen ser ut til a vaere ryddet bort i den aktive kjeden.

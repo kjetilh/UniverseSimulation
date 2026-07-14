@@ -1,0 +1,5 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The frozen event-footprint sampler completed and preserved its declared invariants on six calibration DAGs.,supported,v16q_sampler_qualification.csv;v16q_sampler_calibration_integrity.csv,effect-blind finite-DAG calibration only
+C2,"The sampler is converged, irreducible, stationary, independent, representative, or uniform.",unsupported,none,completion and integrity do not establish a sampling distribution
+C3,The v16m interval-spectrum contrast survives event-footprint conditioning.,not_evaluated,none,v16q computes no interval spectra
+C4,"Dimension, Lorentz symmetry, spacetime, continuum physics, particles, or entanglement were established.",unsupported,none,sampler instrumentation only

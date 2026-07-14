@@ -7506,3 +7506,37 @@ Viktige filer:
 - `Documentation/v16p_rejection_counts.csv`
 - `Documentation/v16p_gate_evaluation.csv`
 - `Documentation/v16p_claim_ledger.csv`
+
+## 10cv. v16q kvalifiserte event-footprint-sampleren effect-blind
+
+`v16q` froes med digest
+`f73caff88c6b944eb2e320d1723dab4cc784e41fc2ccbeb0224e884327a43ea2`.
+Den brukte seks frosne v16n-DAGer, `32` primary-nullreplikater og `16` lengre
+per run. Forsokstakstigen var `60/120/240/480`, og sampleren fikk ikke beregne
+eller lese intervallspekter.
+
+Laveste tak kvalifiserte direkte:
+
+- perturbation integrity: `288/288`
+- minimum changed-edge fraction: `0.100057`
+- minimum unique-null fraction innen run/familie: `1.0`
+- maksimal observert attempts per edge: `59.573491`
+- median acceptance rate omtrent `0.0099`
+- minimum faktisk ressurskonfliktandel etter null: `0.899509`
+
+Status er `v16q_event_footprint_sampler_qualified`. Det betyr at prosedyren
+fullforte og bevarte de deklarerte grad/depth/age/footprint-invariantene paa
+kalibreringskorpuset. Det beviser ikke irreducibility, mixing, convergence,
+stationarity, representativitet eller uniformitet. Konkret ressurskonflikt er
+ikke bevart av denne grove nullen. Neste steg er en separat, frosset posthoc
+v16m-sensitivitetsgate.
+
+Viktige filer:
+
+- `relational_universe_v16q_event_footprint_null_calibration.py`
+- `Documentation/v16q_event_footprint_null_calibration.md`
+- `Documentation/v16q_sampler_calibration_integrity.csv`
+- `Documentation/v16q_attempt_ceiling_summary.csv`
+- `Documentation/v16q_sampler_qualification.csv`
+- `Documentation/v16q_gate_evaluation.csv`
+- `Documentation/v16q_claim_ledger.csv`

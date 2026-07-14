@@ -1,0 +1,5 @@
+attempt_ceiling,n_perturbations,integrity_passes,required_passes,max_attempts_per_edge_observed,min_changed_edge_fraction,min_acceptance_rate,min_actual_resource_conflict_edge_fraction,all_unique_within_run,ceiling_qualification_pass
+60,288,288,288,59.57349119260756,0.10005717552887364,0.004534663166224924,0.8995090961593993,1,1
+120,0,0,288,0.0,0.0,0.0,0.0,0,0
+240,0,0,288,0.0,0.0,0.0,0.0,0,0
+480,0,0,288,0.0,0.0,0.0,0.0,0,0
