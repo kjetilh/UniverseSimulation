@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The causal-interval abundance spectrum is an exact isomorphism-invariant function of each witnessed event DAG.,supported,v16i_event_poset_isomorphism_audit.csv;v16i_interval_spectrum.csv,finite event DAGs under the declared read/write support schema
+C2,"The v16h interval spectrum differs repeatably from a null preserving scheduler order, causal-depth layers, and per-event indegree.",supported,v16i_interval_run_summary.csv;v16i_local_interval_gate.csv,one structural null family; no outdegree or resource-age preservation
+C3,"The interval-abundance contrast transfers across the tested target, growth-seed, and scheduler groups.",supported,v16i_target_transfer.csv;v16i_growth_transfer.csv;v16i_scheduler_transfer.csv,targets 1024/1536 and the declared finite histories
+C4,"The interval spectrum establishes a dimension, manifold, Lorentz symmetry, or spacetime geometry.",unsupported,none,"interval abundance is a topology diagnostic, not a validated physical geometry"
+C5,"The structural null excludes every scheduler, degree-sequence, or rule artifact.",unsupported,v16i_null_integrity_audit.csv,"outdegree sequence, parent age, resource type, and event family are not jointly preserved"

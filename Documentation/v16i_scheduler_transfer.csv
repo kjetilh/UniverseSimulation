@@ -1,0 +1,3 @@
+group_field,group_value,n_runs,median_js_effect_ratio,positive_fraction,p_le_010_fraction,min_median_effect_ratio,min_positive_fraction,group_pass
+arm,current_global,6,3.988057156824104,1.0,0.8333333333333334,1.0,0.8333333333333334,1
+arm,exposure_matched_local,6,2.243224365661393,1.0,0.5,1.0,0.8333333333333334,1

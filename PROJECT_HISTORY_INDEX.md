@@ -7135,3 +7135,59 @@ Viktige filer:
 - `Documentation/v16h_claim_ledger.csv`
 - `Documentation/v0_16h_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16h.md`
+
+## 10cm. v16i fant repeterbar kausal intervalltopologi utover layer+indegree-nullen
+
+Etter at v16h lukket clock/depth common-geometry-syntesen, gikk `v16i` til en ny og uavhengig poset-observabel: det eksakte aapne intervallvolumet for alle sammenlignbare eventpar. For et par `(past,future)` teller observabelen events som er kausalt etter `past` og kausalt foer `future`. Volumene samles i de frosne dyadiske binene `0`, `1`, `2-3`, `4-7`, `8-15`, `16-31`, `32-63`, `64-127` og `128+`. Det brukes ingen clock-map, depth-window-partisjon eller sampled eventpar.
+
+Designkalibreringen brukte bare eksisterende v16c/v16d-historier. Fullspektrum Jensen-Shannon-avstand mot en strukturell null ble valgt som eneste primary. Nullen rewires direkte foreldre, men bevarer:
+
+- eventtall og original schedulerrekkefolge
+- hvert events eksakte indegree
+- hvert events eksakte causal depth
+- hele causal-depth-lagprofilen
+
+Nullen bevarer ikke outdegree, parent-age, event-family eller read/write-resource type. Den tester derfor om intervaltopologien inneholder mer enn depth+indegree, ikke om alle mulige arkitekturartefakter er eliminert.
+
+Kalibreringen ga lokal median JS-effektratio `3.589023` ved v16c/target 1024 og `3.076413` ved v16d/target 1536. Alle `12/12` lokale kalibreringsruns hadde ratio over `1`; `p<=0.10`-andelen var `0.667/0.833`. v16d/v16c-ratio var `0.857173`, innen frossen `[0.5,2.0]`. Kandidat, null, statistikk, retning, terskler, v16h-source-hasher og `64` nuller per run ble laast med spec-digest `4abd9769b44ae7baee5e666f92d119435bc58e310b49d3c720ce04d4e705a184` foer noen v16h-intervallverdi ble beregnet.
+
+v16h var deretter en analyseholdout paa eksisterende, hash-laaste histories, ikke ny dynamikk. Resultatet var:
+
+- alle `768/768` holdoutnuller bevarte scheduler order, indegree, depth-sekvens og lagprofil eksakt
+- `24/24` tilfeldige topologiske event-ID-ommerkinger ga identisk intervallvolumspekter
+- alle `12/12` runs hadde JS-effektratio over `1`
+- lokal medianratio `2.243224`, positiv andel `1.000`, `p<=0.10`-andel `0.500`
+- v16h/v16d target-transfer `0.729169`
+- growth-seed medianratio `3.314220/3.182830`, begge med positiv andel `1.000`
+- scheduler medianratio `3.988057/2.243224`, begge med positiv andel `1.000`
+
+Den absolutte observed JS-avstanden var liten, `0.001647-0.010794`, men systematisk over nullens leave-one-out-variasjon. Som sekundar diagnostikk var tail-mass-delta for intervallvolum `>=8` positiv i alle runs, `0.008215-0.090708`. Primary-gaten passerte paa de frosne kriteriene, men `p<=0.10`-andelen traff minimumet eksakt (`3/6` lokale runs), saa signalet skal behandles som lovende og mekanismeuavklart, ikke som stort.
+
+Status er `causal_interval_abundance_supported_beyond_layer_indegree_null`. Dette stoetter en repeterbar finite-poset-intervallstruktur som ikke reduseres til den testede layer+indegree-nullen. Det etablerer ikke causal-set-dimensjon, manifoldlikhet, Lorentz-invarians, fysisk tid, continuum, partikler, entanglement eller spacetime-geometri.
+
+Neste gate er en smal v16j streng-null/mekanismetest som ogsaa bevarer direkte in/out-degree og parent-age-struktur. Hvis signalet forsvinner der, er v16i best forklart som degree/age-wiring. Ikke start nye target-skaleringer eller en dimensjonsfit foer denne confounden er avgjort.
+
+Viktige filer:
+
+- `relational_universe_v16i_causal_interval_abundance_gate.py`
+- `Documentation/v16i_causal_interval_abundance_gate.md`
+- `Documentation/v16i_design_calibration_interval_runs.csv`
+- `Documentation/v16i_design_calibration_null_distribution.csv`
+- `Documentation/v16i_design_calibration_null_integrity.csv`
+- `Documentation/v16i_design_selection.csv`
+- `Documentation/v16i_frozen_v16d_interval_baseline.csv`
+- `Documentation/v16i_pre_registration.csv`
+- `Documentation/v16i_source_chain.csv`
+- `Documentation/v16i_interval_run_summary.csv`
+- `Documentation/v16i_interval_spectrum.csv`
+- `Documentation/v16i_interval_null_distribution.csv`
+- `Documentation/v16i_null_integrity_audit.csv`
+- `Documentation/v16i_event_poset_isomorphism_audit.csv`
+- `Documentation/v16i_local_interval_gate.csv`
+- `Documentation/v16i_target_transfer.csv`
+- `Documentation/v16i_growth_transfer.csv`
+- `Documentation/v16i_scheduler_transfer.csv`
+- `Documentation/v16i_gate_evaluation.csv`
+- `Documentation/v16i_claim_ledger.csv`
+- `Documentation/v0_16i_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16i.md`

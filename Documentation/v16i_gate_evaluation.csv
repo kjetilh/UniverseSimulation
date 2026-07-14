@@ -1,0 +1,10 @@
+gate,status,observed,required,decision
+v16h_source_contract,pass,1,1,continue
+holdout_run_integrity,pass,runs=12;events=36864,runs=12;events=36864,continue
+layer_indegree_null_integrity,pass,passes=768/768,768/768,continue
+event_poset_isomorphism,pass,passes=24/24,24/24,continue
+local_interval_abundance,pass,median_ratio=2.243224;positive=1.000000;p_le_010=0.500000,median>=2.0;positive>=0.8333333333333334;p_le_010>=0.5,continue
+v16d_to_v16h_target_transfer,pass,0.7291686813048813,"in [0.5,2.0]",continue
+growth_seed_transfer,pass,passing_groups=2/2,2/2,continue
+scheduler_transfer,pass,passing_groups=2/2,2/2,continue
+v16i_overall,causal_interval_abundance_supported_beyond_layer_indegree_null,instrumentation=1;evidence=1,instrumentation=1;evidence=1,causal_interval_abundance_supported_beyond_layer_indegree_null

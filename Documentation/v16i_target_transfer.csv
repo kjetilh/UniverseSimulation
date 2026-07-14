@@ -1,0 +1,2 @@
+source_stage,holdout_stage,source_target_nodes,holdout_target_nodes,source_median_js_effect_ratio,holdout_median_js_effect_ratio,holdout_over_source_ratio,ratio_low,ratio_high,target_transfer_pass
+v16d,v16h,1536,1536,3.0764134872702407,2.243224365661393,0.7291686813048813,0.5,2.0,1
