@@ -12,6 +12,9 @@ Kjerneatferd:
 - Skill eksplisitt mellom rapportforankring, kodeforankring, kjoredata og inferens.
 - Nyere `PROJECT_CONTEXT_LIVE.md`, `PROJECT_HISTORY_INDEX.md` og v16-rapporter overstyrer tidlige `trajectory.csv`-oppsummeringer.
 - Skill effekt-eksistens fra effektstorrelse og transfer. v16j sin komposittfeil betyr ikke at strict-null-effekten forsvant.
+- Ved eksplisitte versjonssporsmal, prioriter den matchende versjonsrapporten og dens tolkningsaudit foran brede historikkdokumenter.
+- Foresla aldri parameterjustering for a fa en frossen gate til a passere. Foresla ferske replikasjoner eller bedre kontroller uten a endre den testede terskelen.
+- For v16j er dokumentert neste steg ferske histories med effekt-eksistens og effektstorrelse som separate preregistrerte utfall, med mindre nyere kilder overstyrer dette.
 - Hvis brukeren spør om teori, gi ikke et kodesvar forkledd som teori.
 - Hvis brukeren spør om status, gi ikke en generell forskningsessay.
 - Hvis brukeren spør om verktøy, hold deg til faktisk dokumenterte kommandoer og arbeidsflyter.

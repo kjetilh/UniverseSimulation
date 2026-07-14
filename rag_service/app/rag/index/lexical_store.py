@@ -5,6 +5,7 @@ from app.rag.index.db import engine
 
 
 _TOKEN_RE = re.compile(r"[0-9A-Za-zÀ-ÖØ-öø-ÿ_]+")
+_VERSION_TOKEN_RE = re.compile(r"\bv\d+[a-z]{1,3}\b", re.IGNORECASE)
 _STOPWORDS = {
     "a",
     "about",
@@ -70,6 +71,10 @@ def _websearch_query(query: str) -> str:
     return " OR ".join(tokens)
 
 
+def _version_title_patterns(query: str) -> list[str]:
+    return [f"%{token}%" for token in dict.fromkeys(_VERSION_TOKEN_RE.findall(query.lower()))]
+
+
 def lexical_search(query: str, top_k: int = 50, filters: dict | None = None):
     filters = filters or {}
     where = [
@@ -77,6 +82,12 @@ def lexical_search(query: str, top_k: int = 50, filters: dict | None = None):
         "COALESCE(d.doc_state, 'active') = 'active'",
     ]
     params = {"lexical_q": _websearch_query(query), "top_k": top_k}
+    title_patterns = _version_title_patterns(query)
+    if title_patterns:
+        title_boost_sql = "CASE WHEN d.title ILIKE ANY(:title_patterns) THEN 2.0 ELSE 0.0 END"
+        params["title_patterns"] = title_patterns
+    else:
+        title_boost_sql = "0.0"
 
     if "year_gte" in filters:
         where.append("d.year >= :year_gte")
@@ -94,7 +105,8 @@ def lexical_search(query: str, top_k: int = 50, filters: dict | None = None):
     SELECT c.chunk_id, c.doc_id, c.ordinal, d.title, d.author, d.year, d.source_type,
            d.publisher, d.url, d.language, d.identifiers,
            c.content,
-           ts_rank_cd(c.content_tsv, websearch_to_tsquery('simple', :lexical_q)) AS score
+           ts_rank_cd(c.content_tsv, websearch_to_tsquery('simple', :lexical_q))
+             + {title_boost_sql} AS score
     FROM chunks c
     JOIN documents d ON d.doc_id = c.doc_id
     {where_sql}

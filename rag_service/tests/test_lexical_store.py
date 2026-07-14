@@ -7,6 +7,10 @@ def test_websearch_query_keeps_version_and_drops_question_stopwords():
     )
 
     assert query == "viste OR v16j OR del OR frosne OR gaten OR feilet"
+    assert lexical_store._version_title_patterns("Sammenlign v16j med V16H og v16j") == [
+        "%v16j%",
+        "%v16h%",
+    ]
 
 
 def test_lexical_search_uses_parameterized_or_query(monkeypatch):
@@ -45,5 +49,7 @@ def test_lexical_search_uses_parameterized_or_query(monkeypatch):
     assert "websearch_to_tsquery" in seen["sql"]
     assert "plainto_tsquery" not in seen["sql"]
     assert seen["params"]["lexical_q"] == "viste OR v16j"
+    assert seen["params"]["title_patterns"] == ["%v16j%"]
     assert seen["params"]["source_type"] == ["universe_experiments"]
     assert seen["params"]["top_k"] == 7
+    assert "d.title ILIKE ANY(:title_patterns)" in seen["sql"]
