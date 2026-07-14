@@ -1,0 +1,5 @@
+gate,status,observed,required,decision
+fresh_calibration_history_and_metadata_integrity,pass,runs=6;events=18432;metadata=6/6,runs=6;events=18432;metadata=6/6,continue
+effect_blind_attempt_ceiling_qualification,fail,none,lowest_frozen_ceiling_with_all_288_perturbations_valid,stop_without_spectrum
+spectrum_exclusion,pass,0,0,calibration_only
+v16n_overall,v16n_coarse_event_resource_sampler_not_qualified,history=1;ceiling=None,history=1;ceiling=qualified,v16n_coarse_event_resource_sampler_not_qualified

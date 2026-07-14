@@ -7408,3 +7408,37 @@ vitenskapelig resultat.
 Viktig fil:
 
 - `Documentation/v16n_panel_direction_report.md`
+
+## 10cs. v16n avviste den foerste actual-conflict resource-null-sampleren
+
+`v16n` froes en effect-blind kalibrering med digest
+`dd548e8ba4df92d2367154023266395c80d87f6769e5139860d7f5050a11b5fc`.
+Den genererte seks nye `exposure_matched_local`-historier paa target `1536` med
+`3072` events hver. Event-ID mapping, resource namespaces, source-DAG og history
+integrity passerte.
+
+Den preregistrerte attempt-stigen `240/480/960/1920` ble kjoert med `192`
+primary og `96` lengre perturbasjoner per tak. Resultatet var `0/288` gyldige
+perturbasjoner ved hvert tak. Den detaljerte auditen viste:
+
+- minimum eligible coarse-color edge fraction `0.997141`
+- alle `1152/1152` uendrede source-strukturer bevarte invariants
+- totalt antall aksepterte swaps `0`
+- maksimum changed-edge fraction `0`
+- ingen intervallspektra beregnet
+
+Status er derfor `v16n_coarse_event_resource_sampler_not_qualified`. Dette er
+ikke et negativt v16m-effektresultat. Samme-color-proposalen har ingen observert
+lovlig overgang under de kombinerte actual-conflict-, order-, age- og
+depth-reglene. Neste steg er en reachability-audit av den mer generelle globale
+to-color-multisetregelen; ikke hoyere attempt ceiling og ikke effektanalyse.
+
+Viktige filer:
+
+- `relational_universe_v16n_coarse_event_resource_null_calibration.py`
+- `Documentation/v16n_coarse_event_resource_null_calibration.md`
+- `Documentation/v16n_sampler_calibration_integrity.csv`
+- `Documentation/v16n_attempt_ceiling_summary.csv`
+- `Documentation/v16n_sampler_qualification.csv`
+- `Documentation/v16n_interpretation_audit.md`
+- `Documentation/v16n_interpretation_audit.csv`

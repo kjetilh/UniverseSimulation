@@ -2830,6 +2830,21 @@ swap, using event-family transitions and actual typed read/write conflict
 channels. Calibration must pass before any spectrum is evaluated. See
 `Documentation/v16n_panel_direction_report.md`.
 
+`v16n` then ran the selected effect-blind calibration on six new
+`exposure_matched_local` histories. History and metadata integrity passed, but
+the sampler did not qualify at any frozen attempt ceiling (`240`, `480`, `960`,
+or `1920`). Every ceiling had `0/288` valid perturbations because total accepted
+swaps were exactly zero and changed-edge fraction stayed zero. At least
+`99.714%` of edges were in non-singleton color buckets, so the failure is the
+combined same-color, actual-cross-conflict, age, order, duplicate, and depth
+constraint rather than absent coarse buckets.
+
+The frozen status is `v16n_coarse_event_resource_sampler_not_qualified`.
+V16n computed no interval spectrum, so it neither supports nor refutes the v16m
+contrast under resource conditioning. The next step is an exact reachability
+audit of the more general global two-color multiset rule before any new sampler
+or effect gate.
+
 ## Generatorstatus
 
 Den eldre generator-/storrelseskrisen ser ut til a vaere ryddet bort i den aktive kjeden.

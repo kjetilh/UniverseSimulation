@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,event_rows,event_id_mapping_total_pass,metadata_sha256,resource_namespaces,other_namespace_count
+v16n_calibration,1536,8018,114756,exposure_matched_local,1980294756,3072,1,4eda1e7fca4e13c562885389576a67cb638588949238a37cce9aee5af3a1b20b,adj:208;edge:3131;node:6047;token:6144,0
+v16n_calibration,1536,8018,117562,exposure_matched_local,1980297562,3072,1,2ae21c45a792e87e87f1bc5614bd3cd65971892e967441616c3d92dacc1ff5d1,adj:180;edge:3058;node:6000;token:6142,0
+v16n_calibration,1536,8018,110360,exposure_matched_local,1980290360,3072,1,a153022394e1d87c6944afe46b4780f6a587e4a55c000374e5b247250fe3f6e5,adj:190;edge:3089;node:6021;token:6143,0
+v16n_calibration,1536,7252,114756,exposure_matched_local,1972634756,3072,1,a6e5a1f4e05fa2467fd31224e368e47c0d924dda90a66c2cf7296df1fac255c3,adj:200;edge:3086;node:6008;token:6144,0
+v16n_calibration,1536,7252,117562,exposure_matched_local,1972637562,3072,1,524ca007f842aa981926f4f1fd47229da7b0d46b8731d2cbea1cfeab9a4b02c9,adj:126;edge:3018;node:6003;token:6141,0
+v16n_calibration,1536,7252,110360,exposure_matched_local,1972630360,3072,1,4ce480b63648cea71789ca7ad2d9103c50ee13f5ebffc755471c718dc4470325,adj:190;edge:3085;node:6017;token:6143,0
