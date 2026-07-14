@@ -1,0 +1,8 @@
+gate,status,observed,required,decision
+fresh_history_integrity,pass,runs=12;events=36864;replays=24,runs=12;events=36864;replays=24,continue
+qualified_primary_perturbation_integrity,pass,384/384,384/384,continue
+fresh_effect_existence,pass,median=12.417734;positive=1.000000;p_le_010=0.833333,median>=2;positive>=5/6;p_le_010>=1/2,replicated
+qualified_longer_perturbation_integrity,pass,192/192,192/192,continue
+longer_perturbation_consistency,pass,median=14.222428;positive=1.000000,median>=1;positive>=5/6,consistent
+magnitude_compatibility,descriptive,compatible_with_both_prior_anchors,not_a_confirmatory_gate,compatible_with_both_prior_anchors
+v16m_overall,fresh_strict_null_spectrum_contrast_replicated_with_qualified_sampler,instrumentation=1;existence=1;longer=1,1;1;1,fresh_strict_null_spectrum_contrast_replicated_with_qualified_sampler

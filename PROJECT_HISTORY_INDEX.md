@@ -7352,3 +7352,59 @@ Viktige filer:
 - `Documentation/v16l_claim_ledger.csv`
 - `Documentation/v16l_sampler_attempt_qualification.md`
 - `Documentation/v0_16l_operativ_anbefaling.md`
+
+## 10cq. v16m replikerte strict-null-spektrumkontrasten med kvalifisert sampler
+
+`v16m` ble frosset med digest
+`569ac97666bbb75c0c8a1335a1b3b96d8c27bbfa4c8236a6184a24c9064e5677` og
+brukte to nye growth seeds, tre nye offsets, begge scheduler-armer, target
+`1536`, `3072` events, `32` primary nuller per run og `16` lengre nuller per
+run. Ingen formelle eller karantenerte v16k-seeds ble gjenbrukt.
+
+Resultatet var:
+
+- fersk historie/replay/rate-integritet: pass
+- primary perturbation integrity: `384/384`
+- lengre perturbation integrity: `192/192`
+- primary-arm median JS effect ratio: `12.417734`
+- primary positiv retning: `6/6`
+- primary `p <= 0.10`: `5/6`
+- lengre median ratio: `14.222428`
+- lengre positiv retning: `6/6`
+- magnitude: deskriptivt `compatible_with_both_prior_anchors`
+
+Overall er
+`fresh_strict_null_spectrum_contrast_replicated_with_qualified_sampler`.
+Alle primary `tail_mass_ge_8_delta` er negative; funnet er derfor kontrast i
+hele intervallspekteret, ikke en stor-intervall-overflod. Resultatet er fortsatt
+betinget paa sampleren og autoriserer ingen dimensjons-, Lorentz-, spacetime-
+eller fysikkpaastand.
+
+Viktige filer:
+
+- `relational_universe_v16m_qualified_sampler_fresh_holdout.py`
+- `Documentation/v16m_qualified_sampler_fresh_holdout.md`
+- `Documentation/v16m_gate_evaluation.csv`
+- `Documentation/v16m_effect_existence_gate.csv`
+- `Documentation/v16m_longer_perturbation_gate.csv`
+- `Documentation/v16m_magnitude_compatibility.csv`
+- `Documentation/v16m_claim_ledger.csv`
+
+## 10cr. Raadgiverpanelet valgte en effektblind v16n resource-null-kalibrering
+
+Et fire-roller remote panel vurderte ny strict-null-replikasjon, skalaoppgang,
+en sterk per-child/exact-resource-null og en grov global edge-color-null.
+Panelet var enig om at neste informasjonsrike spoersmaal er om grov
+event-family/read-write-resource-kobling absorberer v16m-kontrasten.
+
+Valgt v16n-design utvider v16j-double-edge-swapen med en kantfarge bygget av
+forelderfamilie, barnfamilie, konfliktretning og ressursnamespace, der en
+konflikt krever delt konkret resource-ID. Foerste runde er kun effect-blind
+sampler-kalibrering. Ingen intervallspektra skal brukes til valg av signatur,
+forsokstak eller terskler. Mislykket bevegelse skal gi
+`v16n_coarse_event_resource_sampler_not_qualified`, ikke et negativt
+vitenskapelig resultat.
+
+Viktig fil:
+
+- `Documentation/v16n_panel_direction_report.md`

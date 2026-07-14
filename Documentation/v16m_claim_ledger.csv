@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The v16j finite event-DAG interval-spectrum contrast replicated on a second formal fresh-history holdout with the v16l-qualified sampler.,supported,v16m_effect_existence_gate.csv;v16m_longer_perturbation_gate.csv,conditional on this qualified perturbation sampler
+C2,The fresh effect magnitude is descriptively compatible with one or both prior strict-null anchors.,supported,v16m_magnitude_compatibility.csv,"descriptive point-anchor bands, not universal stability"
+C3,"The qualified sampler is uniform, converged, stationary, independent, or representative over the constrained DAG space.",unsupported,none,completion and integrity do not prove sampler distribution
+C4,The contrast is independent of event-family and read/write-resource wiring.,unsupported,none,requires a separately calibrated coarse resource-aware null
+C5,"The interval spectrum establishes dimension, manifoldlikeness, Lorentz symmetry, spacetime, continuum, particles, or entanglement.",unsupported,none,finite event-DAG structural diagnostic only

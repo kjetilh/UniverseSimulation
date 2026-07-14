@@ -2801,6 +2801,35 @@ De viktigste signalene i `Documentation/v12_geometry_invariant_lab.md` er:
 - Breakdiagnosen i `v13n` ender fortsatt på `sampling_ambiguous`, men med negativ margin- og delta-forverring mot de nærmeste naboene. Det peker mer mot et smalt lokalt plateau enn mot en ren nedre bruddkant.
 - Den operative lesningen etter `v13n` er derfor: spektralsporet er fortsatt reelt, men fortsatt bare `mixed`, og større valideringssett er fortsatt `not_yet`.
 
+## Latest event-DAG spectrum state: v16m and the v16n decision
+
+`v16m` completed a genuinely fresh twelve-run holdout with the v16l-qualified
+attempt ceiling and the unchanged v16j interval-spectrum observable and gates.
+All `384/384` primary and `192/192` longer perturbations passed integrity. The
+primary `exposure_matched_local` arm had median JS effect ratio `12.417734`,
+positive direction in `6/6`, and empirical `p <= 0.10` in `5/6`. The longer
+perturbation had median ratio `14.222428` and positive direction in `6/6`.
+
+The frozen overall status is
+`fresh_strict_null_spectrum_contrast_replicated_with_qualified_sampler`.
+Magnitude is descriptively `compatible_with_both_prior_anchors`, but magnitude
+is not a confirmatory gate. All primary `tail_mass_ge_8_delta` values are
+negative, so this is a full-spectrum contrast, not evidence for more large
+intervals.
+
+The strongest live claim is a repeatable finite event-DAG interval-spectrum
+contrast conditional on the qualified sampler. The result does not establish
+sampler convergence/uniformity, event/resource independence, dimension,
+manifoldlikeness, Lorentz symmetry, spacetime, continuum behavior, particles,
+entanglement, or a physical law.
+
+A four-role remote adviser round then compared another replication, scale-up,
+and an event/resource-aware mechanism null. The selected next step is v16n:
+effect-blind calibration of a coarse global edge-color extension of the v16j
+swap, using event-family transitions and actual typed read/write conflict
+channels. Calibration must pass before any spectrum is evaluated. See
+`Documentation/v16n_panel_direction_report.md`.
+
 ## Generatorstatus
 
 Den eldre generator-/storrelseskrisen ser ut til a vaere ryddet bort i den aktive kjeden.
