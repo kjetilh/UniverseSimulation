@@ -7191,3 +7191,65 @@ Viktige filer:
 - `Documentation/v16i_claim_ledger.csv`
 - `Documentation/v0_16i_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16i.md`
+
+## 10cn. v16j lot intervallkontrasten overleve strict null, men ikke den frosne magnitudetransferen
+
+`v16j` var en analyse-gate paa de eksisterende v16h-historiene, ikke ny
+dynamikk. Den beholdt v16i-observabelen uendret og erstattet layer+indegree-
+nullen med en directed double-edge-swap-null som bevarer eventtall,
+schedulerrekkefolge, eksakt direkte indegree og outdegree, eksakt causal-depth-
+sekvens, hele depth-lagprofilen og global dyadisk parent-age-bin-histogram.
+
+Nullinstrumentet ble utviklet og frosset paa v16c/v16d. Per-child age-bin-
+bevaring viste seg aa laase grafen for hardt og ble forkastet i kalibreringsfasen.
+Den valgte globale age-bin-nullen krevde minst `7.5 %` aksepterte swaps, minst
+`10 %` faktisk endrede direkte kanter og `32/32` unike nuller per run. Alle
+`768/768` kalibreringsnuller passerte. Spec-digest var
+`f4bd9863ced6c5e6c8d297a25f751b4ad632e386977b3cfb34fa0ed2e62e5215`.
+
+Den hash-laaste v16h-analysen ga:
+
+- `384/384` strict nuller med full struktur-, miksing- og unikhetspass
+- `12/12` JS-effektratioer over `1`
+- `12/12` empirical upper-tail `p = 1/33 = 0.030303...`
+- lokal primary medianratio `7.975000`, positiv andel `1.000` og
+  `p<=0.10`-andel `1.000`
+- growth-seed medianratio `8.795985/12.666981`, begge grupper pass
+- scheduler medianratio `13.572288/7.975000`, begge armer pass
+- v16h/v16d effektmagnituderatio `0.469661`
+
+Den preregistrerte komposittgaten krevde ogsaa magnituderatio i `[0.5,2.0]`.
+Den feilet derfor med den frosne statusen
+`causal_interval_abundance_not_supported_under_degree_age_null`, selv om
+effekt-eksistensgaten og alle fire gruppediagnostikker passerte. En eksplisitt
+post-run semantisk audit beholder gatefeilen, men hindrer den uriktige
+parafrasen at signalet forsvant. Vitenskapelig arbeidsstatus er
+`strict_null_contrast_supported_magnitude_transfer_not_stable`.
+
+Dette etablerer ikke dimensjon, manifoldlikhet, Lorentz-invarians, fysisk tid,
+continuum, partikler, entanglement eller spacetime. Neste smale gate er en fersk
+history-replikasjon der effekt-eksistens og effektmagnitudestabilitet er separate
+preregistrerte utfall.
+
+Viktige filer:
+
+- `relational_universe_v16j_interval_strict_null_gate.py`
+- `Documentation/v16j_interval_strict_null_gate.md`
+- `Documentation/v16j_design_calibration_strict_null_runs.csv`
+- `Documentation/v16j_design_calibration_strict_null_integrity.csv`
+- `Documentation/v16j_design_selection.csv`
+- `Documentation/v16j_pre_registration.csv`
+- `Documentation/v16j_source_chain.csv`
+- `Documentation/v16j_strict_null_run_summary.csv`
+- `Documentation/v16j_strict_null_distribution.csv`
+- `Documentation/v16j_strict_null_integrity_audit.csv`
+- `Documentation/v16j_local_strict_null_gate.csv`
+- `Documentation/v16j_calibration_transfer.csv`
+- `Documentation/v16j_growth_transfer.csv`
+- `Documentation/v16j_scheduler_transfer.csv`
+- `Documentation/v16j_gate_evaluation.csv`
+- `Documentation/v16j_claim_ledger.csv`
+- `Documentation/v16j_interpretation_audit.md`
+- `Documentation/v16j_interpretation_audit.csv`
+- `Documentation/v0_16j_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16j.md`

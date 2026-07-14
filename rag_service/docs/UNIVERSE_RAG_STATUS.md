@@ -1,125 +1,81 @@
 # UniverseSimulation RAG Status
 
-Dette dokumentet beskriver hvor prosjektet faktisk er na, og hva den nye `rag_service`-pakken skal hjelpe med.
+Last source review: 2026-07-14.
 
-## Status na
+## Source-of-truth order
 
-Per 2026-03-13 har repoet fire sentrale deler:
+For current project claims, use this order:
 
-- `Documentation/grundig-research-rapport-16.md`
-  - den formelle og konseptuelle hovedrapporten
-- `relational_universe_sim.py`
-  - en kjorbar toy-simulator av en dynamisk, urettet graf
-- `trajectory.csv`
-  - en eksisterende baseline-kjoring fra simulatoren
-- `rag_service/`
-  - den nye prosjektspesifikke RAG-tjenesten med docs, prompts og cases
+1. `PROJECT_CONTEXT_LIVE.md`
+2. `PROJECT_HISTORY_INDEX.md`
+3. the newest matching `Documentation/v*.md` and machine-readable CSVs
+4. older reports and prompts
 
-## Hva som er levert med denne RAG-en
+The formal report and early `trajectory.csv` remain historical inputs. They do
+not outrank later executed gates.
 
-Denne RAG-en etablerer et eget korpus for:
+## Current research state
 
-- prosjektstatus
-- teori og argumentasjon
-- verktøybruk
-- modellinstruksjoner og promptprofiler
+- Operational growth regime: `band_zero_del` from v11e.
+- Lorentz-like behavior: `not_yet`; mode, placement, and anisotropy alternatives
+  remain unresolved.
+- Defect interactions are nontrivial, but heuristic collision classes are not
+  particles and active-set landscapes are growth-seed dependent.
+- v16h validated that the clock/depth relation is explained by the scheduler's
+  directly logged pre-event total-rate profile. It is not independent geometry
+  evidence.
+- v16i found a repeatable open causal-interval abundance contrast beyond a null
+  preserving scheduler order, causal depth, and direct indegree.
+- v16j retained that contrast under a stricter null preserving exact direct
+  in/out-degree, exact causal depth, and the global dyadic parent-age histogram.
+  All 12 holdout runs had effect ratio above 1 and `p=1/33`.
+- The frozen v16j composite gate still failed because the v16h/v16d effect-size
+  ratio was `0.469661`, below its preregistered lower bound `0.5`.
 
-Det viktigste er at den gir sprakmodeller et eksplisitt skille mellom:
+The correct concise reading is
+`strict_null_contrast_supported_magnitude_transfer_not_stable`. See
+`Documentation/v16j_interpretation_audit.md`. This is finite-event-poset
+structure, not a validated dimension, manifold, Lorentz symmetry, physical
+time, continuum, particle, entanglement, or spacetime result.
 
-- rapportens formelle ramme
-- dagens implementerte toy-modell
-- observerte resultater i `trajectory.csv`
-- forslag til videre arbeid
+## Current next gate
 
-## Hva rapporten spesifiserer
+Run one fresh-history replication of the frozen interval observable and strict
+null. Preregister effect existence and effect-size stability as separate
+outcomes. Do not increase target or fit a dimension before that replication.
 
-Rapporten formaliserer et mye strengere malbilde enn dagens kode:
+## RAG corpus layout
 
-- mikrotilstander som enkle, urettede grafer
-- lokalitet via grafavstand
-- CTMC/SSA-semantikk
-- et minimalt regelsett:
-  - `R_seed`
-  - `R_slide`
-  - `R_tri`
-- energibegreper som aktivitetsrate, invariants og monsterenergi
-- metastabilitet som definisjon av emergente "partikler"
-- et testprogram for kausale kjegler, Lorentz-likhet og coarse-graining
+- `universe_status`: live context, history, RAG status, and corpus policy
+- `universe_experiments`: recent executed gate reports and interpretation audits
+- `universe_tools`: simulator, gate, site, and RAG operating instructions
+- `universe_argumentation`: formal report and evidence/claim map
+- `universe_prompts`: model personas and answer templates
 
-## Hva dagens kode faktisk implementerer
+The `universe_project` case searches all five source types. Narrow cases retain
+their scoped purpose.
 
-Dagens simulator er en toy-approximation, ikke en direkte DPO-implementasjon av rapporten.
+## Public-site and dynamic-RAG boundary
 
-Det som faktisk finnes i `relational_universe_sim.py`:
+`https://emergentuniverse.haven.digipomps.org` is a static, checksum-manifested
+scientific archive. It publishes selected RAG corpus documents and executed
+artifacts, but it does not route the dynamic RAG API.
 
-- en enkel urettet graf med adjacency-sets
-- mobile tokens som traversal-mekanisme
-- lokale rewrites via:
-  - sletting av traversert kant
-  - triadic closure
-  - lokal rewire
-  - seed attachment
-- kontinuerlig tid via en Gillespie-lignende SSA
-- enkel logging av:
-  - `nodes`
-  - `edges`
-  - `tokens`
-  - `avg_degree`
-  - `clustering`
-  - `eff_dim`
+The dynamic `/v1/research/*` API remains a separately operated, token-scoped
+service. Public exposure requires bearer-token policy, Postgres-backed shared
+rate limiting, signed citation downloads, citation audit, freshness audit, and
+no public admin/ingestion routes. Static-site freshness does not prove dynamic
+RAG freshness; both must be checked separately.
 
-Det som ikke finnes enn:
+## Required answer discipline
 
-- eksplisitt DPO-rule-engine
-- egen logging av `R_seed`, `R_slide`, `R_tri` som distinkte hendelsestyper
-- logging av invariants som `|E|-|V|` eller `beta_1`
-- kausal-kjeglemaaling
-- spektral dimensjon fra random walk
-- systematisk sweep over parameterrom
+Every answer must distinguish:
 
-## Hva baseline-dataene tyder pa
+- algebraic or formal facts
+- implemented generator/instrumentation behavior
+- generated artifacts and scoring products
+- actual executed dynamical or analysis results
+- inference and proposed next work
 
-`trajectory.csv` inneholder 400 loggpunkter fra en lang kjoring opp til 200000 hendelser.
-
-Fra filen:
-
-- noder: `30 -> 838`
-- kanter: `87 -> 7096`
-- gjennomsnittlig grad: `5.8 -> 16.94`
-- clustering holder seg omtrent i intervallet `0.25 - 0.41`
-- `eff_dim` blir etter hvert endelig og ligger ved siste punkt rundt `1.14`
-
-Dette tyder pa:
-
-- en stor sammenhengende komponent vedvarer
-- systemet densifiserer tydelig under default-parametrene
-- dagens modell viser lokal klustring, men ikke grunnlag for sterke paastander om emergent romtid
-
-## Hvorfor vi trenger denne RAG-en
-
-For dette prosjektet er det lett for en modell a blande sammen:
-
-- hva rapporten argumenterer for i prinsippet
-- hva dagens toy-kode faktisk kan teste
-- hva baseline-kjoringen faktisk viser
-
-RAG-en er laget for a redusere akkurat den forvirringen.
-
-## Viktigste gap akkurat na
-
-Det viktigste gapet er ikke manglende ideer, men manglende kobling mellom ide og maaling:
-
-1. Rapporten beskriver observabler og testprogram mye rikere enn koden gjor.
-2. Koden gir bare en grov approximation av regelsettet.
-3. Eksisterende resultater er enkeltskjoringer, ikke robuste eksperimentserier.
-4. Det finnes forelopig lite maskinlesbar dokumentasjon om hvordan verktøyene bor brukes.
-
-## Narmeste neste steg
-
-De mest realistiske neste stegene er:
-
-1. logg regeltyper og bevaringskandidater eksplisitt i simulatoren
-2. bygg et lite sweep-oppsett for parameterregimer
-3. legg til diagnostikker for runaway densifisering vs metastabile klustre
-4. etabler en tydelig mapping mellom rapportens begreper og kodens faktiske proxies
-5. bruk denne RAG-en som kildegrunnlag for videre design og evaluering
+If a source is stale or conflicts with a newer file, state the conflict and use
+the newer file. Never fabricate missing runtime results.

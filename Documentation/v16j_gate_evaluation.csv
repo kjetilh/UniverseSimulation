@@ -1,0 +1,9 @@
+gate,status,observed,required,decision
+v16h_source_contract,pass,1,1,continue
+holdout_run_integrity,pass,runs=12;events=36864,runs=12;events=36864,continue
+strict_null_integrity_and_mixing,pass,passes=384/384,384/384,continue
+local_strict_null_interval_abundance,pass,median_ratio=7.975000;positive=1.000000;p_le_010=1.000000,median>=2.0;positive>=0.8333333333333334;p_le_010>=0.5,continue
+v16d_to_v16h_strict_null_transfer,fail,0.4696605292256925,"in [0.5,2.0]",not_stable_across_seed_holdout
+growth_seed_transfer,pass,passing_groups=2/2,2/2,continue
+scheduler_transfer,pass,passing_groups=2/2,2/2,continue
+v16j_overall,causal_interval_abundance_not_supported_under_degree_age_null,instrumentation=1;evidence=0,instrumentation=1;evidence=1,causal_interval_abundance_not_supported_under_degree_age_null

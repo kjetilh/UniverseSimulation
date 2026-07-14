@@ -1,156 +1,114 @@
 # UniverseSimulation Tool Runbook
 
-Dette dokumentet beskriver hvordan dagens verktøy faktisk brukes.
+Last source review: 2026-07-14.
 
-## Verktøy som finnes na
+## Choose the right entrypoint
 
-### 1. Toy-simulatoren
+- Current status: `PROJECT_CONTEXT_LIVE.md`
+- Experiment history: `PROJECT_HISTORY_INDEX.md`
+- Early toy baseline: `relational_universe_sim.py`
+- Latest strict-null gate: `relational_universe_v16j_interval_strict_null_gate.py`
+- Public archive builder: `Tools/build_emergentuniverse_public_site.py`
+- RAG service: `rag_service/`
 
-Fil:
+The early `trajectory.csv` is historical baseline data. It is not the current
+research frontier.
 
-- `../relational_universe_sim.py`
+## Verify the latest completed gates
 
-Den implementerer:
+From the repository root, using the environment that provides `networkx`:
 
-- en dynamisk urettet graf
-- mobile tokens som lokal handlingsmekanisme
-- seed attachment
-- triadic closure
-- lokal rewire
-- Gillespie-lignende stokastisk tidsutvikling
+```bash
+/opt/anaconda3/bin/python relational_universe_v16i_causal_interval_abundance_gate.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v16j_interval_strict_null_gate.py --verify-only
+```
 
-### 2. Baseline-data
+The v16j command verifies the frozen binary gate products. Read
+`Documentation/v16j_interpretation_audit.md` as the required semantic
+decomposition of effect existence versus effect-size transfer.
 
-Fil:
-
-- `../trajectory.csv`
-
-Denne gir et eksisterende eksempel pa hvordan default-parametrene oppforer seg over tid.
-
-### 3. RAG-tjenesten
-
-Mappe:
-
-- `rag_service/`
-
-Den gir:
-
-- query/chat-endepunkter
-- research-endepunkter for lesende klienter
-- admin-synk og admin-rebuild
-- promptprofiler per case
-
-## Kjor simulatoren
-
-Fra repo-roten:
+## Run the early toy simulator
 
 ```bash
 python3 relational_universe_sim.py --steps 2000 --log-every 500 --out ''
 ```
 
-For full parameteroversikt:
+Use this only for the early model path. Do not infer v16 event-DAG or strict-null
+behavior from it.
+
+## Build and verify the public archive
 
 ```bash
-python3 relational_universe_sim.py --help
+PYTHONPYCACHEPREFIX=/private/tmp/pycache-emergent \
+  python3 Tools/build_emergentuniverse_public_site.py \
+  --out /tmp/emergentuniverse_public
 ```
 
-Viktigste parametere:
+Require the manifest to contain the current v16j report, interpretation audit,
+gate evaluation, and live project context. Check their SHA-256 hashes against
+the repository before deployment.
 
-- `--r-token`
-  - hvor ofte tokens handler
-- `--r-seed`
-  - hvor ofte nye noder kobles inn
-- `--p-del`
-  - sannsynlighet for a slette traversert kant
-- `--p-triad`
-  - sannsynlighet for triadic closure
-- `--p-rewire`
-  - sannsynlighet for lokal rewire
-- `--r-birth` og `--r-death`
-  - valgfri token-fodsel og token-dod
-- `--log-every`
-  - hvor ofte metrics logges
+After deployment:
 
-## Tolk outputen
+```bash
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16j|magnitude transfer|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16j_interpretation_audit.md
+```
 
-Kolonnene i `trajectory.csv` betyr:
+## Start the RAG service locally
 
-- `event`
-  - antall hendelser som er gjennomfort
-- `time`
-  - intern kontinuerlig tid fra SSA
-- `nodes`
-  - antall noder i grafen
-- `edges`
-  - antall kanter
-- `tokens`
-  - antall aktive tokens
-- `avg_degree`
-  - gjennomsnittlig grad
-- `clustering`
-  - lokal trekanttendens
-- `eff_dim`
-  - en grov volumvekstproxy, ikke en full spektral dimensjon
-
-## Hvordan bruke simulatoren til hypotesetesting
-
-Det dagens kode er best egnet til:
-
-- se om en stor komponent vedvarer
-- se om lokal klustring bygges opp
-- se om default-dynamikken runaway-densifiserer
-- sammenligne parameterregimer med enkle makrometrikker
-
-Det den ikke er best egnet til enn:
-
-- streng testing av rapportens DPO-regler
-- direkte maaling av `beta_1` eller andre invariants
-- robust Lorentz-diagnostikk
-- endelig "fysikkbevis"
-
-## Start RAG-tjenesten lokalt
-
-Fra `rag_service/`:
+From `rag_service/`:
 
 ```bash
 python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install -U pip
-python -m pip install -e .
 python -m pip install -e '.[pdf,html,docx]'
 cp .env.example .env
 docker compose -f docker/docker-compose.yml up -d db
+python -m scripts.apply_migrations
 python -m scripts.rebuild_index
 uvicorn app.main:app --reload --port 8000
 ```
 
-## Last inn korpuset uten a flytte kildefiler
+Do not overwrite an existing `.env` containing deployment configuration.
 
-Bruk `sync_folder`, ikke `ingest_folder`, nar kildene ligger i repoet og skal bli liggende der.
+## Sync the current corpus
 
-Kjor fra `rag_service/`:
+Prefer the orchestrator over one-file manual sync:
 
 ```bash
-python -m scripts.sync_folder --path ../Documentation/grundig-research-rapport-16.md --source-type universe_argumentation --ingest-root .. --dry-run
-python -m scripts.sync_folder --path ../README.md --source-type universe_status --ingest-root .. --dry-run
-python -m scripts.sync_folder --path docs/UNIVERSE_RAG_STATUS.md --source-type universe_status --ingest-root .. --dry-run
-python -m scripts.sync_folder --path docs/UNIVERSE_TOOL_RUNBOOK.md --source-type universe_tools --ingest-root .. --dry-run
-python -m scripts.sync_folder --path docs/UNIVERSE_ARGUMENTATION_MAP.md --source-type universe_argumentation --ingest-root .. --dry-run
-python -m scripts.sync_folder --path prompts --source-type universe_prompts --ingest-root .. --dry-run
+python -m scripts.sync_orchestrator \
+  --config config/sync_orchestrator.example.toml \
+  --plan-only
 ```
 
-Nar dry-run ser riktig ut, kjor de samme kommandoene uten `--dry-run`.
+Inspect additions, updates, deletes, source types, and target paths. Then run
+the same command without `--plan-only` only in the intended deployment.
 
-## Hvorfor ikke bruke ingest_folder direkte pa repo-filer
+## Verify dynamic RAG freshness
 
-`ingest_folder` flytter ferdig prosesserte filer til `done/` eller `failed/`.
+Static site freshness and dynamic RAG freshness are separate checks. On the
+loopback-only deployed RAG instance:
 
-Det er riktig nar du jobber mot en opplastingsmappe under `uploads/`, men feil nar du vil bevare prosjektets egne kildedokumenter pa plass.
+```bash
+RESEARCH_API_TOKEN='<token>' \
+RESEARCH_BASE_URL='http://127.0.0.1:8000' \
+RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
+python -m scripts.research_hardening_smoke \
+  --case-id universe_project \
+  --query 'Hva viste v16j, og hvilken del av den frosne gaten feilet?'
+```
 
-## Anbefalt arbeidsflyt
+The answer must include citation/freshness audit metadata and cite current v16j
+material. `--skip-query` is not sufficient for freshness verification.
 
-1. bruk simulatoren for a generere eller tolke data
-2. dokumenter status, tolkning og hypoteser i `rag_service/docs/`
-3. oppdater promptprofilene i `rag_service/prompts/` nar du ser at modeller trenger tydeligere styring
-4. synk endrede docs/prompts inn i RAG-en med `sync_folder`
-5. bruk `universe_project`, `universe_tools`, `universe_argumentation` eller `universe_prompts` avhengig av sporsmalstypen
+## Interpretation rules
+
+- Do not fabricate a CSV or runtime result.
+- Do not treat a generator/replay pass as physics.
+- Do not treat the v16j frozen composite failure as disappearance of the local
+  strict-null effect.
+- Do not treat the local strict-null effect as dimension, manifold, Lorentz
+  symmetry, spacetime, particles, entanglement, or continuum evidence.

@@ -1,122 +1,78 @@
 # UniverseSimulation Corpus Plan
 
-Dette dokumentet beskriver hvordan korpuset er delt opp i `source_type`-er og cases.
+Last source review: 2026-07-14.
 
 ## Source types
 
 ### `universe_status`
 
-Brukes for dokumenter som beskriver faktisk prosjektstatus og modenhet.
+Current state and source-priority documents:
 
-Anbefalte filer:
+- `PROJECT_CONTEXT_LIVE.md`
+- `PROJECT_HISTORY_INDEX.md`
+- `rag_service/docs/UNIVERSE_RAG_STATUS.md`
+- `rag_service/docs/UNIVERSE_CORPUS_PLAN.md`
 
-- `../README.md`
-- `docs/UNIVERSE_RAG_STATUS.md`
-- eventuelle fremtidige statusnotater eller milepaelsoppdateringer
+### `universe_experiments`
+
+Recent executed evidence, not general theory:
+
+- v16h direct total-rate mechanism validation
+- v16i causal-interval abundance gate
+- v16j strict-null gate and interpretation audit
+- their operational recommendations and selected gate CSVs
+
+Do not ingest the large per-null distributions into the default RAG corpus.
+They remain downloadable evidence on the public site.
 
 ### `universe_tools`
 
-Brukes for dokumenter om simulatorbruk, RAG-drift og arbeidsflyt.
-
-Anbefalte filer:
-
-- `docs/UNIVERSE_TOOL_RUNBOOK.md`
-- `docs/RAG_SERVICE_API.md`
-- eventuelle fremtidige runbooks for sweep, plotting eller analyse
+- `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`
+- `rag_service/docs/RAG_SERVICE_API.md`
+- `Documentation/EmergentUniverse_Public_Site_Runbook.md`
 
 ### `universe_argumentation`
 
-Brukes for teori, ontologi, testprogram og argumentkart.
-
-Anbefalte filer:
-
-- `../Documentation/grundig-research-rapport-16.md`
-- `docs/UNIVERSE_ARGUMENTATION_MAP.md`
+- `Documentation/grundig-research-rapport-16.md`
+- `rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md`
 
 ### `universe_prompts`
 
-Brukes for promptprofiler, modelleringsregler og instruksjonsmaler.
-
-Anbefalte filer:
-
-- hele `prompts/`
-- `docs/UNIVERSE_DEEP_RESEARCH_PROMPT.md`
+- `rag_service/prompts/**/*.md`
+- `rag_service/docs/UNIVERSE_DEEP_RESEARCH_PROMPT.md`
 
 ## Cases
 
-### `universe_project`
+- `universe_project`: all source types
+- `universe_tools`: status + tools + recent experiments
+- `universe_argumentation`: argumentation + status + recent experiments
+- `universe_prompts`: prompts + status + argumentation + tools
 
-Samlet case for generelle prosjektsporsmal.
+## Sync policy
 
-Source types:
+Use `scripts.sync_orchestrator` with the tracked TOML template on the deployed
+checkout. It stages a deterministic live tree, tombstones removed documents,
+and calls the admin sync/rebuild surface. Verify the plan before applying.
 
-- `universe_status`
-- `universe_tools`
-- `universe_argumentation`
-- `universe_prompts`
-
-### `universe_tools`
-
-Smalere case for simulator, metrics og RAG-arbeidsflyt.
-
-Source types:
-
-- `universe_status`
-- `universe_tools`
-
-### `universe_argumentation`
-
-Smalere case for teori, ontologi og testbar argumentasjon.
-
-Source types:
-
-- `universe_argumentation`
-- `universe_status`
-
-### `universe_prompts`
-
-Smalere case for promptdesign og modellregler.
-
-Source types:
-
-- `universe_prompts`
-- `universe_status`
-- `universe_argumentation`
-- `universe_tools`
-
-## Hvorfor denne delingen
-
-Prosjektet trenger tydelig separasjon mellom:
-
-- teori
-- faktisk kode og toolbruk
-- status
-- instruksjoner til modeller
-
-Hvis alt blandes i ett udifferensiert korpus, oker risikoen for at modellen:
-
-- overdriver hva simulatoren faktisk kan bevise
-- blander promptmaler med prosjektfakta
-- svarer med teori nar brukeren egentlig spurte om verktøy
-
-## Anbefalt synk-rekkefolge
-
-Fra `rag_service/`:
+From `rag_service/`:
 
 ```bash
-python -m scripts.sync_folder --path ../Documentation/grundig-research-rapport-16.md --source-type universe_argumentation --ingest-root ..
-python -m scripts.sync_folder --path ../README.md --source-type universe_status --ingest-root ..
-python -m scripts.sync_folder --path docs/UNIVERSE_RAG_STATUS.md --source-type universe_status --ingest-root ..
-python -m scripts.sync_folder --path docs/UNIVERSE_TOOL_RUNBOOK.md --source-type universe_tools --ingest-root ..
-python -m scripts.sync_folder --path docs/RAG_SERVICE_API.md --source-type universe_tools --ingest-root ..
-python -m scripts.sync_folder --path docs/UNIVERSE_ARGUMENTATION_MAP.md --source-type universe_argumentation --ingest-root ..
-python -m scripts.sync_folder --path prompts --source-type universe_prompts --ingest-root ..
+python -m scripts.sync_orchestrator \
+  --config config/sync_orchestrator.example.toml \
+  --plan-only
 ```
 
-## Kvalitetsregel for nye dokumenter
+Then run without `--plan-only` only against the intended deployment. After
+sync, run a token-scoped research query for `v16j` and require citations to the
+new strict-null report or interpretation audit plus freshness metadata.
 
-Nye dokumenter bor skrives slik at de tydelig sier:
+## Quality rules
 
-- om de beskriver faktisk kode eller bare foreslatt retning
-- hvilke filer eller kjoredata de bygger pa
-- hva som fortsatt er usikkert
+- Newer repo files outrank older summaries.
+- Current status docs must carry a source-review date.
+- Keep effect existence separate from effect-size stability.
+- Keep formal facts, instrumentation, generated artifacts, executed results,
+  and inference separate.
+- Do not index secrets, `.env`, admin keys, private uploads, `.git`, `.venv`,
+  build products, or raw caches.
+- Never claim dynamic RAG freshness from a static-site deployment alone.

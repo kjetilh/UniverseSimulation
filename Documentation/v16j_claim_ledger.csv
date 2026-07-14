@@ -1,0 +1,5 @@
+claim_id,claim,status,evidence,scope_limit
+C1,"The v16j null preserves exact direct in/out-degree, exact causal depth, scheduler order, and the global dyadic parent-age-bin histogram.",supported,v16j_strict_null_integrity_audit.csv,finite event DAGs; parent ages are binned globally rather than fixed per child or edge
+C2,The v16h causal-interval spectrum remains repeatably distinct under the stricter v16j null.,unsupported,v16j_strict_null_run_summary.csv;v16j_local_strict_null_gate.csv,one preregistered strict-null family on twelve existing histories
+C3,The v16i interval signal cannot be explained by direct degree and coarse parent-age wiring.,unsupported,v16j_gate_evaluation.csv,does not control event family or read/write resource type
+C4,"The interval spectrum establishes dimension, manifoldlikeness, Lorentz symmetry, spacetime, or a continuum limit.",unsupported,none,this remains a finite-poset structural diagnostic

@@ -1,0 +1,2 @@
+stage,target_nodes,primary_arm,n_runs,median_js_effect_ratio,positive_fraction,p_le_010_fraction,min_median_effect_ratio,min_positive_fraction,min_p_le_010_fraction,local_gate_pass
+v16h,1536,exposure_matched_local,6,7.975000457530028,1.0,1.0,2.0,0.8333333333333334,0.5,1

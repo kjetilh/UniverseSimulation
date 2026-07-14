@@ -1,128 +1,89 @@
 # UniverseSimulation Argumentation Map
 
-Dette dokumentet samler prosjektets argumentasjonskjede i en form som bade mennesker og sprakmodeller kan bruke uten a overtolke.
+Last source review: 2026-07-14.
 
-## Evidensnivaer
+## Research question
 
-All argumentasjon i dette prosjektet bor skilles i fire nivaer:
+The program asks whether a very small ontology and local stochastic graph rules
+can produce sufficiently robust higher-level regularities to justify saying
+that universe-like law structure is possible in this model family.
 
-1. Rapportforankret formalisering
-   - det som er eksplisitt formulert i `grundig-research-rapport-16.md`
-2. Implementert kode
-   - det som faktisk er kjort eller kan kjores i `relational_universe_sim.py`
-3. Observerte kjoredata
-   - det som kan leses ut av `trajectory.csv` eller nye kjoringer
-4. Inferens eller forslag
-   - det som virker plausibelt, men ennå ikke er dokumentert i rapport eller kode
+The project is not trying to match our universe by visual analogy. It requires
+operational observables, controls, transfer tests, and explicit failure gates.
 
-Modeller som arbeider med prosjektet ma si hvilket niva en pastand horer til.
+## Evidence levels
 
-## Primitive antagelser
+1. **Formal/algebraic**: definitions, exact identities, relabel covariance, and
+   rule-level facts.
+2. **Generator/instrumentation**: what the simulator constructs or logs and
+   whether replay/integrity checks pass.
+3. **Executed result**: values from completed, source-locked runs or analyses.
+4. **Inference**: the narrow interpretation supported by those results.
+5. **Open proposal**: a not-yet-executed next experiment.
 
-Rapportens minimale antagelser er:
+Generator hygiene is not physics. A scoring artifact is not a dynamical result.
 
-- universet modelleres som en dynamisk graf
-- det finnes bare noder og en relasjonstype
-- endring skjer gjennom lokale, stokastiske rewrites
-- tid er hendelsesbasert, ikke gitt utenfra
-- "seeds" er bare operative nar de er koblet til samme komponent
-- romtid, partikler og felter skal forklares som emergente storrelser
+## Primitive program
 
-## Minimal regelkjerne i rapporten
+- relational state represented by a dynamic graph
+- local stochastic updates
+- event-based causal dependency rather than assumed background spacetime
+- emergent rather than presupposed geometry, particles, and conservation laws
+- relabel covariance as a minimum representation-symmetry requirement
 
-Rapporten foreslar tre lokale regler som formelt utgangspunkt:
+The implemented simulator is an experimental relative of the formal program,
+not an exact realization of every DPO/CTMC statement in the research report.
 
-- `R_seed`
-  - node/leaf birth-death
-- `R_slide`
-  - lokal edge slide
-- `R_tri`
-  - triad closure/opening
+## What has survived so far
 
-Poenget er ikke at disse er endelig sannhet, men at et lite regelsett gir et testbart minimumsbilde.
+- `band_zero_del` is the current operational frontier regime.
+- Defect perturbations show persistent local damage and non-superposition under
+  matched controls.
+- Event-DAG construction, replay, relabel, and several coarse-map contracts have
+  passed their declared integrity gates.
+- Open causal-interval abundance is an exact finite-poset observable and shows a
+  repeatable contrast beyond the v16i layer+indegree null.
+- v16j shows that the contrast remains under exact direct in/out-degree, exact
+  depth, scheduler-order, and global dyadic parent-age controls.
 
-## Hvorfor energi ikke behandles som ett enkelt tall
+The strict-null effect exists in the tested histories, but its magnitude is not
+stable enough relative to the v16d calibration baseline. That distinction is
+central.
 
-Rapporten foreslar tre komplementare maater a snakke om energi eller bevaring pa:
+## What has been explained away or remains negative
 
-- aktivitetsbasert energi
-  - total hendelsesrate eller action-kapasitet
-- Noether-lignende invariants
-  - lineare kombinasjoner av motivtall som faktisk bevares av regelsettet
-- monsterenergi
-  - en Hamiltonsk-lignende funksjon som styrer sannsynlige makrotilstander
+- Lorentz-like propagation remains `not_yet` because placement and mode effects
+  remain live and local isotropy is not established.
+- A spectral quasi-invariant candidate was local and did not become a broad law.
+- Clock/depth alignment is reproducible, but v16h attributes it to the
+  scheduler's pre-event total-rate profile rather than independent geometry.
+- Defect labels, persistence, recurrence, and genealogy are useful observables,
+  but do not establish particle species.
+- Correlation or shared response is not quantum entanglement.
 
-Hovedpoenget er:
+## Threshold for stronger claims
 
-- stabilitet krever ikke automatisk en klassisk global energibevaring
-- men stabile strukturer blir langt mer plausible hvis visse ladninger eller barrierer er omtrent konservative
+To claim that robust universe-like law structure is possible in this model,
+one isolated positive observable is insufficient. At minimum, the program needs
+several jointly surviving properties:
 
-## Hva som teller som "partikler" i dette prosjektet
+- representation/relabel robustness
+- locality and causal propagation not reducible to scheduler bookkeeping
+- a stable invariant or quasi-invariant with cross-seed and cross-scale transfer
+- nontrivial persistent excitations and interactions under matched controls
+- predictive coarse-graining or a robust continuum/geometry proxy
+- fresh preregistered replication and explicit adversarial nulls
 
-Prosjektet bruker metastabilitet som operasjonell definisjon:
+To claim Lorentz-like spacetime specifically requires substantially more:
+isotropy, dispersion/propagation tests, observer- or placement-robust behavior,
+and a geometry estimator that survives mechanism controls and scale transfer.
 
-- et monster teller som partikkel-lignende hvis det varer lenge
-- det ma kunne overleve sma lokale forstyrrelser
-- opplosning ma kreve en kjede av sjeldne hendelser
+## Current argument conclusion
 
-Dette er en presis og simulerbar definisjon, selv om den ikke i seg selv er kvantemekanikk.
+The project has demonstrated that local graph rules can generate nontrivial,
+repeatable finite relational structure worth continued study. It has not shown
+that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
+continuum emerges.
 
-## Hva som ma til for a kunne snakke om emergent romtid
-
-Rapporten legger opp til at dette krever mer enn pen filosofi.
-
-Minstekravene er:
-
-- lokalitetsbundet propagasjon eller effektiv `c_*`
-- robuste coarse-grained observabler
-- parameterregimer med stasjonare eller metastabile makrostorrelser
-- diagnostikker for isotropi, dispersjon og spektral dimensjon
-
-Hvis disse ikke kan males eller stabiliseres, er "emergent spacetime" bare en hypotese.
-
-## Kritiske svakheter som prosjektet ma vaere aapen om
-
-Rapporten gir ogsa sterke advarsler:
-
-- Lorentz-likhet kommer ikke gratis i diskrete grafmodeller
-- bounded-degree-mikrostruktur kan vaere for rigid
-- korrelasjon er ikke det samme som kvante-entanglement
-- coarse-graining ma defineres eksplisitt for a bli testbar fysikk og ikke bare metafor
-
-## Hvordan dagens kode relaterer seg til argumentasjonen
-
-Dagens kode skal leses som et tidlig laboratorium for noen av disse ideene, ikke som en realisering av hele rammen.
-
-Koden kan bidra til a teste:
-
-- om en stor komponent holder seg sammen
-- om klustring og loops oppstar
-- om visse parametere gir runaway densifisering
-- om enkle makrometrikker blir omtrent stabile
-
-Koden kan ikke alene teste:
-
-- DPO-presisjon
-- strenge invariants fra rapportens malbilde
-- observer-uavhengig emergent geometri
-- Lorentz-lik symmetri i sterk forstand
-
-## Testbare hovedsporsmal
-
-Prosjektets sterkeste testbare sporsmal akkurat na er:
-
-1. Finnes det parameterregimer der grafen ikke bare densifiserer ukontrollert?
-2. Finnes det langlivede lokale strukturer som kan behandles som metastabile objekter?
-3. Kan vi definere observabler som faktisk svarer til rapportens bevarings- og stabilitetsideer?
-4. Kan vi lage en tydelig og etterprovbar mapping fra teori til kodeproxy?
-
-## Praktisk regel for modellbruk
-
-Hvis en modell blir spurt om "hva prosjektet viser", bor den som standard svare:
-
-- hva rapporten foreslar
-- hva dagens kode kan teste
-- hva eksisterende data viser
-- hva som fortsatt er apent
-
-Hvis ikke den inndelingen kommer tydelig fram, er svaret for svakt.
+The best current next test is a fresh strict-null causal-interval replication
+with effect existence and magnitude stability kept separate.

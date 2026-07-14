@@ -1,0 +1,2 @@
+source_stage,source_target_nodes,source_primary_arm,source_n_runs,source_median_js_effect_ratio,source_positive_fraction,source_p_le_010_fraction,holdout_ratio_low,holdout_ratio_high
+v16d,1536,exposure_matched_local,6,16.980350617664296,1.0,1.0,0.5,2.0

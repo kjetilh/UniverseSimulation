@@ -1,0 +1,2 @@
+source_stage,holdout_stage,source_median_js_effect_ratio,holdout_median_js_effect_ratio,holdout_over_source_ratio,ratio_low,ratio_high,calibration_transfer_pass
+v16d,v16h,16.980350617664296,7.975000457530028,0.4696605292256925,0.5,2.0,0

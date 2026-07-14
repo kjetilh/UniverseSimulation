@@ -1,0 +1,8 @@
+audit_item,status,observed,required,evidential_role
+strict_null_instrumentation,pass,384/384 valid mixed unique nulls,384/384,precondition
+local_strict_null_effect,pass,median_ratio=7.975000457530028;positive_fraction=1.0;p_le_010_fraction=1.0,median_ratio>=2.0;positive_fraction>=0.8333333333333334;p_le_010_fraction>=0.5,primary effect-existence gate
+growth_seed_transfer,pass,2/2 groups pass,2/2,group robustness
+scheduler_transfer,pass,2/2 groups pass,2/2,group robustness
+v16d_to_v16h_effect_magnitude_transfer,fail,ratio=0.4696605292256925,ratio in [0.5;2.0],effect-size stability gate
+frozen_composite_gate,fail,4/5 evidential subgates pass,5/5,preregistered conjunction retained unchanged
+post_run_scientific_reading,strict_null_contrast_supported_magnitude_transfer_not_stable,12/12 ratios above 1 and empirical_p=0.030303030303030304; holdout magnitude 46.97% of v16d baseline,do not collapse effect existence into magnitude stability,semantic audit only; not a replacement gate
