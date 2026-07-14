@@ -1,11 +1,11 @@
 [orchestrator]
 # Host path that maps to /data/uploads inside this rag_service instance.
-ingest_root = "/srv/ops/rag_service/uploads/universe"
+ingest_root = "/srv/ops/universe_rag/uploads"
 ingest_live_subdir = "universe_live"
 
 # UniverseSimulation RAG admin endpoint.
-admin_base_url = "http://127.0.0.1:8000"
-admin_api_key_env = "ADMIN_API_KEY"
+admin_base_url = "http://127.0.0.1:8103"
+admin_api_key_env = "UNIVERSE_ADMIN_API_KEY"
 request_timeout_sec = 120
 fetch_coverage_actions = true
 
