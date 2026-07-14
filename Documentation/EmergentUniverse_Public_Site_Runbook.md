@@ -117,3 +117,29 @@ Static deployment does not update the dynamic RAG index. Run the tracked sync
 orchestrator separately, then issue a token-scoped query about v16j and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
+
+## Loopback-only production RAG
+
+The server-side Universe instance is intentionally separate from the existing
+Innovasjon and DiMy RAG deployments. Its tracked compose definition is:
+
+```text
+ops/emergentuniverse_rag_compose.yml
+```
+
+The API binds only to `127.0.0.1:8103`. Keep its real environment file outside
+Git, mode `0600`, and use `ops/emergentuniverse_rag.env.example` only as a
+schema. The compose deployment mounts `rag_service/app`, `scripts`, `config`,
+and `prompts` read-only from a revision-locked UniverseSimulation checkout.
+
+After updating the checkout and mirroring the corpus, start or refresh it with:
+
+```bash
+docker compose \
+  --env-file /srv/ops/universe_rag/.env \
+  -f /srv/ops/repos/UniverseSimulation/ops/emergentuniverse_rag_compose.yml \
+  up -d
+```
+
+Do not add an nginx route for this service until the public exposure gate in
+the RAG boundary section has been satisfied independently.

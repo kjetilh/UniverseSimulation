@@ -1,0 +1,78 @@
+name: emergentuniverse-rag
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${UNIVERSE_POSTGRES_USER:-rag}
+      POSTGRES_PASSWORD: ${UNIVERSE_POSTGRES_PASSWORD}
+      POSTGRES_DB: ${UNIVERSE_POSTGRES_DB:-rag_universe}
+    volumes:
+      - universe_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U ${UNIVERSE_POSTGRES_USER:-rag} -d ${UNIVERSE_POSTGRES_DB:-rag_universe}
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  api:
+    # Reuse the audited dependency image, while mounting the revision-locked
+    # UniverseSimulation RAG source read-only.
+    image: ${UNIVERSE_RAG_RUNTIME_IMAGE:-docker-rag_innovasjon_api}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg://${UNIVERSE_POSTGRES_USER:-rag}:${UNIVERSE_POSTGRES_PASSWORD}@db:5432/${UNIVERSE_POSTGRES_DB:-rag_universe}
+      APP_ENV: prod
+      LOG_LEVEL: ${UNIVERSE_LOG_LEVEL:-INFO}
+      EMBEDDING_MODEL: ${UNIVERSE_EMBEDDING_MODEL:-sentence-transformers/all-MiniLM-L6-v2}
+      LLM_PROVIDER: ${UNIVERSE_LLM_PROVIDER:-openai_compat}
+      LLM_BASE_URL: ${UNIVERSE_LLM_BASE_URL:-https://api.openai.com/v1}
+      LLM_API_KEY: ${UNIVERSE_LLM_API_KEY}
+      LLM_MODEL: ${UNIVERSE_LLM_MODEL:-gpt-4o-mini}
+      RAG_CASES_PATH: config/rag_cases.yml
+      INSTANCE_CASE_IDS_JSON: '["universe_project","universe_tools","universe_argumentation","universe_prompts"]'
+      QUERY_ROUTER_ENABLED: "true"
+      QUERY_ROUTER_DOCS_SOURCE_TYPES_JSON: '["universe_status","universe_experiments","universe_tools","universe_argumentation"]'
+      QUERY_ROUTER_PROMPTS_SOURCE_TYPES_JSON: '["universe_prompts"]'
+      TOP_K_VECTOR: ${UNIVERSE_TOP_K_VECTOR:-50}
+      TOP_K_LEXICAL: ${UNIVERSE_TOP_K_LEXICAL:-50}
+      TOP_K_FINAL: ${UNIVERSE_TOP_K_FINAL:-12}
+      MAX_CHUNKS_PER_DOC: ${UNIVERSE_MAX_CHUNKS_PER_DOC:-3}
+      QUERY_REWRITE_ENABLED: ${UNIVERSE_QUERY_REWRITE_ENABLED:-true}
+      RERANKER_ENABLED: ${UNIVERSE_RERANKER_ENABLED:-false}
+      GROUNDING_MIN_CITATIONS: ${UNIVERSE_GROUNDING_MIN_CITATIONS:-2}
+      ADMIN_API_KEY: ${UNIVERSE_ADMIN_API_KEY}
+      INGEST_ROOT: /data/uploads
+      RESEARCH_API_TOKENS_JSON: ${UNIVERSE_RESEARCH_API_TOKENS_JSON}
+      RESEARCH_DOWNLOAD_SIGNING_KEY: ${UNIVERSE_RESEARCH_DOWNLOAD_SIGNING_KEY}
+      RESEARCH_DOWNLOAD_TTL_SECONDS: ${UNIVERSE_RESEARCH_DOWNLOAD_TTL_SECONDS:-300}
+      RESEARCH_ALLOW_QUERY_ACCESS_TOKEN: "false"
+      RESEARCH_RATE_LIMIT_BACKEND: postgres
+      RESEARCH_RATE_LIMIT_PER_MINUTE: ${UNIVERSE_RESEARCH_RATE_LIMIT_PER_MINUTE:-30}
+      RESEARCH_RATE_LIMIT_BURST: ${UNIVERSE_RESEARCH_RATE_LIMIT_BURST:-60}
+      RESEARCH_MIN_CITATIONS: ${UNIVERSE_RESEARCH_MIN_CITATIONS:-2}
+      RESEARCH_MIN_UNIQUE_DOCS: ${UNIVERSE_RESEARCH_MIN_UNIQUE_DOCS:-1}
+      RESEARCH_FRESHNESS_MAX_AGE_SECONDS: ${UNIVERSE_RESEARCH_FRESHNESS_MAX_AGE_SECONDS:-86400}
+      RESEARCH_ENFORCE_RESPONSE_AUDIT: "true"
+      RESEARCH_ENFORCE_FRESHNESS: "true"
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${UNIVERSE_API_PORT:-8103}:8000"
+    volumes:
+      - ${UNIVERSE_REPO_DIR:-/srv/ops/repos/UniverseSimulation}/rag_service/app:/app/app:ro
+      - ${UNIVERSE_REPO_DIR:-/srv/ops/repos/UniverseSimulation}/rag_service/scripts:/app/scripts:ro
+      - ${UNIVERSE_REPO_DIR:-/srv/ops/repos/UniverseSimulation}/rag_service/config:/app/config:ro
+      - ${UNIVERSE_REPO_DIR:-/srv/ops/repos/UniverseSimulation}/rag_service/prompts:/app/prompts:ro
+      - ${UNIVERSE_UPLOADS_DIR:-/srv/ops/universe_rag/uploads}:/data/uploads
+    command:
+      - /bin/sh
+      - -c
+      - python -m scripts.rebuild_index && uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+volumes:
+  universe_pgdata:

@@ -104,6 +104,14 @@ python -m scripts.research_hardening_smoke \
 The answer must include citation/freshness audit metadata and cite current v16j
 material. `--skip-query` is not sufficient for freshness verification.
 
+## Production instance boundary
+
+The dedicated server instance uses
+`ops/emergentuniverse_rag_compose.yml`, binds to loopback port `8103`, and keeps
+its real deployment environment outside Git. It must remain distinct from the
+Innovasjon and DiMy databases and upload roots. Updating the public static site
+does not update this index; both deployments require separate verification.
+
 ## Interpretation rules
 
 - Do not fabricate a CSV or runtime result.
