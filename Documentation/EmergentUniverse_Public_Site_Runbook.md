@@ -132,6 +132,16 @@ Git, mode `0600`, and use `ops/emergentuniverse_rag.env.example` only as a
 schema. The compose deployment mounts `rag_service/app`, `scripts`, `config`,
 and `prompts` read-only from a revision-locked UniverseSimulation checkout.
 
+For a first deployment only, provision isolated secrets from the existing
+provider configuration without printing them:
+
+```bash
+ops/provision_emergentuniverse_rag_env.sh
+```
+
+The provisioner refuses to overwrite an existing environment. Subsequent
+deployments reuse the existing file and operator token.
+
 After updating the checkout and mirroring the corpus, start or refresh it with:
 
 ```bash
