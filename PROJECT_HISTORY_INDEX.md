@@ -7442,3 +7442,35 @@ Viktige filer:
 - `Documentation/v16n_sampler_qualification.csv`
 - `Documentation/v16n_interpretation_audit.md`
 - `Documentation/v16n_interpretation_audit.csv`
+
+## 10ct. v16o viste at actual-conflict color-nullen er strukturelt immobil
+
+`v16o` froes med digest
+`d5dfa4d7b0fbe3f92bd47a827d252416c4c353d9a9ec22e5343492192dae4c4a`
+og enumererte eksakt alle `37,521,528` uordnede kantpar i de seks v16n-DAGene.
+Ingen rewiring eller intervallspektra ble beregnet.
+
+Resultatet var:
+
+- v16n same-color legal pairs: `0` i alle `6/6` runs
+- general two-color-multiset legal pairs: `1` totalt
+- runs med minst ett general legal pair: `1/6`
+- legal edge fraction i den ene runnen: `0.000561`
+- scheduler-order rejects: `33,361,411`
+- missing actual-cross-conflict rejects: `4,126,253`
+
+Status er `v16o_actual_conflict_color_null_structurally_immobile`. Dermed skal
+actual-conflict edge-color-sporet pensjoneres som praktisk nullsampler. V16m-
+effekten er fortsatt ikke evaluert under resource-conditioning. Neste minste
+alternativ er en event-side footprint-null som bevarer grove familie/read-write
+namespace-roller uten aa kreve konkret resource-ID konflikt paa hver ny
+nullkant. Ogsaa den maa begynne med reachability, ikke effekt.
+
+Viktige filer:
+
+- `relational_universe_v16o_event_resource_reachability_audit.py`
+- `Documentation/v16o_event_resource_reachability_audit.md`
+- `Documentation/v16o_reachability_run_summary.csv`
+- `Documentation/v16o_rejection_counts.csv`
+- `Documentation/v16o_gate_evaluation.csv`
+- `Documentation/v16o_claim_ledger.csv`

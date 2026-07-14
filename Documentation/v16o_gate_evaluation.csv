@@ -1,0 +1,7 @@
+gate,status,observed,required,decision
+exact_pair_enumeration,pass,runs=6;pairs=37521528,runs=6;all_pairs_exact,continue
+v16n_same_color_zero_move_reproduction,pass,0,0,diagnosed
+general_color_multiset_reachability,fail,legal_pairs=1;runs_with_moves=1/6,runs_with_moves=6/6,retire_actual_conflict_color_null
+general_color_multiset_support,fail,0.0,>=0.1,do_not_run_effect_gate
+spectrum_and_rewiring_exclusion,pass,spectrum=0;rewires=0,0;0,diagnostic_only
+v16o_overall,v16o_actual_conflict_color_null_structurally_immobile,same_zero=1;general_reachable=0;general_promising=0,diagnostic_branch,v16o_actual_conflict_color_null_structurally_immobile

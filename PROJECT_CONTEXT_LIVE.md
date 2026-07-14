@@ -2845,6 +2845,19 @@ contrast under resource conditioning. The next step is an exact reachability
 audit of the more general global two-color multiset rule before any new sampler
 or effect gate.
 
+`v16o` completed that exact audit over all `37,521,528` unordered direct-edge
+pairs in the six v16n DAGs. The v16n same-color rule had zero legal pairs in
+every run. The more general two-color multiset rule had only one legal pair in
+total, touching two of `3566` edges in one run; five runs had none. The dominant
+rejections were scheduler order (`33,361,411`) and missing actual cross-conflict
+(`4,126,253`).
+
+Status is `v16o_actual_conflict_color_null_structurally_immobile`. This retires
+the actual-resource-conflict edge-color null as a practical sampler. It still
+does not evaluate the v16m spectrum contrast. The next admissible candidate is
+the weaker event-side footprint null proposed by the panel, starting with a
+reachability-only audit.
+
 ## Generatorstatus
 
 Den eldre generator-/storrelseskrisen ser ut til a vaere ryddet bort i den aktive kjeden.

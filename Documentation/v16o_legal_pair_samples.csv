@@ -1,0 +1,2 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,first_edge_index,second_edge_index,old_first_edge,old_second_edge,new_first_edge,new_second_edge,old_first_color,old_second_color,new_first_color,new_second_color,same_color_pair
+v16o,1536,8018,110360,exposure_matched_local,1980290360,1387,2714,1071>1221,1024>2347,1071>2347,1024>1221,token->token|read-write:token&write-read:token&write-write:token,token->token|read-write:edge,token->token|read-write:edge,token->token|read-write:token&write-read:token&write-write:token,0

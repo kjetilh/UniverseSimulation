@@ -1,0 +1,5 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The v16n same-color proposal has no legal first transition on the six calibration DAGs.,supported,v16o_reachability_run_summary.csv;v16o_rejection_counts.csv,exact static enumeration on six finite DAGs
+C2,The general global two-color multiset rule has enough static legal support to justify effect-blind sampler qualification.,unsupported,v16o_reachability_run_summary.csv,reachability is not chain mixing
+C3,The v16m spectrum contrast survives event/resource conditioning.,not_evaluated,none,no spectrum computed
+C4,"The reachable proposal is converged, representative, or uniform.",unsupported,none,static legal-pair audit only
