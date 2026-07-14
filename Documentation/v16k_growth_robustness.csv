@@ -1,0 +1,3 @@
+group_field,group_value,n_runs,median_js_effect_ratio,positive_fraction,p_le_010_fraction,min_median_effect_ratio,min_positive_fraction,group_pass
+growth_seed,6132,6,7.175228979797577,1.0,1.0,1.0,0.8333333333333334,1
+growth_seed,8036,6,11.408357290825812,1.0,1.0,1.0,0.8333333333333334,1

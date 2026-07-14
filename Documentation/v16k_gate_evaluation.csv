@@ -1,0 +1,10 @@
+gate,status,observed,required,decision
+target_hygiene,pass,1536.0,1536,continue
+fresh_history_integrity,pass,runs=12;events=36864,runs=12;events=36864,continue
+replay_relabel_rate_parity,pass,replay=1;relabel=1;rate=1,1;1;1,continue
+primary_perturbation_integrity,fail,passes=383/384,384/384,inconclusive
+fresh_effect_existence,pass,median=8.592671;positive=1.000000;p_le_010=1.000000,median>=2;positive>=5/6;p_le_010>=1/2,replicated_primary
+longer_perturbation_integrity,fail,passes=160/192,192/192,inconclusive
+longer_perturbation_consistency,fail,median=8.768244;positive=1.000000,median>=1;positive>=5/6,inconclusive
+magnitude_compatibility,descriptive,compatible_with_both_prior_anchors,not_a_confirmatory_gate,compatible_with_both_prior_anchors
+v16k_overall,v16k_instrumentation_failed,instrumentation=0;existence=1;longer=0,1;1;1,v16k_instrumentation_failed

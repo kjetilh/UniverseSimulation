@@ -1,0 +1,8 @@
+audit_item,status,observed,required,interpretation
+frozen_overall,failed,v16k_instrumentation_failed,all instrumentation pass,retain frozen failure
+primary_perturbation_integrity,failed,383/384,384/384,one current_global perturbation stopped at 254/255 accepted swaps
+primary_arm_perturbation_integrity,pass,192/192,192/192,valid primary-arm component input
+fresh_effect_existence_component,pass,median=8.59267128528609;positive=1.0;p_le_010=1.0,median>=2;positive>=5/6;p_le_010>=1/2,component pass only
+longer_perturbation_integrity,failed,160/192,192/192,attempt ceiling prevented target completion in two runs
+magnitude_point_classification,descriptive,compatible_with_both_prior_anchors,not_a_confirmatory_gate,does not establish magnitude stability
+next_gate,selected,sampler qualification then new fresh holdout,no effect-ratio-driven tuning,do not proceed directly to resource-aware null

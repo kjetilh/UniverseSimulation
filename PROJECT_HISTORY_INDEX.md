@@ -7253,3 +7253,57 @@ Viktige filer:
 - `Documentation/v16j_interpretation_audit.csv`
 - `Documentation/v0_16j_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16j.md`
+
+## 10co. v16k ga en positiv fersk primary-arm-komponent, men feilet samplerinstrumenteringen
+
+`v16k` fulgte raadgiverpanelets anbefaling om en full fersk replikasjon foer en
+mer kompleks resource-aware null. Designet ble frosset med spec-digest
+`3cba919f951c580ce3851c4294294d723bafb63053c1a67fe25112b9b6d61f14`: target
+`1536`, `3072` events, nye growth seeds `8036/6132`, tre offsets, begge
+scheduler-armer og `12` arm-spesifikke runs. En uformell raadgiverproeve paa
+seeds `5203/5389` ble eksplisitt satt i karantene foer formell kjoering; ingen
+formell seed eller terskel overlappet.
+
+Alle `12/12` ferske histories, `24/24` topologiske replays, `12/12` relabel-
+audits og `12/12` direkte rate-replays passerte. Primary-arm-komponenten hadde:
+
+- `192/192` komplette primary strict-null-perturbasjoner
+- median JS-effektratio `8.592671`
+- positiv andel `1.000` (`6/6`)
+- `p<=0.10`-andel `1.000` (`6/6`)
+- deskriptiv magnitude `compatible_with_both_prior_anchors`
+
+Den frosne overall-gaten passerte likevel ikke. Primary-instrumenteringen var
+`383/384`: en `current_global`-perturbasjon stoppet paa `254/255` aksepterte
+swaps innen forsokstaket, selv om all struktur, unikhet og `10.607 %` endrede
+kanter holdt. Den preregistrerte lengre `0.10`-perturbasjonen var `160/192` paa
+accepted-swap completion. Alle feilede perturbasjoner bevarte strukturen, var
+unike og endret minst `10.825 %` av kantene, men completion-kontrakten var ikke
+oppfylt. Frossen status er derfor permanent `v16k_instrumentation_failed`.
+
+Det er legitimt aa rapportere den positive primary-arm-komponenten, men ikke aa
+kalle v16k en fullfort replikasjon. Neste trinn er sampler-kvalifisering paa de
+lagrede v16k-DAGene, styrt bare av completion/attempt-behov, deretter en ny
+12-run holdout med helt nye seeds. Ikke gaa direkte til resource-aware null og
+ikke fit dimensjon. Resultatet etablerer ikke manifoldlikhet, Lorentz-symmetri,
+spacetime, continuum, partikler, entanglement eller fysisk kausal lov.
+
+Viktige filer:
+
+- `relational_universe_v16k_fresh_strict_null_replication.py`
+- `Documentation/v16k_panel_direction_report.md`
+- `Documentation/v16k_pre_registration.csv`
+- `Documentation/v16k_event_log.csv`
+- `Documentation/v16k_fine_dependency_edges.csv`
+- `Documentation/v16k_strict_null_run_summary.csv`
+- `Documentation/v16k_strict_null_perturbation_integrity.csv`
+- `Documentation/v16k_effect_existence_gate.csv`
+- `Documentation/v16k_longer_perturbation_run_summary.csv`
+- `Documentation/v16k_longer_perturbation_integrity.csv`
+- `Documentation/v16k_longer_perturbation_gate.csv`
+- `Documentation/v16k_magnitude_compatibility.csv`
+- `Documentation/v16k_gate_evaluation.csv`
+- `Documentation/v16k_claim_ledger.csv`
+- `Documentation/v16k_interpretation_audit.md`
+- `Documentation/v16k_interpretation_audit.csv`
+- `Documentation/v0_16k_operativ_anbefaling.md`
