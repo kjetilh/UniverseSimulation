@@ -1,0 +1,6 @@
+gate,status,observed,required,decision
+v16k_source_contract,pass,1,1,continue
+primary_completion_integrity,pass,384/384,384/384,continue
+longer_completion_integrity,pass,192/192,192/192,continue
+effect_blind_qualification,pass,0,effect_values_used=0,continue
+v16l_overall,sampler_attempt_budget_qualified_for_new_holdout,source=1;primary=1;longer=1,1;1;1,sampler_attempt_budget_qualified_for_new_holdout

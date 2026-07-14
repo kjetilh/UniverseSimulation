@@ -7307,3 +7307,48 @@ Viktige filer:
 - `Documentation/v16k_interpretation_audit.md`
 - `Documentation/v16k_interpretation_audit.csv`
 - `Documentation/v0_16k_operativ_anbefaling.md`
+
+## 10cp. v16l kvalifiserte samplerens attempt-budget uten aa rehabilitere v16k
+
+`v16l` er en effect-blind sampler-kvalifisering paa de lagrede v16k-DAGene,
+ikke ny dynamikk og ikke en ny bekreftende effekttest. Samme DAGer, nullseeds,
+swapmaal, stoppregler og nulltall ble rerunnet; eneste operative endring var et
+safety ceiling fra `60` til `240` forsok per direkte kant. Spec-digest var
+`e730d36cef1ec18ef13ce07a24c4b25cbc3c8a016d3fd3058b56b98a586e0413`.
+
+Kvalifiseringen ga:
+
+- primary strict null: `384/384` completion + struktur + unikhet
+- lengre `0.10`-perturbasjon: `192/192` completion + struktur + unikhet
+- maksimum faktisk behov: `60.138480` og `75.522982` forsok per kant
+- minimum changed-edge fraction: `0.100026` og `0.111359`
+- effektverdier brukt i qualification decision: `0`
+
+Status er `sampler_attempt_budget_qualified_for_new_holdout`. Safety ceiling
+`240` er en stoppgrense, ikke et krav om fire ganger arbeid; hver kjede stopper
+naar det opprinnelige swap- og change-maalet er naadd.
+
+Som post-hoc sensitivity ble spektrumverdiene ogsaa beregnet etter completion.
+Effektretningen holdt i `12/12` runs for begge nullfamilier. Primary-ratioene
+var i praksis uendret (median qualified/source `1.000`); lengre null hadde mer
+variasjon (`0.850569` til `1.340876`) men samme retning. Disse tallene var ikke
+del av kvalifiseringsgaten og rehabiliterer ikke v16k.
+
+Neste trinn er ett nytt 12-run fresh-history holdout med nye seeds og den
+kvalifiserte sampleren. Resource-aware null maa vente. Completion beviser
+fortsatt ikke uniformitet, stationarity, convergence eller representativitet,
+og ingen fysikk- eller geometripastand er autorisert.
+
+Viktige filer:
+
+- `relational_universe_v16l_sampler_attempt_qualification.py`
+- `Documentation/v16l_pre_registration.csv`
+- `Documentation/v16l_source_chain.csv`
+- `Documentation/v16l_primary_qualification_integrity.csv`
+- `Documentation/v16l_longer_qualification_integrity.csv`
+- `Documentation/v16l_sampler_qualification.csv`
+- `Documentation/v16l_posthoc_spectrum_sensitivity.csv`
+- `Documentation/v16l_gate_evaluation.csv`
+- `Documentation/v16l_claim_ledger.csv`
+- `Documentation/v16l_sampler_attempt_qualification.md`
+- `Documentation/v0_16l_operativ_anbefaling.md`

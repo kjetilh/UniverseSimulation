@@ -1,0 +1,3 @@
+null_family,n_perturbations,completion_and_integrity_passes,required_passes,max_observed_attempts_per_edge,qualified_ceiling_attempts_per_edge,min_changed_edge_fraction,all_unique_within_run,qualification_pass,effect_values_used_for_decision
+degree_depth_global_age_bin_double_edge_swap,384,384,384,60.13847967000589,240,0.10002577984016499,1,1,0
+degree_depth_global_age_bin_double_edge_swap_longer_010,192,192,192,75.52298173246906,240,0.11135919620429807,1,1,0

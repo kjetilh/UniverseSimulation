@@ -1,0 +1,5 @@
+claim_id,claim,status,evidence,scope_limit
+C1,A 240-attempts-per-edge ceiling completes all frozen primary and longer perturbation targets on the v16k DAGs while preserving declared structure and uniqueness.,supported,v16l_sampler_qualification.csv,attempt-budget qualification on saved v16k DAGs
+C2,The qualified sampler has validated the v16k scientific effect confirmatorily.,unsupported,none,v16l posthoc spectra cannot rehabilitate frozen v16k
+C3,"The qualified sampler is uniform, stationary, converged, independent, or representative over the constrained DAG space.",unsupported,none,completion and perturbation integrity do not prove those properties
+C4,The qualified sampler is ready for a new fresh-history holdout under the declared completion contract.,supported,v16l_gate_evaluation.csv,requires new seeds and unchanged scientific gates
