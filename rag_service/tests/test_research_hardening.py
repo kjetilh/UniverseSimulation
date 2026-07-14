@@ -106,6 +106,47 @@ def test_research_query_attaches_hardening_audit(monkeypatch):
     assert payload["trace"] == {"case_id": "universe_project"}
 
 
+def test_research_query_uses_requested_case_as_prompt_profile(monkeypatch):
+    seen = {}
+
+    def capture_request(req):
+        seen["prompt_profile_case_id"] = req.prompt_profile_case_id
+        return _two_citation_response(req)
+
+    monkeypatch.setattr(routes_research, "_require_case_access", lambda case_id, identity: None)
+    monkeypatch.setattr(routes_research, "_run_query", capture_request)
+    monkeypatch.setattr(research_hardening, "corpus_freshness", _freshness_ok)
+    client = _client(monkeypatch, token="case-prompt-token")
+
+    response = client.post(
+        "/v1/research/query",
+        headers={"Authorization": "Bearer case-prompt-token"},
+        json={"case_id": "universe_project", "query": "Hva vet vi?"},
+    )
+
+    assert response.status_code == 200
+    assert seen["prompt_profile_case_id"] == "universe_project"
+
+
+def test_research_query_rejects_cross_case_prompt_profile(monkeypatch):
+    monkeypatch.setattr(routes_research, "_require_case_access", lambda case_id, identity: None)
+    monkeypatch.setattr(research_hardening, "corpus_freshness", _freshness_ok)
+    client = _client(monkeypatch, token="cross-case-prompt-token")
+
+    response = client.post(
+        "/v1/research/query",
+        headers={"Authorization": "Bearer cross-case-prompt-token"},
+        json={
+            "case_id": "universe_project",
+            "query": "Hva vet vi?",
+            "prompt_profile_case_id": "universe_tools",
+        },
+    )
+
+    assert response.status_code == 400
+    assert response.json()["detail"] == "Research prompt profile must match the requested case."
+
+
 def test_research_query_fails_closed_on_citation_audit_violation(monkeypatch):
     def one_citation_response(req):
         del req

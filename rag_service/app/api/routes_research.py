@@ -379,6 +379,11 @@ def research_query(req: ResearchQueryRequest, identity: ResearchIdentity = Depen
     rate_limit = enforce_research_rate_limit(identity)
     _require_scope(identity, "research:read")
     _require_case_access(req.case_id, identity)
+    if req.prompt_profile_case_id and req.prompt_profile_case_id != req.case_id:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Research prompt profile must match the requested case.",
+        )
     query_req = QueryRequest(
         query=req.query,
         conversation_id=req.conversation_id,
@@ -386,7 +391,7 @@ def research_query(req: ResearchQueryRequest, identity: ResearchIdentity = Depen
         filters=req.filters or {},
         top_k=req.top_k,
         model_profile=req.model_profile,
-        prompt_profile_case_id=req.prompt_profile_case_id,
+        prompt_profile_case_id=req.case_id,
     )
     try:
         response = _run_query(query_req)
