@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The v16m interval-spectrum contrast persists under the qualified coarse event-footprint null on the same six primary histories.,supported,v16r_effect_existence_gate.csv;v16r_longer_footprint_gate.csv,posthoc same-history sensitivity conditional on a coarse qualified sampler
+C2,V16r is an independent replication on fresh histories.,unsupported,v16r_pre_registration.csv,observed v16m histories are reused
+C3,The contrast is independent of concrete resource identity or event mechanism.,unsupported,none,footprint does not preserve concrete resource identity and is not a causal mechanism proof
+C4,"The sampler is uniform, converged, stationary, independent, or representative.",unsupported,none,procedural qualification only
+C5,"Dimension, Lorentz symmetry, spacetime, continuum physics, particles, or entanglement were established.",unsupported,none,finite event-DAG structural sensitivity only

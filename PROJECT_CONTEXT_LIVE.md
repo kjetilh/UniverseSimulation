@@ -2887,6 +2887,23 @@ conflict: the minimum retained actual-conflict edge fraction was `0.899509`.
 No spectrum was computed. The next admissible step is a frozen posthoc v16m
 sensitivity gate under this qualified procedure.
 
+`v16r` completed that posthoc same-history sensitivity gate. On the six v16m
+primary histories, all `192/192` primary and `96/96` longer footprint-null
+perturbations passed integrity. The primary median JS effect ratio was
+`13.057562`, all `6/6` runs were positive, and all `6/6` had empirical
+`p <= 0.10`. The longer median ratio was `12.542120`, again positive in
+`6/6` runs.
+
+Status is
+`v16r_spectrum_contrast_persists_under_event_footprint_null`. This supports
+the narrow claim that coarse event-family/write-read namespace conditioning
+does not absorb the finite event-DAG interval-spectrum contrast on these six
+reused histories, conditional on the qualified sampler. It is not an
+independent replication and does not establish independence from concrete
+resource identity, a causal mechanism, sampler uniformity, dimension, or
+physical geometry. The next strong gate is a fresh-history holdout using the
+frozen footprint null from the start.
+
 ## Generatorstatus
 
 Den eldre generator-/storrelseskrisen ser ut til a vaere ryddet bort i den aktive kjeden.

@@ -1,0 +1,7 @@
+gate,status,observed,required,decision
+qualified_primary_footprint_perturbation_integrity,pass,192/192,192/192,continue
+posthoc_footprint_effect_existence,pass,median=13.057562;positive=1.000000;p_le_010=1.000000,median>=2;positive>=5/6;p_le_010>=1/2,persists
+qualified_longer_footprint_perturbation_integrity,pass,96/96,96/96,continue
+longer_footprint_consistency,pass,median=12.542120;positive=1.000000,median>=1;positive>=5/6,consistent
+independent_replication_exclusion,pass,same_v16m_histories,posthoc_sensitivity_only,do_not_count_as_new_replication
+v16r_overall,v16r_spectrum_contrast_persists_under_event_footprint_null,integrity=1;existence=1;longer=1,diagnostic_branch,v16r_spectrum_contrast_persists_under_event_footprint_null

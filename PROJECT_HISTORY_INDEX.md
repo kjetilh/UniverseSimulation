@@ -7540,3 +7540,42 @@ Viktige filer:
 - `Documentation/v16q_sampler_qualification.csv`
 - `Documentation/v16q_gate_evaluation.csv`
 - `Documentation/v16q_claim_ledger.csv`
+
+## 10cw. v16r viste at spektrumkontrasten bestaar den grove footprint-nullen posthoc
+
+`v16r` froes med digest
+`f0a96df3dab756a9c0aa6ed7409c8e03741a8fccaee08b0ae9267a0b185e31ac`.
+Den gjenbrukte de seks v16m-primaryhistoriene og deres observerte spektra, men
+erstattet strict-nullen med den v16q-kvalifiserte event-footprint-nullen. Dette
+er derfor en posthoc sensitivitetsanalyse, ikke en ny replikasjon.
+
+Resultatet var:
+
+- primary perturbation integrity: `192/192`
+- primary median JS effect ratio: `13.057562`
+- primary positiv retning: `6/6`
+- primary `p <= 0.10`: `6/6`
+- lengre perturbation integrity: `96/96`
+- lengre median JS effect ratio: `12.542120`
+- lengre positiv retning: `6/6`
+- minimum faktisk ressurskonfliktandel i nullene: omtrent `0.8997`
+- alle tail-mass-deltaer var negative
+
+Status er
+`v16r_spectrum_contrast_persists_under_event_footprint_null`. Den grove
+familie/write-read-namespace-strukturen absorberer ikke kontrasten paa disse
+historiene. Resultatet beviser ikke uavhengighet fra konkret ressursidentitet,
+kausal mekanisme, sampleruniformitet, dimensjon eller fysisk geometri. Neste
+sterke steg er en ny frosset holdout med footprint-nullen valgt paa forhaand.
+
+Viktige filer:
+
+- `relational_universe_v16r_event_footprint_sensitivity_gate.py`
+- `Documentation/v16r_event_footprint_sensitivity_gate.md`
+- `Documentation/v16r_event_footprint_run_summary.csv`
+- `Documentation/v16r_event_footprint_perturbation_integrity.csv`
+- `Documentation/v16r_effect_existence_gate.csv`
+- `Documentation/v16r_longer_footprint_gate.csv`
+- `Documentation/v16r_v16m_sensitivity_comparison.csv`
+- `Documentation/v16r_gate_evaluation.csv`
+- `Documentation/v16r_claim_ledger.csv`
