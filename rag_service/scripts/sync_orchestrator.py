@@ -15,7 +15,7 @@ import urllib.error
 import urllib.request
 
 
-DEFAULT_INCLUDE_GLOBS = ["**/*.md", "**/*.markdown", "**/*.txt", "**/*.html", "**/*.htm", "**/*.pdf", "**/*.docx"]
+DEFAULT_INCLUDE_GLOBS = ["**/*.md", "**/*.markdown", "**/*.txt", "**/*.csv", "**/*.html", "**/*.htm", "**/*.pdf", "**/*.docx"]
 DEFAULT_EXCLUDE_GLOBS = [
     "**/.git/**",
     "**/.venv/**",

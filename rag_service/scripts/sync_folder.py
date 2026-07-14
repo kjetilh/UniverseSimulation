@@ -14,7 +14,7 @@ from app.rag.index.indexer import ingest_file
 from app.rag.ingest.metadata import compute_hash
 from app.settings import settings
 
-SUPPORTED_EXTENSIONS = ["*.md", "*.markdown", "*.txt", "*.html", "*.htm", "*.pdf", "*.docx"]
+SUPPORTED_EXTENSIONS = ["*.md", "*.markdown", "*.txt", "*.csv", "*.html", "*.htm", "*.pdf", "*.docx"]
 
 
 def _is_within(path: Path, root: Path) -> bool:
