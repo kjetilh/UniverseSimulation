@@ -86,7 +86,7 @@ name = "UniverseSimulationToolDocs"
 repo_path = "/srv/ops/repos/UniverseSimulation"
 source_type = "universe_tools"
 target_subdir = "UniverseSimulation/tools"
-include = ["rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md", "rag_service/docs/RAG_SERVICE_API.md", "Documentation/EmergentUniverse_Public_Site_Runbook.md"]
+include = ["rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md", "rag_service/docs/RAG_SERVICE_API.md", "Documentation/EmergentUniverse_Public_Site_Runbook.md", "Documentation/Research_Round_Closure_Policy.md"]
 
 [[source]]
 name = "UniverseSimulationPromptProfiles"

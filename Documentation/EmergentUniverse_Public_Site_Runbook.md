@@ -1,5 +1,17 @@
 # Emergent Universe public site runbook
 
+## Mandatory per-round closure
+
+Every completed research round must be committed and pushed, then published to
+both this static archive and the separate UniverseSimulation RAG corpus. The
+round is not `published` until the live manifest revision matches the pushed
+commit, a new HTTPS artifact is readable, and a real token-scoped RAG query
+passes citation and freshness audits. See
+`Documentation/Research_Round_Closure_Policy.md`.
+
+If one publication surface is unavailable, report `publication_blocked`; do
+not infer static-site freshness from RAG freshness or vice versa.
+
 ## Purpose
 
 `emergentuniverse.haven.digipomps.org` publishes a static, scientific-style

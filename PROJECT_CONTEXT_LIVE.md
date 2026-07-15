@@ -6,6 +6,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
 
 - Filer pa disk er ground truth.
 - Nyere lokale `.py`, `.md` og `.csv`-filer overstyrer eldre promptoppsummeringer hvis de sier noe annet.
+- Hver fullforte forskningsrunde skal dokumenteres, verifiseres, committes og pushes, deretter publiseres baade i det statiske forskningsarkivet og den separate RAG-indeksen. Runden er ikke `published` foer live manifest-revisjon, nytt HTTPS-artefakt og en ekte token-scoped RAG-sporring med citation/freshness-audit er kontrollert. Se `Documentation/Research_Round_Closure_Policy.md`.
 - `focused_score` alene avgjor ikke frontier-vinnere.
 - `uavklart` er en legitim konklusjon hvis raw score, CI-low og pairwise peker ulikt.
 - Skill alltid mellom:

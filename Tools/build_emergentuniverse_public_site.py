@@ -43,6 +43,12 @@ DATASET_SPECS: list[dict[str, str]] = [
         "description": "Build, deployment, verification, and RAG exposure boundary for the public site.",
     },
     {
+        "source": "Documentation/Research_Round_Closure_Policy.md",
+        "category": "project_context",
+        "title": "Research round closure policy",
+        "description": "Mandatory commit, push, static archive, RAG sync, and live-verification contract.",
+    },
+    {
         "source": "Documentation/grundig-research-rapport-16.md",
         "category": "theory",
         "title": "Formal research report",

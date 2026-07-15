@@ -2,6 +2,11 @@
 
 Last source review: 2026-07-15.
 
+Every completed research round follows the mandatory closure contract in
+`Documentation/Research_Round_Closure_Policy.md`: verify, commit, push, deploy
+the revision-locked static bundle, sync RAG separately, and prove both surfaces
+live. Any missing gate is `publication_blocked`, not an implicit success.
+
 ## Choose the right entrypoint
 
 - Current status: `PROJECT_CONTEXT_LIVE.md`
