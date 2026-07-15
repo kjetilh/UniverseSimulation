@@ -762,6 +762,108 @@ DATASET_SPECS: list[dict[str, str]] = [
         "title": "v16v non-specialist summary",
         "description": "Plain-language distinction between global reconstruction and physics evidence.",
     },
+    {
+        "source": "Documentation/v16w_global_null_qualification_gate.md",
+        "category": "latest_causal_structure",
+        "title": "v16w global-null qualification gate",
+        "description": "Effect-blind replay, representation, diversity, center and objective-sensitivity gate.",
+    },
+    {
+        "source": "Documentation/v16w_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v16w interpretation audit",
+        "description": "Post-run decomposition preserving the frozen failure while separating valid sub-results.",
+    },
+    {
+        "source": "Documentation/v16w_interpretation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w interpretation audit data",
+        "description": "Machine-readable representation, diversity and objective-dependence diagnosis.",
+    },
+    {
+        "source": "Documentation/v16w_endpoint_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w endpoint audit",
+        "description": "Integrity and null-only feature rows for 288 global endpoints.",
+    },
+    {
+        "source": "Documentation/v16w_pairwise_endpoint_distance.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w pairwise endpoint distance",
+        "description": "Within-arm pairwise edge distance and Jaccard rows.",
+    },
+    {
+        "source": "Documentation/v16w_replay_and_order_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w replay and candidate-order audit",
+        "description": "Exact replay and LP candidate-column covariance checks.",
+    },
+    {
+        "source": "Documentation/v16w_role_relabel_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w semantic role relabel audit",
+        "description": "Event-family and resource-namespace relabel covariance checks.",
+    },
+    {
+        "source": "Documentation/v16w_batch_center_stability.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w batch-center stability",
+        "description": "First-half versus second-half null-only feature-center comparisons.",
+    },
+    {
+        "source": "Documentation/v16w_objective_sensitivity.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w objective sensitivity",
+        "description": "Retain-min versus pure-random-priority endpoint-center comparisons.",
+    },
+    {
+        "source": "Documentation/v16w_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w source qualification summary",
+        "description": "Per-source integrity, diversity, stability and objective qualification results.",
+    },
+    {
+        "source": "Documentation/v16w_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w gate evaluation",
+        "description": "Frozen machine-readable qualification result and decision.",
+    },
+    {
+        "source": "Documentation/v16w_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w claim ledger",
+        "description": "Supported finite subclaims and explicit unresolved distribution/effect claims.",
+    },
+    {
+        "source": "Documentation/v16w_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w preregistration",
+        "description": "Frozen endpoint budgets, thresholds, hashes and effect exclusions.",
+    },
+    {
+        "source": "Documentation/v16w_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v16w source chain",
+        "description": "SHA-256 chain linking qualification to frozen v16s and v16v artifacts.",
+    },
+    {
+        "source": "Documentation/v16w_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v16w next direction",
+        "description": "Frozen decision boundary after global-null qualification.",
+    },
+    {
+        "source": "Documentation/v0_16w_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v16w operational recommendation",
+        "description": "Concise stop decision before any independent-null effect test.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16w.md",
+        "category": "latest_causal_structure",
+        "title": "v16w non-specialist summary",
+        "description": "Plain-language explanation of the global-null procedure failure.",
+    },
 ]
 
 
@@ -958,6 +1060,10 @@ def write_site(
     global_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16v_gate_evaluation.csv")
     global_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16v_source_feasibility_summary.csv")
     global_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16v_claim_ledger.csv")
+    qualification_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16w_gate_evaluation.csv")
+    qualification_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16w_source_qualification_summary.csv")
+    qualification_audit_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16w_interpretation_audit.csv")
+    qualification_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16w_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -985,13 +1091,13 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate constructs complete control DAGs with an independent global edge-slot matching rather than a local switch path. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime, energy or temperature claim.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate rejects the current global edge-slot optimization procedure before any new effect test because endpoint selection depends on LP representation and objective. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime, energy or temperature claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">48 / 48</div><p class="muted">v16v global reconstructions passed exact integrity; every source produced 8/8 distinct endpoints.</p></div>
+      <div class="card"><div class="metric">8 / 24</div><p class="muted">v16w candidate-column covariance passed only 8/24 checks; no source effect was computed.</p></div>
     </section>
 
     <section>
@@ -1003,11 +1109,18 @@ def write_site(
       <p>v16t then tested the footprint-null procedure without computing any source spectrum or observed-effect metric. All frozen comparisons passed, but the required realized-effort audit found that direct short/reference/long averaged <code>993/1005/998</code> accepted swaps while staged averaged <code>2023</code>. The frozen pass is therefore a center-stability diagnostic; it does not separately establish chain-length or path-segmentation stability.</p>
       <p>v16u repaired that design effect-blind. All <code>384/384</code> null outputs passed integrity; direct <code>+2K</code> and staged <code>+K+K</code> used identical total accepted swaps after the same first <code>K</code> prefix in <code>96/96</code>. Exact-length stability passed <code>18/18</code> with maximum center-shift ratio <code>0.666516</code>; matched-path stability passed <code>6/6</code> with maximum ratio <code>0.180595</code> against the frozen limit <code>2.0</code>.</p>
       <p>v16v then used a separate global b-matching construction. All <code>48/48</code> endpoints preserved exact degree, depth, age-bin, event-footprint and per-child slot constraints. Every source produced <code>8/8</code> distinct endpoints, with minimum changed-edge fraction between <code>0.574426</code> and <code>0.630611</code>. This establishes finite construction feasibility and diversity, not a representative probability distribution.</p>
+      <p>v16w attempted to qualify that family without computing source spectra or effect metrics. All <code>288/288</code> endpoints passed structural integrity, semantic role relabel passed <code>24/24</code>, every source had unique fraction <code>1.000</code>, and half-batch centers passed <code>36/36</code>. Exact replay was <code>23/24</code>, candidate-column covariance only <code>8/24</code>, and objective sensitivity only <code>15/36</code>. The global procedure is therefore not qualified.</p>
+      <p>Across all six sources, source-edge fraction, concrete resource-conflict fraction, and within-ensemble pairwise distance shifted materially between source-retention minimization and pure random edge priority. This is evidence of null-procedure dependence, not evidence about the source spectrum.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current independent global-null feasibility gate</h2>
+      <h2>Current global-null qualification gate</h2>
+      {table_html(qualification_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(qualification_source_rows, ["growth_seed", "run_offset", "primary_unique_fraction", "primary_median_pairwise_change", "primary_candidate_union_coverage", "batch_center_pass", "objective_sensitivity_pass", "source_qualification_pass"])}
+      <h3>Required v16w interpretation audit</h3>
+      {table_html(qualification_audit_rows, ["audit_layer", "observed", "preregistered_requirement", "status", "interpretation"])}
+      <h3>Prior independent global-null feasibility gate</h3>
       {table_html(global_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(global_source_rows, ["growth_seed", "run_offset", "edge_count", "candidate_edge_count", "successful_reconstructions", "distinct_reconstruction_count", "minimum_changed_edge_fraction", "source_gate_pass"])}
       <h3>Prior exact matched-effort footprint-null gate</h3>
@@ -1041,6 +1154,7 @@ def write_site(
       <p>v16t compares only null ensembles. Its source spectra and observed/null effect statistics are excluded by preregistration, preventing the stability threshold or path selection from being tuned against the positive v16s result.</p>
       <p>v16u separates the 10% changed-edge burn-in from exact post-burn-in work. Its direct and staged 2K endpoints share the same K prefix and total accepted-swap effort but use different second-half RNG streams. This is a finite procedure-stability control, not proof of mixing or uniform sampling.</p>
       <p>v16v reconstructs each complete DAG as a global bipartite b-matching between exact parent out-degree capacity and per-child slot demand. It uses no local switch trajectory and excludes source spectra and observed-effect metrics. Feasibility and endpoint diversity do not by themselves define or qualify a sampling distribution.</p>
+      <p>v16w tests the global procedure under exact replay, candidate-column permutation, semantic role relabeling, larger endpoint ensembles, finite batch-center comparison, and an alternative random-priority objective. The frozen failure means optimization endpoints must not be treated as samples from a canonical null distribution.</p>
       <p>The separate units-of-action hypothesis treats local realized edit work, carrier occupancy and boundary flux as candidate microscopic inputs. Until a local balance law and reproducible intensive fluctuation parameter are demonstrated, the correct terms are action density and change intensity, not physical energy or temperature.</p>
     </section>
 
@@ -1051,6 +1165,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(qualification_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v16v feasibility claim ledger</h3>
       {table_html(global_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Prior v16u matched-effort claim ledger</h3>
       {table_html(matched_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}

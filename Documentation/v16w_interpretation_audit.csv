@@ -1,0 +1,16 @@
+audit_layer,observed,preregistered_requirement,status,interpretation
+endpoint_integrity,288/288,288/288,pass,All primary and sensitivity endpoints satisfy the frozen structural audits.
+effect_exclusion,switch=0;spectrum=0;effect=0,0;0;0,pass,The run is effect-blind and cannot update the v16s effect claim.
+exact_replay,23/24,24/24,fail,One nominally identical repeated solve selected another feasible optimum.
+candidate_column_covariance,8/24,24/24,fail,The LP endpoint usually depends on candidate-column representation despite edge-keyed costs.
+semantic_role_relabel,24/24,24/24,pass,Injective family/resource renaming preserved candidate sets and selected endpoints.
+unique_endpoints,6/6_sources_at_1.000,all_sources_at_least_0.900,pass,All primary endpoint hashes were distinct.
+median_pairwise_change,0.236959_to_0.320437,all_sources_at_least_0.200,pass,Primary endpoints are separated at the frozen pairwise threshold.
+candidate_union_coverage,5/6_sources_pass;range=0.199607_to_0.242365,all_sources_at_least_0.200,fail,One source missed the threshold narrowly; this is not the main qualification failure.
+effective_edge_support,6/6_sources_pass;range=0.120935_to_0.140574,all_sources_at_least_0.100,pass,Finite primary edge-use entropy passes the frozen floor.
+maximum_nonforced_inclusion,0/6_sources_pass;all=1.000,all_sources_at_most_0.950,fail,Local slot surplus did not exclude globally forced or concentrated edges; a global forced-edge audit is required before interpreting this as ensemble collapse.
+batch_center_stability,36/36,36/36,pass,All six null-only feature centers passed the first-half versus second-half threshold.
+objective_sensitivity,15/36,36/36,fail,Primary source-retention minimization and pure random priority select materially different endpoint ensembles.
+objective_source_edge_fraction,0/6_pass;primary=0.369389_to_0.425574;random=0.547672_to_0.605300,6/6,fail,The arbitrary objective strongly controls source-edge retention.
+objective_concrete_conflict_fraction,0/6_pass;primary=0.370086_to_0.426973;random=0.548230_to_0.608213,6/6,fail,The arbitrary objective strongly controls retention of actual concrete resource conflicts.
+objective_pairwise_change,0/6_pass;primary=0.236775_to_0.320464;random=0.393757_to_0.451343,6/6,fail,The arbitrary objective strongly controls within-ensemble separation.

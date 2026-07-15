@@ -1,0 +1,7 @@
+gate,status,observed,required,decision
+endpoint_integrity_and_effect_exclusion,pass,endpoints=288/288;switch=0;spectrum=0;effect=0,288/288;0;0;0,continue
+replay_and_representation_covariance,fail,replay_order=8/24;relabel=24/24,24/24;24/24,repair_representation_dependence
+primary_endpoint_diversity,fail,sources=0/6,6/6,family_collapsed_or_concentrated
+finite_batch_center_stability,pass,features=36/36,36/36,continue
+objective_sensitivity,fail,features=15/36,36/36,define_explicit_stochastic_measure
+v16w_overall,v16w_global_null_qualification_instrumentation_failed,integrity=1;replay=0;relabel=1;diversity=0;center=1;objective=0;exclusion=1,1;1;1;1;1;1;1,v16w_global_null_qualification_instrumentation_failed

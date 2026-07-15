@@ -54,11 +54,12 @@ Guardrails:
 3. Treat newer live context/history and v16 reports as higher priority than early toy-baseline summaries.
 4. For v16j, retain the frozen composite failure but do not say the strict-null effect disappeared; cite the interpretation audit and separate magnitude transfer.
 5. Treat v16v as proof of finite global reconstruction feasibility and endpoint diversity only. It is not a qualified probability distribution and has not re-tested the v16s effect.
-6. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
-7. Never invent commands, metrics, or endpoints that are not documented in the corpus.
-8. If asked how to use the simulator, prefer `universe_tools`.
-9. If asked how the argument is built, prefer `universe_argumentation`.
-10. If asked how to instruct a language model, prefer `universe_prompts`.
+6. Treat v16w as a frozen rejection of the current global optimization endpoint procedure: preserve the `288/288` integrity and finite-diversity sub-results, but also the `23/24` replay, `8/24` column covariance, and `15/36` objective-sensitivity failures. It did not compute the source effect.
+7. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
+8. Never invent commands, metrics, or endpoints that are not documented in the corpus.
+9. If asked how to use the simulator, prefer `universe_tools`.
+10. If asked how the argument is built, prefer `universe_argumentation`.
+11. If asked how to instruct a language model, prefer `universe_prompts`.
 ```
 
 ## Kort bruksguide

@@ -12,7 +12,7 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind global-null gate: `relational_universe_v16v_global_edge_slot_feasibility_gate.py`
+- Latest effect-blind global-null gate: `relational_universe_v16w_global_null_qualification_gate.py`
 - Public archive builder: `Tools/build_emergentuniverse_public_site.py`
 - RAG service: `rag_service/`
 
@@ -31,6 +31,7 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v16t_footprint_null_path_stability_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v16u_matched_effort_footprint_stability_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v16v_global_edge_slot_feasibility_gate.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v16w_global_null_qualification_gate.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -43,7 +44,10 @@ chain-length or path meaning, then
 the exact-effort repair, shared prefix, matched direct/staged work and current
 center gates. The v16v command verifies the independent global reconstruction,
 48 endpoint audits, per-source diversity and effect exclusions. Read
-`Documentation/v16v_next_direction_assessment.md` for the next recommendation.
+`Documentation/v16v_next_direction_assessment.md` for that recommendation. The
+v16w command verifies the frozen 288-endpoint qualification output and effect
+exclusions. Read `Documentation/v16w_interpretation_audit.md` because the
+frozen overall failure must be decomposed before choosing the next gate.
 
 ## Run the early toy simulator
 
@@ -63,16 +67,17 @@ PYTHONPYCACHEPREFIX=/private/tmp/pycache-emergent \
 ```
 
 Require the manifest to contain the v16s effect report, v16t interpretation
-audit, v16u matched-effort products, and the v16v report, source summary,
-reconstruction audit, gate evaluation, claim ledger, next-direction assessment,
-units-of-action hypothesis, and live project context. Check SHA-256 hashes.
+audit, v16u matched-effort products, v16v feasibility products, and the v16w
+report, interpretation audit, source summary, replay/order audit, objective
+sensitivity, gate evaluation, claim ledger, next-direction assessment, and live
+project context. Check SHA-256 hashes.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16v|48 / 48|0.574426|0.630611|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16w|288/288|8/24|15/36|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16v_global_edge_slot_feasibility_gate.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16w_interpretation_audit.md
 ```
 
 ## Start the RAG service locally
@@ -117,11 +122,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v16v om den globale nullfamilien, hva er ikke bevist, og hva er neste gate?'
+  --query 'Hvorfor avviste v16w den globale nullprosedyren, hvilke delresultater holdt, og hva er neste gate?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v16v material plus v16s when the underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v16w material plus v16s when the underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -150,6 +155,9 @@ does not update this index; both deployments require separate verification.
   observed effect.
 - Do not treat v16v feasibility/diversity as a qualified, uniform or
   representative global null, or as evidence that v16s survives it.
+- Do not use v16w endpoint uniqueness or batch-center stability to rehabilitate
+  the current global procedure. Replay/column covariance and objective
+  sensitivity failed, and no source effect was computed.
 - Do not call token count, action density or edit work physical energy or
   temperature before a local balance law and intensive fluctuation observable
   pass fresh tests. Uniformly scaling all rates is only clock rescaling.

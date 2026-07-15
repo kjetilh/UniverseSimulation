@@ -7771,3 +7771,68 @@ Viktige filer:
 - `Documentation/v16v_next_direction_assessment.md`
 - `Documentation/v16v_units_of_action_energy_temperature_hypothesis.md`
 - `Documentation/v0_16v_operativ_anbefaling.md`
+
+## 10db. v16w avviste dagens globale nullprosedyre foer effektinnsyn
+
+`v16w` ble froset med digest
+`95fcba308a3bdaf5ea453170b4253831ee8a8b621ddbd923b2c6f692e73f1a04`
+og script-hash
+`b4e01b9ccdd648e957d44cb5f90ebf0bf35cf7794ceea506120cf35a0bf48a5a`
+foer de seks kildene ble sendt til solver. Gaten brukte `32` primary
+retain-min-endepunkter og `16` random-priority-endepunkter per kilde, pluss
+replay-, kandidatkolonne- og rolle-relabel-kontroller. Source spectra og
+observed-effect metrics var forbudt.
+
+Resultatet var:
+
+- endpoint integrity: `288/288`
+- exact replay: `23/24`
+- candidate-column covariance: `8/24`
+- semantic role relabel: `24/24`
+- primary unique fraction: `1.000` paa alle seks kilder
+- median pairwise change: `0.236959` til `0.320437`
+- effective edge support ratio: `0.120935` til `0.140574`
+- finite half-batch center stability: `36/36`
+- objective sensitivity: `15/36`
+- local switch/source spectrum/effect calls: `0/0/0`
+
+Frossen status er
+`v16w_global_null_qualification_instrumentation_failed`. LP-endepunktet er ikke
+stabilt mot kandidatkolonne-representasjon, selv med edge-keyed kostnader, og
+én identisk replay valgte et annet feasible optimum. Dette er prosedyre- og
+numerikkviten, ikke fysisk asymmetri.
+
+Objective-auditen viste samtidig en sterk, konsistent designavhengighet. Paa
+alle seks kilder var source-edge fraction `0.369389` til `0.425574` under
+retain-min, men `0.547672` til `0.605300` under random priority. Concrete-
+conflict fraction og parvis endpoint-avstand skiftet tilsvarende. De grove
+edge-slot-constraintene lar dermed et arbitrært solverobjective styre hvor mye
+konkret kausal ressursstotte som beholdes.
+
+Den frosne diversity-gaten feilet ogsaa fordi én kilde laa like under union-
+coverage-grensen og alle hadde maksimum inclusion `1.000` blant lokalt
+"nonforced" kanter. Tolkningsauditen avgrenser dette: lokal slot-surplus beviser
+ikke at en kant er globalt valgfri under full parent-capacity matching.
+
+Beslutningen er aa ikke beregne v16s-effekten under dagens globale familie.
+Neste gate skal effect-blind etablere en eksakt representasjonsuavhengig
+prosedyre, auditere globalt tvungne kanter og definere en eksplisitt stokastisk
+fordeling over feasible matchinger. Concrete resource conflict maa enten
+bevares eller stratifieres eksplisitt.
+
+Viktige filer:
+
+- `relational_universe_v16w_global_null_qualification_gate.py`
+- `Documentation/v16w_global_null_qualification_gate.md`
+- `Documentation/v16w_interpretation_audit.md`
+- `Documentation/v16w_endpoint_audit.csv`
+- `Documentation/v16w_pairwise_endpoint_distance.csv`
+- `Documentation/v16w_replay_and_order_audit.csv`
+- `Documentation/v16w_role_relabel_audit.csv`
+- `Documentation/v16w_batch_center_stability.csv`
+- `Documentation/v16w_objective_sensitivity.csv`
+- `Documentation/v16w_source_qualification_summary.csv`
+- `Documentation/v16w_gate_evaluation.csv`
+- `Documentation/v16w_claim_ledger.csv`
+- `Documentation/v16w_next_direction_assessment.md`
+- `Documentation/v0_16w_operativ_anbefaling.md`

@@ -1,0 +1,7 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The v16w primary global procedure is exactly replayable and invariant to tested candidate-column and semantic-role relabel representations.,not_supported,v16w_replay_and_order_audit.csv;v16w_role_relabel_audit.csv,"tested finite sources, keyed objectives, four endpoint checks and four semantic relabels per source"
+C2,The v16w primary global procedure produces a diverse finite endpoint ensemble with stable half-batch centers.,not_supported,v16w_source_qualification_summary.csv;v16w_batch_center_stability.csv,32 endpoints per each of six frozen source DAGs
+C3,The global endpoint family is insensitive to replacing source-retention minimization with pure random edge priority.,not_supported,v16w_objective_sensitivity.csv,six null-only center features and the frozen range-ratio threshold
+C4,"The global null is a uniform, stationary, maximum-entropy or representative probability distribution.",unsupported,none,finite procedure qualification cannot establish these properties
+C5,The v16s observed spectrum contrast survives the qualified global null.,not_evaluated,v16w_gate_evaluation.csv,source spectra and effect metrics were prohibited
+C6,"The result establishes physical energy, temperature, geometry or spacetime.",unsupported,none,effect-blind finite event-DAG procedure audit only

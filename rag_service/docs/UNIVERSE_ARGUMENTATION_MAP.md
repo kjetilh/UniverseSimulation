@@ -51,10 +51,13 @@ not an exact realization of every DPO/CTMC statement in the research report.
 - v16v showed effect-blind that all six sources admit multiple complete global
   edge-slot reconstructions independent of the local switch path: `48/48`
   integrity passes and `8/8` distinct endpoints per source.
+- v16w showed that finite endpoint diversity is not enough to qualify that
+  global family. Structural integrity passed `288/288`, but candidate-column
+  covariance was only `8/24` and objective sensitivity only `15/36`.
 
-The global construction is feasible and diverse, but is not yet a qualified or
-representative probability distribution. It has not yet tested whether the
-v16s effect survives.
+The global feasible set is nontrivial, but the current optimization endpoint
+procedure is representation- and objective-dependent. It is rejected before
+testing whether the v16s effect survives.
 
 ## What has been explained away or remains negative
 
@@ -96,7 +99,10 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is effect-blind qualification of the frozen v16v
-global edge-slot family. The units-of-action energy/cooling question is a
-promising later mechanism gate, but must not bypass null qualification or use
-uniform clock-rate scaling as a temperature intervention.
+The best current next test is effect-blind construction and qualification of an
+explicit stochastic measure over feasible global matchings, with exact
+representation-independent selection, globally forced-edge auditing, and
+concrete-conflict preservation or stratification. The units-of-action
+energy/cooling question remains a promising later mechanism gate, but must not
+bypass null qualification or use uniform clock-rate scaling as a temperature
+intervention.

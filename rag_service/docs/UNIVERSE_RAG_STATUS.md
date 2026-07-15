@@ -62,24 +62,31 @@ not outrank later executed gates.
   passed exact integrity. Every source produced `8/8` distinct endpoints; the
   minimum changed-edge fraction per source ranged from `0.574426` to
   `0.630611`.
+- v16w attempted to qualify that family effect-blind. Endpoint integrity passed
+  `288/288`, semantic role relabel passed `24/24`, primary unique fraction was
+  `1.000` for every source, and half-batch center stability passed `36/36`.
+  Exact replay was `23/24`, candidate-column covariance only `8/24`, and
+  objective sensitivity only `15/36`. The current global procedure is not
+  qualified.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_independent_global_null_construction_feasible_but_not_yet_qualified`. See
+`fresh_event_footprint_spectrum_contrast_with_global_null_feasible_but_current_optimization_procedure_rejected_effect_blind`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v16v_global_edge_slot_feasibility_gate.md`. This remains finite
-event-DAG structure: the global family is constructible and diverse, but has
-not been qualified as a representative probability distribution and has not
-been used for an effect test. It is not a validated energy, temperature,
+`Documentation/v16w_interpretation_audit.md`. This remains finite event-DAG
+structure: the global feasible set is nontrivial, but floating-LP endpoint
+selection is representation- and objective-dependent and has not been used for
+an effect test. It is not a validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Run v16w as an effect-blind qualification of the frozen global edge-slot null.
-Increase endpoint count and test replay, relabel invariance, endpoint diversity,
-and within-family center stability while still excluding every source spectrum
-and observed-effect metric. Only after qualification may one preregister a
-single independent-null effect test.
+Do not compute the source spectrum under the current global family. Define an
+explicit stochastic measure over feasible global b-matchings and use an exact,
+representation-independent selection procedure. Audit globally forced edges
+instead of inferring freedom from local slot surplus, and preserve or stratify
+concrete resource conflicts. Repeat replay, representation, diversity and
+objective checks effect-blind before any independent-null effect test.
 
 The separate units-of-action hypothesis is an open proposal, not a result. The
 repo supports a future test of local edit work, action-carrier density and
