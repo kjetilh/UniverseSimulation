@@ -1,0 +1,5 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The finite event-DAG interval-spectrum contrast replicated on fresh histories under the preselected qualified event-footprint null.,supported,v16s_effect_existence_gate.csv;v16s_longer_footprint_gate.csv,six finite fresh histories conditional on a coarse qualified sampler
+C2,The contrast is independent of concrete resource identity or establishes a causal event mechanism.,unsupported,none,the footprint does not preserve concrete resource identity
+C3,"The sampler is uniform, converged, stationary, independent, or representative.",unsupported,none,procedural qualification only
+C4,"Dimension, Lorentz symmetry, spacetime, continuum physics, particles, or entanglement were established.",unsupported,none,finite event-DAG structural diagnostic only

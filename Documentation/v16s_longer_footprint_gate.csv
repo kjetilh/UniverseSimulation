@@ -1,0 +1,2 @@
+stage,primary_arm,n_runs,target_swap_multiplier,null_replicates_per_run,median_js_effect_ratio,positive_fraction,perturbation_integrity_pass,min_median_effect_ratio,min_positive_fraction,longer_perturbation_consistency_pass
+v16s,exposure_matched_local,6,0.1,16,12.054418239476494,1.0,1,1.0,0.8333333333333334,1

@@ -7579,3 +7579,43 @@ Viktige filer:
 - `Documentation/v16r_v16m_sensitivity_comparison.csv`
 - `Documentation/v16r_gate_evaluation.csv`
 - `Documentation/v16r_claim_ledger.csv`
+
+## 10cx. v16s replikerte footprint-null-kontrasten paa ferske historier
+
+`v16s` froes med digest
+`06527575422c91ed0c950742e3b0c74686d14c6c738342040f7605da48d30989`.
+Foerst etter freeze genererte den seks nye `exposure_matched_local`-historier
+med growth seeds `9365/9299` og offsets `123078/127341/123403`. Footprint-
+nullen, `32+16` replikater, tak `60`, terskler og kildehashes var valgt paa
+forhaand.
+
+Resultatet var:
+
+- fresh history/replay/rate integrity: pass
+- primary perturbation integrity: `192/192`
+- primary median JS effect ratio: `11.999282`
+- primary positiv retning: `6/6`
+- primary empirical `p = 1/33`: `6/6`
+- lengre perturbation integrity: `96/96`
+- lengre median JS effect ratio: `12.054418`
+- lengre positiv retning: `6/6`
+- alle tail-mass-deltaer negative
+
+Status er `v16s_fresh_event_footprint_spectrum_contrast_replicated`. Den
+avgrensede event-DAG fullspektrumkontrasten er naa replikert paa ferske data
+med den grove footprint-nullen valgt foer historiene ble laget. Dette er ikke
+bevis for konkret ressursuavhengighet, sampleruniformitet, dimensjon, Lorentz,
+spacetime eller fysikk. Neste gate boer teste nullsamplerens path-/kjedelengde-
+stabilitet effect-blind foer mer skala brukes.
+
+Viktige filer:
+
+- `relational_universe_v16s_fresh_event_footprint_holdout.py`
+- `Documentation/v16s_fresh_event_footprint_holdout.md`
+- `Documentation/v16s_event_footprint_run_summary.csv`
+- `Documentation/v16s_effect_existence_gate.csv`
+- `Documentation/v16s_longer_footprint_gate.csv`
+- `Documentation/v16s_anchor_comparison.csv`
+- `Documentation/v16s_gate_evaluation.csv`
+- `Documentation/v16s_claim_ledger.csv`
+- `Documentation/v16o_v16s_direction_and_execution_report.md`

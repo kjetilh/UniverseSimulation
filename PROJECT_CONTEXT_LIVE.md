@@ -2904,6 +2904,27 @@ resource identity, a causal mechanism, sampler uniformity, dimension, or
 physical geometry. The next strong gate is a fresh-history holdout using the
 frozen footprint null from the start.
 
+`v16s` completed that fresh holdout after freezing new growth seeds
+`9365/9299`, offsets `123078/127341/123403`, the primary arm, null counts,
+thresholds, sampler ceiling, and source hashes. All six histories were new.
+History/replay/rate integrity passed, as did all `192/192` primary and `96/96`
+longer footprint-null perturbations.
+
+The primary median JS effect ratio was `11.999282`; all `6/6` runs were
+positive and all had empirical `p = 1/33`. The longer median was `12.054418`,
+positive in `6/6`. All tail-mass deltas were negative. Status is
+`v16s_fresh_event_footprint_spectrum_contrast_replicated`.
+
+The strongest live claim is now a repeatable finite event-DAG full-spectrum
+contrast under both the strict degree/depth/age null and a qualified coarse
+event-footprint null. It remains conditional on finite switch procedures. It
+does not establish concrete-resource independence, sampler mixing/uniformity,
+dimension, manifoldlikeness, Lorentz symmetry, spacetime, particles,
+entanglement, or physical law. The next highest-value gate is effect-blind
+footprint-sampler path-length/start stabilization, not another identical
+holdout or immediate scale-up. See
+`Documentation/v16o_v16s_direction_and_execution_report.md`.
+
 ## Generatorstatus
 
 Den eldre generator-/storrelseskrisen ser ut til a vaere ryddet bort i den aktive kjeden.

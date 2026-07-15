@@ -1,0 +1,7 @@
+growth_seed,run_offset,arm,run_seed,events,support_mismatch_events,context_failures,edge_set_equal,depth_sequence_equal,final_structure_equal,relabel_pass,coarse_map_transport_pass
+9365,123078,exposure_matched_local,1993773078,3072,0,0,1,1,1,1,1
+9365,127341,exposure_matched_local,1993777341,3072,0,0,1,1,1,1,1
+9365,123403,exposure_matched_local,1993773403,3072,0,0,1,1,1,1,1
+9299,123078,exposure_matched_local,1993113078,3072,0,0,1,1,1,1,1
+9299,127341,exposure_matched_local,1993117341,3072,0,0,1,1,1,1,1
+9299,123403,exposure_matched_local,1993113403,3072,0,0,1,1,1,1,1

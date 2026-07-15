@@ -1,0 +1,7 @@
+gate,status,observed,required,decision
+fresh_history_integrity,pass,runs=6;events=18432;replays=12,runs=6;events=18432;replays=12,continue
+qualified_primary_footprint_perturbation_integrity,pass,192/192,192/192,continue
+fresh_footprint_effect_existence,pass,median=11.999282;positive=1.000000;p_le_010=1.000000,median>=2;positive>=5/6;p_le_010>=1/2,replicated
+qualified_longer_footprint_perturbation_integrity,pass,96/96,96/96,continue
+longer_footprint_consistency,pass,median=12.054418;positive=1.000000,median>=1;positive>=5/6,consistent
+v16s_overall,v16s_fresh_event_footprint_spectrum_contrast_replicated,history=1;existence=1;longer=1,1;1;1,v16s_fresh_event_footprint_spectrum_contrast_replicated

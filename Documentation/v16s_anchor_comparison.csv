@@ -1,0 +1,4 @@
+anchor,median_js_effect_ratio,fresh_v16s_over_anchor,confirmatory_gate,interpretation
+v16m_strict_null_fresh_holdout,12.417733656877559,0.9663021268236945,0,descriptive_only
+v16r_footprint_null_posthoc,13.057562100866235,0.9189527379061769,0,descriptive_only
+v16s_footprint_null_fresh_holdout,11.999282442970959,1.0,0,descriptive_only
