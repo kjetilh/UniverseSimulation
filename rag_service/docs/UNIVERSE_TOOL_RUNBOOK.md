@@ -1,13 +1,13 @@
 # UniverseSimulation Tool Runbook
 
-Last source review: 2026-07-14.
+Last source review: 2026-07-15.
 
 ## Choose the right entrypoint
 
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest strict-null gate: `relational_universe_v16j_interval_strict_null_gate.py`
+- Latest fresh footprint-null gate: `relational_universe_v16s_fresh_event_footprint_holdout.py`
 - Public archive builder: `Tools/build_emergentuniverse_public_site.py`
 - RAG service: `rag_service/`
 
@@ -21,11 +21,14 @@ From the repository root, using the environment that provides `networkx`:
 ```bash
 /opt/anaconda3/bin/python relational_universe_v16i_causal_interval_abundance_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v16j_interval_strict_null_gate.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v16q_event_footprint_null_calibration.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v16s_fresh_event_footprint_holdout.py --verify-only
 ```
 
-The v16j command verifies the frozen binary gate products. Read
-`Documentation/v16j_interpretation_audit.md` as the required semantic
-decomposition of effect existence versus effect-size transfer.
+The v16q command verifies effect-blind footprint-sampler qualification. The
+v16s command verifies the newest fresh histories, null integrity and spectrum
+gates. Read `Documentation/v16o_v16s_direction_and_execution_report.md` for the
+required mechanism/null sequence and claim boundaries.
 
 ## Run the early toy simulator
 
@@ -44,16 +47,16 @@ PYTHONPYCACHEPREFIX=/private/tmp/pycache-emergent \
   --out /tmp/emergentuniverse_public
 ```
 
-Require the manifest to contain the current v16j report, interpretation audit,
-gate evaluation, and live project context. Check their SHA-256 hashes against
-the repository before deployment.
+Require the manifest to contain the v16s report, effect gate, gate evaluation,
+claim ledger, direction report, and live project context. Check their SHA-256
+hashes against the repository before deployment.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16j|magnitude transfer|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16s|11.999282|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16j_interpretation_audit.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16s_fresh_event_footprint_holdout.md
 ```
 
 ## Start the RAG service locally
@@ -98,11 +101,12 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v16j, og hvilken del av den frosne gaten feilet?'
+  --query 'Hva viste v16s, hvilke null-invarianter ble bevart, og hva er fortsatt uavklart?'
 ```
 
-The answer must include citation/freshness audit metadata and cite current v16j
-material. `--skip-query` is not sufficient for freshness verification.
+The answer must include citation/freshness audit metadata and cite current
+v16q/v16s material. `--skip-query` is not sufficient for freshness
+verification.
 
 ## Production instance boundary
 
@@ -118,5 +122,6 @@ does not update this index; both deployments require separate verification.
 - Do not treat a generator/replay pass as physics.
 - Do not treat the v16j frozen composite failure as disappearance of the local
   strict-null effect.
-- Do not treat the local strict-null effect as dimension, manifold, Lorentz
-  symmetry, spacetime, particles, entanglement, or continuum evidence.
+- Do not treat the v16s footprint-null replication as sampler uniformity,
+  concrete-resource independence, dimension, manifold, Lorentz symmetry,
+  spacetime, particles, entanglement, or continuum evidence.

@@ -1,6 +1,6 @@
 # UniverseSimulation RAG Status
 
-Last source review: 2026-07-14.
+Last source review: 2026-07-15.
 
 ## Source-of-truth order
 
@@ -31,18 +31,34 @@ not outrank later executed gates.
   All 12 holdout runs had effect ratio above 1 and `p=1/33`.
 - The frozen v16j composite gate still failed because the v16h/v16d effect-size
   ratio was `0.469661`, below its preregistered lower bound `0.5`.
+- v16m independently replicated the strict-null contrast on new histories with
+  a qualified attempt ceiling.
+- v16o showed that the proposed concrete-resource-conflict edge-color null was
+  structurally immobile. v16p found broad static support for a weaker event-
+  footprint null, and v16q qualified that procedure effect-blind at `60`
+  attempts per edge with `288/288` perturbations passing.
+- v16r retained the spectrum contrast under that footprint null on the reused
+  v16m histories. v16s then replicated it on six new histories with the null
+  selected before generation: median JS effect ratio `11.999282`, positive
+  direction and empirical `p=1/33` in `6/6`, with longer median `12.054418`.
+- All v16s tail-mass deltas were negative. The result is a full-spectrum
+  contrast, not excess large intervals.
 
-The correct concise reading is
-`strict_null_contrast_supported_magnitude_transfer_not_stable`. See
-`Documentation/v16j_interpretation_audit.md`. This is finite-event-poset
-structure, not a validated dimension, manifold, Lorentz symmetry, physical
-time, continuum, particle, entanglement, or spacetime result.
+The correct concise current reading is
+`fresh_event_footprint_spectrum_contrast_replicated`. See
+`Documentation/v16s_fresh_event_footprint_holdout.md` and
+`Documentation/v16o_v16s_direction_and_execution_report.md`. This remains
+finite event-DAG structure conditional on constrained switch procedures, not a
+validated dimension, manifold, Lorentz symmetry, physical time, continuum,
+particle, entanglement, or spacetime result.
 
 ## Current next gate
 
-Run one fresh-history replication of the frozen interval observable and strict
-null. Preregister effect existence and effect-size stability as separate
-outcomes. Do not increase target or fit a dimension before that replication.
+Run an effect-blind path/start/chain-length stabilization gate for the
+footprint sampler. Do not spend the next budget on another identical six-run
+holdout, immediate scale-up, or dimension fitting. If the null centers
+stabilize, seek a separately constructed null family before physics-facing
+interpretation.
 
 ## RAG corpus layout
 

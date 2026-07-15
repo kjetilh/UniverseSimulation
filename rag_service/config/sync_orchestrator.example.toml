@@ -9,7 +9,7 @@ admin_api_key_env = "UNIVERSE_ADMIN_API_KEY"
 request_timeout_sec = 120
 fetch_coverage_actions = true
 
-include_default = ["**/*.md", "**/*.markdown", "**/*.txt", "**/*.html", "**/*.htm", "**/*.pdf", "**/*.docx"]
+include_default = ["**/*.md", "**/*.markdown", "**/*.txt", "**/*.csv", "**/*.html", "**/*.htm", "**/*.pdf", "**/*.docx"]
 exclude_default = ["**/.git/**", "**/.venv/**", "**/node_modules/**", "**/__pycache__/**", "**/.build/**", "**/.swiftpm/**"]
 
 [[source]]
@@ -17,7 +17,7 @@ name = "UniverseSimulationResearchReport"
 repo_path = "/srv/ops/repos/UniverseSimulation"
 source_type = "universe_argumentation"
 target_subdir = "UniverseSimulation/research_report"
-include = ["Documentation/grundig-research-rapport-16.md", "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md"]
+include = ["Documentation/grundig-research-rapport-16.md", "Documentation/v16o_v16s_direction_and_execution_report.md", "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md"]
 
 [[source]]
 name = "UniverseSimulationProjectStatus"
@@ -42,6 +42,22 @@ include = [
   "Documentation/v16j_gate_evaluation.csv",
   "Documentation/v16j_local_strict_null_gate.csv",
   "Documentation/v16j_calibration_transfer.csv",
+  "Documentation/v16m_qualified_sampler_fresh_holdout.md",
+  "Documentation/v16m_effect_existence_gate.csv",
+  "Documentation/v16m_gate_evaluation.csv",
+  "Documentation/v16q_event_footprint_null_calibration.md",
+  "Documentation/v16q_sampler_qualification.csv",
+  "Documentation/v16q_gate_evaluation.csv",
+  "Documentation/v16r_event_footprint_sensitivity_gate.md",
+  "Documentation/v16r_effect_existence_gate.csv",
+  "Documentation/v16r_gate_evaluation.csv",
+  "Documentation/v16s_fresh_event_footprint_holdout.md",
+  "Documentation/v16s_event_footprint_run_summary.csv",
+  "Documentation/v16s_effect_existence_gate.csv",
+  "Documentation/v16s_longer_footprint_gate.csv",
+  "Documentation/v16s_anchor_comparison.csv",
+  "Documentation/v16s_gate_evaluation.csv",
+  "Documentation/v16s_claim_ledger.csv",
 ]
 
 [[source]]
