@@ -7672,3 +7672,49 @@ Viktige filer:
 - `Documentation/v16t_realized_effort_interpretation_audit.md`
 - `Documentation/v16t_realized_effort_interpretation_audit.csv`
 - `Documentation/v16t_next_direction_assessment.md`
+
+## 10cz. v16u lukket v16t-konfunderingen med eksakt matched effort
+
+`v16u` froes med digest
+`e0a1c001b7879ff5794f2ed7e8a5916cd4603fd8d3aa39369b241be72ed940f6`.
+Den brukte `10%` change kun som burn-in og forgrenet deretter hver av de seks
+frosne v16s-DAGene i `16` replikater med
+`K = ceil(0.100 * source edge count)` som eksakt accepted-swap-enhet.
+
+Direct `+2K` og staged `+K+K` delte det samme eksakte `K`-prefikset. Staged
+reset RNG-stroemmen bare i andre halvdel, slik at path-sammenligningen hadde
+identisk forhistorie og identisk realisert totalinnsats.
+
+Resultatet var:
+
+- perturbation integrity: `384/384`
+- exact increment realization: `96/96`
+- direct/staged effort difference: `0` i `96/96`
+- shared prefix: `96/96`
+- direct/staged endepunkter var ulike grafer: `96/96`
+- realized-length stability: `18/18`
+- maksimal realized-length center-shift ratio: `0.666516`
+- matched-effort path stability: `6/6`
+- maksimal path center-shift ratio: `0.180595`
+- frossen grense: `2.0`
+- source spectra og observed-effect metrics beregnet: `0`
+
+Status er
+`v16u_footprint_null_centers_stable_under_exact_matched_effort`. Dette lukker
+den konkrete v16t-designfeilen og styrker prosedyregrunnlaget for den lokale
+footprint-nullen. Det beviser ikke mixing, uniform sampling eller at v16s-
+kontrasten overlever en uavhengig konstruert nullfamilie. Neste gate er derfor
+en effect-blind feasibility-/diversitetsaudit for global constrained edge-slot
+reconstruction uten kall til v16q sin lokale switch-kjede.
+
+Viktige filer:
+
+- `relational_universe_v16u_matched_effort_footprint_stability_gate.py`
+- `Documentation/v16u_matched_effort_footprint_stability_gate.md`
+- `Documentation/v16u_realized_effort_audit.csv`
+- `Documentation/v16u_matched_effort_perturbation_audit.csv`
+- `Documentation/v16u_null_center_comparison.csv`
+- `Documentation/v16u_gate_evaluation.csv`
+- `Documentation/v16u_claim_ledger.csv`
+- `Documentation/v16u_next_direction_assessment.md`
+- `Documentation/v0_16u_operativ_anbefaling.md`

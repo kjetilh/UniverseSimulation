@@ -17,7 +17,7 @@ name = "UniverseSimulationResearchReport"
 repo_path = "/srv/ops/repos/UniverseSimulation"
 source_type = "universe_argumentation"
 target_subdir = "UniverseSimulation/research_report"
-include = ["Documentation/grundig-research-rapport-16.md", "Documentation/v16o_v16s_direction_and_execution_report.md", "Documentation/v16t_next_direction_assessment.md", "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md"]
+include = ["Documentation/grundig-research-rapport-16.md", "Documentation/v16o_v16s_direction_and_execution_report.md", "Documentation/v16t_next_direction_assessment.md", "Documentation/v16u_next_direction_assessment.md", "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md"]
 
 [[source]]
 name = "UniverseSimulationProjectStatus"
@@ -66,6 +66,13 @@ include = [
   "Documentation/v16t_claim_ledger.csv",
   "Documentation/v16t_realized_effort_interpretation_audit.md",
   "Documentation/v16t_realized_effort_interpretation_audit.csv",
+  "Documentation/v16u_matched_effort_footprint_stability_gate.md",
+  "Documentation/v0_16u_operativ_anbefaling.md",
+  "Documentation/v16u_null_protocol_summary.csv",
+  "Documentation/v16u_null_center_comparison.csv",
+  "Documentation/v16u_realized_effort_audit.csv",
+  "Documentation/v16u_gate_evaluation.csv",
+  "Documentation/v16u_claim_ledger.csv",
 ]
 
 [[source]]

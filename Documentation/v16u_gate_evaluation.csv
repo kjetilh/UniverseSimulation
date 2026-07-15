@@ -1,0 +1,10 @@
+gate,status,observed,required,decision
+frozen_source_integrity,pass,source_dags=6,source_dags=6,continue
+all_protocol_perturbation_integrity,pass,384/384,384/384,continue
+exact_increment_realization,pass,96/96,96/96,continue
+direct_staged_matched_effort,pass,96/96;max_abs_difference=0,96/96;difference=0,continue
+shared_k_prefix,pass,96/96,96/96,continue
+exact_realized_length_null_center_stability,pass,18/18;max_ratio=0.666516,18/18;ratio<=2.0,stable
+matched_effort_path_segmentation_stability,pass,6/6;max_ratio=0.180595,6/6;ratio<=2.0,stable
+observed_spectrum_and_effect_exclusion,pass,source_spectra=0;observed_effect_metrics=0,0;0,effect_blind
+v16u_overall,v16u_footprint_null_centers_stable_under_exact_matched_effort,integrity=1;effort=1;length=1;path=1,1;1;1;1,v16u_footprint_null_centers_stable_under_exact_matched_effort

@@ -52,22 +52,27 @@ not outrank later executed gates.
   short/reference/long averaged `993/1005/998` accepted swaps, while staged
   averaged `2023`. Direct length was not separated, and path segmentation was
   confounded with extra effort.
+- v16u repaired that confound effect-blind. All `384/384` outputs and `96/96`
+  exact-effort branches passed; direct `+2K` and staged `+K+K` differed by zero
+  accepted swaps after the same prefix in every branch. Realized-length center
+  stability passed `18/18` with maximum ratio `0.666516`; matched-path stability
+  passed `6/6` with maximum ratio `0.180595` against the frozen limit `2.0`.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_replicated_with_v16t_length_path_decomposition_inconclusive`. See
+`fresh_event_footprint_spectrum_contrast_replicated_with_v16u_exact_matched_effort_null_stability`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v16t_realized_effort_interpretation_audit.md`. This remains
+`Documentation/v16u_matched_effort_footprint_stability_gate.md`. This remains
 finite event-DAG structure conditional on constrained switch procedures, not a
 validated dimension, manifold, Lorentz symmetry, physical time, continuum,
 particle, entanglement, or spacetime result.
 
 ## Current next gate
 
-Repair the effect-blind stability design before an independent null: use the
-existing `10%` change rule as burn-in, then branch to exact `+K` and `+2K`
-accepted-swap checkpoints and compare direct `+2K` with staged `+K+K` at
-matched effort. Compute no source spectrum, observed-effect metric, dimension
-fit, or scale-up.
+Run an effect-blind feasibility and diversity audit for a globally reconstructed
+event-DAG null that does not call the v16q local switch chain. Preserve the
+declared degree, depth, age-bin and event-footprint constraints through a
+global edge-slot assignment. Compute no source spectrum, observed-effect
+metric, dimension fit, or scale-up.
 
 ## RAG corpus layout
 

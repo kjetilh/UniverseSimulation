@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The v16u direct +2K and staged +K+K endpoints used exactly matched accepted-swap effort after an identical K prefix.,supported,v16u_realized_effort_audit.csv,six frozen finite source DAGs and sixteen branches each
+C2,"The event-footprint null center is stable across burn-in, exact +K, exact +2K, and prefix-matched +K+K under the frozen ratio gate.",supported,v16u_null_center_comparison.csv;v16u_gate_evaluation.csv,"tested effort range, finite null ensembles, and this local switch family"
+C3,The v16s observed spectrum contrast was replicated or re-evaluated in v16u.,not_evaluated,v16u_gate_evaluation.csv,source spectra and observed-effect metrics were excluded
+C4,"The footprint sampler is irreducible, mixed, converged, stationary, representative, or uniform.",unsupported,none,finite center stability is not a Markov-chain proof
+C5,"Dimension, Lorentz symmetry, spacetime, particles, entanglement, invariants, or physical laws were established.",unsupported,none,null-sampler instrumentation only

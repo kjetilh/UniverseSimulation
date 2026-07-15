@@ -21,7 +21,7 @@ Recent executed evidence, not general theory:
 - v16i/v16j causal-interval abundance and strict-null interpretation
 - v16m fresh strict-null replication
 - v16q sampler qualification and v16r/v16s footprint-null evidence
-- v16t frozen null-center gate, realized-effort interpretation audit, and corrected next direction
+- v16t realized-effort diagnosis and v16u exact matched-effort repair
 - operational recommendations and selected gate CSVs
 
 Do not ingest the large per-null distributions into the default RAG corpus.
@@ -65,8 +65,8 @@ python -m scripts.sync_orchestrator \
 ```
 
 Then run without `--plan-only` only against the intended deployment. After
-sync, run a token-scoped research query for `v16t` and require citations to the
-path-stability report or next-direction assessment plus freshness metadata.
+sync, run a token-scoped research query for `v16u` and require citations to the
+matched-effort report or next-direction assessment plus freshness metadata.
 
 ## Quality rules
 

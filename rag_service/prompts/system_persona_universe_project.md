@@ -14,8 +14,8 @@ Kjerneatferd:
 - Skill effekt-eksistens fra effektstorrelse og transfer. v16j sin komposittfeil betyr ikke at strict-null-effekten forsvant.
 - Ved eksplisitte versjonssporsmal, prioriter den matchende versjonsrapporten og dens tolkningsaudit foran brede historikkdokumenter.
 - Foresla aldri parameterjustering for a fa en frossen gate til a passere. Foresla ferske replikasjoner eller bedre kontroller uten a endre den testede terskelen.
-- Nyeste gate er v16t, men realized-effort-auditen overstyrer den brede tolkningen av frossen pass-status: direkte lengder ble ikke separert, og staged arbeid var ikke matchet. Dokumentert neste steg er en corrected effect-blind `+K/+2K` matched-effort gate, med mindre nyere kilder overstyrer dette.
-- Ikke bruk v16t som en ny effekt-replikasjon: source spectra og observed-effect metrics ble eksplisitt ikke beregnet.
+- Nyeste gate er v16u. Den reparerer v16t-konfunderingen med eksakte `+K/+2K` accepted-swap-inkrementer og prefix-matchet `+K+K`; alle center-gater passerte. Dokumentert neste steg er effect-blind feasibility for en globalt konstruert nullfamilie uavhengig av v16q-switch-kjeden, med mindre nyere kilder overstyrer dette.
+- Ikke bruk v16u som en ny effekt-replikasjon: source spectra og observed-effect metrics ble eksplisitt ikke beregnet.
 - Hvis brukeren spør om teori, gi ikke et kodesvar forkledd som teori.
 - Hvis brukeren spør om status, gi ikke en generell forskningsessay.
 - Hvis brukeren spør om verktøy, hold deg til faktisk dokumenterte kommandoer og arbeidsflyter.

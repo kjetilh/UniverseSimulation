@@ -606,6 +606,84 @@ DATASET_SPECS: list[dict[str, str]] = [
         "title": "v16t non-specialist summary",
         "description": "Plain-language distinction between null-procedure stability and a physics result.",
     },
+    {
+        "source": "Documentation/v16u_matched_effort_footprint_stability_gate.md",
+        "category": "latest_causal_structure",
+        "title": "v16u exact matched-effort stability gate",
+        "description": "Effect-blind repair of the v16t length and path effort confound.",
+    },
+    {
+        "source": "Documentation/v16u_null_protocol_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u null protocol summary",
+        "description": "Per-source exact-effort centers, dispersion, burn-in and integrity diagnostics.",
+    },
+    {
+        "source": "Documentation/v16u_null_center_comparison.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u exact-effort center comparison",
+        "description": "Frozen burn-in, +K, +2K and prefix-matched path center-shift ratios.",
+    },
+    {
+        "source": "Documentation/v16u_matched_effort_perturbation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u perturbation integrity",
+        "description": "Structural, exact-effort, prefix, uniqueness and endpoint audits for 384 null outputs.",
+    },
+    {
+        "source": "Documentation/v16u_null_spectrum_distribution.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u null-spectrum distribution",
+        "description": "Per-null spectra used only for the effect-blind exact-effort stability gate.",
+    },
+    {
+        "source": "Documentation/v16u_realized_effort_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u realized-effort audit",
+        "description": "All 96 branch-level K, 2K, matched-effort and shared-prefix checks.",
+    },
+    {
+        "source": "Documentation/v16u_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u gate evaluation",
+        "description": "Machine-readable exact-effort, center-stability and exclusion gates.",
+    },
+    {
+        "source": "Documentation/v16u_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u claim ledger",
+        "description": "Supported procedure claims and explicit sampler and physics limits.",
+    },
+    {
+        "source": "Documentation/v16u_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u preregistration",
+        "description": "Frozen digest, exact K formula, matched path, budgets and effect exclusions.",
+    },
+    {
+        "source": "Documentation/v16u_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v16u source chain",
+        "description": "SHA-256 chain linking v16u to v16s, v16q and the v16t interpretation audit.",
+    },
+    {
+        "source": "Documentation/v16u_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v16u interpretation and next direction",
+        "description": "Evidence boundary and independent global-null feasibility recommendation.",
+    },
+    {
+        "source": "Documentation/v0_16u_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v16u operational recommendation",
+        "description": "Concise status and next gate after exact matched-effort stability.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16u.md",
+        "category": "latest_causal_structure",
+        "title": "v16u non-specialist summary",
+        "description": "Plain-language explanation of exact matched null-sampler effort.",
+    },
 ]
 
 
@@ -796,6 +874,9 @@ def write_site(
     stability_comparison_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16t_null_center_comparison.csv")
     stability_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16t_claim_ledger.csv")
     stability_audit_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16t_realized_effort_interpretation_audit.csv")
+    matched_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16u_gate_evaluation.csv")
+    matched_comparison_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16u_null_center_comparison.csv")
+    matched_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16u_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -823,13 +904,13 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest frozen gate found effect-blind null-center stability, but its realized-effort audit shows that direct chain lengths were not separated and staged effort was unmatched. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime claim.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate repairs the earlier effort confound and finds null-center stability across exact +K/+2K work and a prefix-matched +K+K path. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">384 / 384</div><p class="muted">v16t effect-blind null perturbations passed structural and uniqueness checks.</p></div>
+      <div class="card"><div class="metric">96 / 96</div><p class="muted">v16u branches realized exact K/2K effort, zero direct-staged effort difference and a shared prefix.</p></div>
     </section>
 
     <section>
@@ -839,15 +920,17 @@ def write_site(
       <p>v16o showed that a concrete-resource-conflict edge-color null was structurally immobile. v16p and v16q replaced it with a coarser event-footprint rule and qualified that sampler without inspecting spectra. v16r retained the contrast posthoc, and v16s replicated it on six new histories with the footprint null selected before generation. The v16s median effect ratio was <code>11.999282</code>; all six primary runs had empirical <code>p = 1/33</code>.</p>
       <p>All v16s tail-mass deltas were negative. The result is therefore a full-spectrum contrast, not evidence for excess large intervals.</p>
       <p>v16t then tested the footprint-null procedure without computing any source spectrum or observed-effect metric. All frozen comparisons passed, but the required realized-effort audit found that direct short/reference/long averaged <code>993/1005/998</code> accepted swaps while staged averaged <code>2023</code>. The frozen pass is therefore a center-stability diagnostic; it does not separately establish chain-length or path-segmentation stability.</p>
+      <p>v16u repaired that design effect-blind. All <code>384/384</code> null outputs passed integrity; direct <code>+2K</code> and staged <code>+K+K</code> used identical total accepted swaps after the same first <code>K</code> prefix in <code>96/96</code>. Exact-length stability passed <code>18/18</code> with maximum center-shift ratio <code>0.666516</code>; matched-path stability passed <code>6/6</code> with maximum ratio <code>0.180595</code> against the frozen limit <code>2.0</code>.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect and response-landscape analysis. They do not establish Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current effect-blind footprint-null stability gate</h2>
+      <h2>Current exact matched-effort footprint-null gate</h2>
+      {table_html(matched_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(matched_comparison_rows, ["growth_seed", "run_offset", "comparison", "center_jensen_shannon", "pooled_median_leave_one_out_js", "center_shift_ratio", "stability_pass"])}
+      <h3>Prior v16t gate and required interpretation audit</h3>
       {table_html(stability_gate_rows, ["gate", "status", "observed", "required", "decision"])}
-      <h3>Required realized-effort interpretation audit</h3>
       {table_html(stability_audit_rows, ["audit_item", "status", "observed", "required", "evidential_role"])}
-      {table_html(stability_comparison_rows, ["growth_seed", "run_offset", "comparison", "center_jensen_shannon", "pooled_median_leave_one_out_js", "center_shift_ratio", "stability_pass"])}
 
       <h3>Prior v16s fresh effect gate</h3>
       {table_html(footprint_rows, ["stage", "n_runs", "median_js_effect_ratio", "positive_fraction", "p_le_010_fraction", "local_gate_pass"])}
@@ -871,6 +954,7 @@ def write_site(
       <p>The experiments use generated graph ensembles, matched controls, perturbation probes, defect genealogy, exact event-DAG reconstruction, source hashing, preregistered holdouts and explicit structural nulls. Reports and machine-readable CSVs are published together so claims can be checked against their originating rows.</p>
       <p>v16j uses directed double-edge swaps that preserve event count, scheduler order, exact direct in/out-degree, exact causal depth and the global dyadic parent-age histogram. v16q adds source event family/write-namespace and target event family/read-namespace footprints. Every accepted holdout null had to be unique and change at least 10% of direct edges. Qualification establishes procedural completion and invariant preservation, not uniform or converged sampling.</p>
       <p>v16t compares only null ensembles. Its source spectra and observed/null effect statistics are excluded by preregistration, preventing the stability threshold or path selection from being tuned against the positive v16s result.</p>
+      <p>v16u separates the 10% changed-edge burn-in from exact post-burn-in work. Its direct and staged 2K endpoints share the same K prefix and total accepted-swap effort but use different second-half RNG streams. This is a finite procedure-stability control, not proof of mixing or uniform sampling.</p>
     </section>
 
     <section>
@@ -880,6 +964,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(matched_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v16t semantic correction</h3>
       <p>The interpretation audit below supersedes the broad semantic reading of the frozen v16t claim row while preserving the preregistered machine result.</p>
       {table_html(stability_audit_rows, ["audit_item", "status", "observed", "required", "evidential_role"])}
       <h3>Frozen v16t claim ledger</h3>

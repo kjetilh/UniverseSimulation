@@ -104,19 +104,19 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16t_footprint_null_path_stability_gate.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16u_matched_effort_footprint_stability_gate.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
-page must distinguish the fresh v16s full-spectrum contrast, the frozen v16t
-null-center pass, and the newer realized-effort audit that makes direct length
-and path decomposition inconclusive. It must separate all three from sampler
-mixing/uniformity and physical interpretation, and state that Lorentz-like
+page must distinguish the fresh v16s full-spectrum contrast, the v16t
+realized-effort diagnosis, and the v16u exact matched-effort null-center pass.
+It must separate all three from sampler mixing/uniformity and physical
+interpretation, and state that Lorentz-like
 behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v16t and require
+orchestrator separately, then issue a token-scoped query about v16u and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 
