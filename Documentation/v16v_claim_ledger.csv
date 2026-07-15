@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,All six frozen v16s DAGs admit multiple exact global edge-slot reconstructions.,supported,v16v_source_feasibility_summary.csv;v16v_global_reconstruction_audit.csv,six finite source DAGs and the frozen stronger per-child slot classes
+C2,The v16v reconstruction is independent of the v16q local switch trajectory.,supported,v16v_gate_evaluation.csv;relational_universe_v16v_global_edge_slot_feasibility_gate.py,"construction independence, not statistical independence of resulting distributions"
+C3,The independent global null is qualified as a representative sampling distribution.,unsupported,none,feasibility and diversity do not establish a probability measure or representativeness
+C4,The v16s observed spectrum contrast survives the independent global null.,not_evaluated,v16v_gate_evaluation.csv,source spectra and effect metrics were excluded
+C5,Units of action have been shown to constitute physical energy or temperature.,unsupported,v16v_units_of_action_energy_temperature_hypothesis.md,a repo-grounded future hypothesis only

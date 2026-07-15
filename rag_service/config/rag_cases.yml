@@ -29,7 +29,7 @@ cases:
     planner:
       docs_source_types: ["universe_status", "universe_experiments", "universe_tools", "universe_argumentation", "universe_prompts"]
       prompts_source_types: []
-      docs_keywords: ["status", "prosjekt", "simulering", "simulation", "graf", "graph", "ctmc", "ssa", "parameter", "trajectory", "argumentasjon", "hypotese", "prompt", "event dag", "interval", "strict null", "v16j", "totalrate"]
+      docs_keywords: ["status", "prosjekt", "simulering", "simulation", "graf", "graph", "ctmc", "ssa", "parameter", "trajectory", "argumentasjon", "hypotese", "prompt", "event dag", "interval", "strict null", "global null", "edge slot", "v16v", "units of action", "action density", "temperature", "totalrate"]
       prompt_keywords: []
       default_domain: docs
     retrieval:

@@ -1,6 +1,6 @@
 # UniverseSimulation Argumentation Map
 
-Last source review: 2026-07-14.
+Last source review: 2026-07-15.
 
 ## Research question
 
@@ -45,10 +45,16 @@ not an exact realization of every DPO/CTMC statement in the research report.
   repeatable contrast beyond the v16i layer+indegree null.
 - v16j shows that the contrast remains under exact direct in/out-degree, exact
   depth, scheduler-order, and global dyadic parent-age controls.
+- v16s replicated a finite event-DAG full-spectrum contrast on fresh histories;
+  v16u closed the known realized-effort confound in the local footprint-null
+  procedure.
+- v16v showed effect-blind that all six sources admit multiple complete global
+  edge-slot reconstructions independent of the local switch path: `48/48`
+  integrity passes and `8/8` distinct endpoints per source.
 
-The strict-null effect exists in the tested histories, but its magnitude is not
-stable enough relative to the v16d calibration baseline. That distinction is
-central.
+The global construction is feasible and diverse, but is not yet a qualified or
+representative probability distribution. It has not yet tested whether the
+v16s effect survives.
 
 ## What has been explained away or remains negative
 
@@ -60,6 +66,11 @@ central.
 - Defect labels, persistence, recurrence, and genealogy are useful observables,
   but do not establish particle species.
 - Correlation or shared response is not quantum entanglement.
+- Tokens and local rewrite events provide repo-grounded ingredients for an
+  action-density or change-intensity hypothesis. The older weighted energy
+  functional was chosen instrumentation, not emergent energy. No temperature
+  exists until a local balance law and reproducible intensive fluctuation
+  parameter are demonstrated.
 
 ## Threshold for stronger claims
 
@@ -85,5 +96,7 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is a fresh strict-null causal-interval replication
-with effect existence and magnitude stability kept separate.
+The best current next test is effect-blind qualification of the frozen v16v
+global edge-slot family. The units-of-action energy/cooling question is a
+promising later mechanism gate, but must not bypass null qualification or use
+uniform clock-rate scaling as a temperature intervention.

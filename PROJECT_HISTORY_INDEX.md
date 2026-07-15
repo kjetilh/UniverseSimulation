@@ -7718,3 +7718,56 @@ Viktige filer:
 - `Documentation/v16u_claim_ledger.csv`
 - `Documentation/v16u_next_direction_assessment.md`
 - `Documentation/v0_16u_operativ_anbefaling.md`
+
+## 10da. v16v viste at en uavhengig global nullfamilie kan konstrueres
+
+`v16v` ble froset med digest
+`c8b502bfc58f220a9813e6d8e58043831353bdb3fe9621a1f5efe051381f16fc`
+foer de seks faktiske kildene ble sendt til solver. Gaten beregnet ingen source
+spectra og ingen observed-effect metrics.
+
+Konstruksjonen er ikke en viderefoering av v16q sin lokale switch-kjede. Den
+loeser hele DAG-en som en global bipartitt b-matching mellom eksakt parent
+out-degree-kapasitet og child-slots som bevarer source event role, dyadisk
+parent-age-bin og depth-witness/lower-depth-klasse. Target event role er bestemt
+av barnet, og én variabel per parent-child-par forbyr duplikatkanter.
+
+Resultatet var:
+
+- source/slot support: `6/6`, med `0` blokkerte slot-klasser
+- global reconstruction integrity: `48/48`
+- distinkte endepunkter: `8/8` for hver av seks kilder
+- candidate edges per kilde: `41390` til `53830`
+- source edges per kilde: `3523` til `3628`
+- minimum changed-edge fraction per kilde: `0.574426` til `0.630611`
+- local switch calls: `0`
+- source-spectrum calls: `0`
+- effect-metric calls: `0`
+
+Status er `v16v_independent_global_null_family_feasible_and_diverse`. Dette er
+ny metodisk viten: de frosne degree/depth/age/footprint-constraintene bestemmer
+ikke DAG-ene naer entydig, og en separat global konstruksjon er praktisk mulig.
+Det kvalifiserer ikke familien som en sannsynlighetsfordeling og sier ikke om
+v16s-kontrasten overlever den. Neste gate er v16w: frys konstruksjonen, utvid
+endpoint-ensemblet og test replay, relabel, diversitet og intern center-
+stabilitet effect-blind foer én ny effekttest.
+
+Samme runde registrerte en separat mekanismehypotese: `units of action` og
+realisert lokal edit-work kan vaere mikroskopisk grunnlag for en emergent
+energitetthet, mens en effektiv temperatur maa utledes fra en reproduserbar
+balanse-/fluktuasjonslov. Uniform rate-skalering er bare klokkereskalering og er
+ikke en gyldig cooling-intervensjon. Forelopig skal sporet omtales som `action
+density` eller `change intensity`, ikke fysisk energi eller temperatur.
+
+Viktige filer:
+
+- `relational_universe_v16v_global_edge_slot_feasibility_gate.py`
+- `Documentation/v16v_global_edge_slot_feasibility_gate.md`
+- `Documentation/v16v_edge_slot_support.csv`
+- `Documentation/v16v_global_reconstruction_audit.csv`
+- `Documentation/v16v_source_feasibility_summary.csv`
+- `Documentation/v16v_gate_evaluation.csv`
+- `Documentation/v16v_claim_ledger.csv`
+- `Documentation/v16v_next_direction_assessment.md`
+- `Documentation/v16v_units_of_action_energy_temperature_hypothesis.md`
+- `Documentation/v0_16v_operativ_anbefaling.md`

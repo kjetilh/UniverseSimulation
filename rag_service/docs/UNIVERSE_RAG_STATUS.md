@@ -57,22 +57,35 @@ not outrank later executed gates.
   accepted swaps after the same prefix in every branch. Realized-length center
   stability passed `18/18` with maximum ratio `0.666516`; matched-path stability
   passed `6/6` with maximum ratio `0.180595` against the frozen limit `2.0`.
+- v16v then constructed an independent global edge-slot null without local
+  switch steps or effect inspection. All `48/48` complete reconstructions
+  passed exact integrity. Every source produced `8/8` distinct endpoints; the
+  minimum changed-edge fraction per source ranged from `0.574426` to
+  `0.630611`.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_replicated_with_v16u_exact_matched_effort_null_stability`. See
+`fresh_event_footprint_spectrum_contrast_with_independent_global_null_construction_feasible_but_not_yet_qualified`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v16u_matched_effort_footprint_stability_gate.md`. This remains
-finite event-DAG structure conditional on constrained switch procedures, not a
-validated dimension, manifold, Lorentz symmetry, physical time, continuum,
-particle, entanglement, or spacetime result.
+`Documentation/v16v_global_edge_slot_feasibility_gate.md`. This remains finite
+event-DAG structure: the global family is constructible and diverse, but has
+not been qualified as a representative probability distribution and has not
+been used for an effect test. It is not a validated energy, temperature,
+dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
+entanglement, or spacetime result.
 
 ## Current next gate
 
-Run an effect-blind feasibility and diversity audit for a globally reconstructed
-event-DAG null that does not call the v16q local switch chain. Preserve the
-declared degree, depth, age-bin and event-footprint constraints through a
-global edge-slot assignment. Compute no source spectrum, observed-effect
-metric, dimension fit, or scale-up.
+Run v16w as an effect-blind qualification of the frozen global edge-slot null.
+Increase endpoint count and test replay, relabel invariance, endpoint diversity,
+and within-family center stability while still excluding every source spectrum
+and observed-effect metric. Only after qualification may one preregister a
+single independent-null effect test.
+
+The separate units-of-action hypothesis is an open proposal, not a result. The
+repo supports a future test of local edit work, action-carrier density and
+boundary flux as possible microscopic inputs to emergent energy. Uniform
+scaling of all Gillespie rates changes clock speed rather than the embedded
+event sequence and is not a valid cooling intervention.
 
 ## RAG corpus layout
 

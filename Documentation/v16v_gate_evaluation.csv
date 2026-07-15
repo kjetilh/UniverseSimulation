@@ -1,0 +1,7 @@
+gate,status,observed,required,decision
+frozen_source_and_slot_support,pass,sources=6/6;blocked=0,sources=6/6;blocked=0,continue
+global_reconstruction_integrity,pass,48/48,48/48,continue
+per_source_endpoint_diversity,pass,"9299:123078=u8,c0.623484;9299:123403=u8,c0.574426;9299:127341=u8,c0.604031;9365:123078=u8,c0.622091;9365:123403=u8,c0.577414;9365:127341=u8,c0.630611",unique>=4;fraction>=0.75;change>=0.1,diverse
+independent_from_local_switch_path,pass,local_switch_calls=0,0,independent_construction
+observed_spectrum_and_effect_exclusion,pass,source_spectrum_calls=0;effect_metric_calls=0,0;0,effect_blind
+v16v_overall,v16v_independent_global_null_family_feasible_and_diverse,support=1;integrity=1;diversity=1;independence=1;exclusion=1,1;1;1;1;1,v16v_independent_global_null_family_feasible_and_diverse
