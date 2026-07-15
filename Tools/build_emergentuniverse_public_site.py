@@ -522,6 +522,90 @@ DATASET_SPECS: list[dict[str, str]] = [
         "title": "v16o-v16s direction and execution report",
         "description": "Adviser arguments, literature constraints, executed sequence and next recommendation.",
     },
+    {
+        "source": "Documentation/v16t_footprint_null_path_stability_gate.md",
+        "category": "latest_causal_structure",
+        "title": "v16t footprint-null path stability gate",
+        "description": "Effect-blind null-center stability test across direct chain lengths and a staged path.",
+    },
+    {
+        "source": "Documentation/v16t_null_protocol_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t null protocol summary",
+        "description": "Per-source protocol centers, dispersion, edge-change and conflict-retention diagnostics.",
+    },
+    {
+        "source": "Documentation/v16t_null_center_comparison.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t null-center comparison",
+        "description": "Frozen chain-length and path-segmentation center-shift ratios for all six source DAGs.",
+    },
+    {
+        "source": "Documentation/v16t_footprint_perturbation_integrity.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t perturbation integrity",
+        "description": "Structural, completion, uniqueness and edge-change audits for all 384 null DAGs.",
+    },
+    {
+        "source": "Documentation/v16t_null_spectrum_distribution.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t null-spectrum distribution",
+        "description": "Per-null spectra used only for effect-blind protocol-center stability comparisons.",
+    },
+    {
+        "source": "Documentation/v16t_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t gate evaluation",
+        "description": "Machine-readable integrity, chain-length, path and spectrum-exclusion gates.",
+    },
+    {
+        "source": "Documentation/v16t_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t claim ledger",
+        "description": "Supported procedure-level claim and explicit unresolved sampler and physics claims.",
+    },
+    {
+        "source": "Documentation/v16t_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t preregistration",
+        "description": "Frozen digest, source hashes, budgets and effect-blind exclusions.",
+    },
+    {
+        "source": "Documentation/v16t_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t source chain",
+        "description": "SHA-256 chain linking v16t to the frozen v16s histories and v16q sampler.",
+    },
+    {
+        "source": "Documentation/v16t_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v16t interpretation and next direction",
+        "description": "Evidence boundary and corrected realized-effort stability recommendation.",
+    },
+    {
+        "source": "Documentation/v16t_realized_effort_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v16t realized-effort interpretation audit",
+        "description": "Post-run audit showing that nominal direct lengths were not separated and staged effort was unmatched.",
+    },
+    {
+        "source": "Documentation/v16t_realized_effort_interpretation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16t realized-effort interpretation data",
+        "description": "Machine-readable semantic correction that preserves the frozen gate while narrowing its claim.",
+    },
+    {
+        "source": "Documentation/v0_16t_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v16t operational recommendation",
+        "description": "Concise operational status and next-step boundary after the effect-blind stability gate.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16t.md",
+        "category": "latest_causal_structure",
+        "title": "v16t non-specialist summary",
+        "description": "Plain-language distinction between null-procedure stability and a physics result.",
+    },
 ]
 
 
@@ -708,6 +792,10 @@ def write_site(
     footprint_longer_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16s_longer_footprint_gate.csv")
     footprint_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16s_gate_evaluation.csv")
     footprint_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16s_claim_ledger.csv")
+    stability_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16t_gate_evaluation.csv")
+    stability_comparison_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16t_null_center_comparison.csv")
+    stability_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16t_claim_ledger.csv")
+    stability_audit_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16t_realized_effort_interpretation_audit.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -735,13 +823,13 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest result is a fresh replication of a finite event-DAG full-spectrum contrast under a qualified null that preserves coarse event-family and write/read namespace footprints.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest frozen gate found effect-blind null-center stability, but its realized-effort audit shows that direct chain lengths were not separated and staged effort was unmatched. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">6 / 6</div><p class="muted">Fresh v16s runs were positive and had empirical p = 1/33.</p></div>
+      <div class="card"><div class="metric">384 / 384</div><p class="muted">v16t effect-blind null perturbations passed structural and uniqueness checks.</p></div>
     </section>
 
     <section>
@@ -750,11 +838,18 @@ def write_site(
       <p>The earlier defect/response track established nontrivial local interactions but not particles. The current architecture track records exact event dependencies. v16h retired a clock/depth common-geometry reading by validating scheduler total rate as the mechanism. v16i through v16m then isolated and freshly replicated an open causal-interval spectrum contrast under a strict degree/depth/age null.</p>
       <p>v16o showed that a concrete-resource-conflict edge-color null was structurally immobile. v16p and v16q replaced it with a coarser event-footprint rule and qualified that sampler without inspecting spectra. v16r retained the contrast posthoc, and v16s replicated it on six new histories with the footprint null selected before generation. The v16s median effect ratio was <code>11.999282</code>; all six primary runs had empirical <code>p = 1/33</code>.</p>
       <p>All v16s tail-mass deltas were negative. The result is therefore a full-spectrum contrast, not evidence for excess large intervals.</p>
+      <p>v16t then tested the footprint-null procedure without computing any source spectrum or observed-effect metric. All frozen comparisons passed, but the required realized-effort audit found that direct short/reference/long averaged <code>993/1005/998</code> accepted swaps while staged averaged <code>2023</code>. The frozen pass is therefore a center-stability diagnostic; it does not separately establish chain-length or path-segmentation stability.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect and response-landscape analysis. They do not establish Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current fresh footprint-null gate</h2>
+      <h2>Current effect-blind footprint-null stability gate</h2>
+      {table_html(stability_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      <h3>Required realized-effort interpretation audit</h3>
+      {table_html(stability_audit_rows, ["audit_item", "status", "observed", "required", "evidential_role"])}
+      {table_html(stability_comparison_rows, ["growth_seed", "run_offset", "comparison", "center_jensen_shannon", "pooled_median_leave_one_out_js", "center_shift_ratio", "stability_pass"])}
+
+      <h3>Prior v16s fresh effect gate</h3>
       {table_html(footprint_rows, ["stage", "n_runs", "median_js_effect_ratio", "positive_fraction", "p_le_010_fraction", "local_gate_pass"])}
       {table_html(footprint_longer_rows, ["stage", "n_runs", "target_swap_multiplier", "median_js_effect_ratio", "positive_fraction", "longer_perturbation_consistency_pass"])}
       {table_html(footprint_gate_rows, ["gate", "status", "observed", "required", "decision"])}
@@ -775,6 +870,7 @@ def write_site(
       <h2>Methods</h2>
       <p>The experiments use generated graph ensembles, matched controls, perturbation probes, defect genealogy, exact event-DAG reconstruction, source hashing, preregistered holdouts and explicit structural nulls. Reports and machine-readable CSVs are published together so claims can be checked against their originating rows.</p>
       <p>v16j uses directed double-edge swaps that preserve event count, scheduler order, exact direct in/out-degree, exact causal depth and the global dyadic parent-age histogram. v16q adds source event family/write-namespace and target event family/read-namespace footprints. Every accepted holdout null had to be unique and change at least 10% of direct edges. Qualification establishes procedural completion and invariant preservation, not uniform or converged sampling.</p>
+      <p>v16t compares only null ensembles. Its source spectra and observed/null effect statistics are excluded by preregistration, preventing the stability threshold or path selection from being tuned against the positive v16s result.</p>
     </section>
 
     <section>
@@ -784,6 +880,11 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      <p>The interpretation audit below supersedes the broad semantic reading of the frozen v16t claim row while preserving the preregistered machine result.</p>
+      {table_html(stability_audit_rows, ["audit_item", "status", "observed", "required", "evidential_role"])}
+      <h3>Frozen v16t claim ledger</h3>
+      {table_html(stability_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v16s effect claim ledger</h3>
       {table_html(footprint_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Earlier v16j interpretation audit</h3>
       {table_html(interpretation_rows, ["audit_item", "status", "observed", "required", "evidential_role"])}

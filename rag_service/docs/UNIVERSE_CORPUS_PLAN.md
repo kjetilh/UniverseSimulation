@@ -1,6 +1,6 @@
 # UniverseSimulation Corpus Plan
 
-Last source review: 2026-07-14.
+Last source review: 2026-07-15.
 
 ## Source types
 
@@ -18,9 +18,11 @@ Current state and source-priority documents:
 Recent executed evidence, not general theory:
 
 - v16h direct total-rate mechanism validation
-- v16i causal-interval abundance gate
-- v16j strict-null gate and interpretation audit
-- their operational recommendations and selected gate CSVs
+- v16i/v16j causal-interval abundance and strict-null interpretation
+- v16m fresh strict-null replication
+- v16q sampler qualification and v16r/v16s footprint-null evidence
+- v16t frozen null-center gate, realized-effort interpretation audit, and corrected next direction
+- operational recommendations and selected gate CSVs
 
 Do not ingest the large per-null distributions into the default RAG corpus.
 They remain downloadable evidence on the public site.
@@ -63,8 +65,8 @@ python -m scripts.sync_orchestrator \
 ```
 
 Then run without `--plan-only` only against the intended deployment. After
-sync, run a token-scoped research query for `v16j` and require citations to the
-new strict-null report or interpretation audit plus freshness metadata.
+sync, run a token-scoped research query for `v16t` and require citations to the
+path-stability report or next-direction assessment plus freshness metadata.
 
 ## Quality rules
 

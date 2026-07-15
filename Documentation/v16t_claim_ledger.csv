@@ -1,0 +1,5 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The event-footprint null center is stable across the tested direct chain lengths and staged path on all six frozen v16s DAGs.,supported,v16t_null_center_comparison.csv;v16t_gate_evaluation.csv,"four frozen protocols, sixteen nulls each, six finite source DAGs"
+C2,"The sampler is irreducible, mixed, converged, stationary, independent, representative, or uniform.",unsupported,none,finite center stability is not a Markov-chain proof
+C3,The v16s observed interval-spectrum contrast was replicated or re-evaluated in v16t.,not_evaluated,v16t_gate_evaluation.csv,source spectrum and observed-effect metrics were excluded
+C4,"Dimension, Lorentz symmetry, spacetime, continuum physics, particles, entanglement, invariants, or physical laws were established.",unsupported,none,null-sampler instrumentation only

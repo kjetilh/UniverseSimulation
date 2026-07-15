@@ -7619,3 +7619,56 @@ Viktige filer:
 - `Documentation/v16s_gate_evaluation.csv`
 - `Documentation/v16s_claim_ledger.csv`
 - `Documentation/v16o_v16s_direction_and_execution_report.md`
+
+## 10cy. v16t stabiliserte footprint-nullens senter over testede stier
+
+`v16t` froes med digest
+`18e6b581cb02677aae4469c285f45a0b2d2f93ae63ae5edbe0fed48b86b568a7`.
+Gaten gjenbrukte de seks frosne v16s-historiene, men beregnet aldri deres
+observerte intervallspektra eller observed/null-effektmaal. Den testet fire
+nullprotokoller effect-blind: direkte multiplikatorer `0.075`, `0.100`, `0.200`
+og en totrinnssti `0.100 + 0.100`, med `16` uavhengige nuller per protokoll og
+kilde.
+
+Resultatet var:
+
+- perturbation integrity: `384/384`
+- unique-null fraction: `1.0` i alle `24` run/protokoll-ensembler
+- direkte kjedelengdestabilitet: `12/12`
+- maksimal direkte center-shift ratio: `0.237211`
+- direkte-lang mot staged-lang stabilitet: `6/6`
+- maksimal staged center-shift ratio: `1.463604`
+- frossen grense: `2.0`
+- source spectra og observed-effect metrics beregnet: `0`
+
+Status er `v16t_footprint_null_centers_stable_across_tested_paths`. Dette
+reduserer bekymringen for synlig kjedelengde-/stigangssensitivitet i det testede
+omraadet, men beviser ikke irreducibility, mixing, convergence, stationarity,
+representativitet eller uniformitet. Staged-stien avviker mer enn de direkte
+lengdeendringene, saa path effects er avgrenset, ikke bevist fravaerende. Neste
+gate boer vaere en effect-blind feasibility-/kvalifiseringsrunde for en separat
+konstruert nullfamilie.
+
+En obligatorisk realized-effort-audit korrigerte deretter den semantiske
+lesningen uten aa endre den frosne maskinstatusen. Direct short/reference/long
+realiserte i snitt `993.145833/1005.020833/998.343750` aksepterte swaps fordi
+`10%`-change-kravet dominerte alle tre stoppregler. Staged realiserte
+`2023.343750`, omtrent dobbelt direct-long. Dermed ble direct chain length ikke
+separert, og path-segmentering ble blandet med ekstra arbeid. Korrekt
+vitenskapelig status er
+`v16t_center_stability_observed_but_length_path_decomposition_inconclusive`.
+Neste gate maa bruke burn-in og deretter eksakte, matchede `+K/+2K` accepted
+swaps foer en separat nullfamilie vurderes.
+
+Viktige filer:
+
+- `relational_universe_v16t_footprint_null_path_stability_gate.py`
+- `Documentation/v16t_footprint_null_path_stability_gate.md`
+- `Documentation/v16t_null_protocol_summary.csv`
+- `Documentation/v16t_null_center_comparison.csv`
+- `Documentation/v16t_footprint_perturbation_integrity.csv`
+- `Documentation/v16t_gate_evaluation.csv`
+- `Documentation/v16t_claim_ledger.csv`
+- `Documentation/v16t_realized_effort_interpretation_audit.md`
+- `Documentation/v16t_realized_effort_interpretation_audit.csv`
+- `Documentation/v16t_next_direction_assessment.md`

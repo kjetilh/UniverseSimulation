@@ -7,7 +7,7 @@ Last source review: 2026-07-15.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest fresh footprint-null gate: `relational_universe_v16s_fresh_event_footprint_holdout.py`
+- Latest effect-blind null-stability gate: `relational_universe_v16t_footprint_null_path_stability_gate.py`
 - Public archive builder: `Tools/build_emergentuniverse_public_site.py`
 - RAG service: `rag_service/`
 
@@ -23,12 +23,16 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v16j_interval_strict_null_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v16q_event_footprint_null_calibration.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v16s_fresh_event_footprint_holdout.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v16t_footprint_null_path_stability_gate.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
-v16s command verifies the newest fresh histories, null integrity and spectrum
-gates. Read `Documentation/v16o_v16s_direction_and_execution_report.md` for the
-required mechanism/null sequence and claim boundaries.
+v16s command verifies the fresh histories, null integrity and spectrum gates.
+The v16t command verifies the frozen effect-blind center-comparison products
+and source-spectrum exclusion. Read
+`Documentation/v16t_realized_effort_interpretation_audit.md` before assigning
+chain-length or path meaning, then
+`Documentation/v16t_next_direction_assessment.md` for the next recommendation.
 
 ## Run the early toy simulator
 
@@ -47,16 +51,17 @@ PYTHONPYCACHEPREFIX=/private/tmp/pycache-emergent \
   --out /tmp/emergentuniverse_public
 ```
 
-Require the manifest to contain the v16s report, effect gate, gate evaluation,
-claim ledger, direction report, and live project context. Check their SHA-256
-hashes against the repository before deployment.
+Require the manifest to contain the v16s effect report plus the v16t report,
+center comparison, perturbation audit, realized-effort interpretation audit,
+gate evaluation, claim ledger, next-direction assessment, and live project
+context. Check their SHA-256 hashes against the repository before deployment.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16s|11.999282|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16t|384 / 384|1.463604|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16s_fresh_event_footprint_holdout.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16t_footprint_null_path_stability_gate.md
 ```
 
 ## Start the RAG service locally
@@ -101,11 +106,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v16s, hvilke null-invarianter ble bevart, og hva er fortsatt uavklart?'
+  --query 'Hva viste v16t, og hvordan endret realized-effort-auditen tolkningen av kjedelengde og stigang?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v16q/v16s material. `--skip-query` is not sufficient for freshness
+v16t material plus v16s when the underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -125,3 +130,7 @@ does not update this index; both deployments require separate verification.
 - Do not treat the v16s footprint-null replication as sampler uniformity,
   concrete-resource independence, dimension, manifold, Lorentz symmetry,
   spacetime, particles, entanglement, or continuum evidence.
+- Do not treat the frozen v16t path/chain-length pass as validated separation:
+  the realized-effort audit found near-equal direct lengths and unmatched staged
+  effort. It also proves no irreducibility, mixing, convergence, stationarity,
+  representativeness, or uniformity.

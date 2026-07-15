@@ -1,0 +1,7 @@
+gate,status,observed,required,decision
+frozen_source_integrity,pass,source_dags=6,source_dags=6,continue
+all_protocol_perturbation_integrity,pass,384/384,384/384,continue
+chain_length_null_center_stability,pass,12/12;max_ratio=0.237211,12/12;ratio<=2.0,stable
+path_segmentation_null_center_stability,pass,6/6;max_ratio=1.463604,6/6;ratio<=2.0,stable
+observed_spectrum_and_effect_exclusion,pass,source_spectra=0;observed_effect_metrics=0,0;0,effect_blind
+v16t_overall,v16t_footprint_null_centers_stable_across_tested_paths,integrity=1;chain=1;path=1,1;1;1,v16t_footprint_null_centers_stable_across_tested_paths

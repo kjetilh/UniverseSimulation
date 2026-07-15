@@ -1,0 +1,6 @@
+audit_item,status,observed,required,evidential_role
+frozen_gate_execution,pass,"384/384 integrity;18/18 frozen center comparisons","all frozen products and gates complete",preserve_frozen_result
+direct_realized_length_separation,not_achieved,"accepted means short=993.145833;reference=1005.020833;long=998.343750","materially distinct realized accepted-swap counts",invalidates_direct_chain_length_interpretation
+path_segmentation_isolation,confounded,"direct_long mean=998.343750;staged_long mean=2023.343750","matched realized accepted-swap count",cannot_separate_segmentation_from_extra_effort
+source_effect_exclusion,pass,"source_spectra=0;observed_effect_metrics=0","0;0",effect_blind_design_preserved
+overall_semantic,v16t_center_stability_observed_but_length_path_decomposition_inconclusive,"frozen_status=pass;realized_effort_separation=0;path_isolation=0","separated_realized_lengths=1;matched_path_effort=1",supersedes_broad_frozen_claim_interpretation

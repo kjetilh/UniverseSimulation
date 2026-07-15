@@ -43,22 +43,31 @@ not outrank later executed gates.
   direction and empirical `p=1/33` in `6/6`, with longer median `12.054418`.
 - All v16s tail-mass deltas were negative. The result is a full-spectrum
   contrast, not excess large intervals.
+- v16t tested the footprint-null center effect-blind across direct swap
+  multipliers `0.075/0.100/0.200` and staged `0.100+0.100`. All `384/384`
+  perturbations passed. Direct chain-length stability passed `12/12` with
+  maximum ratio `0.237211`; path-segmentation stability passed `6/6` with
+  maximum ratio `1.463604` against the frozen limit `2.0`.
+- The newer v16t realized-effort audit limits that frozen pass: direct
+  short/reference/long averaged `993/1005/998` accepted swaps, while staged
+  averaged `2023`. Direct length was not separated, and path segmentation was
+  confounded with extra effort.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_replicated`. See
+`fresh_event_footprint_spectrum_contrast_replicated_with_v16t_length_path_decomposition_inconclusive`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v16o_v16s_direction_and_execution_report.md`. This remains
+`Documentation/v16t_realized_effort_interpretation_audit.md`. This remains
 finite event-DAG structure conditional on constrained switch procedures, not a
 validated dimension, manifold, Lorentz symmetry, physical time, continuum,
 particle, entanglement, or spacetime result.
 
 ## Current next gate
 
-Run an effect-blind path/start/chain-length stabilization gate for the
-footprint sampler. Do not spend the next budget on another identical six-run
-holdout, immediate scale-up, or dimension fitting. If the null centers
-stabilize, seek a separately constructed null family before physics-facing
-interpretation.
+Repair the effect-blind stability design before an independent null: use the
+existing `10%` change rule as burn-in, then branch to exact `+K` and `+2K`
+accepted-swap checkpoints and compare direct `+2K` with staged `+K+K` at
+matched effort. Compute no source spectrum, observed-effect metric, dimension
+fit, or scale-up.
 
 ## RAG corpus layout
 
