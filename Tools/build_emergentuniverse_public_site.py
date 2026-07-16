@@ -1110,6 +1110,108 @@ DATASET_SPECS: list[dict[str, str]] = [
         "title": "v16y non-specialist summary",
         "description": "Plain-language distinction between reversible local moves and start-independent global sampling.",
     },
+    {
+        "source": "Documentation/v16z_alternating_cycle_bridge_gate.md",
+        "category": "latest_causal_structure",
+        "title": "v16z alternating-cycle bridge gate",
+        "description": "Effect-blind exact cycle decomposition and bounded 2x2 accessibility diagnosis.",
+    },
+    {
+        "source": "Documentation/v16z_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v16z interpretation audit",
+        "description": "Formal result boundary for exact cycles, unresolved bounded bridges and representation failure.",
+    },
+    {
+        "source": "Documentation/v16z_postrun_representation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v16z post-run representation audit",
+        "description": "Diagnosis of raw SlotClass-key equality versus edge-level move-set covariance.",
+    },
+    {
+        "source": "Documentation/v16z_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z preregistration",
+        "description": "Frozen source hashes, cycle requirements, search bounds and effect exclusions.",
+    },
+    {
+        "source": "Documentation/v16z_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z source chain",
+        "description": "SHA-256 links to the frozen v16x/v16y accessibility evidence.",
+    },
+    {
+        "source": "Documentation/v16z_alternating_cycle_decomposition.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v16z alternating-cycle decomposition",
+        "description": "All 2139 pair-specific cycle witnesses and exact edge exchanges.",
+    },
+    {
+        "source": "Documentation/v16z_whole_cycle_reversibility_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z whole-cycle reversibility audit",
+        "description": "Per-source coverage and sequential forward/reverse replay checks.",
+    },
+    {
+        "source": "Documentation/v16z_representation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z formal representation audit",
+        "description": "Frozen replay, ordering, relabel and raw kernel-key checks.",
+    },
+    {
+        "source": "Documentation/v16z_postrun_representation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z corrected representation diagnosis",
+        "description": "Edge-level source/random-start move-set covariance without retroactive gate change.",
+    },
+    {
+        "source": "Documentation/v16z_2x2_bridge_search_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z bounded 2x2 bridge summary",
+        "description": "Per-pair path lengths, mismatch reduction, budgets and unresolved statuses.",
+    },
+    {
+        "source": "Documentation/v16z_2x2_bridge_trace.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v16z bounded 2x2 bridge trace",
+        "description": "Full deterministic move trace for all six bounded searches.",
+    },
+    {
+        "source": "Documentation/v16z_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z source qualification summary",
+        "description": "Per-source cycle, representation and bounded-bridge decisions.",
+    },
+    {
+        "source": "Documentation/v16z_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z gate evaluation",
+        "description": "Frozen machine-readable accessibility-gate result.",
+    },
+    {
+        "source": "Documentation/v16z_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v16z claim ledger",
+        "description": "Exact pair-specific claims and explicit global-connectivity exclusions.",
+    },
+    {
+        "source": "Documentation/v16z_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v16z next direction",
+        "description": "State-independent alternating-cycle proposal qualification recommendation.",
+    },
+    {
+        "source": "Documentation/v0_16z_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v16z operational recommendation",
+        "description": "Concise stop boundary and next proposal gate.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16z.md",
+        "category": "latest_causal_structure",
+        "title": "v16z non-specialist summary",
+        "description": "Plain-language distinction between near-accessibility and a connectivity proof.",
+    },
 ]
 
 
@@ -1319,6 +1421,11 @@ def write_site(
     reversible_comparison_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16y_measure_comparison.csv")
     reversible_separation_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16y_postrun_start_separation_audit.csv")
     reversible_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16y_claim_ledger.csv")
+    cycle_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16z_gate_evaluation.csv")
+    cycle_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16z_source_qualification_summary.csv")
+    cycle_bridge_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16z_2x2_bridge_search_summary.csv")
+    cycle_postrun_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16z_postrun_representation_audit.csv")
+    cycle_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16z_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -1346,14 +1453,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate qualifies a reversible local 2x2 move law but rejects it as a finite start-independent global sampler: endpoint clouds remain strongly start-dependent and more concentrated than the v16x reference. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime, energy or temperature claim.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate finds exact pair-specific alternating-cycle paths but no complete bounded 2x2 bridge: all six searches get close and remain unresolved. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime, energy or temperature claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">24 / 24</div><p class="muted">v16y finite chain-mobility checks passed; no source spectrum or observed effect was computed.</p></div>
-      <div class="card"><div class="metric">0 / 6</div><p class="muted">No source passed the preregistered concentration-profile improvement gate.</p></div>
+      <div class="card"><div class="metric">2,139</div><p class="muted">Exact alternating-cycle witnesses across the six frozen v16z start pairs.</p></div>
+      <div class="card"><div class="metric">0 / 6</div><p class="muted">Complete 2x2 bridges found under the bounded target-directed search; failures remain unresolved.</p></div>
     </section>
 
     <section>
@@ -1372,12 +1479,20 @@ def write_site(
       <p>A digest-locked post-run audit combined both independent seed families. The top-edge inclusion rate remained above <code>0.95</code> for four of six sources, including two at <code>32/32</code>. Every top edge still had an alternating-cycle removal witness, so the concentration is not a hidden forced-edge error. It may reflect finite structural asymmetry or the random-min-cost probability law; v16x does not distinguish those explanations.</p>
       <p>v16y then compared that reference with a lazy degree-corrected 2x2 Metropolis chain on the same six coarse state spaces. All <code>192/192</code> chain endpoints passed integrity and effect exclusion, all <code>192/192</code> frozen reference endpoints replayed exactly, all <code>48/48</code> detailed-balance witnesses passed, all <code>6/6</code> representation checks passed, and all <code>24/24</code> finite mobility checks passed.</p>
       <p>The candidate law nevertheless failed as a finite start-independent sampler. Center stability passed only <code>102/126</code>; all 24 failures were start-family comparisons, while independent seed and early/late comparisons had no failures. Mean pairwise endpoint change was <code>0.422373</code> across starts versus <code>0.078443</code> and <code>0.078510</code> within the two start clouds. Concentration improved on <code>0/6</code> sources: the chain maximum inclusion rate was <code>1.000</code> on all six and marginal binary entropy was lower than the v16x reference on all six.</p>
-      <p>This finite separation is consistent with slow traversal or different accessibility components under 2x2 moves. It is not proof of disconnection or failed mixing. The next effect-blind gate audits longer alternating-cycle bridges before spending more budget or reopening the source-spectrum effect.</p>
+      <p>v16z decomposed those same six start-pair differences into <code>2,139</code> exact alternating cycles. Whole-cycle coverage and sequential forward/reverse replay passed <code>6/6</code>. The longest cycle changed <code>78</code> to <code>152</code> edges depending on the source. These are pair-specific algebraic witnesses, not a state-independent sampling law.</p>
+      <p>The bounded target-directed 2x2 search found <code>0/6</code> complete bridges. It reduced mismatch from <code>1,407-1,609</code> to <code>5-26</code>, a <code>98.1521-99.6892%</code> reduction, before every pair stopped as unresolved. The formal representation gate failed because raw <code>SlotClass</code> dictionary keys changed under semantic relabeling; a separate post-run audit preserved that formal status while showing concrete edge-level move-set covariance on <code>6/6</code>. Neither result proves global connectivity, disconnection or mixing.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current reversible global-measure gate</h2>
+      <h2>Current alternating-cycle accessibility gate</h2>
+      {table_html(cycle_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(cycle_source_rows, ["growth_seed", "run_offset", "pair_changed_selected_edge_fraction", "cycle_count", "maximum_cycle_changed_edge_count", "whole_cycle_reversibility_pass", "representation_pass", "bridge_status", "bridge_steps", "bridge_final_mismatch"])}
+      <h3>Bounded 2x2 bridge diagnosis</h3>
+      {table_html(cycle_bridge_rows, ["growth_seed", "run_offset", "initial_mismatch", "final_mismatch", "bridge_steps", "expanded_states", "bridge_status", "exact_bridge_found", "failed_search_means_disconnected"])}
+      <h3>Required post-run representation audit</h3>
+      {table_html(cycle_postrun_rows, ["growth_seed", "run_offset", "formal_raw_kernel_key_equality_pass", "source_start_move_set_covariance_pass", "random_start_move_set_covariance_pass", "corrected_edge_move_representation_pass", "formal_gate_retroactively_changed"])}
+      <h3>Prior v16y reversible global-measure gate</h3>
       {table_html(reversible_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(reversible_source_rows, ["growth_seed", "run_offset", "reference_replay_pass", "reversibility_pass", "representation_pass", "movement_pass", "center_stability_pass", "measure_comparison_pass", "source_qualification_pass"])}
       <h3>Probability-law concentration comparison</h3>
@@ -1431,6 +1546,7 @@ def write_site(
       <p>v16w tests the global procedure under exact replay, candidate-column permutation, semantic role relabeling, larger endpoint ensembles, finite batch-center comparison, and an alternative random-priority objective. The frozen failure means optimization endpoints must not be treated as samples from a canonical null distribution.</p>
       <p>v16x uses canonical candidate ordering, seeded integer random costs and exact min-cost flow. The residual-SCC audit identifies globally forced edges and produces alternating-cycle witnesses. These controls establish finite algebraic freedom and representation covariance; they do not establish uniformity, maximum entropy, mixing, canonicality or a physical ensemble. The frozen concentration failure stops the procedure before source-spectrum inspection.</p>
       <p>v16y uses a lazy, degree-corrected 2x2 Metropolis kernel. Its accepted transition probability is exactly symmetric for every tested neighbor pair, establishing detailed balance for a uniform target inside each 2x2-connected component. The frozen finite run does not establish global connectivity, convergence or mixing; its start dependence and concentration failure stop the procedure before source-spectrum inspection.</p>
+      <p>v16z represents the symmetric difference between two valid assignments as a balanced directed parent/slot graph and decomposes it into alternating cycles. Applying a full cycle preserves all declared matching demands. The bounded 2x2 search is target-directed and diagnostic only; it is not a Markov proposal and cannot qualify a stationary distribution.</p>
       <p>The separate units-of-action hypothesis treats local realized edit work, carrier occupancy and boundary flux as candidate microscopic inputs. Until a local balance law and reproducible intensive fluctuation parameter are demonstrated, the correct terms are action density and change intensity, not physical energy or temperature.</p>
     </section>
 
@@ -1441,6 +1557,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(cycle_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v16y reversible-measure claim ledger</h3>
       {table_html(reversible_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Prior v16x measure claim ledger</h3>
       {table_html(measure_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}

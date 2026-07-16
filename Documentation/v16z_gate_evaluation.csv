@@ -1,0 +1,7 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+frozen_start_pair_replay,pass,6/6,6/6,continue
+whole_cycle_exact_reversibility,pass,6/6,6/6,continue
+representation_covariance,fail,0/6,6/6,repair_representation
+bounded_2x2_pair_accessibility,unresolved,exact_bridges=0/6,descriptive_bounded_result,unresolved_not_disconnected
+v16z_overall,v16z_cycle_representation_not_qualified,exclusion=1;digests=1;cycles=1;representation=0;bridges=0/6,1;1;1;1;descriptive,v16z_cycle_representation_not_qualified

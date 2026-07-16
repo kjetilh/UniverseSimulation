@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,source_edge_count,pair_symmetric_difference_edge_count,pair_changed_selected_edge_fraction,cycle_count,minimum_cycle_changed_edge_count,maximum_cycle_changed_edge_count,mean_cycle_changed_edge_count,symmetric_difference_coverage_pass,sequential_forward_replay_pass,sequential_reverse_replay_pass,all_immediate_reverse_replay_pass,whole_cycle_reversibility_pass,source_spectrum_computed,observed_effect_computed,frozen_start_digest_replay_pass
+v16z,1536,9299,123078,exposure_matched_local,1993113078,3628,3218,0.4434950385887541,347,4,152,9.27377521613833,1,1,1,1,1,0,0,1
+v16z,1536,9299,123403,exposure_matched_local,1993113403,3574,2814,0.393676552881925,345,4,104,8.156521739130435,1,1,1,1,1,0,0,1
+v16z,1536,9299,127341,exposure_matched_local,1993117341,3523,2920,0.41441952881067273,359,4,152,8.133704735376044,1,1,1,1,1,0,0,1
+v16z,1536,9365,123078,exposure_matched_local,1993773078,3567,3192,0.447434819175778,361,4,134,8.842105263157896,1,1,1,1,1,0,0,1
+v16z,1536,9365,123403,exposure_matched_local,1993773403,3604,2844,0.39456159822419534,384,4,78,7.40625,1,1,1,1,1,0,0,1
+v16z,1536,9365,127341,exposure_matched_local,1993777341,3587,3184,0.4438249233342626,343,4,126,9.282798833819243,1,1,1,1,1,0,0,1

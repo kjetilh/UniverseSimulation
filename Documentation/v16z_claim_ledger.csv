@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,Each frozen source/random-cost pair has an exact alternating-cycle decomposition with reversible whole-cycle exchanges.,supported,v16z_alternating_cycle_decomposition.csv;v16z_whole_cycle_reversibility_audit.csv,six pair-specific finite witnesses; not a state-independent proposal law
+C2,The bounded deterministic search found an exact 2x2 bridge for every tested start pair.,not_supported,v16z_2x2_bridge_search_summary.csv;v16z_2x2_bridge_trace.csv,six declared pairs and frozen search budget only
+C3,A failed bounded bridge search proves disconnected 2x2 components.,not_supported,v16z_2x2_bridge_search_summary.csv,budget exhaustion or heuristic failure remains unresolved
+C4,"V16z proves global connectivity, mixing, a global probability law, or maximum entropy.",not_supported,v16z_alternating_cycle_bridge_gate.md,explicit exclusions
+C5,V16z reproduces or updates the v16s spectrum effect.,not_supported,v16z_gate_evaluation.csv,source spectra and effect metrics excluded

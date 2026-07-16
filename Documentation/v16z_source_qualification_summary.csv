@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,pair_changed_selected_edge_fraction,cycle_count,minimum_cycle_changed_edge_count,maximum_cycle_changed_edge_count,mean_cycle_changed_edge_count,whole_cycle_reversibility_pass,representation_pass,frozen_start_digest_replay_pass,bridge_status,bridge_steps,bridge_final_mismatch,bridge_integrity_pass,source_qualification_pass
+v16z,1536,9299,123078,exposure_matched_local,1993113078,0.4434950385887541,347,4,152,9.27377521613833,1,0,1,unresolved_no_admissible_progress,1292,5,1,0
+v16z,1536,9299,123403,exposure_matched_local,1993113403,0.393676552881925,345,4,104,8.156521739130435,1,0,1,unresolved_no_admissible_progress,1064,26,1,0
+v16z,1536,9299,127341,exposure_matched_local,1993117341,0.41441952881067273,359,4,152,8.133704735376044,1,0,1,unresolved_no_admissible_progress,1107,11,1,0
+v16z,1536,9365,123078,exposure_matched_local,1993773078,0.447434819175778,361,4,134,8.842105263157896,1,0,1,unresolved_no_admissible_progress,1237,23,1,0
+v16z,1536,9365,123403,exposure_matched_local,1993773403,0.39456159822419534,384,4,78,7.40625,1,0,1,unresolved_no_admissible_progress,1039,18,1,0
+v16z,1536,9365,127341,exposure_matched_local,1993777341,0.4438249233342626,343,4,126,9.282798833819243,1,0,1,unresolved_no_admissible_progress,1253,26,1,0

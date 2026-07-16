@@ -94,28 +94,43 @@ not outrank later executed gates.
   `1.000` on all six and marginal entropy was lower than the v16x reference.
   Cross-start mean endpoint distance was `0.422373`, versus `0.078443` and
   `0.078510` within the two starts.
+- v16z decomposed the same six start-pair differences into `2139` exact
+  alternating cycles. Symmetric-difference coverage and sequential
+  forward/reverse whole-cycle replay passed `6/6`; the largest cycle changed
+  `78` to `152` edges depending on source.
+- The bounded target-directed v16z 2x2 search found `0/6` complete bridges. It
+  reduced mismatch from `1407-1609` to `5-26`, or `98.1521-99.6892%`, before
+  all six stopped `unresolved_no_admissible_progress`. This is finite near-
+  accessibility, not proof of disconnected components or mixing time.
+- Formal v16z status is `v16z_cycle_representation_not_qualified`: raw kernel
+  dictionary equality failed `0/6` because semantic relabeling changes
+  `SlotClass` keys. A separate post-run audit preserved that status and found
+  concrete edge-level move-set covariance `6/6` at both starts.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_global_alternatives_feasible_but_v16x_random_cost_and_v16y_local_reversible_measures_rejected_effect_blind`. See
+`fresh_event_footprint_spectrum_contrast_with_exact_pair_cycle_paths_but_no_qualified_state_independent_global_measure`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v16y_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v16z_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
-but neither finite endpoint law qualified for an effect test. It is not a
+while v16z established exact pair-specific cycle paths. No state-independent
+global endpoint law qualified for an effect test. It is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum under either the v16x or v16y measure. The
-narrow next gate is an effect-blind alternating-cycle bridge audit on the same
-six spaces and source/random-cost starts. Decompose symmetric differences,
-measure cycle lengths and changed-edge coverage, verify exact whole-cycle
-forward/reverse moves, and use bounded 2x2 bridge search only as a finite
-diagnostic. Search failure is unresolved, not proof of disconnection. Only a
-qualified longer-cycle kernel should proceed to a new finite start/seed/time
-comparison. Do not relax the v16x or v16y gates retrospectively.
+Do not compute the source spectrum under the v16x, v16y, or v16z procedures.
+The narrow next gate is
+`v17a_state_independent_cycle_proposal_qualification` on the same six spaces.
+Construct target-independent alternating-cycle candidates from each current
+state, require exact reverse support in the proposed state, and use the
+explicit forward/reverse proposal ratio in a lazy Metropolis correction.
+Qualify replay, candidate-order and edge-level relabel covariance, reverse
+support, finite movement, and resource bounds before any start/seed/time
+comparison. Do not spend more target-directed 2x2 search budget, and do not
+relax the v16x-v16z gates retrospectively.
 
 The separate units-of-action hypothesis is an open proposal, not a result. The
 repo supports a future test of local edit work, action-carrier density and

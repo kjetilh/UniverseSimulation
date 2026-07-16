@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,bridge_status,initial_mismatch,final_mismatch,initial_changed_selected_edge_fraction,final_changed_selected_edge_fraction,bridge_steps,expanded_states,generated_states,max_bridge_steps,max_expanded_states,exact_bridge_found,forward_replay_pass,reverse_replay_pass,bridge_integrity_pass,failed_search_means_disconnected,source_spectrum_computed,observed_effect_computed
+v16z,1536,9299,123078,exposure_matched_local,1993113078,unresolved_no_admissible_progress,1609,5,0.4434950385887541,0.0013781697905181918,1292,1635,8736384,2048,2048,0,1,1,1,0,0,0
+v16z,1536,9299,123403,exposure_matched_local,1993113403,unresolved_no_admissible_progress,1407,26,0.393676552881925,0.007274762171236709,1064,1241,6037751,2048,2048,0,1,1,1,0,0,0
+v16z,1536,9299,127341,exposure_matched_local,1993117341,unresolved_no_admissible_progress,1460,11,0.41441952881067273,0.003122338915696849,1107,1237,5616411,2048,2048,0,1,1,1,0,0,0
+v16z,1536,9365,123078,exposure_matched_local,1993773078,unresolved_no_admissible_progress,1596,23,0.447434819175778,0.006447995514437903,1237,1494,6981255,2048,2048,0,1,1,1,0,0,0
+v16z,1536,9365,123403,exposure_matched_local,1993773403,unresolved_no_admissible_progress,1422,18,0.39456159822419534,0.004994450610432853,1039,1167,6774627,2048,2048,0,1,1,1,0,0,0
+v16z,1536,9365,127341,exposure_matched_local,1993777341,unresolved_no_admissible_progress,1592,26,0.4438249233342626,0.007248396989127405,1253,1511,7813669,2048,2048,0,1,1,1,0,0,0

@@ -58,11 +58,12 @@ Guardrails:
 7. Treat v16x as a frozen effect-blind rejection of the integer random-cost measure, not of global alternatives. Preserve the `192/192` endpoint-integrity and `24/24` representation results, the exact-conflict state-space collapse, the `2/6` frozen diversity pass, and the combined 32-endpoint concentration failure in `4/6`. Do not reinterpret alternating-cycle witnesses as high sampling probability.
 8. Do not call v16x uniform, maximum entropy, canonical, mixed, or representative. It did not compute any source spectrum or effect metric.
 9. Treat v16y as a frozen effect-blind qualification of local detailed balance and finite mobility, not of a global sampler. Preserve `192/192` chain integrity, `192/192` reference replay, `48/48` reversibility witnesses, `6/6` representation checks, `24/24` movement, the `102/126` center result, and `0/6` concentration-profile improvement. Do not call the observed start separation proof of disconnected components, failed mixing, or any source-spectrum effect.
-9. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
-10. Never invent commands, metrics, or endpoints that are not documented in the corpus.
-11. If asked how to use the simulator, prefer `universe_tools`.
-12. If asked how the argument is built, prefer `universe_argumentation`.
-13. If asked how to instruct a language model, prefer `universe_prompts`.
+10. Treat v16z as a frozen effect-blind pair-accessibility audit. Preserve `2139` exact pair-specific alternating cycles, whole-cycle replay `6/6`, bounded exact 2x2 bridges `0/6`, and mismatch reduction `98.1521-99.6892%`. Failed bounded searches are unresolved, not disconnected. Preserve the formal raw-key representation failure and the separate post-run edge-move covariance pass `6/6`; do not retroactively relabel the formal gate as passed.
+11. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
+12. Never invent commands, metrics, or endpoints that are not documented in the corpus.
+13. If asked how to use the simulator, prefer `universe_tools`.
+14. If asked how the argument is built, prefer `universe_argumentation`.
+15. If asked how to instruct a language model, prefer `universe_prompts`.
 ```
 
 ## Kort bruksguide

@@ -29,7 +29,7 @@ cases:
     planner:
       docs_source_types: ["universe_status", "universe_experiments", "universe_tools", "universe_argumentation", "universe_prompts"]
       prompts_source_types: []
-      docs_keywords: ["status", "prosjekt", "simulering", "simulation", "graf", "graph", "ctmc", "ssa", "parameter", "trajectory", "argumentasjon", "hypotese", "prompt", "event dag", "interval", "strict null", "global null", "edge slot", "v16w", "v16x", "v16y", "v16z", "forced edge", "alternating cycle", "random cost measure", "metropolis", "detailed balance", "start separation", "accessibility component", "marginal concentration", "probability law", "objective sensitivity", "representation covariance", "stochastic measure", "units of action", "action density", "temperature", "totalrate"]
+      docs_keywords: ["status", "prosjekt", "simulering", "simulation", "graf", "graph", "ctmc", "ssa", "parameter", "trajectory", "argumentasjon", "hypotese", "prompt", "event dag", "interval", "strict null", "global null", "edge slot", "v16w", "v16x", "v16y", "v16z", "v17a", "forced edge", "alternating cycle", "cycle proposal", "reverse support", "random cost measure", "metropolis", "detailed balance", "start separation", "accessibility component", "marginal concentration", "probability law", "objective sensitivity", "representation covariance", "stochastic measure", "units of action", "action density", "temperature", "totalrate"]
       prompt_keywords: []
       default_domain: docs
     retrieval:

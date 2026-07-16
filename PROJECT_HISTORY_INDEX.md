@@ -7974,3 +7974,69 @@ Viktige filer:
 - `Documentation/v16y_claim_ledger.csv`
 - `Documentation/v16y_next_direction_assessment.md`
 - `Documentation/v0_16y_operativ_anbefaling.md`
+
+## 10de. v16z fant eksakte syklusveier, men 2x2-broene forble uavklarte
+
+`v16z` ble foerst preregistrert med ubegrenset materialisering foer beam-pruning.
+Den implementasjonen ble avbrutt foer noe kilderesultat var ferdig fordi
+minnebruken passerte 1 GB. Instrumenteringen ble reparert til streaming top-16
+uten aa endre sokebudsjett, ranking, dybde, terskler eller beslutningsregler.
+Den erstattende formelle preregistreringen ble frosset med spec-digest
+`1884bebea6477eedde6289bc20a879b8f6dbe43a13f891c993f6d7d8d134382c`
+og script-hash
+`935caeb60316d926d0f0f54a3208ec9a94f5c7d4721977039552ffc9bcba13e4`.
+
+Gaten beholdt de seks v16x/v16y coarse state-spaces og de samme
+`source_assignment`/`v16x_random_cost_a0`-startparene. Symmetrisk differanse ble
+orientert paa parent/slot-representasjonen og dekomponert i balanserte
+alternerende sykluser. Resultatet var:
+
+- frozen start digest replay: `6/6`
+- symmetric-difference coverage: `6/6`
+- sequential forward/reverse whole-cycle replay: `6/6`
+- totalt antall sykluser: `2139`, eller `343-384` per kilde
+- korteste endring per syklus: `4` kanter paa alle seks
+- lengste endring per syklus: `78-152` kanter
+- source spectrum/effect calls: `0/0`
+
+Det preregistrerte target-directed 2x2-soket hadde maks `2048` path-steg og
+`2048` ekspanderte states per par, med platadybde `3` og beam `16`. Det fant
+ingen komplett bro. Sokene tok `1039-1292` steg og reduserte mismatch fra
+`1407-1609` til `5-26`, tilsvarende `98.1521-99.6892%` reduksjon. Alle seks
+stoppet `unresolved_no_admissible_progress`. Dette er konkrete finite
+naer-tilgjengelighetsvitner, men ikke bevis for disconnection, mixing-tid eller
+global connectivity.
+
+Den formelle representasjonsgaten feilet `0/6` fordi scriptet sammenlignet raw
+`candidate_parents_by_slot`-dictionaries under semantisk relabeling.
+`SlotClass`-noklene skal endres under denne relabelingen, saa dette var ikke en
+kovariant test. En separat post-run audit beholdt den formelle statusen
+`v16z_cycle_representation_not_qualified`, men sammenlignet de konkrete
+edge-level 2x2-move-settene ved begge startene. De passerte candidate-order og
+semantic-relabel covariance `6/6`; raw key equality forble `0/6`.
+
+Neste gate er effect-blind
+`v17a_state_independent_cycle_proposal_qualification`. Den skal definere
+target-independent sykluskandidater fra hver current state, kreve reverse
+support i proposed state og bruke eksplisitt proposal-ratio i en lazy
+Metropolis-korreksjon. Ikke bruk mer target-directed 2x2-budgett, og ikke aapne
+v16s-spektrum/effect foer proposal, tilgjengelighet og start/seed/time-stabilitet
+er kvalifisert.
+
+Viktige filer:
+
+- `relational_universe_v16z_alternating_cycle_bridge_gate.py`
+- `relational_universe_v16z_postrun_representation_audit.py`
+- `Documentation/v16z_alternating_cycle_bridge_gate.md`
+- `Documentation/v16z_interpretation_audit.md`
+- `Documentation/v16z_postrun_representation_audit.md`
+- `Documentation/v16z_alternating_cycle_decomposition.csv`
+- `Documentation/v16z_whole_cycle_reversibility_audit.csv`
+- `Documentation/v16z_2x2_bridge_search_summary.csv`
+- `Documentation/v16z_2x2_bridge_trace.csv`
+- `Documentation/v16z_representation_audit.csv`
+- `Documentation/v16z_postrun_representation_audit.csv`
+- `Documentation/v16z_gate_evaluation.csv`
+- `Documentation/v16z_claim_ledger.csv`
+- `Documentation/v16z_next_direction_assessment.md`
+- `Documentation/v0_16z_operativ_anbefaling.md`

@@ -61,6 +61,9 @@ not an exact realization of every DPO/CTMC statement in the research report.
 - v16y implemented a lazy degree-corrected 2x2 Metropolis law. Tested detailed
   balance passed `48/48`, representation passed `6/6`, and all `24/24` finite
   chains met the movement criterion.
+- v16z gave exact pair-specific alternating-cycle decompositions for all six
+  v16y start pairs: `2139` cycles total, full coverage, and whole-cycle
+  forward/reverse replay `6/6`.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -75,6 +78,14 @@ start comparisons, cross-start distance is about `0.422`, and within-start
 distance about `0.078`. The chain concentration profile is worse than the v16x
 reference on all six sources. This supports a move-accessibility diagnosis, not
 a claim that the move graph is disconnected.
+
+V16z narrows the accessibility question without resolving it globally. The
+target-directed 2x2 search reduced each pair mismatch by more than `98%` but
+found `0/6` complete paths under the frozen bounds. Exact pair-specific
+whole-cycle paths exist, yet they do not define a state-independent proposal
+law. The formal representation status remains failed because it compared raw
+relabel-dependent slot keys; a post-run edge-move audit passed `6/6` and is a
+diagnosis, not a retroactive preregistered pass.
 
 ## What has been explained away or remains negative
 
@@ -116,13 +127,13 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is an effect-blind alternating-cycle bridge gate on
-the same coarse feasible matching space. Retain v16x and v16y as controls, but
-first determine whether longer valid cycles supply explicit forward/reverse
-bridges between the two start families. A bounded search may diagnose found
-bridges but cannot prove disconnection when it fails. Only then should a
-longer-cycle law face marginal entropy, start/seed/time stability and support
-coverage before any source-spectrum inspection. Concrete conflict remains a
+The best current next test is an effect-blind, state-independent alternating-
+cycle proposal qualification on the same coarse feasible matching space.
+Retain v16x-v16z as controls. The proposal must not use the destination target;
+it must expose exact reverse support and proposal probabilities under candidate
+order and semantic relabeling. Only a qualified longer-cycle law should face
+marginal entropy, start/seed/time stability and support coverage before any
+source-spectrum inspection. Concrete conflict remains a
 required diagnostic because exact preservation collapsed the available finite
 freedom. The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not

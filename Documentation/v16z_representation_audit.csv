@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,cycle_signature_sha256,exact_replay_pass,candidate_order_covariance_pass,candidate_set_covariance_pass,start_pair_covariance_pass,semantic_relabel_covariance_pass,bridge_kernel_covariance_pass,representation_pass
+v16z,1536,9299,123078,exposure_matched_local,1993113078,c4cc7f7ae5a142e38aa73b2e88eb73012a3f37b287b06fcb2bab20dd9926484c,1,1,1,1,1,0,0
+v16z,1536,9299,123403,exposure_matched_local,1993113403,1bf3dd902209cd57dadd4fe54dcd814a6efb63dce0ceac78540f46b7a3b45df1,1,1,1,1,1,0,0
+v16z,1536,9299,127341,exposure_matched_local,1993117341,ae5d045a0b93a05dfb8110eeaabf357665863a0d29cdfc0096fc63662eef6633,1,1,1,1,1,0,0
+v16z,1536,9365,123078,exposure_matched_local,1993773078,85c61917a82f06e655d3ba04da2348b86f40b7f1a0d7cfd6a2a22bcc3bebc5e9,1,1,1,1,1,0,0
+v16z,1536,9365,123403,exposure_matched_local,1993773403,10d3836563d3bba240e9dead6b4849e03baf2c3d3fa33bb986aaf41b0cd4c244,1,1,1,1,1,0,0
+v16z,1536,9365,127341,exposure_matched_local,1993777341,6c9853d560f3b81e5c5212d05829a683fc8459a6d6a38eba95e37d82abd05150,1,1,1,1,1,0,0

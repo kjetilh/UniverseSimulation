@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,formal_raw_kernel_key_equality_pass,source_start_move_count,random_start_move_count,source_start_move_set_covariance_pass,random_start_move_set_covariance_pass,formal_cycle_signature_covariance_pass,corrected_edge_move_representation_pass,formal_gate_retroactively_changed,source_spectrum_computed,observed_effect_computed
+v16z,1536,9299,123078,exposure_matched_local,1993113078,0,6942,6659,1,1,1,1,0,0,0
+v16z,1536,9299,123403,exposure_matched_local,1993113403,0,5856,5560,1,1,1,1,0,0,0
+v16z,1536,9299,127341,exposure_matched_local,1993117341,0,5101,4991,1,1,1,1,0,0,0
+v16z,1536,9365,123078,exposure_matched_local,1993773078,0,5707,5532,1,1,1,1,0,0,0
+v16z,1536,9365,123403,exposure_matched_local,1993773403,0,6519,6463,1,1,1,1,0,0,0
+v16z,1536,9365,127341,exposure_matched_local,1993777341,0,6340,6073,1,1,1,1,0,0,0

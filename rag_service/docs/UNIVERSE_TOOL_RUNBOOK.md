@@ -12,8 +12,9 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind global-measure gate: `relational_universe_v16y_reversible_global_measure_gate.py`
-- Latest post-run start-separation audit: `relational_universe_v16y_postrun_start_separation_audit.py`
+- Latest effect-blind accessibility gate: `relational_universe_v16z_alternating_cycle_bridge_gate.py`
+- Latest post-run representation audit: `relational_universe_v16z_postrun_representation_audit.py`
+- Prior reversible-measure controls: `relational_universe_v16y_reversible_global_measure_gate.py` and `relational_universe_v16y_postrun_start_separation_audit.py`
 - Prior integer-measure controls: `relational_universe_v16x_explicit_global_measure_gate.py`, `relational_universe_v16x_postrun_concentration_audit.py`, and `relational_universe_v16x_top_edge_component_audit.py`
 - Public archive builder: `Tools/build_emergentuniverse_public_site.py`
 - RAG service: `rag_service/`
@@ -37,6 +38,7 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v16x_explicit_global_measure_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v16y_reversible_global_measure_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v16y_postrun_start_separation_audit.py
+/opt/anaconda3/bin/python relational_universe_v16z_postrun_representation_audit.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -64,6 +66,12 @@ replays, preregistration/source hashes, representation checks and effect
 exclusions. Read `Documentation/v16y_interpretation_audit.md` and
 `Documentation/v16y_postrun_start_separation_audit.md`; local detailed balance
 does not establish global connectivity or mixing.
+The formal v16z gate intentionally remains representation-failed and its own
+strict verifier therefore does not rehabilitate it. Use the post-run verifier
+to check frozen script/source hashes, exact cycle/bridge products, the preserved
+formal status, and corrected edge-level move-set covariance. Read both
+`Documentation/v16z_interpretation_audit.md` and
+`Documentation/v16z_postrun_representation_audit.md`.
 
 ## Run the early toy simulator
 
@@ -89,14 +97,17 @@ audit, representation audit, source summary, gate evaluation, claim ledger,
 post-run concentration products, the v16y report, interpretation audit,
 reversibility/representation/movement/stability/concentration products,
 post-run start-separation audit, next-direction assessment, and live project
-context. Check SHA-256 hashes.
+context, plus the v16z report, formal/post-run interpretation audits, bounded
+bridge summary, exact cycle/reversibility products, gate and claim ledger.
+Keep the full cycle and bridge-trace CSVs in the static archive only. Check
+SHA-256 hashes.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16y|192/192|48/48|24/24|102/126|0/6|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16z|2,139|0/6|98.1521|6/6|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16y_interpretation_audit.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16z_postrun_representation_audit.md
 ```
 
 ## Start the RAG service locally
@@ -145,11 +156,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva besto og feilet i v16y, hvorfor er startseparasjon ikke bevis for disjunkte komponenter, og hva er neste gate?'
+  --query 'Hva viste v16z om alternerende sykluser og bounded 2x2-broer, hva var representasjonsartefakten, og hva er neste gate?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v16y material plus v16x/v16s when the reference law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v16z material plus v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -190,6 +201,10 @@ does not update this index; both deployments require separate verification.
   proof of global connectivity, mixing, uniform sampling, canonicality, or an
   effect result. Its finite endpoint centers remained start-dependent, and a
   failed bounded bridge search would not prove disconnection.
+- Do not use v16z pair-specific whole-cycle witnesses as a state-independent
+  proposal law. `0/6` bounded exact bridges is unresolved, and the post-run
+  edge-move covariance audit does not retroactively change the formal raw-key
+  representation failure.
 - Do not call token count, action density or edit work physical energy or
   temperature before a local balance law and intensive fluctuation observable
   pass fresh tests. Uniformly scaling all rates is only clock rescaling.
