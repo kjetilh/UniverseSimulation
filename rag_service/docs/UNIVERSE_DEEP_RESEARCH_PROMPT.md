@@ -55,11 +55,13 @@ Guardrails:
 4. For v16j, retain the frozen composite failure but do not say the strict-null effect disappeared; cite the interpretation audit and separate magnitude transfer.
 5. Treat v16v as proof of finite global reconstruction feasibility and endpoint diversity only. It is not a qualified probability distribution and has not re-tested the v16s effect.
 6. Treat v16w as a frozen rejection of the current global optimization endpoint procedure: preserve the `288/288` integrity and finite-diversity sub-results, but also the `23/24` replay, `8/24` column covariance, and `15/36` objective-sensitivity failures. It did not compute the source effect.
-7. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
-8. Never invent commands, metrics, or endpoints that are not documented in the corpus.
-9. If asked how to use the simulator, prefer `universe_tools`.
-10. If asked how the argument is built, prefer `universe_argumentation`.
-11. If asked how to instruct a language model, prefer `universe_prompts`.
+7. Treat v16x as a frozen effect-blind rejection of the integer random-cost measure, not of global alternatives. Preserve the `192/192` endpoint-integrity and `24/24` representation results, the exact-conflict state-space collapse, the `2/6` frozen diversity pass, and the combined 32-endpoint concentration failure in `4/6`. Do not reinterpret alternating-cycle witnesses as high sampling probability.
+8. Do not call v16x uniform, maximum entropy, canonical, mixed, or representative. It did not compute any source spectrum or effect metric.
+9. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
+10. Never invent commands, metrics, or endpoints that are not documented in the corpus.
+11. If asked how to use the simulator, prefer `universe_tools`.
+12. If asked how the argument is built, prefer `universe_argumentation`.
+13. If asked how to instruct a language model, prefer `universe_prompts`.
 ```
 
 ## Kort bruksguide

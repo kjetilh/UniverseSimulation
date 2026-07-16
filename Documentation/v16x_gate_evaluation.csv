@@ -1,0 +1,9 @@
+gate,status,observed,required,decision
+effect_blind_endpoint_integrity,pass,endpoints=192/192;switch=0;spectrum=0;effect=0,192/192;0;0;0,continue
+global_forced_edge_witness_integrity,pass,arms=12/12;witnesses=45,arms=12/12,continue
+effect_blind_state_space_choice,pass,coarse_nontrivial=6/6;conflict_nontrivial=0/6,coarse_nontrivial=6/6;conflict_nontrivial=0/6,coarse_measure_with_conflict_stratification
+representation_covariance,pass,24/24,24/24,continue
+finite_endpoint_diversity,fail,sources=2/6,sources=6/6,measure_concentrated
+finite_batch_center_stability,fail,features=35/36,36/36,increase_or_repair_sampling
+independent_seed_family_stability,pass,features=36/36,36/36,finitely_qualified
+v16x_overall,v16x_integer_measure_endpoint_diversity_not_qualified,integrity=1;witness=1;state=1;representation=1;diversity=0;batch=0;seed=1;exclusion=1,1;1;1;1;1;1;1;1,v16x_integer_measure_endpoint_diversity_not_qualified

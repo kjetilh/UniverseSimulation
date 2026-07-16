@@ -15,7 +15,7 @@ Dette dokumentet er den korteste operative inngangen til dagens repo-state i `Un
   - scoringartefakter,
   - dynamiske simulasjonsresultater.
 
-## Handoff context for next agent (2026-07-15)
+## Handoff context for next agent (2026-07-16)
 
 Denne seksjonen er lagt inn for aa kunne fortsette i ny traad uten aa miste siste operative retning.
 
@@ -115,6 +115,7 @@ Denne seksjonen er lagt inn for aa kunne fortsette i ny traad uten aa miste sist
 - `v16l` kvalifiserer attempt-budgettet uten ny dynamikk og uten effektverdier i beslutningen. Samme v16k-DAGer, nullseeds, swapmaal og nulltall ble rerunnet med safety ceiling `240` istedenfor `60`: primary fullforte `384/384`, lengre `0.10` fullforte `192/192`, all struktur og unikhet holdt. Maks faktisk behov var `60.138480` og `75.522982` forsok per kant. Status er `sampler_attempt_budget_qualified_for_new_holdout`.
 - v16l sine korrigerte spektrumverdier er kun post-hoc sensitivity. Retningen holdt `12/12` i begge nullfamilier, men dette rehabiliterer ikke v16k og inngikk ikke i kvalifiseringsgaten.
 - Arbeidskonklusjon akkurat naa: v15-observabelprogrammet er avsluttet. Clock/depth-relasjonen er reell i simulatoren, men v16h forklarer den parsimonisk med schedulerens totalrate og common-geometry-syntesen er lukket. V16m replikerte en kausal intervallspektrumkontrast under strict-null; v16o-v16q fant og kvalifiserte en grovere event-footprint-null; v16r beholdt kontrasten posthoc; v16s replikerte den paa seks ferske historier. V16t sin realized-effort-audit fant en designkonfundering, v16u reparerte den effect-blind, og v16v viste at en uavhengig global edge-slot-null kan konstrueres. V16w kvalifiserte saa denne familien effect-blind, men feilet: `288/288` endepunkter var strukturelt gyldige, rolle-relabel passerte `24/24`, unikandel var `1.000` og batch-center passerte `36/36`; samtidig var eksakt replay bare `23/24`, kandidatkolonne-kovarians `8/24`, og objective-sensitivity bare `15/36`. Source-edge-retensjon, konkret konfliktandel og parvis endpoint-avstand skiftet paa alle seks kilder mellom retain-min og random-priority. Frossen status er `v16w_global_null_qualification_instrumentation_failed`; den globale nullfamilien er ikke kvalifisert, og v16s-effekten skal ikke testes under den. Neste gate maa definere en representasjonsuavhengig, eksplisitt stokastisk fordeling over feasible globale matchinger og avklare globalt tvungne kanter samt konkret ressurskonflikt effect-blind. `Units of action`/lokal realisert endring er fortsatt en mulig vei til emergent energi og effektiv temperatur, men bruk forelopig bare `action density` eller `change intensity`. Ikke skaler target eller fit dimensjon ennaa. Ikke kall signalet energi, temperatur, manifold, Lorentz-geometri eller spacetime.
+- `v16x` utfoerte denne reparasjonen effect-blind med residual-SCC forced-edge-audit og et eksplisitt 63-bits integer random-cost/min-cost-flow-maal. Exact replay, candidate insertion covariance og semantic relabel passerte samlet `24/24`; endpoint-integritet var `192/192`; seed-family center stability var `36/36`. Exact concrete-conflict-state-space kollapset algebraisk: `99.4607-99.9173%` av source edges var globalt forced og maksimal mulig endring bare `0.000827-0.005827`, under den gamle `0.10`-grensen paa alle seks kilder. Coarse-space overlevde, men det eksplisitte maalet feilet finite diversity fordi fire kilder hadde minst en globalt variabel kant med inclusion `16/16`. Post-run `32`-draw-auditen bestod den gamle `0.95`-grensen bare `2/6`; to kilder hadde `32/32`, to `31/32`. Frossen status er `v16x_integer_measure_endpoint_diversity_not_qualified`. Ikke aapne v16s-effekten. Neste gate skal effect-blind sammenligne sannsynlighetslover paa samme coarse state-space, med eksplisitt stationary target, connectivity/mixing-audit og marginal entropy/component coverage. Ikke omskriv v16x som uniform sampling, maximum entropy eller canonical null.
 - Les foer ny implementering: `Documentation/v15ch_target768_local_swap_p2_horizon_holdout_lab.md`, `Documentation/v15ci_target768_p2_horizon_genealogy_mechanism_lab.md`, `Documentation/v15cj_target768_outer_occupancy_concentration_lab.md`, `Documentation/v15ck_target768_outer_feeder_flux_lab.md`, `Documentation/v15cl_target768_inner_gate_global_budget_lab.md`, `Documentation/v15cm_target768_local_trigger_lab.md`, `Documentation/v15cn_p2_horizon_scale_holdout_lab.md`, `Documentation/v15co_configuration_heuristic_assessment.md`, `Documentation/v15cp_target1024_scaled_budget_p2_horizon_lab.md`, `Documentation/v15cq_intermediate_scale_p2_horizon_lab.md`, `Documentation/v15cr_next_direction_assessment.md`, `Documentation/v15cs_add_chord_p0_scale_response_holdout.md`, `Documentation/v15ct_response_fingerprint_synthesis.md`, `Documentation/v15cu_add_chord_placement_response_map.md`, `Documentation/v15cv_add_chord_winning_placement_mechanism_probe.md`, `Documentation/v15cw_add_chord_p1_p3_genealogy_seed_split.md`, `Documentation/v15cx_p1_1024_genealogy_holdout.md`, `Documentation/v15cy_continuous_genealogy_intensity_synthesis.md`, `Documentation/v15cz_pre_registered_continuous_intensity_holdout.md`, `Documentation/v15da_frozen_intensity_placement_contrast.md`, `Documentation/v15db_routing_phase_observable_synthesis.md`, `Documentation/v15dc_pre_horizon_routing_precursor.md`, `Documentation/v15dd_direct_route_entry_retention.md`, `Documentation/v15de_pre_entry_feature_synthesis.md`, `Documentation/v15df_pre_entry_support_topology_synthesis.md`, `Documentation/v15dg_boundary_mass_holdout.md`, `Documentation/v15dh_boundary_mass_growth_seed_holdout.md`, `Documentation/v15di_growth_seed_signature_synthesis.md`, `Documentation/v15dj_support_conditioned_pre_run_audit.md`, `Documentation/v15dk_pre_registered_support_rank_holdout.md`, `Documentation/v15dl_base_landscape_morphology_synthesis.md`, `Documentation/v15dm_frozen_return_probability_holdout.md`, `Documentation/v15dn_multi_active_landscape_synthesis.md`, `Documentation/v15do_active_set_type_discriminator_synthesis.md`, `Documentation/v15dp_active_set_type_guard_holdout.md`, `Documentation/v15dq_active_set_taxonomy_synthesis.md`, `Documentation/v15dr_active_set_taxonomy_mapper_holdout.md`, `Documentation/v15ds_active_set_landscape_atlas.md`, `Documentation/v15dt_ood_first_stratified_selector_synthesis.md`, `Documentation/v15du_relabel_symmetry_gate.md`, `Documentation/v15dv_relabel_invariant_chord_constructor.md`, `Documentation/v15dw_constructor_coupling_factorial_gate.md`, `Documentation/v15dx_eventwise_beta1_invariant_gate.md`, `Documentation/v15dy_sector_conditioned_marginal_response_gate.md`, `Documentation/v15dz_local_sector_transport_gate.md`, og de tilhorende `v0_15ch`-`v0_15dz` anbefalingene.
 - Retningsgrunnlag foer v16: `Documentation/v15ea_post_beta1_direction_assessment.md`, `Documentation/v15ea_rule_adequacy_matrix.csv`, `Documentation/v15ea_direction_claim_ledger.csv` og `Documentation/v0_15ea_operativ_anbefaling.md`.
 - Les v16a-resultatet foer videre regelarbeid: `Documentation/v16a_disjoint_event_commutation_gate.md`, `Documentation/v16a_event_support_schema.csv`, `Documentation/v16a_local_hazard_factorization.csv`, `Documentation/v16a_remote_context_audit.csv`, `Documentation/v16a_gate_evaluation.csv` og `Documentation/v0_16a_operativ_anbefaling.md`.
@@ -136,12 +137,12 @@ Denne seksjonen er lagt inn for aa kunne fortsette i ny traad uten aa miste sist
 
 ## Siste sikre live status
 
-Nyere regeladekvansrunder etter v15-listen er `v15ea`, `v16a`, `v16aa`, `v16ab`, `v16ac`, `v16b`, `v16c`, `v16d`, `v16e`, `v16f`, `v16g`, `v16h`, `v16i`, `v16j`, `v16k`, `v16l`, `v16m`, `v16n`, `v16o`, `v16p`, `v16q`, `v16r`, `v16s`, `v16t`, `v16u`, `v16v` og `v16w`; v16w er siste fullforte gate.
+Nyere regeladekvansrunder etter v15-listen er `v15ea`, `v16a`, `v16aa`, `v16ab`, `v16ac`, `v16b`, `v16c`, `v16d`, `v16e`, `v16f`, `v16g`, `v16h`, `v16i`, `v16j`, `v16k`, `v16l`, `v16m`, `v16n`, `v16o`, `v16p`, `v16q`, `v16r`, `v16s`, `v16t`, `v16u`, `v16v`, `v16w` og `v16x`; v16x er siste fullforte gate.
 
 Per dagens lokale state er `v11e` den siste frontier-avklaringen. `v12`, `v12b`, `v12c`, `v12d`, `v12e`, `v12f`, `v12g`, `v12h`, `v12i`, `v12j`, `v12k`, `v12l`, `v12m`, `v12n`, `v13`, `v13b`, `v13c`, `v13d`, `v13e`, `v13f`, `v13g`, `v13h`, `v13i`, `v13j`, `v13k`, `v13l`, `v13m`, `v13n`, `v14`, `v14b`, `v14c`, `v15`, `v15b`, `v15c`, `v15d`, `v15e`, `v15f`, `v15g`, `v15h`, `v15i`, `v15j`, `v15k`, `v15l`, `v15m`, `v15n`, `v15o`, `v15p`, `v15q`, `v15r`, `v15s`, `v15t`, `v15u`, `v15v`, `v15w`, `v15x`, `v15y`, `v15z`, `v15aa`, `v15ab`, `v15ac`, `v15ad`, `v15ae`, `v15af`, `v15ag`, `v15ai`, `v15aj`, `v15ak`, `v15al`, `v15am`, `v15an`, `v15ao`, `v15ap`, `v15aq`, `v15ar`, `v15as`, `v15at`, `v15au`, `v15av`, `v15aw`, `v15ax`, `v15ay`, `v15az`, `v15ba`, `v15bb`, `v15bc`, `v15bd`, `v15be`, `v15bf`, `v15bg`, `v15bh`, `v15bi`, `v15bj`, `v15bk`, `v15bl`, `v15bm`, `v15bn`, `v15bo`, `v15bp`, `v15bq`, `v15br`, `v15bs`, `v15bt`, `v15bu`, `v15bv`, `v15bw`, `v15bx`, `v15by`, `v15bz`, `v15ca`, `v15cb`, `v15cc`, `v15cd`, `v15ce`, `v15cf`, `v15cg`, `v15ch`, `v15ci`, `v15cj`, `v15ck`, `v15cl`, `v15cm`, `v15cn`, `v15co`, `v15cp`, `v15cq`, `v15cr`, `v15cs`, `v15ct`, `v15cu`, `v15cv`, `v15cw`, `v15cx`, `v15cy`, `v15cz`, `v15da`, `v15db`, `v15dc`, `v15dd`, `v15de`, `v15df`, `v15dg`, `v15dh`, `v15di`, `v15dj`, `v15dk`, `v15dl`, `v15dm`, `v15dn`, `v15do`, `v15dp`, `v15dq`, `v15dr`, `v15ds`, `v15dt`, `v15du`, `v15dv`, `v15dw`, `v15dx`, `v15dy` og `v15dz` er de aktive struktur-/transfer-/Lorentz-/defect-/heuristikk-rundene bygget pa den.
 
 - Frontier-script: `relational_universe_v11e_band_vs_bridge0075.py`
-- Nyeste regeladekvans-gate: `Documentation/v16w_global_null_qualification_gate.md` (`v16w_global_null_qualification_instrumentation_failed`; globale endepunkter er feasible og finite-diverse, men LP-valget feiler representasjonskovarians og viser sterk objective dependence)
+- Nyeste regeladekvans-gate: `Documentation/v16x_explicit_global_measure_gate.md` (`v16x_integer_measure_endpoint_diversity_not_qualified`; heltallsutvalget reparerer testet representasjonskovarians, men den deklarerte random-cost-fordelingen har for hoy marginal konsentrasjon)
 - Frontier-rapport: `Documentation/v11e_band_vs_bridge0075.md`
 - Frontier-kandidatsammendrag: `Documentation/v11e_band_vs_bridge0075_candidate_summary.csv`
 - Frontier-pairwise: `Documentation/v11e_band_vs_bridge0075_pairwise.csv`
@@ -3024,6 +3025,47 @@ The next effect-blind gate must define an explicit stochastic measure over
 feasible global matchings, use representation-independent exact selection,
 audit globally forced edges, and decide whether concrete resource conflicts are
 preserved or stratified.
+
+`v16x` executed that gate without computing a source spectrum or observed
+effect. It classified globally forced source edges through strongly connected
+components in the source residual matching graph and validated `45`
+globally-variable examples by explicit alternating-cycle flips. Coarse v16v
+spaces retained maximum possible changed-edge fractions `0.582820-0.638695`.
+Exact actual-concrete-conflict spaces retained only `0.000827-0.005827`, so all
+six fail the already frozen v16v `0.10` nontrivial-change floor. Concrete
+conflict must therefore be stratified or diagnosed rather than preserved
+exactly under this state-space definition.
+
+The surviving coarse space was sampled by canonically assigning seeded
+pseudo-random integer costs in `[1, 2^63-1]` and solving exact integer-capacity
+minimum-cost b-matchings with `network_simplex`. No source-retention objective
+was present. All `192/192` declared endpoints passed integrity. Exact replay,
+candidate insertion-order covariance, and semantic role relabel covariance
+passed `24/24`. Independent seed-family center stability passed `36/36`; half-
+batch stability passed `35/36`.
+
+The finite diversity composite failed on four sources only because a globally
+variable edge appeared in all `16` primary endpoints. Other diversity measures
+were broad: unique fraction `1.000`, median pairwise change `0.395117-0.451079`,
+variable union coverage `0.344466-0.423147`, and effective variable support
+ratio `0.253525-0.319294`. A post-run audit replayed all `192/192` endpoint
+digests and combined the two independent seed families. The old maximum-
+inclusion ceiling passed only `2/6`; source maxima were `29/32`, `30/32`,
+`31/32`, `31/32`, `32/32`, and `32/32`.
+
+Every top-inclusion edge is a concrete-conflict source edge but has a valid
+alternating-cycle removal witness. Five sit in residual SCCs with
+`2529-3099` nodes; one sits in a 146-node SCC. This is not a hidden forced-edge
+error. The declared random-cost measure is materially concentrated on some
+globally variable choices. Frozen status is
+`v16x_integer_measure_endpoint_diversity_not_qualified`.
+
+Do not run an observed v16s effect under v16x. The next effect-blind gate should
+compare probability laws on the same coarse state space, retain v16x as a
+reference, define an explicit stationary target for a symmetric alternating-
+cycle or heat-bath proposal, and audit connectivity, finite mixing, marginal
+entropy, component coverage, pairwise distance, and concrete-conflict strata.
+See `Documentation/v16x_interpretation_audit.md`.
 
 ## Generatorstatus
 

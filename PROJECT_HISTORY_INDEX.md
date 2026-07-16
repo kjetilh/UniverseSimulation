@@ -7836,3 +7836,77 @@ Viktige filer:
 - `Documentation/v16w_claim_ledger.csv`
 - `Documentation/v16w_next_direction_assessment.md`
 - `Documentation/v0_16w_operativ_anbefaling.md`
+
+## 10dc. v16x reparerte representasjonslaget, men random-cost-maalet var konsentrert
+
+`v16x` ble frosset med spec-digest
+`8c35bd8f7517ed374e401106fad3bb9ca31bbbff5a5fb326412ae7450ce50ee6`
+og script-hash
+`1748f3d4cc797902eb96877341417bad0574b2cc708a605358eec14b7e6cb26c`.
+Forced-edge-tallene paa de seks gamle kildene var eksplisitt oppgitt som
+designinspisert; den deterministiske state-space-auditen er derfor ikke en ny
+holdout. Samplerendepunktene og representasjonskontrollene ble derimot ikke
+generert foer hashlaasing.
+
+Residual-SCC-auditen klassifiserte globalt variable kanter gjennom alternerende
+sykler og validerte `45` konkrete flips. Coarse v16v-space hadde globalt forced
+source-edge fraction `0.361305-0.417180` og maksimal mulig source change
+`0.582820-0.638695`. Et state-space som krevde actual concrete conflict paa
+hver kandidatkant kollapset: forced source fraction ble
+`0.994607-0.999173`, og maksimal mulig source change bare
+`0.000827-0.005827`. Dermed feilet alle seks den allerede frosne v16v-grensen
+`0.10` uten samplerbruk.
+
+Coarse-space ble saa utstyrt med et eksplisitt random-cost-maal: seeded
+pseudo-random 63-bits heltallskostnad per kanonisk kandidatkant, uten source-
+retention-term, og integer-capacity `network_simplex` for minimum-cost
+b-matching. Resultatet var:
+
+- endpoint integrity/effect exclusion: `192/192`, calls `0/0/0`
+- forced-edge witness arms: `12/12`, witnesses `45`
+- exact replay + insertion order + semantic relabel: `24/24`
+- primary unique fraction: `1.000` paa alle seks kilder
+- median pairwise change: `0.395117-0.451079`
+- variable union coverage: `0.344466-0.423147`
+- effective variable support: `0.253525-0.319294`
+- half-batch center stability: `35/36`
+- independent seed-family stability: `36/36`
+- frozen finite-diversity source pass: `2/6`
+
+Fire diversity-feil kom bare fra maksimum inclusion `1.000` blant globalt
+variable kanter. En separat post-run audit regenererte og digest-verifiserte
+alle `192/192` endepunkter og kombinerte begge seed-familier. Den gamle
+`<=0.95`-grensen passerte fortsatt bare `2/6`; maksimum var `29/32`, `30/32`,
+to ganger `31/32` og to ganger `32/32`.
+
+Komponentauditen viste at alle toppkantene har faktiske alternerende
+fjerningsvitner som endrer `2-10` source edges. Fem ligger i store SCC-er med
+`2529-3099` noder og `19690-29255` interne kandidater; den sjette ligger i en
+146-node-komponent. Dette er ikke skjulte forced edges. Det eksplisitte
+random-cost-maalet legger hoy masse paa enkelte strukturelt variable valg.
+
+Frossen status er
+`v16x_integer_measure_endpoint_diversity_not_qualified`. Resultatet reparerer
+v16w sin testede representasjonsfeil, men kvalifiserer ikke en uniform,
+maximum-entropy eller canonical null og aapner ikke v16s-effekten. Neste gate
+skal effect-blind sammenligne sannsynlighetslover paa samme coarse space, med
+eksplisitt stationary target, connectivity/mixing-diagnostikk og en ny
+forhaandsregistrert marginal-entropy/component-coverage-profil.
+
+Viktige filer:
+
+- `relational_universe_v16x_explicit_global_measure_gate.py`
+- `relational_universe_v16x_postrun_concentration_audit.py`
+- `relational_universe_v16x_top_edge_component_audit.py`
+- `Documentation/v16x_explicit_global_measure_gate.md`
+- `Documentation/v16x_interpretation_audit.md`
+- `Documentation/v16x_state_space_forced_edge_audit.csv`
+- `Documentation/v16x_sampler_endpoint_audit.csv`
+- `Documentation/v16x_representation_audit.csv`
+- `Documentation/v16x_source_qualification_summary.csv`
+- `Documentation/v16x_postrun_combined_seed_concentration.csv`
+- `Documentation/v16x_postrun_top_edge_component_audit.csv`
+- `Documentation/v16x_gate_evaluation.csv`
+- `Documentation/v16x_claim_ledger.csv`
+- `Documentation/v16x_next_direction_assessment.md`
+- `Documentation/v0_16x_operativ_anbefaling.md`

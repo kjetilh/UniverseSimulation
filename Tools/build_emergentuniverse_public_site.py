@@ -864,6 +864,126 @@ DATASET_SPECS: list[dict[str, str]] = [
         "title": "v16w non-specialist summary",
         "description": "Plain-language explanation of the global-null procedure failure.",
     },
+    {
+        "source": "Documentation/v16x_explicit_global_measure_gate.md",
+        "category": "latest_causal_structure",
+        "title": "v16x explicit global-measure gate",
+        "description": "Effect-blind integer random-cost endpoint measure with forced-edge, covariance, diversity and stability gates.",
+    },
+    {
+        "source": "Documentation/v16x_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v16x interpretation audit",
+        "description": "Evidence-layered diagnosis of the passed representation controls and failed endpoint-concentration gate.",
+    },
+    {
+        "source": "Documentation/v16x_state_space_forced_edge_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x forced-edge audit",
+        "description": "Residual-SCC forced-edge counts and alternating-cycle witness summaries for both frozen state-space arms.",
+    },
+    {
+        "source": "Documentation/v16x_sampler_endpoint_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x endpoint audit",
+        "description": "Integrity, effect-exclusion and null-only feature rows for 192 integer-cost endpoints.",
+    },
+    {
+        "source": "Documentation/v16x_pairwise_endpoint_distance.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x pairwise endpoint distance",
+        "description": "Within-seed-family pairwise endpoint change and Jaccard rows.",
+    },
+    {
+        "source": "Documentation/v16x_representation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x representation audit",
+        "description": "Exact replay, candidate-insertion permutation and semantic-relabel covariance checks.",
+    },
+    {
+        "source": "Documentation/v16x_batch_center_stability.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x batch-center stability",
+        "description": "Effect-blind half-batch center comparisons for null-only endpoint features.",
+    },
+    {
+        "source": "Documentation/v16x_seed_family_stability.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x seed-family stability",
+        "description": "Independent random-cost seed-family endpoint-center comparisons.",
+    },
+    {
+        "source": "Documentation/v16x_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x source qualification summary",
+        "description": "Per-source forced-edge, diversity, covariance and stability decisions.",
+    },
+    {
+        "source": "Documentation/v16x_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x gate evaluation",
+        "description": "Frozen machine-readable explicit-measure qualification result.",
+    },
+    {
+        "source": "Documentation/v16x_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x claim ledger",
+        "description": "Supported finite subclaims and explicit unresolved measure/effect claims.",
+    },
+    {
+        "source": "Documentation/v16x_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x preregistration",
+        "description": "Frozen state spaces, endpoint budgets, thresholds, source hashes and effect exclusions.",
+    },
+    {
+        "source": "Documentation/v16x_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x source chain",
+        "description": "SHA-256 chain linking the explicit-measure gate to frozen v16s/v16v/v16w evidence.",
+    },
+    {
+        "source": "Documentation/v16x_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v16x next direction",
+        "description": "Preregistered interpretation boundary and next probability-law comparison.",
+    },
+    {
+        "source": "Documentation/v0_16x_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v16x operational recommendation",
+        "description": "Concise stop decision before any global-null effect test.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16x.md",
+        "category": "latest_causal_structure",
+        "title": "v16x non-specialist summary",
+        "description": "Plain-language distinction between feasible alternatives and a qualified probability measure.",
+    },
+    {
+        "source": "Documentation/v16x_postrun_concentration_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v16x post-run concentration audit",
+        "description": "Digest-locked 32-endpoint decomposition of the failed marginal-concentration criterion.",
+    },
+    {
+        "source": "Documentation/v16x_postrun_combined_seed_concentration.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x combined-seed concentration",
+        "description": "Top globally variable edge inclusion across both declared 16-endpoint seed families.",
+    },
+    {
+        "source": "Documentation/v16x_postrun_diversity_decomposition.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x diversity decomposition",
+        "description": "Per-source decomposition of endpoint spread, variable support and concentrated edge classes.",
+    },
+    {
+        "source": "Documentation/v16x_postrun_top_edge_component_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16x top-edge component audit",
+        "description": "Alternating-cycle witnesses and residual-component sizes for the most concentrated edges.",
+    },
 ]
 
 
@@ -1064,6 +1184,10 @@ def write_site(
     qualification_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16w_source_qualification_summary.csv")
     qualification_audit_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16w_interpretation_audit.csv")
     qualification_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16w_claim_ledger.csv")
+    measure_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16x_gate_evaluation.csv")
+    measure_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16x_source_qualification_summary.csv")
+    measure_concentration_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16x_postrun_combined_seed_concentration.csv")
+    measure_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16x_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -1091,13 +1215,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate rejects the current global edge-slot optimization procedure before any new effect test because endpoint selection depends on LP representation and objective. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime, energy or temperature claim.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate repairs representation dependence with an integer random-cost construction, but rejects that explicit endpoint measure because globally variable concrete-conflict edges remain too concentrated. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime, energy or temperature claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">8 / 24</div><p class="muted">v16w candidate-column covariance passed only 8/24 checks; no source effect was computed.</p></div>
+      <div class="card"><div class="metric">24 / 24</div><p class="muted">v16x replay, insertion-permutation and semantic-relabel checks passed; no source effect was computed.</p></div>
+      <div class="card"><div class="metric">2 / 6</div><p class="muted">Only two sources passed the frozen 16-endpoint diversity gate because maximum variable-edge inclusion was too high.</p></div>
     </section>
 
     <section>
@@ -1111,11 +1236,19 @@ def write_site(
       <p>v16v then used a separate global b-matching construction. All <code>48/48</code> endpoints preserved exact degree, depth, age-bin, event-footprint and per-child slot constraints. Every source produced <code>8/8</code> distinct endpoints, with minimum changed-edge fraction between <code>0.574426</code> and <code>0.630611</code>. This establishes finite construction feasibility and diversity, not a representative probability distribution.</p>
       <p>v16w attempted to qualify that family without computing source spectra or effect metrics. All <code>288/288</code> endpoints passed structural integrity, semantic role relabel passed <code>24/24</code>, every source had unique fraction <code>1.000</code>, and half-batch centers passed <code>36/36</code>. Exact replay was <code>23/24</code>, candidate-column covariance only <code>8/24</code>, and objective sensitivity only <code>15/36</code>. The global procedure is therefore not qualified.</p>
       <p>Across all six sources, source-edge fraction, concrete resource-conflict fraction, and within-ensemble pairwise distance shifted materially between source-retention minimization and pure random edge priority. This is evidence of null-procedure dependence, not evidence about the source spectrum.</p>
+      <p>v16x replaced floating priorities with deterministic integer min-cost flow under seeded random costs. All <code>192/192</code> endpoints passed integrity and effect exclusion, and all <code>24/24</code> replay/permutation/relabel checks passed. The residual-SCC audit also supplied alternating-cycle witnesses for globally variable source edges.</p>
+      <p>The exact concrete-conflict state space nevertheless collapsed: its maximum possible changed-edge fraction was only <code>0.000827</code> to <code>0.005827</code>, far below the existing <code>0.10</code> floor. The retained coarse state space generated unique and widely separated endpoints, but only <code>2/6</code> sources passed the frozen diversity criterion because one globally variable edge appeared in every primary endpoint for four sources.</p>
+      <p>A digest-locked post-run audit combined both independent seed families. The top-edge inclusion rate remained above <code>0.95</code> for four of six sources, including two at <code>32/32</code>. Every top edge still had an alternating-cycle removal witness, so the concentration is not a hidden forced-edge error. It may reflect finite structural asymmetry or the random-min-cost probability law; v16x does not distinguish those explanations.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current global-null qualification gate</h2>
+      <h2>Current explicit global-measure gate</h2>
+      {table_html(measure_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(measure_source_rows, ["growth_seed", "run_offset", "primary_unique_fraction", "primary_median_pairwise_change", "primary_variable_union_coverage", "primary_effective_variable_support_ratio", "primary_max_variable_edge_inclusion_rate", "representation_pass", "endpoint_diversity_pass", "batch_center_pass", "seed_family_pass", "source_qualification_pass"])}
+      <h3>Required post-run concentration audit</h3>
+      {table_html(measure_concentration_rows, ["growth_seed", "run_offset", "top_edge_is_source", "top_edge_has_concrete_conflict", "combined_inclusion_count", "combined_trial_count", "combined_inclusion_rate", "maximum_allowed_rate", "combined_rate_pass", "endpoint_digest_replay_pass"])}
+      <h3>Prior v16w global-procedure qualification gate</h3>
       {table_html(qualification_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(qualification_source_rows, ["growth_seed", "run_offset", "primary_unique_fraction", "primary_median_pairwise_change", "primary_candidate_union_coverage", "batch_center_pass", "objective_sensitivity_pass", "source_qualification_pass"])}
       <h3>Required v16w interpretation audit</h3>
@@ -1155,6 +1288,7 @@ def write_site(
       <p>v16u separates the 10% changed-edge burn-in from exact post-burn-in work. Its direct and staged 2K endpoints share the same K prefix and total accepted-swap effort but use different second-half RNG streams. This is a finite procedure-stability control, not proof of mixing or uniform sampling.</p>
       <p>v16v reconstructs each complete DAG as a global bipartite b-matching between exact parent out-degree capacity and per-child slot demand. It uses no local switch trajectory and excludes source spectra and observed-effect metrics. Feasibility and endpoint diversity do not by themselves define or qualify a sampling distribution.</p>
       <p>v16w tests the global procedure under exact replay, candidate-column permutation, semantic role relabeling, larger endpoint ensembles, finite batch-center comparison, and an alternative random-priority objective. The frozen failure means optimization endpoints must not be treated as samples from a canonical null distribution.</p>
+      <p>v16x uses canonical candidate ordering, seeded integer random costs and exact min-cost flow. The residual-SCC audit identifies globally forced edges and produces alternating-cycle witnesses. These controls establish finite algebraic freedom and representation covariance; they do not establish uniformity, maximum entropy, mixing, canonicality or a physical ensemble. The frozen concentration failure stops the procedure before source-spectrum inspection.</p>
       <p>The separate units-of-action hypothesis treats local realized edit work, carrier occupancy and boundary flux as candidate microscopic inputs. Until a local balance law and reproducible intensive fluctuation parameter are demonstrated, the correct terms are action density and change intensity, not physical energy or temperature.</p>
     </section>
 
@@ -1165,6 +1299,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(measure_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v16w qualification claim ledger</h3>
       {table_html(qualification_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Prior v16v feasibility claim ledger</h3>
       {table_html(global_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}

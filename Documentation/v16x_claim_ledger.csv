@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The residual-SCC audit separates globally forced source edges from edges on feasible alternating cycles for the frozen state spaces.,supported,v16x_state_space_forced_edge_audit.csv,"six frozen finite source DAGs; deterministic design audit, not fresh holdout"
+C2,Exact concrete-conflict preservation leaves enough global freedom to meet the frozen 10% nontrivial-change floor.,not_supported,v16x_state_space_forced_edge_audit.csv,same six source DAGs and v16v slot constraints
+C3,The declared integer-cost measure is replayable and covariant to tested insertion-order and semantic-role representations.,supported,v16x_representation_audit.csv,four checks per source under seeded pseudorandom costs
+C4,The declared measure has adequate finite diversity and stable centers across half-batches and independent seed families.,not_supported,v16x_source_qualification_summary.csv;v16x_batch_center_stability.csv;v16x_seed_family_stability.csv,16 endpoints per seed family on each of six frozen sources
+C5,"V16x establishes uniform sampling, maximum entropy, a canonical null, or physical structure.",not_supported,v16x_explicit_global_measure_gate.md,explicit exclusions

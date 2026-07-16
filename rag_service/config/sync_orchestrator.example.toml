@@ -17,7 +17,7 @@ name = "UniverseSimulationResearchReport"
 repo_path = "/srv/ops/repos/UniverseSimulation"
 source_type = "universe_argumentation"
 target_subdir = "UniverseSimulation/research_report"
-include = ["Documentation/grundig-research-rapport-16.md", "Documentation/v16o_v16s_direction_and_execution_report.md", "Documentation/v16t_next_direction_assessment.md", "Documentation/v16u_next_direction_assessment.md", "Documentation/v16v_next_direction_assessment.md", "Documentation/v16v_units_of_action_energy_temperature_hypothesis.md", "Documentation/v16w_next_direction_assessment.md", "Documentation/v16w_interpretation_audit.md", "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md"]
+include = ["Documentation/grundig-research-rapport-16.md", "Documentation/v16o_v16s_direction_and_execution_report.md", "Documentation/v16t_next_direction_assessment.md", "Documentation/v16u_next_direction_assessment.md", "Documentation/v16v_next_direction_assessment.md", "Documentation/v16v_units_of_action_energy_temperature_hypothesis.md", "Documentation/v16w_next_direction_assessment.md", "Documentation/v16w_interpretation_audit.md", "Documentation/v16x_next_direction_assessment.md", "Documentation/v16x_interpretation_audit.md", "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md"]
 
 [[source]]
 name = "UniverseSimulationProjectStatus"
@@ -88,6 +88,24 @@ include = [
   "Documentation/v16w_objective_sensitivity.csv",
   "Documentation/v16w_gate_evaluation.csv",
   "Documentation/v16w_claim_ledger.csv",
+  "Documentation/v16x_explicit_global_measure_gate.md",
+  "Documentation/v16x_interpretation_audit.md",
+  "Documentation/v16x_postrun_concentration_audit.md",
+  "Documentation/v0_16x_operativ_anbefaling.md",
+  "Documentation/v16x_state_space_forced_edge_audit.csv",
+  "Documentation/v16x_sampler_endpoint_audit.csv",
+  "Documentation/v16x_pairwise_endpoint_distance.csv",
+  "Documentation/v16x_representation_audit.csv",
+  "Documentation/v16x_batch_center_stability.csv",
+  "Documentation/v16x_seed_family_stability.csv",
+  "Documentation/v16x_source_qualification_summary.csv",
+  "Documentation/v16x_gate_evaluation.csv",
+  "Documentation/v16x_claim_ledger.csv",
+  "Documentation/v16x_pre_registration.csv",
+  "Documentation/v16x_source_chain.csv",
+  "Documentation/v16x_postrun_combined_seed_concentration.csv",
+  "Documentation/v16x_postrun_diversity_decomposition.csv",
+  "Documentation/v16x_postrun_top_edge_component_audit.csv",
 ]
 
 [[source]]

@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,top_parent_event_id,top_child_event_id,combined_inclusion_count,combined_trial_count,combined_inclusion_rate,residual_scc_node_count,residual_scc_parent_count,residual_scc_slot_count,residual_scc_candidate_edge_count,residual_scc_source_edge_count,residual_scc_candidate_surplus,shortest_alternating_return_path_edge_count,witness_changed_source_edge_count,witness_changed_edge_fraction,witness_removes_top_edge_pass,witness_assignment_integrity_pass,source_spectrum_computed,observed_effect_computed
+v16x,1536,9299,123078,exposure_matched_local,1993113078,170,201,30,32,0.9375,3010,1450,1560,27816,1674,26142,5,3,0.0008269018743109151,1,1,0,0
+v16x,1536,9299,123403,exposure_matched_local,1993113403,2081,2170,31,32,0.96875,2529,1219,1310,22207,1398,20809,9,5,0.0013989927252378287,1,1,0,0
+v16x,1536,9299,127341,exposure_matched_local,1993117341,2470,2790,32,32,1.0,2671,1295,1376,20197,1449,18748,19,10,0.002838489923360772,1,1,0,0
+v16x,1536,9365,123078,exposure_matched_local,1993773078,90,145,29,32,0.90625,3099,1482,1617,29255,1695,27560,5,3,0.0008410428931875525,1,1,0,0
+v16x,1536,9365,123403,exposure_matched_local,1993773403,2421,3071,32,32,1.0,2588,1262,1326,19690,1429,18261,9,5,0.0013873473917869034,1,1,0,0
+v16x,1536,9365,127341,exposure_matched_local,1993777341,125,1545,31,32,0.96875,146,28,118,857,120,737,3,2,0.0005575689991636465,1,1,0,0

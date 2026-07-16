@@ -1,6 +1,6 @@
 # UniverseSimulation RAG Status
 
-Last source review: 2026-07-15.
+Last source review: 2026-07-16.
 
 ## Source-of-truth order
 
@@ -68,25 +68,44 @@ not outrank later executed gates.
   Exact replay was `23/24`, candidate-column covariance only `8/24`, and
   objective sensitivity only `15/36`. The current global procedure is not
   qualified.
+- v16x replaced the floating optimization priorities with canonical integer
+  random costs and exact min-cost flow. Endpoint integrity and effect exclusion
+  passed `192/192`; exact replay, insertion permutation and semantic relabel
+  passed `24/24`. The residual-SCC audit supplied alternating-cycle witnesses
+  for globally variable source edges.
+- Exact concrete-conflict preservation was algebraically too restrictive: its
+  maximum possible changed-edge fraction was only `0.000827` to `0.005827`,
+  below the retained `0.10` floor. The coarse space was therefore used with
+  concrete conflict as a diagnostic, not a preserved invariant.
+- The v16x random-cost measure was rejected effect-blind. Only `2/6` sources
+  passed the frozen endpoint-diversity criterion because maximum inclusion of a
+  globally variable edge was too high. A digest-locked 32-endpoint post-run
+  audit still exceeded the `0.95` bound in `4/6`, including `2/6` at `32/32`.
+  Every top edge had a valid alternating-cycle removal witness, so this is not a
+  hidden forced-edge error.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_global_null_feasible_but_current_optimization_procedure_rejected_effect_blind`. See
+`fresh_event_footprint_spectrum_contrast_with_global_alternatives_feasible_but_v16x_integer_random_cost_measure_concentrated_and_rejected_effect_blind`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v16w_interpretation_audit.md`. This remains finite event-DAG
-structure: the global feasible set is nontrivial, but floating-LP endpoint
-selection is representation- and objective-dependent and has not been used for
-an effect test. It is not a validated energy, temperature,
+`Documentation/v16x_interpretation_audit.md`. This remains finite event-DAG
+structure: the coarse global feasible set is nontrivial and the v16x integer
+construction is representation-covariant, but its endpoint probability law is
+too concentrated under the frozen criterion and has not been used for an
+effect test. It is not a validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum under the current global family. Define an
-explicit stochastic measure over feasible global b-matchings and use an exact,
-representation-independent selection procedure. Audit globally forced edges
-instead of inferring freedom from local slot surplus, and preserve or stratify
-concrete resource conflicts. Repeat replay, representation, diversity and
-objective checks effect-blind before any independent-null effect test.
+Do not compute the source spectrum under the v16x random-cost measure. Keep its
+forced-edge audit and integer construction as controls, but compare probability
+laws on the same coarse feasible space effect-blind. The narrow next candidate
+is a symmetric lazy alternating-cycle or heat-bath chain with an explicit
+stationary target. Test reachability, replay, relabel covariance, marginal
+entropy, residual-component coverage, pairwise distance and seed stability.
+Any replacement for the maximum-inclusion veto requires a new preregistration;
+do not relax the v16x gate retrospectively. Retain concrete conflict as an
+explicit stratum or diagnostic before any independent-null effect test.
 
 The separate units-of-action hypothesis is an open proposal, not a result. The
 repo supports a future test of local edit work, action-carrier density and

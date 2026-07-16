@@ -1,6 +1,6 @@
 # UniverseSimulation Argumentation Map
 
-Last source review: 2026-07-15.
+Last source review: 2026-07-16.
 
 ## Research question
 
@@ -54,10 +54,17 @@ not an exact realization of every DPO/CTMC statement in the research report.
 - v16w showed that finite endpoint diversity is not enough to qualify that
   global family. Structural integrity passed `288/288`, but candidate-column
   covariance was only `8/24` and objective sensitivity only `15/36`.
+- v16x repaired representation dependence with canonical integer random costs:
+  endpoint integrity passed `192/192` and replay/permutation/relabel covariance
+  passed `24/24`. A residual-SCC audit also proved that the most concentrated
+  edges lie on feasible alternating cycles and are not globally forced.
 
-The global feasible set is nontrivial, but the current optimization endpoint
-procedure is representation- and objective-dependent. It is rejected before
-testing whether the v16s effect survives.
+The coarse global feasible set is nontrivial, but v16x rejected the random-cost
+endpoint measure before testing whether the v16s effect survives. Only `2/6`
+sources passed the frozen diversity gate; after combining both declared seed
+families, `4/6` still exceeded the `0.95` top-edge inclusion bound. The result
+does not distinguish structural probability concentration from bias induced by
+the random-min-cost probability law.
 
 ## What has been explained away or remains negative
 
@@ -99,10 +106,14 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is effect-blind construction and qualification of an
-explicit stochastic measure over feasible global matchings, with exact
-representation-independent selection, globally forced-edge auditing, and
-concrete-conflict preservation or stratification. The units-of-action
+The best current next test is an effect-blind comparison of probability laws on
+the same coarse feasible matching space. Retain v16x as a reference and compare
+it with a symmetric lazy alternating-cycle or heat-bath chain whose stationary
+target and reachability assumptions are explicit. Qualify marginal entropy,
+component coverage, pairwise spread, replay, relabel covariance and seed
+stability before inspecting the source spectrum. Concrete conflict remains a
+required diagnostic or stratum because exact preservation collapsed the
+available finite freedom. The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not
 bypass null qualification or use uniform clock-rate scaling as a temperature
 intervention.
