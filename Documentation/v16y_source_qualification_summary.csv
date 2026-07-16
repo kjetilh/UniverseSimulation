@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,reference_replay_pass,reversibility_pass,representation_pass,movement_pass,center_stability_pass,endpoint_integrity_pass,measure_comparison_pass,minimum_final_start_changed_edge_fraction,minimum_accepted_swaps_per_edge_observed,minimum_sample_unique_fraction,source_qualification_pass
+v16y,1536,9299,123078,exposure_matched_local,1993113078,1,1,1,1,0,1,0,0.08434399117971336,0.06063947078280044,1.0,0
+v16y,1536,9299,123403,exposure_matched_local,1993113403,1,1,1,1,0,1,0,0.07974258533855627,0.06547285954113038,1.0,0
+v16y,1536,9299,127341,exposure_matched_local,1993117341,1,1,1,1,0,1,0,0.09026397956287258,0.07152994606869145,1.0,0
+v16y,1536,9365,123078,exposure_matched_local,1993773078,1,1,1,1,0,1,0,0.09868236613400616,0.0672834314550042,1.0,0
+v16y,1536,9365,123403,exposure_matched_local,1993773403,1,1,1,1,0,1,0,0.07713651498335183,0.06992230854605994,1.0,0
+v16y,1536,9365,127341,exposure_matched_local,1993777341,1,1,1,1,0,1,0,0.09450794535823803,0.06858098689712852,1.0,0

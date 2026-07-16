@@ -1,0 +1,6 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The implemented lazy degree-corrected 2x2 chain satisfies detailed balance for the declared component-uniform target on tested transitions.,supported,v16y_proposal_reversibility_audit.csv,finite implementation witnesses; stationary target is per connected component
+C2,The chain has adequate finite mobility and start/seed/time stability under the preregistered 512-step budget.,not_supported,v16y_chain_transition_summary.csv;v16y_chain_center_stability.csv,six frozen sources; finite diagnostics do not prove mixing
+C3,The component-uniform chain improves concentration while retaining at least half the random-cost reference support on at least four sources.,not_supported,v16y_marginal_concentration_profile.csv;v16y_measure_comparison.csv,32 endpoints per law and source
+C4,"V16y proves global connectivity, mixing, global uniformity, maximum entropy, or a canonical null.",not_supported,v16y_reversible_global_measure_gate.md,explicit exclusions
+C5,V16y reproduces or updates the v16s spectrum effect.,not_supported,v16y_gate_evaluation.csv,source spectrum and effect metrics excluded

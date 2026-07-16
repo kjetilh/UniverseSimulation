@@ -1,0 +1,9 @@
+gate,status,observed,required,decision
+effect_blind_endpoint_integrity,pass,endpoints=192/192;spectrum=0;effect=0,192/192;0;0,continue
+frozen_random_cost_reference_replay,pass,192/192,192/192,continue
+exact_detailed_balance_reversibility,pass,48/48,48/48,continue
+representation_covariance,pass,6/6,6/6,continue
+finite_chain_mobility,pass,chains=24/24,chains=24/24,continue
+start_seed_time_center_stability,fail,features=102/126,126/126,not_finitely_stable
+concentration_profile_improvement,fail,sources=0/6,sources>=4/6,profile_not_improved
+v16y_overall,v16y_2x2_chain_finite_centers_not_stable,integrity=1;reference=1;reversibility=1;representation=1;movement=1;centers=0;profile=0,1;1;1;1;1;1;1,v16y_2x2_chain_finite_centers_not_stable

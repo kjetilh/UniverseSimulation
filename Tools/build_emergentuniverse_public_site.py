@@ -984,6 +984,132 @@ DATASET_SPECS: list[dict[str, str]] = [
         "title": "v16x top-edge component audit",
         "description": "Alternating-cycle witnesses and residual-component sizes for the most concentrated edges.",
     },
+    {
+        "source": "Documentation/v16y_reversible_global_measure_gate.md",
+        "category": "latest_causal_structure",
+        "title": "v16y reversible global-measure gate",
+        "description": "Effect-blind comparison of the v16x reference law and a lazy degree-corrected 2x2 Metropolis chain.",
+    },
+    {
+        "source": "Documentation/v16y_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v16y interpretation audit",
+        "description": "Required separation of local reversibility, finite mobility, start dependence and unproved accessibility claims.",
+    },
+    {
+        "source": "Documentation/v16y_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y preregistration",
+        "description": "Frozen chain budget, probability-law target, thresholds, source hashes and effect exclusions.",
+    },
+    {
+        "source": "Documentation/v16y_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y source chain",
+        "description": "SHA-256 links to the frozen v16x measure evidence used by v16y.",
+    },
+    {
+        "source": "Documentation/v16y_proposal_reversibility_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y proposal reversibility audit",
+        "description": "Exact forward/reverse transition witnesses and detailed-balance checks.",
+    },
+    {
+        "source": "Documentation/v16y_representation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y representation audit",
+        "description": "Replay, candidate-order and semantic-relabel covariance checks.",
+    },
+    {
+        "source": "Documentation/v16y_random_cost_reference_replay.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y frozen reference replay",
+        "description": "Digest verification of all 192 frozen v16x random-cost endpoints.",
+    },
+    {
+        "source": "Documentation/v16y_chain_transition_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y chain transition summary",
+        "description": "Per-chain accepted work, neighbor degree, movement and uniqueness diagnostics.",
+    },
+    {
+        "source": "Documentation/v16y_chain_endpoint_audit.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v16y chain endpoint audit",
+        "description": "Full 192-row effect-blind endpoint feature and integrity table.",
+    },
+    {
+        "source": "Documentation/v16y_chain_pairwise_distance.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v16y chain pairwise distance",
+        "description": "Full within-source endpoint distance table used by the start-separation audit.",
+    },
+    {
+        "source": "Documentation/v16y_chain_center_stability.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y center stability",
+        "description": "Start-family, chain-seed and early/late feature-center comparisons.",
+    },
+    {
+        "source": "Documentation/v16y_marginal_concentration_profile.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y marginal concentration profile",
+        "description": "Same-size marginal support, concentration and entropy profiles for both probability laws.",
+    },
+    {
+        "source": "Documentation/v16y_measure_comparison.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y probability-law comparison",
+        "description": "Per-source comparison of concentration, marginal entropy and support retention.",
+    },
+    {
+        "source": "Documentation/v16y_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y source qualification summary",
+        "description": "Per-source replay, reversibility, representation, movement, stability and profile decisions.",
+    },
+    {
+        "source": "Documentation/v16y_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y gate evaluation",
+        "description": "Frozen machine-readable reversible-measure qualification result.",
+    },
+    {
+        "source": "Documentation/v16y_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y claim ledger",
+        "description": "Supported local subclaims and explicit unresolved global-measure and effect claims.",
+    },
+    {
+        "source": "Documentation/v16y_postrun_start_separation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v16y post-run start-separation audit",
+        "description": "Bounded diagnosis of start-dependent endpoint clouds without claiming component disconnection.",
+    },
+    {
+        "source": "Documentation/v16y_postrun_start_separation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v16y post-run start-separation data",
+        "description": "Per-source within-start, cross-start and marginal-concentration aggregates.",
+    },
+    {
+        "source": "Documentation/v16y_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v16y next direction",
+        "description": "Effect-blind alternating-cycle bridge recommendation after the failed start-stability gate.",
+    },
+    {
+        "source": "Documentation/v0_16y_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v16y operational recommendation",
+        "description": "Concise stop decision before any source-spectrum effect test.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_16y.md",
+        "category": "latest_causal_structure",
+        "title": "v16y non-specialist summary",
+        "description": "Plain-language distinction between reversible local moves and start-independent global sampling.",
+    },
 ]
 
 
@@ -1188,6 +1314,11 @@ def write_site(
     measure_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16x_source_qualification_summary.csv")
     measure_concentration_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16x_postrun_combined_seed_concentration.csv")
     measure_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16x_claim_ledger.csv")
+    reversible_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16y_gate_evaluation.csv")
+    reversible_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16y_source_qualification_summary.csv")
+    reversible_comparison_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16y_measure_comparison.csv")
+    reversible_separation_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16y_postrun_start_separation_audit.csv")
+    reversible_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v16y_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -1215,14 +1346,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate repairs representation dependence with an integer random-cost construction, but rejects that explicit endpoint measure because globally variable concrete-conflict edges remain too concentrated. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime, energy or temperature claim.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate qualifies a reversible local 2x2 move law but rejects it as a finite start-independent global sampler: endpoint clouds remain strongly start-dependent and more concentrated than the v16x reference. The underlying signal remains a finite event-DAG spectrum contrast, not a spacetime, energy or temperature claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">24 / 24</div><p class="muted">v16x replay, insertion-permutation and semantic-relabel checks passed; no source effect was computed.</p></div>
-      <div class="card"><div class="metric">2 / 6</div><p class="muted">Only two sources passed the frozen 16-endpoint diversity gate because maximum variable-edge inclusion was too high.</p></div>
+      <div class="card"><div class="metric">24 / 24</div><p class="muted">v16y finite chain-mobility checks passed; no source spectrum or observed effect was computed.</p></div>
+      <div class="card"><div class="metric">0 / 6</div><p class="muted">No source passed the preregistered concentration-profile improvement gate.</p></div>
     </section>
 
     <section>
@@ -1239,11 +1370,21 @@ def write_site(
       <p>v16x replaced floating priorities with deterministic integer min-cost flow under seeded random costs. All <code>192/192</code> endpoints passed integrity and effect exclusion, and all <code>24/24</code> replay/permutation/relabel checks passed. The residual-SCC audit also supplied alternating-cycle witnesses for globally variable source edges.</p>
       <p>The exact concrete-conflict state space nevertheless collapsed: its maximum possible changed-edge fraction was only <code>0.000827</code> to <code>0.005827</code>, far below the existing <code>0.10</code> floor. The retained coarse state space generated unique and widely separated endpoints, but only <code>2/6</code> sources passed the frozen diversity criterion because one globally variable edge appeared in every primary endpoint for four sources.</p>
       <p>A digest-locked post-run audit combined both independent seed families. The top-edge inclusion rate remained above <code>0.95</code> for four of six sources, including two at <code>32/32</code>. Every top edge still had an alternating-cycle removal witness, so the concentration is not a hidden forced-edge error. It may reflect finite structural asymmetry or the random-min-cost probability law; v16x does not distinguish those explanations.</p>
+      <p>v16y then compared that reference with a lazy degree-corrected 2x2 Metropolis chain on the same six coarse state spaces. All <code>192/192</code> chain endpoints passed integrity and effect exclusion, all <code>192/192</code> frozen reference endpoints replayed exactly, all <code>48/48</code> detailed-balance witnesses passed, all <code>6/6</code> representation checks passed, and all <code>24/24</code> finite mobility checks passed.</p>
+      <p>The candidate law nevertheless failed as a finite start-independent sampler. Center stability passed only <code>102/126</code>; all 24 failures were start-family comparisons, while independent seed and early/late comparisons had no failures. Mean pairwise endpoint change was <code>0.422373</code> across starts versus <code>0.078443</code> and <code>0.078510</code> within the two start clouds. Concentration improved on <code>0/6</code> sources: the chain maximum inclusion rate was <code>1.000</code> on all six and marginal binary entropy was lower than the v16x reference on all six.</p>
+      <p>This finite separation is consistent with slow traversal or different accessibility components under 2x2 moves. It is not proof of disconnection or failed mixing. The next effect-blind gate audits longer alternating-cycle bridges before spending more budget or reopening the source-spectrum effect.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current explicit global-measure gate</h2>
+      <h2>Current reversible global-measure gate</h2>
+      {table_html(reversible_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(reversible_source_rows, ["growth_seed", "run_offset", "reference_replay_pass", "reversibility_pass", "representation_pass", "movement_pass", "center_stability_pass", "measure_comparison_pass", "source_qualification_pass"])}
+      <h3>Probability-law concentration comparison</h3>
+      {table_html(reversible_comparison_rows, ["growth_seed", "run_offset", "reference_max_inclusion_rate", "chain_max_inclusion_rate", "mean_binary_entropy_delta", "effective_support_ratio_chain_over_reference", "union_coverage_ratio_chain_over_reference", "measure_comparison_pass"])}
+      <h3>Required post-run start-separation audit</h3>
+      {table_html(reversible_separation_rows, ["growth_seed", "run_offset", "within_source_start_mean_changed_fraction", "within_random_start_mean_changed_fraction", "cross_start_mean_changed_fraction", "start_family_failed_feature_count", "chain_seed_failed_feature_count", "time_window_failed_feature_count", "disconnected_component_proven"])}
+      <h3>Prior v16x explicit global-measure gate</h3>
       {table_html(measure_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(measure_source_rows, ["growth_seed", "run_offset", "primary_unique_fraction", "primary_median_pairwise_change", "primary_variable_union_coverage", "primary_effective_variable_support_ratio", "primary_max_variable_edge_inclusion_rate", "representation_pass", "endpoint_diversity_pass", "batch_center_pass", "seed_family_pass", "source_qualification_pass"])}
       <h3>Required post-run concentration audit</h3>
@@ -1289,6 +1430,7 @@ def write_site(
       <p>v16v reconstructs each complete DAG as a global bipartite b-matching between exact parent out-degree capacity and per-child slot demand. It uses no local switch trajectory and excludes source spectra and observed-effect metrics. Feasibility and endpoint diversity do not by themselves define or qualify a sampling distribution.</p>
       <p>v16w tests the global procedure under exact replay, candidate-column permutation, semantic role relabeling, larger endpoint ensembles, finite batch-center comparison, and an alternative random-priority objective. The frozen failure means optimization endpoints must not be treated as samples from a canonical null distribution.</p>
       <p>v16x uses canonical candidate ordering, seeded integer random costs and exact min-cost flow. The residual-SCC audit identifies globally forced edges and produces alternating-cycle witnesses. These controls establish finite algebraic freedom and representation covariance; they do not establish uniformity, maximum entropy, mixing, canonicality or a physical ensemble. The frozen concentration failure stops the procedure before source-spectrum inspection.</p>
+      <p>v16y uses a lazy, degree-corrected 2x2 Metropolis kernel. Its accepted transition probability is exactly symmetric for every tested neighbor pair, establishing detailed balance for a uniform target inside each 2x2-connected component. The frozen finite run does not establish global connectivity, convergence or mixing; its start dependence and concentration failure stop the procedure before source-spectrum inspection.</p>
       <p>The separate units-of-action hypothesis treats local realized edit work, carrier occupancy and boundary flux as candidate microscopic inputs. Until a local balance law and reproducible intensive fluctuation parameter are demonstrated, the correct terms are action density and change intensity, not physical energy or temperature.</p>
     </section>
 
@@ -1299,6 +1441,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(reversible_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v16x measure claim ledger</h3>
       {table_html(measure_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Prior v16w qualification claim ledger</h3>
       {table_html(qualification_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}

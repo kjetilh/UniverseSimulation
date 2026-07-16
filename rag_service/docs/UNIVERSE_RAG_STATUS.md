@@ -83,29 +83,39 @@ not outrank later executed gates.
   audit still exceeded the `0.95` bound in `4/6`, including `2/6` at `32/32`.
   Every top edge had a valid alternating-cycle removal witness, so this is not a
   hidden forced-edge error.
+- v16y compared the frozen v16x reference with a lazy degree-corrected 2x2
+  Metropolis chain on the same coarse spaces, still without source spectra or
+  effect metrics. Integrity and reference replay passed `192/192`, tested
+  detailed balance passed `48/48`, representation passed `6/6`, and finite
+  mobility passed `24/24`.
+- The v16y finite law was rejected. Center stability passed `102/126`, with all
+  `24` failures caused by start-family comparisons and no chain-seed or
+  early/late failures. Concentration improved on `0/6`; chain top inclusion was
+  `1.000` on all six and marginal entropy was lower than the v16x reference.
+  Cross-start mean endpoint distance was `0.422373`, versus `0.078443` and
+  `0.078510` within the two starts.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_global_alternatives_feasible_but_v16x_integer_random_cost_measure_concentrated_and_rejected_effect_blind`. See
+`fresh_event_footprint_spectrum_contrast_with_global_alternatives_feasible_but_v16x_random_cost_and_v16y_local_reversible_measures_rejected_effect_blind`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v16x_interpretation_audit.md`. This remains finite event-DAG
-structure: the coarse global feasible set is nontrivial and the v16x integer
-construction is representation-covariant, but its endpoint probability law is
-too concentrated under the frozen criterion and has not been used for an
-effect test. It is not a validated energy, temperature,
+`Documentation/v16y_interpretation_audit.md`. This remains finite event-DAG
+structure: the coarse global feasible set is nontrivial, v16x repaired tested
+representation dependence, and v16y established a reversible local move law,
+but neither finite endpoint law qualified for an effect test. It is not a
+validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum under the v16x random-cost measure. Keep its
-forced-edge audit and integer construction as controls, but compare probability
-laws on the same coarse feasible space effect-blind. The narrow next candidate
-is a symmetric lazy alternating-cycle or heat-bath chain with an explicit
-stationary target. Test reachability, replay, relabel covariance, marginal
-entropy, residual-component coverage, pairwise distance and seed stability.
-Any replacement for the maximum-inclusion veto requires a new preregistration;
-do not relax the v16x gate retrospectively. Retain concrete conflict as an
-explicit stratum or diagnostic before any independent-null effect test.
+Do not compute the source spectrum under either the v16x or v16y measure. The
+narrow next gate is an effect-blind alternating-cycle bridge audit on the same
+six spaces and source/random-cost starts. Decompose symmetric differences,
+measure cycle lengths and changed-edge coverage, verify exact whole-cycle
+forward/reverse moves, and use bounded 2x2 bridge search only as a finite
+diagnostic. Search failure is unresolved, not proof of disconnection. Only a
+qualified longer-cycle kernel should proceed to a new finite start/seed/time
+comparison. Do not relax the v16x or v16y gates retrospectively.
 
 The separate units-of-action hypothesis is an open proposal, not a result. The
 repo supports a future test of local edit work, action-carrier density and

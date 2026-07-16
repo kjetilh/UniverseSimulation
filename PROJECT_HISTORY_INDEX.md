@@ -7910,3 +7910,67 @@ Viktige filer:
 - `Documentation/v16x_claim_ledger.csv`
 - `Documentation/v16x_next_direction_assessment.md`
 - `Documentation/v0_16x_operativ_anbefaling.md`
+
+## 10dd. v16y kvalifiserte lokal reversibilitet, men avviste startuavhengig finite sampling
+
+`v16y` ble frosset med spec-digest
+`b7799276bd22e8fd875cf2bc6455957e38b6c83900958fa0d6bc9bf9b19de08b`
+og script-hash
+`ecf2028f737686d925c54126088289895ac461816f19fefeae24e747403783c0`
+foer den formelle kjoringen. Source spectra og observed-effect metrics var
+forbudt.
+
+Gaten beholdt de seks v16x coarse state-space-kildene og sammenlignet det
+frosne random-cost-referansemaalet med en lazy 2x2-Metropolis-kjede. Forslaget
+trekker uniformt blant gyldige 2x2-naboer og aksepterer med
+`min(1, degree(current)/degree(proposed))`. Akseptert overgangssannsynlighet er
+derfor eksakt `1/(2*max(degree(x),degree(y)))` begge veier. Dette gir en uniform
+stationary target bare innen hver 2x2-sammenhengskomponent; global
+irreducibility eller mixing ble ikke antatt.
+
+Resultatet var:
+
+- endpoint integrity/effect exclusion: `192/192`, calls `0/0`
+- frozen v16x endpoint replay: `192/192`
+- detailed-balance witnesses: `48/48`
+- representation controls: `6/6`
+- finite movement: `24/24`
+- center stability: `102/126`
+- concentration-profile improvement: `0/6`
+
+Alle `24` center-feil var start-family-rader, fire trekk paa hver av seks
+kilder. Independent chain-seed og early/late-window passerte `84/84`. Kjeden
+beveget seg omtrent aatte prosent fra egen start, mens post-run-auditen maalte
+mean pairwise change `0.422373` cross-start mot `0.078443` og `0.078510` innen
+de to startgruppene. Kjedens topp globalt variable kant stod i `32/32`
+endepunkter paa alle seks kilder; marginal binary entropy var lavere enn
+v16x-referansen paa alle seks.
+
+Frossen status er `v16y_2x2_chain_finite_centers_not_stable`. Dette
+kvalifiserer den lokale reversibilitetsalgebraen og finite mobiliteten, men ikke
+en startuavhengig global sannsynlighetslov. Startseparasjonen er konsistent med
+langsom traversering eller ulike 2x2-accessibility-komponenter; den beviser ikke
+disconnection.
+
+Neste gate er effect-blind `v16z_alternating_cycle_bridge_gate`: dekomponer
+startparenes symmetriske differanser, auditer lengre alternerende sykluser og
+eksakte forward/reverse whole-cycle moves, og bruk bounded 2x2 bridge search
+bare som finite diagnose. Ikke aapne v16s-effekten foer move-class/accessibility
+er kvalifisert.
+
+Viktige filer:
+
+- `relational_universe_v16y_reversible_global_measure_gate.py`
+- `relational_universe_v16y_postrun_start_separation_audit.py`
+- `Documentation/v16y_reversible_global_measure_gate.md`
+- `Documentation/v16y_interpretation_audit.md`
+- `Documentation/v16y_chain_transition_summary.csv`
+- `Documentation/v16y_chain_center_stability.csv`
+- `Documentation/v16y_marginal_concentration_profile.csv`
+- `Documentation/v16y_measure_comparison.csv`
+- `Documentation/v16y_postrun_start_separation_audit.md`
+- `Documentation/v16y_postrun_start_separation_audit.csv`
+- `Documentation/v16y_gate_evaluation.csv`
+- `Documentation/v16y_claim_ledger.csv`
+- `Documentation/v16y_next_direction_assessment.md`
+- `Documentation/v0_16y_operativ_anbefaling.md`

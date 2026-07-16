@@ -58,6 +58,9 @@ not an exact realization of every DPO/CTMC statement in the research report.
   endpoint integrity passed `192/192` and replay/permutation/relabel covariance
   passed `24/24`. A residual-SCC audit also proved that the most concentrated
   edges lie on feasible alternating cycles and are not globally forced.
+- v16y implemented a lazy degree-corrected 2x2 Metropolis law. Tested detailed
+  balance passed `48/48`, representation passed `6/6`, and all `24/24` finite
+  chains met the movement criterion.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -65,6 +68,13 @@ sources passed the frozen diversity gate; after combining both declared seed
 families, `4/6` still exceeded the `0.95` top-edge inclusion bound. The result
 does not distinguish structural probability concentration from bias induced by
 the random-min-cost probability law.
+
+V16y does not resolve that ambiguity. Its local kernel is reversible, but the
+finite endpoints are strongly start-dependent: all `24` failed center rows are
+start comparisons, cross-start distance is about `0.422`, and within-start
+distance about `0.078`. The chain concentration profile is worse than the v16x
+reference on all six sources. This supports a move-accessibility diagnosis, not
+a claim that the move graph is disconnected.
 
 ## What has been explained away or remains negative
 
@@ -106,14 +116,15 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is an effect-blind comparison of probability laws on
-the same coarse feasible matching space. Retain v16x as a reference and compare
-it with a symmetric lazy alternating-cycle or heat-bath chain whose stationary
-target and reachability assumptions are explicit. Qualify marginal entropy,
-component coverage, pairwise spread, replay, relabel covariance and seed
-stability before inspecting the source spectrum. Concrete conflict remains a
-required diagnostic or stratum because exact preservation collapsed the
-available finite freedom. The units-of-action
+The best current next test is an effect-blind alternating-cycle bridge gate on
+the same coarse feasible matching space. Retain v16x and v16y as controls, but
+first determine whether longer valid cycles supply explicit forward/reverse
+bridges between the two start families. A bounded search may diagnose found
+bridges but cannot prove disconnection when it fails. Only then should a
+longer-cycle law face marginal entropy, start/seed/time stability and support
+coverage before any source-spectrum inspection. Concrete conflict remains a
+required diagnostic because exact preservation collapsed the available finite
+freedom. The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not
 bypass null qualification or use uniform clock-rate scaling as a temperature
 intervention.
