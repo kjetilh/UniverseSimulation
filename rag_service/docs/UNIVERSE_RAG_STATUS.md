@@ -116,7 +116,10 @@ event sequence and is not a valid cooling intervention.
 ## RAG corpus layout
 
 - `universe_status`: live context, history, RAG status, and corpus policy
-- `universe_experiments`: recent executed gate reports and interpretation audits
+- `universe_experiments`: recent executed gate reports, interpretation audits,
+  and bounded aggregate CSVs. Large endpoint- and pairwise-row tables remain in
+  the checksum-addressed public archive but are excluded from generative RAG to
+  prevent a raw table from exhausting the model context.
 - `universe_tools`: simulator, gate, site, and RAG operating instructions
 - `universe_argumentation`: formal report and evidence/claim map
 - `universe_prompts`: model personas and answer templates

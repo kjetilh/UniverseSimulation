@@ -120,6 +120,10 @@ python -m scripts.sync_orchestrator \
 
 Inspect additions, updates, deletes, source types, and target paths. Then run
 the same command without `--plan-only` only in the intended deployment.
+Keep large raw endpoint and pairwise tables in the public checksum archive, not
+the generative corpus. The RAG source list should use gate reports, claim
+ledgers, bounded aggregates and interpretation audits so one retrieved CSV
+cannot exhaust the model context.
 
 ## Verify dynamic RAG freshness
 

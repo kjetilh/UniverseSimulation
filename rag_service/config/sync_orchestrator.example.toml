@@ -93,8 +93,6 @@ include = [
   "Documentation/v16x_postrun_concentration_audit.md",
   "Documentation/v0_16x_operativ_anbefaling.md",
   "Documentation/v16x_state_space_forced_edge_audit.csv",
-  "Documentation/v16x_sampler_endpoint_audit.csv",
-  "Documentation/v16x_pairwise_endpoint_distance.csv",
   "Documentation/v16x_representation_audit.csv",
   "Documentation/v16x_batch_center_stability.csv",
   "Documentation/v16x_seed_family_stability.csv",
