@@ -68,6 +68,10 @@ not an exact realization of every DPO/CTMC statement in the research report.
   explicit reverse auxiliary and exact Metropolis ratio. Frozen-start replay
   and representation passed `12/12`; reverse support and pathwise detailed
   balance passed `84/84`; runtime passed `24/24`.
+- v17b replaced the low-yield random walk with exact residual-cycle
+  enumeration. Matched valid yield improved `24/24` with median ratio
+  `2.898276`, and finite movement passed `24/24`, while exact reverse support
+  and pathwise balance passed `36/36`.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -99,6 +103,14 @@ small finite displacement, not representation, reversibility, detailed-balance
 or runtime failure. This neither proves disconnected components nor weakens the
 earlier finite spectrum contrast; the effect was not computed.
 
+V17b repairs that finite-movement failure but does not yet provide a usable
+sampler. Resource passed only `12/24`, with chain runtime from `27.479260` to
+`270.449001` seconds. The result supports the residual constructor's finite
+yield and movement on the six reused spaces, not convergence, mixing, global
+support or the v16s effect. A post-run runtime diagnosis is explicitly
+exploratory and identifies implementation costs without changing the frozen
+v17b status.
+
 ## What has been explained away or remains negative
 
 - Lorentz-like propagation remains `not_yet` because placement and mode effects
@@ -109,6 +121,9 @@ earlier finite spectrum contrast; the effect was not computed.
 - Defect labels, persistence, recurrence, and genealogy are useful observables,
   but do not establish particle species.
 - Correlation or shared response is not quantum entanglement.
+- Bell's theorem, a chosen Bell inequality and observed finite Bell-test data
+  are separate evidential layers. UniverseSimulation currently has no local
+  setting/outcome trial protocol, causal separation audit or Bell statistic.
 - Tokens and local rewrite events provide repo-grounded ingredients for an
   action-density or change-intensity hypothesis. The older weighted energy
   functional was chosen instrumentation, not emergent energy. No temperature
@@ -139,14 +154,14 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is an effect-blind residual-graph cycle constructor
-on the same coarse feasible matching space. Retain v16x-v17a as controls. The
-proposal must remain target-independent and retain v17a's exact reverse support
-and proposal ratio, while materially increasing valid-cycle yield and finite
-displacement under a newly frozen qualification. Only a qualified proposal law
-should face marginal entropy, start/seed/time stability and support coverage
-before any source-spectrum inspection. Merely lengthening the failed v17a
-chains is not the right test. Concrete conflict remains a
+The best current next test is an effect-blind v17c exact-counter runtime gate on
+the same coarse feasible matching space. Retain v16x-v17b as controls. Preserve
+v17b's proposal distribution, exact reverse support, proposal ratio, movement
+floors and runtime bound while removing duplicate forward enumeration and full
+completion materialization. Require count/support parity and movement/resource
+`24/24`. Only then should the proposal face marginal entropy,
+start/seed/time stability and support coverage before source-spectrum
+inspection. Concrete conflict remains a
 required diagnostic because exact preservation collapsed the available finite
 freedom. The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not

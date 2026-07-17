@@ -1,0 +1,7 @@
+claim_id,claim,status,evidence,scope_limit
+C1,"The v17b proposal uses the current assignment and residual completion only, without a destination target or source effect.",supported,specification and effect-exclusion audit,algorithmic target independence; not physical locality
+C2,Every tested distinguished residual auxiliary has exact reverse support and pathwise detailed balance.,supported,v17b_pathwise_reversibility_audit.csv,36 finite witnesses on six reused spaces and two starts
+C3,The residual constructor materially improves valid-proposal yield over matched v17a chains.,supported,v17b_paired_v17a_improvement.csv,finite paired cells; not a mixing-rate theorem
+C4,The residual constructor qualifies finite movement under the unchanged v17a budget and floors.,supported,v17b_chain_transition_summary.csv,finite movement; not convergence or global support
+C5,"The v17b kernel is globally irreducible, mixed, or uniform over the full feasible space.",unsupported,none,target is component-uniform only
+C6,The v16s spectrum contrast survives v17b or v17b exhibits Bell correlations.,not_tested,spectrum/effect calls prohibited; Bell observables absent,requires later qualified stability and separate Bell operationalization

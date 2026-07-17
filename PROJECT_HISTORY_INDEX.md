@@ -8101,3 +8101,77 @@ Viktige filer:
 - `Documentation/v17a_postrun_movement_diagnosis.csv`
 - `Documentation/v17a_next_direction_assessment.md`
 - `Documentation/v0_17a_operativ_anbefaling.md`
+
+## 10dg. v17b reparerte finite movement, men feilet ressursgaten
+
+`v17b` ble preregistrert med spec-digest
+`0182751f7a0c07e347f06dc4be714977680387e7c328f25f0060855f18e43072`.
+Gaten beholdt de seks v16x-state-rommene, begge frosne startfamiliene, begge
+chain-seed-familiene, 512 steg, v17a sine movement-terskler og maksimum
+`60` sekunder per kjede. Source spectrum og observed-effect-metrikker var
+forbudt.
+
+Den nye konstruktoren valgte eksakt sykkellengde `2`, `3` eller `4`, et
+start-edge og deretter uniformt blant alle simple residuale alternerende
+sykluser med den lengden. Reverse auxiliary beholdt samme lengde og reversert
+ordnet add-sekvens; lazy Metropolis brukte eksakt proposal-ratio.
+
+Formelle resultater:
+
+- source spectrum/effect calls: `0/0`
+- frozen-start replay: `12/12`
+- representation covariance: `12/12`
+- exact reverse support: `36/36`
+- pathwise detailed balance: `36/36`
+- matched valid-proposal improvement mot v17a: `24/24`
+- median valid-proposal ratio: `2.898276`
+- finite movement: `24/24`
+- resource bound: `12/24`
+
+Valid proposals var minst `119` per kjede, accepted cycles minst `72`, accepted
+length-3-or-greater minst `34`, og sluttforskyvning minst `0.051944`. Dermed
+passerte alle 24 kjeder de uendrede movement-kravene. Runtime var imidlertid
+`27.479260-270.449001` sekunder, og bare en av seks source-celler passerte alle
+fire per-kjede runtime-krav. Frossen status er
+`v17b_resource_not_qualified`.
+
+En eksplisitt post-run diagnose fant at length-4-sekvenser utgjorde `0.965295`
+av registrert completion-masse, men at runtime og denne massen bare hadde
+Pearson `r=0.125554`. Tracen logger ikke feilede branch visits eller allocation
+cost og er derfor ikke en komplett cost-model. Statisk er minst to kostnader
+klare: forward completion-settet enumereres paa nytt i `path_probability()`, og
+alle fullforte sykluser materialiseres foer sampling.
+
+Neste gate er `v17c_exact_counter_runtime_qualification`. Den skal beholde
+samme proposal-lov, reverse auxiliary, terskler og effect-eksklusjon, men bruke
+eksakt completion-counting med uniform sampling uten duplisert forward-
+enumerering eller full tuple-materialisering. Source spectrum, start/seed/time-
+stabilitet og fysiske claims forblir lukket til movement og resource begge
+passerer `24/24`.
+
+Bell-metoden er dokumentert separat i
+`Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`.
+Den rapporten er konseptuell claim-hygiene, ikke et v17b-resultat: repoet har
+ingen Bell-test eller etablert entanglement-observabel.
+
+Viktige filer:
+
+- `relational_universe_v17b_residual_cycle_constructor_gate.py`
+- `relational_universe_v17b_postrun_runtime_diagnosis.py`
+- `Documentation/v17b_residual_cycle_constructor_gate.md`
+- `Documentation/v17b_interpretation_audit.md`
+- `Documentation/v17b_pre_registration.csv`
+- `Documentation/v17b_residual_cycle_trace.csv`
+- `Documentation/v17b_pathwise_reversibility_audit.csv`
+- `Documentation/v17b_representation_audit.csv`
+- `Documentation/v17b_chain_transition_summary.csv`
+- `Documentation/v17b_paired_v17a_improvement.csv`
+- `Documentation/v17b_source_qualification_summary.csv`
+- `Documentation/v17b_gate_evaluation.csv`
+- `Documentation/v17b_claim_ledger.csv`
+- `Documentation/v17b_postrun_runtime_diagnosis.md`
+- `Documentation/v17b_postrun_runtime_diagnosis.csv`
+- `Documentation/v17b_next_direction_assessment.md`
+- `Documentation/v0_17b_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17b.md`
+- `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`

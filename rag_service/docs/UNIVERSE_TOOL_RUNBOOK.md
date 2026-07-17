@@ -12,8 +12,8 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind proposal gate: `relational_universe_v17a_state_independent_cycle_proposal_qualification.py`
-- Latest post-run movement diagnosis: `relational_universe_v17a_postrun_movement_diagnosis.py`
+- Latest effect-blind proposal gate: `relational_universe_v17b_residual_cycle_constructor_gate.py`
+- Latest post-run runtime diagnosis: `relational_universe_v17b_postrun_runtime_diagnosis.py`
 - Prior accessibility gate and representation audit: `relational_universe_v16z_alternating_cycle_bridge_gate.py` and `relational_universe_v16z_postrun_representation_audit.py`
 - Prior reversible-measure controls: `relational_universe_v16y_reversible_global_measure_gate.py` and `relational_universe_v16y_postrun_start_separation_audit.py`
 - Prior integer-measure controls: `relational_universe_v16x_explicit_global_measure_gate.py`, `relational_universe_v16x_postrun_concentration_audit.py`, and `relational_universe_v16x_top_edge_component_audit.py`
@@ -42,6 +42,8 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v16z_postrun_representation_audit.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17a_state_independent_cycle_proposal_qualification.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17a_postrun_movement_diagnosis.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17b_residual_cycle_constructor_gate.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17b_postrun_runtime_diagnosis.py
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -83,6 +85,12 @@ cycles, unique states and displacement. Read
 `Documentation/v17a_interpretation_audit.md` and
 `Documentation/v17a_postrun_movement_diagnosis.md`; do not substitute longer
 runs for qualification of a redesigned proposal.
+The v17b verifier checks the frozen residual-cycle proposal contract, source
+hashes, 12,288 trace rows, representation, exact reverse support, pathwise
+balance, paired v17a yield, movement, resource and effect exclusion. Read
+`Documentation/v17b_interpretation_audit.md` and
+`Documentation/v17b_postrun_runtime_diagnosis.md`. Movement passed `24/24`, but
+resource passed only `12/24`; do not open stability or source-spectrum tests.
 
 ## Run the early toy simulator
 
@@ -112,15 +120,18 @@ context, plus the v16z report, formal/post-run interpretation audits, bounded
 bridge summary, exact cycle/reversibility products, gate and claim ledger, and
 the v17a report, interpretation audit, reverse-support/representation products,
 transition/source summaries, movement diagnosis, gate and claim ledger. Keep
-the full v16z decomposition/bridge traces and v17a proposal trace in the static
-archive only. Check SHA-256 hashes.
+the v17b report, interpretation audit, reverse-support/representation products,
+paired improvement, transition/source summaries, runtime diagnosis, gate and
+claim ledger, plus the Bell methods/claim-boundary report. Keep the full v16z
+decomposition/bridge traces and v17a/v17b proposal traces in the static archive
+only. Check SHA-256 hashes.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17a|84 / 84|0 / 24|0.010632|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17b|24 / 24|12 / 24|2.898276|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17a_postrun_movement_diagnosis.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17b_postrun_runtime_diagnosis.md
 ```
 
 ## Start the RAG service locally
@@ -169,11 +180,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v17a om den target-independent syklusproposalens reversibilitet, finite movement og neste gate?'
+  --query 'Hva viste v17b om residual-cycle proposalens reversibilitet, finite movement, runtime og Bell-claim-grensen?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v17a material plus v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v17b material plus v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -222,6 +233,12 @@ does not update this index; both deployments require separate verification.
   proof of global irreducibility, mixing, uniform sampling or a qualified null.
   Finite movement failed `0/24`; this rejects the implemented constructor under
   the frozen budget, not the v16s effect or every cycle-based proposal.
+- Do not use v17b's movement pass `24/24` as proof of convergence, mixing,
+  global irreducibility, uniform sampling or source-effect survival. Resource
+  passed only `12/24`, so start/seed/time stability and spectrum remain closed.
+- Do not describe ordinary graph correlations as Bell violations or
+  entanglement. The repo lacks the required local settings, trial protocol,
+  causal non-influence audit and Bell null statistic.
 - Do not call token count, action density or edit work physical energy or
   temperature before a local balance law and intensive fluctuation observable
   pass fresh tests. Uniformly scaling all rates is only clock rescaling.

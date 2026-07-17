@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17a_postrun_movement_diagnosis.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17b_postrun_runtime_diagnosis.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -137,6 +137,13 @@ reverse-support and pathwise-balance passes `84/84`, resource pass `24/24`,
 finite-movement failure `0/24`, and post-run displacement range
 `0.010632-0.030656`. These are proposal diagnostics, not global mixing or
 source-effect evidence.
+It must report the v17b frozen-start/representation passes `12/12`, exact
+reverse-support and pathwise-balance passes `36/36`, matched valid-yield and
+finite-movement passes `24/24`, median valid-yield ratio `2.898276`, resource
+pass only `12/24`, and runtime range `27.479260-270.449001`. The v17b repair is
+finite movement with an unqualified runtime, not convergence, mixing, source-
+effect or physics evidence. The Bell methods report must remain a conceptual
+claim boundary and must not imply that the repo has performed a Bell test.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -144,7 +151,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v17a and require
+orchestrator separately, then issue a token-scoped query about v17b and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 
