@@ -1,0 +1,7 @@
+claim_id,claim,status,evidence,scope_limit
+C1,The implemented cycle proposal is target-independent and uses only the current assignment plus frozen candidates.,supported,specification and effect-exclusion audit,algorithmic proposal property; not physical state independence
+C2,Every tested oriented auxiliary has exact reverse support and satisfies pathwise detailed balance.,supported,v17a_pathwise_reversibility_audit.csv,84 finite witnesses across six spaces and two starts
+C3,"The finite proposal execution is replay-, candidate-order-, and semantic-role-relabel covariant on both starts.",supported,v17a_representation_audit.csv,tested role relabel; not a proof of every graph automorphism
+C4,The proposal has qualified finite movement under the frozen 512-step budget.,not_supported,v17a_chain_transition_summary.csv,finite mobility; not convergence or mixing
+C5,"The cycle kernel is globally irreducible, mixed, or uniform over the full feasible space.",unsupported,none,v17a target is component-uniform only
+C6,The frozen v16s spectrum contrast survives the v17a measure.,not_tested,spectrum and effect calls are prohibited,requires later stability qualification and fresh holdout

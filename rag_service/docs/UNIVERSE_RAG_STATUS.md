@@ -1,6 +1,6 @@
 # UniverseSimulation RAG Status
 
-Last source review: 2026-07-16.
+Last source review: 2026-07-17.
 
 ## Source-of-truth order
 
@@ -106,31 +106,39 @@ not outrank later executed gates.
   dictionary equality failed `0/6` because semantic relabeling changes
   `SlotClass` keys. A separate post-run audit preserved that status and found
   concrete edge-level move-set covariance `6/6` at both starts.
+- v17a implemented the next effect-blind state-local cycle proposal. Frozen
+  start replay and representation covariance passed `12/12`; exact reverse
+  support and pathwise detailed balance passed `84/84`; resource bounds passed
+  `24/24`. Source spectra and effect metrics remained unopened.
+- Formal v17a status is
+  `v17a_cycle_proposal_finite_movement_not_qualified`: finite movement passed
+  `0/24`. Under 512 steps the chains produced `31-61` valid proposals, accepted
+  `15-39` cycles, visited `16-40` unique states, and ended only
+  `0.010632-0.030656` from their starts against the frozen `0.05` floor.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_exact_pair_cycle_paths_but_no_qualified_state_independent_global_measure`. See
+`fresh_event_footprint_spectrum_contrast_with_reversible_cycle_proposal_algebra_but_failed_finite_proposal_movement`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v16z_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17a_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
-while v16z established exact pair-specific cycle paths. No state-independent
-global endpoint law qualified for an effect test. It is not a
+v16z established exact pair-specific cycle paths, and v17a established tested
+reverse-support and detailed-balance algebra for a target-independent proposal.
+The implemented proposal did not qualify finite movement, so no
+state-independent global endpoint law qualified for an effect test. It is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum under the v16x, v16y, or v16z procedures.
-The narrow next gate is
-`v17a_state_independent_cycle_proposal_qualification` on the same six spaces.
-Construct target-independent alternating-cycle candidates from each current
-state, require exact reverse support in the proposed state, and use the
-explicit forward/reverse proposal ratio in a lazy Metropolis correction.
-Qualify replay, candidate-order and edge-level relabel covariance, reverse
-support, finite movement, and resource bounds before any start/seed/time
-comparison. Do not spend more target-directed 2x2 search budget, and do not
-relax the v16x-v16z gates retrospectively.
+Do not compute the source spectrum under the v16x-v17a procedures. The narrow
+next gate is a new effect-blind residual-graph cycle constructor on the same six
+spaces. It must raise valid-cycle yield and finite displacement while preserving
+v17a's distinguished reverse auxiliary and exact proposal ratio. Qualify the
+new constructor from scratch under frozen movement and representation
+thresholds before any start/seed/time comparison. Do not merely lengthen the
+failed v17a chains, and do not relax the v16x-v17a gates retrospectively.
 
 The separate units-of-action hypothesis is an open proposal, not a result. The
 repo supports a future test of local edit work, action-carrier density and

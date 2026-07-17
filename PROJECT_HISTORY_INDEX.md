@@ -8040,3 +8040,64 @@ Viktige filer:
 - `Documentation/v16z_claim_ledger.csv`
 - `Documentation/v16z_next_direction_assessment.md`
 - `Documentation/v0_16z_operativ_anbefaling.md`
+
+## 10df. v17a kvalifiserte reversibilitetsalgebraen, men ikke finite movement
+
+`v17a` ble preregistrert med spec-digest
+`7b161609f0614fabd2b5316a6d64c9b5dff34492de4b79e0749d27d1f61befbd`.
+En foerste `prepare-only` stoppet foer noen v17a-fil ble skrevet fordi
+post-run-modulens artefaktkonstant het `AUDIT_CSV`, ikke `POSTRUN_AUDIT`.
+Referansen ble rettet, compile og syntetisk detailed-balance-test ble kjoert
+paa nytt, og preregistreringen ble deretter frosset.
+
+Gaten beholdt de seks coarse v16x-state-spacene og begge frosne
+`source_assignment`/`v16x_random_cost_a0`-startene. Proposal-kjernen velger en
+distinguished orientert alternerende syklus med lengde `2-8` fra current state
+alene. Reverse auxiliary er den reverserte ordnede listen av add-kanter, og en
+lazy Metropolis-korreksjon bruker eksakt
+`min(1, q_reverse_auxiliary/q_forward_auxiliary)`. Ingen target-graf,
+source-spectrum eller observed-effect-statistikk ble brukt.
+
+Formelle resultater:
+
+- source spectrum/effect calls: `0/0`
+- frozen start replay: `12/12`
+- replay/order/semantic-role-relabel representation: `12/12`
+- exact reverse auxiliary support: `84/84`
+- pathwise detailed balance: `84/84`
+- resource bound: `24/24`
+- finite movement: `0/24`
+
+Post-run-diagnosen beholdt den frosne statusen
+`v17a_cycle_proposal_finite_movement_not_qualified`. Valid proposals var
+`31-61` per 512-stegskjede og passerte frozen floor paa `0/24`. Accepted cycles
+var `15-39` og passerte paa `6/24`; accepted length-3-or-greater passerte
+`2/24`. Alle `24/24` kjeder passerte unique-state-floor med `16-40` states,
+men final start displacement var bare `0.010632-0.030656`, under `0.05` paa
+`24/24`. Runtime var `2.525771-3.498641` sekunder og er ikke flaskehalsen.
+
+Resultatet kvalifiserer proposalens finite representasjons- og
+reversibilitetsalgebra, men ikke en brukbar finite sampler. Det er ikke grunnlag
+for start/seed/time-stabilitet eller v16s-effect. Neste smale gate maa redesigne
+selve cycle construction med en residual-graph cycle finder som gir hoyere
+valid-cycle yield, samtidig som distinguished reverse auxiliary og eksakt
+proposal-ratio beholdes. Ikke bare forleng 512-stegskjedene.
+
+Viktige filer:
+
+- `relational_universe_v17a_state_independent_cycle_proposal_qualification.py`
+- `relational_universe_v17a_postrun_movement_diagnosis.py`
+- `Documentation/v17a_state_independent_cycle_proposal_qualification.md`
+- `Documentation/v17a_interpretation_audit.md`
+- `Documentation/v17a_pre_registration.csv`
+- `Documentation/v17a_cycle_proposal_trace.csv`
+- `Documentation/v17a_pathwise_reversibility_audit.csv`
+- `Documentation/v17a_representation_audit.csv`
+- `Documentation/v17a_chain_transition_summary.csv`
+- `Documentation/v17a_source_qualification_summary.csv`
+- `Documentation/v17a_gate_evaluation.csv`
+- `Documentation/v17a_claim_ledger.csv`
+- `Documentation/v17a_postrun_movement_diagnosis.md`
+- `Documentation/v17a_postrun_movement_diagnosis.csv`
+- `Documentation/v17a_next_direction_assessment.md`
+- `Documentation/v0_17a_operativ_anbefaling.md`

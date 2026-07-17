@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16z_postrun_representation_audit.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17a_postrun_movement_diagnosis.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -132,6 +132,11 @@ disconnected components. It must report the v16z exact pair-specific cycle
 coverage/replay `6/6`, bounded bridges `0/6`, `98.1521-99.6892%` mismatch
 reduction, preserved formal raw-key representation failure, and post-run
 edge-move covariance `6/6` without turning the audit into a retroactive pass.
+It must also report the v17a frozen-start/representation passes `12/12`, exact
+reverse-support and pathwise-balance passes `84/84`, resource pass `24/24`,
+finite-movement failure `0/24`, and post-run displacement range
+`0.010632-0.030656`. These are proposal diagnostics, not global mixing or
+source-effect evidence.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -139,7 +144,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v16z and require
+orchestrator separately, then issue a token-scoped query about v17a and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 

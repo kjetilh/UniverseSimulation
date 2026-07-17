@@ -1,6 +1,6 @@
 # UniverseSimulation Tool Runbook
 
-Last source review: 2026-07-16.
+Last source review: 2026-07-17.
 
 Every completed research round follows the mandatory closure contract in
 `Documentation/Research_Round_Closure_Policy.md`: verify, commit, push, deploy
@@ -12,8 +12,9 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind accessibility gate: `relational_universe_v16z_alternating_cycle_bridge_gate.py`
-- Latest post-run representation audit: `relational_universe_v16z_postrun_representation_audit.py`
+- Latest effect-blind proposal gate: `relational_universe_v17a_state_independent_cycle_proposal_qualification.py`
+- Latest post-run movement diagnosis: `relational_universe_v17a_postrun_movement_diagnosis.py`
+- Prior accessibility gate and representation audit: `relational_universe_v16z_alternating_cycle_bridge_gate.py` and `relational_universe_v16z_postrun_representation_audit.py`
 - Prior reversible-measure controls: `relational_universe_v16y_reversible_global_measure_gate.py` and `relational_universe_v16y_postrun_start_separation_audit.py`
 - Prior integer-measure controls: `relational_universe_v16x_explicit_global_measure_gate.py`, `relational_universe_v16x_postrun_concentration_audit.py`, and `relational_universe_v16x_top_edge_component_audit.py`
 - Public archive builder: `Tools/build_emergentuniverse_public_site.py`
@@ -39,6 +40,8 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v16y_reversible_global_measure_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v16y_postrun_start_separation_audit.py
 /opt/anaconda3/bin/python relational_universe_v16z_postrun_representation_audit.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17a_state_independent_cycle_proposal_qualification.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17a_postrun_movement_diagnosis.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -72,6 +75,14 @@ to check frozen script/source hashes, exact cycle/bridge products, the preserved
 formal status, and corrected edge-level move-set covariance. Read both
 `Documentation/v16z_interpretation_audit.md` and
 `Documentation/v16z_postrun_representation_audit.md`.
+The v17a verifier checks preregistration/source hashes, frozen starts,
+representation products, reverse-auxiliary support, pathwise balance, movement,
+resource bounds and effect exclusion. The post-run verifier preserves the
+formal `0/24` movement status while diagnosing valid-proposal yield, accepted
+cycles, unique states and displacement. Read
+`Documentation/v17a_interpretation_audit.md` and
+`Documentation/v17a_postrun_movement_diagnosis.md`; do not substitute longer
+runs for qualification of a redesigned proposal.
 
 ## Run the early toy simulator
 
@@ -98,16 +109,18 @@ post-run concentration products, the v16y report, interpretation audit,
 reversibility/representation/movement/stability/concentration products,
 post-run start-separation audit, next-direction assessment, and live project
 context, plus the v16z report, formal/post-run interpretation audits, bounded
-bridge summary, exact cycle/reversibility products, gate and claim ledger.
-Keep the full cycle and bridge-trace CSVs in the static archive only. Check
-SHA-256 hashes.
+bridge summary, exact cycle/reversibility products, gate and claim ledger, and
+the v17a report, interpretation audit, reverse-support/representation products,
+transition/source summaries, movement diagnosis, gate and claim ledger. Keep
+the full v16z decomposition/bridge traces and v17a proposal trace in the static
+archive only. Check SHA-256 hashes.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v16z|2,139|0/6|98.1521|6/6|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17a|84 / 84|0 / 24|0.010632|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v16z_postrun_representation_audit.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17a_postrun_movement_diagnosis.md
 ```
 
 ## Start the RAG service locally
@@ -156,11 +169,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v16z om alternerende sykluser og bounded 2x2-broer, hva var representasjonsartefakten, og hva er neste gate?'
+  --query 'Hva viste v17a om den target-independent syklusproposalens reversibilitet, finite movement og neste gate?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v16z material plus v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v17a material plus v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -205,6 +218,10 @@ does not update this index; both deployments require separate verification.
   proposal law. `0/6` bounded exact bridges is unresolved, and the post-run
   edge-move covariance audit does not retroactively change the formal raw-key
   representation failure.
+- Do not use v17a's reverse-support, detailed-balance or unique-state passes as
+  proof of global irreducibility, mixing, uniform sampling or a qualified null.
+  Finite movement failed `0/24`; this rejects the implemented constructor under
+  the frozen budget, not the v16s effect or every cycle-based proposal.
 - Do not call token count, action density or edit work physical energy or
   temperature before a local balance law and intensive fluctuation observable
   pass fresh tests. Uniformly scaling all rates is only clock rescaling.

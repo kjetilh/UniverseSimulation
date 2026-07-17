@@ -1,0 +1,7 @@
+stage,metric,minimum,mean,maximum,passing_chains,total_chains,frozen_requirement,metric_pass,interpretation
+v17a_postrun,valid_proposals,31.0,47.458333333333336,61.0,0,24,>=64,0,proposal construction reaches a valid closed cycle too infrequently
+v17a_postrun,accepted_cycles,15.0,27.125,39.0,6,24,>=32,0,accepted movement is below the frozen floor on most chains
+v17a_postrun,accepted_long_cycles,5.0,10.791666666666666,17.0,2,24,>=16,0,length-three-or-greater movement is too sparse
+v17a_postrun,unique_state_count,16.0,28.125,40.0,24,24,>=16,1,all chains visit multiple distinct states
+v17a_postrun,final_start_changed_edge_fraction,0.010632344711807518,0.02073056545188695,0.030655691172296384,0,24,>=0.05,0,finite displacement remains below the frozen five-percent floor
+v17a_postrun,elapsed_seconds,2.5257710409350693,3.0755329843183667,3.498640582896769,24,24,<=60.0,1,runtime is not the qualification bottleneck

@@ -1,6 +1,6 @@
 # UniverseSimulation Argumentation Map
 
-Last source review: 2026-07-16.
+Last source review: 2026-07-17.
 
 ## Research question
 
@@ -64,6 +64,10 @@ not an exact realization of every DPO/CTMC statement in the research report.
 - v16z gave exact pair-specific alternating-cycle decompositions for all six
   v16y start pairs: `2139` cycles total, full coverage, and whole-cycle
   forward/reverse replay `6/6`.
+- v17a turned that direction into a target-independent finite proposal with an
+  explicit reverse auxiliary and exact Metropolis ratio. Frozen-start replay
+  and representation passed `12/12`; reverse support and pathwise detailed
+  balance passed `84/84`; runtime passed `24/24`.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -86,6 +90,14 @@ whole-cycle paths exist, yet they do not define a state-independent proposal
 law. The formal representation status remains failed because it compared raw
 relabel-dependent slot keys; a post-run edge-move audit passed `6/6` and is a
 diagnosis, not a retroactive preregistered pass.
+
+V17a qualifies the tested proposal algebra but rejects its finite execution.
+Movement passed `0/24`: all chains reached `16-40` unique states, yet none met
+all preregistered proposal-count, accepted-cycle, long-cycle and five-percent
+displacement floors. The post-run diagnosis points to low valid-cycle yield and
+small finite displacement, not representation, reversibility, detailed-balance
+or runtime failure. This neither proves disconnected components nor weakens the
+earlier finite spectrum contrast; the effect was not computed.
 
 ## What has been explained away or remains negative
 
@@ -127,13 +139,14 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is an effect-blind, state-independent alternating-
-cycle proposal qualification on the same coarse feasible matching space.
-Retain v16x-v16z as controls. The proposal must not use the destination target;
-it must expose exact reverse support and proposal probabilities under candidate
-order and semantic relabeling. Only a qualified longer-cycle law should face
-marginal entropy, start/seed/time stability and support coverage before any
-source-spectrum inspection. Concrete conflict remains a
+The best current next test is an effect-blind residual-graph cycle constructor
+on the same coarse feasible matching space. Retain v16x-v17a as controls. The
+proposal must remain target-independent and retain v17a's exact reverse support
+and proposal ratio, while materially increasing valid-cycle yield and finite
+displacement under a newly frozen qualification. Only a qualified proposal law
+should face marginal entropy, start/seed/time stability and support coverage
+before any source-spectrum inspection. Merely lengthening the failed v17a
+chains is not the right test. Concrete conflict remains a
 required diagnostic because exact preservation collapsed the available finite
 freedom. The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not

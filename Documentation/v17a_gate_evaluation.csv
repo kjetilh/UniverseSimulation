@@ -1,0 +1,9 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+frozen_start_replay,pass,12/12,12/12,continue
+representation_covariance,pass,12/12,12/12,continue
+exact_reverse_auxiliary_support,pass,84/84,84/84,continue
+pathwise_detailed_balance,pass,84/84,84/84,continue
+finite_movement,fail,0/24,24/24,retire_or_redesign_proposal
+resource_bound,pass,24/24,24/24,continue
+v17a_overall,v17a_cycle_proposal_finite_movement_not_qualified,exclusion=1;starts=12/12;representation=12/12;reverse=84/84;balance=84/84;movement=0/24;resource=24/24,1;12/12;12/12;84/84;84/84;24/24;24/24,v17a_cycle_proposal_finite_movement_not_qualified

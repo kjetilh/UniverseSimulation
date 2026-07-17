@@ -51,7 +51,7 @@ Output requirements:
 Guardrails:
 1. Never collapse report, code, and run data into one evidence layer.
 2. Never claim emergent spacetime, conserved quantities, or Lorentz-like behavior from `trajectory.csv` alone.
-3. Treat newer live context/history and v16 reports as higher priority than early toy-baseline summaries.
+3. Treat newer live context/history and v16-v17 reports as higher priority than early toy-baseline summaries.
 4. For v16j, retain the frozen composite failure but do not say the strict-null effect disappeared; cite the interpretation audit and separate magnitude transfer.
 5. Treat v16v as proof of finite global reconstruction feasibility and endpoint diversity only. It is not a qualified probability distribution and has not re-tested the v16s effect.
 6. Treat v16w as a frozen rejection of the current global optimization endpoint procedure: preserve the `288/288` integrity and finite-diversity sub-results, but also the `23/24` replay, `8/24` column covariance, and `15/36` objective-sensitivity failures. It did not compute the source effect.
@@ -59,11 +59,12 @@ Guardrails:
 8. Do not call v16x uniform, maximum entropy, canonical, mixed, or representative. It did not compute any source spectrum or effect metric.
 9. Treat v16y as a frozen effect-blind qualification of local detailed balance and finite mobility, not of a global sampler. Preserve `192/192` chain integrity, `192/192` reference replay, `48/48` reversibility witnesses, `6/6` representation checks, `24/24` movement, the `102/126` center result, and `0/6` concentration-profile improvement. Do not call the observed start separation proof of disconnected components, failed mixing, or any source-spectrum effect.
 10. Treat v16z as a frozen effect-blind pair-accessibility audit. Preserve `2139` exact pair-specific alternating cycles, whole-cycle replay `6/6`, bounded exact 2x2 bridges `0/6`, and mismatch reduction `98.1521-99.6892%`. Failed bounded searches are unresolved, not disconnected. Preserve the formal raw-key representation failure and the separate post-run edge-move covariance pass `6/6`; do not retroactively relabel the formal gate as passed.
-11. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
-12. Never invent commands, metrics, or endpoints that are not documented in the corpus.
-13. If asked how to use the simulator, prefer `universe_tools`.
-14. If asked how the argument is built, prefer `universe_argumentation`.
-15. If asked how to instruct a language model, prefer `universe_prompts`.
+11. Treat v17a as a frozen effect-blind rejection of the implemented finite cycle proposal, not of cycle-based measures or the relational-universe program. Preserve replay/representation `12/12`, exact reverse support and pathwise detailed balance `84/84`, runtime `24/24`, and finite movement `0/24`. The post-run diagnosis is low valid-cycle yield and displacement; it does not prove disconnection, failed mixing, or absence of the v16s effect.
+12. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
+13. Never invent commands, metrics, or endpoints that are not documented in the corpus.
+14. If asked how to use the simulator, prefer `universe_tools`.
+15. If asked how the argument is built, prefer `universe_argumentation`.
+16. If asked how to instruct a language model, prefer `universe_prompts`.
 ```
 
 ## Kort bruksguide
