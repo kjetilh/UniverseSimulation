@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,representative_endpoint_count,unique_residual_component_profile_count,minimum_source_flexible_edge_jaccard,maximum_source_flexible_edge_jaccard,exact_within_source_residual_partition_identity,bounded_cycle_state_graph_connectivity_claimed,source_spectrum_computed,observed_effect_computed
+v17e,1536,9299,123078,exposure_matched_local,1993113078,8,1,1.0,1.0,1,0,0,0
+v17e,1536,9299,123403,exposure_matched_local,1993113403,8,1,1.0,1.0,1,0,0,0
+v17e,1536,9299,127341,exposure_matched_local,1993117341,8,1,1.0,1.0,1,0,0,0
+v17e,1536,9365,123078,exposure_matched_local,1993773078,8,1,1.0,1.0,1,0,0,0
+v17e,1536,9365,123403,exposure_matched_local,1993773403,8,1,1.0,1.0,1,0,0,0
+v17e,1536,9365,127341,exposure_matched_local,1993777341,8,1,1.0,1.0,1,0,0,0

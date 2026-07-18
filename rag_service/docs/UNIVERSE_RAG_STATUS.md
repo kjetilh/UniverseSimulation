@@ -145,32 +145,45 @@ not outrank later executed gates.
   endpoint-distance agreement `12/18`; all six distance failures were
   start-family comparisons. Formal status is
   `v17d_endpoint_centers_not_stable`.
+- v17e reused the same starts and random streams, replayed all `192/192` frozen
+  v17d checkpoint endpoints exactly, and continued every chain to 4096 steps.
+  Integrity passed `384/384`, reversibility `36/36`, representation `12/12`,
+  and traversal/resource `24/24`; maximum runtime was `107.676262` seconds.
+- The preregistered material cross-start contraction passed `0/6`. Absolute
+  scale/baseline distance ratios were `0.978973-1.005348`, against `<=0.90`.
+  A disclosed post-run diagnosis found within-start dispersion expansion of
+  `1.385802-1.470668` in `6/6`, so lower cross/within ratios reflect diffusion
+  within start families rather than material cross-start convergence. Formal
+  status is `v17e_cross_start_distance_flat_retire_length_2_4_kernel`.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_exact_residual_cycle_proposal_showing_persistent_finite_start_memory`. See
+`fresh_event_footprint_spectrum_contrast_with_exact_bounded_cycle_kernel_retired_for_scale_flat_start_memory`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v17d_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17e_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
 v16z established exact pair-specific cycle paths, and v17a established tested
 reverse-support and detailed-balance algebra for a target-independent proposal.
 V17b repaired finite movement and v17c showed that the same finite proposal law
 can meet the frozen runtime bound without changing any tested transition. V17d
-then passed seed/time distance and residual/footprint diagnostics but failed
-finite start independence. The law has not passed finite start stability or
-source-effect transfer. It is not a
+then failed finite start independence, and v17e found that doubling the chain
+budget broadened within-start clouds without materially reducing absolute
+cross-start distance. The length-2-to-4 move class is retired as a scale-growth
+direction. The law has not passed finite start stability or source-effect
+transfer. It is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum yet. The narrow next gate is one bounded
-effect-blind scale response on the same six spaces under the qualified v17c
-implementation. Use substantially longer checkpoints and direct cross-start
-endpoint distance as the primary response. If it remains flat, stop scaling the
-length-2-to-4 kernel and change the move class. Do not relax or reinterpret the
-v16x-v17d gates retrospectively.
+Do not compute the source spectrum yet. The narrow next gate is one
+effect-blind move-class expansion on the same six spaces and starts. Preserve
+an explicit stationary target, exact reverse accounting, representation
+checks, and compare cross-start response under matched realized work. Exact
+longer alternating cycles or a reversible compound-cycle proposal are
+candidates, not qualified methods. Do not spend more budget scaling the
+length-2-to-4 kernel or reinterpret v16x-v17e retrospectively.
 
 `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`
 separates Bell's theorem, Bell inequalities and observed finite experimental

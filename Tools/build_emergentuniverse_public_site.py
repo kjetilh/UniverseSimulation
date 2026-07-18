@@ -1651,6 +1651,168 @@ DATASET_SPECS: list[dict[str, str]] = [
         "description": "Plain-language distinction between start memory and physical evidence.",
     },
     {
+        "source": "Documentation/v17e_effect_blind_scale_response_gate.md",
+        "category": "latest_causal_structure",
+        "title": "v17e effect-blind scale response",
+        "description": "Frozen matched-prefix 2048-to-4096 cross-start distance gate.",
+    },
+    {
+        "source": "Documentation/v17e_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v17e interpretation audit",
+        "description": "Claim boundary for scale-flat start memory and kernel retirement.",
+    },
+    {
+        "source": "Documentation/v17e_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e preregistration",
+        "description": "Frozen checkpoints, hashes, effect exclusion, contraction threshold and stop rule.",
+    },
+    {
+        "source": "Documentation/v17e_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e source chain",
+        "description": "SHA-256 links to the v17c kernel and frozen v17d prefix evidence.",
+    },
+    {
+        "source": "Documentation/v17e_v17d_prefix_replay.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e matched v17d prefix replay",
+        "description": "Exact replay audit for all 192 frozen v17d checkpoint endpoints.",
+    },
+    {
+        "source": "Documentation/v17e_endpoint_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e endpoint audit",
+        "description": "All 384 effect-blind baseline and doubled-scale endpoint rows.",
+    },
+    {
+        "source": "Documentation/v17e_pairwise_distance.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17e pairwise endpoint distances",
+        "description": "All within-source endpoint pairs; static only and excluded from generative RAG.",
+    },
+    {
+        "source": "Documentation/v17e_center_stability.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e endpoint center diagnostics",
+        "description": "Start, seed and 2048-to-4096 center comparisons.",
+    },
+    {
+        "source": "Documentation/v17e_endpoint_agreement.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e endpoint agreement diagnostics",
+        "description": "Cross-group versus within-group distance ratios at doubled scale.",
+    },
+    {
+        "source": "Documentation/v17e_cross_start_scale_response.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e primary cross-start scale response",
+        "description": "Per-source absolute cross-start distance response and frozen contraction decision.",
+    },
+    {
+        "source": "Documentation/v17e_start_feature_scale_response.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e start-feature scale response",
+        "description": "Diagnostic coarse-feature start-gap response from 2048 to 4096 steps.",
+    },
+    {
+        "source": "Documentation/v17e_residual_component_profile.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e residual component profiles",
+        "description": "Residual-SCC profiles at 48 representative endpoints.",
+    },
+    {
+        "source": "Documentation/v17e_residual_component_stability.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e residual component stability",
+        "description": "Start, seed and scale diagnostics for residual-component features.",
+    },
+    {
+        "source": "Documentation/v17e_residual_partition_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e residual partition audit",
+        "description": "Exact residual-profile identity without a global connectivity claim.",
+    },
+    {
+        "source": "Documentation/v17e_proposal_footprint.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e proposal footprints",
+        "description": "Accepted-cycle edge, parent and slot incidence by checkpoint window.",
+    },
+    {
+        "source": "Documentation/v17e_proposal_footprint_overlap.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e proposal footprint overlap",
+        "description": "Start, seed and scale overlap for observed accepted proposals.",
+    },
+    {
+        "source": "Documentation/v17e_chain_transition_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e chain transition summary",
+        "description": "Per-chain 4096-step traversal, acceptance, displacement and runtime evidence.",
+    },
+    {
+        "source": "Documentation/v17e_pathwise_reversibility_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e pathwise reversibility audit",
+        "description": "Exact reverse support and detailed-balance witnesses for the reused kernel.",
+    },
+    {
+        "source": "Documentation/v17e_representation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e representation audit",
+        "description": "Replay, candidate-order and semantic-role covariance checks.",
+    },
+    {
+        "source": "Documentation/v17e_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e source qualification summary",
+        "description": "Per-source integrity, runtime and primary scale-response decisions.",
+    },
+    {
+        "source": "Documentation/v17e_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e gate evaluation",
+        "description": "Frozen machine-readable scale-flat kernel-retirement decision.",
+    },
+    {
+        "source": "Documentation/v17e_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e claim ledger",
+        "description": "Supported finite scale claims and explicit convergence/physics exclusions.",
+    },
+    {
+        "source": "Documentation/v17e_postrun_diffusion_diagnosis.md",
+        "category": "latest_causal_structure",
+        "title": "v17e post-run diffusion diagnosis",
+        "description": "Descriptive separation of within-family diffusion from cross-start convergence.",
+    },
+    {
+        "source": "Documentation/v17e_postrun_diffusion_diagnosis.csv",
+        "category": "latest_causal_structure",
+        "title": "v17e post-run diffusion data",
+        "description": "Per-source within-dispersion expansion and flat cross-start response.",
+    },
+    {
+        "source": "Documentation/v17e_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v17e next direction",
+        "description": "Effect-blind move-class expansion after retiring scale growth.",
+    },
+    {
+        "source": "Documentation/v0_17e_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v17e operational recommendation",
+        "description": "Concise kernel-retirement and next-move boundary.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17e.md",
+        "category": "latest_causal_structure",
+        "title": "v17e non-specialist summary",
+        "description": "Plain-language matched-prefix scale-response result.",
+    },
+    {
         "source": "Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md",
         "category": "methods_and_claim_boundaries",
         "title": "Bell theorem, inequalities and observed correlations",
@@ -1888,6 +2050,11 @@ def write_site(
     finite_stability_postrun_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17d_postrun_start_memory_diagnosis.csv")
     finite_stability_residual_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17d_postrun_residual_partition_audit.csv")
     finite_stability_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17d_claim_ledger.csv")
+    scale_response_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17e_gate_evaluation.csv")
+    scale_response_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17e_source_qualification_summary.csv")
+    scale_response_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17e_cross_start_scale_response.csv")
+    scale_response_postrun_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17e_postrun_diffusion_diagnosis.csv")
+    scale_response_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17e_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -1915,14 +2082,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate finds persistent start-state memory after 2048-step exact-counter chains, despite seed/time agreement and stable residual diagnostics. The underlying signal remains a finite event-DAG spectrum contrast, not a Bell test, spacetime, energy or temperature claim.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate exactly replays the 2048-step baseline and finds that cross-start distance remains flat at 4096 steps while within-start dispersion grows. This retires further scale growth of one bounded-cycle move class, not the model. The underlying signal remains a finite event-DAG spectrum contrast, not a Bell test, spacetime, energy or temperature claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">24 / 24</div><p class="muted">v17d chains passing finite traversal and the preregistered resource bound.</p></div>
-      <div class="card"><div class="metric">12 / 18</div><p class="muted">v17d endpoint-distance agreements; all six failures are start-family contrasts.</p></div>
+      <div class="card"><div class="metric">192 / 192</div><p class="muted">v17e checkpoints exactly replaying the frozen v17d random-stream prefix.</p></div>
+      <div class="card"><div class="metric">0 / 6</div><p class="muted">v17e sources meeting the material cross-start contraction threshold at doubled scale.</p></div>
     </section>
 
     <section>
@@ -1952,12 +2119,21 @@ def write_site(
       <p>Runtime improved in every matched chain. The median v17c/v17b ratio was <code>0.161356</code> and maximum v17c chain runtime was <code>14.921836</code> seconds. This isolates the v17b failure as implementation cost on these finite spaces; it does not establish convergence, mixing, start independence or survival of the v16s effect. The next gate remains effect-blind finite start/seed/time stability.</p>
       <p>v17d ran that stability gate for <code>2048</code> steps across both starts and two fresh seed families. Endpoint integrity passed <code>384/384</code>, reversibility <code>36/36</code>, representation <code>12/12</code>, traversal/resource <code>24/24</code>, residual-component centers <code>90/90</code>, and proposal-footprint overlap <code>18/18</code>.</p>
       <p>Finite start independence did not qualify. Endpoint centers passed <code>85/108</code> and endpoint-distance agreement <code>12/18</code>; every distance failure was the start-family contrast, with cross/within ratios <code>2.656766-2.906643</code>. Seed and early/late distance comparisons passed <code>12/12</code>. Source-edge/conflict gaps contracted from early to late in <code>12/12</code> cells, but direct cross-start distance was effectively flat. Exact residual-SCC profiles were identical across the eight representative endpoints within each source. This supports one bounded scale-response test, not a convergence, connectivity or physical claim.</p>
+      <p>v17e ran that bounded test with the same starts and random streams. All <code>192/192</code> baseline endpoints replayed v17d exactly before the chains continued to <code>4096</code> steps. Integrity passed <code>384/384</code>, reversibility <code>36/36</code>, representation <code>12/12</code>, and traversal/resource <code>24/24</code>; maximum runtime was <code>107.676262</code> seconds.</p>
+      <p>The primary material-contraction gate failed <code>0/6</code>. Cross-start scale/baseline distance ratios were <code>0.978973-1.005348</code>, against the frozen requirement <code>&lt;=0.90</code>. A disclosed post-run diagnosis found within-start dispersion growth of <code>1.385802-1.470668</code> in all six sources. The lower cross/within ratio therefore reflects wider within-family clouds, not material cross-start convergence. Further step-budget scaling of the length-2-to-4 kernel is retired; the next effect-blind gate must change the move class.</p>
       <p>The separate Bell methods report distinguishes Bell's theorem, testable Bell inequalities and finite observed quantum-correlation data. UniverseSimulation currently has no alternative local measurement settings, Bell trial protocol or entanglement observable; graph correlation is not relabeled as Bell evidence.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current finite-stability gate</h2>
+      <h2>Current matched-prefix scale-response gate</h2>
+      {table_html(scale_response_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(scale_response_source_rows, ["growth_seed", "run_offset", "chain_passes", "v17d_prefix_replay_passes", "primary_scale_response_pass", "cross_start_distance_ratio", "residual_partition_identity_pass", "maximum_chain_seconds", "source_qualification_pass"])}
+      <h3>Primary absolute cross-start response</h3>
+      {table_html(scale_response_rows, ["growth_seed", "run_offset", "baseline_median_cross_start_distance", "scale_median_cross_start_distance", "scale_over_baseline_cross_start_distance_ratio", "primary_material_contraction_pass", "baseline_cross_to_within_ratio", "scale_cross_to_within_ratio"])}
+      <h3>Post-run diffusion diagnosis</h3>
+      {table_html(scale_response_postrun_rows, ["growth_seed", "run_offset", "cross_start_distance_ratio", "within_start_dispersion_ratio", "scale_over_baseline_cross_to_within_ratio", "source_and_conflict_gap_contractions", "candidate_rank_gap_contraction", "residual_partition_identity", "postrun_diagnosis"])}
+      <h3>Prior v17d finite-stability gate</h3>
       {table_html(finite_stability_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(finite_stability_source_rows, ["growth_seed", "run_offset", "chain_passes", "endpoint_center_passes", "endpoint_agreement_passes", "component_center_passes", "proposal_overlap_passes", "maximum_chain_seconds", "source_qualification_pass"])}
       <h3>Start, seed and time endpoint agreement</h3>
@@ -2046,6 +2222,7 @@ def write_site(
       <p>v17b preserves that probability contract but enumerates all bounded residual completions for a chosen start and exact length. It repairs finite movement under the unchanged budget, but the <code>12/24</code> resource pass blocks stability and source-effect tests. The next implementation may optimize exact counting and uniform sampling only; changing the law or relaxing the runtime threshold would be a new scientific design, not a performance repair.</p>
       <p>v17c makes only that implementation change. It counts exact completion branches, selects one uniform depth-first rank, and reuses the forward count in the auxiliary probability. Exact v17b transition replay verifies that the tested dynamics did not change. Passing finite runtime qualifies a stability experiment, not global sampling, convergence or source-effect transfer.</p>
       <p>v17d keeps that law and samples separated early/late windows from four-times-longer chains. Its residual SCCs and observed accepted-proposal footprints are diagnostics only. Exact residual-profile identity does not imply that the bounded-cycle Markov state graph is globally connected, and start-sensitive finite endpoints are not a qualified global null.</p>
+      <p>v17e matches the v17d random-stream prefix exactly and doubles the chain budget. Absolute cross-start distance remains effectively flat while within-start dispersion grows. This supports retiring scale growth of the tested length-2-to-4 move class. It does not prove disconnected components, failed convergence for every possible move class, or any source-spectrum effect.</p>
       <p>The separate units-of-action hypothesis treats local realized edit work, carrier occupancy and boundary flux as candidate microscopic inputs. Until a local balance law and reproducible intensive fluctuation parameter are demonstrated, the correct terms are action density and change intensity, not physical energy or temperature.</p>
     </section>
 
@@ -2056,6 +2233,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(scale_response_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v17d finite-stability claim ledger</h3>
       {table_html(finite_stability_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Prior v17c exact-counter claim ledger</h3>
       {table_html(counter_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}

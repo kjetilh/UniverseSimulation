@@ -8311,3 +8311,68 @@ Viktige filer:
 - `Documentation/v17d_next_direction_assessment.md`
 - `Documentation/v0_17d_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17d.md`
+
+## 10dj. v17e fant diffusjon innen startfamilier uten cross-start-konvergens
+
+`v17e` ble preregistrert med spec-digest
+`a8991577f79ef432ef51cb27ce1bb55d9f04b55f71a83f7576e6c6e03bb92b02`
+og script-hash
+`ee30b83eb5ca1d1a91da66f222c05d6f42fd43e323d158433906f60ff06d7e98`.
+Gaten beholdt de seks v17d-rommene, begge startfamilier, begge random streams
+og den eksakte v17c length-`2-4` proposal-loven. Hver kjede gjenga foerst det
+frosne v17d-vinduet `1536-1984` og fortsatte uten restart til et nytt vindu
+`3584-4032` under totalt `4096` steg. Source spectrum og observed effect var
+forbudt.
+
+Formelle resultater:
+
+- source spectrum/effect calls: `0/0`
+- frozen-start replay: `12/12`
+- matched v17d endpoint-prefix: `192/192`
+- endpoint integrity: `384/384`
+- pathwise detailed balance: `36/36`
+- representation covariance: `12/12`
+- finite traversal/resource: `24/24`
+- maximum chain runtime: `107.676262` sekunder
+- primary material cross-start contraction: `0/6`
+
+Direkte cross-start scale/baseline-distance var `0.978973-1.005348`, mot det
+frosne kravet `<=0.90` i alle seks rom. Den operative statusen er derfor
+`v17e_cross_start_distance_flat_retire_length_2_4_kernel`. Dette er en
+stopregel for mer stegbudsjett paa denne move-klassen, ikke en paastand om at
+den globale state-grafen er frakoblet eller at andre reversible moves ikke kan
+virke.
+
+En separat deskriptiv postrun-diagnose viste samme moenster i `6/6` rom:
+within-start dispersion vokste `1.385802-1.470668`, mens absolutt cross-start
+distance forble flat. Cross/within-ratio falt til `0.673283-0.725462` av
+baseline fordi de interne skyene spredte seg, ikke fordi startfamiliene
+konvergerte materielt. Source-edge- og concrete-conflict-gap krympet i `12/12`
+celler, candidate-rank-gap i `3/6`, og exact residual-profile identity forble
+`6/6`. Postrun-bandene var ikke preregistrerte og er diagnose, ikke en ny gate.
+
+Neste smale steg er en effect-blind move-class expansion paa de samme rommene.
+En lengre alternating-cycle eller reversibel compound-cycle proposal maa ha
+eksplisitt stationary target, eksakt reverse accounting, representation-
+kontroll og matched realized-work. Source spectrum forblir lukket til en slik
+ny kjerne passer probability-, runtime- og start-memory-gatene.
+
+Viktige filer:
+
+- `relational_universe_v17e_effect_blind_scale_response_gate.py`
+- `relational_universe_v17e_postrun_diffusion_diagnosis.py`
+- `Documentation/v17e_effect_blind_scale_response_gate.md`
+- `Documentation/v17e_interpretation_audit.md`
+- `Documentation/v17e_pre_registration.csv`
+- `Documentation/v17e_v17d_prefix_replay.csv`
+- `Documentation/v17e_cross_start_scale_response.csv`
+- `Documentation/v17e_start_feature_scale_response.csv`
+- `Documentation/v17e_endpoint_agreement.csv`
+- `Documentation/v17e_residual_partition_audit.csv`
+- `Documentation/v17e_gate_evaluation.csv`
+- `Documentation/v17e_claim_ledger.csv`
+- `Documentation/v17e_postrun_diffusion_diagnosis.md`
+- `Documentation/v17e_postrun_diffusion_diagnosis.csv`
+- `Documentation/v17e_next_direction_assessment.md`
+- `Documentation/v0_17e_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17e.md`

@@ -82,6 +82,15 @@ not an exact realization of every DPO/CTMC statement in the research report.
   `90/90`, and proposal-footprint overlap `18/18`. Endpoint centers passed only
   `85/108` and distance agreement `12/18`; all distance failures were the
   start-family contrast. Source effects remained closed.
+- v17e matched the v17d random-stream prefix exactly at `192/192` checkpoints
+  and doubled the budget to 4096 steps. Integrity, reversibility,
+  representation and traversal/resource all passed, but material cross-start
+  contraction passed `0/6`; scale/baseline ratios were
+  `0.978973-1.005348`.
+- The v17e post-run diagnosis found within-start dispersion expansion of
+  `1.385802-1.470668` in all six sources while absolute cross-start distance
+  stayed flat. This retires more scale growth for the length-2-to-4 move class;
+  it does not prove global disconnection or reject other reversible moves.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -138,6 +147,16 @@ residual-SCC profiles were identical across both starts, both seeds and both
 windows within each source. This supports one bounded scale-response test, not
 global connectivity, convergence, mixing or source-effect survival.
 
+V17e executed that bounded test with an exact matched v17d prefix. All
+`192/192` checkpoint endpoints replayed before continuation to 4096 steps, and
+all probability, representation, traversal and resource checks passed. The
+material absolute cross-start contraction nevertheless passed `0/6`, with
+scale/baseline ratios `0.978973-1.005348`. Within-start dispersion expanded
+`1.385802-1.470668`, so the lower cross/within ratios are diffusion within the
+start clouds rather than center convergence. This retires more scale growth of
+the tested length-2-to-4 kernel and motivates a broader reversible move class;
+it does not establish disconnected components or reject the model family.
+
 ## What has been explained away or remains negative
 
 - Lorentz-like propagation remains `not_yet` because placement and mode effects
@@ -181,14 +200,14 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is one bounded effect-blind scale-response gate on
-the same coarse feasible matching space. Retain v16x-v17d as controls. Use the
-qualified exact-counter implementation with both starts, independent seeds and
-substantially longer checkpoints. Direct cross-start endpoint distance is the
-primary response. If it remains flat, stop scaling the length-2-to-4 kernel and
-change the move class before source-spectrum inspection. Concrete conflict remains a
-required diagnostic because exact preservation collapsed the available finite
-freedom. The units-of-action
+The best current next test is one effect-blind move-class expansion on the same
+coarse feasible matching space. Retain v16x-v17e as controls. Preserve an
+explicit stationary target and exact reverse accounting, but add a genuinely
+broader transition such as an exact longer alternating cycle or reversible
+compound-cycle proposal. Compare start-memory response under matched realized
+work before source-spectrum inspection. Concrete conflict remains a required
+diagnostic because exact preservation collapsed the available finite freedom.
+The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not
 bypass null qualification or use uniform clock-rate scaling as a temperature
 intervention.

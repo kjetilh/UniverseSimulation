@@ -1,0 +1,8 @@
+claim_id,claim,status,evidence,scope_limit
+C1,v17e computes no source spectrum or observed-effect statistic.,supported,static call audit plus endpoint and transition fields,this script and these outputs
+C2,The 2048-step v17e checkpoint exactly replays the frozen v17d endpoint window.,supported,v17e_v17d_prefix_replay.csv,192 recorded endpoints
+C3,Direct cross-start endpoint distance contracts materially from 2048 to 4096 under the frozen threshold in all six spaces.,not_supported,v17e_cross_start_scale_response.csv,"six reused spaces, two starts, two streams, two finite windows"
+C4,Residual profile identity proves the bounded-cycle state graph is connected.,unsupported,v17e_residual_partition_audit.csv,residual algebra is not global state-graph reachability
+C5,"The tested chain is irreducible, converged, mixed, or globally uniform.",unsupported,none,finite scale response cannot prove these properties
+C6,The v16s source effect survives this sampler.,not_tested,source effects prohibited,requires a separately qualified sampler
+C7,"The model exhibits Bell correlation, entanglement, Lorentz symmetry, spacetime, particles, physical energy, or temperature.",not_tested,required observables and interventions absent,outside v17e

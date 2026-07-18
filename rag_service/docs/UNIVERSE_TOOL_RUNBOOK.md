@@ -12,8 +12,8 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind finite-stability gate: `relational_universe_v17d_effect_blind_finite_stability.py`
-- Latest post-run diagnosis: `relational_universe_v17d_postrun_start_memory_diagnosis.py`
+- Latest effect-blind scale-response gate: `relational_universe_v17e_effect_blind_scale_response_gate.py`
+- Latest post-run diagnosis: `relational_universe_v17e_postrun_diffusion_diagnosis.py`
 - Prior residual-constructor diagnosis: `relational_universe_v17b_postrun_runtime_diagnosis.py`
 - Prior accessibility gate and representation audit: `relational_universe_v16z_alternating_cycle_bridge_gate.py` and `relational_universe_v16z_postrun_representation_audit.py`
 - Prior reversible-measure controls: `relational_universe_v16y_reversible_global_measure_gate.py` and `relational_universe_v16y_postrun_start_separation_audit.py`
@@ -48,6 +48,8 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v17c_exact_counter_runtime_qualification.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17d_effect_blind_finite_stability.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17d_postrun_start_memory_diagnosis.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17e_effect_blind_scale_response_gate.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17e_postrun_diffusion_diagnosis.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -107,6 +109,12 @@ center rows, 48 proposal footprints, 18 footprint-overlap rows, 24 chains,
 reversibility/representation products, source hashes and effect exclusion.
 Read `Documentation/v17d_interpretation_audit.md` and the post-run diagnosis.
 The `85/108` center and `12/18` distance results keep source effects closed.
+The v17e verifier checks the frozen source/script hashes, 192 exact v17d prefix
+replays, 384 endpoints, 12,096 pairwise rows, six primary scale responses,
+reversibility/representation, traversal/resource and effect exclusion. Read
+`Documentation/v17e_interpretation_audit.md` and the post-run diffusion
+diagnosis. Material contraction passed `0/6`; do not spend more budget scaling
+the length-2-to-4 kernel.
 
 ## Run the early toy simulator
 
@@ -147,13 +155,17 @@ interpretation audit, preregistration, center/distance/residual/footprint
 aggregates, transition/source summaries, gate, claim ledger and post-run
 start-memory diagnosis. Keep the full v17d pairwise table static only. Check
 SHA-256 hashes.
+Require the v17e report, interpretation audit, preregistration, prefix replay,
+primary scale response, feature/residual/footprint aggregates, transition and
+source summaries, gate, claim ledger and post-run diffusion diagnosis. Keep the
+full v17e endpoint and pairwise tables static only.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17d|85/108|12/18|2.656766|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17e|192/192|0/6|0.978973|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17d_effect_blind_finite_stability.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17e_effect_blind_scale_response_gate.md
 ```
 
 ## Start the RAG service locally
@@ -202,11 +214,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v17d om start-, seed- og tidsstabilitet, residualprofiler, proposal-footprints og neste scale-response-gate?'
+  --query 'Hva viste v17e om matched prefix, absolutt cross-start-avstand, within-start diffusion og beslutningen om move-klassen?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v17d material plus v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v17e material plus v17d/v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -266,6 +278,10 @@ does not update this index; both deployments require separate verification.
   or proposal-footprint overlap as proof of global connectivity, convergence or
   mixing. Endpoint centers and distance agreement failed because start memory
   remained; residual SCCs are matching algebra, not Markov-component proofs.
+- Do not use v17e's falling cross/within ratio as absolute cross-start
+  convergence. Within-start dispersion expanded while cross-start distance was
+  flat. The result retires scale growth of one move class, not the whole model,
+  and does not prove disconnected components.
 - Do not describe ordinary graph correlations as Bell violations or
   entanglement. The repo lacks the required local settings, trial protocol,
   causal non-influence audit and Bell null statistic.

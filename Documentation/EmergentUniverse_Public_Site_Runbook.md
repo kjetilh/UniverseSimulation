@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17d_effect_blind_finite_stability.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17e_effect_blind_scale_response_gate.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -157,6 +157,13 @@ residual-component centers `90/90`, and proposal-footprint overlap `18/18`.
 All six distance failures are start-family contrasts. Exact residual-profile
 identity across representative endpoints is matching algebra, not proof of
 bounded-cycle state-graph connectivity. The source spectrum remains closed.
+It must report the v17e matched-prefix replay `192/192`, integrity `384/384`,
+reversibility `36/36`, representation `12/12`, traversal/resource `24/24`,
+maximum runtime `107.676262`, and material cross-start contraction `0/6` with
+ratios `0.978973-1.005348`. It must explain that within-start dispersion grew
+`1.385802-1.470668`; the lower cross/within ratio is not absolute cross-start
+convergence. Further scale growth of the length-2-to-4 kernel is retired, but
+global disconnection and failure of other move classes are not claimed.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -164,7 +171,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v17d and require
+orchestrator separately, then issue a token-scoped query about v17e and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 
