@@ -12,7 +12,8 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind proposal/runtime gate: `relational_universe_v17c_exact_counter_runtime_qualification.py`
+- Latest effect-blind finite-stability gate: `relational_universe_v17d_effect_blind_finite_stability.py`
+- Latest post-run diagnosis: `relational_universe_v17d_postrun_start_memory_diagnosis.py`
 - Prior residual-constructor diagnosis: `relational_universe_v17b_postrun_runtime_diagnosis.py`
 - Prior accessibility gate and representation audit: `relational_universe_v16z_alternating_cycle_bridge_gate.py` and `relational_universe_v16z_postrun_representation_audit.py`
 - Prior reversible-measure controls: `relational_universe_v16y_reversible_global_measure_gate.py` and `relational_universe_v16y_postrun_start_separation_audit.py`
@@ -45,6 +46,8 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v17b_residual_cycle_constructor_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17b_postrun_runtime_diagnosis.py
 /opt/anaconda3/bin/python relational_universe_v17c_exact_counter_runtime_qualification.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17d_effect_blind_finite_stability.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17d_postrun_start_memory_diagnosis.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -98,6 +101,12 @@ reverse support, pathwise balance, finite movement, resource and effect
 exclusion. Read `Documentation/v17c_interpretation_audit.md`. Movement and
 resource passed `24/24`, qualifying only the next effect-blind finite-stability
 gate; source spectrum and observed effect remain closed.
+The v17d verifier checks 384 endpoints, 12,096 pairwise rows, 108 endpoint
+center rows, 18 distance-agreement rows, 48 residual profiles, 90 residual
+center rows, 48 proposal footprints, 18 footprint-overlap rows, 24 chains,
+reversibility/representation products, source hashes and effect exclusion.
+Read `Documentation/v17d_interpretation_audit.md` and the post-run diagnosis.
+The `85/108` center and `12/18` distance results keep source effects closed.
 
 ## Run the early toy simulator
 
@@ -133,14 +142,18 @@ claim ledger, plus the Bell methods/claim-boundary report. Keep the full v16z
 decomposition/bridge traces and v17a/v17b/v17c proposal traces in the static
 archive only. Also require the v17c report, interpretation audit, counter
 parity, reverse/representation audits, exact replay/runtime comparison,
-transition/source summaries, gate and claim ledger. Check SHA-256 hashes.
+transition/source summaries, gate and claim ledger. Require the v17d report,
+interpretation audit, preregistration, center/distance/residual/footprint
+aggregates, transition/source summaries, gate, claim ledger and post-run
+start-memory diagnosis. Keep the full v17d pairwise table static only. Check
+SHA-256 hashes.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17c|24 / 24|14.921836|0.161356|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17d|85/108|12/18|2.656766|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17c_exact_counter_runtime_qualification.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17d_effect_blind_finite_stability.md
 ```
 
 ## Start the RAG service locally
@@ -189,11 +202,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v17c om exact-counter parity, transition replay, finite movement, runtime og den neste effect-blind stability-gaten?'
+  --query 'Hva viste v17d om start-, seed- og tidsstabilitet, residualprofiler, proposal-footprints og neste scale-response-gate?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v17c material plus v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v17d material plus v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -248,7 +261,11 @@ does not update this index; both deployments require separate verification.
 - Do not use v17c's exact replay or movement/resource pass `24/24` as proof of
   convergence, mixing, global irreducibility, start independence, canonical
   sampling or source-effect survival. It qualifies implementation/runtime only;
-  start/seed/time stability and spectrum remain closed.
+  v17d subsequently failed finite start independence and spectrum remains closed.
+- Do not use v17d seed/time distance agreement, exact residual-profile identity
+  or proposal-footprint overlap as proof of global connectivity, convergence or
+  mixing. Endpoint centers and distance agreement failed because start memory
+  remained; residual SCCs are matching algebra, not Markov-component proofs.
 - Do not describe ordinary graph correlations as Bell violations or
   entanglement. The repo lacks the required local settings, trial protocol,
   causal non-influence audit and Bell null statistic.

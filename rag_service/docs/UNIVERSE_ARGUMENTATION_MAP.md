@@ -1,6 +1,6 @@
 # UniverseSimulation Argumentation Map
 
-Last source review: 2026-07-17.
+Last source review: 2026-07-18.
 
 ## Research question
 
@@ -77,6 +77,11 @@ not an exact realization of every DPO/CTMC statement in the research report.
   sampling. Count/support parity passed `36/36`, movement and resource passed
   `24/24`, maximum runtime was `14.921836` seconds, and no source effect was
   computed.
+- v17d extended that qualified kernel to 2048 steps with both starts and two
+  fresh seeds. Traversal/resource passed `24/24`, residual-component centers
+  `90/90`, and proposal-footprint overlap `18/18`. Endpoint centers passed only
+  `85/108` and distance agreement `12/18`; all distance failures were the
+  start-family contrast. Source effects remained closed.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -124,6 +129,15 @@ qualifies the implementation for a finite stability test. It does not establish
 irreducibility, convergence, mixing, a unique endpoint law or survival of the
 v16s spectrum contrast.
 
+V17d shows that runtime qualification was not enough to remove finite start
+memory. Seed and early/late distance comparisons passed `12/12`, while all six
+start-family distance comparisons failed with cross/within ratios
+`2.656766-2.906643`. Source-edge/conflict gaps contracted in `12/12` postrun
+cells, but direct cross-start endpoint distance was effectively flat. Exact
+residual-SCC profiles were identical across both starts, both seeds and both
+windows within each source. This supports one bounded scale-response test, not
+global connectivity, convergence, mixing or source-effect survival.
+
 ## What has been explained away or remains negative
 
 - Lorentz-like propagation remains `not_yet` because placement and mode effects
@@ -167,12 +181,12 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is an effect-blind v17d finite-stability gate on the
-same coarse feasible matching space. Retain v16x-v17c as controls. Use the
-qualified exact-counter implementation with both starts, independent seed
-families and preregistered early/late windows. Require finite start/seed/time
-agreement plus proposal-component overlap and support-coverage diagnostics
-before source-spectrum inspection. Concrete conflict remains a
+The best current next test is one bounded effect-blind scale-response gate on
+the same coarse feasible matching space. Retain v16x-v17d as controls. Use the
+qualified exact-counter implementation with both starts, independent seeds and
+substantially longer checkpoints. Direct cross-start endpoint distance is the
+primary response. If it remains flat, stop scaling the length-2-to-4 kernel and
+change the move class before source-spectrum inspection. Concrete conflict remains a
 required diagnostic because exact preservation collapsed the available finite
 freedom. The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not

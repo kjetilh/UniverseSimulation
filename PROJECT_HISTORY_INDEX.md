@@ -8242,3 +8242,72 @@ Viktige filer:
 - `Documentation/v17c_next_direction_assessment.md`
 - `Documentation/v0_17c_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17c.md`
+
+## 10di. v17d fant reproduserbar start-hukommelse etter fire ganger lengre kjeder
+
+`v17d` ble preregistrert med spec-digest
+`056c7e6ada666b232d528bf1d0d1ff5317fe5457cd9bd5575fadc8a3a2f5a5f0`.
+Foer preregistrering ble en effect-blind `pilot_seed` kjort paa foerste source;
+den brukte `56.433774` sekunder, ga `16` endpoints, `65/72` aksepterte
+tidlige/sene sykluser og sluttforskyvning `0.169239`. Den formelle gaten
+beholdt tersklene valgt foer piloten.
+
+Gaten brukte de samme seks coarse v16x-rommene, begge frosne startfamilier og
+to nye seedfamilier. Hver kjede gikk `2048` steg og logget aatte endpoints i
+et tidlig vindu (`768-1216`) og aatte i et sent vindu (`1536-1984`). Source
+spectrum og observed-effect-statistikk var forbudt.
+
+Formelle resultater:
+
+- source spectrum/effect calls: `0/0`
+- frozen-start replay: `12/12`
+- endpoint integrity: `384/384`
+- pathwise detailed balance: `36/36`
+- representation covariance: `12/12`
+- finite traversal/resource: `24/24`
+- endpoint-center stability: `85/108`
+- endpoint-distance agreement: `12/18`
+- residual-component center stability: `90/90`
+- proposal-footprint overlap: `18/18`
+
+Alle seks endpoint-distance-feil kom fra startfamilien. Cross/within-ratio var
+`2.656766-2.906643`; seed og early/late distance passerte `12/12`. Maksimal
+runtime var `67.228174` sekunder, minste sluttforskyvning `0.148169`, og minste
+aksepterte tidlige/sene syklusantall `55`.
+
+En deskriptiv postrun-audit fant at source-edge- og concrete-conflict-gapene
+krympet fra tidlig til sent i `12/12` source-feature-celler. Direkte cross-start
+endpoint-avstand var likevel praktisk talt flat, med late/early-ratio
+`0.987676-1.005646`. Candidate-rank-gap krympet bare `3/6`.
+
+Alle aatte representative endpoints innen hver source hadde samme eksakte
+residual-SCC-profile digest og flexible-edge Jaccard `1.0`. Dermed er en
+skiftende residualpartisjon ikke forklaringen paa start-hukommelsen. Dette
+beviser ikke at state-grafen under bounded cycles med lengde `2-4` er connected.
+
+Frossen status er `v17d_endpoint_centers_not_stable`. Source spectrum forblir
+lukket. Neste gate er ett avgrenset effect-blind scale-response-forsok med
+vesentlig lengre checkpoints og direkte cross-start-avstand som primaerrespons.
+Hvis avstanden forblir flat, skal videre skalering av denne kjernen stoppes og
+move-klassen endres.
+
+Viktige filer:
+
+- `relational_universe_v17d_effect_blind_finite_stability.py`
+- `relational_universe_v17d_postrun_start_memory_diagnosis.py`
+- `Documentation/v17d_effect_blind_finite_stability.md`
+- `Documentation/v17d_interpretation_audit.md`
+- `Documentation/v17d_pre_registration.csv`
+- `Documentation/v17d_endpoint_audit.csv`
+- `Documentation/v17d_center_stability.csv`
+- `Documentation/v17d_endpoint_agreement.csv`
+- `Documentation/v17d_residual_component_profile.csv`
+- `Documentation/v17d_proposal_footprint_overlap.csv`
+- `Documentation/v17d_gate_evaluation.csv`
+- `Documentation/v17d_claim_ledger.csv`
+- `Documentation/v17d_postrun_start_memory_diagnosis.md`
+- `Documentation/v17d_postrun_start_memory_diagnosis.csv`
+- `Documentation/v17d_postrun_residual_partition_audit.csv`
+- `Documentation/v17d_next_direction_assessment.md`
+- `Documentation/v0_17d_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17d.md`

@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17c_exact_counter_runtime_qualification.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17d_effect_blind_finite_stability.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -151,6 +151,12 @@ and pathwise balance `36/36`, movement/resource `24/24`, maximum runtime
 exact finite implementation for effect-blind stability testing; it does not
 establish convergence, mixing, start independence, source-effect survival or
 physics.
+It must report the v17d integrity `384/384`, traversal/resource `24/24`,
+endpoint-center result `85/108`, endpoint-distance agreement `12/18`,
+residual-component centers `90/90`, and proposal-footprint overlap `18/18`.
+All six distance failures are start-family contrasts. Exact residual-profile
+identity across representative endpoints is matching algebra, not proof of
+bounded-cycle state-graph connectivity. The source spectrum remains closed.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -158,7 +164,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v17c and require
+orchestrator separately, then issue a token-scoped query about v17d and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 

@@ -1,0 +1,13 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+frozen_start_replay,pass,12/12,12/12,continue
+endpoint_integrity,pass,384/384,384/384,continue
+pathwise_detailed_balance,pass,36/36,36/36,continue
+representation_covariance,pass,12/12,12/12,continue
+finite_traversal,pass,24/24,24/24,continue
+resource_bound,pass,24/24;max=67.228174s,24/24;each<=75s,continue
+endpoint_center_stability,fail,85/108,108/108,effects_closed
+endpoint_distance_agreement,fail,12/18,18/18,effects_closed
+residual_component_profile_stability,pass,90/90,90/90,continue
+proposal_footprint_overlap,pass,18/18,18/18,continue
+v17d_overall,v17d_endpoint_centers_not_stable,exclusion=1;starts=12/12;integrity=384/384;reverse=36/36;representation=12/12;traversal=24/24;resource=24/24;centers=85/108;distance=12/18;components=90/90;footprints=18/18,1;12/12;384/384;36/36;12/12;24/24;24/24;108/108;18/18;90/90;18/18,v17d_endpoint_centers_not_stable

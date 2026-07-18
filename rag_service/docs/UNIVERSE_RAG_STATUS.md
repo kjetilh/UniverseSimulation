@@ -139,32 +139,38 @@ not outrank later executed gates.
 - Runtime improved in all `24/24` matched chains. Median v17c/v17b runtime ratio
   was `0.161356`, maximum chain runtime was `14.921836` seconds, and formal
   status is `v17c_exact_counter_runtime_qualified`.
+- v17d then ran 24 fresh 2048-step chains across both starts. Integrity passed
+  `384/384`, traversal/resource `24/24`, residual-component centers `90/90`,
+  and proposal-footprint overlap `18/18`. Endpoint centers passed `85/108` and
+  endpoint-distance agreement `12/18`; all six distance failures were
+  start-family comparisons. Formal status is
+  `v17d_endpoint_centers_not_stable`.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_exact_residual_cycle_proposal_runtime_qualified_before_stability`. See
+`fresh_event_footprint_spectrum_contrast_with_exact_residual_cycle_proposal_showing_persistent_finite_start_memory`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v17c_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17d_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
 v16z established exact pair-specific cycle paths, and v17a established tested
 reverse-support and detailed-balance algebra for a target-independent proposal.
 V17b repaired finite movement and v17c showed that the same finite proposal law
-can meet the frozen runtime bound without changing any tested transition. The
-law has not yet passed start/seed/time stability, component-coverage or source-
-effect transfer. It is not a
+can meet the frozen runtime bound without changing any tested transition. V17d
+then passed seed/time distance and residual/footprint diagnostics but failed
+finite start independence. The law has not passed finite start stability or
+source-effect transfer. It is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum yet. The narrow next gate is
-`v17d_effect_blind_finite_stability` on the same six spaces under the qualified
-v17c implementation. Freeze longer early/late windows, both start families and
-new independent seed families. Require finite within-source start/seed/time
-agreement and proposal-component overlap/coverage diagnostics before any source
-spectrum or observed-effect comparison. Do not relax or reinterpret the
-v16x-v17c gates retrospectively.
+Do not compute the source spectrum yet. The narrow next gate is one bounded
+effect-blind scale response on the same six spaces under the qualified v17c
+implementation. Use substantially longer checkpoints and direct cross-start
+endpoint distance as the primary response. If it remains flat, stop scaling the
+length-2-to-4 kernel and change the move class. Do not relax or reinterpret the
+v16x-v17d gates retrospectively.
 
 `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`
 separates Bell's theorem, Bell inequalities and observed finite experimental

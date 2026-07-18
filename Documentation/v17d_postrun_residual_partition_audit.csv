@@ -1,0 +1,7 @@
+stage,growth_seed,run_offset,representative_endpoint_count,start_family_count,seed_family_count,window_count,unique_residual_component_profile_count,minimum_source_flexible_edge_jaccard,maximum_source_flexible_edge_jaccard,exact_within_source_residual_partition_identity,bounded_cycle_state_graph_connectivity_claimed,source_spectrum_computed,observed_effect_computed
+v17d_postrun,9299,123078,8,2,2,2,1,1.0,1.0,1,0,0,0
+v17d_postrun,9299,123403,8,2,2,2,1,1.0,1.0,1,0,0,0
+v17d_postrun,9299,127341,8,2,2,2,1,1.0,1.0,1,0,0,0
+v17d_postrun,9365,123078,8,2,2,2,1,1.0,1.0,1,0,0,0
+v17d_postrun,9365,123403,8,2,2,2,1,1.0,1.0,1,0,0,0
+v17d_postrun,9365,127341,8,2,2,2,1,1.0,1.0,1,0,0,0

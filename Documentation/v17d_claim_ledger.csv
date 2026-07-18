@@ -1,0 +1,7 @@
+claim_id,claim,status,evidence,scope_limit
+C1,v17d computes no source spectrum or observed-effect statistic.,supported,static call audit plus endpoint/transition fields,this script and these outputs
+C2,The v17c proposal remains reversible and representation-covariant in the v17d source chain.,supported,v17d_pathwise_reversibility_audit.csv;v17d_representation_audit.csv,finite witnesses and 64-step representation checks
+C3,"The tested endpoints agree across starts, fresh seeds and early/late windows under all frozen finite thresholds.",not_supported,v17d_center_stability.csv;v17d_endpoint_agreement.csv,six reused finite spaces and 24 chains
+C4,Residual component profiles and empirical proposal footprints agree under the frozen diagnostic thresholds.,supported,v17d_residual_component_stability.csv;v17d_proposal_footprint_overlap.csv,"diagnostics, not global Markov-component proof"
+C5,"The v17d chain is globally irreducible, converged, mixed, or uniform over the full feasible state space.",unsupported,none,finite diagnostics cannot prove these properties
+C6,"The v16s source-spectrum effect survives v17d or the model exhibits Bell correlations, entanglement, Lorentz symmetry or spacetime.",not_tested,effect calls prohibited and required observables absent,requires separate later gates
