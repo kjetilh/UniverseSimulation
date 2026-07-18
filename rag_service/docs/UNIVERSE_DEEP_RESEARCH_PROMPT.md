@@ -61,12 +61,13 @@ Guardrails:
 10. Treat v16z as a frozen effect-blind pair-accessibility audit. Preserve `2139` exact pair-specific alternating cycles, whole-cycle replay `6/6`, bounded exact 2x2 bridges `0/6`, and mismatch reduction `98.1521-99.6892%`. Failed bounded searches are unresolved, not disconnected. Preserve the formal raw-key representation failure and the separate post-run edge-move covariance pass `6/6`; do not retroactively relabel the formal gate as passed.
 11. Treat v17a as a frozen effect-blind rejection of the implemented finite cycle proposal, not of cycle-based measures or the relational-universe program. Preserve replay/representation `12/12`, exact reverse support and pathwise detailed balance `84/84`, runtime `24/24`, and finite movement `0/24`. The post-run diagnosis is low valid-cycle yield and displacement; it does not prove disconnection, failed mixing, or absence of the v16s effect.
 12. Treat v17b as a finite movement repair with an unqualified runtime, not a qualified global sampler. Preserve starts/representation `12/12`, reverse support and balance `36/36`, paired yield and movement `24/24`, median yield ratio `2.898276`, resource `12/24`, and runtime `27.479260-270.449001`. Do not open source spectrum or stability until an exact-law runtime repair passes.
-13. Keep Bell's theorem, Bell inequalities and observed quantum-correlation data distinct. UniverseSimulation currently has no Bell trial protocol or established entanglement observable; do not relabel graph correlations as Bell violations.
-14. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
-15. Never invent commands, metrics, or endpoints that are not documented in the corpus.
-16. If asked how to use the simulator, prefer `universe_tools`.
-17. If asked how the argument is built, prefer `universe_argumentation`.
-18. If asked how to instruct a language model, prefer `universe_prompts`.
+13. Treat v17c as an exact finite implementation/runtime qualification, not a qualified global sampler or source-effect result. Preserve count/support parity `36/36`, exact v17b trace/summary replay `24/24`, representation `12/12`, reverse support and balance `36/36`, movement/resource `24/24`, maximum runtime `14.921836`, and median v17c/v17b runtime ratio `0.161356`. Source spectrum and observed effect remained unopened; the next gate is effect-blind finite stability.
+14. Keep Bell's theorem, Bell inequalities and observed quantum-correlation data distinct. UniverseSimulation currently has no Bell trial protocol or established entanglement observable; do not relabel graph correlations as Bell violations.
+15. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
+16. Never invent commands, metrics, or endpoints that are not documented in the corpus.
+17. If asked how to use the simulator, prefer `universe_tools`.
+18. If asked how the argument is built, prefer `universe_argumentation`.
+19. If asked how to instruct a language model, prefer `universe_prompts`.
 ```
 
 ## Kort bruksguide

@@ -8175,3 +8175,70 @@ Viktige filer:
 - `Documentation/v0_17b_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17b.md`
 - `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`
+
+## 10dh. v17c kvalifiserte den eksakte telleren og ressursgaten
+
+`v17c` ble preregistrert med spec-digest
+`6398a1b02ac455b34db4b57a9a877d85ff06d3d7e64d9794ba9113ef477f6f8`.
+Foer preregistrering ble to effektblinde implementasjonsforsok forkastet. En
+metode-cache beholdt tellerinstanser og ga minnevekst; en korrekt, men tung
+frozenset-DP brukte `35.090357` sekunder paa den tillatte 128-stegspiloten, mot
+v17b `12.113058`. Den endelige kompakte telleren brukte per-kernel
+parent/slot-indekser, direkte terminaltelling og uniform depth-first rang. Den
+samme piloten tok `2.459563` sekunder med identiske forslag, aksepter og
+sluttforskyvning. Ingen source spectrum- eller effect-statistikk ble lest i
+kalibreringen.
+
+Den formelle gaten beholdt v17b sin proposal-lov, ordnede completion-stoette,
+begge startfamilier, begge chain-seed-familier, 512 steg, laziness, exact
+reverse auxiliary, Metropolis-ratio, movement-gulv og `60`-sekundersgrense.
+V17b sine numeriske chain-seeds ble beholdt, slik at implementasjonsekvivalens
+kunne testes med eksakt overgangsreplay i stedet for bare aggregatlikhet.
+
+Formelle resultater:
+
+- source spectrum/effect calls: `0/0`
+- frozen-start replay: `12/12`
+- exact completion-count/support parity mot v17b: `36/36`
+- exact v17b transition-trace og summary replay: `24/24`
+- representation covariance: `12/12`
+- exact reverse support: `36/36`
+- pathwise detailed balance: `36/36`
+- finite movement: `24/24`
+- resource bound: `24/24`
+
+Minimum valid proposals, accepted cycles, accepted length-3-or-greater cycles
+og sluttforskyvning forble eksakt v17b-verdiene `119`, `72`, `34` og
+`0.051944`. Runtime forbedret seg i `24/24` matchede kjeder. Median
+v17c/v17b-ratio var `0.161356`, og maksimal kjedetid falt fra v17b
+`270.449001` til v17c `14.921836` sekunder. Alle seks source-celler passerte
+alle fire per-kjede ressurskrav. Frossen status er
+`v17c_exact_counter_runtime_qualified`.
+
+Dette isolerer v17b sin ressursfeil som en implementasjonskost paa de testede
+endelige rommene. Det etablerer ikke global irreducibility, convergence,
+mixing, en kanonisk sannsynlighetslov eller at v16s-kontrasten overlever under
+denne kjernen. Neste gate er `v17d_effect_blind_finite_stability`: samme seks
+rom og proposal-lov, men lengre frosne vinduer, begge starter, uavhengige
+seedfamilier og eksplisitt komponentoverlapp. Source spectrum, observed effect,
+Bell, entanglement, Lorentz og spacetime forblir lukket.
+
+Viktige filer:
+
+- `relational_universe_v17c_exact_counter_runtime_qualification.py`
+- `Documentation/v17c_exact_counter_runtime_qualification.md`
+- `Documentation/v17c_interpretation_audit.md`
+- `Documentation/v17c_pre_registration.csv`
+- `Documentation/v17c_source_chain.csv`
+- `Documentation/v17c_counter_parity_audit.csv`
+- `Documentation/v17c_exact_counter_trace.csv`
+- `Documentation/v17c_pathwise_reversibility_audit.csv`
+- `Documentation/v17c_representation_audit.csv`
+- `Documentation/v17c_chain_transition_summary.csv`
+- `Documentation/v17c_paired_v17b_runtime.csv`
+- `Documentation/v17c_source_qualification_summary.csv`
+- `Documentation/v17c_gate_evaluation.csv`
+- `Documentation/v17c_claim_ledger.csv`
+- `Documentation/v17c_next_direction_assessment.md`
+- `Documentation/v0_17c_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17c.md`

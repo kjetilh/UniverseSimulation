@@ -1,0 +1,7 @@
+claim_id,claim,status,evidence,scope_limit
+C1,v17c computes no source spectrum or observed-effect statistic.,supported,effect-blind implementation audit and trace,static and runtime exclusion for this script
+C2,The exact counter has the same ordered completion support as v17b on all frozen witness cells.,supported,v17c_counter_parity_audit.csv,36 finite start/length cells
+C3,v17c exactly replays the frozen v17b transition paths.,supported,v17c_paired_v17b_runtime.csv,24 frozen 512-step chains
+C4,The exact counter qualifies the frozen finite movement and runtime gates.,supported,v17c_chain_transition_summary.csv,24 finite chains on six reused spaces
+C5,"The v17c kernel is globally irreducible, mixed, or uniform over the full feasible space.",unsupported,none,target remains component-uniform only
+C6,The v16s spectrum contrast survives v17c or v17c exhibits Bell correlations.,not_tested,spectrum/effect calls prohibited; Bell observables absent,requires later qualified gates

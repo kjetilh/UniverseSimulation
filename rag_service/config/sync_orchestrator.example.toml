@@ -17,7 +17,7 @@ name = "UniverseSimulationResearchReport"
 repo_path = "/srv/ops/repos/UniverseSimulation"
 source_type = "universe_argumentation"
 target_subdir = "UniverseSimulation/research_report"
-include = ["Documentation/grundig-research-rapport-16.md", "Documentation/v16o_v16s_direction_and_execution_report.md", "Documentation/v16t_next_direction_assessment.md", "Documentation/v16u_next_direction_assessment.md", "Documentation/v16v_next_direction_assessment.md", "Documentation/v16v_units_of_action_energy_temperature_hypothesis.md", "Documentation/v16w_next_direction_assessment.md", "Documentation/v16w_interpretation_audit.md", "Documentation/v16x_next_direction_assessment.md", "Documentation/v16x_interpretation_audit.md", "Documentation/v16y_next_direction_assessment.md", "Documentation/v16y_interpretation_audit.md", "Documentation/v16y_postrun_start_separation_audit.md", "Documentation/v16z_next_direction_assessment.md", "Documentation/v16z_interpretation_audit.md", "Documentation/v16z_postrun_representation_audit.md", "Documentation/v17a_next_direction_assessment.md", "Documentation/v17a_interpretation_audit.md", "Documentation/v17a_postrun_movement_diagnosis.md", "Documentation/v17b_next_direction_assessment.md", "Documentation/v17b_interpretation_audit.md", "Documentation/v17b_postrun_runtime_diagnosis.md", "Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md", "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md"]
+include = ["Documentation/grundig-research-rapport-16.md", "Documentation/v16o_v16s_direction_and_execution_report.md", "Documentation/v16t_next_direction_assessment.md", "Documentation/v16u_next_direction_assessment.md", "Documentation/v16v_next_direction_assessment.md", "Documentation/v16v_units_of_action_energy_temperature_hypothesis.md", "Documentation/v16w_next_direction_assessment.md", "Documentation/v16w_interpretation_audit.md", "Documentation/v16x_next_direction_assessment.md", "Documentation/v16x_interpretation_audit.md", "Documentation/v16y_next_direction_assessment.md", "Documentation/v16y_interpretation_audit.md", "Documentation/v16y_postrun_start_separation_audit.md", "Documentation/v16z_next_direction_assessment.md", "Documentation/v16z_interpretation_audit.md", "Documentation/v16z_postrun_representation_audit.md", "Documentation/v17a_next_direction_assessment.md", "Documentation/v17a_interpretation_audit.md", "Documentation/v17a_postrun_movement_diagnosis.md", "Documentation/v17b_next_direction_assessment.md", "Documentation/v17b_interpretation_audit.md", "Documentation/v17b_postrun_runtime_diagnosis.md", "Documentation/v17c_next_direction_assessment.md", "Documentation/v17c_interpretation_audit.md", "Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md", "rag_service/docs/UNIVERSE_ARGUMENTATION_MAP.md"]
 
 [[source]]
 name = "UniverseSimulationProjectStatus"
@@ -160,6 +160,19 @@ include = [
   "Documentation/v17b_gate_evaluation.csv",
   "Documentation/v17b_claim_ledger.csv",
   "Documentation/v17b_postrun_runtime_diagnosis.csv",
+  "Documentation/v17c_exact_counter_runtime_qualification.md",
+  "Documentation/v17c_interpretation_audit.md",
+  "Documentation/v0_17c_operativ_anbefaling.md",
+  "Documentation/v17c_pre_registration.csv",
+  "Documentation/v17c_source_chain.csv",
+  "Documentation/v17c_counter_parity_audit.csv",
+  "Documentation/v17c_pathwise_reversibility_audit.csv",
+  "Documentation/v17c_representation_audit.csv",
+  "Documentation/v17c_chain_transition_summary.csv",
+  "Documentation/v17c_paired_v17b_runtime.csv",
+  "Documentation/v17c_source_qualification_summary.csv",
+  "Documentation/v17c_gate_evaluation.csv",
+  "Documentation/v17c_claim_ledger.csv",
 ]
 
 [[source]]

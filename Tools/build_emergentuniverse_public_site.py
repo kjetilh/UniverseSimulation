@@ -1411,6 +1411,102 @@ DATASET_SPECS: list[dict[str, str]] = [
         "description": "Plain-language distinction between finite movement and a qualified sampler.",
     },
     {
+        "source": "Documentation/v17c_exact_counter_runtime_qualification.md",
+        "category": "latest_causal_structure",
+        "title": "v17c exact-counter runtime qualification",
+        "description": "Frozen implementation-equivalence, finite movement and resource qualification.",
+    },
+    {
+        "source": "Documentation/v17c_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v17c interpretation audit",
+        "description": "Claim boundary for exact implementation parity and finite runtime qualification.",
+    },
+    {
+        "source": "Documentation/v17c_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c preregistration",
+        "description": "Frozen proposal law, parity, movement, resource and effect-exclusion contract.",
+    },
+    {
+        "source": "Documentation/v17c_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c source chain",
+        "description": "SHA-256 links to the frozen v17b implementation and evidence baseline.",
+    },
+    {
+        "source": "Documentation/v17c_counter_parity_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c exact counter parity audit",
+        "description": "Completion-count, support-membership and rank-order parity for 36 frozen cells.",
+    },
+    {
+        "source": "Documentation/v17c_exact_counter_trace.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17c exact-counter trace",
+        "description": "All 12,288 proposal attempts; static archive only, excluded from generative RAG.",
+    },
+    {
+        "source": "Documentation/v17c_pathwise_reversibility_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c pathwise reversibility audit",
+        "description": "Exact reverse support and detailed-balance witnesses for the optimized implementation.",
+    },
+    {
+        "source": "Documentation/v17c_representation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c representation audit",
+        "description": "Frozen replay, candidate-order and semantic-role covariance checks.",
+    },
+    {
+        "source": "Documentation/v17c_chain_transition_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c chain transition summary",
+        "description": "Per-chain movement, displacement, exact transition digest and runtime evidence.",
+    },
+    {
+        "source": "Documentation/v17c_paired_v17b_runtime.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c paired v17b runtime and replay",
+        "description": "Matched runtime ratios plus exact transition and summary parity for all 24 chains.",
+    },
+    {
+        "source": "Documentation/v17c_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c source qualification summary",
+        "description": "Per-source parity, reversibility, movement and resource decisions.",
+    },
+    {
+        "source": "Documentation/v17c_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c gate evaluation",
+        "description": "Frozen machine-readable exact-counter qualification result.",
+    },
+    {
+        "source": "Documentation/v17c_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v17c claim ledger",
+        "description": "Supported finite implementation claims and explicit sampling/physics exclusions.",
+    },
+    {
+        "source": "Documentation/v17c_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v17c next direction",
+        "description": "Effect-blind finite-stability recommendation after runtime qualification.",
+    },
+    {
+        "source": "Documentation/v0_17c_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v17c operational recommendation",
+        "description": "Concise qualification and source-spectrum stop boundary.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17c.md",
+        "category": "latest_causal_structure",
+        "title": "v17c non-specialist summary",
+        "description": "Plain-language distinction between faster exact counting and emergent physics.",
+    },
+    {
         "source": "Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md",
         "category": "methods_and_claim_boundaries",
         "title": "Bell theorem, inequalities and observed correlations",
@@ -1638,6 +1734,10 @@ def write_site(
     residual_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17b_source_qualification_summary.csv")
     residual_runtime_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17b_postrun_runtime_diagnosis.csv")
     residual_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17b_claim_ledger.csv")
+    counter_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17c_gate_evaluation.csv")
+    counter_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17c_source_qualification_summary.csv")
+    counter_runtime_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17c_paired_v17b_runtime.csv")
+    counter_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17c_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -1665,14 +1765,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate repairs finite cycle-proposal movement but fails its preregistered runtime bound. The underlying signal remains a finite event-DAG spectrum contrast, not a Bell test, spacetime, energy or temperature claim.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate exactly preserves the finite cycle-proposal law while qualifying its implementation and runtime. The underlying signal remains a finite event-DAG spectrum contrast, not a Bell test, spacetime, energy or temperature claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">24 / 24</div><p class="muted">v17b chains that passed every unchanged finite-movement threshold.</p></div>
-      <div class="card"><div class="metric">12 / 24</div><p class="muted">v17b chains that also passed the preregistered 60-second resource bound.</p></div>
+      <div class="card"><div class="metric">24 / 24</div><p class="muted">v17c chains that exactly replayed v17b and passed finite movement.</p></div>
+      <div class="card"><div class="metric">14.9218 s</div><p class="muted">Maximum v17c chain runtime; the 60-second resource gate passed 24 / 24.</p></div>
     </section>
 
     <section>
@@ -1698,12 +1798,19 @@ def write_site(
       <p>v17b replaced that random forward walk with an exact length-2-to-4 residual-cycle enumerator while preserving target independence, the distinguished reverse auxiliary and the exact lazy Metropolis ratio. Frozen starts and representation passed <code>12/12</code>; reverse support and pathwise balance passed <code>36/36</code>; valid-proposal yield improved against v17a in <code>24/24</code> matched chains with median ratio <code>2.898276</code>.</p>
       <p>Finite movement now passed <code>24/24</code>: minimum valid proposals were <code>119</code>, minimum accepted cycles <code>72</code>, and minimum final displacement <code>0.051944</code>. Resource qualification failed <code>12/24</code>, with runtime <code>27.479260-270.449001</code> seconds and only <code>1/6</code> source cells passing every per-chain runtime check. This is a constructor-runtime failure, not a movement, reversibility, source-effect or physics result.</p>
       <p>The disclosed post-run diagnosis finds that length-4 cycles account for <code>0.965295</code> of recorded completion mass, but recorded mass correlates weakly with runtime (<code>r=0.125554</code>) and omits failed branch visits. The implementation also duplicates forward enumeration and materializes all completions. The next gate must preserve the exact proposal law while replacing those costs with exact counting and uniform sampling.</p>
+      <p>v17c performed that implementation-only repair. Exact completion count/support parity passed <code>36/36</code>, and all <code>24/24</code> frozen v17b transition traces and summaries replayed exactly. Representation passed <code>12/12</code>; reverse support and pathwise detailed balance passed <code>36/36</code>; movement and the 60-second resource bound both passed <code>24/24</code>.</p>
+      <p>Runtime improved in every matched chain. The median v17c/v17b ratio was <code>0.161356</code> and maximum v17c chain runtime was <code>14.921836</code> seconds. This isolates the v17b failure as implementation cost on these finite spaces; it does not establish convergence, mixing, start independence or survival of the v16s effect. The next gate remains effect-blind finite start/seed/time stability.</p>
       <p>The separate Bell methods report distinguishes Bell's theorem, testable Bell inequalities and finite observed quantum-correlation data. UniverseSimulation currently has no alternative local measurement settings, Bell trial protocol or entanglement observable; graph correlation is not relabeled as Bell evidence.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current residual-cycle constructor gate</h2>
+      <h2>Current exact-counter runtime gate</h2>
+      {table_html(counter_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(counter_source_rows, ["growth_seed", "run_offset", "counter_parity_passes", "representation_passes", "reversibility_passes", "exact_replay_passes", "movement_passes", "resource_passes", "maximum_chain_seconds", "source_qualification_pass"])}
+      <h3>Matched v17b replay and runtime</h3>
+      {table_html(counter_runtime_rows, ["growth_seed", "run_offset", "start_family", "chain_seed_family", "v17b_elapsed_seconds", "v17c_elapsed_seconds", "runtime_ratio_v17c_over_v17b", "runtime_improved", "summary_parity_pass", "exact_transition_replay_pass"])}
+      <h3>Prior v17b residual-cycle constructor gate</h3>
       {table_html(residual_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(residual_source_rows, ["growth_seed", "run_offset", "representation_passes", "reversibility_passes", "movement_passes", "resource_passes", "minimum_valid_proposals", "minimum_accepted_cycles", "minimum_accepted_long_cycles", "minimum_final_start_changed_edge_fraction", "maximum_chain_seconds", "source_qualification_pass"])}
       <h3>Required post-run runtime diagnosis</h3>
@@ -1777,6 +1884,7 @@ def write_site(
       <p>v16z represents the symmetric difference between two valid assignments as a balanced directed parent/slot graph and decomposes it into alternating cycles. Applying a full cycle preserves all declared matching demands. The bounded 2x2 search is target-directed and diagnostic only; it is not a Markov proposal and cannot qualify a stationary distribution.</p>
       <p>v17a samples a distinguished oriented alternating-cycle auxiliary from the current assignment only, pairs it with a reversed auxiliary in the proposed state, and uses the exact lazy Metropolis-Hastings ratio. The tested paths satisfy detailed balance for a uniform target inside each proposal-connected component. The failed finite-movement gate means that algebraic correctness is not enough: this constructor is too inefficient under the frozen 512-step budget to justify stability, mixing or effect tests.</p>
       <p>v17b preserves that probability contract but enumerates all bounded residual completions for a chosen start and exact length. It repairs finite movement under the unchanged budget, but the <code>12/24</code> resource pass blocks stability and source-effect tests. The next implementation may optimize exact counting and uniform sampling only; changing the law or relaxing the runtime threshold would be a new scientific design, not a performance repair.</p>
+      <p>v17c makes only that implementation change. It counts exact completion branches, selects one uniform depth-first rank, and reuses the forward count in the auxiliary probability. Exact v17b transition replay verifies that the tested dynamics did not change. Passing finite runtime qualifies a stability experiment, not global sampling, convergence or source-effect transfer.</p>
       <p>The separate units-of-action hypothesis treats local realized edit work, carrier occupancy and boundary flux as candidate microscopic inputs. Until a local balance law and reproducible intensive fluctuation parameter are demonstrated, the correct terms are action density and change intensity, not physical energy or temperature.</p>
     </section>
 
@@ -1787,6 +1895,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(counter_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v17b residual-constructor claim ledger</h3>
       {table_html(residual_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Prior v17a cycle-proposal claim ledger</h3>
       {table_html(cycle_proposal_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}

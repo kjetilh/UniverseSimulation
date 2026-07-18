@@ -1,6 +1,6 @@
 # UniverseSimulation Tool Runbook
 
-Last source review: 2026-07-17.
+Last source review: 2026-07-18.
 
 Every completed research round follows the mandatory closure contract in
 `Documentation/Research_Round_Closure_Policy.md`: verify, commit, push, deploy
@@ -12,8 +12,8 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind proposal gate: `relational_universe_v17b_residual_cycle_constructor_gate.py`
-- Latest post-run runtime diagnosis: `relational_universe_v17b_postrun_runtime_diagnosis.py`
+- Latest effect-blind proposal/runtime gate: `relational_universe_v17c_exact_counter_runtime_qualification.py`
+- Prior residual-constructor diagnosis: `relational_universe_v17b_postrun_runtime_diagnosis.py`
 - Prior accessibility gate and representation audit: `relational_universe_v16z_alternating_cycle_bridge_gate.py` and `relational_universe_v16z_postrun_representation_audit.py`
 - Prior reversible-measure controls: `relational_universe_v16y_reversible_global_measure_gate.py` and `relational_universe_v16y_postrun_start_separation_audit.py`
 - Prior integer-measure controls: `relational_universe_v16x_explicit_global_measure_gate.py`, `relational_universe_v16x_postrun_concentration_audit.py`, and `relational_universe_v16x_top_edge_component_audit.py`
@@ -44,6 +44,7 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v17a_postrun_movement_diagnosis.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17b_residual_cycle_constructor_gate.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17b_postrun_runtime_diagnosis.py
+/opt/anaconda3/bin/python relational_universe_v17c_exact_counter_runtime_qualification.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -91,6 +92,12 @@ balance, paired v17a yield, movement, resource and effect exclusion. Read
 `Documentation/v17b_interpretation_audit.md` and
 `Documentation/v17b_postrun_runtime_diagnosis.md`. Movement passed `24/24`, but
 resource passed only `12/24`; do not open stability or source-spectrum tests.
+The v17c verifier checks frozen source/script hashes, 36 exact count/support
+parity cells, 12,288 trace rows, exact v17b transition replay, representation,
+reverse support, pathwise balance, finite movement, resource and effect
+exclusion. Read `Documentation/v17c_interpretation_audit.md`. Movement and
+resource passed `24/24`, qualifying only the next effect-blind finite-stability
+gate; source spectrum and observed effect remain closed.
 
 ## Run the early toy simulator
 
@@ -123,15 +130,17 @@ transition/source summaries, movement diagnosis, gate and claim ledger. Keep
 the v17b report, interpretation audit, reverse-support/representation products,
 paired improvement, transition/source summaries, runtime diagnosis, gate and
 claim ledger, plus the Bell methods/claim-boundary report. Keep the full v16z
-decomposition/bridge traces and v17a/v17b proposal traces in the static archive
-only. Check SHA-256 hashes.
+decomposition/bridge traces and v17a/v17b/v17c proposal traces in the static
+archive only. Also require the v17c report, interpretation audit, counter
+parity, reverse/representation audits, exact replay/runtime comparison,
+transition/source summaries, gate and claim ledger. Check SHA-256 hashes.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17b|24 / 24|12 / 24|2.898276|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17c|24 / 24|14.921836|0.161356|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17b_postrun_runtime_diagnosis.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17c_exact_counter_runtime_qualification.md
 ```
 
 ## Start the RAG service locally
@@ -180,11 +189,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v17b om residual-cycle proposalens reversibilitet, finite movement, runtime og Bell-claim-grensen?'
+  --query 'Hva viste v17c om exact-counter parity, transition replay, finite movement, runtime og den neste effect-blind stability-gaten?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v17b material plus v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v17c material plus v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -236,6 +245,10 @@ does not update this index; both deployments require separate verification.
 - Do not use v17b's movement pass `24/24` as proof of convergence, mixing,
   global irreducibility, uniform sampling or source-effect survival. Resource
   passed only `12/24`, so start/seed/time stability and spectrum remain closed.
+- Do not use v17c's exact replay or movement/resource pass `24/24` as proof of
+  convergence, mixing, global irreducibility, start independence, canonical
+  sampling or source-effect survival. It qualifies implementation/runtime only;
+  start/seed/time stability and spectrum remain closed.
 - Do not describe ordinary graph correlations as Bell violations or
   entanglement. The repo lacks the required local settings, trial protocol,
   causal non-influence audit and Bell null statistic.

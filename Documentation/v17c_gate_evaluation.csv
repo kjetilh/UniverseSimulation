@@ -1,0 +1,11 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+frozen_start_replay,pass,12/12,12/12,continue
+exact_counter_support_parity,pass,36/36,36/36,continue
+exact_v17b_transition_replay,pass,trace=24/24;summary=24/24,24/24;24/24,continue
+representation_covariance,pass,12/12,12/12,continue
+exact_reverse_support,pass,36/36,36/36,continue
+pathwise_detailed_balance,pass,36/36,36/36,continue
+finite_movement,pass,24/24,24/24,continue
+resource_bound,pass,24/24,24/24,continue
+v17c_overall,v17c_exact_counter_runtime_qualified,exclusion=1;starts=12/12;counter=36/36;replay=24/24;representation=12/12;reverse=36/36;balance=36/36;movement=24/24;resource=24/24,1;12/12;36/36;24/24;12/12;36/36;36/36;24/24;24/24,v17c_exact_counter_runtime_qualified

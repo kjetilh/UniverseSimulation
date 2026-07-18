@@ -72,6 +72,11 @@ not an exact realization of every DPO/CTMC statement in the research report.
   enumeration. Matched valid yield improved `24/24` with median ratio
   `2.898276`, and finite movement passed `24/24`, while exact reverse support
   and pathwise balance passed `36/36`.
+- v17c preserved that exact proposal law and replayed all `24/24` v17b
+  transition traces exactly using completion counting plus uniform rank
+  sampling. Count/support parity passed `36/36`, movement and resource passed
+  `24/24`, maximum runtime was `14.921836` seconds, and no source effect was
+  computed.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -110,6 +115,14 @@ yield and movement on the six reused spaces, not convergence, mixing, global
 support or the v16s effect. A post-run runtime diagnosis is explicitly
 exploratory and identifies implementation costs without changing the frozen
 v17b status.
+
+V17c isolates that resource failure as an implementation cost on the tested
+finite spaces. It retained the exact ordered support, proposal probabilities,
+reverse auxiliary, starts, seeds and transition paths while reducing the median
+runtime ratio to `0.161356` and passing the frozen resource bound `24/24`. This
+qualifies the implementation for a finite stability test. It does not establish
+irreducibility, convergence, mixing, a unique endpoint law or survival of the
+v16s spectrum contrast.
 
 ## What has been explained away or remains negative
 
@@ -154,14 +167,12 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is an effect-blind v17c exact-counter runtime gate on
-the same coarse feasible matching space. Retain v16x-v17b as controls. Preserve
-v17b's proposal distribution, exact reverse support, proposal ratio, movement
-floors and runtime bound while removing duplicate forward enumeration and full
-completion materialization. Require count/support parity and movement/resource
-`24/24`. Only then should the proposal face marginal entropy,
-start/seed/time stability and support coverage before source-spectrum
-inspection. Concrete conflict remains a
+The best current next test is an effect-blind v17d finite-stability gate on the
+same coarse feasible matching space. Retain v16x-v17c as controls. Use the
+qualified exact-counter implementation with both starts, independent seed
+families and preregistered early/late windows. Require finite start/seed/time
+agreement plus proposal-component overlap and support-coverage diagnostics
+before source-spectrum inspection. Concrete conflict remains a
 required diagnostic because exact preservation collapsed the available finite
 freedom. The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not

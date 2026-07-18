@@ -1,6 +1,6 @@
 # UniverseSimulation RAG Status
 
-Last source review: 2026-07-17.
+Last source review: 2026-07-18.
 
 ## Source-of-truth order
 
@@ -128,30 +128,43 @@ not outrank later executed gates.
   recorded completion mass, but completion mass correlated weakly with runtime
   (`r=0.125554`) and omits failed branch work. Static inspection identified
   duplicate forward enumeration and full completion materialization.
+- v17c preserved the exact v17b proposal law, starts, numerical chain seeds,
+  512-step budget, movement floors and exact lazy Metropolis ratio while
+  replacing tuple materialization with exact completion counting and uniform
+  depth-first rank sampling. Source spectrum/effect calls remained `0/0`.
+- Exact completion count/support parity passed `36/36`; exact v17b transition
+  trace and summary replay passed `24/24`; representation passed `12/12`;
+  reverse support and pathwise detailed balance passed `36/36`; finite movement
+  and the `<=60 s` resource bound both passed `24/24`.
+- Runtime improved in all `24/24` matched chains. Median v17c/v17b runtime ratio
+  was `0.161356`, maximum chain runtime was `14.921836` seconds, and formal
+  status is `v17c_exact_counter_runtime_qualified`.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_exact_residual_cycle_movement_but_unqualified_constructor_runtime`. See
+`fresh_event_footprint_spectrum_contrast_with_exact_residual_cycle_proposal_runtime_qualified_before_stability`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v17b_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17c_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
 v16z established exact pair-specific cycle paths, and v17a established tested
 reverse-support and detailed-balance algebra for a target-independent proposal.
-V17b repaired finite movement but did not qualify the constructor runtime, so no
-state-independent global endpoint law qualified for an effect test. It is not a
+V17b repaired finite movement and v17c showed that the same finite proposal law
+can meet the frozen runtime bound without changing any tested transition. The
+law has not yet passed start/seed/time stability, component-coverage or source-
+effect transfer. It is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum under the v16x-v17b procedures. The narrow
-next gate is `v17c_exact_counter_runtime_qualification` on the same six spaces.
-It must preserve v17b's exact proposal distribution, reverse auxiliary, 512
-steps, movement floors and `<=60 s` resource threshold while eliminating
-duplicate forward enumeration and full completion materialization. Require
-count/support parity against v17b and movement/resource `24/24` before any
-start/seed/time comparison. Do not relax the v16x-v17b gates retrospectively.
+Do not compute the source spectrum yet. The narrow next gate is
+`v17d_effect_blind_finite_stability` on the same six spaces under the qualified
+v17c implementation. Freeze longer early/late windows, both start families and
+new independent seed families. Require finite within-source start/seed/time
+agreement and proposal-component overlap/coverage diagnostics before any source
+spectrum or observed-effect comparison. Do not relax or reinterpret the
+v16x-v17c gates retrospectively.
 
 `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`
 separates Bell's theorem, Bell inequalities and observed finite experimental
