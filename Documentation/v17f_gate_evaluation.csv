@@ -1,0 +1,10 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+frozen_start_and_assignment_integrity,pass,starts=12/12;final_integrity=24/24,12/12;24/24,continue
+length5_pathwise_detailed_balance,pass,12/12,12/12,continue
+ordered_batch_reverse_pairing,pass,12/12,12/12,continue
+new_one_step_length_support,pass,12/12,12/12,one_step_novelty_only
+representation_covariance,pass,12/12,12/12,continue
+length5_finite_exercise,pass,24/24;min=7,24/24;each>=4,continue
+finite_traversal_and_resource,fail,movement=15/24;resource=24/24;max=22.681378s,24/24;24/24;each<=120s,do_not_compare_start_memory
+v17f_overall,v17f_finite_movement_not_qualified,exclusion=1;starts=12/12;integrity=24/24;reverse=12/12;batch=12/12;novelty=12/12;representation=12/12;exercise=24/24;movement=15/24;resource=24/24,1;12/12;24/24;12/12;12/12;12/12;12/12;24/24;24/24;24/24,v17f_finite_movement_not_qualified

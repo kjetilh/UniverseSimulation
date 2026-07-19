@@ -1,0 +1,8 @@
+claim_id,purpose_ref,goal_id,claim_type,strength,claim,status,evidence,scope_limit
+C1,purpose://validation,G1,factual,assertive,v17f computes no source spectrum or observed-effect statistic.,supported,static call audit plus trace/summary exclusion fields,this script and tracked outputs
+C2,purpose://validation,G1,factual,moderated,"The tested length-5 auxiliaries have reverse support, batch roundtrip and pathwise detailed balance.",supported,v17f_pathwise_reversibility_audit.csv,12 finite witnesses; not an exhaustive state-space proof
+C3,purpose://validation,G1,factual,assertive,Each tested length-5 witness is outside the old kernel's one-step length support.,supported,v17f_pathwise_reversibility_audit.csv,one-step novelty only; not connected-component novelty
+C4,purpose://validation,G1,project_capability,moderated,"The expanded kernel qualifies finite representation, exercise, traversal and resource behavior under all frozen thresholds.",not_supported,v17f_representation_audit.csv;v17f_chain_transition_summary.csv,six finite spaces and 24 chains
+C5,purpose://validation,G1,causal,speculative,The length-5 move crosses a connected component inaccessible to the old kernel.,not_tested,none,one-step novelty does not establish this
+C6,purpose://validation,G1,statistical,speculative,The expanded kernel reduces cross-start memory under matched realized work.,not_tested,no matched-work comparison in v17f,candidate question for v17g only after qualification
+C7,purpose://validation,G1,project_capability,speculative,"v17f establishes source effects, Bell correlations, entanglement, Lorentz symmetry, spacetime or a universe model.",contradicted,required observables were prohibited or absent,requires separate later operational gates

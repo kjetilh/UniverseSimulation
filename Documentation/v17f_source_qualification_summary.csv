@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,frozen_start_passes,reversibility_passes,batch_roundtrip_passes,novel_one_step_passes,representation_passes,movement_passes,resource_passes,integrity_passes,minimum_accepted_length5_cycles,minimum_final_start_changed_edge_fraction,maximum_chain_seconds,source_qualification_pass
+v17f,1536,9299,123078,exposure_matched_local,1993113078,2,2,2,2,2,3,4,4,11,0.06642778390297688,20.118772208923474,0
+v17f,1536,9299,123403,exposure_matched_local,1993113403,2,2,2,2,2,3,4,4,13,0.06323447118074987,12.363857582909986,0
+v17f,1536,9299,127341,exposure_matched_local,1993117341,2,2,2,2,2,2,4,4,10,0.06528526823729774,11.64669116679579,0
+v17f,1536,9365,123078,exposure_matched_local,1993773078,2,2,2,2,2,2,4,4,11,0.07289038407625459,12.935028666863218,0
+v17f,1536,9365,123403,exposure_matched_local,1993773403,2,2,2,2,2,2,4,4,7,0.058546059933407335,16.12683179206215,0
+v17f,1536,9365,127341,exposure_matched_local,1993777341,2,2,2,2,2,3,4,4,9,0.06635071090047395,22.681377707980573,0

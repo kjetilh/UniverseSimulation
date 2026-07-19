@@ -1,6 +1,6 @@
 # UniverseSimulation RAG Status
 
-Last source review: 2026-07-18.
+Last source review: 2026-07-19.
 
 ## Source-of-truth order
 
@@ -155,11 +155,27 @@ not outrank later executed gates.
   `1.385802-1.470668` in `6/6`, so lower cross/within ratios reflect diffusion
   within start families rather than material cross-start convergence. Formal
   status is `v17e_cross_start_distance_flat_retire_length_2_4_kernel`.
+- v17f changed the move class effect-blind with a 50/50 mixture of the
+  qualified length-2-to-4 kernel and a fixed length-5, batch-guided bounded-
+  search proposal. Frozen starts/final integrity passed `12/12` and `24/24`;
+  reverse, batch-roundtrip, one-step novelty, and representation witnesses all
+  passed `12/12`. Length-5 exercise and resource passed `24/24`, with at least
+  `7` accepted length-5 moves per chain and maximum runtime `22.681378` seconds.
+- Formal finite movement nevertheless passed only `15/24`. All other movement
+  floors passed `24/24`; the sole failure was `11` reverse-unsupported raw
+  length-5 auxiliaries in `9/24` chains among `720` valid length-5 proposals.
+  Metropolis assigned `q_reverse=0`, rejected these proposals, and preserved
+  the state. Frozen status is `v17f_finite_movement_not_qualified`.
+- The descriptive post-run replay matched `24/24` traces. All `11/11` explicit
+  reverse paths were structurally valid and exhausted the frozen 20,000-state
+  witness budget; a diagnostic 10x ceiling recovered `9/11`. This localizes the
+  failure to bounded-search support asymmetry. It does not retroactively pass
+  v17f or qualify a larger search budget.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_exact_bounded_cycle_kernel_retired_for_scale_flat_start_memory`. See
+`fresh_event_footprint_spectrum_contrast_with_length5_move_exercised_but_bounded_reverse_support_not_qualified`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v17e_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17f_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
 v16z established exact pair-specific cycle paths, and v17a established tested
@@ -168,8 +184,10 @@ V17b repaired finite movement and v17c showed that the same finite proposal law
 can meet the frozen runtime bound without changing any tested transition. V17d
 then failed finite start independence, and v17e found that doubling the chain
 budget broadened within-start clouds without materially reducing absolute
-cross-start distance. The length-2-to-4 move class is retired as a scale-growth
-direction. The law has not passed finite start stability or source-effect
+cross-start distance. V17f exercised a genuinely new one-step length-5 move but
+its raw bounded auxiliary support was not reverse-closed. The length-2-to-4
+move class remains retired as a scale-growth direction, while the expanded law
+has not passed proposal qualification, finite start stability, or source-effect
 transfer. It is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
@@ -177,13 +195,16 @@ entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum yet. The narrow next gate is one
-effect-blind move-class expansion on the same six spaces and starts. Preserve
-an explicit stationary target, exact reverse accounting, representation
-checks, and compare cross-start response under matched realized work. Exact
-longer alternating cycles or a reversible compound-cycle proposal are
-candidates, not qualified methods. Do not spend more budget scaling the
-length-2-to-4 kernel or reinterpret v16x-v17e retrospectively.
+Do not compute the source spectrum or test start memory yet. The narrow next
+gate is an effect-blind reverse-closure repair of the v17f length-5 component
+under the same six spaces, starts, batch size, cycle length, 20,000-state
+search law, and 1024-step budget. Post-filter each generated raw auxiliary on
+its explicitly mapped reverse support under that same bounded law; unmatched
+raw auxiliaries must become proposal dead ends before valid-yield accounting.
+Require exact accepted-transition and final-endpoint parity against v17f, zero
+runtime reverse-unsupported events, representation `12/12`, movement `24/24`,
+and resource `24/24`. Do not increase the step or search budget, reopen effects,
+or reinterpret one-step novelty as component connectivity.
 
 `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`
 separates Bell's theorem, Bell inequalities and observed finite experimental

@@ -8376,3 +8376,81 @@ Viktige filer:
 - `Documentation/v17e_next_direction_assessment.md`
 - `Documentation/v0_17e_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17e.md`
+
+## 10dk. v17f fant en brukbar lengde-5 move, men bounded witness support var ikke reverse-closed
+
+`v17f` ble preregistrert med spec-digest
+`f8bd29b92701c6142f2822961952277ddaca013027789cc3d1273b4bb6b2b081`,
+script-hash
+`ba5d5d4f7f6f322039d23bde8f5c5550f034ed4b15158564ef29a03a42edf029`,
+pilot-hash
+`58eb749644ad49adbaa443d906ba9fee031505ac0bb6910c2fadac516a383871`
+og source-chain-hash
+`68d45ab309881c3c8887cdda66eeb93f34251c9d8e0469186352a74fdaf2c666`.
+Den ekskluderte effect-blind designpiloten paa foerste source valgte batch `4`,
+fixed length `5` og et deterministisk `20 000`-state witness-sok. Piloten ga
+`6/64` og `4/64` gyldige forslag, `3` og `4` aksepterte sykluser, null
+reverse-unsupported og maksimal proposal-tid `0.083315` s. Pilotresultatene
+inngikk ikke i den formelle gaten.
+
+Den formelle kjernen var en 50/50-blanding av den kvalifiserte v17c
+length-`2-4`-kjernen og den nye batch-guided length-`5`-komponenten. Den
+deklarerte target-loven var uniform bare innen hver connected component av den
+utvidede proposal-kjernen. Hver av seks source spaces ble kjort fra begge
+frosne starter og to nye seedfamilier i `1024` steg. Source spectrum og
+observed effect var forbudt.
+
+Formelle resultater:
+
+- source spectrum/effect calls: `0/0`
+- frozen starts/final assignment integrity: `12/12`, `24/24`
+- length-5 reverse support/recovery/pathwise balance witnesses: `12/12`
+- ordered first-batch roundtrip: `12/12`
+- old-kernel one-step length novelty: `12/12`
+- representation covariance: `12/12`
+- finite length-5 exercise: `24/24`, minimum `7` accepted
+- resource: `24/24`, maximum chain runtime `22.681378` s
+- formal finite movement: `15/24`
+
+Alle `24/24` kjeder passerte valid-proposal-, total-acceptance-, old-cycle-,
+length-5-, unique-state-, final-displacement- og integrity-gulvene. Hele
+movement-feilen kom fra `11` reverse-unsupported length-5 raw auxiliaries i
+`9/24` kjeder, blant `720` gyldige length-5-forslag (`0.015278`). Metropolis
+ga disse `q_reverse=0`, avviste dem og endret ingen state. Frossen status er
+`v17f_finite_movement_not_qualified`; den omskrives ikke som bestaa.
+
+En separat deskriptiv replay passerte `24/24` traces. Alle `11/11` eksplisitte
+reverse paths var strukturelt gyldige, og witness-soket tomte sitt frosne
+budsjett i `11/11`. Et diagnostisk 10x-tak gjenfant `9/11`, men kvalifiserer
+ikke et storre tak. Postrun-statusen er
+`v17f_reverse_support_failure_is_bounded_search_asymmetry`.
+
+Neste gate skal ikke skaleres og skal ikke teste start-memory. Den minste
+reparasjonen er aa post-filtrere det eksisterende raw length-5-auxiliaryet paa
+eksplisitt mapped reverse support under samme `20 000`-state lov. Ikke-parede
+raw auxiliaries blir proposal dead ends foer valid-yield-regnskap. Gaten maa
+kreve exact accepted-transition og final-endpoint parity mot v17f, zero runtime
+reverse-unsupported, representation `12/12`, movement `24/24` og resource
+`24/24`. One-step novelty er fortsatt ikke component-connectivity.
+
+Viktige filer:
+
+- `relational_universe_v17f_effect_blind_length5_move_qualification.py`
+- `relational_universe_v17f_postrun_reverse_closure_diagnosis.py`
+- `Documentation/v17f_effect_blind_length5_move_qualification.md`
+- `Documentation/v17f_interpretation_audit.md`
+- `Documentation/v17f_excluded_design_pilot.csv`
+- `Documentation/v17f_pre_registration.csv`
+- `Documentation/v17f_source_chain.csv`
+- `Documentation/v17f_pathwise_reversibility_audit.csv`
+- `Documentation/v17f_representation_audit.csv`
+- `Documentation/v17f_chain_transition_summary.csv`
+- `Documentation/v17f_source_qualification_summary.csv`
+- `Documentation/v17f_gate_evaluation.csv`
+- `Documentation/v17f_goal_evaluation.csv`
+- `Documentation/v17f_claim_ledger.csv`
+- `Documentation/v17f_postrun_reverse_closure_diagnosis.md`
+- `Documentation/v17f_postrun_reverse_closure_diagnosis.csv`
+- `Documentation/v17f_next_direction_assessment.md`
+- `Documentation/v0_17f_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17f.md`

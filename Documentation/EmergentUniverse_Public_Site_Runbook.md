@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17e_effect_blind_scale_response_gate.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17f_effect_blind_length5_move_qualification.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -164,6 +164,14 @@ ratios `0.978973-1.005348`. It must explain that within-start dispersion grew
 `1.385802-1.470668`; the lower cross/within ratio is not absolute cross-start
 convergence. Further scale growth of the length-2-to-4 kernel is retired, but
 global disconnection and failure of other move classes are not claimed.
+It must report the v17f frozen-start/final-integrity results `12/12` and
+`24/24`, reverse/batch/one-step-novelty/representation results `12/12`, finite
+length-5 exercise and resource `24/24`, minimum accepted length-5 moves `7`,
+and maximum runtime `22.681378`. It must preserve formal movement `15/24` and
+the `11/720` reverse-unsupported valid raw auxiliaries. The post-run result that
+all `11/11` explicit reverse paths were structurally valid and a diagnostic 10x
+ceiling recovered `9/11` localizes bounded-search support asymmetry; it does not
+retroactively pass v17f, qualify a larger budget, or establish connectivity.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -171,7 +179,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v17e and require
+orchestrator separately, then issue a token-scoped query about v17f and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 

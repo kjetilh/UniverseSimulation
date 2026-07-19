@@ -91,6 +91,15 @@ not an exact realization of every DPO/CTMC statement in the research report.
   `1.385802-1.470668` in all six sources while absolute cross-start distance
   stayed flat. This retires more scale growth for the length-2-to-4 move class;
   it does not prove global disconnection or reject other reversible moves.
+- v17f expanded the move class with a fixed length-5, batch-guided bounded-
+  search component. Length-5 exercise and resource passed `24/24`, with at
+  least `7` accepted length-5 moves per chain, but formal movement passed only
+  `15/24` because `11/720` valid raw length-5 auxiliaries lacked mapped reverse
+  support under the frozen bounded search.
+- The v17f post-run replay recovered all formal traces `24/24`, found all
+  `11/11` explicit reverse paths structurally valid, and recovered `9/11` only
+  after a diagnostic 10x search ceiling. This is bounded-search support
+  asymmetry, not a retroactive pass or evidence of component connectivity.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -157,6 +166,14 @@ start clouds rather than center convergence. This retires more scale growth of
 the tested length-2-to-4 kernel and motivates a broader reversible move class;
 it does not establish disconnected components or reject the model family.
 
+V17f confirms that the expanded proposal can actually exercise a new length-5
+one-step transition at acceptable finite cost, but the raw auxiliary support
+is not reverse-closed under its declared bounded search. Metropolis rejection
+of the `q_reverse=0` cases kept every affected transition probability-safe and
+left state unchanged, while the stricter qualification gate correctly failed.
+The next uncertainty is therefore proposal support hygiene, not chain scale,
+start memory, source-effect survival, or physics.
+
 ## What has been explained away or remains negative
 
 - Lorentz-like propagation remains `not_yet` because placement and mode effects
@@ -200,13 +217,16 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is one effect-blind move-class expansion on the same
-coarse feasible matching space. Retain v16x-v17e as controls. Preserve an
-explicit stationary target and exact reverse accounting, but add a genuinely
-broader transition such as an exact longer alternating cycle or reversible
-compound-cycle proposal. Compare start-memory response under matched realized
-work before source-spectrum inspection. Concrete conflict remains a required
-diagnostic because exact preservation collapsed the available finite freedom.
+The best current next test is an effect-blind reverse-closure repair of v17f on
+the same coarse spaces, starts, batch size, fixed length 5, 20,000-state search
+law, and step budget. Retain v17f as the exact transition reference. A raw
+auxiliary without its explicitly mapped reverse under the same bounded law must
+become a proposal dead end before valid-yield accounting. Require exact
+accepted-transition and endpoint parity, zero runtime reverse-unsupported
+events, representation, movement, and resource passes before any matched-work
+start-memory test or source-spectrum inspection. Concrete conflict remains a
+required diagnostic because exact preservation collapsed the available finite
+freedom.
 The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not
 bypass null qualification or use uniform clock-rate scaling as a temperature

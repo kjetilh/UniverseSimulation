@@ -1813,6 +1813,120 @@ DATASET_SPECS: list[dict[str, str]] = [
         "description": "Plain-language matched-prefix scale-response result.",
     },
     {
+        "source": "Documentation/v17f_effect_blind_length5_move_qualification.md",
+        "category": "latest_causal_structure",
+        "title": "v17f effect-blind length-5 move qualification",
+        "description": "Frozen qualification gate for the expanded length-2-to-5 proposal kernel.",
+    },
+    {
+        "source": "Documentation/v17f_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v17f interpretation audit",
+        "description": "Separates one-step novelty and finite qualification from connectivity and physics.",
+    },
+    {
+        "source": "Documentation/v17f_excluded_design_pilot.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f excluded design pilot",
+        "description": "Effect-blind algorithmic calibration excluded from the formal six-source gate.",
+    },
+    {
+        "source": "Documentation/v17f_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f preregistration",
+        "description": "Frozen hashes, proposal law, thresholds and stop decisions.",
+    },
+    {
+        "source": "Documentation/v17f_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f source chain",
+        "description": "SHA-256 links to v17a-v17e evidence and the excluded pilot.",
+    },
+    {
+        "source": "Documentation/v17f_proposal_trace.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17f proposal trace",
+        "description": "All 24,576 formal transition rows; static only and excluded from generative RAG.",
+    },
+    {
+        "source": "Documentation/v17f_pathwise_reversibility_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f pathwise reversibility audit",
+        "description": "Length-5 reverse support, batch roundtrip, one-step novelty and balance witnesses.",
+    },
+    {
+        "source": "Documentation/v17f_representation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f representation audit",
+        "description": "Replay, candidate-order and semantic-role covariance checks.",
+    },
+    {
+        "source": "Documentation/v17f_chain_transition_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f chain transition summary",
+        "description": "Per-chain old/new exercise, movement, reverse support and runtime evidence.",
+    },
+    {
+        "source": "Documentation/v17f_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f source qualification summary",
+        "description": "Per-source probability, representation, movement and resource decisions.",
+    },
+    {
+        "source": "Documentation/v17f_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f gate evaluation",
+        "description": "Frozen machine-readable finite-movement failure.",
+    },
+    {
+        "source": "Documentation/v17f_goal_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f goal evaluation",
+        "description": "Terminal evaluation of the move-qualification goal.",
+    },
+    {
+        "source": "Documentation/v17f_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f claim ledger",
+        "description": "Adjudicated finite claims and explicit start-memory/connectivity/physics exclusions.",
+    },
+    {
+        "source": "Documentation/v17f_postrun_reverse_closure_diagnosis.md",
+        "category": "latest_causal_structure",
+        "title": "v17f post-run reverse-closure diagnosis",
+        "description": "Descriptive localization of the failed raw auxiliary support to bounded-search asymmetry.",
+    },
+    {
+        "source": "Documentation/v17f_postrun_reverse_closure_diagnosis.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f post-run reverse-closure data",
+        "description": "All 11 reverse-unsupported events with structural and expanded-search diagnostics.",
+    },
+    {
+        "source": "Documentation/v17f_postrun_reverse_closure_inputs.csv",
+        "category": "latest_causal_structure",
+        "title": "v17f post-run input hashes",
+        "description": "SHA-256 audit for every frozen input to the descriptive diagnosis.",
+    },
+    {
+        "source": "Documentation/v17f_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v17f next direction",
+        "description": "Reverse-closure-filter repair before any matched-work start-memory gate.",
+    },
+    {
+        "source": "Documentation/v0_17f_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v17f operational recommendation",
+        "description": "Concise formal failure and exact-parity repair boundary.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17f.md",
+        "category": "latest_causal_structure",
+        "title": "v17f non-specialist summary",
+        "description": "Plain-language length-5 move qualification result.",
+    },
+    {
         "source": "Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md",
         "category": "methods_and_claim_boundaries",
         "title": "Bell theorem, inequalities and observed correlations",
@@ -2055,6 +2169,11 @@ def write_site(
     scale_response_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17e_cross_start_scale_response.csv")
     scale_response_postrun_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17e_postrun_diffusion_diagnosis.csv")
     scale_response_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17e_claim_ledger.csv")
+    move_qualification_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17f_gate_evaluation.csv")
+    move_qualification_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17f_source_qualification_summary.csv")
+    move_qualification_transition_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17f_chain_transition_summary.csv")
+    move_qualification_postrun_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17f_postrun_reverse_closure_diagnosis.csv")
+    move_qualification_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17f_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -2082,14 +2201,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate exactly replays the 2048-step baseline and finds that cross-start distance remains flat at 4096 steps while within-start dispersion grows. This retires further scale growth of one bounded-cycle move class, not the model. The underlying signal remains a finite event-DAG spectrum contrast, not a Bell test, spacetime, energy or temperature claim.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate adds a genuinely new length-5 one-step move and passes finite probability, representation, exercise and resource checks, but fails its stricter movement qualification because bounded witness support is not reverse-closed. This is a proposal-law repair target, not a connectivity, Bell, spacetime, energy or temperature claim.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">192 / 192</div><p class="muted">v17e checkpoints exactly replaying the frozen v17d random-stream prefix.</p></div>
-      <div class="card"><div class="metric">0 / 6</div><p class="muted">v17e sources meeting the material cross-start contraction threshold at doubled scale.</p></div>
+      <div class="card"><div class="metric">12 / 12</div><p class="muted">v17f finite reverse, batch, one-step-novelty and representation witnesses passing.</p></div>
+      <div class="card"><div class="metric">11 / 720</div><p class="muted">v17f valid length-5 raw auxiliaries lacking reverse support under the frozen bounded search.</p></div>
     </section>
 
     <section>
@@ -2121,12 +2240,21 @@ def write_site(
       <p>Finite start independence did not qualify. Endpoint centers passed <code>85/108</code> and endpoint-distance agreement <code>12/18</code>; every distance failure was the start-family contrast, with cross/within ratios <code>2.656766-2.906643</code>. Seed and early/late distance comparisons passed <code>12/12</code>. Source-edge/conflict gaps contracted from early to late in <code>12/12</code> cells, but direct cross-start distance was effectively flat. Exact residual-SCC profiles were identical across the eight representative endpoints within each source. This supports one bounded scale-response test, not a convergence, connectivity or physical claim.</p>
       <p>v17e ran that bounded test with the same starts and random streams. All <code>192/192</code> baseline endpoints replayed v17d exactly before the chains continued to <code>4096</code> steps. Integrity passed <code>384/384</code>, reversibility <code>36/36</code>, representation <code>12/12</code>, and traversal/resource <code>24/24</code>; maximum runtime was <code>107.676262</code> seconds.</p>
       <p>The primary material-contraction gate failed <code>0/6</code>. Cross-start scale/baseline distance ratios were <code>0.978973-1.005348</code>, against the frozen requirement <code>&lt;=0.90</code>. A disclosed post-run diagnosis found within-start dispersion growth of <code>1.385802-1.470668</code> in all six sources. The lower cross/within ratio therefore reflects wider within-family clouds, not material cross-start convergence. Further step-budget scaling of the length-2-to-4 kernel is retired; the next effect-blind gate must change the move class.</p>
+      <p>v17f made that move-class change with a 50/50 mixture of the qualified length-2-to-4 kernel and a fixed length-5, batch-guided bounded-search proposal. Frozen starts and integrity passed <code>12/12</code> and <code>24/24</code>; reverse/batch/one-step-novelty witnesses and representation each passed <code>12/12</code>; finite length-5 exercise and resource passed <code>24/24</code>. Every formal chain accepted at least <code>7</code> length-5 moves, and maximum chain runtime was <code>22.681378</code> seconds.</p>
+      <p>The formal movement gate nevertheless failed <code>15/24</code>. Eleven of <code>720</code> valid length-5 raw auxiliaries lacked reverse support under the frozen 20,000-state witness search and were correctly rejected with no state change. A descriptive exact replay passed <code>24/24</code>, found all eleven explicit reverse paths structurally valid, and found witness-budget exhaustion in all eleven; a diagnostic 10x cap recovered nine. The frozen failure stands. The next gate is a reverse-closure-filter repair with exact accepted-transition and endpoint parity, not a larger budget or a start-memory test.</p>
       <p>The separate Bell methods report distinguishes Bell's theorem, testable Bell inequalities and finite observed quantum-correlation data. UniverseSimulation currently has no alternative local measurement settings, Bell trial protocol or entanglement observable; graph correlation is not relabeled as Bell evidence.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current matched-prefix scale-response gate</h2>
+      <h2>Current move-class qualification gate</h2>
+      {table_html(move_qualification_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(move_qualification_source_rows, ["growth_seed", "run_offset", "frozen_start_passes", "reversibility_passes", "novel_one_step_passes", "representation_passes", "movement_passes", "resource_passes", "minimum_accepted_length5_cycles", "maximum_chain_seconds", "source_qualification_pass"])}
+      <h3>Per-chain old/new finite exercise</h3>
+      {table_html(move_qualification_transition_rows, ["growth_seed", "run_offset", "start_family", "chain_seed_family", "valid_proposals", "accepted_cycles", "accepted_old_cycles", "accepted_length5_cycles", "reverse_unsupported", "final_start_changed_edge_fraction", "elapsed_seconds", "movement_pass", "resource_pass"])}
+      <h3>Post-run reverse-closure diagnosis</h3>
+      {table_html(move_qualification_postrun_rows, ["growth_seed", "run_offset", "start_family", "chain_seed_family", "step", "failure_reason", "reverse_raw_path_valid_pass", "frozen_search_budget_exhaustions", "expanded_search_recovers_reverse_support"])}
+      <h3>Prior v17e matched-prefix scale-response gate</h3>
       {table_html(scale_response_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(scale_response_source_rows, ["growth_seed", "run_offset", "chain_passes", "v17d_prefix_replay_passes", "primary_scale_response_pass", "cross_start_distance_ratio", "residual_partition_identity_pass", "maximum_chain_seconds", "source_qualification_pass"])}
       <h3>Primary absolute cross-start response</h3>
@@ -2223,6 +2351,7 @@ def write_site(
       <p>v17c makes only that implementation change. It counts exact completion branches, selects one uniform depth-first rank, and reuses the forward count in the auxiliary probability. Exact v17b transition replay verifies that the tested dynamics did not change. Passing finite runtime qualifies a stability experiment, not global sampling, convergence or source-effect transfer.</p>
       <p>v17d keeps that law and samples separated early/late windows from four-times-longer chains. Its residual SCCs and observed accepted-proposal footprints are diagnostics only. Exact residual-profile identity does not imply that the bounded-cycle Markov state graph is globally connected, and start-sensitive finite endpoints are not a qualified global null.</p>
       <p>v17e matches the v17d random-stream prefix exactly and doubles the chain budget. Absolute cross-start distance remains effectively flat while within-start dispersion grows. This supports retiring scale growth of the tested length-2-to-4 move class. It does not prove disconnected components, failed convergence for every possible move class, or any source-spectrum effect.</p>
+      <p>v17f mixes that old kernel with a new length-5 auxiliary whose ordered first-edge batch is mapped bijectively under reversal. Metropolis rejection keeps the finite kernel probability-safe when raw reverse support is absent, but the frozen qualification required zero such events and therefore failed. The post-run repair target is to make the declared raw support reverse-closed under the same bounded law; one-step length novelty is not evidence of a new connected-component bridge.</p>
       <p>The separate units-of-action hypothesis treats local realized edit work, carrier occupancy and boundary flux as candidate microscopic inputs. Until a local balance law and reproducible intensive fluctuation parameter are demonstrated, the correct terms are action density and change intensity, not physical energy or temperature.</p>
     </section>
 
@@ -2233,6 +2362,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(move_qualification_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v17e scale-response claim ledger</h3>
       {table_html(scale_response_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Prior v17d finite-stability claim ledger</h3>
       {table_html(finite_stability_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}

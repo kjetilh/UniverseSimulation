@@ -1,0 +1,2 @@
+goal_id,purpose_ref,metric,baseline,target,timeframe,status,evidence
+G1,purpose://validation,"all frozen probability, representation, finite exercise, movement and resource gates",v17e retired length-2-to-4 scale growth; no qualified replacement move,reverse/batch/novelty/representation 12/12 and exercise/movement/resource 24/24,v17f formal round,missed,v17f_gate_evaluation.csv;v17f_source_qualification_summary.csv
