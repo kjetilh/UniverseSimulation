@@ -185,11 +185,20 @@ not outrank later executed gates.
   The nontrivial evidence is exact raw/filter identity, retained support,
   balance/representation and accepted-dynamics parity. This qualifies a finite
   proposal law, not new dynamics, connectivity, convergence, mixing or physics.
+- v17h compared the qualified old and expanded kernels at exactly `192`
+  accepted removed-edge units in every one of `48` chains. Frozen starts,
+  exact work/endpoint integrity, retained reverse support, movement and resource
+  passed `48/48`; all `24/24` expanded chains exercised length-5 moves.
+- The preregistered material cross-start reduction failed `0/6`. Expanded/old
+  ratios were `0.980433-1.013939`, median `1.003301`, with only directional
+  improvement in `3/6`. The symmetric exact-work terminal rule is finite
+  conditioning and may add a small terminal endpoint bias. Formal status is
+  `v17h_expanded_kernel_no_uniform_matched_work_gain`.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_reverse_closed_length5_proposal_qualified_but_start_memory_untested`. See
+`fresh_event_footprint_spectrum_contrast_with_fixed_length5_expansion_not_a_uniform_start_memory_remedy`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v17g_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17h_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
 v16z established exact pair-specific cycle paths, and v17a established tested
@@ -200,23 +209,23 @@ then failed finite start independence, and v17e found that doubling the chain
 budget broadened within-start clouds without materially reducing absolute
 cross-start distance. V17f exercised a genuinely new one-step length-5 move,
 and v17g qualified a reverse-closed finite version without changing accepted
-v17f dynamics. The length-2-to-4 move class remains retired as a scale-growth
-direction, while the expanded law has not passed finite start stability or
-source-effect transfer. It is not a
+v17f dynamics. V17h matched realized work exactly and found no uniform
+cross-start efficiency gain from the fixed 50/50 expansion. The old kernel
+remains retired as a scale-growth direction, and the fixed length-5 expansion
+is retired as a uniform start-memory remedy. Source effects remain closed. It
+is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum yet. The narrow next gate is an effect-blind
-matched accepted-edge-work start-memory comparison. Compare the qualified old
-length-2-to-4 kernel with the qualified v17g reverse-closed expanded kernel on
-the same six spaces and both frozen starts, using independent seeds and equal
-accepted removed-edge work. Make absolute cross-start endpoint distance the
-primary response. Do not reuse unequal step counts as equal work, reopen source
-effects, or reinterpret reduced finite start distance as proof of mixing or
-global connectivity.
+Do not compute the source spectrum yet. The narrow next gate should target
+direct cross-start accessibility with a larger algebraically declared move and
+exact reverse accounting. Do not add more work or seeds to the same fixed 50/50
+length-5 expansion. Preserve effect exclusion and use finite accessibility as
+an instrumentation/qualification target, not as proof of mixing or global
+connectivity.
 
 `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`
 separates Bell's theorem, Bell inequalities and observed finite experimental

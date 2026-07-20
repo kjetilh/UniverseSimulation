@@ -1,0 +1,6 @@
+claim_id,purpose_ref,goal_id,claim_type,strength,claim,status,evidence,scope_limit
+C1,purpose://validation,G1,factual,assertive,v17h computes no source spectrum or observed-effect metric.,supported,static call audit plus runtime exclusion fields,v17h script and outputs
+C2,purpose://validation,G1,project_capability,assertive,Both kernel arms complete exactly equal accepted removed-edge work with valid endpoints.,supported,v17h_chain_transition_summary.csv,48 finite chains; terminal conditioning rule applies
+C3,purpose://validation,G1,empirical,moderated,The expanded kernel reduces median absolute cross-start distance by at least 10 percent in every source at matched work.,not_supported,v17h_matched_work_comparison.csv,"six reused spaces, two starts, two new seed families, work 192"
+C4,purpose://validation,G1,causal,speculative,The expanded move graph is globally connected or mixed.,not_tested,none,finite relative endpoint distance cannot establish connectivity or mixing
+C5,purpose://validation,G1,project_capability,speculative,"v17h establishes source effects, geometry, Lorentz symmetry, spacetime or a universe model.",contradicted,effect observables prohibited and no physical diagnostic computed,requires separate later gates

@@ -109,6 +109,15 @@ not an exact realization of every DPO/CTMC statement in the research report.
 - v17g therefore qualifies the finite reverse-closed proposal implementation.
   Because all accepted transitions and endpoints intentionally match v17f,
   this is not new evidence for start convergence, connectivity or mixing.
+- v17h compared that expanded kernel with the old qualified kernel at exactly
+  `192` accepted removed-edge units in each of `48` chains. Exact work,
+  endpoint integrity, retained reverse support, movement and resource passed
+  `48/48`; length-5 exercise passed `24/24` expanded chains.
+- The primary material cross-start reduction failed `0/6`. Expanded/old ratios
+  were `0.980433-1.013939`, median `1.003301`, with directional improvement in
+  only `3/6`. The exact-work terminal rule is symmetric but finite-conditioned.
+  This retires the fixed 50/50 expansion as a uniform start-memory remedy, not
+  every larger move or the relational-universe program.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -226,16 +235,16 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is an effect-blind matched accepted-edge-work
-start-memory comparison. Compare the qualified old length-2-to-4 kernel with
-the qualified v17g reverse-closed expanded kernel on the same coarse spaces and
-both frozen starts. Use independent seeds, stop both arms at the same accepted
-removed-edge work, and use absolute cross-start endpoint distance as the
-primary response. Keep source spectrum and observed effects closed. A finite
-distance reduction would motivate a stronger stability gate; it would not by
-itself establish global connectivity or mixing. Concrete conflict remains a
-required diagnostic because exact preservation collapsed the available finite
-freedom.
+The best current next test remains effect-blind but changes the move class.
+v17h removed unequal realized work as the immediate confound and found no
+uniform benefit from the fixed length-5 expansion. The next narrow design
+should target direct cross-start accessibility with a larger algebraically
+declared move and exact reverse accounting, rather than add work or seeds to
+the same 50/50 kernel. Source spectrum and observed effects remain closed.
+Success would qualify a stronger finite accessibility/stability test; it would
+not by itself establish global connectivity or mixing. Concrete conflict
+remains a required diagnostic because exact preservation collapsed the
+available finite freedom.
 The units-of-action
 energy/cooling question remains a promising later mechanism gate, but must not
 bypass null qualification or use uniform clock-rate scaling as a temperature

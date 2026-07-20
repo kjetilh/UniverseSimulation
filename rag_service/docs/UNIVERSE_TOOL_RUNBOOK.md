@@ -12,7 +12,8 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind reverse-closure gate: `relational_universe_v17g_effect_blind_reverse_closure_qualification.py`
+- Latest effect-blind matched-work gate: `relational_universe_v17h_effect_blind_matched_work_start_memory.py`
+- Prior reverse-closure gate: `relational_universe_v17g_effect_blind_reverse_closure_qualification.py`
 - Prior move-qualification gate and diagnosis: `relational_universe_v17f_effect_blind_length5_move_qualification.py` and `relational_universe_v17f_postrun_reverse_closure_diagnosis.py`
 - Prior residual-constructor diagnosis: `relational_universe_v17b_postrun_runtime_diagnosis.py`
 - Prior accessibility gate and representation audit: `relational_universe_v16z_alternating_cycle_bridge_gate.py` and `relational_universe_v16z_postrun_representation_audit.py`
@@ -53,6 +54,7 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v17f_effect_blind_length5_move_qualification.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17f_postrun_reverse_closure_diagnosis.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17g_effect_blind_reverse_closure_qualification.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17h_effect_blind_matched_work_start_memory.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -134,6 +136,12 @@ and representation `12/12`, movement/resource `24/24`, and effect exclusion.
 Read `Documentation/v17g_interpretation_audit.md`: the pass qualifies the
 finite proposal implementation but adds no new accepted dynamics. The next
 gate must compare start memory at matched accepted edge-work.
+The v17h verifier checks frozen source/script hashes, 48 exact-work endpoints,
+the full proposal trace, pairwise distances, retained reverse support, movement,
+length-5 exercise, resource and effect exclusion. Read
+`Documentation/v17h_interpretation_audit.md`. Work/integrity/support/movement/
+resource passed `48/48`, but material cross-start reduction passed `0/6`; the
+fixed 50/50 length-5 expansion is retired as a uniform start-memory remedy.
 
 ## Run the early toy simulator
 
@@ -188,13 +196,18 @@ reverse/representation audits, exact v17f transition parity, runtime support,
 transition/source summaries, gate, goal, claim ledger and next direction. Keep
 the full v17g 24,576-row proposal trace in the static archive only, not the
 generative RAG corpus.
+Require the v17h report, interpretation audit, preregistration/source chain,
+endpoint audit, kernel-distance and matched-work summaries, transition/source
+summaries, gate, goal, claim ledger and next direction. Keep the full v17h
+proposal trace and pairwise-distance table in the static archive only, not the
+generative RAG corpus.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17g|24,576|24/24|20.456393|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17h|48/48|0/6|1.003301|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17g_effect_blind_reverse_closure_qualification.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17h_effect_blind_matched_work_start_memory.md
 ```
 
 ## Start the RAG service locally
@@ -243,11 +256,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v17g om reverse closure, eksakt v17f-paritet og hva som maa testes ved matched accepted work i v17h?'
+  --query 'Hva viste v17h om matched accepted work, cross-start-avstand og hvorfor den faste length-5-utvidelsen pensjoneres?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v17g material plus v17f/v17e/v17d/v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v17h material plus v17g/v17f/v17e/v17d/v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -319,8 +332,12 @@ does not update this index; both deployments require separate verification.
 - Do not use v17g's reverse-closure qualification as new movement, convergence
   or mixing evidence. Its accepted transitions and endpoints intentionally
   match v17f `24/24`; zero retained unsupported proposals is partly
-  definitional after filtering. Test the expanded kernel at matched accepted
-  edge-work before making any start-memory comparison.
+  definitional after filtering.
+- Do not use v17h's exact-work/integrity passes as evidence of stationary
+  sampling, connectivity or mixing. Material cross-start reduction passed
+  `0/6`; this retires only the fixed 50/50 length-5 expansion as a uniform
+  start-memory remedy. The symmetric exact-work terminal rule remains finite
+  conditioning and may add a small endpoint bias.
 - Do not describe ordinary graph correlations as Bell violations or
   entanglement. The repo lacks the required local settings, trial protocol,
   causal non-influence audit and Bell null statistic.

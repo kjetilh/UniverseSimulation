@@ -1,0 +1,2 @@
+goal_id,purpose_ref,metric,baseline,target,timeframe,status,evidence
+G1,purpose://validation,material cross-start distance reduction at exact matched accepted work,old qualified length-2-to-4 kernel,expanded/old median cross-start distance <=0.90 in 6/6 sources,one frozen v17h round,missed,v17h_matched_work_comparison.csv;v17h_gate_evaluation.csv

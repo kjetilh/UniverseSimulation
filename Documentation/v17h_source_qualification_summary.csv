@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,chain_count,frozen_start_passes,matched_work_passes,reverse_support_passes,movement_passes,resource_passes,minimum_expanded_length5_cycles,maximum_attempts_used,maximum_chain_seconds,expanded_over_old_cross_start_distance_ratio,material_cross_start_reduction_pass,source_spectrum_computed,observed_effect_computed
+v17h,1536,9299,123078,exposure_matched_local,1993113078,8,2,8,8,8,8,9,751,16.42185404105112,0.9922408441961514,0,0,0
+v17h,1536,9299,123403,exposure_matched_local,1993113403,8,2,8,8,8,8,9,887,11.128806916996837,0.9804332634521313,0,0,0
+v17h,1536,9299,127341,exposure_matched_local,1993117341,8,2,8,8,8,8,4,695,8.67719520907849,1.0085704490915324,0,0,0
+v17h,1536,9365,123078,exposure_matched_local,1993773078,8,2,8,8,8,8,7,788,9.652979624923319,1.0078542255733585,0,0,0
+v17h,1536,9365,123403,exposure_matched_local,1993773403,8,2,8,8,8,8,4,854,12.322226042160764,1.0139385275196569,0,0,0
+v17h,1536,9365,127341,exposure_matched_local,1993777341,8,2,8,8,8,8,6,743,14.574273874983191,0.9987480438184665,0,0,0

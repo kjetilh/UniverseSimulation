@@ -1,0 +1,9 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+frozen_start_integrity,pass,12/12,12/12,continue
+exact_matched_work_and_endpoint_integrity,pass,48/48;work=192,48/48;each=192,continue
+retained_reverse_support,pass,48/48,48/48,continue
+finite_movement_and_length5_exercise,pass,movement=48/48;expanded_length5=24/24,48/48;24/24,continue
+resource_bound,pass,48/48;max=16.421854s,48/48;each<=120s,continue
+primary_matched_work_cross_start_reduction,fail,0/6;ratio=0.980433-1.013939,6/6;each<=0.90,retire_current_length5_as_uniform_start_memory_remedy
+v17h_overall,v17h_expanded_kernel_no_uniform_matched_work_gain,exclusion=1;starts=12/12;work=48/48;support=48/48;movement=48/48;length5=24/24;resource=48/48;primary=0/6,1;12/12;48/48;48/48;48/48;24/24;48/48;6/6,v17h_expanded_kernel_no_uniform_matched_work_gain

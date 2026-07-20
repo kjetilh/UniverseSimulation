@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17g_effect_blind_reverse_closure_qualification.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17h_effect_blind_matched_work_start_memory.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -178,6 +178,14 @@ retained-support results `24/24`, pathwise witness/representation `12/12`,
 movement/resource `24/24`, minimum retained valid proposals `130`, and maximum
 runtime `20.456393`. It must state that this qualifies the finite proposal law
 without adding accepted dynamics, convergence, connectivity or mixing evidence.
+It must report v17h exact accepted work/endpoint integrity/reverse support/
+movement/resource `48/48`, expanded length-5 exercise `24/24`, primary
+material cross-start reduction `0/6`, ratio range `0.980433-1.013939`, median
+ratio `1.003301`, and directional reduction `3/6`. It must disclose that the
+symmetric exact-work terminal rule is finite conditioning and may add a small
+endpoint bias. The fixed 50/50 length-5 expansion is retired as a uniform
+start-memory remedy; all larger moves, connectivity, mixing and the model are
+not rejected by this result.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -185,7 +193,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v17g and require
+orchestrator separately, then issue a token-scoped query about v17h and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 

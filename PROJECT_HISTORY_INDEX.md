@@ -8514,3 +8514,70 @@ Viktige filer:
 - `Documentation/v17g_next_direction_assessment.md`
 - `Documentation/v0_17g_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17g.md`
+
+## 10dm. v17h fant ingen uniform start-memory-gevinst ved eksakt matched work
+
+`v17h` ble preregistrert med spec-digest
+`4bd90e7542b3fd3ad289e7a7fffc5f0fbb334daa097e9c9e5084f670cab56f96`,
+script-hash
+`c041b4dfe377c965b68959de2277f602c16d4183b940652418a471f05a0922ca`
+og source-chain-hash
+`4857f2f92e9a0848b7914126c2303c81bb5dc6e0409e08d6fa10af2a3bbb249d`.
+Gaten beholdt de seks rommene og begge frosne starter, men brukte to nye
+seedfamilier. Den sammenlignet den gamle length-`2-4`-kjernen med v17g sin
+reverse-closed 50/50 length-`2-5`-kjerne ved eksakt `192` aksepterte
+removed-edge-enheter i hver kjede. Source spectrum og observed effect var
+forbudt.
+
+Terminalregelen avviste en ellers Metropolis-akseptert syklus hvis den ville
+overskride work-target eller etterlate noyaktig én uoppnaaelig work-enhet.
+Regelen ble brukt symmetrisk i begge armer, men dette er en finite conditioning-
+regel, ikke stationary sampling, og den kan gi en liten terminal bias.
+
+Formelle resultater:
+
+- source spectrum/effect calls: `0/0`
+- frozen-start replay: `12/12`
+- eksakt matched work og endpoint-integritet: `48/48`, hver med work `192`
+- retained reverse support: `48/48`
+- finite movement: `48/48`
+- expanded length-5 exercise: `24/24`
+- resource: `48/48`, maksimal runtime `16.421854` sekunder
+- primaer material cross-start-reduksjon: `0/6`
+
+Expanded/old median absolutt cross-start-distance-ratio var
+`0.980433-1.013939`, med median `1.003301`. Bare en svak retningsmessig
+reduksjon forekom i `3/6` source spaces; ingen passerte det frosne kravet
+`<=0.90`. Minste aksepterte length-5-antall i expanded-armen var `4`, og
+maksimalt antall forsok var `887`.
+
+Frossen status er `v17h_expanded_kernel_no_uniform_matched_work_gain`. Eksakt
+arbeidsmatching fjerner ulikt realisert arbeid som forklaring paa sammenligningen,
+men resultatet avviser bare denne faste 50/50 length-5-utvidelsen som en uniform
+kur mot startminne. Det beviser ikke disconnection, mixing failure, fravaer av
+source effect, eller at alle storre moves eller modellen feiler.
+
+Neste effect-blind retning er aa teste direkte cross-start accessibility med et
+storre algebraisk deklarert move. Mer arbeid eller flere seeds paa den samme
+50/50-kjernen er ikke prioritert.
+
+Viktige filer:
+
+- `relational_universe_v17h_effect_blind_matched_work_start_memory.py`
+- `Documentation/v17h_effect_blind_matched_work_start_memory.md`
+- `Documentation/v17h_interpretation_audit.md`
+- `Documentation/v17h_pre_registration.csv`
+- `Documentation/v17h_source_chain.csv`
+- `Documentation/v17h_proposal_trace.csv`
+- `Documentation/v17h_endpoint_audit.csv`
+- `Documentation/v17h_pairwise_distance.csv`
+- `Documentation/v17h_kernel_distance_summary.csv`
+- `Documentation/v17h_matched_work_comparison.csv`
+- `Documentation/v17h_chain_transition_summary.csv`
+- `Documentation/v17h_source_qualification_summary.csv`
+- `Documentation/v17h_gate_evaluation.csv`
+- `Documentation/v17h_goal_evaluation.csv`
+- `Documentation/v17h_claim_ledger.csv`
+- `Documentation/v17h_next_direction_assessment.md`
+- `Documentation/v0_17h_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17h.md`

@@ -2029,6 +2029,108 @@ DATASET_SPECS: list[dict[str, str]] = [
         "description": "Plain-language reverse-closure qualification result.",
     },
     {
+        "source": "Documentation/v17h_effect_blind_matched_work_start_memory.md",
+        "category": "latest_causal_structure",
+        "title": "v17h matched-work start-memory gate",
+        "description": "Effect-blind comparison of old and expanded kernels at exactly matched accepted edge work.",
+    },
+    {
+        "source": "Documentation/v17h_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v17h interpretation audit",
+        "description": "Claim boundary for the negative matched-work result and terminal conditioning rule.",
+    },
+    {
+        "source": "Documentation/v17h_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h preregistration",
+        "description": "Frozen design, hashes, thresholds and stopping decisions.",
+    },
+    {
+        "source": "Documentation/v17h_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h source chain",
+        "description": "SHA-256 links to the frozen v16x-v17g evidence chain.",
+    },
+    {
+        "source": "Documentation/v17h_proposal_trace.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17h proposal trace",
+        "description": "Full per-attempt matched-work proposal trace; static archive only.",
+    },
+    {
+        "source": "Documentation/v17h_endpoint_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h endpoint audit",
+        "description": "Per-chain exact work, endpoint integrity and finite execution audit.",
+    },
+    {
+        "source": "Documentation/v17h_pairwise_distance.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17h pairwise endpoint distances",
+        "description": "Full within-start and cross-start pairwise distance table; static archive only.",
+    },
+    {
+        "source": "Documentation/v17h_kernel_distance_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h kernel distance summary",
+        "description": "Per-source within-start and cross-start endpoint-distance summaries by kernel.",
+    },
+    {
+        "source": "Documentation/v17h_matched_work_comparison.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h matched-work comparison",
+        "description": "Primary expanded-versus-old cross-start response at exact accepted work.",
+    },
+    {
+        "source": "Documentation/v17h_chain_transition_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h chain transition summary",
+        "description": "Per-chain proposal, acceptance, work, movement, support and resource evidence.",
+    },
+    {
+        "source": "Documentation/v17h_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h source qualification summary",
+        "description": "Per-source integrity, matched-work, support, movement, resource and primary decisions.",
+    },
+    {
+        "source": "Documentation/v17h_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h gate evaluation",
+        "description": "Frozen machine-readable matched-work gate result.",
+    },
+    {
+        "source": "Documentation/v17h_goal_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h goal evaluation",
+        "description": "Terminal evaluation of the matched-work start-memory goal.",
+    },
+    {
+        "source": "Documentation/v17h_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v17h claim ledger",
+        "description": "Adjudicated matched-work claims and explicit connectivity/physics exclusions.",
+    },
+    {
+        "source": "Documentation/v17h_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v17h next direction",
+        "description": "Effect-blind direct-accessibility direction using a larger algebraically declared move.",
+    },
+    {
+        "source": "Documentation/v0_17h_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v17h operational recommendation",
+        "description": "Concise negative result, retirement decision and next-gate boundary.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17h.md",
+        "category": "latest_causal_structure",
+        "title": "v17h non-specialist summary",
+        "description": "Plain-language matched-work start-memory result.",
+    },
+    {
         "source": "Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md",
         "category": "methods_and_claim_boundaries",
         "title": "Bell theorem, inequalities and observed correlations",
@@ -2282,6 +2384,12 @@ def write_site(
     reverse_closure_support_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17g_runtime_support_audit.csv")
     reverse_closure_transition_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17g_chain_transition_summary.csv")
     reverse_closure_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17g_claim_ledger.csv")
+    matched_work_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17h_gate_evaluation.csv")
+    matched_work_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17h_source_qualification_summary.csv")
+    matched_work_comparison_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17h_matched_work_comparison.csv")
+    matched_work_kernel_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17h_kernel_distance_summary.csv")
+    matched_work_transition_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17h_chain_transition_summary.csv")
+    matched_work_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17h_claim_ledger.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -2309,14 +2417,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate reverse-closes the new length-5 proposal support while reproducing all accepted v17f transitions and endpoints exactly. This qualifies a finite proposal law and its instrumentation, not connectivity, mixing, Bell behavior, spacetime, energy or temperature.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate compares the qualified old and expanded kernels at exactly matched accepted work. The fixed length-5 expansion showed no uniform cross-start gain and is retired as a general start-memory remedy; this does not reject all larger moves, connectivity, mixing, Bell behavior, spacetime, energy or temperature.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">24,576 / 24,576</div><p class="muted">v17g raw generation and event reclassification rows exactly matched to v17f.</p></div>
-      <div class="card"><div class="metric">24 / 24</div><p class="muted">v17g accepted-transition, endpoint and retained reverse-support checks passing.</p></div>
+      <div class="card"><div class="metric">48 / 48</div><p class="muted">v17h chains passed exact work, endpoint integrity, reverse support, movement and resource checks.</p></div>
+      <div class="card"><div class="metric">0 / 6</div><p class="muted">v17h sources passed the preregistered material cross-start reduction threshold.</p></div>
     </section>
 
     <section>
@@ -2352,12 +2460,23 @@ def write_site(
       <p>The formal movement gate nevertheless failed <code>15/24</code>. Eleven of <code>720</code> valid length-5 raw auxiliaries lacked reverse support under the frozen 20,000-state witness search and were correctly rejected with no state change. A descriptive exact replay passed <code>24/24</code>, found all eleven explicit reverse paths structurally valid, and found witness-budget exhaustion in all eleven; a diagnostic 10x cap recovered nine. The frozen failure stands. The next gate is a reverse-closure-filter repair with exact accepted-transition and endpoint parity, not a larger budget or a start-memory test.</p>
       <p>v17g performed that repair under the same six spaces, starts, seeds, raw generator, 50/50 mixture and 1,024-step budget. A length-5 raw auxiliary whose explicitly mapped reverse was unsupported under the same 20,000-state bounded law became a self-loop before valid-proposal accounting. Raw generation and event reclassification matched v17f on <code>24,576/24,576</code> rows, and the filter identified exactly the same <code>11</code> auxiliaries.</p>
       <p>Accepted-transition and final-endpoint parity passed <code>24/24</code>; retained runtime reverse support passed <code>24/24</code>; pathwise witnesses and representation passed <code>12/12</code>; movement and resource passed <code>24/24</code>. Minimum retained valid proposals were <code>130</code>, minimum accepted length-5 cycles <code>7</code>, and maximum runtime <code>20.456393</code> seconds. The formal status is <code>v17g_reverse_closed_length5_move_qualified</code>. Zero unsupported retained proposals is partly definitional after filtering; the nontrivial evidence is exact raw/filter identity, retained support, balance/representation and exact accepted-dynamics parity. The next gate tests start memory at matched accepted edge-work without source spectra or effects.</p>
+      <p>v17h then compared that expanded kernel with the qualified old length-2-to-4 kernel at exactly <code>192</code> accepted removed-edge units in each of <code>48</code> chains. Exact work and endpoint integrity, retained reverse support, movement and resource passed <code>48/48</code>; all <code>24/24</code> expanded chains exercised length-5 moves. Source spectra and observed effects remained closed.</p>
+      <p>The preregistered material cross-start reduction failed <code>0/6</code>. Expanded/old median cross-start-distance ratios were <code>0.980433-1.013939</code>, with median <code>1.003301</code>; only directional improvement occurred in <code>3/6</code>. The symmetric exact-work stopping rule may add a small finite terminal-conditioning bias. The result retires this fixed 50/50 length-5 expansion as a uniform start-memory remedy. It does not establish disconnection, failed mixing, absence of a source effect, or failure of all larger moves. The next effect-blind design targets direct cross-start accessibility with a larger algebraically declared move.</p>
       <p>The separate Bell methods report distinguishes Bell's theorem, testable Bell inequalities and finite observed quantum-correlation data. UniverseSimulation currently has no alternative local measurement settings, Bell trial protocol or entanglement observable; graph correlation is not relabeled as Bell evidence.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current reverse-closure qualification gate</h2>
+      <h2>Current matched-work start-memory gate</h2>
+      {table_html(matched_work_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(matched_work_source_rows, ["growth_seed", "run_offset", "chain_count", "frozen_start_passes", "matched_work_passes", "reverse_support_passes", "movement_passes", "resource_passes", "minimum_expanded_length5_cycles", "maximum_attempts_used", "maximum_chain_seconds", "expanded_over_old_cross_start_distance_ratio", "material_cross_start_reduction_pass"])}
+      <h3>Primary exact-work comparison</h3>
+      {table_html(matched_work_comparison_rows, ["growth_seed", "run_offset", "accepted_edge_work_per_chain", "old_median_cross_start_distance", "expanded_median_cross_start_distance", "expanded_over_old_cross_start_distance_ratio", "directional_cross_start_reduction", "material_cross_start_reduction_pass", "old_median_within_start_distance", "expanded_median_within_start_distance"])}
+      <h3>Kernel distance summaries</h3>
+      {table_html(matched_work_kernel_rows, ["growth_seed", "run_offset", "kernel_arm", "median_within_start_distance", "median_cross_start_distance", "cross_to_within_distance_ratio", "minimum_cross_start_distance", "maximum_cross_start_distance"])}
+      <h3>Per-chain exact-work execution</h3>
+      {table_html(matched_work_transition_rows, ["growth_seed", "run_offset", "kernel_arm", "start_family", "chain_seed_family", "attempts", "valid_proposals", "accepted_cycles", "accepted_old_cycles", "accepted_length5_cycles", "accepted_edge_work", "work_boundary_rejects", "final_start_changed_edge_fraction", "elapsed_seconds", "matched_work_pass", "retained_reverse_support_pass", "movement_pass", "resource_pass"])}
+      <h3>Prior v17g reverse-closure qualification</h3>
       {table_html(reverse_closure_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(reverse_closure_source_rows, ["growth_seed", "run_offset", "frozen_start_passes", "raw_generation_parity_passes", "accepted_transition_parity_passes", "final_endpoint_parity_passes", "retained_reverse_support_passes", "representation_passes", "movement_passes", "resource_passes", "filtered_raw_auxiliaries", "minimum_retained_valid_proposals", "maximum_chain_seconds"])}
       <h3>Exact v17f transition parity</h3>
@@ -2472,6 +2591,7 @@ def write_site(
       <p>v17e matches the v17d random-stream prefix exactly and doubles the chain budget. Absolute cross-start distance remains effectively flat while within-start dispersion grows. This supports retiring scale growth of the tested length-2-to-4 move class. It does not prove disconnected components, failed convergence for every possible move class, or any source-spectrum effect.</p>
       <p>v17f mixes that old kernel with a new length-5 auxiliary whose ordered first-edge batch is mapped bijectively under reversal. Metropolis rejection keeps the finite kernel probability-safe when raw reverse support is absent, but the frozen qualification required zero such events and therefore failed. The post-run repair target is to make the declared raw support reverse-closed under the same bounded law; one-step length novelty is not evidence of a new connected-component bridge.</p>
       <p>v17g applies that deterministic support filter before valid-proposal accounting and makes no additional random draw. It preserves the raw generator and maps only the eleven known unsupported auxiliaries to self-loops, producing exact accepted-transition and endpoint parity with v17f. This qualifies the finite reverse-closed proposal implementation; because the accepted dynamics are unchanged, it contributes no new evidence about convergence, mixing, component connectivity or source effects.</p>
+      <p>v17h stops each old and expanded chain at exactly 192 accepted removed-edge units. A transition is rejected at the work boundary if it would overshoot the target or leave one unreachable unit. The rule is symmetric across arms and removes unequal realized work as the comparison confound, but it is finite terminal conditioning rather than stationary sampling and may introduce a small endpoint bias. The failed primary gate supports retiring only the tested fixed 50/50 length-5 expansion.</p>
       <p>The separate units-of-action hypothesis treats local realized edit work, carrier occupancy and boundary flux as candidate microscopic inputs. Until a local balance law and reproducible intensive fluctuation parameter are demonstrated, the correct terms are action density and change intensity, not physical energy or temperature.</p>
     </section>
 
@@ -2482,6 +2602,8 @@ def write_site(
 
     <section>
       <h2>Current machine-readable claim ledger</h2>
+      {table_html(matched_work_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
+      <h3>Prior v17g reverse-closure claim ledger</h3>
       {table_html(reverse_closure_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
       <h3>Prior v17f move-qualification claim ledger</h3>
       {table_html(move_qualification_claim_rows, ["claim_id", "claim", "status", "evidence", "scope_limit"])}
