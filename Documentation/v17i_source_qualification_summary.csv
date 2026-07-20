@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,cycle_count,basis_qualification_pass,coupled_identity_passes,endpoint_integrity_passes,minimum_cycle_inclusion,maximum_cycle_inclusion,cycle_exercise_pass,within_start_pair_count,cross_start_pair_count,median_within_start_distance,median_cross_start_distance,cross_over_within_distance_ratio,finite_distance_agreement_pass,source_qualification_pass,pair_derived_positive_control,source_spectrum_computed,observed_effect_computed
+v17h,1536,9299,123078,exposure_matched_local,1993113078,347,1,16,32,7,25,1,240,256,0.22147188533627343,0.2213340683572216,0.999377722464219,1,1,1,0,0
+v17h,1536,9299,123403,exposure_matched_local,1993113403,345,1,16,32,7,25,1,240,256,0.19683827644096252,0.19641857862339115,0.997867803837953,1,1,1,0,0
+v17h,1536,9299,127341,exposure_matched_local,1993117341,359,1,16,32,4,25,1,240,256,0.20508089696281578,0.20593244393982402,1.0041522491349482,1,1,1,0,0
+v17h,1536,9365,123078,exposure_matched_local,1993773078,361,1,16,32,7,24,1,240,256,0.22525932155873285,0.22525932155873285,1.0,1,1,1,0,0
+v17h,1536,9365,123403,exposure_matched_local,1993773403,384,1,16,32,6,24,1,240,256,0.19755826859045506,0.19839067702552718,1.0042134831460674,1,1,1,0,0
+v17h,1536,9365,127341,exposure_matched_local,1993777341,343,1,16,32,8,25,1,240,256,0.22233063841650402,0.21926400892110398,0.9862068965517242,1,1,1,0,0

@@ -8581,3 +8581,66 @@ Viktige filer:
 - `Documentation/v17h_next_direction_assessment.md`
 - `Documentation/v0_17h_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17h.md`
+
+## 10dn. v17i kvalifiserte en pair-basis positiv kontroll for start-distance
+
+`v17i` ble preregistrert med spec-digest
+`3f8d676c1cf3d9588775029ec6fc9cb36c009990ff5e03db2b19d9234567a588`,
+script-hash
+`96f04c52c645857e6447943d0a7348da6ea47a297cbfcf80021192b048908369`
+og source-chain-hash
+`8ffc71b089dc2a1f67acc4d91036990fcade56cc7051baf578895c8856d5d960`.
+Gaten brukte de frosne, pair-spesifikke v16z whole-cycle-dekomposisjonene som
+en eksakt hyperkube-basis mellom hvert av de seks startparene. Hver basisbit
+slur en hel alternerende syklus. En fair bitmaske gir derfor en eksakt uniform
+fordeling over denne konstruerte pair-komponenten.
+
+Dette er en positiv kontroll som med hensikt kjenner begge starter. Den er ikke
+en state-independent proposal, en kandidat global null eller ny dynamikk.
+Source spectrum og observed effect var forbudt.
+
+Formelle resultater:
+
+- source spectrum/effect calls: `0/0`
+- frozen basis, disjoint support og all-mask tilgjengelighet begge veier: `6/6`
+- antall disjunkte whole-cycle-koordinater: `343-384`
+- eksakt complement-coupled endpoint identity: `96/96`
+- uavhengig fair-mask endpoint-integritet: `192/192`
+- finite cycle exercise: `6/6`
+- finite cross/within distance positive control: `6/6`
+- cross/within median-distance-ratio: `0.986207-1.004213`
+
+Frossen status er `v17i_pair_basis_positive_control_qualified`. Resultatet
+viser at cross-start-avstandsobservabelen kan vise startuavhengighet naar store
+algebraiske trekk og tilgjengelighet konstrueres eksakt. Dermed er ren
+observabelsvikt en svakere forklaring paa v17h. Men fordi basisen er bygget fra
+begge startene, kan resultatet ikke brukes som nullfordeling eller bevis for
+global connectivity, mixing, source effect eller fysikk.
+
+Per-source output arver `stage=v17h` i source-prefixen. Dette er en dokumentert
+provenance-label-artifact; filenames, preregistration, mask-seeds og gates er
+v17i, og stage-feltet inngaar ikke i masks, endepunkter eller avstander.
+
+Neste effect-blind gate skal kvalifisere en anchor-independent, state-local
+long-cycle- eller compound-cycle-proposal med eksakt reverse accounting. Pair-
+basis-kontrollen skal ikke brukes som source-null, og source effect forblir
+lukket.
+
+Viktige filer:
+
+- `relational_universe_v17i_effect_blind_cycle_basis_positive_control.py`
+- `Documentation/v17i_effect_blind_cycle_basis_positive_control.md`
+- `Documentation/v17i_interpretation_audit.md`
+- `Documentation/v17i_pre_registration.csv`
+- `Documentation/v17i_source_chain.csv`
+- `Documentation/v17i_cycle_basis_audit.csv`
+- `Documentation/v17i_complement_coupling_audit.csv`
+- `Documentation/v17i_uniform_mask_endpoint_audit.csv`
+- `Documentation/v17i_uniform_mask_pairwise_distance.csv`
+- `Documentation/v17i_source_qualification_summary.csv`
+- `Documentation/v17i_gate_evaluation.csv`
+- `Documentation/v17i_goal_evaluation.csv`
+- `Documentation/v17i_claim_ledger.csv`
+- `Documentation/v17i_next_direction_assessment.md`
+- `Documentation/v0_17i_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17i.md`

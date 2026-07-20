@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17h_effect_blind_matched_work_start_memory.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17i_effect_blind_cycle_basis_positive_control.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -186,6 +186,11 @@ symmetric exact-work terminal rule is finite conditioning and may add a small
 endpoint bias. The fixed 50/50 length-5 expansion is retired as a uniform
 start-memory remedy; all larger moves, connectivity, mixing and the model are
 not rejected by this result.
+It must report v17i pair-basis/single-block accessibility `6/6`, complement
+identity `96/96`, endpoint integrity `192/192`, finite distance response `6/6`
+and ratio range `0.986207-1.004213`. It must state that the basis was derived
+from both starts and is an engineered positive control, not a state-independent
+proposal, source null, connectivity/mixing result or physical signal.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -193,7 +198,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v17h and require
+orchestrator separately, then issue a token-scoped query about v17i and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 

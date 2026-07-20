@@ -1,0 +1,6 @@
+claim_id,purpose_ref,goal_id,claim_type,strength,claim,status,evidence,scope_limit
+C1,purpose://validation,G1,factual,assertive,v17i computes no source spectrum or observed-effect metric.,supported,static call audit and output exclusion fields,v17i script and outputs
+C2,purpose://validation,G1,algebraic,assertive,Each frozen pair is connected in both directions by one all-cycle basis block.,supported,v17i_cycle_basis_audit.csv,six pair-derived frozen bases
+C3,purpose://validation,G1,instrumentation,bounded,The cross-start distance diagnostic responds as expected under exact pair-basis uniform masks.,supported,"coupling, endpoint, pairwise and source summaries",engineered positive control
+C4,purpose://validation,G1,global,prohibited,The pair basis is a state-independent global null or proves global connectivity/mixing.,contradicted,basis explicitly derived from both starts,requires anchor-independent proposal qualification
+C5,purpose://validation,G1,physics,prohibited,"v17i establishes source effects, geometry, Lorentz symmetry, spacetime or a universe model.",contradicted,effect observables prohibited and no physical diagnostic computed,requires separate later gates

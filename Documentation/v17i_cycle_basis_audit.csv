@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,cycle_count,minimum_exchange_size,maximum_exchange_size,pair_difference_edge_count,basis_support_edge_count,frozen_cycle_digest_replay_pass,support_disjoint_pass,support_exact_pair_difference_pass,single_block_left_to_right_pass,single_block_right_to_left_pass,basis_qualification_pass,source_spectrum_computed,observed_effect_computed
+v17h,1536,9299,123078,exposure_matched_local,1993113078,347,2,76,3218,3218,1,1,1,1,1,1,0,0
+v17h,1536,9299,123403,exposure_matched_local,1993113403,345,2,52,2814,2814,1,1,1,1,1,1,0,0
+v17h,1536,9299,127341,exposure_matched_local,1993117341,359,2,76,2920,2920,1,1,1,1,1,1,0,0
+v17h,1536,9365,123078,exposure_matched_local,1993773078,361,2,67,3192,3192,1,1,1,1,1,1,0,0
+v17h,1536,9365,123403,exposure_matched_local,1993773403,384,2,39,2844,2844,1,1,1,1,1,1,0,0
+v17h,1536,9365,127341,exposure_matched_local,1993777341,343,2,63,3184,3184,1,1,1,1,1,1,0,0

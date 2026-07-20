@@ -12,7 +12,8 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind matched-work gate: `relational_universe_v17h_effect_blind_matched_work_start_memory.py`
+- Latest effect-blind accessibility positive control: `relational_universe_v17i_effect_blind_cycle_basis_positive_control.py`
+- Prior matched-work gate: `relational_universe_v17h_effect_blind_matched_work_start_memory.py`
 - Prior reverse-closure gate: `relational_universe_v17g_effect_blind_reverse_closure_qualification.py`
 - Prior move-qualification gate and diagnosis: `relational_universe_v17f_effect_blind_length5_move_qualification.py` and `relational_universe_v17f_postrun_reverse_closure_diagnosis.py`
 - Prior residual-constructor diagnosis: `relational_universe_v17b_postrun_runtime_diagnosis.py`
@@ -55,6 +56,7 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v17f_postrun_reverse_closure_diagnosis.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17g_effect_blind_reverse_closure_qualification.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17h_effect_blind_matched_work_start_memory.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17i_effect_blind_cycle_basis_positive_control.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -142,6 +144,11 @@ length-5 exercise, resource and effect exclusion. Read
 `Documentation/v17h_interpretation_audit.md`. Work/integrity/support/movement/
 resource passed `48/48`, but material cross-start reduction passed `0/6`; the
 fixed 50/50 length-5 expansion is retired as a uniform start-memory remedy.
+The v17i verifier checks frozen source/script hashes, six exact pair bases, 96
+complement-coupled identities, 192 independent endpoints, 2,976 pairwise rows,
+cycle exercise, finite distance response and effect exclusion. Read
+`Documentation/v17i_interpretation_audit.md`: the pass is an engineered
+positive control, not a reusable source null or connectivity/mixing result.
 
 ## Run the early toy simulator
 
@@ -201,13 +208,16 @@ endpoint audit, kernel-distance and matched-work summaries, transition/source
 summaries, gate, goal, claim ledger and next direction. Keep the full v17h
 proposal trace and pairwise-distance table in the static archive only, not the
 generative RAG corpus.
+Require the v17i report, interpretation audit, preregistration/source chain,
+basis/coupling/endpoint/source summaries, gate, goal, claim ledger and next
+direction. Keep the full pairwise-distance table in the static archive only.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17h|48/48|0/6|1.003301|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17i|96/96|192/192|0.986207|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17h_effect_blind_matched_work_start_memory.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17i_effect_blind_cycle_basis_positive_control.md
 ```
 
 ## Start the RAG service locally
@@ -256,11 +266,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v17h om matched accepted work, cross-start-avstand og hvorfor den faste length-5-utvidelsen pensjoneres?'
+  --query 'Hva viste v17i sin cycle-basis positive control, og hvorfor er den ikke en source-null eller mixing-test?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v17h material plus v17g/v17f/v17e/v17d/v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v17i material plus v17h/v17g/v17f/v17e/v17d/v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -338,6 +348,9 @@ does not update this index; both deployments require separate verification.
   `0/6`; this retires only the fixed 50/50 length-5 expansion as a uniform
   start-memory remedy. The symmetric exact-work terminal rule remains finite
   conditioning and may add a small endpoint bias.
+- Do not use v17i's exact pair-basis accessibility or distance pass as a source
+  null, state-independent proposal, emergent dynamics, connectivity or mixing.
+  The basis was constructed from both frozen starts and is a positive control.
 - Do not describe ordinary graph correlations as Bell violations or
   entanglement. The repo lacks the required local settings, trial protocol,
   causal non-influence audit and Bell null statistic.

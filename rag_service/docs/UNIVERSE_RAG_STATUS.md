@@ -194,11 +194,20 @@ not outrank later executed gates.
   improvement in `3/6`. The symmetric exact-work terminal rule is finite
   conditioning and may add a small terminal endpoint bias. Formal status is
   `v17h_expanded_kernel_no_uniform_matched_work_gain`.
+- v17i used the exact pair-derived v16z whole-cycle bases as an engineered
+  accessibility positive control. Basis/single-block replay passed `6/6`,
+  complement-coupled identity `96/96`, independent endpoint integrity
+  `192/192`, and finite distance response `6/6`; cross/within ratios were
+  `0.986207-1.004213`. Formal status is
+  `v17i_pair_basis_positive_control_qualified`.
+- Because each basis was constructed from both frozen starts, v17i validates
+  distance instrumentation under exact engineered accessibility. It is not a
+  state-independent proposal, global null, mixing result or source-effect test.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_fixed_length5_expansion_not_a_uniform_start_memory_remedy`. See
+`fresh_event_footprint_spectrum_contrast_with_pair_basis_distance_positive_control_but_no_anchor_independent_large_move`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v17h_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17i_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
 v16z established exact pair-specific cycle paths, and v17a established tested
@@ -220,11 +229,11 @@ entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum yet. The narrow next gate should target
-direct cross-start accessibility with a larger algebraically declared move and
-exact reverse accounting. Do not add more work or seeds to the same fixed 50/50
-length-5 expansion. Preserve effect exclusion and use finite accessibility as
-an instrumentation/qualification target, not as proof of mixing or global
+Do not compute the source spectrum yet. The narrow next gate should qualify an
+anchor-independent state-local long-cycle or compound-cycle proposal with exact
+reverse accounting. Do not use the pair-derived v17i basis as the source null,
+and do not add more work to the fixed 50/50 length-5 expansion. Finite
+accessibility remains qualification evidence, not proof of mixing or global
 connectivity.
 
 `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`

@@ -118,6 +118,11 @@ not an exact realization of every DPO/CTMC statement in the research report.
   only `3/6`. The exact-work terminal rule is symmetric but finite-conditioned.
   This retires the fixed 50/50 expansion as a uniform start-memory remedy, not
   every larger move or the relational-universe program.
+- v17i supplied the required engineered positive control. Pair-basis replay and
+  single-block accessibility passed `6/6`, exact complement coupling `96/96`,
+  endpoint integrity `192/192`, and finite distance response `6/6` with ratios
+  `0.986207-1.004213`. This weakens pure distance-instrumentation failure as an
+  explanation for v17h, but the pair-derived basis is not a reusable null.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -236,11 +241,11 @@ that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
 The best current next test remains effect-blind but changes the move class.
-v17h removed unequal realized work as the immediate confound and found no
-uniform benefit from the fixed length-5 expansion. The next narrow design
-should target direct cross-start accessibility with a larger algebraically
-declared move and exact reverse accounting, rather than add work or seeds to
-the same 50/50 kernel. Source spectrum and observed effects remain closed.
+V17i shows that the distance diagnostic responds when large accessibility is
+engineered exactly. The next narrow design should construct an anchor-
+independent state-local long-cycle or compound-cycle move with exact reverse
+accounting, rather than use the pair basis as a null or add work to the same
+50/50 kernel. Source spectrum and observed effects remain closed.
 Success would qualify a stronger finite accessibility/stability test; it would
 not by itself establish global connectivity or mixing. Concrete conflict
 remains a required diagnostic because exact preservation collapsed the

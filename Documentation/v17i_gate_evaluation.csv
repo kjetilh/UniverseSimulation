@@ -1,0 +1,8 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+frozen_cycle_basis_and_single_block_accessibility,pass,6/6,6/6,continue
+exact_complement_coupled_endpoint_identity,pass,96/96,96/96,continue
+independent_uniform_mask_integrity,pass,192/192,192/192,continue
+finite_cycle_exercise,pass,6/6,6/6,continue
+finite_cross_start_distance_positive_control,pass,6/6,6/6;ratio=0.85-1.15,instrumentation_supported
+v17i_overall,v17i_pair_basis_positive_control_qualified,exclusion=1;basis=6/6;coupling=96/96;integrity=192/192;exercise=6/6;distance=6/6,1;6/6;96/96;192/192;6/6;6/6,v17i_pair_basis_positive_control_qualified
