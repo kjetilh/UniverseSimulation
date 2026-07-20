@@ -1,6 +1,6 @@
 # UniverseSimulation RAG Status
 
-Last source review: 2026-07-19.
+Last source review: 2026-07-20.
 
 ## Source-of-truth order
 
@@ -171,11 +171,25 @@ not outrank later executed gates.
   witness budget; a diagnostic 10x ceiling recovered `9/11`. This localizes the
   failure to bounded-search support asymmetry. It does not retroactively pass
   v17f or qualify a larger search budget.
+- v17g kept the same six spaces, starts, seeds, raw generator, bounded witness
+  law, mixture and 1024-step budget. It reclassified a raw length-5 auxiliary
+  as a self-loop before valid accounting when its explicitly mapped reverse was
+  unsupported under the same bounded law. No extra random draw was added.
+- Raw generation and event reclassification matched v17f `24576/24576`; the
+  filter identified exactly the same `11` auxiliaries. Accepted-transition and
+  final-endpoint parity passed `24/24`, retained runtime reverse support passed
+  `24/24`, pathwise witnesses and representation passed `12/12`, and movement
+  and resource passed `24/24`. Formal status is
+  `v17g_reverse_closed_length5_move_qualified`.
+- Zero retained unsupported proposals is partly definitional after filtering.
+  The nontrivial evidence is exact raw/filter identity, retained support,
+  balance/representation and accepted-dynamics parity. This qualifies a finite
+  proposal law, not new dynamics, connectivity, convergence, mixing or physics.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_length5_move_exercised_but_bounded_reverse_support_not_qualified`. See
+`fresh_event_footprint_spectrum_contrast_with_reverse_closed_length5_proposal_qualified_but_start_memory_untested`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v17f_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17g_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
 v16z established exact pair-specific cycle paths, and v17a established tested
@@ -184,27 +198,25 @@ V17b repaired finite movement and v17c showed that the same finite proposal law
 can meet the frozen runtime bound without changing any tested transition. V17d
 then failed finite start independence, and v17e found that doubling the chain
 budget broadened within-start clouds without materially reducing absolute
-cross-start distance. V17f exercised a genuinely new one-step length-5 move but
-its raw bounded auxiliary support was not reverse-closed. The length-2-to-4
-move class remains retired as a scale-growth direction, while the expanded law
-has not passed proposal qualification, finite start stability, or source-effect
-transfer. It is not a
+cross-start distance. V17f exercised a genuinely new one-step length-5 move,
+and v17g qualified a reverse-closed finite version without changing accepted
+v17f dynamics. The length-2-to-4 move class remains retired as a scale-growth
+direction, while the expanded law has not passed finite start stability or
+source-effect transfer. It is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
 entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum or test start memory yet. The narrow next
-gate is an effect-blind reverse-closure repair of the v17f length-5 component
-under the same six spaces, starts, batch size, cycle length, 20,000-state
-search law, and 1024-step budget. Post-filter each generated raw auxiliary on
-its explicitly mapped reverse support under that same bounded law; unmatched
-raw auxiliaries must become proposal dead ends before valid-yield accounting.
-Require exact accepted-transition and final-endpoint parity against v17f, zero
-runtime reverse-unsupported events, representation `12/12`, movement `24/24`,
-and resource `24/24`. Do not increase the step or search budget, reopen effects,
-or reinterpret one-step novelty as component connectivity.
+Do not compute the source spectrum yet. The narrow next gate is an effect-blind
+matched accepted-edge-work start-memory comparison. Compare the qualified old
+length-2-to-4 kernel with the qualified v17g reverse-closed expanded kernel on
+the same six spaces and both frozen starts, using independent seeds and equal
+accepted removed-edge work. Make absolute cross-start endpoint distance the
+primary response. Do not reuse unequal step counts as equal work, reopen source
+effects, or reinterpret reduced finite start distance as proof of mixing or
+global connectivity.
 
 `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`
 separates Bell's theorem, Bell inequalities and observed finite experimental

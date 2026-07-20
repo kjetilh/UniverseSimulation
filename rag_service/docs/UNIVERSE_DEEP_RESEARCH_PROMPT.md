@@ -65,12 +65,13 @@ Guardrails:
 14. Treat v17d as a finite start-memory failure, not a convergence or component result. Preserve integrity `384/384`, traversal/resource `24/24`, endpoint centers `85/108`, endpoint-distance agreement `12/18`, residual-component centers `90/90`, proposal-footprint overlap `18/18`, and the fact that every distance failure was a start-family contrast. Exact residual-profile identity does not prove bounded-cycle state-graph connectivity. Source effects remained unopened.
 15. Treat v17e as a matched-prefix scale-flat result for one move class, not proof of disconnected components or failure of every sampler. Preserve exact v17d prefix replay `192/192`, integrity `384/384`, reversibility `36/36`, representation `12/12`, traversal/resource `24/24`, and primary material contraction `0/6` with ratios `0.978973-1.005348`. The post-run within-dispersion ratios `1.385802-1.470668` are descriptive and show diffusion without absolute cross-start convergence. Retire more scale growth of the length-2-to-4 kernel; keep source effects closed while changing the move class.
 16. Treat v17f as a frozen proposal-qualification failure with a useful exercised length-5 move, not as mixing or connectivity evidence. Preserve starts/final integrity `12/12` and `24/24`, reverse/batch/novelty/representation `12/12`, length-5 exercise/resource `24/24`, and formal movement `15/24`. State that `11/720` valid raw length-5 auxiliaries lacked reverse support under the frozen bounded search and were safely rejected with `q_reverse=0`. The post-run `9/11` recovery at a diagnostic 10x ceiling localizes bounded-search asymmetry but does not qualify a larger budget or retroactively pass v17f.
-17. Keep Bell's theorem, Bell inequalities and observed quantum-correlation data distinct. UniverseSimulation currently has no Bell trial protocol or established entanglement observable; do not relabel graph correlations as Bell violations.
-18. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
-19. Never invent commands, metrics, or endpoints that are not documented in the corpus.
-20. If asked how to use the simulator, prefer `universe_tools`.
-20. If asked how the argument is built, prefer `universe_argumentation`.
-21. If asked how to instruct a language model, prefer `universe_prompts`.
+17. Treat v17g as a finite proposal-law and instrumentation qualification, not new dynamical evidence. Preserve raw/event parity `24576/24576`, exact identity of all `11` filtered auxiliaries, accepted-transition/final-endpoint/retained-support `24/24`, pathwise witness/representation `12/12`, and movement/resource `24/24`. State that zero retained unsupported proposals is partly definitional after filtering and that accepted v17f dynamics were deliberately unchanged. Require matched accepted-edge-work before comparing start memory.
+18. Keep Bell's theorem, Bell inequalities and observed quantum-correlation data distinct. UniverseSimulation currently has no Bell trial protocol or established entanglement observable; do not relabel graph correlations as Bell violations.
+19. If asked about energy or cooling, distinguish the repo's units of action, chosen historical energy diagnostics, and the new unexecuted action-density/change-intensity hypothesis. Uniform rate scaling is not cooling.
+20. Never invent commands, metrics, or endpoints that are not documented in the corpus.
+21. If asked how to use the simulator, prefer `universe_tools`.
+22. If asked how the argument is built, prefer `universe_argumentation`.
+23. If asked how to instruct a language model, prefer `universe_prompts`.
 ```
 
 ## Kort bruksguide

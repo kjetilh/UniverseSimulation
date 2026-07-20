@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17f_effect_blind_length5_move_qualification.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17g_effect_blind_reverse_closure_qualification.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -172,6 +172,12 @@ the `11/720` reverse-unsupported valid raw auxiliaries. The post-run result that
 all `11/11` explicit reverse paths were structurally valid and a diagnostic 10x
 ceiling recovered `9/11` localizes bounded-search support asymmetry; it does not
 retroactively pass v17f, qualify a larger budget, or establish connectivity.
+It must report v17g raw-generation/event parity `24576/24576`, exact identity
+of the same `11` filtered auxiliaries, accepted-transition/final-endpoint and
+retained-support results `24/24`, pathwise witness/representation `12/12`,
+movement/resource `24/24`, minimum retained valid proposals `130`, and maximum
+runtime `20.456393`. It must state that this qualifies the finite proposal law
+without adding accepted dynamics, convergence, connectivity or mixing evidence.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -179,7 +185,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v17f and require
+orchestrator separately, then issue a token-scoped query about v17g and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 

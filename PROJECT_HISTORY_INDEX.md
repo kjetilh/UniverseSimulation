@@ -8454,3 +8454,63 @@ Viktige filer:
 - `Documentation/v17f_next_direction_assessment.md`
 - `Documentation/v0_17f_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17f.md`
+
+## 10dl. v17g kvalifiserte reverse-closure-filteret uten aa endre akseptert dynamikk
+
+`v17g` preregistrerte en smal, effect-blind reparasjon av v17f sin
+proposal-stoette. Spec-digest var
+`e7b8341a0b3874f5d27b22ca2998f300e6c297660623c89f6c9d5e4755e0f3b8`,
+script-hash var
+`47664b2b9f3bd6f9631188fdada050142401a21de6a7313e24194c79a90def2e`,
+og source-chain-hash var
+`3072fd9d7b7db030d410d5819ebb77b7fe3e4ee6290a7edb3fab55b1f964c01d`.
+Det frosne designet beholdt v17f-generatoren, begge starter, seks rom,
+seedfamilier, 50/50-blanding, batch `4`, length `5`, `20 000`-state
+witness-tak og `1024` steg. Den eneste semantiske endringen var at et raatt
+length-5 auxiliary med unsupported mapped reverse ble klassifisert som
+`reverse_filtered_dead_end` og self-loop foer valid-regnskapet, uten et ekstra
+tilfeldighetstrekk.
+
+Formal raw generation og event reclassification matchet v17f
+`24576/24576`. Filteret identifiserte noyaktig de samme `11` hendelsene som
+v17f hadde avvist med `q_reverse=0`. Accepted-transition- og
+final-endpoint-parity passerte `24/24`; retained runtime reverse support
+passerte `24/24`; pathwise witness og representation passerte `12/12`; movement
+og resource passerte `24/24`. Minste retained valid proposals var `130`, minste
+accepted length-5 cycles `7`, og maksimal kjedetid `20.456393` sekunder.
+Frossen status er `v17g_reverse_closed_length5_move_qualified`.
+
+Null runtime reverse-unsupported er delvis definisjonelt etter filteret. Den
+ikke-trivielle evidensen er derfor exact raw parity, exact filtered identity,
+retained reverse support, balance/representation og full accepted-transition-
+og endpoint-parity. Resultatet kvalifiserer proposal-loven og
+instrumenteringen paa de testede endelige rommene. Det er ikke ny dynamisk
+evidens og etablerer ikke connectivity, convergence, mixing, source effect,
+geometri eller fysikk.
+
+Neste gate er `v17h_effect_blind_matched_accepted_work_start_memory`: sammenlign
+den kvalifiserte gamle length-`2-4`-kjernen med den kvalifiserte reverse-closed
+expanded-kjernen paa de samme seks rommene og begge startene, med uavhengige
+seeds og likt akseptert removed-edge-work. Primaerresponsen er absolutt
+cross-start-avstand. Source spectrum og observed effect forblir lukket.
+
+Viktige filer:
+
+- `relational_universe_v17g_effect_blind_reverse_closure_qualification.py`
+- `Documentation/v17g_effect_blind_reverse_closure_qualification.md`
+- `Documentation/v17g_interpretation_audit.md`
+- `Documentation/v17g_pre_registration.csv`
+- `Documentation/v17g_source_chain.csv`
+- `Documentation/v17g_proposal_trace.csv`
+- `Documentation/v17g_pathwise_reversibility_audit.csv`
+- `Documentation/v17g_representation_audit.csv`
+- `Documentation/v17g_v17f_transition_parity.csv`
+- `Documentation/v17g_runtime_support_audit.csv`
+- `Documentation/v17g_chain_transition_summary.csv`
+- `Documentation/v17g_source_qualification_summary.csv`
+- `Documentation/v17g_gate_evaluation.csv`
+- `Documentation/v17g_goal_evaluation.csv`
+- `Documentation/v17g_claim_ledger.csv`
+- `Documentation/v17g_next_direction_assessment.md`
+- `Documentation/v0_17g_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17g.md`

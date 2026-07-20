@@ -1,0 +1,2 @@
+goal_id,purpose_ref,metric,baseline,target,timeframe,status,evidence
+G1,purpose://validation,"parity plus reverse-support, representation, movement and resource gates",v17f had 11/720 reverse-unsupported valid length-5 auxiliaries,exact v17f accepted dynamics with reverse-closed retained support,one frozen v17g round,satisfied,v17g_gate_evaluation.csv;v17g_v17f_transition_parity.csv

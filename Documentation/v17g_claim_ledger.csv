@@ -1,0 +1,6 @@
+claim_id,purpose_ref,goal_id,claim_type,strength,claim,status,evidence,scope_limit
+C1,purpose://validation,G1,factual,assertive,v17g computes no source spectrum or observed-effect metric.,supported,static call audit plus output exclusion fields,v17g script and outputs
+C2,purpose://validation,G1,project_capability,assertive,The reverse-closure filter preserves v17f raw generation and accepted finite dynamics.,supported,v17g_v17f_transition_parity.csv,24 frozen finite chains
+C3,purpose://validation,G1,project_capability,moderated,Every retained runtime auxiliary has mapped reverse support under the same bounded law.,supported,v17g_runtime_support_audit.csv,retained auxiliaries encountered in 24 chains
+C4,purpose://validation,G1,causal,speculative,The length-5 move connects old-kernel Markov components or reduces start memory.,not_tested,none,requires separate matched-work gate and connectivity analysis
+C5,purpose://validation,G1,project_capability,speculative,"v17g establishes source effects, mixing, Lorentz symmetry, spacetime or a universe model.",contradicted,effect observables prohibited; accepted dynamics intentionally unchanged,requires separate later gates

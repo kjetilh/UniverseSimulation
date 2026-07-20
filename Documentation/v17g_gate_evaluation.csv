@@ -1,0 +1,9 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+raw_generation_and_event_parity,pass,raw=24576/24576;event=24576/24576,24576/24576;24576/24576,continue
+filtered_auxiliary_identity,pass,filtered=11;identity=24/24;counts=24/24,11;24/24;24/24,continue
+accepted_transition_and_endpoint_parity,pass,accepted=24/24;endpoint=24/24,24/24;24/24,continue
+retained_reverse_support_and_balance,pass,runtime=24/24;witness=12/12,24/24;12/12,continue
+representation_covariance,pass,12/12,12/12,continue
+finite_movement_and_resource,pass,movement=24/24;resource=24/24,24/24;24/24,continue
+v17g_overall,v17g_reverse_closed_length5_move_qualified,raw=24576;filtered=11;accepted=24/24;endpoint=24/24;support=24/24;representation=12/12;movement=24/24;resource=24/24,raw=24576;filtered=11;accepted=24/24;endpoint=24/24;support=24/24;representation=12/12;movement=24/24;resource=24/24,v17g_reverse_closed_length5_move_qualified

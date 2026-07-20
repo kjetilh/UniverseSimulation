@@ -100,6 +100,15 @@ not an exact realization of every DPO/CTMC statement in the research report.
   `11/11` explicit reverse paths structurally valid, and recovered `9/11` only
   after a diagnostic 10x search ceiling. This is bounded-search support
   asymmetry, not a retroactive pass or evidence of component connectivity.
+- v17g applied a deterministic same-budget reverse-support filter before valid
+  accounting while preserving v17f's raw generator and random streams. Raw
+  generation/event classification matched `24576/24576`; exactly the same
+  `11` auxiliaries were filtered; accepted transitions, endpoints and retained
+  reverse support passed `24/24`; pathwise witness/representation passed
+  `12/12`; movement/resource passed `24/24`.
+- v17g therefore qualifies the finite reverse-closed proposal implementation.
+  Because all accepted transitions and endpoints intentionally match v17f,
+  this is not new evidence for start convergence, connectivity or mixing.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
@@ -217,14 +226,14 @@ repeatable finite relational structure worth continued study. It has not shown
 that a universe, spacetime, Lorentz symmetry, particles, entanglement, or a
 continuum emerges.
 
-The best current next test is an effect-blind reverse-closure repair of v17f on
-the same coarse spaces, starts, batch size, fixed length 5, 20,000-state search
-law, and step budget. Retain v17f as the exact transition reference. A raw
-auxiliary without its explicitly mapped reverse under the same bounded law must
-become a proposal dead end before valid-yield accounting. Require exact
-accepted-transition and endpoint parity, zero runtime reverse-unsupported
-events, representation, movement, and resource passes before any matched-work
-start-memory test or source-spectrum inspection. Concrete conflict remains a
+The best current next test is an effect-blind matched accepted-edge-work
+start-memory comparison. Compare the qualified old length-2-to-4 kernel with
+the qualified v17g reverse-closed expanded kernel on the same coarse spaces and
+both frozen starts. Use independent seeds, stop both arms at the same accepted
+removed-edge work, and use absolute cross-start endpoint distance as the
+primary response. Keep source spectrum and observed effects closed. A finite
+distance reduction would motivate a stronger stability gate; it would not by
+itself establish global connectivity or mixing. Concrete conflict remains a
 required diagnostic because exact preservation collapsed the available finite
 freedom.
 The units-of-action

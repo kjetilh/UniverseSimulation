@@ -1,6 +1,6 @@
 # UniverseSimulation Tool Runbook
 
-Last source review: 2026-07-19.
+Last source review: 2026-07-20.
 
 Every completed research round follows the mandatory closure contract in
 `Documentation/Research_Round_Closure_Policy.md`: verify, commit, push, deploy
@@ -12,8 +12,8 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind move-qualification gate: `relational_universe_v17f_effect_blind_length5_move_qualification.py`
-- Latest post-run diagnosis: `relational_universe_v17f_postrun_reverse_closure_diagnosis.py`
+- Latest effect-blind reverse-closure gate: `relational_universe_v17g_effect_blind_reverse_closure_qualification.py`
+- Prior move-qualification gate and diagnosis: `relational_universe_v17f_effect_blind_length5_move_qualification.py` and `relational_universe_v17f_postrun_reverse_closure_diagnosis.py`
 - Prior residual-constructor diagnosis: `relational_universe_v17b_postrun_runtime_diagnosis.py`
 - Prior accessibility gate and representation audit: `relational_universe_v16z_alternating_cycle_bridge_gate.py` and `relational_universe_v16z_postrun_representation_audit.py`
 - Prior reversible-measure controls: `relational_universe_v16y_reversible_global_measure_gate.py` and `relational_universe_v16y_postrun_start_separation_audit.py`
@@ -52,6 +52,7 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v17e_postrun_diffusion_diagnosis.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17f_effect_blind_length5_move_qualification.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17f_postrun_reverse_closure_diagnosis.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17g_effect_blind_reverse_closure_qualification.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -126,6 +127,13 @@ bounded-search support asymmetry without changing the gate. Read
 `Documentation/v17f_interpretation_audit.md` and
 `Documentation/v17f_postrun_reverse_closure_diagnosis.md`; do not increase the
 search budget or open start-memory/source-effect tests before reverse closure.
+The v17g verifier checks frozen source/script hashes, all 24,576 raw/event
+parity rows, exact identity of the 11 filtered auxiliaries, accepted-transition
+and endpoint parity `24/24`, retained reverse support `24/24`, pathwise witness
+and representation `12/12`, movement/resource `24/24`, and effect exclusion.
+Read `Documentation/v17g_interpretation_audit.md`: the pass qualifies the
+finite proposal implementation but adds no new accepted dynamics. The next
+gate must compare start memory at matched accepted edge-work.
 
 ## Run the early toy simulator
 
@@ -175,13 +183,18 @@ preregistration/source chain, reverse/representation audits, transition/source
 summaries, gate, goal, claim ledger, next direction, and post-run reverse-
 closure diagnosis plus its input hashes. Keep the full 24,576-row proposal
 trace in the static archive only, not the generative RAG corpus.
+Require the v17g report, interpretation audit, preregistration/source chain,
+reverse/representation audits, exact v17f transition parity, runtime support,
+transition/source summaries, gate, goal, claim ledger and next direction. Keep
+the full v17g 24,576-row proposal trace in the static archive only, not the
+generative RAG corpus.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17f|12/12|11/720|15/24|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17g|24,576|24/24|20.456393|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17f_effect_blind_length5_move_qualification.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17g_effect_blind_reverse_closure_qualification.md
 ```
 
 ## Start the RAG service locally
@@ -230,11 +243,11 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva viste v17f om length-5 move, reverse support, bounded-search asymmetry og neste reverse-closure-reparasjon?'
+  --query 'Hva viste v17g om reverse closure, eksakt v17f-paritet og hva som maa testes ved matched accepted work i v17h?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v17f material plus v17e/v17d/v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
+v17g material plus v17f/v17e/v17d/v17c/v17b/v17a/v16z/v16y/v16x/v16s when the prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
 ## Production instance boundary
@@ -303,6 +316,11 @@ does not update this index; both deployments require separate verification.
   reverse-unsupported raw auxiliaries were safely rejected, but their existence
   failed the frozen support gate. The diagnostic 10x recovery does not qualify
   a larger search budget or change formal movement `15/24`.
+- Do not use v17g's reverse-closure qualification as new movement, convergence
+  or mixing evidence. Its accepted transitions and endpoints intentionally
+  match v17f `24/24`; zero retained unsupported proposals is partly
+  definitional after filtering. Test the expanded kernel at matched accepted
+  edge-work before making any start-memory comparison.
 - Do not describe ordinary graph correlations as Bell violations or
   entanglement. The repo lacks the required local settings, trial protocol,
   causal non-influence audit and Bell null statistic.
