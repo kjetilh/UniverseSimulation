@@ -1,0 +1,36 @@
+# v17j effect-blind anchor-independent compound-cycle qualification
+
+Status: `v17j_anchor_independent_compound_cycle_qualified`.
+
+## Purpose and frozen design
+
+The gate asks whether a larger reusable proposal can be built without the v17i pair basis. It composes two exact state-local v17c cycles into one auxiliary path. The second cycle is sampled from the first intermediate state. The mapped reverse applies the second reverse first and the first reverse second.
+
+The forward density is the exact product `q1*q2`; the reverse density is the exact reversed-path product. Blocks with fewer than `6` net changed edges are symmetric self-loops without renormalization. Source spectra and observed effects were prohibited.
+
+## Formal result
+
+The formal run covered `24` chains. It retained `554` compound blocks and accepted `152`. The weakest chain retained `12` and accepted `2` blocks. All retained-path audits passed in `554/554`. Maximum chain runtime was `17.250864` seconds.
+
+## Gates
+
+| gate | status | observed | required | decision |
+| --- | --- | --- | --- | --- |
+| effect_blind_and_proposal_scope_independence | pass | spectrum=0;effect=0;proposal_forbidden=0 | 0;0;0 | continue |
+| formal_chain_count | pass | 24/24 | 24/24 | continue |
+| exact_reverse_involution_balance_integrity | pass | 554/554 | all_retained | continue |
+| finite_compound_large_move_exercise | pass | 24/24 | 24/24;retained>=4;accepted>=2;net>=6 | continue |
+| finite_movement | pass | 24/24 | 24/24 | continue |
+| endpoint_integrity | pass | 24/24 | 24/24 | continue |
+| representation_covariance | pass | 12/12 | 12/12 | continue |
+| resource_bound | pass | 24/24;max=17.250864s | 24/24;each<=60.0s | continue |
+| per_source_qualification | pass | 6/6 | 6/6 | matched_work_next |
+| v17j_overall | v17j_anchor_independent_compound_cycle_qualified | effect_blind=1;chains=24;reverse=554/554;exercise=24/24;movement=24/24;representation=12/12;sources=6/6 | 1;24;all;24;24;12;6 | v17j_anchor_independent_compound_cycle_qualified |
+
+## Evidential boundary
+
+A qualification result concerns the implemented finite proposal law: target independence of proposal construction, exact sampled auxiliary-path reversal, endpoint integrity, representation covariance, finite movement and resource bounds. It is not evidence of global connectivity, mixing, equilibrium, source effects or physics.
+
+## Next decision
+
+Run a separate v17k effect-blind matched accepted-work comparison between the qualified compound law and the v17h expanded single-cycle law. Keep source effects closed.

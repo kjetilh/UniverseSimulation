@@ -2221,6 +2221,108 @@ DATASET_SPECS: list[dict[str, str]] = [
         "description": "Plain-language explanation of the pair-basis positive control.",
     },
     {
+        "source": "Documentation/v17j_effect_blind_compound_cycle_qualification.md",
+        "category": "latest_causal_structure",
+        "title": "v17j anchor-independent compound-cycle qualification",
+        "description": "Effect-blind qualification of a two-cycle state-local large-move proposal with exact reverse accounting.",
+    },
+    {
+        "source": "Documentation/v17j_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v17j interpretation audit",
+        "description": "Separates finite proposal qualification from connectivity, mixing, source effects and physics.",
+    },
+    {
+        "source": "Documentation/v17j_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v17j next direction",
+        "description": "Effect-blind matched-work start-memory comparison recommended after qualification.",
+    },
+    {
+        "source": "Documentation/v0_17j_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v17j operational recommendation",
+        "description": "Concise compound-cycle qualification result and next-gate boundary.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17j.md",
+        "category": "latest_causal_structure",
+        "title": "v17j non-specialist summary",
+        "description": "Plain-language explanation of the compound-cycle proposal qualification.",
+    },
+    {
+        "source": "Documentation/v17j_design_calibration.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j design calibration",
+        "description": "Declared one-source effect-blind technical pilot used before preregistration.",
+    },
+    {
+        "source": "Documentation/v17j_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j source chain",
+        "description": "SHA-256 links to the frozen exact-counter, reverse-closure, matched-work and positive-control evidence.",
+    },
+    {
+        "source": "Documentation/v17j_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j preregistration",
+        "description": "Frozen compound proposal, hashes, thresholds and exclusions.",
+    },
+    {
+        "source": "Documentation/v17j_compound_proposal_trace.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17j compound proposal trace",
+        "description": "Full per-step compound proposal trace; static archive only.",
+    },
+    {
+        "source": "Documentation/v17j_reverse_path_audit.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17j reverse path audit",
+        "description": "Per-retained-path exact reverse involution, balance and integrity evidence.",
+    },
+    {
+        "source": "Documentation/v17j_endpoint_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j endpoint audit",
+        "description": "Per-chain final endpoint integrity and movement evidence.",
+    },
+    {
+        "source": "Documentation/v17j_representation_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j representation audit",
+        "description": "Replay, candidate-order and semantic-role covariance checks.",
+    },
+    {
+        "source": "Documentation/v17j_chain_transition_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j chain transition summary",
+        "description": "Per-chain retained, accepted, movement and resource totals.",
+    },
+    {
+        "source": "Documentation/v17j_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j source qualification summary",
+        "description": "Per-source compound exercise, reverse accounting and qualification decisions.",
+    },
+    {
+        "source": "Documentation/v17j_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j gate evaluation",
+        "description": "Frozen machine-readable compound-cycle qualification result.",
+    },
+    {
+        "source": "Documentation/v17j_goal_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j goal evaluation",
+        "description": "Terminal evaluation of the compound proposal qualification goal.",
+    },
+    {
+        "source": "Documentation/v17j_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v17j claim ledger",
+        "description": "Adjudicated proposal claims and explicit global/physics exclusions.",
+    },
+    {
         "source": "Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md",
         "category": "methods_and_claim_boundaries",
         "title": "Bell theorem, inequalities and observed correlations",
@@ -2484,6 +2586,10 @@ def write_site(
     basis_control_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17i_source_qualification_summary.csv")
     basis_control_basis_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17i_cycle_basis_audit.csv")
     basis_control_claim_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17i_claim_ledger.csv")
+    compound_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17j_gate_evaluation.csv")
+    compound_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17j_source_qualification_summary.csv")
+    compound_transition_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17j_chain_transition_summary.csv")
+    compound_representation_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17j_representation_audit.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -2511,14 +2617,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind positive control shows that the cross-start distance diagnostic responds correctly when large accessibility is engineered with an exact pair-derived cycle basis. Because that basis knows both starts, the pass validates instrumentation rather than a reusable null, emergent dynamics, mixing, spacetime or physics.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate qualifies an anchor-independent, state-local two-cycle large-move proposal with exact sampled-path reversal and balance. This is a reusable proposal mechanism, not evidence that the chains mix, that source effects survive, or that spacetime or physics has emerged.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">96 / 96</div><p class="muted">v17i complement-coupled masks produced exactly identical endpoints.</p></div>
-      <div class="card"><div class="metric">6 / 6</div><p class="muted">v17i finite cross/within distance positive controls passed.</p></div>
+      <div class="card"><div class="metric">554 / 554</div><p class="muted">v17j retained compound paths passed exact reverse, balance and integrity audits.</p></div>
+      <div class="card"><div class="metric">24 / 24</div><p class="muted">v17j chains exercised accepted net-large compound moves within resource bounds.</p></div>
     </section>
 
     <section>
@@ -2558,12 +2664,21 @@ def write_site(
       <p>The preregistered material cross-start reduction failed <code>0/6</code>. Expanded/old median cross-start-distance ratios were <code>0.980433-1.013939</code>, with median <code>1.003301</code>; only directional improvement occurred in <code>3/6</code>. The symmetric exact-work stopping rule may add a small finite terminal-conditioning bias. The result retires this fixed 50/50 length-5 expansion as a uniform start-memory remedy. It does not establish disconnection, failed mixing, absence of a source effect, or failure of all larger moves. The next effect-blind design targets direct cross-start accessibility with a larger algebraically declared move.</p>
       <p>v17i then used the exact v16z pair-specific whole-cycle decompositions as an engineered accessibility positive control. The six bases contained <code>343-384</code> disjoint cycles. A single all-cycle block mapped each frozen start to the other in both directions on <code>6/6</code> sources; complement-coupled fair masks gave exact endpoint identity <code>96/96</code>, and <code>192/192</code> independent fair-mask endpoints preserved integrity.</p>
       <p>Finite cross/within median-distance ratios were <code>0.986207-1.004213</code>, passing the frozen <code>0.85-1.15</code> positive-control interval on <code>6/6</code>. Thus the distance observable can display start independence when accessibility is built in exactly, making pure observable failure a weaker explanation for v17h. But the basis was derived from both starts and cannot serve as a state-independent proposal or source null. The next gate must construct an anchor-independent state-local long-cycle or compound-cycle law with exact reverse accounting.</p>
+      <p>v17j constructed that proposal without the pair basis. Each auxiliary block samples one exact state-local length-<code>2-4</code> cycle, applies it, and samples a second from the intermediate state. The exact forward density is <code>q1*q2</code>; the reverse applies the mapped subcycle reverses in the opposite order. A symmetric filter retains only endpoints with at least <code>6</code> net changed edges, while filtered paths remain self-loops without proposal renormalization.</p>
+      <p>The formal effect-blind run retained <code>554</code> compound paths and accepted <code>152</code> across <code>24</code> chains. Exact round-trip, reverse involution, pathwise Metropolis balance and endpoint integrity passed <code>554/554</code>; finite exercise, movement, endpoint and resource gates passed <code>24/24</code>; representation covariance passed <code>12/12</code>; and all <code>6/6</code> sources qualified. This establishes a finite anchor-independent proposal mechanism, not global connectivity, irreducibility, mixing, equilibrium, source effects or physics. The next gate is a separate effect-blind matched-work start-memory comparison.</p>
       <p>The separate Bell methods report distinguishes Bell's theorem, testable Bell inequalities and finite observed quantum-correlation data. UniverseSimulation currently has no alternative local measurement settings, Bell trial protocol or entanglement observable; graph correlation is not relabeled as Bell evidence.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current cycle-basis accessibility positive control</h2>
+      <h2>Current anchor-independent compound-cycle qualification</h2>
+      {table_html(compound_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(compound_source_rows, ["growth_seed", "run_offset", "chain_count", "chain_qualification_passes", "retained_blocks", "accepted_blocks", "minimum_chain_retained_blocks", "minimum_chain_accepted_blocks", "minimum_chain_unique_states", "reverse_audit_rows", "all_reverse_path_pass", "source_qualification_pass"])}
+      <h3>Per-chain compound execution</h3>
+      {table_html(compound_transition_rows, ["growth_seed", "run_offset", "start_family", "chain_seed_family", "nonlazy_attempts", "symmetric_net_filter", "retained_blocks", "accepted_blocks", "minimum_accepted_net_changed_edges", "maximum_accepted_net_changed_edges", "unique_state_count", "runtime_seconds", "movement_pass", "resource_pass"])}
+      <h3>Representation covariance</h3>
+      {table_html(compound_representation_rows, ["growth_seed", "run_offset", "start_family", "candidate_set_covariance_pass", "exact_replay_pass", "candidate_order_covariance_pass", "semantic_relabel_covariance_pass", "representation_pass"])}
+      <h3>Prior v17i cycle-basis accessibility positive control</h3>
       {table_html(basis_control_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(basis_control_source_rows, ["growth_seed", "run_offset", "cycle_count", "basis_qualification_pass", "coupled_identity_passes", "endpoint_integrity_passes", "minimum_cycle_inclusion", "maximum_cycle_inclusion", "median_within_start_distance", "median_cross_start_distance", "cross_over_within_distance_ratio", "finite_distance_agreement_pass", "source_qualification_pass"])}
       <h3>Exact pair-basis audit</h3>

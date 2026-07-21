@@ -271,6 +271,20 @@ include = [
   "Documentation/v17i_gate_evaluation.csv",
   "Documentation/v17i_goal_evaluation.csv",
   "Documentation/v17i_claim_ledger.csv",
+  "Documentation/v17j_effect_blind_compound_cycle_qualification.md",
+  "Documentation/v17j_interpretation_audit.md",
+  "Documentation/v17j_next_direction_assessment.md",
+  "Documentation/v0_17j_operativ_anbefaling.md",
+  "Documentation/v17j_design_calibration.csv",
+  "Documentation/v17j_pre_registration.csv",
+  "Documentation/v17j_source_chain.csv",
+  "Documentation/v17j_endpoint_audit.csv",
+  "Documentation/v17j_representation_audit.csv",
+  "Documentation/v17j_chain_transition_summary.csv",
+  "Documentation/v17j_source_qualification_summary.csv",
+  "Documentation/v17j_gate_evaluation.csv",
+  "Documentation/v17j_goal_evaluation.csv",
+  "Documentation/v17j_claim_ledger.csv",
 ]
 
 [[source]]

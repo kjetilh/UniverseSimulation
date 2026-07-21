@@ -8644,3 +8644,68 @@ Viktige filer:
 - `Documentation/v17i_next_direction_assessment.md`
 - `Documentation/v0_17i_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17i.md`
+
+## 10do. v17j kvalifiserte en anchor-independent compound-cycle-proposal
+
+`v17j` ble preregistrert etter en deklarert one-source/one-start effect-blind
+teknisk pilot. Frosne hashes var:
+
+- spec-digest: `b3cb78a92da6203bbc0c7c2e12e9cdf3504237a8351a384ab201bb9013cc9a77`
+- script: `f96923380b7f1cd9701c7356de59fe90b152ebff98f2f975494a71ff56df8684`
+- source chain: `8e4e377e6ebd32feb7e08dadad93c273524eeb5370dfb5f7729f2279d79c1268`
+- design calibration: `bb5788345256d64f2719207fa0140e8b15a3cd31335e997c81c994ede5492277`
+
+Proposal-loven komponerer to eksakte v17c state-local sykluser med lengde
+`2-4`. Den andre trekkes fra mellomtilstanden. Forward auxiliary-path density
+er eksakt `q1*q2`; mapped reverse anvender reversen av deltrekk to og deretter
+reversen av deltrekk en. Et symmetrisk endpoint-filter beholder bare blokker
+med minst `6` netto endrede kanter. Filtrerte paths er self-loops og loven
+renormaliseres ikke.
+
+Den formelle effect-blind kjøringen ga:
+
+- source spectrum/effect/proposal-forbidden calls: `0/0/0`
+- formelle chains: `24/24`
+- retained compound paths: `554`
+- accepted compound blocks: `152`
+- exact round-trip, reverse involution, pathwise balance og endpoint-integritet:
+  `554/554`
+- compound large-move exercise og finite movement: `24/24`
+- final endpoint-integritet og resource: `24/24`
+- representation covariance: `12/12`
+- per-source qualification: `6/6`
+- svakeste chain: `12` retained, `2` accepted, `3` unique states
+- maksimal chain-runtime: `17.250864 s`
+
+Frossen status er
+`v17j_anchor_independent_compound_cycle_qualified`. Proposal-konstruksjonen
+ser current assignment og den frosne candidate-grafen, men ikke det paired
+evaluation-targetet. Resultatet kvalifiserer derfor en reusable finite
+large-move proposal-lov uten v17i sin pair-basis.
+
+Dette beviser ikke global connectivity, irreducibility, mixing, convergence,
+stationary sampling, source effect eller fysikk. Paired starts brukes fortsatt
+som evaluation anchors. Neste gate er en separat effect-blind `v17k` matched
+accepted-work start-memory-sammenligning mellom compound-loven og v17h sin
+expanded single-cycle-lov. Source spectrum forblir lukket.
+
+Viktige filer:
+
+- `relational_universe_v17j_effect_blind_compound_cycle_qualification.py`
+- `Documentation/v17j_design_calibration.csv`
+- `Documentation/v17j_source_chain.csv`
+- `Documentation/v17j_pre_registration.csv`
+- `Documentation/v17j_compound_proposal_trace.csv`
+- `Documentation/v17j_reverse_path_audit.csv`
+- `Documentation/v17j_endpoint_audit.csv`
+- `Documentation/v17j_representation_audit.csv`
+- `Documentation/v17j_chain_transition_summary.csv`
+- `Documentation/v17j_source_qualification_summary.csv`
+- `Documentation/v17j_gate_evaluation.csv`
+- `Documentation/v17j_goal_evaluation.csv`
+- `Documentation/v17j_claim_ledger.csv`
+- `Documentation/v17j_effect_blind_compound_cycle_qualification.md`
+- `Documentation/v17j_interpretation_audit.md`
+- `Documentation/v17j_next_direction_assessment.md`
+- `Documentation/v0_17j_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17j.md`

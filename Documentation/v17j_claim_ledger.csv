@@ -1,0 +1,7 @@
+claim_id,purpose_ref,goal_id,claim_type,strength,claim,status,evidence,scope_limit
+C1,purpose://validation,G1,factual,assertive,v17j computes no source spectrum or observed-effect metric.,supported,static call audit and output exclusion fields,v17j only
+C2,purpose://validation,G1,algorithmic,assertive,"The compound proposal uses only the current state and frozen candidate graph, not the paired target start.",supported,proposal-scope AST audit and function signatures,proposal construction; paired starts remain evaluation anchors
+C3,purpose://validation,G1,algebraic,assertive,Every retained auxiliary path has an exact reverse involution and exact pathwise Metropolis balance.,supported,v17j_reverse_path_audit.csv,retained finite sampled auxiliary paths
+C4,purpose://validation,G1,finite_simulation,bounded,The compound law exercises accepted net-large moves with integrity and representation covariance on all frozen evaluation chains.,supported,"transition, endpoint, representation and source summaries","six spaces, two starts and two seed families"
+C5,purpose://validation,G1,global,prohibited,"v17j proves global connectivity, irreducibility, mixing, convergence or a stationary sample.",contradicted,finite qualification does not establish global state-space properties,requires separate formal or scaling evidence
+C6,purpose://validation,G1,physics,prohibited,"v17j establishes source effects, energy, geometry, Lorentz symmetry, spacetime or a universe model.",contradicted,effect observables prohibited and no physical diagnostics computed,requires later gates

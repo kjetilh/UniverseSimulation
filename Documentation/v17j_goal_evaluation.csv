@@ -1,0 +1,2 @@
+purpose_ref,goal_id,metric,baseline,target,status,evidence,next_decision
+purpose://validation,G1,effect_blind_anchor_independent_compound_proposal_qualification,v17i pair-derived positive control only,"exact reverse, finite large-move exercise, representation and resource pass",satisfied,v17j_anchor_independent_compound_cycle_qualified,v17k_matched_work_start_memory

@@ -116,7 +116,7 @@ After deployment, verify at minimum:
 ```bash
 curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "Emergent Universe|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json | head
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17i_effect_blind_cycle_basis_positive_control.md | head
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17j_effect_blind_compound_cycle_qualification.md | head
 ```
 
 The manifest source revision must match the deployed repository revision. The
@@ -191,6 +191,12 @@ identity `96/96`, endpoint integrity `192/192`, finite distance response `6/6`
 and ratio range `0.986207-1.004213`. It must state that the basis was derived
 from both starts and is an engineered positive control, not a state-independent
 proposal, source null, connectivity/mixing result or physical signal.
+It must report v17j retained compound paths `554`, accepted blocks `152`, exact
+reverse/involution/balance/integrity `554/554`, compound exercise/movement/
+resource/endpoints `24/24`, representation `12/12`, and per-source
+qualification `6/6`. It must state that v17j qualifies a finite
+anchor-independent proposal law, not global connectivity, irreducibility,
+mixing, convergence, stationary sampling, source-effect survival or physics.
 It must separate these from
 sampler qualification/mixing/uniformity and physical
 interpretation, and state that Lorentz-like
@@ -198,7 +204,7 @@ behavior, universal invariants, particle species, spacetime, and a completed
 universe model have not been established.
 
 Static deployment does not update the dynamic RAG index. Run the tracked sync
-orchestrator separately, then issue a token-scoped query about v17i and require
+orchestrator separately, then issue a token-scoped query about v17j and require
 current citations plus freshness metadata. See
 `rag_service/docs/UNIVERSE_TOOL_RUNBOOK.md`.
 

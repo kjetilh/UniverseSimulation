@@ -1,0 +1,7 @@
+stage,growth_seed,run_offset,chain_count,chain_qualification_passes,retained_blocks,accepted_blocks,minimum_chain_retained_blocks,minimum_chain_accepted_blocks,minimum_chain_unique_states,reverse_audit_rows,all_reverse_path_pass,source_qualification_pass,source_spectrum_computed,observed_effect_computed
+v17j,9299,123078,4,4,96,23,19,5,6,96,1,1,0,0
+v17j,9299,123403,4,4,86,19,18,2,3,86,1,1,0,0
+v17j,9299,127341,4,4,84,33,12,3,4,84,1,1,0,0
+v17j,9365,123078,4,4,97,29,18,4,5,97,1,1,0,0
+v17j,9365,123403,4,4,86,28,12,2,3,86,1,1,0,0
+v17j,9365,127341,4,4,105,20,21,3,4,105,1,1,0,0

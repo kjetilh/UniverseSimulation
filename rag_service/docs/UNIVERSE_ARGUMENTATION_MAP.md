@@ -123,6 +123,13 @@ not an exact realization of every DPO/CTMC statement in the research report.
   endpoint integrity `192/192`, and finite distance response `6/6` with ratios
   `0.986207-1.004213`. This weakens pure distance-instrumentation failure as an
   explanation for v17h, but the pair-derived basis is not a reusable null.
+- v17j supplied the first reusable anchor-independent large-move proposal in
+  this branch. It composes two exact state-local subcycles and maps the reverse
+  auxiliary in opposite order. Reverse/involution/balance/integrity passed
+  `554/554`; exercise/movement/resource/endpoints `24/24`; representation
+  `12/12`; per-source qualification `6/6`. This supports the proposal mechanism
+  only. It does not establish global connectivity, mixing, convergence or
+  removal of finite start memory; that requires the next matched-work gate.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`
