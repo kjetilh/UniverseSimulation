@@ -1,0 +1,2 @@
+goal_id,purpose_ref,metric,baseline,target,timeframe,status,evidence,next_decision
+G1,purpose://validation,material compound cross-start distance reduction at exact matched accepted gross work,qualified v17h expanded reverse-closed single-cycle law,compound/expanded median cross-start distance <=0.90 in 6/6 sources,one frozen v17k round,missed,v17k_matched_work_comparison.csv;v17k_gate_evaluation.csv,v17k_compound_no_uniform_matched_work_gain

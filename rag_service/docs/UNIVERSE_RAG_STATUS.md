@@ -1,6 +1,6 @@
 # UniverseSimulation RAG Status
 
-Last source review: 2026-07-21.
+Last source review: 2026-07-23.
 
 ## Source-of-truth order
 
@@ -213,11 +213,21 @@ not outrank later executed gates.
   integrity passed `554/554`; exercise/movement/resource/endpoints passed
   `24/24`; representation `12/12`; per-source qualification `6/6`. Formal
   status is `v17j_anchor_independent_compound_cycle_qualified`.
+- v17k compared that law with v17h's qualified expanded single-cycle law at
+  exactly `192` accepted gross removed-edge units in each of `48` chains.
+  Frozen starts, direct proposal-law reuse, endpoint/work integrity,
+  reverse/balance/work definition, movement, arm exercise and resource passed
+  `48/48`; source spectra and observed effects remained closed.
+- Compound reduced cross-start distance directionally in `4/6`, but material
+  reduction passed `0/6`. Compound/expanded ratios were
+  `0.991307-1.003176`, median `0.995490`, against the frozen `<=0.90`
+  requirement. Formal status is
+  `v17k_compound_no_uniform_matched_work_gain`.
 
 The correct concise current reading is
-`fresh_event_footprint_spectrum_contrast_with_qualified_anchor_independent_compound_proposal_but_unresolved_start_memory`. See
+`fresh_event_footprint_spectrum_contrast_with_qualified_compound_proposal_but_no_uniform_compound_matched_work_gain`. See
 `Documentation/v16s_fresh_event_footprint_holdout.md` and
-`Documentation/v17j_interpretation_audit.md`. This remains finite event-DAG
+`Documentation/v17k_interpretation_audit.md`. This remains finite event-DAG
 structure: the coarse global feasible set is nontrivial, v16x repaired tested
 representation dependence, and v16y established a reversible local move law,
 v16z established exact pair-specific cycle paths, and v17a established tested
@@ -232,9 +242,11 @@ v17f dynamics. V17h matched realized work exactly and found no uniform
 cross-start efficiency gain from the fixed 50/50 expansion. The old kernel
 remains retired as a scale-growth direction, and the fixed length-5 expansion
 is retired as a uniform start-memory remedy. V17i showed that the distance
-observable responds under pair-engineered accessibility, and v17j qualified a
-reusable anchor-independent compound proposal. Neither establishes that this
-new law removes start memory. Source effects remain closed. It
+observable responds under pair-engineered accessibility, v17j qualified a
+reusable anchor-independent compound proposal, and v17k found that grouping two
+local cycles into that proposal did not materially reduce start memory at equal
+gross work. This retires the exact two-subcycle net-6 law as a uniform remedy,
+not all large moves or the model. Source effects remain closed. It
 is not a
 validated energy, temperature,
 dimension, manifold, Lorentz symmetry, physical time, continuum, particle,
@@ -242,11 +254,11 @@ entanglement, or spacetime result.
 
 ## Current next gate
 
-Do not compute the source spectrum yet. The narrow next gate is a separate
-effect-blind matched accepted-work start-memory comparison between the qualified
-v17j compound law and v17h's expanded single-cycle law. Do not use the
-pair-derived v17i basis as the source null and do not infer mixing or global
-connectivity from v17j qualification alone.
+Do not compute the source spectrum yet. The narrow next gate must diagnose
+whether the remaining start-memory barrier is insufficient move diameter or
+accessibility-component structure before selecting a monolithic long-cycle
+proposal. Do not use the pair-derived v17i basis as a source null, and do not
+infer disconnection or failed mixing from the v17k finite negative result.
 
 `Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md`
 separates Bell's theorem, Bell inequalities and observed finite experimental

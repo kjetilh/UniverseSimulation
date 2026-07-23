@@ -8709,3 +8709,72 @@ Viktige filer:
 - `Documentation/v17j_next_direction_assessment.md`
 - `Documentation/v0_17j_operativ_anbefaling.md`
 - `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17j.md`
+
+## 10dp. v17k fant ingen uniform compound-fordel ved eksakt likt bruttoarbeid
+
+`v17k` ble preregistrert etter en deklarert one-source/one-start effect-blind
+teknisk pilot. Frosne hashes var:
+
+- spec-digest: `3f748e5fba446a3b5fb27d39eadc7a746a1fb7e2123e5ff0feeffe4cd918a7d5`
+- script: `71ac22515ba3807f5a3c0d81842916f24719737c7aeb30b8878f5ff31d6ec7b4`
+- source chain: `9e1b69ada5dccc7869610eab9d4c39fda1b17d2871c9bbb2c7977cd9c474cc64`
+- design calibration: `ec92dd926b364aa60967e5146d4e86b6ef20f713e2b6ada275b0022da9cfbcbf`
+
+Gaten sammenlignet v17j sin kvalifiserte two-subcycle net-6 compound-lov med
+v17h sin reverse-closed expanded single-cycle-lov paa de samme seks endelige
+rommene, begge frosne starter og to nye seedfamilier. Hver av de `48` kjedene
+stoppet ved eksakt `192` aksepterte brutto removed-edge-enheter. Compound-work
+var summen av de to delsyklusenes removed-edge-antall; netto endpoint-endring
+ble logget separat og ble aldri brukt som erstatning for bruttoarbeid.
+
+Den formelle effect-blind kjøringen ga:
+
+- source spectrum/effect calls: `0/0`
+- frozen starts: `12/12`
+- direkte gjenbruk av kvalifiserte proposal-lover: `2/2`, reimplementert `0`
+- exact gross work og endpoint-integritet: `48/48`, work `192`
+- exact reverse, balance og work-definition: `48/48`
+- finite movement og arm exercise: `48/48`
+- resource: `48/48`, maksimal kjedetid `262.266565 s`
+- retningsmessig compound-reduksjon: `4/6`
+- preregistrert materiell compound-reduksjon: `0/6`
+- compound/expanded cross-start-ratio: `0.991307-1.003176`
+- median ratio: `0.995490`
+
+Expanded-armene brukte `57-67` aksepterte enkeltcykler. Compound-armene brukte
+`28-30` aksepterte blokker ved samme bruttoarbeid. Compound nettoarbeid var
+`190-192`, saa cancellation mellom deltrekk forklarer ikke den manglende
+materielle forbedringen. Frossen status er
+`v17k_compound_no_uniform_matched_work_gain`.
+
+Dette er et rent relativt finite-effektivitetsresultat. Det pensjonerer den
+eksakte two-subcycle net-6-loven som en uniform kur mot startminne under det
+frosne designet. Det beviser ikke disconnection, manglende irreducibility,
+convergence eller mixing, og sier ikke at alle compound-, long-cycle- eller
+algebraiske move-klasser feiler. Source spectra og observed effects ble ikke
+beregnet. Neste gate skal derfor fortsatt vaere effect-blind og skille mellom
+to forklaringer foer en ny proposal velges: for liten move-diameter versus
+accessibility-component-struktur.
+
+Viktige filer:
+
+- `relational_universe_v17k_effect_blind_compound_matched_work_start_memory.py`
+- `Documentation/v17k_design_calibration.csv`
+- `Documentation/v17k_source_chain.csv`
+- `Documentation/v17k_pre_registration.csv`
+- `Documentation/v17k_proposal_law_audit.csv`
+- `Documentation/v17k_proposal_trace.csv`
+- `Documentation/v17k_endpoint_audit.csv`
+- `Documentation/v17k_pairwise_distance.csv`
+- `Documentation/v17k_kernel_distance_summary.csv`
+- `Documentation/v17k_matched_work_comparison.csv`
+- `Documentation/v17k_chain_transition_summary.csv`
+- `Documentation/v17k_source_qualification_summary.csv`
+- `Documentation/v17k_gate_evaluation.csv`
+- `Documentation/v17k_goal_evaluation.csv`
+- `Documentation/v17k_claim_ledger.csv`
+- `Documentation/v17k_effect_blind_compound_matched_work_start_memory.md`
+- `Documentation/v17k_interpretation_audit.md`
+- `Documentation/v17k_next_direction_assessment.md`
+- `Documentation/v0_17k_operativ_anbefaling.md`
+- `Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17k.md`

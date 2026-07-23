@@ -1,0 +1,10 @@
+gate,status,observed,required,decision
+effect_blind_integrity,pass,spectrum=0;effect=0,0;0,continue
+frozen_start_integrity,pass,12/12,12/12,continue
+qualified_proposal_law_reuse,pass,2/2;reimplemented=0,2/2;reimplemented=0,continue
+exact_matched_gross_work_and_endpoint_integrity,pass,48/48;work=192,48/48;each=192,continue
+exact_reverse_balance_and_work_definition,pass,48/48,48/48,continue
+finite_movement_and_arm_exercise,pass,movement=48/48;exercise=48/48,48/48;48/48,continue
+resource_bound,pass,48/48;max=262.266565s,48/48;each<=900s,continue
+primary_compound_cross_start_reduction,fail,0/6;ratio=0.991307-1.003176,6/6;each<=0.90,retire_current_two_cycle_law_as_uniform_remedy
+v17k_overall,v17k_compound_no_uniform_matched_work_gain,exclusion=1;starts=12/12;laws=1;work=48/48;proposal=48/48;movement=48/48;exercise=48/48;resource=48/48;primary=0/6,1;12/12;1;48/48;48/48;48/48;48/48;48/48;6/6,v17k_compound_no_uniform_matched_work_gain

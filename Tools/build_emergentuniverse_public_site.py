@@ -2323,6 +2323,120 @@ DATASET_SPECS: list[dict[str, str]] = [
         "description": "Adjudicated proposal claims and explicit global/physics exclusions.",
     },
     {
+        "source": "Documentation/v17k_effect_blind_compound_matched_work_start_memory.md",
+        "category": "latest_causal_structure",
+        "title": "v17k compound matched-work start-memory gate",
+        "description": "Effect-blind equal-gross-work comparison of the qualified compound and expanded proposal laws.",
+    },
+    {
+        "source": "Documentation/v17k_interpretation_audit.md",
+        "category": "latest_causal_structure",
+        "title": "v17k interpretation audit",
+        "description": "Separates the finite relative efficiency result from connectivity, mixing, source effects and physics.",
+    },
+    {
+        "source": "Documentation/v17k_next_direction_assessment.md",
+        "category": "latest_causal_structure",
+        "title": "v17k next direction",
+        "description": "Move-diameter versus accessibility-component diagnosis recommended before another proposal.",
+    },
+    {
+        "source": "Documentation/v0_17k_operativ_anbefaling.md",
+        "category": "latest_causal_structure",
+        "title": "v17k operational recommendation",
+        "description": "Concise matched-work result and next-gate boundary.",
+    },
+    {
+        "source": "Documentation/relasjonell_universgraf_for_ikke_spesialister_v0_17k.md",
+        "category": "latest_causal_structure",
+        "title": "v17k non-specialist summary",
+        "description": "Plain-language explanation of the compound matched-work result.",
+    },
+    {
+        "source": "Documentation/v17k_design_calibration.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k design calibration",
+        "description": "Declared one-source effect-blind pilot used before preregistration.",
+    },
+    {
+        "source": "Documentation/v17k_source_chain.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k source chain",
+        "description": "SHA-256 links to the frozen proposal-law and prior-gate evidence.",
+    },
+    {
+        "source": "Documentation/v17k_pre_registration.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k preregistration",
+        "description": "Frozen work target, seeds, thresholds, proposal-law references and exclusions.",
+    },
+    {
+        "source": "Documentation/v17k_proposal_law_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k proposal law audit",
+        "description": "Direct qualified-law reuse and gross-work definition for both comparison arms.",
+    },
+    {
+        "source": "Documentation/v17k_proposal_trace.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17k proposal trace",
+        "description": "Full per-attempt matched-work proposal trace; static archive only.",
+    },
+    {
+        "source": "Documentation/v17k_endpoint_audit.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k endpoint audit",
+        "description": "Per-chain exact gross/net work and final endpoint integrity evidence.",
+    },
+    {
+        "source": "Documentation/v17k_pairwise_distance.csv",
+        "category": "latest_causal_structure_raw",
+        "title": "v17k pairwise distance",
+        "description": "Full within-start and cross-start endpoint distance table; static archive only.",
+    },
+    {
+        "source": "Documentation/v17k_kernel_distance_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k kernel distance summary",
+        "description": "Per-source within-start and cross-start distance summaries for both arms.",
+    },
+    {
+        "source": "Documentation/v17k_matched_work_comparison.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k matched-work comparison",
+        "description": "Primary per-source compound-over-expanded start-memory comparison.",
+    },
+    {
+        "source": "Documentation/v17k_chain_transition_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k chain transition summary",
+        "description": "Per-chain attempts, accepted events, gross/net work, movement and resource totals.",
+    },
+    {
+        "source": "Documentation/v17k_source_qualification_summary.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k source qualification summary",
+        "description": "Per-source technical passes and primary material-reduction decision.",
+    },
+    {
+        "source": "Documentation/v17k_gate_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k gate evaluation",
+        "description": "Frozen machine-readable compound matched-work result.",
+    },
+    {
+        "source": "Documentation/v17k_goal_evaluation.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k goal evaluation",
+        "description": "Terminal evaluation of the matched-work start-memory goal.",
+    },
+    {
+        "source": "Documentation/v17k_claim_ledger.csv",
+        "category": "latest_causal_structure",
+        "title": "v17k claim ledger",
+        "description": "Adjudicated relative-efficiency claims and explicit global/physics exclusions.",
+    },
+    {
         "source": "Documentation/Bell_teorem_ulikheter_og_observerte_kvantekorrelasjoner.md",
         "category": "methods_and_claim_boundaries",
         "title": "Bell theorem, inequalities and observed correlations",
@@ -2590,6 +2704,12 @@ def write_site(
     compound_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17j_source_qualification_summary.csv")
     compound_transition_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17j_chain_transition_summary.csv")
     compound_representation_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17j_representation_audit.csv")
+    compound_work_gate_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17k_gate_evaluation.csv")
+    compound_work_source_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17k_source_qualification_summary.csv")
+    compound_work_comparison_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17k_matched_work_comparison.csv")
+    compound_work_kernel_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17k_kernel_distance_summary.csv")
+    compound_work_transition_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17k_chain_transition_summary.csv")
+    compound_work_law_rows = csv_rows(out_dir / "data" / "latest_causal_structure" / "v17k_proposal_law_audit.csv")
     grouped = grouped_manifest(manifest)
     artifact_items = []
     for category, items in sorted(grouped.items()):
@@ -2617,14 +2737,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate qualifies an anchor-independent, state-local two-cycle large-move proposal with exact sampled-path reversal and balance. This is a reusable proposal mechanism, not evidence that the chains mix, that source effects survive, or that spacetime or physics has emerged.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate compared the qualified two-cycle compound proposal with the expanded single-cycle proposal at exactly equal accepted gross work. All technical controls passed, but the compound law produced no preregistered material reduction in finite start memory.</p>
   </header>
   <main>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
-      <div class="card"><div class="metric">554 / 554</div><p class="muted">v17j retained compound paths passed exact reverse, balance and integrity audits.</p></div>
-      <div class="card"><div class="metric">24 / 24</div><p class="muted">v17j chains exercised accepted net-large compound moves within resource bounds.</p></div>
+      <div class="card"><div class="metric">48 / 48</div><p class="muted">v17k chains passed exact gross-work, proposal, movement, exercise and resource gates.</p></div>
+      <div class="card"><div class="metric">0 / 6</div><p class="muted">v17k sources met the frozen 10% material compound start-memory reduction.</p></div>
     </section>
 
     <section>
@@ -2666,12 +2786,25 @@ def write_site(
       <p>Finite cross/within median-distance ratios were <code>0.986207-1.004213</code>, passing the frozen <code>0.85-1.15</code> positive-control interval on <code>6/6</code>. Thus the distance observable can display start independence when accessibility is built in exactly, making pure observable failure a weaker explanation for v17h. But the basis was derived from both starts and cannot serve as a state-independent proposal or source null. The next gate must construct an anchor-independent state-local long-cycle or compound-cycle law with exact reverse accounting.</p>
       <p>v17j constructed that proposal without the pair basis. Each auxiliary block samples one exact state-local length-<code>2-4</code> cycle, applies it, and samples a second from the intermediate state. The exact forward density is <code>q1*q2</code>; the reverse applies the mapped subcycle reverses in the opposite order. A symmetric filter retains only endpoints with at least <code>6</code> net changed edges, while filtered paths remain self-loops without proposal renormalization.</p>
       <p>The formal effect-blind run retained <code>554</code> compound paths and accepted <code>152</code> across <code>24</code> chains. Exact round-trip, reverse involution, pathwise Metropolis balance and endpoint integrity passed <code>554/554</code>; finite exercise, movement, endpoint and resource gates passed <code>24/24</code>; representation covariance passed <code>12/12</code>; and all <code>6/6</code> sources qualified. This establishes a finite anchor-independent proposal mechanism, not global connectivity, irreducibility, mixing, equilibrium, source effects or physics. The next gate is a separate effect-blind matched-work start-memory comparison.</p>
+      <p>v17k performed that comparison on the same six spaces, frozen starts and two fresh seed families. Each of <code>48</code> chains completed exactly <code>192</code> accepted gross removed-edge units. Qualified-law reuse, endpoint/work integrity, reverse/balance/work definition, movement, arm exercise and resource gates passed <code>48/48</code>; source spectra and observed effects remained closed.</p>
+      <p>The compound law reduced cross-start distance directionally in <code>4/6</code>, but the preregistered material reduction passed <code>0/6</code>. Compound/expanded ratios were <code>0.991307-1.003176</code>, median <code>0.995490</code>, against the frozen requirement <code>&lt;=0.90</code> in all six. Compound used <code>28-30</code> accepted blocks versus <code>57-67</code> expanded single-cycle events at equal gross work; accepted net work was <code>190-192</code>, so subcycle cancellation does not explain the result. This retires only the exact two-subcycle net-6 law as a uniform start-memory remedy. It does not establish disconnection, failed mixing, absent source effects or failure of all large moves.</p>
       <p>The separate Bell methods report distinguishes Bell's theorem, testable Bell inequalities and finite observed quantum-correlation data. UniverseSimulation currently has no alternative local measurement settings, Bell trial protocol or entanglement observable; graph correlation is not relabeled as Bell evidence.</p>
       <p class="warning">Interpretation boundary: the public data support a program of local defect, causal-structure and adversarial-null analysis. They do not establish physical energy or temperature, Lorentz invariance, quantum entanglement, particle species or a completed universe model.</p>
     </section>
 
     <section>
-      <h2>Current anchor-independent compound-cycle qualification</h2>
+      <h2>Current compound matched-work result</h2>
+      {table_html(compound_work_gate_rows, ["gate", "status", "observed", "required", "decision"])}
+      {table_html(compound_work_source_rows, ["growth_seed", "run_offset", "chain_count", "frozen_start_passes", "matched_work_passes", "proposal_integrity_passes", "movement_passes", "arm_exercise_passes", "resource_passes", "minimum_compound_blocks", "minimum_expanded_length5_cycles", "maximum_attempts_used", "maximum_chain_seconds", "compound_over_expanded_cross_start_distance_ratio", "material_cross_start_reduction_pass"])}
+      <h3>Primary exact-work comparison</h3>
+      {table_html(compound_work_comparison_rows, ["growth_seed", "run_offset", "accepted_gross_edge_work_per_chain", "expanded_median_cross_start_distance", "compound_median_cross_start_distance", "compound_over_expanded_cross_start_distance_ratio", "directional_cross_start_reduction", "material_cross_start_reduction_pass", "expanded_median_within_start_distance", "compound_median_within_start_distance"])}
+      <h3>Kernel distance summaries</h3>
+      {table_html(compound_work_kernel_rows, ["growth_seed", "run_offset", "kernel_arm", "median_within_start_distance", "median_cross_start_distance", "cross_to_within_distance_ratio", "minimum_cross_start_distance", "maximum_cross_start_distance"])}
+      <h3>Qualified proposal-law reuse</h3>
+      {table_html(compound_work_law_rows, ["kernel_arm", "proposal_function", "reverse_function", "qualification_context", "gross_work_definition", "net_change_separate", "proposal_law_reimplemented", "audit_pass"])}
+      <h3>Per-chain exact-work execution</h3>
+      {table_html(compound_work_transition_rows, ["growth_seed", "run_offset", "kernel_arm", "start_family", "chain_seed_family", "attempts", "accepted_events", "accepted_single_cycles", "accepted_length5_cycles", "accepted_compound_blocks", "accepted_gross_edge_work", "accepted_net_changed_edge_work", "net_to_gross_accepted_work_ratio", "work_boundary_rejects", "unique_state_count", "final_start_changed_edge_fraction", "elapsed_seconds", "matched_work_pass", "proposal_integrity_pass", "arm_exercise_pass", "movement_pass", "resource_pass"])}
+      <h3>Prior v17j anchor-independent compound-cycle qualification</h3>
       {table_html(compound_gate_rows, ["gate", "status", "observed", "required", "decision"])}
       {table_html(compound_source_rows, ["growth_seed", "run_offset", "chain_count", "chain_qualification_passes", "retained_blocks", "accepted_blocks", "minimum_chain_retained_blocks", "minimum_chain_accepted_blocks", "minimum_chain_unique_states", "reverse_audit_rows", "all_reverse_path_pass", "source_qualification_pass"])}
       <h3>Per-chain compound execution</h3>

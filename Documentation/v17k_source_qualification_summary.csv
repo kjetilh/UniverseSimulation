@@ -1,0 +1,7 @@
+stage,target_nodes,growth_seed,run_offset,arm,run_seed,chain_count,frozen_start_passes,matched_work_passes,proposal_integrity_passes,movement_passes,arm_exercise_passes,resource_passes,minimum_compound_blocks,minimum_expanded_length5_cycles,maximum_attempts_used,maximum_chain_seconds,compound_over_expanded_cross_start_distance_ratio,material_cross_start_reduction_pass,source_spectrum_computed,observed_effect_computed
+v17k,1536,9299,123078,exposure_matched_local,1993113078,8,2,8,8,8,8,8,29,6,2428,208.4915625420399,0.9913070475007761,0,0,0
+v17k,1536,9299,123403,exposure_matched_local,1993113403,8,2,8,8,8,8,8,28,8,3783,262.2665648339316,0.9961034360609282,0,0,0
+v17k,1536,9299,127341,exposure_matched_local,1993117341,8,2,8,8,8,8,8,29,5,1637,73.78524591680616,0.9948770491803279,0,0,0
+v17k,1536,9365,123078,exposure_matched_local,1993773078,8,2,8,8,8,8,8,29,7,1722,94.22015979140997,1.000626174076393,0,0,0
+v17k,1536,9365,123403,exposure_matched_local,1993773403,8,2,8,8,8,8,8,29,6,2166,178.4804148748517,1.0031757233592096,0,0,0
+v17k,1536,9365,127341,exposure_matched_local,1993777341,8,2,8,8,8,8,8,28,6,1272,162.31828187499195,0.9946775203506574,0,0,0

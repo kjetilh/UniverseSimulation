@@ -1,6 +1,6 @@
 # UniverseSimulation Argumentation Map
 
-Last source review: 2026-07-18.
+Last source review: 2026-07-23.
 
 ## Research question
 
@@ -129,7 +129,15 @@ not an exact realization of every DPO/CTMC statement in the research report.
   `554/554`; exercise/movement/resource/endpoints `24/24`; representation
   `12/12`; per-source qualification `6/6`. This supports the proposal mechanism
   only. It does not establish global connectivity, mixing, convergence or
-  removal of finite start memory; that requires the next matched-work gate.
+  removal of finite start memory.
+- v17k performed that matched-work gate at exactly `192` accepted gross
+  removed-edge units in each of `48` chains. All technical gates passed
+  `48/48`, but the preregistered material compound reduction passed `0/6`;
+  compound/expanded ratios were `0.991307-1.003176`, median `0.995490`.
+  Directional reduction in `4/6` is too small and inconsistent to rescue the
+  frozen `<=0.90` hypothesis. This rejects the exact two-subcycle net-6 law as
+  a uniform finite start-memory remedy. It does not reject all compound or
+  long-cycle moves, prove state-space disconnection, or test source effects.
 
 The coarse global feasible set is nontrivial, but v16x rejected the random-cost
 endpoint measure before testing whether the v16s effect survives. Only `2/6`

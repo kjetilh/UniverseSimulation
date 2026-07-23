@@ -1,6 +1,6 @@
 # UniverseSimulation Tool Runbook
 
-Last source review: 2026-07-21.
+Last source review: 2026-07-23.
 
 Every completed research round follows the mandatory closure contract in
 `Documentation/Research_Round_Closure_Policy.md`: verify, commit, push, deploy
@@ -12,7 +12,8 @@ live. Any missing gate is `publication_blocked`, not an implicit success.
 - Current status: `PROJECT_CONTEXT_LIVE.md`
 - Experiment history: `PROJECT_HISTORY_INDEX.md`
 - Early toy baseline: `relational_universe_sim.py`
-- Latest effect-blind compound proposal qualification: `relational_universe_v17j_effect_blind_compound_cycle_qualification.py`
+- Latest effect-blind compound matched-work gate: `relational_universe_v17k_effect_blind_compound_matched_work_start_memory.py`
+- Prior compound proposal qualification: `relational_universe_v17j_effect_blind_compound_cycle_qualification.py`
 - Prior accessibility positive control: `relational_universe_v17i_effect_blind_cycle_basis_positive_control.py`
 - Prior matched-work gate: `relational_universe_v17h_effect_blind_matched_work_start_memory.py`
 - Prior reverse-closure gate: `relational_universe_v17g_effect_blind_reverse_closure_qualification.py`
@@ -59,6 +60,7 @@ From the repository root, using the environment that provides `networkx`:
 /opt/anaconda3/bin/python relational_universe_v17h_effect_blind_matched_work_start_memory.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17i_effect_blind_cycle_basis_positive_control.py --verify-only
 /opt/anaconda3/bin/python relational_universe_v17j_effect_blind_compound_cycle_qualification.py --verify-only
+/opt/anaconda3/bin/python relational_universe_v17k_effect_blind_compound_matched_work_start_memory.py --verify-only
 ```
 
 The v16q command verifies effect-blind footprint-sampler qualification. The
@@ -157,6 +159,13 @@ rows, finite compound exercise, movement, resources, endpoints and effect
 exclusion. Read `Documentation/v17j_interpretation_audit.md`: qualification is
 for the finite anchor-independent proposal law, not connectivity, mixing,
 stationarity, source effects or physics.
+The v17k verifier checks frozen pilot/source/script hashes, direct qualified-law
+reuse, 48 exact-gross-work endpoints, the full proposal trace, pairwise
+distances, reverse/balance/work definition, finite movement, arm exercise,
+resources and effect exclusion. Read
+`Documentation/v17k_interpretation_audit.md`. Technical controls passed
+`48/48`, but material compound reduction passed `0/6`; this retires only the
+exact two-subcycle net-6 law as a uniform remedy.
 
 ## Run the early toy simulator
 
@@ -223,13 +232,18 @@ Require the v17j report, interpretation audit, next direction, design
 calibration, preregistration/source chain, endpoint/representation/transition/
 source summaries, gate, goal and claim ledger. Keep the full per-step proposal
 trace and per-retained-path reverse table in the static archive only.
+Require the v17k report, interpretation audit, next direction, design
+calibration, preregistration/source chain, proposal-law/endpoint/kernel/
+matched-work/transition/source summaries, gate, goal and claim ledger. Keep the
+full proposal trace and pairwise-distance table in the static archive only, not
+the generative RAG corpus.
 
 After deployment:
 
 ```bash
-curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17j|554/554|152|compound|Interpretation boundary"
+curl -fsS https://emergentuniverse.haven.digipomps.org/ | grep -E "v17k|48/48|0/6|0.995490|compound|Interpretation boundary"
 curl -fsS https://emergentuniverse.haven.digipomps.org/data/manifest.json
-curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17j_effect_blind_compound_cycle_qualification.md
+curl -fsS https://emergentuniverse.haven.digipomps.org/data/latest_causal_structure/v17k_effect_blind_compound_matched_work_start_memory.md
 ```
 
 ## Start the RAG service locally
@@ -278,11 +292,12 @@ RESEARCH_BASE_URL='http://127.0.0.1:8000' \
 RESEARCH_EXPECTED_RATE_LIMIT_BACKEND=postgres \
 python -m scripts.research_hardening_smoke \
   --case-id universe_project \
-  --query 'Hva kvalifiserte v17j sin compound-cycle gate, og hvorfor beviser den ikke mixing eller at startminnet er fjernet?'
+  --query 'Hva fant v17k ved eksakt likt bruttoarbeid, og hvorfor avviser resultatet bare den konkrete compound-loven og ikke mixing eller hele modellen?'
 ```
 
 The answer must include citation/freshness audit metadata and cite current
-v17j material plus v17i/v17h/v17g/v17c/v16z/v16s when the positive control,
+v17k material plus v17j/v17i/v17h/v17g/v17c/v16z/v16s when the proposal,
+positive control,
 prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
