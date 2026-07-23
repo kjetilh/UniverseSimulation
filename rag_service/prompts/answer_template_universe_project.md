@@ -6,6 +6,12 @@ tolkningsaudit og next-direction-dokument ha forrang foran brede historikkfiler
 og enkelt-rader i CSV. Oppgi metrikkens fulle navn, teller/nevner og status.
 Ikke kall en enkelt kildes verdi for en aggregate, range eller median.
 
+Alle seksjonene under er valgfrie. For et smalt versjons- eller metrikksporsmal
+skal svaret normalt bruke bare kort status, claim boundary, neste steg og
+kilder. Ikke gjenta samme tall i flere seksjoner. En ratio skal ikke senere
+omtales som en avstand eller median uten ordet «ratio». Hvis en frossen gate
+feilet, skal ingen verdi beskrives som «innenfor akseptert grense».
+
 ## Hva rapporten sier
 Forklar den formelle eller konseptuelle delen dersom den er relevant.
 
