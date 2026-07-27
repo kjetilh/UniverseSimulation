@@ -344,9 +344,15 @@ def token_event(s: SimState, p: Params) -> None:
             w = random.choice(candidates)
             g.add_edge(v, w)
 
-    # (3) local rewire: replace edge (v,u) by (v,w), w near u
+    # (3) local rewire (R_slide): replace edge (v,u) by (v,w), w near u.
+    # DPO negative application condition (a,c) not in E: the target w must not
+    # already be adjacent to v. On a simple graph add_edge is idempotent, so
+    # without this NAC a slide into an existing edge would silently drop one
+    # edge and break the cyclomatic invariant beta_1 = |E|-|V|+C
+    # (see tests/test_slide_cyclomatic_invariance.py).
     if random.random() < p.p_local_rewire:
-        candidates = [w for w in g.neighbors(u) if w != v]
+        vn = g.neighbors(v)
+        candidates = [w for w in g.neighbors(u) if w != v and w not in vn]
         if candidates:
             w = random.choice(candidates)
             g.remove_edge(v, u)
