@@ -1,0 +1,23 @@
+{
+  "thresholds": {
+    "g01_r_over_floor": 2.0,
+    "g02_links_per_event": 5.0,
+    "g03_max_interval_frac": 0.05,
+    "g04_theta": 5.0
+  },
+  "gate1_s_range": [
+    0.2,
+    0.4
+  ],
+  "gate1_ci_width_max": 0.05,
+  "gate1_arm_agreement": 0.05,
+  "decimation_p": [
+    1.0,
+    0.5,
+    0.25,
+    0.125,
+    0.0625,
+    0.03125
+  ],
+  "L_min_for_fit": 8
+}

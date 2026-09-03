@@ -1,0 +1,9 @@
+fingerprint,description,attempts,last_outcome,escalated,note
+beta1-bookkeeping-fidelity-measurement,measure whether delta_core beta1 matches measured E-N+C across perturbation constructors,0,not_started,no,WP-A
+loop-detector-acceptance-run,finish detector tests and produce measured acceptance report,1,tests_done_19_of_19_pass_acceptance_pending,no,"WP-B; bit 7 verifisert uavhengig av Claude 24. aug"
+environment-spec-and-ci,make repo reproducible and regressions catchable,0,not_started,no,WP-C
+public-archive-revision-equals-head,live manifest revision must equal pushed commit,0,not_started,no,WP-D
+matched-work-cross-start-mixing,uniform mixing gain for cycle-move family,11,closed_negative_result_recorded,no,"v17a-v17k; konklusjon i Documentation/v17_program_closure.md 24. aug"
+event-dag-dimension-admissibility,is the event DAG an object that admits a dimension (Gate 0),1,closed_negative_gate0_failed_0_of_36,no,"WP-F0; kjort 3. sep av Claude i mount-VM (G1-avvik notert i rapporten); Documentation/Program/WP-F0_report.md"
+event-dag-dimension-estimate,stable null-separated dimension of the intrinsic event DAG,0,not_started_blocked_by_WP-F0_negative,no,"WP-F1; skal ikke kjores - Gate 0 feilet"
+codex-mcp-session-dies-after-a-few-minutes,codex-local MCP sessions stop 2-5 min after dispatch regardless of managing turn liveness,3,escalated_to_kjetil,yes,"24. aug: 3 forsok. Hypotesen om at turen holdt oekten i live ble refutert - vakten kjorte 70 min etter at jobbene doede. G3: stopp, ikke variant 4."
