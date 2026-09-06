@@ -1,0 +1,18 @@
+{
+  "algorithm": "Python frozenset transitive closure; no integer bitsets",
+  "decimation_draws_per_p": 32,
+  "files": {
+    "Documentation/Program/WP-F0_dimension_admissibility.md": "004ceb53482e2f0bae0b5c4cf31b2051bea2537656d4373695e3ea2d1fe5f73c",
+    "Documentation/Program/WP-G1_blind_replica_decimation_draws.csv": "5e613ab31e5eb3812b4caf38dc2f6b1f69142fd2b8a60f66c7a0048a7cf1c523",
+    "Documentation/Program/WP-G1_blind_replica_per_history.csv": "4d993828620715827168bcd9076453bc1a74d14be61779db1288a0e6f9311739",
+    "Documentation/v16b_dependency_edges.csv": "7aba485e15830de908cb91f99647582996d2b16d464d82795afd5225a4e8b57c",
+    "Documentation/v16b_run_summary.csv": "5cd6e4578007632b6763047ff619f45e94ca7b01bfe5df566bac0a387f2c5c3d",
+    "Documentation/v16c_fine_dependency_edges.csv": "35d05dddfcb4f8962db6e599ee4faeb1536c1a1392e09dff1eeeff35f9c03503",
+    "Documentation/v16c_run_summary.csv": "c2138e81c8641ea709759df2a511e6905dc7d1fc12ae17079cabfc70c42a728d",
+    "Documentation/v16d_fine_dependency_edges.csv": "6acb6478fd4dff90b9188da9aa3fc2d19def41ea192d0466e04eed95d64adc19",
+    "Documentation/v16d_run_summary.csv": "fcefc5c0d9420b68679a20efb4e7df61aee1952498dd72c750beea41e4a21670",
+    "Tools/causet_admissibility_replica.py": "25ca0bdce52960465fce262dffee4a431cae3a05b2a5441287e23a32dd008abc",
+    "relational_universe_v16b_intrinsic_event_dag_gate.py": "fba9a56af938ffc90c9878d799498da0d1868e2491044147ae5df0ca9e2f7709"
+  },
+  "phase": "blind-history-replication-before-WP-F0-code-or-result-inspection"
+}

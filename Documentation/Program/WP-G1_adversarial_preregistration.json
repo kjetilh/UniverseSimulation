@@ -1,0 +1,59 @@
+{
+  "status": "frozen_before_step_2_measurement",
+  "date_utc": "2026-09-06T18:34:00Z",
+  "purpose_ref": "purpose://prompt.unknown",
+  "history_target": {
+    "derivation": "rounded median raw-edge count among the 24 pre-existing N=2048 WP-F0 histories",
+    "raw_edges": 2328,
+    "raw_edges_per_event": 1.13671875
+  },
+  "cross_edge_bundle": {
+    "n": 2048,
+    "chains": 32,
+    "chain_length": 64,
+    "replicates": 24,
+    "seed": 2026090601,
+    "construction": "add exactly 312 unique cross-chain edges with source layer below target layer to the 2016 chain-cover edges",
+    "decimation_draws_per_p": 20,
+    "p_equals_one_draws": 1,
+    "fit": "OLS over every observed (log(p), log(L)) pair with L>=8, matching the WP-F0 implementation for comparison"
+  },
+  "d2_conflict_projection": {
+    "n": 2048,
+    "coordinates": "independent uniform light-cone coordinates (u,v) in [0,1]^2, ordered by u+v",
+    "resources_per_event": "discrete uniform 1, 2, or 3 distinct resources",
+    "access_mode": "every assigned resource is both read and written",
+    "conflict_frontier": "same RAW/WAW/WAR last-writer/readers-since-write update as DependencyDAG.add",
+    "pool_candidates": "512 through 4096 inclusive in steps of 128",
+    "calibration_replicates_per_candidate": 8,
+    "calibration_seed": 2026090602,
+    "selection_metric": "absolute error of median raw edges/event from 1.13671875 only",
+    "held_out_replicates": 24,
+    "held_out_seed": 2026090603,
+    "decimation_draws_per_p": 20,
+    "p_equals_one_draws": 1
+  },
+  "n_inventory": {
+    "included": "v16b_dependency_edges.csv plus every Documentation/*fine_dependency_edges.csv paired to its run summary",
+    "excluded": "files whose schema names coarse_event_id because they are coarse quotient DAGs, not fine event DAGs",
+    "fit": "descriptive log(Theta) on log(N), separately by arm; grouped history bootstrap",
+    "bootstrap_replicates": 20000,
+    "seed": 2026090604
+  },
+  "chain_bundle_theory": {
+    "distribution": "L(p)=max of 32 independent Binomial(64,p) variables",
+    "procedure_replicates": 200000,
+    "seed": 2026090605,
+    "reported_variants": [
+      "WP-F0 weighting: one deterministic p=1 observation and 20 observations at every p<1",
+      "literal at-least-20-per-p weighting: 20 observations at every level"
+    ]
+  },
+  "bootstrap_unit_audit": {
+    "input": "WP-F0_decimation_draws.csv",
+    "comparison": "within-p draw bootstrap versus history-cluster bootstrap",
+    "replicates": 20000,
+    "seed": 2026090606
+  },
+  "claim_limit": "Synthetic generator checks and finite stored-history measurements only; no physics inference and no new UniverseSimulation dynamics."
+}

@@ -136,3 +136,14 @@ Seed 20260903 er default; desimering og bootstrap er deterministiske gitt seed.
 - s for d=4-referansen er svakt bestemt ved N=2048 (to p-punkter). Ikke relevant
   for konklusjonen, som ikke hviler på d=4-tallet.
 - Commit-hash: se under.
+
+## Addendum 6. september 2026 — etter WP-G1
+
+WP-G1 (Codex, uavhengig blind replika) reproduserte alle deterministiske tall over
+eksakt, 36/36. G1-kvitteringen for målingen er dermed gitt. Konklusjonen i del 6 står
+**bare i smal form**: den lagrede konflikt-DAG-en er tynn og Myrheim–Meyer bærer ingen
+informasjon på den. Den brede formen — «derfor skal den dyre runden ikke kjøres» — er
+veltet: WP-G1 steg 2.2 viser at en ekte d=2-sprinkling gir de samme Gate 0-verdiene
+etter konflikt-DAG-konstruksjonen. Gaten skiller ikke geometri fra projeksjon.
+Ordet «kjedebunt» er også feil (WP-G1 2.1). Fire kodefeil i `causet_admissibility.py`
+er dokumentert i WP-G1 steg 3; ingen endrer portutfallet. Se `WP-G1_report.md`.
