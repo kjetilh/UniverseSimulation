@@ -73,3 +73,12 @@ meningsløs på den. **Faller:** «derfor skal v18 ikke kjøres». Programmets s
 spørsmålet slik det ble stilt (dimensjon av *denne* DAG-en) er fortsatt nei; det nye
 er at spørsmålet var stilt til feil objekt. Neste beslutning (Kjetil): finnes en
 geometribevarende orden å måle på? Se `Documentation/Program/WP-G1_report.md`.
+
+| WP-F2 | Geometribevaring av innflytelsesordenen (ring/lat2/lat3/rrg, modus M og R) | WP-G1 | utsendt 6. sep |
+| WP-H | Tilstandsgrafens dimensjon mot konfigurasjonsnull, r ≤ 10 | — | utsendt 6. sep |
+| WP-F3 | Innflytelsesordenen på universet (α, γ som primærobservabler) | WP-F2 består | betinget |
+
+6. sep: Kjetil valgte **lesning G** (geometri med stabil, null-separert dimensjon, ikke
+Lorentz-likhet) etter `Documentation/Geometribevarende_orden_2026-09-06.md`. WP-F1/v18
+er erstattet av WP-F2 → WP-F3. Mekanismeargumentet (moves skriver bare eget token;
+innflytelse bæres av vandrende tokens → diffusiv) står som premiss.
