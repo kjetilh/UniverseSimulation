@@ -1,0 +1,369 @@
+{
+  "M_move_weighting": "multiply each move weight by 1+epsilon*mark[destination]; renormalize within each token, retaining 1/K token mass",
+  "M_seed_policy": "pending",
+  "M_structural_action": "move token to descriptor u, increment mark[v], preserve all edges and nodes",
+  "WP_F0_metrics": "exact transitive reduction links/event, Theta=r*(n-1)/(h-1), r/r_floor, inclusive max interval/N",
+  "alpha_fit": "unweighted OLS log(median V) vs log(tau), median V >= 8, at least 2 points",
+  "arm": "exposure_matched_local",
+  "assignments": [
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "R",
+      "run_offset": 41011,
+      "seed": 1152067013,
+      "substrate": "ring"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "R",
+      "run_offset": 41047,
+      "seed": 1152067049,
+      "substrate": "ring"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "R",
+      "run_offset": 41011,
+      "seed": 1153087013,
+      "substrate": "ring"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "R",
+      "run_offset": 41047,
+      "seed": 1153087049,
+      "substrate": "ring"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "R",
+      "run_offset": 41011,
+      "seed": 1152067013,
+      "substrate": "lat2"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "R",
+      "run_offset": 41047,
+      "seed": 1152067049,
+      "substrate": "lat2"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "R",
+      "run_offset": 41011,
+      "seed": 1153087013,
+      "substrate": "lat2"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "R",
+      "run_offset": 41047,
+      "seed": 1153087049,
+      "substrate": "lat2"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "R",
+      "run_offset": 41011,
+      "seed": 1152067013,
+      "substrate": "lat3"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "R",
+      "run_offset": 41047,
+      "seed": 1152067049,
+      "substrate": "lat3"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "R",
+      "run_offset": 41011,
+      "seed": 1153087013,
+      "substrate": "lat3"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "R",
+      "run_offset": 41047,
+      "seed": 1153087049,
+      "substrate": "lat3"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "R",
+      "run_offset": 41011,
+      "seed": 1152067013,
+      "substrate": "rrg"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "R",
+      "run_offset": 41047,
+      "seed": 1152067049,
+      "substrate": "rrg"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "R",
+      "run_offset": 41011,
+      "seed": 1153087013,
+      "substrate": "rrg"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "R",
+      "run_offset": 41047,
+      "seed": 1153087049,
+      "substrate": "rrg"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "M",
+      "run_offset": 41011,
+      "seed": 1152067013,
+      "substrate": "ring"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "M",
+      "run_offset": 41047,
+      "seed": 1152067049,
+      "substrate": "ring"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "M",
+      "run_offset": 41011,
+      "seed": 1153087013,
+      "substrate": "ring"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "M",
+      "run_offset": 41047,
+      "seed": 1153087049,
+      "substrate": "ring"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "M",
+      "run_offset": 41011,
+      "seed": 1152067013,
+      "substrate": "lat2"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "M",
+      "run_offset": 41047,
+      "seed": 1152067049,
+      "substrate": "lat2"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "M",
+      "run_offset": 41011,
+      "seed": 1153087013,
+      "substrate": "lat2"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "M",
+      "run_offset": 41047,
+      "seed": 1153087049,
+      "substrate": "lat2"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "M",
+      "run_offset": 41011,
+      "seed": 1152067013,
+      "substrate": "lat3"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "M",
+      "run_offset": 41047,
+      "seed": 1152067049,
+      "substrate": "lat3"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "M",
+      "run_offset": 41011,
+      "seed": 1153087013,
+      "substrate": "lat3"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "M",
+      "run_offset": 41047,
+      "seed": 1153087049,
+      "substrate": "lat3"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "M",
+      "run_offset": 41011,
+      "seed": 1152067013,
+      "substrate": "rrg"
+    },
+    {
+      "growth_seed": 2801,
+      "initial_tokens": 17,
+      "mode": "M",
+      "run_offset": 41047,
+      "seed": 1152067049,
+      "substrate": "rrg"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "M",
+      "run_offset": 41011,
+      "seed": 1153087013,
+      "substrate": "rrg"
+    },
+    {
+      "growth_seed": 2903,
+      "initial_tokens": 26,
+      "mode": "M",
+      "run_offset": 41047,
+      "seed": 1153087049,
+      "substrate": "rrg"
+    }
+  ],
+  "bootstrap": "exact enumeration of all 4^4 history resamples, percentile 95% CI of median, no event bootstrap",
+  "claim_limit": "finite calibration only; a failed gate cannot prove failure at all N/T or for every rule",
+  "drift": "symmetric edge difference/frozen initial E; also removed initial edges/E, added edges/E, ever changed original edges/E",
+  "eligible_events": "event time >= total_time/2, for both V and R",
+  "epsilon": 0.25,
+  "fingerprint": "influence-order-geometry-calibration",
+  "gamma_fit": "unweighted OLS log(pairwise R90) vs log(tau), all positive finite R, at least 2 points",
+  "gate": {
+    "gamma_max_range": 0.1,
+    "missing_fit": "not evaluable, never a pass",
+    "order": [
+      "ring",
+      "lat2",
+      "lat3",
+      "rrg"
+    ],
+    "separation": "strictly disjoint adjacent 95% alpha intervals"
+  },
+  "kernel_order": "union legacy action reads with node/adj at v and neighbors, incident edges; M mark reads on closed 2-hop ball; actual M writes",
+  "legacy_order": "unchanged v16a.action_access on the same sampled descriptors; descriptive projection, includes counterfactual structural writes in M",
+  "local_rate": 0.0005039538147742117,
+  "metric_R": "snapshot immediately before events 0,512,...; distance at later event snapshot; absent/disconnected node pairs reported as undefined",
+  "params": {
+    "birth_degree_bias": 0.5,
+    "death_inverse_degree_scale": 1.0,
+    "forbid_pruning_current_token_node": true,
+    "min_tokens": 1,
+    "p_del": 0.0,
+    "p_swap": 0.02,
+    "p_triad": 0.0,
+    "r_birth": 0.02,
+    "r_death": 0.0,
+    "r_seed": 0.04,
+    "r_token": 1.0
+  },
+  "params_provenance": "v16b.run -> v16a.anchor_params; frozen_spec does not contain Params",
+  "percentile": "linear interpolation at (n-1)*q",
+  "pilot_assignment": {
+    "growth_seed": 2801,
+    "initial_tokens": 17,
+    "mode": "R",
+    "run_offset": 41011,
+    "seed": 1152067013,
+    "substrate": "lat3"
+  },
+  "prepared_at": "2026-09-07T21:05:17.398354+00:00",
+  "runtime_ceiling_seconds": 10800,
+  "runtime_policy": "one complete lat3/R pilot at 16384; 32*pilot seconds; halve once to 8192 if >10800",
+  "source_hashes": {
+    "Documentation/Program/WP-F2_influence_order_calibration.md": "a9950e892c2ce2edd43e2c7fb4260a6de49b915042b5719fcee7e9da5301754a",
+    "Documentation/v16ac_target_summary.csv": "d5cbe90ccd48cc3d84133228ad0644a780ca7fecf316f76c30973300541ebd20",
+    "Documentation/v16b_pre_registration.csv": "a963fd0b610536adbf55c1c6d1dc8f0bea5ddc55fd45dfa7b3cdb996fb7277fa",
+    "Documentation/v16b_run_summary.csv": "5cd6e4578007632b6763047ff619f45e94ca7b01bfe5df566bac0a387f2c5c3d",
+    "Tools/influence_order_lab.py": "79e66fb42efb360568c6fd123e51861c911a92fd379c74a0a283bff5657a7d4e",
+    "relational_universe_local_max_coupling_lab.py": "695ed59ca168336334d5745076ee8924596447ee6db237963468abde526f0e1c",
+    "relational_universe_v09_scale_and_natural_ensembles.py": "33d979b1ef33689c34e52b1c5fab3240b0c2b141c8e7850938da7a32d8b80459",
+    "relational_universe_v15_defect_lifetime_lab.py": "5ef8d381f96011d59909c8e8356b69e1e38e198b556ddf1f23c0bf80882bbb6a",
+    "relational_universe_v16a_disjoint_event_commutation_gate.py": "d288d5680f62267e850dc20fffa9e960f123ae64c81f123cdfd2744d1fc24e7a",
+    "relational_universe_v16ac_local_seed_adapter_gate.py": "d4e29fa7b012e3187db87ea0f40028409c8385772d6c6f16147794ca825b2148",
+    "relational_universe_v16b_intrinsic_event_dag_gate.py": "fba9a56af938ffc90c9878d799498da0d1868e2491044147ae5df0ca9e2f7709"
+  },
+  "source_revision": "7923f3d2b5e89f834617460356c059ef76f1bf49",
+  "steps_requested": 16384,
+  "tau_grid": "powers of 2 in physical Gillespie time, 1 <= tau <= total_time/4",
+  "v16b_frozen_spec": {
+    "arms": [
+      "current_global",
+      "exposure_matched_local"
+    ],
+    "growth_seeds": [
+      2801,
+      2903
+    ],
+    "local_rate": 0.0005039538147742117,
+    "purpose_ref": "purpose://prompt.unknown",
+    "run_offsets": [
+      41011,
+      41047,
+      41081
+    ],
+    "source_target_sha256": "d5cbe90ccd48cc3d84133228ad0644a780ca7fecf316f76c30973300541ebd20",
+    "steps": 2048,
+    "target_nodes": 1024,
+    "thresholds": {
+      "commutation_candidates": 512,
+      "growth_median_ratio_range": [
+        0.6,
+        1.67
+      ],
+      "max_commutation_tests": 128,
+      "max_comparable_pair_fraction": 0.95,
+      "max_local_metric_cv": 0.35,
+      "max_nonseed_event_tv": 0.05,
+      "min_commutation_tests_per_run": 64,
+      "min_layer_width_fraction": 0.01,
+      "min_reordered_position_fraction": 0.1,
+      "scheduler_median_ratio_range": [
+        0.6,
+        1.67
+      ]
+    },
+    "topological_replays": 4
+  }
+}

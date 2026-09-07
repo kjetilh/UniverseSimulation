@@ -1,0 +1,13 @@
+mode,order,criterion,status,observed
+M,kernel,ordering,not_run,M seed semantics pending
+M,kernel,separation,not_run,M seed semantics pending
+M,kernel,mechanism,not_run,M seed semantics pending
+M,legacy,ordering,not_run,M seed semantics pending
+M,legacy,separation,not_run,M seed semantics pending
+M,legacy,mechanism,not_run,M seed semantics pending
+R,kernel,ordering,not_evaluable,all four alpha medians required
+R,kernel,separation,not_evaluable,all four alpha history-bootstrap intervals required
+R,kernel,mechanism,fail,0.10617288727600349
+R,legacy,ordering,not_evaluable,all four alpha medians required
+R,legacy,separation,not_evaluable,all four alpha history-bootstrap intervals required
+R,legacy,mechanism,fail,0.17958592832197745

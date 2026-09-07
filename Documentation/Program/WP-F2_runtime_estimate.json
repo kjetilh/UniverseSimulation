@@ -1,0 +1,8 @@
+{
+  "pilot_seconds": 506.63647287501954,
+  "projected_32_histories_seconds": 16212.367132000625,
+  "projected_hours": 4.503435314444618,
+  "selected_steps": 8192,
+  "estimated_selected_seconds": 8106.183566000313,
+  "caveat": "single lat3/R history; mode, token growth, analysis and machine load may change runtime"
+}
