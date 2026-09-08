@@ -1,0 +1,8 @@
+{
+  "policy": "mark",
+  "frozen_sha256": "8b220334d2fbe55054d92c215fec608f378fd8ec2a9ddcbf3e6e54cc09990c42",
+  "authority": "WP-F2 amendment 1, spec author Claude; user requested execution",
+  "timestamp": "2026-09-08T21:52:56.725731+00:00",
+  "amendment_sha256": "6e8192d49458056482c8202954a2125e56f50189ebdc7971a6e5e329034c2e59",
+  "wording": "i modus M utføres `seed` som `mark:host` — ingen node, ingen kant. Lese-/skrivesett: leser `token:t` (ved `seed_tid`) og `node:host`, skriver `mark:host`."
+}

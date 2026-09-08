@@ -1,0 +1,5 @@
+mode,order,complete,evaluable,ordering,separation,mechanism,passed
+M,kernel,False,False,False,False,False,False
+M,legacy,False,False,False,False,False,False
+R,kernel,True,False,False,False,False,False
+R,legacy,True,False,False,False,False,False

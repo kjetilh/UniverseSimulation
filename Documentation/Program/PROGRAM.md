@@ -82,3 +82,17 @@ geometribevarende orden å måle på? Se `Documentation/Program/WP-G1_report.md`
 Lorentz-likhet) etter `Documentation/Geometribevarende_orden_2026-09-06.md`. WP-F1/v18
 er erstattet av WP-F2 → WP-F3. Mekanismeargumentet (moves skriver bare eget token;
 innflytelse bæres av vandrende tokens → diffusiv) står som premiss.
+
+### WP-F2 status 8. sep 2026
+
+Forsøk 2 (modus R, kernel-orden) måler α = 1,621 / 2,054 / 2,756 for ring / lat2 /
+lat3, rekkefølge og disjunkte KI; forhåndssagt α = 1 + d_s/2 treffer for d=1 og 2.
+Ekspanderen er separert på funksjonsform (eksponentiell, 4/4) — ikke på eksponent, som
+gaten feilaktig krevde. Se `WP-F2_amendment_2.md`. Modus M og WP-H gjenstår; γ-leddet
+feiler (0,129 mot 0,10). Ingen univershistorie er målt: dette er kalibrering.
+
+Node-based-algorithm framework (`Tools/nodegraph/`, gren `losen/nodegraph-vurdering-20260908`)
+er HAVENs metode for algoritmeutvikling under utvikling, og dens tre nektelser i
+`purpose.py` gjelder gater i dette repoet: målt null, målt positiv referanse, og at
+statistikken må kunne skille sine egne to referanser. Den tredje er nøyaktig det
+WP-F2-gaten brøt.
