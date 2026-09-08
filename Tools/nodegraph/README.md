@@ -8,11 +8,20 @@ Formålet står i `PURPOSE.md`. Vurderingen av om dette er verdt å bygge videre
 på, med alle måletall, står i
 `../../Documentation/Nodegraf_Vurdering_2026-09-08.md`.
 
+**Skal du bruke det:** les `INSTRUKSJONER.md` og kjør
+`python3 examples/minimal_purpose.py`. Den er hele arbeidsflyten på under 130
+linjer, med planta effekt, så du ser maskineriet svare riktig på et spørsmål
+der fasiten er kjent. På den arenaen finner søket `gini(x)`, mens de to
+opplagte håndplukkede observablene så vidt klarer holdout-porten.
+
 ## Filene
 
 | fil | hva den er |
 |---|---|
+| `INSTRUKSJONER.md` | hvordan du peker dette mot et nytt problem: seks steg, tre nektelser, og fallgruvene med måletall |
+| `examples/minimal_purpose.py` | hele arbeidsflyten, selvstendig, med planta effekt |
 | `core.py` | typer, noder, DAG, typesjekk, referanseevaluator, komposittnoder, parser |
+| `stats.py` | den parede statistikken, de målte nullene og fortegnstesten. Vet ingenting om arenaen — det er meningen |
 | `library.py` | 45 basisnoder. Python- og C-implementasjon side om side, per node |
 | `compile_py.py` | graf → rett-fram Python |
 | `compile_c.py` | graf → C → `gcc -O2` → ctypes, med konformansharness |
