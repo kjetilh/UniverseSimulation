@@ -1,0 +1,153 @@
+{
+  "winner_expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+  "replication_seeds": [
+    501000,
+    501001,
+    501002,
+    501003,
+    501004,
+    501005,
+    501006,
+    501007,
+    501008,
+    501009,
+    501010,
+    501011,
+    501012,
+    501013,
+    501014,
+    501015,
+    501016,
+    501017,
+    501018,
+    501019,
+    501020,
+    501021,
+    501022,
+    501023
+  ],
+  "rows": [
+    {
+      "name": "WINNER @ selection(train)",
+      "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+      "score": 8.018963688454768,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 213726532160.0,
+      "sign_positive": 23
+    },
+    {
+      "name": "WINNER @ holdout",
+      "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+      "score": 3.2835283206736716,
+      "permutation_p": 0.004849757512124394,
+      "n_pairs": 24,
+      "median_delta": 113729736887.5,
+      "sign_positive": 20
+    },
+    {
+      "name": "WINNER @ replication(fresh)",
+      "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+      "score": 4.943286525706133,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 94068620975.5,
+      "sign_positive": 21
+    },
+    {
+      "name": "n @ replication",
+      "expr": "n",
+      "score": 1.274933227174147,
+      "permutation_p": 0.23013849307534623,
+      "n_pairs": 24,
+      "median_delta": -22.0,
+      "sign_positive": 10
+    },
+    {
+      "name": "m @ replication",
+      "expr": "m",
+      "score": 1.1364108101374368,
+      "permutation_p": 0.27968601569921503,
+      "n_pairs": 24,
+      "median_delta": 40.5,
+      "sign_positive": 13
+    },
+    {
+      "name": "beta1 @ replication",
+      "expr": "beta1",
+      "score": 4.261559014707726,
+      "permutation_p": 0.00014999250037498125,
+      "n_pairs": 24,
+      "median_delta": 68.5,
+      "sign_positive": 20
+    },
+    {
+      "name": "mean_deg @ replication",
+      "expr": "mean(deg)",
+      "score": 1.4424604652723523,
+      "permutation_p": 0.1711414429278536,
+      "n_pairs": 24,
+      "median_delta": 2.433255086628587,
+      "sign_positive": 15
+    },
+    {
+      "name": "mean_clus @ replication",
+      "expr": "mean(clus)",
+      "score": 0.5806223640298224,
+      "permutation_p": 0.5727713614319284,
+      "n_pairs": 24,
+      "median_delta": -0.0020400184116051365,
+      "sign_positive": 12
+    },
+    {
+      "name": "mean_tri @ replication",
+      "expr": "mean(tri)",
+      "score": 0.7748373513424073,
+      "permutation_p": 0.45152742362881854,
+      "n_pairs": 24,
+      "median_delta": 8.182526061530641,
+      "sign_positive": 14
+    },
+    {
+      "name": "max_deg @ replication",
+      "expr": "vmax(deg)",
+      "score": 0.27450540652296035,
+      "permutation_p": 0.8201589920503974,
+      "n_pairs": 24,
+      "median_delta": 0.0,
+      "sign_positive": 9
+    },
+    {
+      "name": "mean_b2 @ replication",
+      "expr": "mean(b2)",
+      "score": 1.5483474643389727,
+      "permutation_p": 0.14469276536173192,
+      "n_pairs": 24,
+      "median_delta": 7.633333333333333,
+      "sign_positive": 16
+    },
+    {
+      "name": "edge_density @ replication",
+      "expr": "div(m, n)",
+      "score": 1.442460465272145,
+      "permutation_p": 0.1711414429278536,
+      "n_pairs": 24,
+      "median_delta": 1.2166275433142935,
+      "sign_positive": 15
+    },
+    {
+      "name": "assortativity @ replication",
+      "expr": "corr(edeg_a, edeg_b)",
+      "score": 0.955302180222604,
+      "permutation_p": 0.3614319284035798,
+      "n_pairs": 24,
+      "median_delta": -0.06866334594778792,
+      "sign_positive": 11
+    }
+  ],
+  "winner_vs_beta1": {
+    "pearson_r": 0.950286119210005,
+    "spearman_rho": 0.980351715154147,
+    "note": "computed on the replication set only"
+  }
+}

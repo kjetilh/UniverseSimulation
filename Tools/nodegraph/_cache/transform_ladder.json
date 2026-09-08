@@ -1,0 +1,234 @@
+{
+  "beta1": {
+    "train": {
+      "name": "beta1",
+      "expr": "beta1",
+      "score": 6.26752607560149,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 141.0,
+      "sign_positive": 23
+    },
+    "holdout": {
+      "name": "beta1",
+      "expr": "beta1",
+      "score": 2.640645185068998,
+      "permutation_p": 0.017149142542872857,
+      "n_pairs": 24,
+      "median_delta": 87.5,
+      "sign_positive": 20
+    },
+    "replication": {
+      "name": "beta1",
+      "expr": "beta1",
+      "score": 4.261559014707726,
+      "permutation_p": 0.00014999250037498125,
+      "n_pairs": 24,
+      "median_delta": 68.5,
+      "sign_positive": 20
+    }
+  },
+  "beta1^2": {
+    "train": {
+      "name": "beta1^2",
+      "expr": "sq(beta1)",
+      "score": 6.921982162961733,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 211710.0,
+      "sign_positive": 23
+    },
+    "holdout": {
+      "name": "beta1^2",
+      "expr": "sq(beta1)",
+      "score": 2.8972862749311963,
+      "permutation_p": 0.009899505024748763,
+      "n_pairs": 24,
+      "median_delta": 128322.5,
+      "sign_positive": 20
+    },
+    "replication": {
+      "name": "beta1^2",
+      "expr": "sq(beta1)",
+      "score": 4.399283297723845,
+      "permutation_p": 0.00014999250037498125,
+      "n_pairs": 24,
+      "median_delta": 103515.0,
+      "sign_positive": 20
+    }
+  },
+  "beta1^4": {
+    "train": {
+      "name": "beta1^4",
+      "expr": "sq(sq(beta1))",
+      "score": 7.779359855794057,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 223983779215.5,
+      "sign_positive": 23
+    },
+    "holdout": {
+      "name": "beta1^4",
+      "expr": "sq(sq(beta1))",
+      "score": 3.434760016134021,
+      "permutation_p": 0.0034998250087495625,
+      "n_pairs": 24,
+      "median_delta": 138487576032.5,
+      "sign_positive": 20
+    },
+    "replication": {
+      "name": "beta1^4",
+      "expr": "sq(sq(beta1))",
+      "score": 4.427515471220988,
+      "permutation_p": 0.00024998750062496874,
+      "n_pairs": 24,
+      "median_delta": 109471150920.0,
+      "sign_positive": 20
+    }
+  },
+  "beta1^8": {
+    "train": {
+      "name": "beta1^8",
+      "expr": "sq(sq(sq(beta1)))",
+      "score": 7.33456108286132,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 1.20340137099803e+23,
+      "sign_positive": 23
+    },
+    "holdout": {
+      "name": "beta1^8",
+      "expr": "sq(sq(sq(beta1)))",
+      "score": 4.283497004983797,
+      "permutation_p": 0.0006499675016249188,
+      "n_pairs": 24,
+      "median_delta": 7.829081419338162e+22,
+      "sign_positive": 20
+    },
+    "replication": {
+      "name": "beta1^8",
+      "expr": "sq(sq(sq(beta1)))",
+      "score": 3.952047152445329,
+      "permutation_p": 0.000999950002499875,
+      "n_pairs": 24,
+      "median_delta": 5.852568202969488e+22,
+      "sign_positive": 20
+    }
+  },
+  "log(beta1)": {
+    "train": {
+      "name": "log(beta1)",
+      "expr": "log1p(beta1)",
+      "score": 5.55892680742294,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 0.19242934231358033,
+      "sign_positive": 23
+    },
+    "holdout": {
+      "name": "log(beta1)",
+      "expr": "log1p(beta1)",
+      "score": 2.3965601581150184,
+      "permutation_p": 0.028748562571871406,
+      "n_pairs": 24,
+      "median_delta": 0.1158992600204991,
+      "sign_positive": 20
+    },
+    "replication": {
+      "name": "log(beta1)",
+      "expr": "log1p(beta1)",
+      "score": 4.050588455733639,
+      "permutation_p": 0.00014999250037498125,
+      "n_pairs": 24,
+      "median_delta": 0.09612204937663726,
+      "sign_positive": 20
+    }
+  },
+  "sqrt(beta1)": {
+    "train": {
+      "name": "sqrt(beta1)",
+      "expr": "sqrt(beta1)",
+      "score": 5.914523177316949,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 2.5905848587890663,
+      "sign_positive": 23
+    },
+    "holdout": {
+      "name": "sqrt(beta1)",
+      "expr": "sqrt(beta1)",
+      "score": 2.518552544410868,
+      "permutation_p": 0.021498925053747314,
+      "n_pairs": 24,
+      "median_delta": 1.5973727886480873,
+      "sign_positive": 20
+    },
+    "replication": {
+      "name": "sqrt(beta1)",
+      "expr": "sqrt(beta1)",
+      "score": 4.163896496278086,
+      "permutation_p": 0.00014999250037498125,
+      "n_pairs": 24,
+      "median_delta": 1.270996971073835,
+      "sign_positive": 20
+    }
+  },
+  "winner(seed A)": {
+    "train": {
+      "name": "winner(seed A)",
+      "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+      "score": 8.018963688454768,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 213726532160.0,
+      "sign_positive": 23
+    },
+    "holdout": {
+      "name": "winner(seed A)",
+      "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+      "score": 3.2835283206736716,
+      "permutation_p": 0.004849757512124394,
+      "n_pairs": 24,
+      "median_delta": 113729736887.5,
+      "sign_positive": 20
+    },
+    "replication": {
+      "name": "winner(seed A)",
+      "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+      "score": 4.943286525706133,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 94068620975.5,
+      "sign_positive": 21
+    }
+  },
+  "winner(seed B)": {
+    "train": {
+      "name": "winner(seed B)",
+      "expr": "sq(sq(median(vshift(tokdeg, beta1))))",
+      "score": 8.146189227456137,
+      "permutation_p": 4.999750012499375e-05,
+      "n_pairs": 24,
+      "median_delta": 185948070352.5,
+      "sign_positive": 23
+    },
+    "holdout": {
+      "name": "winner(seed B)",
+      "expr": "sq(sq(median(vshift(tokdeg, beta1))))",
+      "score": 3.6857724880262905,
+      "permutation_p": 0.0021498925053747312,
+      "n_pairs": 24,
+      "median_delta": 117120286576.5,
+      "sign_positive": 19
+    },
+    "replication": {
+      "name": "winner(seed B)",
+      "expr": "sq(sq(median(vshift(tokdeg, beta1))))",
+      "score": 4.626246818363323,
+      "permutation_p": 9.99950002499875e-05,
+      "n_pairs": 24,
+      "median_delta": 83666599537.0,
+      "sign_positive": 22
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "generated_unix": 1788902121.3283112,
+  "library_ops": 45,
+  "contract": {
+    "id": "observable_responds_to_rule_arm",
+    "statement": "Find a scalar observable of the final simulation graph whose paired response to a change in the rewrite rule beats what the same search achieves on label-permuted data, and which keeps that response on start seeds never used to select it.",
+    "signature": [
+      [
+        "n",
+        "real"
+      ],
+      [
+        "m",
+        "real"
+      ],
+      [
+        "beta1",
+        "real"
+      ],
+      [
+        "deg",
+        "vec"
+      ],
+      [
+        "tri",
+        "vec"
+      ],
+      [
+        "clus",
+        "vec"
+      ],
+      [
+        "b1",
+        "vec"
+      ],
+      [
+        "b2",
+        "vec"
+      ],
+      [
+        "b3",
+        "vec"
+      ],
+      [
+        "comp",
+        "vec"
+      ],
+      [
+        "tokdeg",
+        "vec"
+      ],
+      [
+        "edeg_a",
+        "vec"
+      ],
+      [
+        "edeg_b",
+        "vec"
+      ]
+    ],
+    "output_type": "real",
+    "null_reference": {
+      "role": "null",
+      "value": 4.987480341789539,
+      "method": "95th pct of max score over the whole candidate set under arm-label permutation of the same paired differences",
+      "source": "run_experiment.py P3"
+    },
+    "positive_reference": {
+      "role": "positive",
+      "value": 50.0,
+      "method": "best score of the same search on the strong arm, where the response is known to be present",
+      "source": "run_experiment.py P6 (arm p_triadic_closure 0.02 vs 0.30)"
+    },
+    "min_separation": 2.0,
+    "admissibility": {
+      "admissible": true,
+      "reasons": [],
+      "separation": 10.025102170540023,
+      "threshold": 4.987480341789539
+    },
+    "notes": "The two references come from different arms and different pair counts (strong n=8, weak n=24). The strong-arm null is the higher of the two, so the separation check is conservative."
+  },
+  "contract_admissible": true,
+  "contract_reasons": [],
+  "positive_reference_run": {
+    "arm": "strong",
+    "arm_field": "p_triadic_closure",
+    "levels": {
+      "lo": 0.02,
+      "hi": 0.3
+    },
+    "steps": 20000,
+    "n_train_pairs": 8,
+    "n_holdout_pairs": 8,
+    "n_candidates": 9000,
+    "selection_gate_null_search_p95": 37.1760754264115,
+    "null_single_p95_train": 3.1441567930814656,
+    "winner_expr": "n",
+    "winner_size": 1,
+    "winner_depth": 0,
+    "winner_train_score": 50.0,
+    "winner_holdout_score": 50.0,
+    "holdout_gate_null_p95": 3.1877973382569116,
+    "passes_selection": true,
+    "passes_holdout": true,
+    "top10": [
+      {
+        "expr": "n",
+        "train_score": 50.0,
+        "size": 1
+      },
+      {
+        "expr": "m",
+        "train_score": 50.0,
+        "size": 1
+      },
+      {
+        "expr": "count(deg)",
+        "train_score": 50.0,
+        "size": 2
+      },
+      {
+        "expr": "sum(deg)",
+        "train_score": 50.0,
+        "size": 2
+      },
+      {
+        "expr": "sum(clus)",
+        "train_score": 50.0,
+        "size": 2
+      },
+      {
+        "expr": "sum(b2)",
+        "train_score": 50.0,
+        "size": 2
+      },
+      {
+        "expr": "mean(b2)",
+        "train_score": 50.0,
+        "size": 2
+      },
+      {
+        "expr": "mean(edeg_a)",
+        "train_score": 50.0,
+        "size": 2
+      },
+      {
+        "expr": "mean(edeg_b)",
+        "train_score": 50.0,
+        "size": 2
+      },
+      {
+        "expr": "std(deg)",
+        "train_score": 50.0,
+        "size": 2
+      }
+    ],
+    "permutation_reps": 2000
+  },
+  "search_run": {
+    "arm": "weak",
+    "arm_field": "p_local_rewire",
+    "levels": {
+      "lo": 0.03,
+      "hi": 0.09
+    },
+    "steps": 20000,
+    "n_train_pairs": 24,
+    "n_holdout_pairs": 24,
+    "n_candidates": 9000,
+    "selection_gate_null_search_p95": 4.987480341789539,
+    "null_single_p95_train": 2.0462698499590393,
+    "winner_expr": "sq(sq(median(vshift(tokdeg, beta1))))",
+    "winner_size": 6,
+    "winner_depth": 4,
+    "winner_train_score": 8.146189227456137,
+    "winner_holdout_score": 3.6857724880262905,
+    "holdout_gate_null_p95": 2.142017692075827,
+    "passes_selection": true,
+    "passes_holdout": true,
+    "top10": [
+      {
+        "expr": "sq(sq(median(vshift(tokdeg, beta1))))",
+        "train_score": 8.146189227456137,
+        "size": 6
+      },
+      {
+        "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+        "train_score": 8.018963688454768,
+        "size": 6
+      },
+      {
+        "expr": "sq(vmax(vshift(tokdeg, beta1)))",
+        "train_score": 7.285724241181342,
+        "size": 5
+      },
+      {
+        "expr": "sq(mean(vshift(tokdeg, beta1)))",
+        "train_score": 7.163286508070458,
+        "size": 5
+      },
+      {
+        "expr": "sq(vmin(vshift(tokdeg, beta1)))",
+        "train_score": 6.99474743158713,
+        "size": 5
+      },
+      {
+        "expr": "sq(sub(beta1, entropy(tri)))",
+        "train_score": 6.956762980020884,
+        "size": 5
+      },
+      {
+        "expr": "sq(beta1)",
+        "train_score": 6.921982162961733,
+        "size": 2
+      },
+      {
+        "expr": "sq(vmin(vscale(deg, beta1)))",
+        "train_score": 6.921982162961733,
+        "size": 5
+      },
+      {
+        "expr": "sq(vmin(vscale(b1, beta1)))",
+        "train_score": 6.921982162961733,
+        "size": 5
+      },
+      {
+        "expr": "add(add(iqr(vsq(tokdeg)), corr(edeg_b, vmul(vscale(clus, n), vadd(b1, tokdeg)))), sq(q10(vscale(deg, beta1))))",
+        "train_score": 6.913348410208079,
+        "size": 18
+      }
+    ],
+    "permutation_reps": 1500,
+    "search_seed": null
+  },
+  "hand_picked_baselines_weak_arm": {
+    "n": {
+      "expr": "n",
+      "train_score": 3.102754426027619,
+      "holdout_score": 1.1814312723627405
+    },
+    "m": {
+      "expr": "m",
+      "train_score": 2.981593017632611,
+      "holdout_score": 1.115157648177054
+    },
+    "beta1": {
+      "expr": "beta1",
+      "train_score": 6.26752607560149,
+      "holdout_score": 2.640645185068998
+    },
+    "mean_deg": {
+      "expr": "mean(deg)",
+      "train_score": 3.4596562754152833,
+      "holdout_score": 1.6461633177204147
+    },
+    "mean_clus": {
+      "expr": "mean(clus)",
+      "train_score": 1.9512553112479392,
+      "holdout_score": 0.5361654158604525
+    },
+    "mean_tri": {
+      "expr": "mean(tri)",
+      "train_score": 2.7599247097604964,
+      "holdout_score": 1.1080537718889183
+    },
+    "max_deg": {
+      "expr": "vmax(deg)",
+      "train_score": 0.14291792020207425,
+      "holdout_score": 2.3062545874281564
+    },
+    "mean_b2": {
+      "expr": "mean(b2)",
+      "train_score": 3.546243137627689,
+      "holdout_score": 1.4059694412807633
+    },
+    "edge_density": {
+      "expr": "div(m, n)",
+      "train_score": 3.459656275414725,
+      "holdout_score": 1.6461633177201531
+    },
+    "assortativity": {
+      "expr": "corr(edeg_a, edeg_b)",
+      "train_score": 3.202464148819911,
+      "holdout_score": 1.0015623034423609
+    }
+  }
+}

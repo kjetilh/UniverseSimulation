@@ -1,0 +1,25 @@
+{
+  "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
+  "conformance": {
+    "trials": 400,
+    "failures": 0,
+    "worst_abs_error": 0.0,
+    "passed": true,
+    "rtol": 1e-09,
+    "atol": 1e-09,
+    "worst_env_sizes": null
+  },
+  "us_per_call": {
+    "interpreter": 844.4429149999905,
+    "python_codegen": 856.5089295999769,
+    "c_marshalled": 345.2538751500015,
+    "c_resident": 3.365350000012768
+  },
+  "speedup_vs_interpreter": {
+    "python_codegen": 0.9859125641508236,
+    "c_marshalled": 2.445860787610589,
+    "c_resident": 250.92276137601937
+  },
+  "input_size": 3200,
+  "iterations": 20000
+}
