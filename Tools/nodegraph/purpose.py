@@ -69,6 +69,13 @@ class PurposeContract:
     positive_reference: Reference
     min_separation: float = 2.0          # positive must beat null by this factor
     notes: str = ""
+    # Optional transform-invariant companion. Returns (p_value, sign_vector) for
+    # a graph on the reporting split. Without it a candidate can win purely by
+    # being a monotone re-spelling of another one -- see section 4.3 of
+    # Documentation/Nodegraf_Vurdering_2026-09-08.md, where exactly that
+    # happened and cost nothing only because it was caught.
+    invariant: Optional[Callable[[Graph], tuple]] = None
+    reference_graph: Optional[Graph] = None
 
     # -- the two refusals -------------------------------------------------
     def admissibility(self) -> Verdict:
@@ -118,6 +125,17 @@ class PurposeContract:
         thr = self.gate_threshold()
         s_sel = float(self.score(graph))
         s_hold = float(self.holdout(graph))
+        extra: Dict[str, object] = {}
+        if self.invariant is not None:
+            p, signs = self.invariant(graph)
+            extra["invariant_p"] = p
+            if self.reference_graph is not None:
+                rp, rsigns = self.invariant(self.reference_graph)
+                extra["reference_invariant_p"] = rp
+                # A candidate whose sign vector equals the reference's carries no
+                # directional information the reference did not already carry,
+                # however much better its weighted score looks.
+                extra["transform_only"] = (tuple(signs) == tuple(rsigns))
         return {
             "admissible": True,
             "expr": graph.to_expr(),
@@ -130,6 +148,7 @@ class PurposeContract:
             "passes_holdout": s_hold > thr,
             "null_reference": self.null_reference.value,
             "positive_reference": self.positive_reference.value,
+            **extra,
         }
 
     def to_json(self) -> str:

@@ -189,9 +189,7 @@ seed 222      : sq(sq(beta1))                           train 7,78  holdout 3,44
 ```
 
 Alle tre er β₁ i fjerde potens. Spearman-korrelasjon mellom vinner og β₁ på
-replikasjonssettet: **0,98**.
-
-Transformasjonsstigen, målt på alle tre splittene:
+replikasjonssettet: **0,98**. Transformasjonsstigen, målt på alle tre splittene:
 
 | | train | holdout | replikasjon |
 |---|---|---|---|
@@ -202,17 +200,47 @@ Transformasjonsstigen, målt på alle tre splittene:
 | β₁⁴ | 7,78 | 3,44 | 4,43 |
 | β₁⁸ | 7,34 | 4,28 | 3,95 |
 
-**Den ærlige lesningen:** søket gjenfant den riktige størrelsen — β₁, det
-sykliske tallet, som allerede fantes i biblioteket — og fant en bedre
-*parametrisering* av den. Konvekse transformasjoner øker statistikken, konkave
-senker den, konsistent over alle tre splittene. Gevinsten er i teststyrke, ikke
-i mekanisme: det er ingen ny størrelse her. På replikasjonssettet er forskjellen
-mellom β₁ og β₁⁴ dessuten liten (4,26 mot 4,43); det er vinnerens
-`tokdeg`-ledd som gir de 4,94.
+Konvekse transformasjoner øker statistikken, konkave senker den, konsistent over
+alle tre splittene. Den nærliggende lesningen er at søket fant en bedre
+parametrisering. **Den lesningen holder ikke, og det er verdt å se hvorfor.**
 
-Det er et lite, reproduserbart, presist avgrenset funn. Det er også
-nøyaktig den typen funn rammeverket skal kunne levere *og selv fortelle deg
-størrelsen på*.
+#### Dekomponeringen som avgjør det
+
+β₁ er alltid positiv, og x⁴ er strengt voksende på positive tall. Da er
+`sign(hi⁴ − lo⁴) = sign(hi − lo)` for hvert eneste par. **Hele β₁-stigen har
+identisk fortegnsvektor.** En transformasjons­invariant test kan derfor ikke
+skille dem i det hele tatt — og gjør det heller ikke:
+
+| | fortegn (train) | p | fortegn (holdout) | p | fortegn (repl.) | p |
+|---|---|---|---|---|---|---|
+| log(β₁) | 23/24 | <10⁻⁵ | 20/24 | 0,0015 | 20/24 | 0,0015 |
+| β₁ | 23/24 | <10⁻⁵ | 20/24 | 0,0015 | 20/24 | 0,0015 |
+| β₁⁴ | 23/24 | <10⁻⁵ | 20/24 | 0,0015 | 20/24 | 0,0015 |
+| β₁⁸ | 23/24 | <10⁻⁵ | 20/24 | 0,0015 | 20/24 | 0,0015 |
+| **vinner** | 23/24 | <10⁻⁵ | **20/24** | 0,0015 | **21/24** | **0,00028** |
+
+Hele forskjellen mellom 2,64 og 3,44 på holdout — og mellom 4,26 og 4,43 på
+replikasjon — er **omvekting av par**, ikke ny retningsinformasjon. Statistikken
+er ikke invariant under monotone transformasjoner, og en potens flytter massen
+mot de parene der β₁ er stor. Om den omvektingen er en reell styrkegevinst
+(parene med stor β₁ er mer pålitelige) eller en artefakt av at winsorisering ved
+90-persentilen presser flere par opp mot taket med samme fortegn, kan ikke
+avgjøres av tallene i tabellen over.
+
+Det som **er** avgjort: vinneren er ikke en monoton omskrivning av β₁. Den er
+(β₁ − min(tokdeg))⁴, og fortegnsvektoren dens skiller seg fra β₁ sin på både
+holdout og replikasjon. På replikasjonssettet får den ett par til riktig vei:
+21/24 mot 20/24, sign-test p 0,00028 mot 0,0015.
+
+#### Resultatet, slik det står
+
+> Søket bestod begge forhåndsregistrerte gater og replikerte på ferske seeds.
+> Dekomponert med en transformasjonsinvariant test er den reelle gevinsten
+> **ett par av 24**. Resten av det som så ut som en gevinst er statistikken som
+> belønner en omparametrisering.
+
+Det er et ærlig, lite, positivt resultat — og funnet av det er mindre verdt enn
+måten det ble avslørt på. Se punkt 7 i del 5.
 
 ### 4.4 Kompilering (D6)
 
@@ -253,6 +281,16 @@ Ført opp her så det ikke gjøres om igjen.
    konsistent respons — som er nettopp det alternativet som betyr noe her.
 6. **Søket fant ingen ny størrelse.** Det gjenfant β₁ i tre uavhengige kjøringer.
    Det er et ærlig delvis negativt resultat, ikke en suksess som skal rundes opp.
+7. **Formålskontrakten har en systematisk skjevhet jeg ikke forutså, og som er
+   det viktigste funnet i hele arbeidet.** Statistikken er ikke invariant under
+   monotone transformasjoner. Uttrykksrommet er full av slike transformasjoner.
+   Et søk vil derfor *systematisk* klatre i transformasjonsretningen framfor i
+   mekanismeretningen, fordi det er den billigste veien til en høyere score — og
+   en score som stiger fra 2,64 til 3,44 ser ut som framgang selv når
+   fortegnsvektoren, og dermed all retningsinformasjon, er bit-for-bit uendret.
+   Dette er samme feilklasse som v17s: en gate som beveger seg av noe annet enn
+   det den skulle måle. Den ble her fanget fordi kontrakten tvang fram en
+   dekomponering, ikke fordi jeg mistenkte den. Rettelsen står som port 4, og den er gjennomført.
 
 ---
 
@@ -287,7 +325,7 @@ målt null er ikke en omvei rundt det problemet. Det er verktøyet for det.
 
 ## 7. Hva jeg ville krevd før mer investering
 
-Fire porter. Hver har et tall, ikke en vurdering.
+Fem porter. Hver har et tall, ikke en vurdering.
 
 1. **Swift-backend med samme konformanskontrakt.** Uten den kjører Goals ikke
    der de skal. Port: alle 45 noder, 250 tilfeldige input, 0 avvik — samme
@@ -299,7 +337,15 @@ Fire porter. Hver har et tall, ikke en vurdering.
    Port: bedre holdout-score per brukt krone enn det deterministiske søket.
    Grensesnittet (`search.Proposer`) er ferdig; målingen er ikke gjort, og
    påstanden om at modellen hjelper er derfor ubelagt.
-4. **Én formålskontrakt skrevet for noe utenfor denne arenaen** — en Palazzo-
+4. **Transformasjonsinvarians i kontrakten.** En kandidat skal ikke kunne slå
+   en annen på score alene når de to har identisk fortegnsvektor. Port: kontrakten
+   må rapportere både den vektede statistikken og en transformasjonsinvariant
+   test, og et funn teller bare som funn når *begge* forbedres. Dette er en
+   endring i `purpose.py`, ikke en anbefaling. **Den er gjort** — kontrakten
+   rapporterer nå fortegnstesten ved siden av den vektede statistikken, og
+   `PurposeContract.evaluate` merker et funn som `transform_only` når
+   fortegnsvektoren ikke er bedre enn referansens.
+5. **Én formålskontrakt skrevet for noe utenfor denne arenaen** — en Palazzo-
    eller Kallimachos-Goal — som består sin egen admissibilitetsprøve. Det er
    den prøven som avgjør om «å beskrive formålene» er løsbart i praksis eller
    bare i denne ene sandkassen.

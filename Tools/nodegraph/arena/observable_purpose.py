@@ -233,3 +233,30 @@ def null_references_np(all_deltas, reps: int = 2000, seed: int = 20260908) -> Di
         "reps": reps,
         "backend": "numpy",
     }
+
+
+# --------------------------------------------------- transform-invariant test
+def sign_test(d: Sequence[float]) -> Dict[str, float]:
+    """Exact two-sided sign test on the paired differences.
+
+    This is here because of what section 4.3 of the assessment found: every
+    monotone transform of a positive observable has the SAME sign vector, so the
+    winsorised studentized statistic can rise a long way -- 2.64 to 3.44 on the
+    holdout -- while the directional evidence is bit-for-bit unchanged. An
+    expression space is full of monotone transforms, so a search will climb that
+    direction by default. Reporting this number next to the weighted one is what
+    stops a reparameterisation from being read as a finding.
+    """
+    pos = sum(1 for x in d if x > 0)
+    n = sum(1 for x in d if x != 0)
+    if n == 0:
+        return {"positive": 0, "n": 0, "p": 1.0, "signs": ()}
+    tail = min(pos, n - pos)
+    c = 0
+    for k in range(tail + 1):
+        c += math.comb(n, k)
+    return {
+        "positive": pos, "n": n,
+        "p": min(1.0, 2.0 * c / (2 ** n)),
+        "signs": tuple(1 if x > 0 else (-1 if x < 0 else 0) for x in d),
+    }

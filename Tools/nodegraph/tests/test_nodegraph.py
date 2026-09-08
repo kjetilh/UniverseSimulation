@@ -243,6 +243,32 @@ def test_recorded_result_reproduces_from_the_cached_substrate():
         assert abs(s - exp["search_run"][key]) < 1e-9, (split, s, exp["search_run"][key])
 
 
+
+
+def test_sign_test_is_blind_to_monotone_transforms():
+    """The property section 4.3 of the assessment turns on."""
+    d = [3.0, -1.0, 8.0, 2.0, -0.5, 9.0, 4.0, 1.0]
+    a = OP.sign_test(d)
+    b = OP.sign_test([x * abs(x) * abs(x) for x in d])  # odd, strictly increasing
+    assert a["signs"] == b["signs"] and abs(a["p"] - b["p"]) < 1e-15
+    assert OP.paired_score(d) != OP.paired_score([x * abs(x) * abs(x) for x in d])
+
+
+def test_contract_flags_a_monotone_respelling_as_transform_only():
+    ref = parse(REG, SIG, "mean(v)")
+    cand = parse(REG, SIG, "sq(sq(mean(v)))")
+    envs = [{"v": [float(k), float(k) + 1.0], "w": [], "x": 0.0, "y": 0.0, "p": True}
+            for k in range(1, 9)]
+    def inv(g):
+        d = [g.evaluate(e) - g.evaluate({**e, "v": [x - 0.3 for x in e["v"]]}) for e in envs]
+        r = OP.sign_test(d)
+        return r["p"], r["signs"]
+    c = _contract(2.0, 20.0)
+    c.invariant = inv
+    c.reference_graph = ref
+    assert c.evaluate(cand)["transform_only"] is True
+
+
 if __name__ == "__main__":
     fns = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
