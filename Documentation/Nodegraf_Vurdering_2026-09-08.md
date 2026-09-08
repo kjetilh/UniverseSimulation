@@ -150,6 +150,40 @@ To nuller, fordi det tas to ulike beslutninger:
 kontrollerer multippel-testing-problemet et søk skaper) gater utvalget;
 `null_single` gater holdout, der nøyaktig én vinner måles.
 
+> ### RETTELSE 8. september 2026 — avsnittet under er feil
+>
+> Påvist av Astra (`Nodegraf_Astra_Motsvar_2026-09-08.md`, del 5) og verifisert
+> mot `_cache/experiment.json` og `run_experiment.py:190–205`.
+>
+> **Separasjonen 9,9 er 50,0 / 5,05 — den sterke armens vinner delt på den
+> SVAKE armens null.** To armer, to ulike parantall (8 mot 24), én brøk.
+> Kontraktens egen begrunnelse i koden («the strong-arm null is the higher of
+> the two, so the separation check is conservative») er nøyaktig baklengs: å
+> bruke den lavere nullen i nevneren gjør forholdet større, ikke mer
+> konservativt.
+>
+> Mot den sterke armens egen null blir forholdet **50,0 / 37,18 = 1,345**, under
+> kontraktens krav på 2,0. Og siden `stats.SCORE_CAP = 50,0`, kan **ingen**
+> kandidat nå 2,0 mot en null på 37,2 — porten er uoppnåelig ved konstruksjon i
+> denne kalibreringen.
+>
+> Konsekvens, uten pynt: **den positive referansen er ikke etablert etter
+> kontraktens egen målestokk.** Etter kontraktens andre nektelse er
+> svakarm-runden dermed instrumentering, ikke en test. Det som *står* er at den
+> sterke armen responderer — vinneren treffer taket mens dens null er 37,2 — men
+> taket sensurerer hvor langt over den ligger, så størrelsen på responsen er
+> ukjent.
+>
+> Dette er fjerde gang samme feilklasse er registrert i dette repoet: en positiv
+> referanse som ikke er ført gjennom samme oppstilling som det den skal
+> kalibrere. Se `AGENTS.md`, «Endpoint quantities», og `WP-F2_amendment_2.md`.
+>
+> Riktig fiks er ikke å senke terskelen: kjør den positive referansen med samme
+> parantall som den svake armen (24, ikke 8) — maksimumsnullen faller når n
+> øker — og fjern eller hev taket så forholdet kan måles i det hele tatt.
+> Til det er gjort, skal ingen påstand i denne rapporten støtte seg på ordet
+> «admissibel».
+
 **Kontrakten er admissibel:** positiv referanse 50,0 mot søkenull 5,05,
 separasjon **9,9**. Instrumentet responderer beviselig når effekten er til
 stede. På den sterke armen er søkenullen 37,2 med bare 8 par — en direkte
