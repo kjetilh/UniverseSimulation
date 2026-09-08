@@ -72,11 +72,12 @@ Kopier `examples/minimal_purpose.py` og bytt ut de fem merkede blokkene.
 | | målt |
 |---|---|
 | Kodegenerering til Python gir ingen gevinst | 0,99× |
-| Marshalling per kall spiser gevinsten | 2,45× mot 251× |
+| Marshalling per kall spiser gevinsten | ~3× mot ~275× |
 | Blind nivå-for-nivå enumerering er uframkommelig | drept etter 170 s før dybde 2 |
 | Median/MAD er degenerert ved lav n | nullreferansen traff taket ved n = 8 |
 | Effektstørrelse uten √n har nesten ingen styrke | mot små, konsistente responser |
 | Monotone omskrivninger klatrer «gratis» i den vektede scoren | 2,64 → 3,44 uten ett eneste fortegnsskifte |
+| En konformansprøve som bare trakk korte vektorer «sertifiserte» et stille galt svar | 11,6 % feil ved 400 000 elementer |
 
 De to siste ble begge oppdaget **fordi nullen ble målt**. Hadde den vært
 antatt, hadde de passert.
@@ -94,6 +95,8 @@ python3 demo_compile.py                  # komposittnode → C → sertifisering
 ## Grenser du skal si fra om, ikke jobbe rundt
 
 - C-backenden returnerer en skalar. En `vec`-verdi kompileres ikke.
+- Går arenaen tom, reiser kallet `ArenaTooSmall` i stedet for å gi et tall.
+  Referansetolken er fortsatt riktig for det inputet — bruk den.
 - Alle 45 nodene har C-implementasjon. Legger du til en node uten, blir grafen
   ukompilerbar, og `compile_c` sier hvilken node det gjelder.
 - Ingenting her er en fysikkpåstand. Skal et resultat inn i v-serien, gjelder

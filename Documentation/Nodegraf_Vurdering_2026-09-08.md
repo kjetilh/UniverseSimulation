@@ -18,7 +18,7 @@ opp:
 | Del av forslaget | Vurdering |
 |---|---|
 | Typede noder som funksjonsdefinisjoner, komposittnoder, bibliotek | **Solid.** Bygget, testet, virker. Billig. |
-| Kompilere en funnet graf til raskere form | **Solid, med én skarp betingelse.** Målt 251× — men bare når dataene allerede ligger på den kompilerte siden. Krysser du språkgrensen per kall er gevinsten 2,45×. |
+| Kompilere en funnet graf til raskere form | **Solid, med én skarp betingelse.** Målt 265–289× — men bare når dataene allerede ligger på den kompilerte siden. Krysser du språkgrensen per kall er gevinsten ~3×. |
 | AI-agent som justerer algoritmer uten å forstå matten | **Reell, men det er ikke her flaskehalsen ligger.** Et deterministisk søk uten tokens fant svaret. Grafrepresentasjonen er den lette femtedelen. |
 | «Utfordringen ligger kanskje i å beskrive formålene» | **Det er ikke «kanskje». Det er hele problemet,** og det er det eneste stedet dette repoet har et dokumentert, dyrt sår. |
 | Løse partielle differensiallikninger | **Overklaimet som formulert.** Én naboversjon er innen rekkevidde og gjør allerede nytte i litteraturen; åpne PDE-problemer er det ikke. |
@@ -249,10 +249,15 @@ mot referansen, og målt på 20 000 kall med `|tokdeg| = 3200`:
 
 | | µs/kall | mot tolk |
 |---|---|---|
-| referansetolk | 844,44 | 1,00× |
-| Python-kodegenerering | 856,51 | **0,99×** |
-| C, marshalling hvert kall | 345,25 | 2,45× |
-| C, input allerede residente | 3,37 | **250,92×** |
+| referansetolk | 899–1019 | 1,00× |
+| Python-kodegenerering | ~samme | **0,86–0,99×** |
+| C, marshalling hvert kall | 299–312 | 3,0–3,3× |
+| C, input allerede residente | 3,4–3,5 | **265–289×** |
+
+Spennet er fire kjøringer på en maskin som samtidig kjørte Codex-køen; en enkelt
+kjøring under last ga 1,46× for marshalling-raden. Bruk ikke ett av tallene som
+en presis måling. Poenget er avstanden mellom de to nederste radene, og den er
+to størrelsesordener uansett hvilken kjøring du leser.
 
 ---
 
@@ -260,11 +265,11 @@ mot referansen, og målt på 20 000 kall med `|tokdeg| = 3200`:
 
 Ført opp her så det ikke gjøres om igjen.
 
-1. **Kodegenerering til Python ga null gevinst (0,99×).** Dispatch var aldri
+1. **Kodegenerering til Python ga null gevinst (0,86–0,99× over fire kjøringer).** Dispatch var aldri
    flaskehalsen; op-kroppene er det. Gevinsten kommer av å *forlate* Python,
    ikke av å generere den penere.
 2. **Å krysse språkgrensen per kall spiser nesten hele kompilerings­gevinsten:
-   2,45× mot 251×.** Dette er den viktigste enkeltmålingen i hele arbeidet, og
+   ~3× mot ~275×.** Dette er den viktigste enkeltmålingen i hele arbeidet, og
    den har direkte konsekvens for HAVEN: et kompilert Goal-uttrykk må evalueres
    *der dataene ligger*, inne i cellen, ikke kalles ett og ett utenfra.
 3. **Blind nivå-for-nivå enumerering var uframkommelig.** Dybde 1 ga alene 260
@@ -281,7 +286,24 @@ Ført opp her så det ikke gjøres om igjen.
    konsistent respons — som er nettopp det alternativet som betyr noe her.
 6. **Søket fant ingen ny størrelse.** Det gjenfant β₁ i tre uavhengige kjøringer.
    Det er et ærlig delvis negativt resultat, ikke en suksess som skal rundes opp.
-7. **Formålskontrakten har en systematisk skjevhet jeg ikke forutså, og som er
+7. **«Sertifisert» var for sterkt ord, og konformansharnessen var for svak til
+   å bære det.** C-backenden ga et stille galt svar — 11,6 % relativ feil — for
+   en graf med seks vektor-mellomresultater på 400 000 elementer, samtidig som
+   den bestod konformansprøven. Årsaken: arenaen mettet ved å returnere sin egen
+   basepeker, så rørledningen aliaset sitt eget input; og prøven trakk aldri
+   vektorer lengre enn 128, så den kunne ikke se det. Første rettelse var verre
+   enn feilen: å flagge overflow men fortsatt gi ut basepekeren lot kallerne
+   skrive utenfor bufferet, altså minnekorrupsjon i stedet for et galt tall —
+   det ga segfault i testsuiten. Riktig rettelse er at allokering **feiler**:
+   NULL, hver kaller sjekker, en mislykket vektor har lengde 0 så ingen løkke
+   skriver noe, og inngangspunktet gjør flagget om til NaN som Python-siden
+   reiser som `ArenaTooSmall`. Arenaen dimensjoneres nå fra grafens antall
+   vektor-mellomresultater og inputlengden. Verifisert: korrekt på 2 000 000
+   elementer, og 810 kall over alle 45 noder med utsultet arena uten krasj.
+   **Lærdommen er ikke om arenaer.** Den er at en konformansprøve bare beviser
+   noe innenfor fordelingen den trekker fra, og at et ord som «sertifisert»
+   inviterer til å glemme det. Prøven trekker nå også 4 096 og 20 000.
+8. **Formålskontrakten har en systematisk skjevhet jeg ikke forutså, og som er
    det viktigste funnet i hele arbeidet.** Statistikken er ikke invariant under
    monotone transformasjoner. Uttrykksrommet er full av slike transformasjoner.
    Et søk vil derfor *systematisk* klatre i transformasjonsretningen framfor i
