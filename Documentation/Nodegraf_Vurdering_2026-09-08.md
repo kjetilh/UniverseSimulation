@@ -222,8 +222,14 @@ seed 111      : sq(sq(median(vshift(tokdeg, beta1))))   train 8,15  holdout 3,69
 seed 222      : sq(sq(beta1))                           train 7,78  holdout 3,44
 ```
 
-Alle tre er β₁ i fjerde potens. Spearman-korrelasjon mellom vinner og β₁ på
-replikasjonssettet: **0,98**. Transformasjonsstigen, målt på alle tre splittene:
+Alle tre er en fjerdepotens av noe β₁-nært. **Rettet 8. sep etter Astra del 3:
+formuleringen «alle tre er β₁ i fjerde potens» var bokstavelig gal.** Bare seed
+222 er ren β₁⁴; vinneren er `(β₁ − min(tokdeg))⁴` og bruker en ekstra kanal, og
+seed 111 bruker `median` av samme vektor. Det er nettopp derfor vinneren kan ha
+en annen fortegnsvektor enn β₁ — se dekomponeringen under, som sier det riktig.
+Spearman-korrelasjon mellom vinner og β₁ på replikasjonssettet: **0,98**
+(0,980352 lagret; med korrekt midtrank-behandling av ties 0,980617 — Astra del 3.
+Avrundingen og innvendingen er uendret). Transformasjonsstigen, målt på alle tre splittene:
 
 | | train | holdout | replikasjon |
 |---|---|---|---|
@@ -273,8 +279,21 @@ holdout og replikasjon. På replikasjonssettet får den ett par til riktig vei:
 > **ett par av 24**. Resten av det som så ut som en gevinst er statistikken som
 > belønner en omparametrisering.
 
-Det er et ærlig, lite, positivt resultat — og funnet av det er mindre verdt enn
-måten det ble avslørt på. Se punkt 7 i del 5.
+> **RETTELSE 8. sep (Astra del 3).** «Ett par av 24» kan stå som et deskriptivt
+> nettotall for dette datasettet, men **ikke bære en påstand om replikert
+> forbedring**. Den direkte parede sammenligningen mellom vinneren og β₁ på
+> replikasjonssettet er én forbedring og null forverringer — ett diskordant par.
+> En eksakt McNemar-/binomialtest på det gir tosidig p = 1 og ensidig p = 0,5.
+> På holdout er nettogevinsten null: vinneren taper ett fortegn (seed 9000) og
+> vinner ett annet (seed 9016). De to fortegnstestene med p ≈ 0,00028 og
+> p ≈ 0,00154 tester hver sin observabel mot sin egen null; de tester ikke
+> forskjellen mellom dem.
+>
+> Forsvarlig konklusjon: **responsen finnes også for β₁; merverdien av den søkte
+> observabelen er uavklart.** Ikke «gevinsten er ett par».
+
+Det er et ærlig, lite resultat — og funnet av det er mindre verdt enn måten det
+ble avslørt på. Se punkt 7 i del 5.
 
 ### 4.4 Kompilering (D6)
 
@@ -346,7 +365,8 @@ Ført opp her så det ikke gjøres om igjen.
    fortegnsvektoren, og dermed all retningsinformasjon, er bit-for-bit uendret.
    Dette er samme feilklasse som v17s: en gate som beveger seg av noe annet enn
    det den skulle måle. Den ble her fanget fordi kontrakten tvang fram en
-   dekomponering, ikke fordi jeg mistenkte den. Rettelsen står som port 4, og den er gjennomført.
+   dekomponering, ikke fordi jeg mistenkte den. Rettelsen står som port 4. **Den er
+IKKE gjennomført** — se rettelsen i del 7, punkt 4.
 
 ---
 
@@ -397,10 +417,19 @@ Fem porter. Hver har et tall, ikke en vurdering.
    en annen på score alene når de to har identisk fortegnsvektor. Port: kontrakten
    må rapportere både den vektede statistikken og en transformasjonsinvariant
    test, og et funn teller bare som funn når *begge* forbedres. Dette er en
-   endring i `purpose.py`, ikke en anbefaling. **Den er gjort** — kontrakten
-   rapporterer nå fortegnstesten ved siden av den vektede statistikken, og
-   `PurposeContract.evaluate` merker et funn som `transform_only` når
-   fortegnsvektoren ikke er bedre enn referansens.
+   endring i `purpose.py`, ikke en anbefaling. **RETTELSE 8. sep (Astra del 6):
+   påstanden «Den er gjort» var feil.** Mekanismen finnes, men er ikke koblet
+   til noe: `PurposeContract.evaluate` beregner `transform_only`
+   (`purpose.py:138`), men `passes_selection` og `passes_holdout` bruker bare
+   score mot én terskel (`:147`) og ser aldri på den. Verre: `evaluate` blir
+   **aldri kalt** — hovedeksperimentet oppretter kontrakten uten `invariant` og
+   `reference_graph` (`run_experiment.py:178`), regner PASS-feltene selv inne i
+   `run_arm` (`:129`), og kaller bare `admissibility()` (`:209`). Porten står
+   altså fortsatt åpen. Astra tilføyer at kravet bør omskrives: identisk
+   fortegnsvektor er ikke bevis for at to funksjoner er monotone omskrivninger,
+   og en reell styrkegevinst fra bedre bruk av magnituder bør ikke utelukkes på
+   forhånd. Kravet bør være dokumentert forbedring ved kontrollert feilrate,
+   sammenlignet direkte mot en forhåndsvalgt baseline.
 5. **Én formålskontrakt skrevet for noe utenfor denne arenaen** — en Palazzo-
    eller Kallimachos-Goal — som består sin egen admissibilitetsprøve. Det er
    den prøven som avgjør om «å beskrive formålene» er løsbart i praksis eller
