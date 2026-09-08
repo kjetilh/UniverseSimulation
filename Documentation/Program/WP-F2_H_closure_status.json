@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-09-08T22:22:51.147581+00:00",
+  "status": "publication_blocked",
+  "research_measurements": "completed_and_verified",
+  "execution_order": [
+    "R saved-log reanalysis",
+    "M 16 histories x 8192",
+    "amendment 1 gates",
+    "WP-H exact replay and analysis"
+  ],
+  "F2": {
+    "attempt": 2,
+    "amendment": 1,
+    "R_kernel": "fail_ordering_separation_mechanism",
+    "M_kernel": "fail_ordering_separation_mechanism",
+    "R_gamma_span": 0.12912210119404216,
+    "M_gamma_span": 0.12915488582082207,
+    "histories_verified": 32
+  },
+  "H": {
+    "attempt": 1,
+    "replay_verified": 12,
+    "graphs_verified": 144,
+    "registered_gate": "pass_12_of_12_below_null95",
+    "nulls_disconnected": 96,
+    "aggregation_sensitivity": "mean-return-curve exponent reverses all96 pairwise directions; no aggregate-independent or asymptotic geometry claim"
+  },
+  "git": {
+    "branch": "program/wp-f2-f3-20260908",
+    "observed_head": "b9ec9092f40a0c1a797cb7651dd5af5443ba8840",
+    "staging_exit_code": 128,
+    "stderr": "fatal: Unable to create '/Users/kjetil/Build/Digipomps/HAVEN/UniverseSimulation/.git/index.lock': Operation not permitted",
+    "intended_staging_files": 171,
+    "staged_before": [],
+    "commits_created_by_this_execution": [],
+    "concurrent_integration": "3ab0fd5 committed partial results; aa6e954 dispatched further work; neither establishes completion of this execution"
+  },
+  "closure": {
+    "repository": "blocked_at_git_add",
+    "push": "not_performed_by_this_execution",
+    "static_build": "not_performed_from_a_final_pushed_commit",
+    "deployment": "not_performed_by_this_execution",
+    "live_manifest_revision": "not_verified",
+    "RAG_sync": "not_performed_by_this_execution",
+    "token_scoped_RAG_query": "not_performed; auth/citation/rate-limit/freshness not verified",
+    "G1_independent_review": "not_confirmed_for_final_results"
+  },
+  "stop_rule": "WP-F2_amendment_1.md step 5: report .git blockage and stop; integrator commits. No retry or bypass.",
+  "next_decision": "Integrator reviews the two explicit file lists and shared ledger, creates separate scoped commits, and handles applicable publication closure. No dynamics rerun or threshold change is needed to integrate these results."
+}

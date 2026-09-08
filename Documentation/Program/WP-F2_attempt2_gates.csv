@@ -1,0 +1,5 @@
+mode,order,complete,evaluable,ordering,separation,mechanism,gamma_span,outcome,passed,adjacent_alpha_signs
+R,kernel,True,True,fail,fail,fail,0.12912210119404216,fail,False,1;1;-1
+R,legacy,True,False,not_evaluable,not_evaluable,not_evaluable,nan,not_evaluable,False,NA;NA;NA
+M,kernel,True,True,fail,fail,fail,0.12915488582082207,fail,False,1;1;-1
+M,legacy,True,False,not_evaluable,not_evaluable,not_evaluable,nan,not_evaluable,False,NA;NA;NA

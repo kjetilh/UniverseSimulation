@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-09-08T22:15:25.144337+00:00",
+  "basis": "measured sixteen F2 R 8192-step dynamics scaled to twelve 2048-step replays",
+  "replay_estimated_seconds": 128.140538343534,
+  "caveat": "different substrates/token growth and building original bases; forecast only, not an H measurement",
+  "analysis_pilot_seconds": 0.3914870419539511,
+  "analysis_144_graph_estimate_seconds": 56.37413404136896,
+  "analysis_caveat": "one universe graph; rewiring and positive graph costs differ; pilot excluded from all gate aggregates",
+  "pilot_graph_sha256": "0aeef8fc2170a9476e6715eca4579be0c0bf29e967258f03fc16a132768443c2"
+}

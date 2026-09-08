@@ -1,0 +1,9 @@
+order,tau,V_median,R90,pair_count,undefined_distance_pairs,finite_distance_pairs
+kernel,1,1.0,3.0,11158,0,11158
+kernel,2,3.0,4.0,28064,0,28064
+kernel,4,6.0,5.0,82418,0,82418
+kernel,8,25.0,6.0,269707,0,269707
+legacy,1,1.0,2.0,7491,0,7491
+legacy,2,2.0,3.0,15241,0,15241
+legacy,4,4.0,3.0,31382,0,31382
+legacy,8,9.0,4.0,66462,0,66462

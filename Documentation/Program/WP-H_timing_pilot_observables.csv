@@ -1,0 +1,2 @@
+label,nodes,edges,components,d_vol_3_6,d_vol_6_10,ds_median,ds_mean_curve,diameter,median_distance,finite_pair_median,disconnected_pairs,roots
+timing_pilot,1027,1156,1,2.7295831661344647,2.2669657762738407,1.9737377760543793,1.840832211167631,26,10.0,10.0,0,64

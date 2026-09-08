@@ -1,0 +1,13 @@
+history,root_median_below_each_null,mean_curve_above_each_null,null_components_min,null_components_max,null_disconnected_pairs_min,null_disconnected_pairs_max
+2801_41011_current_global,8,8,66,78,139113,180952
+2801_41011_exposure_matched_local,8,8,58,75,134394,169741
+2801_41047_current_global,8,8,61,74,142121,175387
+2801_41047_exposure_matched_local,8,8,62,71,137793,162772
+2801_41081_current_global,8,8,64,82,133674,193083
+2801_41081_exposure_matched_local,8,8,63,79,136190,183883
+2903_41011_current_global,8,8,52,74,106467,152560
+2903_41011_exposure_matched_local,8,8,59,79,122731,167893
+2903_41047_current_global,8,8,52,72,109308,167999
+2903_41047_exposure_matched_local,8,8,61,77,138677,173700
+2903_41081_current_global,8,8,57,75,123746,170561
+2903_41081_exposure_matched_local,8,8,61,74,136015,164501

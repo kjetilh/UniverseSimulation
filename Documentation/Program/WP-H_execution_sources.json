@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-09-08T22:17:39.457570+00:00",
+  "role": "execution provenance; scientific preregistration remains WP-H_frozen.json from 7 September",
+  "source_sha256": {
+    "Tools/state_graph_dimension_lab.py": "a56fb3ac379adb31ef1c65d9f49a87c519910074325ea7dda333a42ca4104633",
+    "Tools/run_wp_h_package.py": "330513b9c08aa07b10453c804277140f3db4b11a1f926c8ff2da5ba6298c723d",
+    "Tools/verify_wp_h_artifacts.py": "da2fe466e4a75e77edd4717768b22af46937ea7f96ce888e273a091978c7f8a1",
+    "Documentation/Program/WP-H_frozen.json": "dfe12effe77675174e04ea07c3afba669c46d5474c8c6b599ac72d7d61570b59",
+    "Documentation/Program/WP-F2_attempt2_gates.csv": "29f7e91d0ad602492e755c4353b2461b260f5c86b32076b7a7e1bb9c35eea6d0"
+  },
+  "self_test": {
+    "command": "/opt/homebrew/bin/python3.11 Tools/state_graph_dimension_lab.py --self-test",
+    "exit_code": 0,
+    "observed_output": "2026-09-08T22:15:34.018323+00:00 SELF_TEST_PASS exact_ring_ball_distance_binomial_returns_and_positive_sizes"
+  }
+}

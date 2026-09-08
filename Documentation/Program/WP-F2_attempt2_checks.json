@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-09-08T22:06:54.864914+00:00",
+  "provenance": "Record of actual completed tool executions; stdout was returned in the session, not captured to this JSON.",
+  "checks": [
+    {
+      "command": "/opt/homebrew/bin/python3.11 -m unittest tests.test_influence_order_lab tests.test_influence_order_attempt2 -v",
+      "exit_code": 0,
+      "tests": 5,
+      "outcome": "OK"
+    },
+    {
+      "command": "PYTHONPATH=/opt/homebrew/lib/python3.11/site-packages python3 -m unittest tests.test_influence_order_runtime tests.test_influence_order_attempt2_runtime -v",
+      "exit_code": 0,
+      "tests": 4,
+      "outcome": "OK"
+    },
+    {
+      "command": "python3 Tools/influence_order_lab.py --self-test",
+      "exit_code": 0,
+      "outcome": "SELF_TEST_PASS exhaustive_posets_n_le_5 interval_identity_and_estimators"
+    }
+  ],
+  "source_sha256": {
+    "tests/test_influence_order_lab.py": "9858957f859886bd24e01bcc74619ab9394ee7b3258e6e51900e255c282d3990",
+    "tests/test_influence_order_runtime.py": "f5c997c8356984d021f49b77ce1c86442a332f47957a0e7aa70c95de8e415103",
+    "tests/test_influence_order_attempt2.py": "e177c8a433f162626de0819d2545d1022a0fa427d8314ac0dd1da6de95404b7a",
+    "tests/test_influence_order_attempt2_runtime.py": "3bd174b7a360a40b4d6e5ed1da81fd56731b59b5a98ebe771aec0036ac8fbb15",
+    "Tools/influence_order_attempt2.py": "e3427dcb8a6d90f5f573ebdf06ccf4d9343a058c5a5189b19d523c6589248a28",
+    "Tools/verify_wp_f2_attempt2.py": "22c2f7daf6c6fa936ad2e3336c06fe953b171e833b6f8a3510b6e0b3ecd7dcb1"
+  }
+}
