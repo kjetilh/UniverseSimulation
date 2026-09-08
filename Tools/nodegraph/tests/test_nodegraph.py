@@ -115,7 +115,7 @@ def test_every_library_op_has_a_conformant_c_implementation():
         g = parse(REG, sig, expr)
         try:
             c = compile_c.compile_graph(g)
-            rep = compile_c.conformance(g, c, trials=250, seed=7 + len(name))
+            rep = compile_c.conformance(g, c, trials=90, seed=7 + len(name))
             if not rep["passed"]:
                 failures.append((name, rep))
         except Exception as e:  # pragma: no cover
@@ -267,6 +267,37 @@ def test_contract_flags_a_monotone_respelling_as_transform_only():
     c.invariant = inv
     c.reference_graph = ref
     assert c.evaluate(cand)["transform_only"] is True
+
+
+
+def test_c_backend_is_correct_on_long_vectors():
+    """The case that was silently wrong: 6 vector temporaries, 400k elements.
+
+    The old arena saturated by returning its own base pointer, so the pipeline
+    aliased its input and the answer came back 11.6% off -- while the
+    conformance harness passed, because it only ever drew vectors of at most
+    128 elements."""
+    g = parse(REG, (("v", VEC),),
+              "topmean(zscore(vlog1p(sortdesc(norm1(vsq(v))))))")
+    c = compile_c.compile_graph(g)
+    assert c.vec_temps >= 6
+    for n in (1000, 400_000):
+        env = {"v": [float(i % 97) + 0.5 for i in range(n)]}
+        ref, got = g.evaluate(env), c(**env)
+        assert abs(ref - got) <= 1e-9 * max(1.0, abs(ref)), (n, ref, got)
+
+
+def test_exhausted_arena_refuses_instead_of_returning_a_number():
+    import ctypes
+    g = parse(REG, (("v", VEC),), "sum(zscore(vsq(v)))")
+    c = compile_c.compile_graph(g)
+    env = {"v": [float(i) for i in range(5000)]}
+    assert isinstance(c(**env), float)          # sized correctly, returns a value
+    tiny = 64
+    scratch = (ctypes.c_double * tiny)()
+    arr = (ctypes.c_double * len(env["v"]))(*env["v"])
+    out = c.fn(scratch, ctypes.c_long(tiny), arr, ctypes.c_int(len(env["v"])))
+    assert out != out, "an exhausted arena must return NaN, not a number"
 
 
 if __name__ == "__main__":

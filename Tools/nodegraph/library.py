@@ -123,10 +123,11 @@ def _max2(a, b):
 _C_SORT = """
 static int nv_cmp(const void*x,const void*y){double a=*(const double*)x,b=*(const double*)y;
   return a<b?-1:(a>b?1:0);}
-static double* nv_sorted(nv_arena*ar,nv_vec v){double*p=nv_alloc(ar,v.n);
+static double* nv_sorted(nv_arena*ar,nv_vec v){double*p=nv_alloc(ar,v.n<1?1:v.n);
+  if(!p)return 0;
   for(int i=0;i<v.n;i++)p[i]=v.d[i]; qsort(p,v.n,sizeof(double),nv_cmp); return p;}
 static double nv_quant(nv_arena*ar,nv_vec v,double q){ if(v.n==0)return 0.0;
-  double*p=nv_sorted(ar,v); long k=(long)floor(q*(v.n-1)+0.5);
+  double*p=nv_sorted(ar,v); if(!p)return 0.0; long k=(long)floor(q*(v.n-1)+0.5);
   if(k<0)k=0; if(k>v.n-1)k=v.n-1; return nv_fin(p[k]); }
 """
 
@@ -216,8 +217,9 @@ def _iqr(v):
 
 @_op("gini", [VEC], REAL, "nv_gini",
      """double nv_gini(nv_arena*ar,nv_vec v){ if(v.n==0)return 0.0;
-  nv_vec a=nv_new(ar,v.n); for(int i=0;i<v.n;i++)a.d[i]=fabs(v.d[i]);
-  double*p=nv_sorted(ar,a); double s=0,w=0;
+  nv_vec a=nv_new(ar,v.n); if(a.n!=v.n)return 0.0;
+  for(int i=0;i<v.n;i++)a.d[i]=fabs(v.d[i]);
+  double*p=nv_sorted(ar,a); if(!p)return 0.0; double s=0,w=0;
   for(int i=0;i<a.n;i++){s+=p[i]; w+=(double)(i+1)*p[i];}
   if(s<NV_EPS)return 0.0; return nv_fin(2.0*w/(a.n*s)-((double)a.n+1.0)/a.n);}""", cost=3.0)
 def _gini(v):
@@ -245,7 +247,7 @@ def _entropy(v):
 
 @_op("topmean", [VEC], REAL, "nv_topmean",
      """double nv_topmean(nv_arena*ar,nv_vec v){ if(v.n==0)return 0.0; double*p=nv_sorted(ar,v);
-  int k=(int)(v.n/10); if(k<1)k=1; double s=0; for(int i=v.n-k;i<v.n;i++)s+=p[i];
+  if(!p)return 0.0; int k=(int)(v.n/10); if(k<1)k=1; double s=0; for(int i=v.n-k;i<v.n;i++)s+=p[i];
   return nv_fin(s/k);}""", cost=2.0)
 def _topmean(v):
     p = sorted(_v(v))
@@ -284,7 +286,8 @@ def _skew(v):
 
 # ----------------------------------------------------------------- vec -> vec
 @_op("sortdesc", [VEC], VEC, "nv_sortdesc",
-     """nv_vec nv_sortdesc(nv_arena*ar,nv_vec v){ double*p=nv_sorted(ar,v); nv_vec r=nv_new(ar,v.n);
+     """nv_vec nv_sortdesc(nv_arena*ar,nv_vec v){ double*p=nv_sorted(ar,v); nv_vec r=nv_new(ar,v.n); if(r.n!=v.n)return r;
+  if(!p||r.n!=v.n){ r.d=ar->buf; r.n=0; return r; }
   for(int i=0;i<v.n;i++)r.d[i]=p[v.n-1-i]; return r;}""", cost=2.0)
 def _sortdesc(v):
     return sorted(_v(v), reverse=True)
@@ -292,7 +295,7 @@ def _sortdesc(v):
 
 @_op("norm1", [VEC], VEC, "nv_norm1",
      """nv_vec nv_norm1(nv_arena*ar,nv_vec v){ double s=0; for(int i=0;i<v.n;i++)s+=fabs(v.d[i]);
-  nv_vec r=nv_new(ar,v.n); if(s<NV_EPS){for(int i=0;i<v.n;i++)r.d[i]=0.0; return r;}
+  nv_vec r=nv_new(ar,v.n); if(r.n!=v.n)return r; if(s<NV_EPS){for(int i=0;i<v.n;i++)r.d[i]=0.0; return r;}
   for(int i=0;i<v.n;i++)r.d[i]=nv_fin(v.d[i]/s); return r;}""")
 def _norm1(v):
     v = _v(v)
@@ -302,7 +305,7 @@ def _norm1(v):
 
 @_op("zscore", [VEC], VEC, "nv_zscore",
      """nv_vec nv_zscore(nv_arena*ar,nv_vec v){ double m=nv_mean(ar,v),sd=nv_std(ar,v);
-  nv_vec r=nv_new(ar,v.n); for(int i=0;i<v.n;i++)r.d[i]=sd<NV_EPS?0.0:nv_fin((v.d[i]-m)/sd);
+  nv_vec r=nv_new(ar,v.n); if(r.n!=v.n)return r; for(int i=0;i<v.n;i++)r.d[i]=sd<NV_EPS?0.0:nv_fin((v.d[i]-m)/sd);
   return r;}""", cost=2.0)
 def _zscore(v):
     v = _v(v)
@@ -312,22 +315,24 @@ def _zscore(v):
 
 
 @_op("vlog1p", [VEC], VEC, "nv_vlog1p",
-     "nv_vec nv_vlog1p(nv_arena*ar,nv_vec v){nv_vec r=nv_new(ar,v.n);"
+     "nv_vec nv_vlog1p(nv_arena*ar,nv_vec v){nv_vec r=nv_new(ar,v.n); if(r.n!=v.n)return r;"
      "for(int i=0;i<v.n;i++)r.d[i]=nv_fin(log1p(fabs(v.d[i])));return r;}")
 def _vlog1p(v):
     return [_f(math.log1p(abs(x))) for x in _v(v)]
 
 
 @_op("vsq", [VEC], VEC, "nv_vsq",
-     "nv_vec nv_vsq(nv_arena*ar,nv_vec v){nv_vec r=nv_new(ar,v.n);"
+     "nv_vec nv_vsq(nv_arena*ar,nv_vec v){nv_vec r=nv_new(ar,v.n); if(r.n!=v.n)return r;"
      "for(int i=0;i<v.n;i++)r.d[i]=nv_fin(v.d[i]*v.d[i]);return r;}")
 def _vsq(v):
     return [_f(x * x) for x in _v(v)]
 
 
 @_op("diff", [VEC], VEC, "nv_diff",
-     """nv_vec nv_diff(nv_arena*ar,nv_vec v){ if(v.n<2){nv_vec z=nv_new(ar,1);z.d[0]=0.0;return z;}
+     """nv_vec nv_diff(nv_arena*ar,nv_vec v){ if(v.n<2){nv_vec z=nv_new(ar,1);
+    if(z.n==1)z.d[0]=0.0; return z;}
   double*p=nv_sorted(ar,v); nv_vec r=nv_new(ar,v.n-1);
+  if(!p||r.n!=v.n-1){ r.d=ar->buf; r.n=0; return r; }
   for(int i=0;i+1<v.n;i++)r.d[i]=nv_fin(p[i+1]-p[i]); return r;}""", cost=2.0)
 def _diff(v):
     p = sorted(_v(v))
@@ -338,7 +343,7 @@ def _diff(v):
 
 # ------------------------------------------------------------ vec, real -> vec
 @_op("vscale", [VEC, REAL], VEC, "nv_vscale",
-     "nv_vec nv_vscale(nv_arena*ar,nv_vec v,double a){nv_vec r=nv_new(ar,v.n);"
+     "nv_vec nv_vscale(nv_arena*ar,nv_vec v,double a){nv_vec r=nv_new(ar,v.n); if(r.n!=v.n)return r;"
      "for(int i=0;i<v.n;i++)r.d[i]=nv_fin(v.d[i]*a);return r;}")
 def _vscale(v, a):
     a = _f(a)
@@ -346,7 +351,7 @@ def _vscale(v, a):
 
 
 @_op("vshift", [VEC, REAL], VEC, "nv_vshift",
-     "nv_vec nv_vshift(nv_arena*ar,nv_vec v,double a){nv_vec r=nv_new(ar,v.n);"
+     "nv_vec nv_vshift(nv_arena*ar,nv_vec v,double a){nv_vec r=nv_new(ar,v.n); if(r.n!=v.n)return r;"
      "for(int i=0;i<v.n;i++)r.d[i]=nv_fin(v.d[i]-a);return r;}")
 def _vshift(v, a):
     a = _f(a)
@@ -354,7 +359,7 @@ def _vshift(v, a):
 
 
 @_op("clipmax", [VEC, REAL], VEC, "nv_clipmax",
-     "nv_vec nv_clipmax(nv_arena*ar,nv_vec v,double a){nv_vec r=nv_new(ar,v.n);"
+     "nv_vec nv_clipmax(nv_arena*ar,nv_vec v,double a){nv_vec r=nv_new(ar,v.n); if(r.n!=v.n)return r;"
      "for(int i=0;i<v.n;i++)r.d[i]=v.d[i]>a?a:v.d[i];return r;}")
 def _clipmax(v, a):
     a = _f(a)
@@ -363,7 +368,8 @@ def _clipmax(v, a):
 
 # ------------------------------------------------------------- vec, vec -> vec
 @_op("vadd", [VEC, VEC], VEC, "nv_vadd",
-     "nv_vec nv_vadd(nv_arena*ar,nv_vec a,nv_vec b){int n=a.n<b.n?a.n:b.n;nv_vec r=nv_new(ar,n);"
+     "nv_vec nv_vadd(nv_arena*ar,nv_vec a,nv_vec b){int n=a.n<b.n?a.n:b.n;"
+     "nv_vec r=nv_new(ar,n); if(r.n!=n)return r;"
      "for(int i=0;i<n;i++)r.d[i]=nv_fin(a.d[i]+b.d[i]);return r;}")
 def _vadd(a, b):
     a, b = _v(a), _v(b)
@@ -372,7 +378,8 @@ def _vadd(a, b):
 
 
 @_op("vmul", [VEC, VEC], VEC, "nv_vmul",
-     "nv_vec nv_vmul(nv_arena*ar,nv_vec a,nv_vec b){int n=a.n<b.n?a.n:b.n;nv_vec r=nv_new(ar,n);"
+     "nv_vec nv_vmul(nv_arena*ar,nv_vec a,nv_vec b){int n=a.n<b.n?a.n:b.n;"
+     "nv_vec r=nv_new(ar,n); if(r.n!=n)return r;"
      "for(int i=0;i<n;i++)r.d[i]=nv_fin(a.d[i]*b.d[i]);return r;}")
 def _vmul(a, b):
     a, b = _v(a), _v(b)
@@ -441,11 +448,21 @@ C_PRELUDE = r"""
 #include <string.h>
 #define NV_EPS 1e-12
 typedef struct { double *d; int n; } nv_vec;
-typedef struct { double *buf; long used, cap; } nv_arena;
+typedef struct { double *buf; long used, cap; int overflow; } nv_arena;
 static double nv_fin(double x){ if(isnan(x)||isinf(x)) return 0.0; return x; }
-static double* nv_alloc(nv_arena*ar,int n){ if(ar->used+n>ar->cap) return ar->buf; /* saturating */
+/* An exhausted arena must not quietly hand back aliased memory: that produced a
+   silently wrong answer at 400k elements that the conformance harness passed,
+   because the harness only ever drew vectors of at most 128. Flagging the
+   overflow and returning the base pointer anyway was worse still -- callers
+   then wrote past the buffer, which is memory corruption, not a wrong number.
+   So allocation FAILS: it returns NULL, every caller checks, a failed vector is
+   length 0 so no loop writes anything, and the entry point turns the flag into
+   NaN. Every op is total, so NaN cannot arise any other way. */
+static double* nv_alloc(nv_arena*ar,int n){ if(n<0||ar->used+n>ar->cap){ ar->overflow=1;
+    return 0; }
   double*p=ar->buf+ar->used; ar->used+=n; return p; }
-static nv_vec nv_new(nv_arena*ar,int n){ nv_vec v; v.d=nv_alloc(ar,n<1?1:n); v.n=n; return v; }
+static nv_vec nv_new(nv_arena*ar,int n){ nv_vec v; double*p=nv_alloc(ar,n<1?1:n);
+  if(!p){ v.d=ar->buf; v.n=0; return v; } v.d=p; v.n=n<0?0:n; return v; }
 """ + _C_SORT
 
 

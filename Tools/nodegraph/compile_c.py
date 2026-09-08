@@ -11,7 +11,9 @@ is reported as uncertified and must not be used.
 Limits, stated rather than hidden:
   * output type must be real or bool (a vec-valued graph is not compiled)
   * every op on the reachable path must declare a C runtime function
-  * the arena is sized from the input; deeper vec pipelines need a bigger one
+  * the arena is sized at call time from the graph's vec-temporary count and the
+    input lengths; if it is still too small the call raises ArenaTooSmall rather
+    than returning a number
 """
 from __future__ import annotations
 
@@ -32,6 +34,10 @@ CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_cache", "cbui
 
 class NotCompilable(Exception):
     pass
+
+
+class ArenaTooSmall(RuntimeError):
+    """The C scratch arena ran out. Raised instead of returning a wrong number."""
 
 
 def to_source(graph: Graph) -> str:
@@ -83,8 +89,9 @@ def to_source(graph: Graph) -> str:
     src.append(
         """
 double nv_entry(double* scratch, long scratch_n, %s) {
-  nv_arena ar; ar.buf=scratch; ar.used=0; ar.cap=scratch_n;
-  return nv_main(&ar%s);
+  nv_arena ar; ar.buf=scratch; ar.used=0; ar.cap=scratch_n; ar.overflow=0;
+  double r = nv_main(&ar%s);
+  return ar.overflow ? NAN : r;
 }
 """
         % (
@@ -105,9 +112,15 @@ class CompiledC:
     source: str
     certified: bool = False
     conformance: Optional[dict] = None
+    vec_temps: int = 1
+
+    def scratch_size(self, env) -> int:
+        longest = max([1] + [len(v) for (n, t) in self.signature
+                             if t == VEC for v in [env[n]]])
+        return max(1 << 16, 2 * self.vec_temps * (longest + 8))
 
     def __call__(self, **env):
-        scratch_n = 1 << 20
+        scratch_n = self.scratch_size(env)
         scratch = (ctypes.c_double * scratch_n)()
         args = [scratch, ctypes.c_long(scratch_n)]
         keep = []
@@ -121,6 +134,12 @@ class CompiledC:
             else:
                 args.append(ctypes.c_double(1.0 if v is True else (0.0 if v is False else float(v))))
         out = self.fn(*args)
+        if out != out:  # NaN: the only way an all-total op set can produce one
+            raise ArenaTooSmall(
+                f"C scratch arena of {scratch_n} doubles exhausted for "
+                f"{self.vec_temps} vector temporaries; the reference "
+                f"interpreter is still correct for this input"
+            )
         return bool(out) if _root_type(self) == BOOL else out
 
 
@@ -153,7 +172,10 @@ def compile_graph(graph: Graph, cc: str = "gcc", opt: str = "-O2") -> CompiledC:
             argtypes.append(ctypes.c_double)
     fn.argtypes = argtypes
     fn.restype = ctypes.c_double
-    out = CompiledC(fn, tuple(graph.signature), so, src)
+    g = inline(graph)
+    out = CompiledC(fn, tuple(graph.signature), so, src,
+                    vec_temps=max(1, sum(1 for i in g.reachable()
+                                         if g.nodes[i].type == VEC)))
     out._root_type = graph.output_type  # type: ignore[attr-defined]
     return out
 
@@ -163,7 +185,10 @@ def random_env(signature, rng: random.Random) -> Dict[str, object]:
     env: Dict[str, object] = {}
     for name, t in signature:
         if t == VEC:
-            n = rng.choice([0, 1, 2, 3, 7, 33, 128])
+            # 20000 is here because it is not: a harness that only ever drew
+            # short vectors certified a backend that returned an 11.6% wrong
+            # answer at 400000 elements.
+            n = rng.choice([0, 1, 2, 3, 7, 33, 128, 128, 4096, 20000, 20000])
             env[name] = [rng.choice([rng.uniform(-50, 50), rng.uniform(0, 3), 0.0]) for _ in range(n)]
         elif t == BOOL:
             env[name] = rng.random() < 0.5

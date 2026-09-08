@@ -10,15 +10,15 @@
     "worst_env_sizes": null
   },
   "us_per_call": {
-    "interpreter": 844.4429149999905,
-    "python_codegen": 856.5089295999769,
-    "c_marshalled": 345.2538751500015,
-    "c_resident": 3.365350000012768
+    "interpreter": 943.3112400499795,
+    "python_codegen": 1099.7362026000246,
+    "c_marshalled": 644.5860231999632,
+    "c_resident": 4.5942083000227285
   },
   "speedup_vs_interpreter": {
-    "python_codegen": 0.9859125641508236,
-    "c_marshalled": 2.445860787610589,
-    "c_resident": 250.92276137601937
+    "python_codegen": 0.857761377519244,
+    "c_marshalled": 1.4634373165074754,
+    "c_resident": 205.32617993078648
   },
   "input_size": 3200,
   "iterations": 20000
