@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import ctypes
 import hashlib
+import math
 import os
 import random
 import subprocess
@@ -38,6 +39,15 @@ class NotCompilable(Exception):
 
 class ArenaTooSmall(RuntimeError):
     """The C scratch arena ran out. Raised instead of returning a wrong number."""
+
+
+class NonFiniteInput(ValueError):
+    """The two implementations agree on FINITE inputs and are not claimed to
+    agree outside that. They demonstrably do not: the Python nodes sanitise
+    their operands (library._f) while the C nodes sanitise their results, so
+    add(NaN,3) is 3 in Python and 0 in C, min2(NaN,3) is 0 and 3, gt(inf,1) is
+    false and true, mean([inf,2]) is 1 and 0. Rather than pretend, the boundary
+    refuses the input and says which one."""
 
 
 def to_source(graph: Graph) -> str:
@@ -120,6 +130,15 @@ class CompiledC:
         return max(1 << 16, 2 * self.vec_temps * (longest + 8))
 
     def __call__(self, **env):
+        for name, t in self.signature:
+            v = env[name]
+            bad = ([x for x in v if not math.isfinite(float(x))][:1] if t == VEC
+                   else ([] if isinstance(v, bool) or math.isfinite(float(v)) else [v]))
+            if bad:
+                raise NonFiniteInput(
+                    f"input {name!r} contains {bad[0]!r}; the C backend is only "
+                    f"claimed equivalent to the reference on finite inputs"
+                )
         scratch_n = self.scratch_size(env)
         scratch = (ctypes.c_double * scratch_n)()
         args = [scratch, ctypes.c_long(scratch_n)]
@@ -189,11 +208,19 @@ def random_env(signature, rng: random.Random) -> Dict[str, object]:
             # short vectors certified a backend that returned an 11.6% wrong
             # answer at 400000 elements.
             n = rng.choice([0, 1, 2, 3, 7, 33, 128, 128, 4096, 20000, 20000])
-            env[name] = [rng.choice([rng.uniform(-50, 50), rng.uniform(0, 3), 0.0]) for _ in range(n)]
+            # Extremes and near-EPS values are drawn on purpose: an all-moderate
+            # generator is what let a 400000-element aliasing bug through, and a
+            # separate totality test -- not this one -- is what caught `** 2`
+            # raising OverflowError where `*` quietly gives inf.
+            pool = [rng.uniform(-50, 50), rng.uniform(0, 3), 0.0,
+                    rng.choice([1e150, -1e150, 5e-324, 1e-12, 1.000000000001e-12,
+                                0.999999999999e-12, 1e16, -1e16])]
+            env[name] = [rng.choice(pool) for _ in range(n)]
         elif t == BOOL:
             env[name] = rng.random() < 0.5
         else:
-            env[name] = rng.choice([rng.uniform(-50, 50), 0.0, rng.uniform(0, 1e6)])
+            env[name] = rng.choice([rng.uniform(-50, 50), 0.0, rng.uniform(0, 1e6),
+                                    rng.choice([1e150, -1e150, 5e-324, 1e-12, 1e16])])
     return env
 
 
@@ -212,7 +239,9 @@ def conformance(graph: Graph, backend, trials: int = 400, seed: int = 20260908,
         gf = 1.0 if isinstance(got, bool) and got else (0.0 if isinstance(got, bool) else float(got))
         err = abs(rf - gf)
         tol = atol + rtol * abs(rf)
-        if err > tol:
+        # `err > tol` is False for NaN, so a backend that returns NaN used to
+        # count as conforming. Non-finite on either side is a failure.
+        if not (math.isfinite(rf) and math.isfinite(gf)) or err > tol:
             fails += 1
             if err > worst:
                 worst, worst_env = err, env

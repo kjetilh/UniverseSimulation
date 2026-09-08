@@ -32,12 +32,21 @@ from core import Graph
 
 @dataclass
 class Reference:
-    """A calibration point that was actually measured, with its provenance."""
+    """A calibration point that was actually measured, with its provenance.
+
+    `null_value` is the null measured on the SAME footing as this reference --
+    same arm, same pair count, same candidate set. Without it a separation is
+    not a separation. On 2026-09-08 this contract reported a separation of 9.9
+    by dividing a positive reference measured on one arm (n=8) by a null
+    measured on a different arm (n=24). Like for like the number was 1.35, below
+    the contract's own floor of 2, and the framework should have refused itself.
+    """
 
     role: str          # 'null' | 'positive'
     value: Optional[float]
     method: str        # how it was produced, in one line
     source: str        # file, script or procedure it can be re-derived from
+    null_value: Optional[float] = None   # the null measured alongside `value`
 
     @property
     def measured(self) -> bool:
@@ -76,6 +85,7 @@ class PurposeContract:
     # happened and cost nothing only because it was caught.
     invariant: Optional[Callable[[Graph], tuple]] = None
     reference_graph: Optional[Graph] = None
+    holdout_null_reference: Optional[Reference] = None
 
     # -- the two refusals -------------------------------------------------
     def admissibility(self) -> Verdict:
@@ -93,25 +103,48 @@ class PurposeContract:
         if reasons:
             return Verdict(False, reasons)
 
-        null = float(self.null_reference.value)
         pos = float(self.positive_reference.value)
-        sep = pos / null if null > 1e-12 else float("inf")
+        # Like for like: the positive reference is judged against the null that
+        # was measured with it, never against a null from another arm.
+        basis = self.positive_reference.null_value
+        if basis is None:
+            return Verdict(
+                False,
+                [
+                    "positive reference has no null measured on the same footing "
+                    "(Reference.null_value is unset); a ratio against a null from "
+                    "another arm, another n or another candidate set is not a "
+                    "separation and must not be reported as one"
+                ],
+            )
+        basis = float(basis)
+        sep = pos / basis if basis > 1e-12 else float("inf")
         if sep < self.min_separation:
             return Verdict(
                 False,
                 [
                     f"statistic does not separate its own references "
-                    f"(positive={pos:.4g}, null={null:.4g}, ratio={sep:.3g} < "
+                    f"(positive={pos:.4g}, its own null={basis:.4g}, ratio={sep:.3g} < "
                     f"{self.min_separation:g}); the purpose is not measurable by "
                     f"this statistic and no candidate can be gated on it"
                 ],
                 separation=sep,
-                threshold=null,
+                threshold=float(self.null_reference.value),
             )
-        return Verdict(True, [], separation=sep, threshold=null)
+        return Verdict(True, [], separation=sep, threshold=float(self.null_reference.value))
+
+    def holdout_threshold(self) -> float:
+        """Holdout gate. A search picks the best of thousands and needs a
+        max-statistic null; a holdout measures ONE pre-chosen candidate and needs
+        that candidate's own null. They are different numbers and conflating them
+        was one of this contract's defects."""
+        r = self.holdout_null_reference or self.null_reference
+        if not r.measured:
+            raise AssertionError("holdout null reference not measured")
+        return float(r.value)
 
     def gate_threshold(self) -> float:
-        """Pre-registered pass mark: the measured null reference."""
+        """Pre-registered selection pass mark: the max-statistic null."""
         v = self.admissibility()
         if not v:
             raise AssertionError("; ".join(v.reasons))
@@ -123,6 +156,7 @@ class PurposeContract:
         if not v:
             return {"admissible": False, "reasons": v.reasons}
         thr = self.gate_threshold()
+        hthr = self.holdout_threshold()
         s_sel = float(self.score(graph))
         s_hold = float(self.holdout(graph))
         extra: Dict[str, object] = {}
@@ -132,10 +166,24 @@ class PurposeContract:
             if self.reference_graph is not None:
                 rp, rsigns = self.invariant(self.reference_graph)
                 extra["reference_invariant_p"] = rp
-                # A candidate whose sign vector equals the reference's carries no
-                # directional information the reference did not already carry,
-                # however much better its weighted score looks.
-                extra["transform_only"] = (tuple(signs) == tuple(rsigns))
+                # Up to a global flip: a two-sided sign test cannot tell d from
+                # -d, so a candidate whose signs are the reference's negated
+                # carries no more direction either. Comparing raw vectors called
+                # that a difference, which it is not.
+                a, b = tuple(signs), tuple(rsigns)
+                extra["transform_only"] = (a == b) or (a == tuple(-x for x in b))
+                # and the part that actually decides: does the direction evidence
+                # get stronger, or only the weighted score?
+                extra["invariant_improves"] = bool(p < rp)
+        # One place forms the verdict. Passing both gates is not enough: if an
+        # invariant companion was declared, the direction evidence must improve
+        # too, or the candidate only moved the weighted score.
+        finding = (s_sel > thr) and (s_hold > hthr)
+        if "invariant_improves" in extra:
+            finding = finding and bool(extra["invariant_improves"])
+        elif self.invariant is not None:
+            finding = False
+        extra["is_finding"] = finding
         return {
             "admissible": True,
             "expr": graph.to_expr(),
@@ -144,8 +192,9 @@ class PurposeContract:
             "selection_score": s_sel,
             "holdout_score": s_hold,
             "gate_threshold": thr,
+            "holdout_gate_threshold": hthr,
             "passes_selection": s_sel > thr,
-            "passes_holdout": s_hold > thr,
+            "passes_holdout": s_hold > hthr,
             "null_reference": self.null_reference.value,
             "positive_reference": self.positive_reference.value,
             **extra,
