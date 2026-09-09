@@ -2,6 +2,20 @@
 
 Dette dokumentet er den korteste operative inngangen til dagens repo-state i `UniverseSimulation`.
 
+## Nyeste avgrensede retning: UC2 (2026-09-10)
+
+Brukerens utgangspunkt er en graf uten fysiske nodeverdier, koordinater eller
+ytre påvirkning. Vedvarende endringsenheter flytter en relasjonsende lokalt og
+fortsetter fra målnoden. UC2 prøver en separat, eksplisitt regel med fast
+node-/kant-/enhetstall; fødsler og fragmentering inngår ikke i denne modellen.
+De eldre v-seriene nedenfor er historikk, ikke bevis for at denne regelen virker.
+
+- Den nye kjernen besto 61 målrettede tester og 40 000 fler-enhetsforsøk uten invariantbrudd. Protokoll og kode ble pushet før måling; begge datasett er replay-verifisert.
+- Målte dynamiske positive/null-referanser kvalifiserte det strenge løkkemålet. I 16 kandidatkjøringer med 65 536 endringer ble én trestegs tidslig graf+enhet-løkke gjentatt tre ganger; mediandekning var null. Dette er ikke etablert metastabilitet eller en effekt utover en matchet kandidat-null.
+- Flytteloven bevarer komponenter og sykkelrang: flere steg alene kan ikke skape grafsykluser fra trær eller fragmentering. Neste modellarbeid bør avklare lokale fødsels-/topologiregler, ikke bare øke kjørelengden. Ingen Lorentz-, dimensjons- eller partikkelpåstand følger av UC2; den fulle hypotesen er åpen.
+- SSH er løst med dokumentert eksplisitt identitet. Nettarkiv og RAG synkes separat. Full generativ RAG-verifisering står `publication_blocked` fordi leverandøren melder oppbrukte API-kreditter; vellykket korpussynk er ikke en bestått query-audit.
+- Les [UC2-rapporten](Documentation/Program/UC2_report.md), [modellkontrakten](Documentation/Program/UC2_model_contract.md), [kvalifiseringen](Documentation/Program/UC2_qualification.md) og [den kildehashede proveniensindeksen](Documentation/Program/UC2_provenance.md). Sistnevnte er en deklarert evidensgraf, ikke en ny grafdatabase eller automatisk sannhetskontroll.
+
 ## Arbeidsregler
 
 - Filer pa disk er ground truth.

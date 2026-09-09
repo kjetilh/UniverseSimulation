@@ -2,6 +2,18 @@
 
 Dette er en komprimert historikk over de viktigste metodiske vendepunktene frem til dagens live state.
 
+## Nyeste: UC1/UC2 vender tilbake til lokal endring (2026-09-10)
+
+UC1 kontrollerte samsvar med vedvarende lokale endringsenheter og kvalifiserte
+et smalt sirkulasjonsinstrument. UC2 innførte deretter en separat, testet
+relasjonsflyttingskjerne og frøs protokollen før dynamisk kalibrering og kandidat.
+Én kort eksakt tidslig løkke ble observert i 16 kjøringer, uten grunnlag for
+metastabilitet utover tilfeldighet. Regelen bevarer topologiens komponentantall
+og sykkelrang; vekst og fragmentering må spesifiseres i en senere modell.
+Se [UC2-rapport og rådata](Documentation/Program/UC2_report.md). Den generative
+RAG-query-gaten er blokkert av leverandørens API-kreditter. Eldre funn nedenfor
+gjelder sine egne modeller og overføres ikke automatisk til UC2.
+
 ## 0. v14 og v14b skilte Lorentz-diagnostikk fra frontier og invariants
 
 Etter `v13n` ble det tydelig at videre hyperlokal spektralraffinering ikke svarer direkte pa relativitets-sporsmalet.

@@ -1,0 +1,642 @@
+[
+  {
+    "run_id": "positive-0",
+    "node_count": 3,
+    "seed": 2026091000,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-0",
+    "node_count": 3,
+    "seed": 2026091000,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-1",
+    "node_count": 3,
+    "seed": 2026091001,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-1",
+    "node_count": 3,
+    "seed": 2026091001,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-2",
+    "node_count": 3,
+    "seed": 2026091002,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-2",
+    "node_count": 3,
+    "seed": 2026091002,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-3",
+    "node_count": 3,
+    "seed": 2026091003,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-3",
+    "node_count": 3,
+    "seed": 2026091003,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-4",
+    "node_count": 3,
+    "seed": 2026091004,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-4",
+    "node_count": 3,
+    "seed": 2026091004,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-5",
+    "node_count": 3,
+    "seed": 2026091005,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-5",
+    "node_count": 3,
+    "seed": 2026091005,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-6",
+    "node_count": 3,
+    "seed": 2026091006,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-6",
+    "node_count": 3,
+    "seed": 2026091006,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-7",
+    "node_count": 3,
+    "seed": 2026091007,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-7",
+    "node_count": 3,
+    "seed": 2026091007,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-8",
+    "node_count": 3,
+    "seed": 2026091008,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-8",
+    "node_count": 3,
+    "seed": 2026091008,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-9",
+    "node_count": 3,
+    "seed": 2026091009,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-9",
+    "node_count": 3,
+    "seed": 2026091009,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-10",
+    "node_count": 3,
+    "seed": 2026091010,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-10",
+    "node_count": 3,
+    "seed": 2026091010,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-11",
+    "node_count": 3,
+    "seed": 2026091011,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-11",
+    "node_count": 3,
+    "seed": 2026091011,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-12",
+    "node_count": 3,
+    "seed": 2026091012,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-12",
+    "node_count": 3,
+    "seed": 2026091012,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-13",
+    "node_count": 3,
+    "seed": 2026091013,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-13",
+    "node_count": 3,
+    "seed": 2026091013,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-14",
+    "node_count": 3,
+    "seed": 2026091014,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-14",
+    "node_count": 3,
+    "seed": 2026091014,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "positive-15",
+    "node_count": 3,
+    "seed": 2026091015,
+    "role": "positive",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  },
+  {
+    "run_id": "null-15",
+    "node_count": 3,
+    "seed": 2026091015,
+    "role": "null",
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "units": [
+      0
+    ],
+    "steps": 2048
+  }
+]

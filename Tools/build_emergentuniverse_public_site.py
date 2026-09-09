@@ -29,6 +29,16 @@ DATASET_SPECS: list[dict[str, str]] = [
          "category": "uc2_local_change", "title": title,
          "description": "UC2 bounded local-change qualification and explicit provenance; no physics claim."}
         for name, title in (
+            ("UC2_report.md", "UC2: one short temporal orbit, no established metastability"),
+            ("UC2_calibration.json", "UC2: dynamic reference qualification and hashes"),
+            ("UC2_calibration_summary.csv", "UC2: dynamic reference summaries"),
+            ("UC2_calibration_initial.json", "UC2: reference initial states"),
+            ("UC2_calibration_events.csv", "UC2: all 65,536 reference changes"),
+            ("UC2_candidate.json", "UC2: descriptive candidate result and hashes"),
+            ("UC2_candidate_summary.csv", "UC2: sixteen candidate summaries"),
+            ("UC2_candidate_initial.json", "UC2: candidate initial states"),
+            ("UC2_candidate_events.csv", "UC2: all 65,536 candidate changes"),
+            ("UC2_witness.csv", "UC2: nine-change temporal recurrence witness"),
             ("UC2_model_contract.md", "UC2: clarified model contract and limits"),
             ("UC2_preregistration.json", "UC2: frozen candidate protocol"),
             ("UC2_qualification.md", "UC2: simulator qualification and execution ledger"),
@@ -2792,12 +2802,13 @@ def write_site(
   <main>
     <section>
       <h2>UC2 — persistent local endpoint relocation</h2>
+      <p><strong>Measured result:</strong> one short repeated three-step temporal orbit in 16 preregistered runs totaling 65,536 changes; median strict coverage zero at both sizes. The whole graph and unit position returned in that one nine-change sequence while the graph remained a tree. This is not established metastability or an excess over a matched candidate null. <a href="data/uc2_local_change/UC2_report.md">Results and raw evidence</a>. Generative RAG verification is blocked by exhausted provider API credits; corpus sync is separate.</p>
       <p>The clarified candidate relocates one relation end along an existing edge and continues the same unit from the target. Its fixed-population kernel is qualified separately from the historical baseline. Simultaneous graph cycles and temporal recurrence are distinct: this law preserves cycle rank, but a changing tree can return to an earlier state.</p>
       <p><a href="data/uc2_local_change/UC2_model_contract.md">Model contract and scope</a> · <a href="data/uc2_local_change/UC2_qualification.md">Qualification and execution status</a> · <a href="data/uc2_local_change/UC2_provenance.md">Source-hashed provenance</a>. A registered protocol or instrument pass is not a candidate effect or physics finding.</p>
     </section>
     <section>
       <h2>UC1 — ontology and circulation instrumentation, 2026-09-09</h2>
-      <p>The root baseline exhibited three boundary-case violations of persistent local change. A small circulation detector separated engineered oriented laps from unbiased walks in 16/16 control pairs. No candidate universe was run, and no spontaneous metastability or physics result is claimed. Deployment and dedicated RAG closure remain unverified.</p>
+      <p>The root baseline exhibited three boundary-case violations of persistent local change. A small circulation detector separated engineered oriented laps from unbiased walks in 16/16 control pairs. No candidate universe was run in UC1, and no spontaneous metastability or physics result is claimed. UC1 ended with publication blocked; see UC2 above for current deployment and RAG status.</p>
       <p><a href="data/uc1_instrumentation/UC1_report.md">Read the result, original premises and next decision</a>. The historical results below retain their own scopes and limitations.</p>
     </section>
     <section class="grid">

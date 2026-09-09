@@ -1,0 +1,41 @@
+{
+  "round": "UC2",
+  "stage": "calibration",
+  "source_sha256": {
+    "Documentation/Program/UC2_preregistration.json": "56de517f878efb184485373af87c801732be7a4b5651c0d427b4a7f4396349ed",
+    "Tools/local_change_candidate.py": "c4f63b6fea5835bd06fb25e6586e094508e2e2e006fda91fe2c88bb7eb218c44",
+    "Tools/run_local_change_candidate.py": "d55a2f02332ca5232bf810ed1f3cbc1b5fd989fd7c3158d3b2d1f4d31cf3f586",
+    "Tools/units_of_change_conformance.py": "65b2a4eda73fdbfd2c22bd2c4387f19cfa4314df1bdf1824a7fa6e81e617bc3e"
+  },
+  "runs": 32,
+  "total_successful_changes": 65536,
+  "evidence_sha256": {
+    "UC2_calibration_initial.json": "622ca188b9176d8bc8eb64db49031e4b453c451e25ce7feb19fe6cf7e6c0ecce",
+    "UC2_calibration_events.csv": "016a964ab07955d8a83d4e6f2762fd1d0597c823c6ab603f756399843aeed764",
+    "UC2_calibration_summary.csv": "333c6b594821088a49f11fcf774dc652d983dd5c76956df76d3e7be31dd9ef13"
+  },
+  "positive_median": 1.0,
+  "null_median": 0.023193359375,
+  "paired_signs": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "one_sided_sign_score": 1.52587890625e-05,
+  "squared_signs_identical": true,
+  "reference_gate_pass": true,
+  "claim_limit": "Dynamic engineered orbit instrument qualification, not spontaneous structure."
+}

@@ -1,5 +1,11 @@
 # UC2 — kvalifisering, kjørebok og avgrensning
 
+**Oppdatert etter måling:** Den frosne kalibreringen og kandidaten er nå kjørt
+og fullt replay-verifisert. Se [UC2_report.md](UC2_report.md) for resultatet:
+én kort tidslig løkkesekvens i 16 kjøringer; ingen etablert metastabilitet.
+RAG-synk virker, men full generativ query-audit er blokkert av leverandørens
+oppbrukte API-kreditter. Resten nedenfor bevarer kvalifiseringen før måling.
+
 Dato: 2026-09-10. Work ID `UC2`; utgangspunkt `3cedd21`;
 branch `program/wp-f2-f3-20260908`. Koordinator/integrator: root.
 Tilstand ved første publiseringsetappe: **VERIFIED — klar for frosset,

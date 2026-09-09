@@ -1,0 +1,22 @@
+{
+  "round": "UC2",
+  "stage": "candidate",
+  "source_sha256": {
+    "Documentation/Program/UC2_preregistration.json": "56de517f878efb184485373af87c801732be7a4b5651c0d427b4a7f4396349ed",
+    "Tools/local_change_candidate.py": "c4f63b6fea5835bd06fb25e6586e094508e2e2e006fda91fe2c88bb7eb218c44",
+    "Tools/run_local_change_candidate.py": "d55a2f02332ca5232bf810ed1f3cbc1b5fd989fd7c3158d3b2d1f4d31cf3f586",
+    "Tools/units_of_change_conformance.py": "65b2a4eda73fdbfd2c22bd2c4387f19cfa4314df1bdf1824a7fa6e81e617bc3e"
+  },
+  "runs": 16,
+  "total_successful_changes": 65536,
+  "evidence_sha256": {
+    "UC2_candidate_initial.json": "38ee3efbfc3c004c9e3edd9bcb7bd789a5bc0fd9a7f773ab731d43764a8b2712",
+    "UC2_candidate_events.csv": "beb239398135d5f1236d0964127d2739ba26dfb6d056d0f741081eb467c1034c",
+    "UC2_candidate_summary.csv": "80b33439b8f26c5f5eafa6ff1ee39b1396895d178f4d1c46097fef8aa0a0ced3"
+  },
+  "calibration_sha256": "760c7411880d645d659f45a5ef0bf365a882d14db611e249052ee067ba2d5718",
+  "node_itinerary_median": 0.0,
+  "exact_state_orbit_median": 0.0,
+  "claim_limit": "Finite temporal recurrence availability in a specified conservative kernel only; no spontaneous graph-loop creation, persistent material cluster, Lorentz-like symmetry, physical invariant, or complete universe model.",
+  "candidate_effect_gate": "not_defined_descriptive_only"
+}
