@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "title": "UC1 / UC2 explicit provenance — not a graph database",
+  "nodes": [
+    {"id":"uc2-rule","kind":"user_rule","status":"verified","source":"Documentation/Program/UC2_model_contract.md","anchor":"brukerens-presisering-og-var-avgrensning"},
+    {"id":"uc2-protocol","kind":"protocol","status":"planned","source":"Documentation/Program/UC2_preregistration.json"},
+    {"id":"uc2-kernel","kind":"code","status":"verified","source":"Tools/local_change_candidate.py"},
+    {"id":"uc2-runner","kind":"code","status":"planned","source":"Tools/run_local_change_candidate.py"},
+    {"id":"uc2-tests","kind":"test","status":"verified","source":"tests/test_local_change_candidate.py"},
+    {"id":"uc2-limits","kind":"limitation","status":"verified","source":"Documentation/Program/UC2_model_contract.md","anchor":"hva-kandidaten-kan-svare-pa"},
+    {"id":"uc1-report","kind":"report","status":"measured","source":"Documentation/Program/UC1_report.md"},
+    {"id":"uc1-evidence","kind":"data","status":"measured","source":"Documentation/Program/UC1_measurements.json"},
+    {"id":"uc1-protocol","kind":"protocol","status":"verified","source":"Documentation/Program/UC1_preregistration.json"}
+  ],
+  "edges": [
+    {"source":"uc2-protocol","target":"uc2-rule","relation":"assumes"},
+    {"source":"uc2-kernel","target":"uc2-rule","relation":"implements"},
+    {"source":"uc2-tests","target":"uc2-kernel","relation":"tests"},
+    {"source":"uc2-runner","target":"uc2-protocol","relation":"implements"},
+    {"source":"uc2-runner","target":"uc2-kernel","relation":"executed_with"},
+    {"source":"uc2-protocol","target":"uc2-limits","relation":"limited_by"},
+    {"source":"uc1-report","target":"uc1-evidence","relation":"reports"},
+    {"source":"uc1-evidence","target":"uc1-protocol","relation":"derived_from"}
+  ]
+}

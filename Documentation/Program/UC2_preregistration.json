@@ -1,0 +1,40 @@
+{
+  "round": "UC2",
+  "date": "2026-09-10",
+  "stage": "finite_descriptive_candidate_not_effect_test",
+  "purpose": "Test a faithful bounded endpoint-relocation kernel and measure temporal recurrence on unstructured acyclic initial graphs, without confusing temporal itineraries with simultaneous graph cycles.",
+  "user_rule": "A unit of change moves a relation from one node to another and continues traversal from the target node.",
+  "operationalization": "At unit position v select uniformly a legal ordered pair (u,a): v-u and v-a exist, u!=a and u-a does not exist. Replace a-v by a-u, retain v-u and move this same unit to u. One successful relational rewrite is one tick. A blocked attempt changes neither position nor tick. Unit positions are explicit primitive bookkeeping, not node values or weights; this is not an adjacency-only encoding.",
+  "bounded_scope": "Fixed nodes and unit population for this first kernel trial. Node birth, internal unit birth, fragmentation, noisy metastability, invariants and symmetry inference are not implemented or tested. Uniform unit scheduling is an implementation interleaving, not an external physical clock.",
+  "algebraic_limits": "Each slide preserves node count, edge count, connected components and cycle rank. A tree cannot develop simultaneous graph cycles. Continued activity for one initially eligible unit has an available inverse after each move and is therefore guaranteed by construction, not emergent stability.",
+  "primary_observable": "UC1 coverage: fraction of unit hops covered by three consecutive same-direction laps of an exact simple node itinerary length3..6. This measures temporal itinerary recurrence, not necessarily graph-state return.",
+  "secondary_descriptive_observable": "Fraction of hops covered by three repetitions of a simple exact graph-plus-unit state cycle of length3..6; states within its first lap must all be distinct. State IDs are observational and have no effect on dynamics. No inferential gate uses this secondary statistic.",
+  "calibration": {
+    "initial_edges": [[0,1],[0,2]],
+    "initial_unit": 0,
+    "positive": "Engineered legal dynamic orbit 0->1->2->0, repeated. The graph is a tree at every step.",
+    "null": "Uniform legal slides under the identical local kernel and identical initial tree. Not a frozen graph, shuffled invalid history or stay-at-source ablation.",
+    "replicates": 16,
+    "steps": 2048,
+    "seed_start": 2026091000,
+    "gate": "Positive median > null median and exact one-sided paired sign score <=0.05; signs unchanged by squaring. References must pass before candidate execution. No endpoint tuning on candidate results."
+  },
+  "candidate": {
+    "node_counts": [12,24],
+    "replicates_per_size": 8,
+    "steps": 4096,
+    "seed_formula": "20260910000 + 100 * node_count + replicate",
+    "initialization": "Uniform labeled tree from a uniform Pruefer sequence; one unit chosen uniformly among nodes of degree>=2. This activity conditioning is declared in advance. Node labels do not enter transition probabilities.",
+    "null_boundary": "The three-node reference calibrates detection, not a matched causal null for larger candidates. Candidate results are descriptive only: no beyond-chance, metastability or effect-size significance claim. Independent same-law runs are replication, not alternative-law nulls.",
+    "record": "Initial graph/unit and every legal slide, per-run hashes/summary, counts, all successful ticks and separate attempts. Entire events can be replayed to verify contemporaneous edges and exact state return."
+  },
+  "qualification": [
+    "Exhaustive legal moves on all simple graphs with <=4 nodes: preservation, locality, target continuation and inverse support.",
+    "Invalid moves fail without mutation; isolated/K2 units persist; no cross-component reconnection; multiple-unit invariants.",
+    "Seeded replay, label-equivariant transition support and observer noninterference.",
+    "Dynamic engineered orbit fixture stays acyclic; exact-state recurrence distinguished from node itinerary.",
+    "Candidate refuses stale source/protocol/reference hashes or failed reference gate."
+  ],
+  "stop_rule": "Run this single preregistered candidate law. At most two implementation fixes per same failure; do not tune dynamics on outputs. Any invariant violation invalidates the affected run and blocks scientific interpretation.",
+  "claim_limit": "Finite temporal recurrence availability in a specified conservative kernel only; no spontaneous graph-loop creation, persistent material cluster, Lorentz-like symmetry, physical invariant, or complete universe model."
+}

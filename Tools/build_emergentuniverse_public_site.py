@@ -24,6 +24,20 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 DATASET_SPECS: list[dict[str, str]] = [
+    *[
+        {"source": "Documentation/Program/" + name,
+         "category": "uc2_local_change", "title": title,
+         "description": "UC2 bounded local-change qualification and explicit provenance; no physics claim."}
+        for name, title in (
+            ("UC2_model_contract.md", "UC2: clarified model contract and limits"),
+            ("UC2_preregistration.json", "UC2: frozen candidate protocol"),
+            ("UC2_qualification.md", "UC2: simulator qualification and execution ledger"),
+            ("UC2_provenance.md", "UC1/UC2: explicit source-hashed provenance index"),
+            ("UC2_provenance_nodes.csv", "UC1/UC2: provenance nodes"),
+            ("UC2_provenance_edges.csv", "UC1/UC2: declared evidence relations"),
+            ("UC2_provenance_manifest.json", "UC1/UC2: provenance declarations"),
+        )
+    ],
     {
         "source": "Documentation/Program/UC1_report.md",
         "category": "uc1_instrumentation",
@@ -2776,6 +2790,11 @@ def write_site(
     <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate compared the qualified two-cycle compound proposal with the expanded single-cycle proposal at exactly equal accepted gross work. All technical controls passed, but the compound law produced no preregistered material reduction in finite start memory.</p>
   </header>
   <main>
+    <section>
+      <h2>UC2 — persistent local endpoint relocation</h2>
+      <p>The clarified candidate relocates one relation end along an existing edge and continues the same unit from the target. Its fixed-population kernel is qualified separately from the historical baseline. Simultaneous graph cycles and temporal recurrence are distinct: this law preserves cycle rank, but a changing tree can return to an earlier state.</p>
+      <p><a href="data/uc2_local_change/UC2_model_contract.md">Model contract and scope</a> · <a href="data/uc2_local_change/UC2_qualification.md">Qualification and execution status</a> · <a href="data/uc2_local_change/UC2_provenance.md">Source-hashed provenance</a>. A registered protocol or instrument pass is not a candidate effect or physics finding.</p>
+    </section>
     <section>
       <h2>UC1 — ontology and circulation instrumentation, 2026-09-09</h2>
       <p>The root baseline exhibited three boundary-case violations of persistent local change. A small circulation detector separated engineered oriented laps from unbiased walks in 16/16 control pairs. No candidate universe was run, and no spontaneous metastability or physics result is claimed. Deployment and dedicated RAG closure remain unverified.</p>

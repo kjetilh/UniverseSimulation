@@ -32,6 +32,11 @@ repo_path = "/srv/ops/repos/UniverseSimulation"
 source_type = "universe_experiments"
 target_subdir = "UniverseSimulation/experiments"
 include = [
+  "Documentation/Program/UC2_model_contract.md",
+  "Documentation/Program/UC2_qualification.md",
+  "Documentation/Program/UC2_provenance.md",
+  "Documentation/Program/UC2_provenance_nodes.csv",
+  "Documentation/Program/UC2_provenance_edges.csv",
   "Documentation/Program/UC1_report.md",
   "Documentation/Program/UC1_verification.md",
   "Documentation/Program/UC1_reference_summary.csv",

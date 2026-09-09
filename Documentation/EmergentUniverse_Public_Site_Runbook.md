@@ -88,6 +88,34 @@ for auth/case diagnostics, not production readiness.
 
 ## Deployment target
 
+### SSH identity and revision isolation (verified 2026-09-10)
+
+Use the staging host's documented identity explicitly:
+
+```bash
+ssh -i ~/.ssh/id_ed25519_hetzner -o IdentitiesOnly=yes \
+  -o BatchMode=yes -o StrictHostKeyChecking=yes ops@89.167.90.101
+```
+
+The same identity works for `root` for the static docroot. In UC1, the default
+identity selection failed even outside sandbox. UC2 distinguished the failure:
+TCP connection and host-key verification passed, but the default keys were
+rejected. The explicit Hetzner identity authenticated successfully. A sandbox
+network error and an SSH authentication rejection are different failures.
+Never print private keys, dotenv values or bearer tokens to diagnose either.
+`IdentitiesOnly` constrains offered identities to the configured files, as
+specified by the [OpenSSH manual](https://man.openbsd.org/ssh_config#IdentitiesOnly).
+
+The server's main checkout may be on another research branch. Preserve it.
+Create a clean detached release checkout of the exact pushed commit, build from
+that checkout, and use an effective sync config whose source `repo_path`s point
+to the same release. Review sync additions/deletions before execution. Do not
+infer corpus revision from the age of its newest indexed document: require
+current round citations and verify the mirrored source bytes against the release.
+Keep a recoverable previous static release when switching the public docroot.
+Only the dedicated Universe instance and static archive are in scope; do not
+restart or resync other HAVEN/DiMy services.
+
 The staging VPS already hosts `staging.haven.digipomps.org` and related nginx
 server blocks. This site is deployed as static files on the same server.
 

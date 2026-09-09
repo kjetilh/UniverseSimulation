@@ -88,7 +88,10 @@ def _summarize_query(
     *,
     token: str,
     expected_rate_backend: str,
+    required_citation_substring: str | None = None,
 ) -> dict[str, Any]:
+    if not isinstance(payload, dict):
+        raise SmokeFailure("Query response must be a JSON object.")
     _assert_no_token_echo(payload, token)
     hardening = _extract_hardening(payload)
     for required in ("auth", "rate_limit", "citation_audit", "freshness"):
@@ -103,18 +106,62 @@ def _summarize_query(
             f"{actual_backend!r}, expected {expected_rate_backend!r}."
         )
 
+    for audit in ("citation_audit", "freshness"):
+        if hardening[audit].get("ok") is not True:
+            raise SmokeFailure(f"Research query did not pass {audit} (ok must be true).")
+
+    citations = payload.get("citations")
+    if not isinstance(citations, list) or not citations:
+        raise SmokeFailure("Research query must include nonempty actual citations.")
+    for citation in citations:
+        if not isinstance(citation, dict) or any(
+            not isinstance(citation.get(field), str) or not citation[field].strip()
+            for field in ("doc_id", "chunk_id", "title", "excerpt")
+        ):
+            raise SmokeFailure("Research query contains an incomplete actual citation.")
+
+    matched_citations = []
+    if required_citation_substring is not None:
+        needle = required_citation_substring.strip().casefold()
+        if not needle:
+            raise SmokeFailure("Required citation substring cannot be empty.")
+        # Identity metadata only: mentioning a new round in the answer or an old
+        # document's excerpt does not establish that the new document was cited.
+        matched_citations = [
+            {field: citation[field] for field in ("doc_id", "chunk_id", "title")}
+            for citation in citations
+            if any(
+                isinstance(citation.get(field), str) and needle in citation[field].casefold()
+                for field in ("doc_id", "title", "url", "download_url")
+            )
+        ]
+        if not matched_citations:
+            raise SmokeFailure("No actual citation identity matches the required substring.")
+
     return {
         "rate_limit_backend": actual_backend,
         "rate_limit_used": rate_limit.get("used"),
         "rate_limit_remaining": rate_limit.get("remaining"),
         "citation_audit_ok": hardening["citation_audit"].get("ok"),
         "citation_count": hardening["citation_audit"].get("citation_count"),
+        "actual_citation_count": len(citations),
         "freshness_ok": hardening["freshness"].get("ok"),
         "active_docs": hardening["freshness"].get("active_docs"),
+        "required_citation_substring": required_citation_substring,
+        "matched_required_citations": matched_citations,
     }
 
 
 def run_smoke(args: argparse.Namespace) -> dict[str, Any]:
+    required_citation_substring = getattr(args, "required_citation_substring", None)
+    if required_citation_substring is not None:
+        if not required_citation_substring.strip():
+            raise SmokeFailure("Required citation substring cannot be empty.")
+        if args.skip_query or args.allow_audit_fail_closed:
+            raise SmokeFailure(
+                "--required-citation-substring requires a successful query; "
+                "it cannot be combined with --skip-query or --allow-audit-fail-closed."
+            )
     token = args.token or os.environ.get("RESEARCH_API_TOKEN", "")
     if not token:
         raise SmokeFailure("Missing token. Pass --token or set RESEARCH_API_TOKEN.")
@@ -162,6 +209,7 @@ def run_smoke(args: argparse.Namespace) -> dict[str, Any]:
                 query_payload,
                 token=token,
                 expected_rate_backend=args.expected_rate_backend,
+                required_citation_substring=required_citation_substring,
             )
             checks.append({"name": "query_hardening_audit", "status": query_response.status})
         elif args.allow_audit_fail_closed and query_response.status in {424, 503}:
@@ -221,6 +269,15 @@ def build_parser() -> argparse.ArgumentParser:
         "--query",
         default="Hva er prosjektets navarende evidensstatus?",
         help="Query used for /v1/research/query.",
+    )
+    parser.add_argument(
+        "--required-citation-substring",
+        default=None,
+        help=(
+            "Require a case-insensitive literal substring in an actual citation's "
+            "doc_id, title, url or download_url (not answer/excerpt text). "
+            "Requires a successful query."
+        ),
     )
     parser.add_argument(
         "--expected-rate-backend",
