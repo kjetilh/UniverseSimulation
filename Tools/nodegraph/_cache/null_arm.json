@@ -1,0 +1,77 @@
+{
+  "arm": "null",
+  "arm_field": "p_local_rewire",
+  "levels": {
+    "lo": 0.06,
+    "hi": 0.06
+  },
+  "steps": 20000,
+  "n_train_pairs": 24,
+  "n_holdout_pairs": 24,
+  "n_candidates": 9000,
+  "selection_gate_null_search_p95": 4.990787636515726,
+  "null_single_p95_train": 2.082752385646173,
+  "winner_expr": "inv(iqr(b3))",
+  "winner_size": 3,
+  "winner_depth": 2,
+  "winner_train_score": 4.546383127717145,
+  "winner_holdout_score": 0.1385717572351238,
+  "holdout_gate_null_p95": 2.162099997991333,
+  "passes_selection": false,
+  "passes_holdout": false,
+  "top10": [
+    {
+      "expr": "inv(iqr(b3))",
+      "train_score": 4.546383127717145,
+      "size": 3
+    },
+    {
+      "expr": "inv(sqrt(iqr(b3)))",
+      "train_score": 4.414534819695412,
+      "size": 4
+    },
+    {
+      "expr": "sq(mean(vscale(deg, m)))",
+      "train_score": 4.318223291569448,
+      "size": 5
+    },
+    {
+      "expr": "mean(vscale(deg, m))",
+      "train_score": 4.214687653991897,
+      "size": 4
+    },
+    {
+      "expr": "neg(mean(vscale(deg, m)))",
+      "train_score": 4.214687653991897,
+      "size": 5
+    },
+    {
+      "expr": "ifelse(gt(sq(median(vadd(b2, b2))), median(vsq(tri))), mean(vscale(deg, m)), sub(sq(mean(vadd(b2, b2))), sq(std(vadd(b2, b2)))))",
+      "train_score": 4.214687653991897,
+      "size": 18
+    },
+    {
+      "expr": "inv(iqr(vadd(diff(b3), b3)))",
+      "train_score": 4.187393873132821,
+      "size": 5
+    },
+    {
+      "expr": "sqrt(mean(vscale(deg, m)))",
+      "train_score": 4.111791269264502,
+      "size": 5
+    },
+    {
+      "expr": "log1p(mean(vscale(deg, m)))",
+      "train_score": 3.974364671832908,
+      "size": 5
+    },
+    {
+      "expr": "log1p(iqr(b3))",
+      "train_score": 3.7152932311294675,
+      "size": 3
+    }
+  ],
+  "permutation_reps": 2000,
+  "search_seed": null,
+  "verdict": "CLEAN"
+}

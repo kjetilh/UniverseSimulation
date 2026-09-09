@@ -107,9 +107,15 @@ def test_every_library_op_has_a_conformant_c_implementation():
     for name, op in sorted(REG.ops.items()):
         sig, names = _sig_for(op)
         if op.output == VEC:
-            # wrap so the graph returns a scalar the C entry point can hand back
+            # Wrap so the graph returns a scalar. sum+count+std alone is blind to
+            # ORDER -- an identity implementation of sortdesc passes it -- so the
+            # wrapper also correlates the result against a witness vector, which
+            # separates [3,2,1] from [1,2,3].
+            witness = "b_witness"
+            sig = sig + ((witness, VEC),)
             inner = f"{name}(" + ", ".join(names) + ")"
-            expr = f"add(add(sum({inner}), count({inner})), std({inner}))"
+            expr = (f"add(add(add(sum({inner}), count({inner})), std({inner})), "
+                    f"corr({inner}, {witness}))")
         else:
             expr = f"{name}(" + ", ".join(names) + ")"
         g = parse(REG, sig, expr)
@@ -166,12 +172,13 @@ def test_no_node_returns_nan_or_raises_on_degenerate_input():
 
 
 # ------------------------------------------------------------ the contract
-def _contract(null, pos, min_sep=2.0):
+def _contract(null, pos, min_sep=2.0, pos_null=None):
     return PurposeContract(
         id="t", statement="t", signature=SIG, output_type=REAL,
         score=lambda g: 1.0, holdout=lambda g: 1.0,
         null_reference=Reference("null", null, "m", "s"),
-        positive_reference=Reference("positive", pos, "m", "s"),
+        positive_reference=Reference("positive", pos, "m", "s",
+                                     null_value=(null if pos_null is None else pos_null)),
         min_separation=min_sep,
     )
 
@@ -298,6 +305,83 @@ def test_exhausted_arena_refuses_instead_of_returning_a_number():
     arr = (ctypes.c_double * len(env["v"]))(*env["v"])
     out = c.fn(scratch, ctypes.c_long(tiny), arr, ctypes.c_int(len(env["v"])))
     assert out != out, "an exhausted arena must return NaN, not a number"
+
+
+
+def test_conformance_counts_a_nan_backend_as_a_failure():
+    """`err > tol` is False for NaN, so a NaN-returning backend used to pass."""
+    g = parse(REG, (("v", VEC),), "mean(v)")
+
+    class NaNBackend:
+        def __call__(self, **env):
+            return float("nan")
+
+    rep = compile_c.conformance(g, NaNBackend(), trials=20, seed=1)
+    assert not rep["passed"] and rep["failures"] == 20
+
+
+def test_non_finite_input_is_refused_at_the_c_boundary():
+    """The two implementations are equivalent on FINITE inputs and are not
+    claimed to be outside that; these four cases really do diverge."""
+    for expr, sig, env in (
+        ("add(a, b)", (("a", REAL), ("b", REAL)), {"a": float("nan"), "b": 3.0}),
+        ("min2(a, b)", (("a", REAL), ("b", REAL)), {"a": float("nan"), "b": 3.0}),
+        ("gt(a, b)", (("a", REAL), ("b", REAL)), {"a": float("inf"), "b": 1.0}),
+        ("mean(v)", (("v", VEC),), {"v": [float("inf"), 2.0]}),
+    ):
+        g = parse(REG, sig, expr)
+        c = compile_c.compile_graph(g)
+        g.evaluate(env)                      # the reference stays total
+        try:
+            c(**env)
+        except compile_c.NonFiniteInput:
+            continue
+        raise AssertionError(f"{expr} with {env} must be refused, not answered")
+
+
+def test_contract_refuses_a_cross_arm_separation():
+    """The defect Astra found: a positive reference from one arm divided by a
+    null from another is not a separation. 50/5.05 read as 9.9; like for like it
+    was 50/37.18 = 1.35, under the contract's own floor."""
+    c = _contract(5.051415, 50.0, pos_null=37.176075)
+    v = c.admissibility()
+    assert not v and "not measurable" in v.reasons[0] and abs(v.separation - 1.345) < 0.01
+    bare = PurposeContract(
+        id="t", statement="t", signature=SIG, output_type=REAL,
+        score=lambda g: 1.0, holdout=lambda g: 1.0,
+        null_reference=Reference("null", 2.0, "m", "s"),
+        positive_reference=Reference("positive", 20.0, "m", "s"),  # no null_value
+    )
+    assert not bare.admissibility()
+
+
+def test_transform_only_ignores_a_global_sign_flip():
+    ref = parse(REG, SIG, "mean(v)")
+    cand = parse(REG, SIG, "neg(mean(v))")
+    envs = [{"v": [float(k), float(k) + 1.0], "w": [], "x": 0.0, "y": 0.0, "p": True}
+            for k in range(1, 9)]
+
+    def inv(g):
+        d = [g.evaluate(e) - g.evaluate({**e, "v": [t - 0.3 for t in e["v"]]}) for e in envs]
+        r = OP.sign_test(d)
+        return r["p"], r["signs"]
+
+    c = _contract(2.0, 20.0)
+    c.invariant = inv
+    c.reference_graph = ref
+    r = c.evaluate(cand)
+    assert r["transform_only"] is True, "a negated sign vector carries no new direction"
+    assert r["is_finding"] is False
+
+
+def test_holdout_gate_is_its_own_number():
+    c = _contract(5.0, 50.0)
+    c.holdout_null_reference = Reference("null", 2.0, "winner's own permutation", "s")
+    c.score = lambda g: 6.0
+    c.holdout = lambda g: 3.0
+    r = c.evaluate(parse(REG, SIG, "mean(v)"))
+    assert r["gate_threshold"] == 5.0 and r["holdout_gate_threshold"] == 2.0
+    assert r["passes_selection"] and r["passes_holdout"]
 
 
 if __name__ == "__main__":

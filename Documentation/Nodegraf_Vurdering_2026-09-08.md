@@ -8,6 +8,22 @@ sammendrag.
 **Ingen fysikkpåstand.** Ingen v-runde er åpnet, ingen gate berørt,
 `attempt_ledger.csv` er urørt.
 
+> **Rettet 8. september etter Astras motsvar.** Fjorten innvendinger er
+> kontrollert i kode og data og står alle. De to som endrer konklusjonen er
+> rettet i teksten under og merket «RETTET»; hele listen med kontrollene står i
+> `Nodegraf_Losen_Motsvar_2026-09-08.md`, Astras dokument i
+> `Nodegraf_Astra_Motsvar_2026-09-08.md`, og min egen revisjon skrevet før jeg
+> leste hennes i `Nodegraf_Losen_Egenrevisjon_2026-09-08.md`.
+
+> **Integrasjonsmerknad 9. september 2026.** Vurderingen og revisjonene over
+> beskriver mellomstadier. Commit `73d555f` la deretter inn nullarm-kontrollen
+> (`Tools/nodegraph/null_arm_check.py`, lagret resultat i `_cache/null_arm.json`)
+> og koblet `PurposeContract.evaluate` inn i `run_experiment.py`. Utsagnene i
+> del 5 og del 7 om at disse to tiltakene mangler er derfor historiske.
+> Dette etablerer ikke den manglende positive kalibreringen eller merverdi
+> over β₁. Astras presiseringer av uttrykk, ranger og paret sammenligning er
+> beholdt ved integrasjonen av de to branchene.
+
 ---
 
 ## 1. Kort svar
@@ -117,7 +133,9 @@ delgraf registreres som node, brukes som node, og inlines til nøyaktig samme
 graf som den innsatte formen.
 
 **Konformans:** hver av de 45 nodene ble kompilert til C og sammenlignet mot
-referansetolken på 250 tilfeldige input hver. **0 avvik.** For den utvalgte
+referansetolken på **90** tilfeldige input hver (vurderingen sa først 250; tallet
+i testfila er 90). **0 avvik.** Prøven trekker nå også 4 096 og 20 000 elementer
+og verdier som 1e150, 5e-324 og rundt EPS. For den utvalgte
 grafen: 400 forsøk, største absolutte avvik **0,0**. En backend som ikke består
 denne prøven sertifiseres ikke og deles ikke ut.
 
@@ -150,43 +168,15 @@ To nuller, fordi det tas to ulike beslutninger:
 kontrollerer multippel-testing-problemet et søk skaper) gater utvalget;
 `null_single` gater holdout, der nøyaktig én vinner måles.
 
-> ### RETTELSE 8. september 2026 — avsnittet under er feil
->
-> Påvist av Astra (`Nodegraf_Astra_Motsvar_2026-09-08.md`, del 5) og verifisert
-> mot `_cache/experiment.json` og `run_experiment.py:190–205`.
->
-> **Separasjonen 9,9 er 50,0 / 5,05 — den sterke armens vinner delt på den
-> SVAKE armens null.** To armer, to ulike parantall (8 mot 24), én brøk.
-> Kontraktens egen begrunnelse i koden («the strong-arm null is the higher of
-> the two, so the separation check is conservative») er nøyaktig baklengs: å
-> bruke den lavere nullen i nevneren gjør forholdet større, ikke mer
-> konservativt.
->
-> Mot den sterke armens egen null blir forholdet **50,0 / 37,18 = 1,345**, under
-> kontraktens krav på 2,0. Og siden `stats.SCORE_CAP = 50,0`, kan **ingen**
-> kandidat nå 2,0 mot en null på 37,2 — porten er uoppnåelig ved konstruksjon i
-> denne kalibreringen.
->
-> Konsekvens, uten pynt: **den positive referansen er ikke etablert etter
-> kontraktens egen målestokk.** Etter kontraktens andre nektelse er
-> svakarm-runden dermed instrumentering, ikke en test. Det som *står* er at den
-> sterke armen responderer — vinneren treffer taket mens dens null er 37,2 — men
-> taket sensurerer hvor langt over den ligger, så størrelsen på responsen er
-> ukjent.
->
-> Dette er fjerde gang samme feilklasse er registrert i dette repoet: en positiv
-> referanse som ikke er ført gjennom samme oppstilling som det den skal
-> kalibrere. Se `AGENTS.md`, «Endpoint quantities», og `WP-F2_amendment_2.md`.
->
-> Riktig fiks er ikke å senke terskelen: kjør den positive referansen med samme
-> parantall som den svake armen (24, ikke 8) — maksimumsnullen faller når n
-> øker — og fjern eller hev taket så forholdet kan måles i det hele tatt.
-> Til det er gjort, skal ingen påstand i denne rapporten støtte seg på ordet
-> «admissibel».
-
-**Kontrakten er admissibel:** positiv referanse 50,0 mot søkenull 5,05,
-separasjon **9,9**. Instrumentet responderer beviselig når effekten er til
-stede. På den sterke armen er søkenullen 37,2 med bare 8 par — en direkte
+**RETTET — kontrakten var ikke admissibel.** Jeg skrev: positiv referanse 50,0
+mot søkenull 5,05, separasjon 9,9. Men 5,05 er **svak** arms søkenull, og 50,0 er
+**sterk** arms vinner. Med sterk arms egen null blir forholdet `50/37,18 = 1,345`
+— under kontraktens eget krav på 2. Kommentaren i koden som begrunnet valget med
+at sterk arms null var høyest, beskrev motsatt nevner av den koden faktisk brukte.
+Og siden statistikken er kappet ved 50, kan ingen kandidat nå 2 i den
+kalibreringen: taket, referansen og forholdsporten er ikke forenlige. Det
+instrumentet fortsatt viser er at det responderer på en stor kontrast — men det
+er en røykprøve, ikke en kalibrering. På den sterke armen er søkenullen 37,2 med bare 8 par — en direkte
 måling av hvor mye et søk over 9 000 kandidater blåser opp maksimumsstatistikken.
 
 **Resultat på svak arm** (9 000 distinkte kandidater, dybde 3):
@@ -274,10 +264,14 @@ holdout og replikasjon. På replikasjonssettet får den ett par til riktig vei:
 
 #### Resultatet, slik det står
 
-> Søket bestod begge forhåndsregistrerte gater og replikerte på ferske seeds.
-> Dekomponert med en transformasjonsinvariant test er den reelle gevinsten
-> **ett par av 24**. Resten av det som så ut som en gevinst er statistikken som
-> belønner en omparametrisering.
+> **RETTET.** Søket bestod begge forhåndsregistrerte gater og observabelen
+> responderer på ferske seeds. Det gjør β₁ også. **Merverdien over β₁ er
+> uavklart:** den direkte parede sammenligningen — McNemar på de diskordante
+> parene — gir 1 mot 0 på replikasjon og 1 mot 1 på holdout, altså tosidig
+> p = 1,0 begge steder. β₁⁴ har dessuten *høyere* permutasjons-p enn β₁ på
+> replikasjon (0,00025 mot 0,00015). «Den reelle gevinsten er ett par av 24»
+> var min formulering; ett par er et deskriptivt nettotall i dette datasettet og
+> bærer ingen konklusjon om replikert forbedring.
 
 > **RETTELSE 8. sep (Astra del 3).** «Ett par av 24» kan stå som et deskriptivt
 > nettotall for dette datasettet, men **ikke bære en påstand om replikert
@@ -340,7 +334,7 @@ Ført opp her så det ikke gjøres om igjen.
 6. **Søket fant ingen ny størrelse.** Det gjenfant β₁ i tre uavhengige kjøringer.
    Det er et ærlig delvis negativt resultat, ikke en suksess som skal rundes opp.
 7. **«Sertifisert» var for sterkt ord, og konformansharnessen var for svak til
-   å bære det.** C-backenden ga et stille galt svar — 11,6 % relativ feil — for
+   å bære det.** Se også del 5 punkt 9. C-backenden ga et stille galt svar — 11,6 % relativ feil — for
    en graf med seks vektor-mellomresultater på 400 000 elementer, samtidig som
    den bestod konformansprøven. Årsaken: arenaen mettet ved å returnere sin egen
    basepeker, så rørledningen aliaset sitt eget input; og prøven trakk aldri
@@ -356,7 +350,30 @@ Ført opp her så det ikke gjøres om igjen.
    **Lærdommen er ikke om arenaer.** Den er at en konformansprøve bare beviser
    noe innenfor fordelingen den trekker fra, og at et ord som «sertifisert»
    inviterer til å glemme det. Prøven trekker nå også 4 096 og 20 000.
-8. **Formålskontrakten har en systematisk skjevhet jeg ikke forutså, og som er
+8. **Overskriftstallet var en sammenligning av epler og pærer, og kontrakten
+   fanget den ikke fordi den ikke kunne.** Separasjonen 9,9 delte sterk arms
+   vinnerscore på svak arms null. `Reference` hadde ingen plass til «nullen målt
+   på samme fotfeste», så kontrakten hadde ingen måte å nekte på. Den har det nå
+   (`Reference.null_value`), og hadde den hatt det 8. september, ville den nektet
+   seg selv. Dette er den dyreste enkeltfeilen i arbeidet, og den ble funnet av
+   en ekstern rådgiver med i oppgave å motsi — ikke av testsuiten, ikke av meg.
+9. **Konformansharnessen hadde tre hull til, alle konkrete.** `err > tol` er
+   `False` for NaN, så en backend som returnerer NaN telte som bestått.
+   Vektornoder ble kontrollert med `sum + count + std`, som er blind for
+   rekkefølge — en identitets-`sortdesc` består. Og de to implementasjonene
+   divergerer på ikke-endelig input i fire målte tilfeller, fordi Python-nodene
+   renser *operandene* og C-nodene renser *resultatet*: `add(NaN,3)` gir 3 mot 0,
+   `min2(NaN,3)` gir 0 mot 3, `gt(inf,1)` gir false mot true, `mean([inf,2])` gir
+   1 mot 0. Alle tre er rettet; det siste ved å avvise ikke-endelig input på
+   C-grensen og si rett ut at ekvivalensen bare påstås for endelige tall.
+10. **Dedupliseringen gjorde ikke det doc-stringen lovet.** «Bare den billigste
+   overlever» sto i teksten; koden forkastet enhver gjentakelse uten å
+   sammenligne kostnad. Og «samme funksjon» var for sterkt uansett: probene er
+   kuttet til 48 elementer og hashet med ni sifre, så `[0]*48+[1]` og `[0]*49`
+   er umulige å skille selv om summene er ulike. Rettet begge veier — koden
+   beholder nå den billigste, og teksten sier at dette er observasjonell
+   ekvivalens *på probene*, en søkeheuristikk og ikke semantisk likhet.
+11. **Formålskontrakten har en systematisk skjevhet jeg ikke forutså, og som er
    det viktigste funnet i hele arbeidet.** Statistikken er ikke invariant under
    monotone transformasjoner. Uttrykksrommet er full av slike transformasjoner.
    Et søk vil derfor *systematisk* klatre i transformasjonsretningen framfor i
@@ -401,41 +418,44 @@ målt null er ikke en omvei rundt det problemet. Det er verktøyet for det.
 
 ## 7. Hva jeg ville krevd før mer investering
 
-Fem porter. Hver har et tall, ikke en vurdering.
+Fire porter, etter Astras motsvar. Hver har et tall, ikke en vurdering.
 
-1. **Swift-backend med samme konformanskontrakt.** Uten den kjører Goals ikke
-   der de skal. Port: alle 45 noder, 250 tilfeldige input, 0 avvik — samme
-   prøve som C bestod.
-2. **Ett funn som ikke er en omskrivning av noe biblioteket allerede hadde.**
-   Port: Spearman mot enhver enkelt kanal < 0,9 på et replikasjonssett, med
-   permutasjons-p < 0,01. Dagens kjøring er på 0,98 og består ikke.
-3. **Språkmodell-forslagsstiller målt mot enumeratoren på samme kontrakt.**
-   Port: bedre holdout-score per brukt krone enn det deterministiske søket.
-   Grensesnittet (`search.Proposer`) er ferdig; målingen er ikke gjort, og
-   påstanden om at modellen hjelper er derfor ubelagt.
-4. **Transformasjonsinvarians i kontrakten.** En kandidat skal ikke kunne slå
-   en annen på score alene når de to har identisk fortegnsvektor. Port: kontrakten
-   må rapportere både den vektede statistikken og en transformasjonsinvariant
-   test, og et funn teller bare som funn når *begge* forbedres. Dette er en
-   endring i `purpose.py`, ikke en anbefaling. **RETTELSE 8. sep (Astra del 6):
-   påstanden «Den er gjort» var feil.** Mekanismen finnes, men er ikke koblet
-   til noe: `PurposeContract.evaluate` beregner `transform_only`
-   (`purpose.py:138`), men `passes_selection` og `passes_holdout` bruker bare
-   score mot én terskel (`:147`) og ser aldri på den. Verre: `evaluate` blir
-   **aldri kalt** — hovedeksperimentet oppretter kontrakten uten `invariant` og
-   `reference_graph` (`run_experiment.py:178`), regner PASS-feltene selv inne i
-   `run_arm` (`:129`), og kaller bare `admissibility()` (`:209`). Porten står
-   altså fortsatt åpen. Astra tilføyer at kravet bør omskrives: identisk
-   fortegnsvektor er ikke bevis for at to funksjoner er monotone omskrivninger,
-   og en reell styrkegevinst fra bedre bruk av magnituder bør ikke utelukkes på
-   forhånd. Kravet bør være dokumentert forbedring ved kontrollert feilrate,
-   sammenlignet direkte mot en forhåndsvalgt baseline.
-5. **Én formålskontrakt skrevet for noe utenfor denne arenaen** — en Palazzo-
-   eller Kallimachos-Goal — som består sin egen admissibilitetsprøve. Det er
-   den prøven som avgjør om «å beskrive formålene» er løsbart i praksis eller
-   bare i denne ene sandkassen.
+1. **Kalibrert merverdi for hele beslutningsprosedyren.** Astras port, og den
+   beste av dem alle. Frys data, søkevalg, statistikk, baseline og
+   beslutningskode. Vis så på *uavhengige* batcher at falsk-positiv-raten holder
+   avtalt nivå, og at styrken forbedres over en forhåndsvalgt β₁-baseline med en
+   nedre konfidensgrense over en praktisk margin. Antall batcher bestemmes før
+   kjøring. Søkevalg og transformasjonsvalg må ligge innenfor det som fryses.
+2. **En nullarm.** Kjør hele løypa med `lo` og `hi` på samme parameterverdi,
+   bare ulike hendelsesseeds. Finner den noe, ligger feilen i datagenerering,
+   mellomlagring eller paring. Permutasjonsnullen tester statistikken; nullarmen
+   tester rørledningen, og den kan ikke se en feil i `pairs()` som parer feil
+   `lo` med feil `hi`. Koster 15 sekunder. Ikke kjørt.
+3. **Swift-backend med den spesifiserte konformansprøven** — ikke «250
+   tilfeldige input», men et navngitt inputdomene med de målrettede
+   semantikkprøvene fra punkt 9 i del 5: ikke-endelige verdier, ekstreme
+   eksponenter, grenseverdier rundt EPS, kansellering, lange nesten-konstante
+   vektorer, og en rekkefølgefølsom kontroll for hver vektornode.
+4. **Kontrakten koblet inn i resultatløypa.** Mekanismen finnes og er testet;
+   `run_experiment.py` lager fortsatt kontrakten med `score=lambda g: 0.0` og
+   kaller bare `admissibility()`. En port som ikke håndheves er ikke en port.
 
-Faller port 2 og 3 begge, står fortsatt kjernen, kompilatoren og
+**Strøket: den gamle port 2** (Spearman < 0,9 mot enhver kanal). Korrelasjonsavstand
+er verken ny informasjon, bedre måling eller nytte, og den belønner å blande inn
+støy. Verre: lest bokstavelig består `neg(beta1)` med ρ = −1 og nøyaktig samme
+score. Kravet skulle vært dokumentert merverdi ved kontrollert feilrate, som nå
+er port 1.
+
+**Omskrevet: den gamle port 4.** Jeg krevde at fortegnsvektoren måtte bli bedre.
+Det utelukker på forhånd reelle styrkegevinster som kommer av bedre utnyttelse
+av magnituder. Kravet er nå at både retning og størrelse rapporteres, med en
+forhåndsdefinert sammenligning mot baseline — ikke at en kandidat må tilfredsstille
+en bestemt fortelling om nyhet.
+
+**Den gamle port 3** (språkmodell per krone) er ikke en port på om rammeverket er
+verdt å bygge. Den er et eget spørsmål og kan stilles når som helst.
+
+Faller port 1 og 3 begge, står fortsatt kjernen, kompilatoren og
 formålskontrakten igjen som nyttige for HAVEN. Da er det dét dette er, og det
 bør sies rett ut i stedet for å holdes åpent.
 

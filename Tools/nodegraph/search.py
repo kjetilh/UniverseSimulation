@@ -2,11 +2,17 @@
 """
 search.py -- bottom-up typed enumeration with observational deduplication.
 
-Candidates are built level by level from the library. Two candidates that
-produce identical values on every probe environment are the same function as
-far as this arena can tell, so only the cheaper one survives. That single rule
-is what keeps a combinatorial space tractable: most of an expression space is
-re-spellings of the same function.
+Candidates are built level by level from the library. Two candidates that agree
+on every probe environment are treated as the same function and only the cheaper
+survives. That single rule is what keeps a combinatorial space tractable: most
+of an expression space is re-spellings of the same function.
+
+Two honest limits on "the same function". The probes are the arena's own data
+truncated to 48 elements, and the fingerprint rounds to nine significant digits
+and, for long vectors, looks only at the first and last 32. So this is
+observational equivalence ON THE PROBES -- a search heuristic that can discard a
+candidate that differs elsewhere -- not a proof of semantic equality. [0]*48+[1]
+and [0]*49 are indistinguishable to it and have different sums.
 
 `Proposer` is the seam. The enumerator below is deterministic and costs no
 tokens, so a result obtained with it does not depend on any model being
@@ -150,10 +156,21 @@ class Enumerator(Proposer):
                 if require_new is not None and not any(id(c) in require_new for c in combo):
                     continue
                 cand = self._build(op.name, combo)
-                if cand is None or cand.fp in seen:
+                if cand is None:
                     continue
-                seen[cand.fp] = cand
-                out.append(cand)
+                old = seen.get(cand.fp)
+                if old is None:
+                    seen[cand.fp] = cand
+                    out.append(cand)
+                elif cand.cost < old.cost - 1e-9:
+                    # keep the cheaper representative, which the docstring
+                    # promised and the code did not do: it discarded any repeat
+                    # without ever comparing cost.
+                    seen[cand.fp] = cand
+                    for k, c in enumerate(out):
+                        if c.fp == cand.fp:
+                            out[k] = cand
+                            break
         return out
 
     def _trim(self, cands, cap):

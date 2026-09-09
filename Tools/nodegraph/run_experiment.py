@@ -16,6 +16,14 @@ Pre-registration (fixed before any candidate was scored; see PURPOSE.md):
       response is known to be present.
   P7  A run in which the winner passes P3 but fails P4 is reported as a failure
       to generalise, not re-run with a different statistic.
+  P8  The verdict is formed by PurposeContract.evaluate and by nothing else.
+      Until 2026-09-08 the contract was built here with score=lambda g: 0.0 and
+      no invariant, and the PASS fields were computed separately inside
+      run_arm -- so the gate the assessment said was enforced was not in the
+      path at all. One place forms the verdict or the contract is decoration.
+  P9  The positive reference carries the null measured ON THE SAME FOOTING.
+      Reporting a strong-arm score over a weak-arm null read as separation 9.9;
+      like for like it was 1.35, under the contract's own floor.
 """
 from __future__ import annotations
 
@@ -175,6 +183,14 @@ def main() -> int:
     if args.only != "both":
         pass
 
+    winner_graph = core.parse(REG, OP.CHANNELS, weak["winner_expr"])
+    wdata0 = OP.load("weak")
+    tr0, ho0 = OP.pairs(wdata0, "train"), OP.pairs(wdata0, "holdout")
+
+    def _sign_inv(g):
+        r = OP.sign_test(OP.deltas(g, ho0))
+        return r["p"], r["signs"]
+
     contract = PurposeContract(
         id="observable_responds_to_rule_arm",
         statement=(
@@ -185,8 +201,8 @@ def main() -> int:
         ),
         signature=OP.CHANNELS,
         output_type=core.REAL,
-        score=lambda g: 0.0,
-        holdout=lambda g: 0.0,
+        score=lambda g: OP.paired_score(OP.deltas(g, tr0)),
+        holdout=lambda g: OP.paired_score(OP.deltas(g, ho0)),
         null_reference=Reference(
             "null", weak["selection_gate_null_search_p95"],
             "95th pct of max score over the whole candidate set under arm-label "
@@ -198,15 +214,25 @@ def main() -> int:
             "best score of the same search on the strong arm, where the response "
             "is known to be present",
             "run_experiment.py P6 (arm p_triadic_closure 0.02 vs 0.30)",
+            null_value=strong["selection_gate_null_search_p95"],
+        ),
+        holdout_null_reference=Reference(
+            "null", weak["holdout_gate_null_p95"],
+            "95th pct of the selected winner's own score under permutation of "
+            "its holdout differences",
+            "run_experiment.py P4",
         ),
         min_separation=2.0,
         notes=(
-            "The two references come from different arms and different pair counts "
-            "(strong n=8, weak n=24). The strong-arm null is the higher of the two, "
-            "so the separation check is conservative."
+            "The positive reference is judged against the null measured with it, "
+            "on the strong arm at n=8. Comparing it against the weak arm's null "
+            "instead is what produced the retracted separation of 9.9."
         ),
     )
+    contract.invariant = _sign_inv
+    contract.reference_graph = core.parse(REG, OP.CHANNELS, OP.BASELINES["beta1"])
     verdict = contract.admissibility()
+    decision = contract.evaluate(winner_graph)
 
     baselines = {}
     wdata = OP.load("weak")
@@ -225,6 +251,7 @@ def main() -> int:
         "contract": json.loads(contract.to_json()),
         "contract_admissible": bool(verdict),
         "contract_reasons": verdict.reasons,
+        "contract_decision": decision,
         "positive_reference_run": strong,
         "search_run": weak,
         "hand_picked_baselines_weak_arm": baselines,
@@ -233,13 +260,24 @@ def main() -> int:
         json.dump(out, f, indent=2)
 
     print("\n== result ==", flush=True)
-    print(f"contract admissible: {bool(verdict)} (separation {verdict.separation})", flush=True)
+    print(f"contract admissible: {bool(verdict)} "
+          f"(separation {verdict.separation})", flush=True)
+    for r in verdict.reasons:
+        print(f"  REFUSED: {r}", flush=True)
+    if not verdict:
+        print("  -> this run is an instrumentation round. It does not gate.",
+              flush=True)
     print(f"candidates examined : {weak['n_candidates']}", flush=True)
     print(f"winner              : {weak['winner_expr']}", flush=True)
     print(f"train  {weak['winner_train_score']:.3f}  vs selection gate {weak['selection_gate_null_search_p95']:.3f}"
           f"  -> {'PASS' if weak['passes_selection'] else 'FAIL'}", flush=True)
     print(f"holdout{weak['winner_holdout_score']:8.3f}  vs holdout gate  {weak['holdout_gate_null_p95']:.3f}"
           f"  -> {'PASS' if weak['passes_holdout'] else 'FAIL'}", flush=True)
+    if decision.get("admissible"):
+        print(f"is_finding          : {decision['is_finding']}  "
+              f"(transform_only={decision.get('transform_only')}, "
+              f"invariant p {decision.get('invariant_p')} vs reference "
+              f"{decision.get('reference_invariant_p')})", flush=True)
     best_bl = max(baselines.items(), key=lambda kv: kv[1]["holdout_score"])
     print(f"best hand-picked on holdout: {best_bl[0]} = {best_bl[1]['holdout_score']:.3f}", flush=True)
     print(f"\nwrote {args.out}", flush=True)
