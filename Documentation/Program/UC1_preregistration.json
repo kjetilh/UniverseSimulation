@@ -1,0 +1,41 @@
+{
+  "round": "UC1",
+  "fingerprint": "persistent-local-change-ontology-and-circulation-instrument",
+  "date": "2026-09-09",
+  "stage": "instrumentation_before_model_selection",
+  "purpose": "Determine whether the existing baseline obeys the clarified ontology and whether a small history-based circulation detector separates measured references.",
+  "user_premises": [
+    "Nodes and relations have no internal physical values or coordinates.",
+    "Units of change persist; new units may be born.",
+    "Changes follow node hops along existing relations.",
+    "New nodes may be produced by local dynamics, potentially depending on degree.",
+    "Disconnected components cannot interact through a global fallback.",
+    "Weak metastable circulating patterns are an eligible first target; no physical dimension is required."
+  ],
+  "open_model_choice": "User clarification pending: persistent units encoded as graph motifs or as explicit primitive entities with positions. No candidate model will be run before this is settled.",
+  "baseline_probes": [
+    "One unit on K2: one certain edge-deletion hop, zero explicit unit death and birth rates, default pruning.",
+    "One unit on one of two disconnected K2 components: same hop with relocation enabled; record whether it appears in the other component.",
+    "One isolated unit host plus separate K2: execute isolated-node fallback; record newly created cross-component edge."
+  ],
+  "circulation_endpoint": "Fraction of hops covered by at least three consecutive laps of a simple cycle of length 3 through 6, following the direction of the first lap. Unit-hop histories only; node labels carry no meaning.",
+  "references": {
+    "graphs": ["C3", "C4"],
+    "replicates_per_graph": 8,
+    "hops_per_history": 2048,
+    "seed_formula": "2026090900 + 100 * cycle_length + replicate",
+    "positive": "Legal oriented laps on the same cycle; engineered instrument control, not emergent dynamics.",
+    "null": "Independent unbiased neighbor hops on the same cycle with the same hop budget.",
+    "separation": "Positive exceeds paired null on a one-sided exact sign test p <= 0.05, with positive median exceeding null median.",
+    "invariant_companion": "Raw paired signs and exact binomial sign probability; repeat comparison after squaring coverage, a strictly increasing transform on [0,1]."
+  },
+  "verification": [
+    "Analytic path fixtures: repeated simple cycles count; immediate backtracking and acyclic walks do not.",
+    "Node-renaming and full-history reversal preserve coverage.",
+    "Every calibration hop follows an edge of the declared control cycle.",
+    "Independent review of implementation and evidence; no whole-Documentation test scan."
+  ],
+  "negative_outcome": "Baseline nonconformance is an implementation counterexample, not failure of the universe hypothesis. Unseparated references reject the instrument. No candidate result exists while the model representation is unresolved.",
+  "stop_rule": "At most two attempts on one failure fingerprint; do not tune the endpoint using candidate results.",
+  "closure": "Commit and push intended files; build public archive from pushed commit; verify static deployment and separate token-scoped RAG. Missing access is publication_blocked."
+}

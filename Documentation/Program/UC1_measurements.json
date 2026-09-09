@@ -1,0 +1,84 @@
+{
+  "round": "UC1",
+  "stage": "instrumentation_only",
+  "preregistration_sha256": "b0ba3861ee1df93aa102d2b0857945988a0e951caa11239e23cbc06f3bfa128a",
+  "source_sha256": "65b2a4eda73fdbfd2c22bd2c4387f19cfa4314df1bdf1824a7fa6e81e617bc3e",
+  "baseline_source_sha256": "9f6fae9d0910fd5fded1b30bd6927a9235c9adc40838980c125c25da4074bbdb",
+  "baseline_probes": [
+    {
+      "probe": "unit_loss",
+      "initial_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "tokens_before": [
+        0
+      ],
+      "tokens_after": [],
+      "nodes_after": [],
+      "violation_observed": true,
+      "scope": "root baseline under specified boundary input; not all v-series runs"
+    },
+    {
+      "probe": "cross_component_relocation",
+      "initial_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "tokens_before": [
+        0
+      ],
+      "tokens_after": [
+        2
+      ],
+      "nodes_after": [
+        2,
+        3
+      ],
+      "violation_observed": true,
+      "scope": "root baseline under specified boundary input; not all v-series runs"
+    },
+    {
+      "probe": "isolated_global_reconnection",
+      "initial_edges": [
+        [
+          2,
+          3
+        ]
+      ],
+      "tokens_before": [
+        0
+      ],
+      "tokens_after": [
+        0
+      ],
+      "neighbors_of_isolated_host_after": [
+        2
+      ],
+      "violation_observed": true,
+      "scope": "root baseline fallback on an isolated host"
+    }
+  ],
+  "reference_pairs": 16,
+  "positive_signs": 16,
+  "negative_signs": 0,
+  "one_sided_sign_p": 1.52587890625e-05,
+  "positive_median": 1.0,
+  "null_median": 0.007568359375,
+  "squared_signs_identical": true,
+  "reference_separation_pass": true,
+  "candidate_runs": 0,
+  "claim_limit": "Engineered circulation controls and baseline counterexamples only. No spontaneous metastability, invariant, dimension or physics result.",
+  "evidence_sha256": {
+    "UC1_reference_paths.csv": "1023701b1acac7bfb845f9644d5dc9146d84cb846524b68bfe4015868bc599bf",
+    "UC1_reference_summary.csv": "28c5b31a679e0917b0f822706eb9a6edacfc09b9f24ce7dbb658e45cb1743768"
+  }
+}

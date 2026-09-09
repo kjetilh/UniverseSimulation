@@ -25,6 +25,42 @@ ROOT = Path(__file__).resolve().parents[1]
 
 DATASET_SPECS: list[dict[str, str]] = [
     {
+        "source": "Documentation/Program/UC1_report.md",
+        "category": "uc1_instrumentation",
+        "title": "UC1: persistent local change and circulation instrumentation",
+        "description": "Three root-baseline counterexamples and measured circulation controls; no candidate universe result; publication blocked.",
+    },
+    {
+        "source": "Documentation/Program/UC1_preregistration.json",
+        "category": "uc1_instrumentation",
+        "title": "UC1 frozen protocol",
+        "description": "Premises, pending model choice, references, gates and claim limits fixed before measurement.",
+    },
+    {
+        "source": "Documentation/Program/UC1_measurements.json",
+        "category": "uc1_instrumentation",
+        "title": "UC1 measurements and source hashes",
+        "description": "Executed baseline probes, calibration gate and SHA-256 provenance.",
+    },
+    {
+        "source": "Documentation/Program/UC1_reference_summary.csv",
+        "category": "uc1_instrumentation",
+        "title": "UC1 paired reference summaries",
+        "description": "Sixteen engineered-positive versus unbiased-walk comparisons on C3 and C4.",
+    },
+    {
+        "source": "Documentation/Program/UC1_reference_paths.csv",
+        "category": "uc1_instrumentation",
+        "title": "UC1 raw reference histories",
+        "description": "All 65,568 recorded positions; calibration only, not spontaneous formation.",
+    },
+    {
+        "source": "Documentation/Program/UC1_verification.md",
+        "category": "uc1_instrumentation",
+        "title": "UC1 verification and publication boundary",
+        "description": "Focused tests, replay, independent review and remaining publication dependencies.",
+    },
+    {
         "source": "PROJECT_CONTEXT_LIVE.md",
         "category": "project_context",
         "title": "Live project context",
@@ -2740,6 +2776,11 @@ def write_site(
     <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate compared the qualified two-cycle compound proposal with the expanded single-cycle proposal at exactly equal accepted gross work. All technical controls passed, but the compound law produced no preregistered material reduction in finite start memory.</p>
   </header>
   <main>
+    <section>
+      <h2>UC1 — ontology and circulation instrumentation, 2026-09-09</h2>
+      <p>The root baseline exhibited three boundary-case violations of persistent local change. A small circulation detector separated engineered oriented laps from unbiased walks in 16/16 control pairs. No candidate universe was run, and no spontaneous metastability or physics result is claimed. Deployment and dedicated RAG closure remain unverified.</p>
+      <p><a href="data/uc1_instrumentation/UC1_report.md">Read the result, original premises and next decision</a>. The historical results below retain their own scopes and limitations.</p>
+    </section>
     <section class="grid">
       <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>

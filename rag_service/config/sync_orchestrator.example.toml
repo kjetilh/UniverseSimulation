@@ -32,6 +32,9 @@ repo_path = "/srv/ops/repos/UniverseSimulation"
 source_type = "universe_experiments"
 target_subdir = "UniverseSimulation/experiments"
 include = [
+  "Documentation/Program/UC1_report.md",
+  "Documentation/Program/UC1_verification.md",
+  "Documentation/Program/UC1_reference_summary.csv",
   "Documentation/v16h_fresh_rate_logged_mechanism_holdout.md",
   "Documentation/v0_16h_operativ_anbefaling.md",
   "Documentation/v16i_causal_interval_abundance_gate.md",
