@@ -1,5 +1,5 @@
 {
-  "generated_unix": 1788902028.5377855,
+  "generated_unix": 1788917623.1280222,
   "library_ops": 45,
   "contract": {
     "id": "observable_responds_to_rule_arm",
@@ -61,27 +61,39 @@
     "output_type": "real",
     "null_reference": {
       "role": "null",
-      "value": 5.051415121943108,
+      "value": 5.067288863728147,
       "method": "95th pct of max score over the whole candidate set under arm-label permutation of the same paired differences",
-      "source": "run_experiment.py P3"
+      "source": "run_experiment.py P3",
+      "null_value": null
     },
     "positive_reference": {
       "role": "positive",
       "value": 50.0,
       "method": "best score of the same search on the strong arm, where the response is known to be present",
-      "source": "run_experiment.py P6 (arm p_triadic_closure 0.02 vs 0.30)"
+      "source": "run_experiment.py P6 (arm p_triadic_closure 0.02 vs 0.30)",
+      "null_value": 37.1760754264115
     },
     "min_separation": 2.0,
     "admissibility": {
-      "admissible": true,
-      "reasons": [],
-      "separation": 9.898216399361512,
-      "threshold": 5.051415121943108
+      "admissible": false,
+      "reasons": [
+        "statistic does not separate its own references (positive=50, its own null=37.18, ratio=1.34 < 2); the purpose is not measurable by this statistic and no candidate can be gated on it"
+      ],
+      "separation": 1.3449510048195628,
+      "threshold": 5.067288863728147
     },
-    "notes": "The two references come from different arms and different pair counts (strong n=8, weak n=24). The strong-arm null is the higher of the two, so the separation check is conservative."
+    "notes": "The positive reference is judged against the null measured with it, on the strong arm at n=8. Comparing it against the weak arm's null instead is what produced the retracted separation of 9.9."
   },
-  "contract_admissible": true,
-  "contract_reasons": [],
+  "contract_admissible": false,
+  "contract_reasons": [
+    "statistic does not separate its own references (positive=50, its own null=37.18, ratio=1.34 < 2); the purpose is not measurable by this statistic and no candidate can be gated on it"
+  ],
+  "contract_decision": {
+    "admissible": false,
+    "reasons": [
+      "statistic does not separate its own references (positive=50, its own null=37.18, ratio=1.34 < 2); the purpose is not measurable by this statistic and no candidate can be gated on it"
+    ]
+  },
   "positive_reference_run": {
     "arm": "strong",
     "arm_field": "p_triadic_closure",
@@ -168,26 +180,56 @@
     "n_train_pairs": 24,
     "n_holdout_pairs": 24,
     "n_candidates": 9000,
-    "selection_gate_null_search_p95": 5.051415121943108,
+    "selection_gate_null_search_p95": 5.067288863728147,
     "null_single_p95_train": 2.104409310068705,
-    "winner_expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
-    "winner_size": 6,
-    "winner_depth": 4,
-    "winner_train_score": 8.018963688454768,
-    "winner_holdout_score": 3.2835283206736716,
-    "holdout_gate_null_p95": 2.047616590227874,
+    "winner_expr": "ifelse(lt(q90(clus), inv(sqrt(vmin(deg)))), neg(std(vadd(deg, deg))), max2(inv(median(vlog1p(tokdeg))), add(corr(tri, vlog1p(norm1(edeg_a))), skew(vsq(edeg_b)))))",
+    "winner_size": 25,
+    "winner_depth": 6,
+    "winner_train_score": 8.536396238606924,
+    "winner_holdout_score": 5.7479587925201985,
+    "holdout_gate_null_p95": 2.097360068082454,
     "passes_selection": true,
     "passes_holdout": true,
     "top10": [
       {
-        "expr": "sq(sq(vmin(vshift(tokdeg, beta1))))",
-        "train_score": 8.018963688454768,
+        "expr": "ifelse(lt(q90(clus), inv(sqrt(vmin(deg)))), neg(std(vadd(deg, deg))), max2(inv(median(vlog1p(tokdeg))), add(corr(tri, vlog1p(norm1(edeg_a))), skew(vsq(edeg_b)))))",
+        "train_score": 8.536396238606924,
+        "size": 25
+      },
+      {
+        "expr": "ifelse(lt(q90(clus), inv(sqrt(vmin(deg)))), neg(inv(std(norm1(edeg_a)))), div(mean(vsq(norm1(b2))), sq(vmin(vlog1p(b3)))))",
+        "train_score": 8.257158584841829,
+        "size": 22
+      },
+      {
+        "expr": "ifelse(lt(q90(clus), inv(sqrt(vmin(deg)))), q10(vmul(deg, b2)), log1p(sqrt(q90(vlog1p(tokdeg)))))",
+        "train_score": 8.256336828795192,
+        "size": 16
+      },
+      {
+        "expr": "q90(vshift(vscale(clus, n), beta1))",
+        "train_score": 8.146501537694194,
         "size": 6
       },
       {
-        "expr": "neg(sq(q90(vshift(tokdeg, beta1))))",
-        "train_score": 7.313401507787325,
-        "size": 6
+        "expr": "ifelse(lt(q90(clus), inv(sqrt(vmin(deg)))), sq(entropy(vsq(tri))), mul(corr(vmul(clus, b1), vadd(deg, b1)), iqr(vlog1p(vadd(edeg_b, edeg_b)))))",
+        "train_score": 8.109766414388304,
+        "size": 21
+      },
+      {
+        "expr": "ifelse(lt(q90(clus), inv(sqrt(vmin(deg)))), sq(topmean(vsq(deg))), log1p(div(mean(vlog1p(vadd(b1, b1))), median(vsq(b1)))))",
+        "train_score": 7.845709857795228,
+        "size": 19
+      },
+      {
+        "expr": "sq(sq(beta1))",
+        "train_score": 7.779359855794057,
+        "size": 3
+      },
+      {
+        "expr": "ifelse(lt(q90(clus), inv(sqrt(vmin(deg)))), neg(mean(vadd(b1, b1))), sub(skew(vlog1p(b3)), cv(vshift(vshift(clus, 2), 0.5))))",
+        "train_score": 7.2904771618048025,
+        "size": 21
       },
       {
         "expr": "sq(vmax(vshift(tokdeg, beta1)))",
@@ -195,42 +237,13 @@
         "size": 5
       },
       {
-        "expr": "sq(mean(vshift(tokdeg, beta1)))",
-        "train_score": 7.163286508070458,
-        "size": 5
-      },
-      {
-        "expr": "neg(sq(mean(vshift(tokdeg, beta1))))",
-        "train_score": 7.163286508070458,
-        "size": 6
-      },
-      {
-        "expr": "ifelse(lt(min2(median(vlog1p(b2)), inv(corr(vscale(b2, m), vsq(vlog1p(deg))))), vmin(vscale(comp, 2))), sq(vmin(vscale(deg, beta1))), corr(vsq(vlog1p(clus)), vadd(vlog1p(b2), vsq(edeg_b))))",
-        "train_score": 7.011299872862262,
-        "size": 28
-      },
-      {
-        "expr": "sq(vmin(vshift(tokdeg, beta1)))",
-        "train_score": 6.99474743158713,
-        "size": 5
-      },
-      {
-        "expr": "sq(q10(vshift(tokdeg, beta1)))",
-        "train_score": 6.987337390356454,
-        "size": 5
-      },
-      {
-        "expr": "sq(q90(vshift(clus, beta1)))",
-        "train_score": 6.94274747954053,
-        "size": 5
-      },
-      {
-        "expr": "sq(mean(vshift(clus, beta1)))",
-        "train_score": 6.927954322841559,
-        "size": 5
+        "expr": "ifelse(lt(q90(clus), inv(sqrt(vmin(deg)))), inv(skew(tri)), corr(comp, tokdeg))",
+        "train_score": 7.204205930497774,
+        "size": 14
       }
     ],
-    "permutation_reps": 2000
+    "permutation_reps": 2000,
+    "search_seed": null
   },
   "hand_picked_baselines_weak_arm": {
     "n": {

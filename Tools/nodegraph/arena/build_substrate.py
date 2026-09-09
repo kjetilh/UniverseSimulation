@@ -153,6 +153,13 @@ ARMS = {
     # weak arm: the actual search target. p_local_rewire moves an edge endpoint
     # without changing |E|; its coarse signature is not obvious a priori.
     "weak": ("p_local_rewire", 0.03, 0.09),
+    # null arm: the SAME parameter value on both levels. Only the event stream
+    # differs, exactly as it does in the weak arm. There is nothing to find, so
+    # anything the pipeline reports here is manufactured by the pipeline --
+    # by the pairing, the caching, the substrate extraction or the loader --
+    # and no amount of calibrating the statistic would reveal it. The
+    # permutation null tests the statistic; this tests the plumbing.
+    "null": ("p_local_rewire", 0.06, 0.06),
 }
 
 
