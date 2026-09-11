@@ -1,6 +1,6 @@
 # UniverseSimulation RAG Status
 
-Last source review: 2026-07-23.
+Last source review: 2026-09-11 (UC3; historical sections below retained).
 
 ## Source-of-truth order
 
@@ -8,13 +8,39 @@ For current project claims, use this order:
 
 1. `PROJECT_CONTEXT_LIVE.md`
 2. `PROJECT_HISTORY_INDEX.md`
-3. the newest matching `Documentation/v*.md` and machine-readable CSVs
+3. the newest matching `Documentation/Program/UC*.md` or `Documentation/v*.md`, protocol and machine-readable evidence, within that model's scope
 4. older reports and prompts
 
 The formal report and early `trajectory.csv` remain historical inputs. They do
 not outrank later executed gates.
 
-## Current research state
+## Current research state: UC3
+
+UC3 adds a frozen local bud/collapse/cut law and a component-exposure observer
+for repeated coarse growth/decomposition with part replacement. It passed
+78 targeted tests, 8,000 separate stress attempts, and complete seeded replay.
+Measured references separated in 16/16 pairs (positive median 1.0, null median
+0.1410788382). They qualify the composite instrument, not a candidate effect.
+
+All 16 candidates gained nodes but ended with all 256 persistent units isolated
+after 4,525 changes. Temporary cores formed in every run, but zero complete
+two-period windows met the size/core eligibility conditions. 253 of 256 unit
+tracks were too short. Growth of disconnected, inactive graph remains is not
+sustained active organization. Unit birth is omitted; the full hypothesis is
+open. The next design question is local renewal of active units before
+absorption, with a new protocol and qualified endpoint, not retuning UC3.
+See `Documentation/Program/UC3_report.md` and its source-hashed provenance.
+
+Eight compact UC3 documents use a separate `UniverseSimulation/uc3` mirror
+target and explicit year 2026; raw events stay in the checksum archive.
+The provenance index declares typed source/evidence relations; no graph
+database, learned weights, inference engine or retrieval-policy change is
+introduced. Corpus sync and model-free authenticated metadata checks do not
+replace the mandatory generative citation/freshness/PostgreSQL audit.
+That query gate remains `publication_blocked`: the last actual query failed
+with provider `credit_balance_exhausted`, and restored credits are unconfirmed.
+
+## Historical v-series research state (different models)
 
 - Operational growth regime: `band_zero_del` from v11e.
 - Lorentz-like behavior: `not_yet`; mode, placement, and anisotropy alternatives

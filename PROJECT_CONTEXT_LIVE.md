@@ -2,7 +2,23 @@
 
 Dette dokumentet er den korteste operative inngangen til dagens repo-state i `UniverseSimulation`.
 
-## Nyeste avgrensede retning: UC2 (2026-09-10)
+## Nyeste avgrensede retning: UC3 (2026-09-11)
+
+Utgangspunktet er fortsatt en graf uten koordinater, fysiske nodeverdier eller
+ytre påvirkning, med vedvarende lokale endringsenheter. UC3 la til én eksplisitt
+bud/collapse/cut-regel og et komponentlokalt mål for grove vekst-/nedgangssykluser
+med utskiftede deler. Nabotråden «Vurder glemmestrukturer i verktøyk​» bidro med
+skillet mellom deloverlevelse, formretur og tidslig orden; ingen lærte vekter
+eller observatørhistorikk ble lagt inn i dynamikken.
+
+- Plan/kode/protokoll pushet i `e26c8c0412fb9600b2968dde05773bad1d02d2b9` før full måling. 78 målrettede tester besto; separat 8 000-forsøksstress og full seeded replay besto.
+- Instrumentet skilte 16/16 lovlige positive/null-par, medianer 1,0 og 0,1410788382. Dette er ikke en effekt-null for kandidaten.
+- 16 kandidatkjøringer ga 29 198 forsøk og 4 525 endringer. Alle fikk netto flere noder, men alle 256 enheter endte isolert. Midlertidige store kjerner oppsto; ingen komplette to-periodersvinduer oppfylte størrelse/kjerne gjennom hele forløpet. 253/256 spor var for korte, de øvrige tre ga ni ineligible vinduer.
+- Beslutning: ikke forleng absorberte UC3-tilstander eller juster sykluskrav etter data. Undersøk lokal nydanning av aktiv endringskapasitet før absorpsjon i en ny registrering. Spontan enhetsfødsel er fortsatt utelatt; hele hypotesen er åpen. Netto grafrester på tvers av frakoblede universer er ikke vedvarende organisering.
+- Full generativ RAG-verifisering står `publication_blocked` etter leverandørens oppbrukte API-kreditter; statisk arkiv og korpussynk kontrolleres separat. Ikke likestill modellfri korpustilgang med sitat-/ferskhetsaudit.
+- Les [UC3-rapport](Documentation/Program/UC3_report.md), [frossen plan](Documentation/Program/UC3_plan.md), [rådata og hasher](Documentation/Program/UC3_candidate.json) og [proveniensgraf](Documentation/Program/UC3_provenance.md). UC1/UC2 og v-seriene nedenfor er historiske modeller med egne avgrensninger.
+
+## Forrige avgrensede retning: UC2 (2026-09-10)
 
 Brukerens utgangspunkt er en graf uten fysiske nodeverdier, koordinater eller
 ytre påvirkning. Vedvarende endringsenheter flytter en relasjonsende lokalt og

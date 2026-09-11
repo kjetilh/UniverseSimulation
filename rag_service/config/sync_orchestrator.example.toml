@@ -328,3 +328,22 @@ repo_path = "/srv/ops/repos/UniverseSimulation"
 source_type = "universe_prompts"
 target_subdir = "UniverseSimulation/prompts"
 include = ["rag_service/prompts/**/*.md", "rag_service/docs/UNIVERSE_DEEP_RESEARCH_PROMPT.md"]
+
+# A distinct mirror target prevents per-source deletion conflicts. Explicit
+# year avoids interpreting four-digit step counts as publication dates.
+[[source]]
+name = "UniverseSimulationUC3"
+repo_path = "/srv/ops/repos/UniverseSimulation"
+source_type = "universe_experiments"
+target_subdir = "UniverseSimulation/uc3"
+year = 2026
+include = [
+  "Documentation/Program/UC3_plan.md",
+  "Documentation/Program/UC3_qualification.md",
+  "Documentation/Program/UC3_report.md",
+  "Documentation/Program/UC3_calibration_summary.csv",
+  "Documentation/Program/UC3_candidate_summary.csv",
+  "Documentation/Program/UC3_provenance.md",
+  "Documentation/Program/UC3_provenance_nodes.csv",
+  "Documentation/Program/UC3_provenance_edges.csv",
+]

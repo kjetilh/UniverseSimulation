@@ -1,0 +1,49 @@
+{
+  "calibration_sha256": "08e6482af210507bd173e83619fddf6159c4f7c3cc57a93672e371692bea8cad",
+  "candidate_effect_gate": "not_defined_descriptive_only",
+  "claim_limit": "Finite component-exposure recurrence of coarse growth/decomposition profiles with actual core replacement. Triangle birth, accounting invariants, net node drift and permanent fragmentation are rule consequences, not emergent physics. No matched full-law candidate null, life claim, long-term growth theorem, Lorentz symmetry or complete universe model. Fixed units omit spontaneous unit birth.",
+  "evidence_sha256": {
+    "UC3_candidate_events.csv": "7c130c7408aaa7b04a1deb0e245012804a70d358c266587e936717e2bba96c65",
+    "UC3_candidate_frames.csv": "61049021f750eb9cce3e1cfb3a352c782a8d9c275dcb3030145b294073cf2747",
+    "UC3_candidate_initial.json": "172e94ff227e77087ccf1ac1fdb49103ac5b8d2c47c813680f4494f3b019e826",
+    "UC3_candidate_observations.json": "28a0c1540bc8c65a031e3a9440eec632a17f1320e23aafb6eb3138b959131824",
+    "UC3_candidate_summary.csv": "f0cedc85a4bfd47ed13754a37fa06cc06c234b34baa7aa71ffd333029be526f2"
+  },
+  "round": "UC3",
+  "runs": 16,
+  "source_sha256": {
+    "Documentation/Program/UC3_plan.md": "9afdc8f14414b56a9f4b5715e41b40cb8a53c1f6c2e35c0dd75de5ea03984088",
+    "Tools/local_change_candidate.py": "c4f63b6fea5835bd06fb25e6586e094508e2e2e006fda91fe2c88bb7eb218c44",
+    "Tools/local_growth_candidate.py": "a8860340714c113f2c58f935ebf09c811a89e122c746679b14f398a3f5c64d9c",
+    "Tools/local_growth_observer.py": "296cca14f66484a72c792bafc45cc4b4a805eaf20a54b2d3edacf9a55e4f8a46",
+    "Tools/run_local_change_candidate.py": "d55a2f02332ca5232bf810ed1f3cbc1b5fd989fd7c3158d3b2d1f4d31cf3f586",
+    "Tools/run_local_growth_candidate.py": "6b7eaac053b5be98e2e7ab4126021575de64e62e13c79654b71c90140bd3e74e",
+    "Tools/units_of_change_conformance.py": "65b2a4eda73fdbfd2c22bd2c4387f19cfa4314df1bdf1824a7fa6e81e617bc3e",
+    "preregistration": "fe41c9c31e958f6acaf4176ebb684419df6cfe560e33dab92a5042b90d3e0eb5"
+  },
+  "stage": "candidate",
+  "strata": [
+    {
+      "initial_nodes": 32,
+      "primary_median": 0.0,
+      "runs": 8,
+      "runs_with_qualifying_windows": 0,
+      "runs_with_size_core_exposure": 0,
+      "stops": {
+        "activity_absorbed": 8
+      }
+    },
+    {
+      "initial_nodes": 96,
+      "primary_median": 0.0,
+      "runs": 8,
+      "runs_with_qualifying_windows": 0,
+      "runs_with_size_core_exposure": 0,
+      "stops": {
+        "activity_absorbed": 8
+      }
+    }
+  ],
+  "total_attempts": 29198,
+  "total_changes": 4525
+}

@@ -1,0 +1,49 @@
+{
+  "claim_limit": "Measured composite observer references, not a matched full-law candidate null or a physics result.",
+  "conditional_dyck_words": 3631908,
+  "evidence_sha256": {
+    "UC3_calibration_events.csv": "a079bf9e751aa72f077b5fc5122ee08f413da36a0834ad3f46388d4cd22c3ff4",
+    "UC3_calibration_frames.csv": "27eb43c94becc7f9bdf217dd512cf60d8c46f0a660dd901cd608f64f77b111f4",
+    "UC3_calibration_initial.json": "53785f57189361458854971789c02d6f21c892d2d03df1809db50b45f944de57",
+    "UC3_calibration_observations.json": "c592bbfb41c6a7ee304a45dd0c9ad23e32f4fba546bc5c0f342141c0a02f4952",
+    "UC3_calibration_summary.csv": "08335e942780fee765b687a6a434c9dc036acbfe0ae267e2a39c36eb2d6258a5"
+  },
+  "null_median": 0.14107883817427386,
+  "one_sided_sign_score": 1.52587890625e-05,
+  "paired_signs": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "positive_median": 1.0,
+  "reference_gate_pass": true,
+  "round": "UC3",
+  "runs": 32,
+  "source_sha256": {
+    "Documentation/Program/UC3_plan.md": "9afdc8f14414b56a9f4b5715e41b40cb8a53c1f6c2e35c0dd75de5ea03984088",
+    "Tools/local_change_candidate.py": "c4f63b6fea5835bd06fb25e6586e094508e2e2e006fda91fe2c88bb7eb218c44",
+    "Tools/local_growth_candidate.py": "a8860340714c113f2c58f935ebf09c811a89e122c746679b14f398a3f5c64d9c",
+    "Tools/local_growth_observer.py": "296cca14f66484a72c792bafc45cc4b4a805eaf20a54b2d3edacf9a55e4f8a46",
+    "Tools/run_local_change_candidate.py": "d55a2f02332ca5232bf810ed1f3cbc1b5fd989fd7c3158d3b2d1f4d31cf3f586",
+    "Tools/run_local_growth_candidate.py": "6b7eaac053b5be98e2e7ab4126021575de64e62e13c79654b71c90140bd3e74e",
+    "Tools/units_of_change_conformance.py": "65b2a4eda73fdbfd2c22bd2c4387f19cfa4314df1bdf1824a7fa6e81e617bc3e",
+    "preregistration": "fe41c9c31e958f6acaf4176ebb684419df6cfe560e33dab92a5042b90d3e0eb5"
+  },
+  "squared_signs_identical": true,
+  "stage": "calibration",
+  "total_attempts": 32768,
+  "total_changes": 32768
+}

@@ -26,6 +26,33 @@ ROOT = Path(__file__).resolve().parents[1]
 DATASET_SPECS: list[dict[str, str]] = [
     *[
         {"source": "Documentation/Program/" + name,
+         "category": "uc3_local_growth", "title": title,
+         "description": "UC3 local growth/decomposition and component-exposure evidence; no physics or life claim."}
+        for name, title in (
+            ("UC3_report.md", "UC3: local growth and decomposition results"),
+            ("UC3_plan.md", "UC3: frozen model choice, macro observer and decisions"),
+            ("UC3_preregistration.json", "UC3: preregistered law and experimental schedule"),
+            ("UC3_qualification.md", "UC3: simulator and observer qualification"),
+            ("UC3_calibration.json", "UC3: measured reference gate and hashes"),
+            ("UC3_calibration_initial.json", "UC3: reference initial states"),
+            ("UC3_calibration_events.csv", "UC3: all lawful reference events"),
+            ("UC3_calibration_frames.csv", "UC3: reference component-exposure observations"),
+            ("UC3_calibration_summary.csv", "UC3: reference summaries"),
+            ("UC3_calibration_observations.json", "UC3: reference windows and exposure"),
+            ("UC3_candidate.json", "UC3: descriptive candidate result and hashes"),
+            ("UC3_candidate_initial.json", "UC3: candidate initial states"),
+            ("UC3_candidate_events.csv", "UC3: all candidate attempts and changes"),
+            ("UC3_candidate_frames.csv", "UC3: candidate component-exposure observations"),
+            ("UC3_candidate_summary.csv", "UC3: candidate run summaries"),
+            ("UC3_candidate_observations.json", "UC3: candidate windows and exposure"),
+            ("UC3_provenance.md", "UC3: explicit source-hashed provenance"),
+            ("UC3_provenance_nodes.csv", "UC3: provenance nodes"),
+            ("UC3_provenance_edges.csv", "UC3: declared evidence relations"),
+            ("UC3_provenance_manifest.json", "UC3: provenance declarations"),
+        )
+    ],
+    *[
+        {"source": "Documentation/Program/" + name,
          "category": "uc2_local_change", "title": title,
          "description": "UC2 bounded local-change qualification and explicit provenance; no physics claim."}
         for name, title in (
@@ -2797,9 +2824,15 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce robust higher-level law structure. The latest effect-blind gate compared the qualified two-cycle compound proposal with the expanded single-cycle proposal at exactly equal accepted gross work. All technical controls passed, but the compound law produced no preregistered material reduction in finite start memory.</p>
+    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce higher-level organization. The latest bounded candidate, UC3, permits local growth and decomposition. All sixteen worlds gained nodes but lost all active units to isolation. Temporary structure formed; sustained growth-cycle recurrence did not receive an eligible observation window.</p>
   </header>
   <main>
+    <section>
+      <h2>UC3 — graph growth without sustained activity</h2>
+      <p><strong>Measured result:</strong> 16 preregistered worlds, 29,198 attempts and 4,525 changes. All 256 persistent units survived but became isolated. No complete two-period window retained sufficient component size and core, although temporary cores formed in every run. Zero cycle scores therefore do not refute macroscopic recurrence. <a href="data/uc3_local_growth/UC3_report.md">Results, limitations and raw evidence</a>.</p>
+      <p>The local law combines endpoint sliding, triangular node birth, local collapse and edge cutting, with fixed class weights 4:1:2:1. An independent observer measures coarse form returning with replaced parts; its history never enters the dynamics. Measured lawful references separated in 16/16 pairs, but are not a matched full-law candidate null. Triangles, accounting identities and retained inactive debris are not emergent physics or life.</p>
+      <p>Next decision: investigate local renewal of active change units before absorption in a new preregistration. Extending already absorbed UC3 states cannot help. <a href="data/uc3_local_growth/UC3_plan.md">Frozen plan and neighboring-task contribution</a> · <a href="data/uc3_local_growth/UC3_qualification.md">78 targeted tests and stress qualification</a> · <a href="data/uc3_local_growth/UC3_provenance.md">Explicit provenance graph</a>. Full publication remains blocked by the generative RAG credit gate; static publication and corpus sync are separate.</p>
+    </section>
     <section>
       <h2>UC2 — persistent local endpoint relocation</h2>
       <p><strong>Measured result:</strong> one short repeated three-step temporal orbit in 16 preregistered runs totaling 65,536 changes; median strict coverage zero at both sizes. The whole graph and unit position returned in that one nine-change sequence while the graph remained a tree. This is not established metastability or an excess over a matched candidate null. <a href="data/uc2_local_change/UC2_report.md">Results and raw evidence</a>. Generative RAG verification is blocked by exhausted provider API credits; corpus sync is separate.</p>
@@ -2812,7 +2845,7 @@ def write_site(
       <p><a href="data/uc1_instrumentation/UC1_report.md">Read the result, original premises and next decision</a>. The historical results below retain their own scopes and limitations.</p>
     </section>
     <section class="grid">
-      <div class="card"><div class="metric">band_zero_del</div><p class="muted">Current operational growth regime, retained after the v11e frontier duel.</p></div>
+      <div class="card"><div class="metric">band_zero_del</div><p class="muted">Historical v-series growth regime, retained after the v11e frontier duel; not the UC3 law.</p></div>
       <div class="card"><div class="metric">11.9993</div><p class="muted">v16s median JS effect ratio on six new footprint-null holdout histories.</p></div>
       <div class="card"><div class="metric">48 / 48</div><p class="muted">v17k chains passed exact gross-work, proposal, movement, exercise and resource gates.</p></div>
       <div class="card"><div class="metric">0 / 6</div><p class="muted">v17k sources met the frozen 10% material compound start-memory reduction.</p></div>

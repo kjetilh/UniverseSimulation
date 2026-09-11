@@ -2,7 +2,21 @@
 
 Dette er en komprimert historikk over de viktigste metodiske vendepunktene frem til dagens live state.
 
-## Nyeste: UC1/UC2 vender tilbake til lokal endring (2026-09-10)
+## Nyeste: UC3 skiller grafvekst fra aktiv organisering (2026-09-11)
+
+Frossen lokal bud/collapse/cut-kandidat tillot vekst og fragmentering uten
+koordinater eller vekter. Et nytt komponentlokalt instrument for gjentatt
+grov form med delutskifting besto 16/16 dynamiske referansepar. Kandidatens
+16 kjøringer ga netto nodevekst, men alle 256 enheter ble isolert etter
+totalt 4 525 endringer. Ingen komplett to-periodersobservasjon var både
+stor nok og hadde tilstrekkelig kjerne gjennom hele vinduet, selv om alle
+kjøringer dannet midlertidige kjerner. Dette er aktivitetsabsorpsjon under
+én lov, ikke en avkreftelse av makroskopiske sykluser eller univershypotesen.
+Neste spørsmål er lokal fornyelse av aktive enheter, ikke lengre kjøring
+av absorberte tilstander. Se [UC3-rapporten](Documentation/Program/UC3_report.md).
+Full generativ RAG-verifisering er fortsatt blokkert av API-kredittene.
+
+## UC1/UC2 vender tilbake til lokal endring (2026-09-10)
 
 UC1 kontrollerte samsvar med vedvarende lokale endringsenheter og kvalifiserte
 et smalt sirkulasjonsinstrument. UC2 innførte deretter en separat, testet
