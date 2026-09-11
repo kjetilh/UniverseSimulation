@@ -1,0 +1,12 @@
+{
+  "round": "UC3",
+  "date": "2026-09-11",
+  "stage": "finite_descriptive_growth_candidate_not_effect_test",
+  "plan": "Documentation/Program/UC3_plan.md",
+  "law": {"classes": ["slide", "bud", "collapse", "cut"], "weights": [4, 1, 2, 1], "unit_birth": false, "retain_all_components": true, "reuse_node_ids": false},
+  "observer": {"lag": 8, "min_nodes": 16, "min_core_nodes": 4, "size_tolerance": 0.1, "shape_tolerance": 0.05, "excursion_ratio": 1.5, "turnover_min": 0.25},
+  "clock": "One event counts only for persistent units in its pre-event connected component. Cut counts for both descendants once. Snapshot every initial_node_count/4 component exposures; no unrelated-component clock or observer feedback.",
+  "calibration": {"node_count": 16, "replicates": 16, "periods": 32, "buds_per_period": 16, "snapshot_interval": 4, "null_observed_height_min": 8, "seed_start": 2026091100, "positive": "All buds then all collapses per period on opposite ends of a fan", "null": "Uniform Dyck words with equal event counts conditioned on an observed height >=8; integer completion counts, no rejection", "gate": "positive_median > null_median and paired one-sided sign score <=0.05 and squared signs unchanged"},
+  "candidate": {"node_counts": [32, 96], "replicates_per_size": 8, "units_divisor": 4, "snapshot_divisor": 4, "max_attempts": 16384, "max_changes": 4096, "node_cap": 1024, "seed_start": 20260911000, "seed_formula": "seed_start + 100 * node_count + replicate", "initialization": "Uniform labeled Pruefer tree then independent uniform unit hosts among all nodes"},
+  "claim_limit": "Finite component-exposure recurrence of coarse growth/decomposition profiles with actual core replacement. Triangle birth, accounting invariants, net node drift and permanent fragmentation are rule consequences, not emergent physics. No matched full-law candidate null, life claim, long-term growth theorem, Lorentz symmetry or complete universe model. Fixed units omit spontaneous unit birth."
+}
