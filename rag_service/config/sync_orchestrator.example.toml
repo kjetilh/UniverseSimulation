@@ -347,3 +347,15 @@ include = [
   "Documentation/Program/UC3_provenance_nodes.csv",
   "Documentation/Program/UC3_provenance_edges.csv",
 ]
+
+[[source]]
+name = "UniverseSimulationUC3R"
+repo_path = "/srv/ops/repos/UniverseSimulation"
+source_type = "universe_experiments"
+target_subdir = "UniverseSimulation/uc3r"
+year = 2026
+include = [
+  "Documentation/Program/UC3R_report.md",
+  "Documentation/Program/UC3R_protocol.md",
+  "Documentation/Program/UC3R_worlds.csv",
+]

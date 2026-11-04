@@ -26,6 +26,19 @@ ROOT = Path(__file__).resolve().parents[1]
 DATASET_SPECS: list[dict[str, str]] = [
     *[
         {"source": "Documentation/Program/" + name,
+         "category": "uc3r_structural_remnants", "title": title,
+         "description": "Post-hoc observations from the sixteen archived UC3 candidate worlds."}
+        for name, title in (
+            ("UC3R_report.md", "UC3R report on structural remnants and later budding"),
+            ("UC3R_protocol.md", "UC3R observation rules and exposure window"),
+            ("UC3R_result.json", "UC3R aggregate observations and source hashes"),
+            ("UC3R_worlds.csv", "UC3R observations for each world"),
+            ("UC3R_tags.csv", "UC3R component histories by tagged unit"),
+            ("UC3R_buds.csv", "UC3R observed buds and incident remnant edges"),
+        )
+    ],
+    *[
+        {"source": "Documentation/Program/" + name,
          "category": "uc3_local_growth", "title": title,
          "description": "UC3 local growth/decomposition and component-exposure evidence; no physics or life claim."}
         for name, title in (
@@ -2824,9 +2837,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">A public, evidence-led archive testing whether local stochastic graph dynamics can produce higher-level organization. The latest bounded candidate, UC3, permits local growth and decomposition. All sixteen worlds gained nodes but lost all active units to isolation. Temporary structure formed; sustained growth-cycle recurrence did not receive an eligible observation window.</p>
+    <p class="lead">This archive examines whether local graph edits can produce higher-level organization. UC3R revisits sixteen UC3 worlds to ask what survives when a local core shrinks, and whether a later bud uses a surviving edge.</p>
   </header>
   <main>
+    <section>
+      <h2>UC3R — structural remnants and later budding</h2>
+      <p>The observer follows each tagged unit through the archived edits. It records which edges from the earlier core remain after a loss, which are available at a later bud’s source, and which edge the bud actually uses. A later increase in core size is recorded separately. These observations describe the recorded histories. A causal growth advantage would require a separate comparison.</p>
+      <p><a href="data/uc3r_structural_remnants/UC3R_report.md">Read the UC3R report</a> · <a href="data/uc3r_structural_remnants/UC3R_protocol.md">Observation rules</a> · <a href="data/uc3r_structural_remnants/UC3R_worlds.csv">Observations for all sixteen worlds</a>.</p>
+    </section>
     <section>
       <h2>UC3 — graph growth without sustained activity</h2>
       <p><strong>Measured result:</strong> 16 preregistered worlds, 29,198 attempts and 4,525 changes. All 256 persistent units survived but became isolated. No complete two-period window retained sufficient component size and core, although temporary cores formed in every run. Zero cycle scores therefore do not refute macroscopic recurrence. <a href="data/uc3_local_growth/UC3_report.md">Results, limitations and raw evidence</a>.</p>

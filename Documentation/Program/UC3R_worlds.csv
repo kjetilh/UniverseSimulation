@@ -1,0 +1,17 @@
+run_id,initial_nodes,attempts,ticks,stop,final_state_sha256,tags,stage_no_peak,stage_no_loss,stage_empty_R,stage_no_bud,stage_no_hit,stage_hit,tags_peak,tags_loss,tags_retained,tags_retained_post_initial,tags_followup_bud,tags_zero_followup,tags_short_followup,tags_full_followup,tags_hit,tags_post_initial_hit,tags_growth,tags_joint,tags_post_initial_joint,loss_split,loss_slide,loss_bud,loss_collapse,loss_cut,tag_buds,tag_hits,unique_buds,unique_hits,unique_post_initial_hits,conditional_expected_tag_hits,conditional_O_minus_E,conditional_O_minus_E_sign
+n32-0,32,1097,194,activity_absorbed,227d5b64b2ea849ece0f64c4b3079da9b2bfd2b1853f413c48cdabc0152eb3eb,8,1,0,0,0,2,5,7,7,7,7,7,0,2,5,5,5,5,5,5,0,0,0,7,0,19,10,4,2,1,25/4,15/4,positive
+n32-1,32,878,150,activity_absorbed,b254614bf906fe3dc61846555130eef456d0cdc58355e9b86bd92e13a3b1f5ec,8,0,0,1,0,0,7,8,8,7,7,7,1,1,7,7,0,7,7,0,1,0,0,7,0,43,18,8,3,0,18,0,tied
+n32-2,32,403,82,activity_absorbed,a166f06f088accd9d1fcb57159b97a69ec7563bb92ede0eb89b4cba8b1801977,8,1,0,0,3,2,2,7,7,7,7,4,0,5,2,2,0,0,0,0,7,0,0,0,0,4,2,3,1,0,1,1,positive
+n32-3,32,376,96,activity_absorbed,70338c2650f8a957a3d5b791c9f140019d30d733c8621424f60c1fc1bf279d80,8,0,0,0,0,0,8,8,8,8,8,8,0,0,8,8,8,8,8,8,0,0,0,0,8,32,16,4,2,2,56/3,-8/3,negative
+n32-4,32,1064,225,activity_absorbed,6e675d3777bf63ce271aa5c6e091abd931aff44ca794c83b5a6b6bcc87ac60e1,8,0,0,0,0,0,8,8,8,8,8,8,0,0,8,8,8,8,8,8,0,0,0,8,0,32,8,4,1,1,8,0,tied
+n32-5,32,495,81,activity_absorbed,23b52255da855634f2ff86839c1acd416fcce46411444ca059ff920a6554a76f,8,5,0,1,0,0,2,3,3,2,2,2,1,1,2,2,2,2,2,2,1,0,0,2,0,8,2,4,1,1,2,0,tied
+n32-6,32,482,130,activity_absorbed,470d86cd689d8f0b5cd6a2b70f46b9131cd252f3f1e55c14a99e1246d7ac7a89,8,0,0,0,1,5,2,8,8,8,8,7,0,3,5,2,0,5,0,0,8,0,0,0,0,12,2,3,1,0,2,0,tied
+n32-7,32,635,180,activity_absorbed,d626b39653fb7a670b909c0abcefec136edca10b8b71a19b243474d33c807a45,8,2,0,0,0,2,4,6,6,6,6,6,0,1,5,4,0,6,4,0,0,0,0,0,6,36,4,12,1,0,2,2,positive
+n96-0,96,2408,526,activity_absorbed,2c6e504526e1561f11acf4721f4adc009291185137b32f52431bc3c611b46349,24,1,0,0,0,0,23,23,23,23,23,23,0,2,21,23,23,23,23,23,22,0,0,0,1,78,61,10,7,6,213/4,31/4,positive
+n96-1,96,3346,410,activity_absorbed,8a8e5a73581335abc7576502f8d645fd05aecb2193983ed9c8f4db5b5b509858,24,5,0,4,6,7,2,19,19,15,14,10,3,7,12,2,1,5,2,1,4,0,0,2,13,17,2,12,2,1,2,0,tied
+n96-2,96,3337,390,activity_absorbed,483f78d8284a54bdd82cbefc19e699e3108eb5ee873d268112758986eb190800,24,2,0,0,3,19,0,22,22,22,22,19,0,4,18,0,0,16,0,0,0,0,0,0,22,98,0,15,0,0,0,0,tied
+n96-3,96,3398,457,activity_absorbed,52a2ed58cb1a11595a5b28b05a126babcc10401c9b30483511ddc19bf1ee6e86,24,2,0,0,0,0,22,22,22,22,22,22,0,1,21,22,17,21,21,17,15,1,0,6,0,83,33,15,5,2,205/6,-7/6,negative
+n96-4,96,3279,477,activity_absorbed,281cbdfcfe67348351e88141c1479306c378f89d4424f656b29d7f1cbe930836,24,0,0,2,0,1,21,24,24,22,22,22,0,3,21,21,21,21,21,21,2,0,0,22,0,108,42,8,2,1,35,7,positive
+n96-5,96,4099,457,activity_absorbed,be99385f4ae37362b7c1dddf51ffe6905c03c5ba5c83db86d5ab0970566648eb,24,6,0,0,0,6,12,18,18,18,18,18,0,1,17,12,0,18,12,0,0,0,0,18,0,51,24,8,2,0,20,4,positive
+n96-6,96,1896,302,activity_absorbed,e4fc8f77e0b90aa93c7a0692e7604c2b5e3a4d8735f90cd535d8943b1e641778,24,5,0,0,1,3,15,19,19,19,19,18,0,5,14,15,1,17,15,1,0,0,0,17,2,53,17,12,4,3,117/5,-32/5,negative
+n96-7,96,2005,368,activity_absorbed,006ebbfba233847f68f4b13256a4773f9e562ee4a93394bffe4ded75ee63f63c,24,1,0,0,0,19,4,23,23,23,23,23,0,2,21,4,0,23,4,0,23,0,0,0,0,91,4,10,1,0,5,-1,negative

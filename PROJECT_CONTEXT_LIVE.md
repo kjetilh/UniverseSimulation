@@ -2,6 +2,68 @@
 
 Dette dokumentet er den korteste operative inngangen til dagens repo-state i `UniverseSimulation`.
 
+## UC3R — observert viderebruk etter delvis nedbygging (2026-11-04)
+
+I de 16 **eksisterende** UC3-loggene brukte 35 ulike knoppskytinger en
+uavbrutt overlevende kant fra en tidligere lokal 2-kjerne etter at kjernen
+ble minst halvert. 15 verdener hadde treff; i 9 verdener traff 18 ulike
+knopper en kant opprettet etter start. I 13 verdener kom ny kjernevekst ved
+eller etter et treff. Det påviser direkte viderebruk på denne skalaen,
+ikke vekstfordel, periodisitet eller kumulativ organisasjon.
+
+Skillet mellom hendelse og observasjon er avgjørende: 245 treff i
+korrelerte enhetsspor tilsvarte bare 35 forskjellige fysiske knopper.
+170 av spor-treffene var tvungne fordi alle tilgjengelige ankerkanter var
+rester. Ingen ny simulering eller preferanse-/effektgate. Les
+[rapport og konkret hendelsesforløp](Documentation/Program/UC3R_report.md),
+[etteranalysens uttrekksregel](Documentation/Program/UC3R_protocol.md)
+og [maskinlesbare resultater](Documentation/Program/UC3R_result.json).
+
+## Metodisk presisering: reststruktur og videre vekst (2026-11-03)
+
+Brukerens spørsmål: «Vurder om det kan være nyttig å følge med på om strukturer
+oppstår, kollapser men etterlater noe struktur som neste iterasjon av vekst
+bygger videre på.» Dette er **et observasjonsforslag, ikke en utført ny
+forskningsrunde eller et påvist arve-/vekstresultat**. Ingen simulator, gate,
+frossen protokoll, rådata eller publisering er endret i denne vurderingen.
+
+- Strukturell videreføring krever ikke UC3s to fasejusterte perioder eller
+  gjentakelse av samme form. UC3s nullskår avgjør derfor ikke dette spørsmålet.
+  Relasjonelt minne kan ligge i grafen som faktisk er igjen; observatørhistorikk
+  må fortsatt ikke påvirke overgangsloven. Samme komplette graf/enhetsplassering
+  må ha samme overgangslov uansett urepresentert fortid.
+- Skill fire påstander: rester finnes; senere endringer bruker dem; restene
+  påvirker senere vekst sammenlignet med en relevant kontroll; organisering
+  akkumuleres over flere forløp. Ingen av dem alene beviser alle de andre.
+  Samme node-ID er ikke nok: observer sammenhengende overlevende relasjoner
+  og eventuelt overført topologi. Skill brutt/gjenopprettet kant fra overlevende
+  kant; strengt kantoverlapp dekker heller ikke all mulig topologisk videreføring.
+- UC3s rå starttilstander og hendelser muliggjør rekonstruksjon før absorpsjon.
+  En rest i en komponent med aktive enheter kan brukes senere; en frakoblet
+  komponent uten enheter kan ikke gjenstartes med UC3s lov. De 163 kantbærende
+  sluttkomponentene i den eksisterende rapporten er frosne rester, ikke allerede
+  påvist gjenvekst. Kildene er `Documentation/Program/UC3_report.md`,
+  `Tools/local_growth_candidate.py` og `Tools/run_local_growth_candidate.py`.
+- En bud bruker allerede en gammel kant per definisjon. Et fremtidig mål må
+  skille gjenbruk av identifisert rest etter nedbygging fra denne innebygde
+  egenskapen og fra ulik tilgjengelighet for enhetene. Registrer også avbrutte
+  forløp og null gjenvekst, ikke bare vellykkede etterkommere. Etter brudd følger
+  observatøren hver kausalt tilgjengelige etterkommer separat.
+- Anbefalt neste analyse, ennå ikke utført: definer nedbygging/rest/gjenvekst
+  før inspeksjon av enkeltforløp; rekonstruer alle relevante UC3-spor med
+  observatørmerker uten tilbakekobling. Merk dette som etteranalyse av kjente
+  data. En senere kausal eller kumulativ vekstpåstand trenger egne målte null-
+  og positive referanser gjennom samme konstruksjon, arm og utvalgsstørrelse,
+  samt ferske data. UC3s eksisterende viftekontroller validerer ikke dette nye
+  spørsmålet. Ingen omkoblingskontroll er her implementert eller kvalifisert.
+
+Naturlig analogi, ikke universbevis: Kopecky mfl. (2026),
+[Legacies of foundation species shape life after death](https://doi.org/10.1126/sciadv.aef9983),
+analyserer materiale fra ti økosystemer og finner at etterlatte organismerester
+kan både fremme og hemme senere demografiske prosesser. Dette støtter at
+spørsmålet er biologisk relevant, ikke at reststruktur alltid gir netto vekst
+eller at den samme mekanismen er vist i en uvektet graf.
+
 ## Nyeste avgrensede retning: UC3 (2026-09-11)
 
 Utgangspunktet er fortsatt en graf uten koordinater, fysiske nodeverdier eller
