@@ -26,6 +26,19 @@ ROOT = Path(__file__).resolve().parents[1]
 DATASET_SPECS: list[dict[str, str]] = [
     *[
         {"source": "Documentation/Program/" + name,
+         "category": "uc3g_matched_regrowth", "title": title,
+         "description": "UC3G paired test of local core regrowth after a loss in fresh worlds."}
+        for name, title in (
+            ("UC3G_report.md", "UC3G findings on local core regrowth"),
+            ("UC3G_protocol.md", "UC3G preregistered comparison and decisions"),
+            ("UC3G_result.json", "UC3G aggregate outcomes and gate results"),
+            ("UC3G_worlds.csv", "UC3G observations by world"),
+            ("UC3G_pairs.jsonl", "UC3G paired starting states and intervention records"),
+            ("UC3G_followups.csv.gz", "UC3G follow-up outcomes (compressed CSV)"),
+        )
+    ],
+    *[
+        {"source": "Documentation/Program/" + name,
          "category": "uc3r_structural_remnants", "title": title,
          "description": "Post-hoc observations from the sixteen archived UC3 candidate worlds."}
         for name, title in (
@@ -2837,9 +2850,14 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">This archive examines whether local graph edits can produce higher-level organization. UC3R revisits sixteen UC3 worlds to ask what survives when a local core shrinks, and whether a later bud uses a surviving edge.</p>
+    <p class="lead">This archive examines whether local graph edits can produce higher-level organization. UC3G asks whether the surviving structure of a shrunken core changes its chance of growing again.</p>
   </header>
   <main>
+    <section>
+      <h2>UC3G — local core regrowth in fresh worlds</h2>
+      <p>The experiment compares a preserved remnant with a legally rewired remnant matched for local growth opportunities. The report gives the number of eligible worlds, the paired growth outcomes and the limits of the comparison.</p>
+      <p><a href="data/uc3g_matched_regrowth/UC3G_report.md">Read the UC3G report</a> · <a href="data/uc3g_matched_regrowth/UC3G_protocol.md">Study protocol</a> · <a href="data/uc3g_matched_regrowth/UC3G_result.json">Machine-readable results</a>.</p>
+    </section>
     <section>
       <h2>UC3R — structural remnants and later budding</h2>
       <p>The observer follows each tagged unit through the archived edits. It records which edges from the earlier core remain after a loss, which are available at a later bud’s source, and which edge the bud actually uses. A later increase in core size is recorded separately. These observations describe the recorded histories. A causal growth advantage would require a separate comparison.</p>

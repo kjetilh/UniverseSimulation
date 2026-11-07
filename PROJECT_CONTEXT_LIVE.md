@@ -2,6 +2,10 @@
 
 Dette dokumentet er den korteste operative inngangen til dagens repo-state i `UniverseSimulation`.
 
+## UC3G — matchet forsøk på ny lokal kjernevekst (2026-11-07)
+
+53 av 128 nye verdener ga to lovlige oppsett med samme umiddelbare vekstmuligheter. Ved å bevare alle restkantene fikk vi 1263/1696 fortsettelser med ny lokal kjernevekst, mot 1286/1696 når ett endepunkt på én overlevende kant ble flyttet. Forskjellen var −1,36 prosentpoeng (95 % verdensvist bootstrapintervall −3,83 til +1,18). Begge armene skilte de målte referansene. Ingen vekstfordel ble påvist ved ett slikt hopp over 16 lokale endringer. Akkumulering over flere vekstsykluser står åpen. [Rapport](Documentation/Program/UC3G_report.md) · [Protokoll](Documentation/Program/UC3G_protocol.md) · [Råresultat](Documentation/Program/UC3G_result.json).
+
 ## UC3R — observert viderebruk etter delvis nedbygging (2026-11-04)
 
 I de 16 **eksisterende** UC3-loggene brukte 35 ulike knoppskytinger en

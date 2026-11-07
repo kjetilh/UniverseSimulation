@@ -1,0 +1,108 @@
+{
+  "analysis": {
+    "contrasts": {
+      "32": {
+        "denominator_per_arm": 704,
+        "difference": -0.015625,
+        "hits": {
+          "preserved": 512,
+          "rewired": 523
+        },
+        "worlds": 22
+      },
+      "96": {
+        "denominator_per_arm": 992,
+        "difference": -0.012096774193548387,
+        "hits": {
+          "preserved": 751,
+          "rewired": 763
+        },
+        "worlds": 31
+      },
+      "all": {
+        "denominator_per_arm": 1696,
+        "difference": -0.013561320754716982,
+        "hits": {
+          "preserved": 1263,
+          "rewired": 1286
+        },
+        "worlds": 53
+      }
+    },
+    "interval_95": [
+      -0.038325471698113206,
+      0.01179245283018868
+    ],
+    "natural_censored": 0,
+    "negative": 26,
+    "one_sided_sign_p": 0.7645604931891441,
+    "positive": 22,
+    "tied": 5,
+    "verdict": "preserved_advantage_not_demonstrated"
+  },
+  "evidence_sha256": {
+    "UC3G_followups.csv.gz": "ffef5426cc1af7258abe6b0a9e23b7a9e9bd65a2ec89f2d966e92f27fff72e52",
+    "UC3G_pairs.jsonl": "afba56f32e4734cad47ff98d7cbcef2226cb9ad313e514db71e66680804112e7",
+    "UC3G_worlds.csv": "bf84b0cafb04f78c29b11a4903533e335bd5b7b7e75e1e7dbc7ebe81ee4897d8"
+  },
+  "followup_stops": {
+    "natural": {
+      "absorbed": 386,
+      "hit": 2549,
+      "window": 457
+    },
+    "null": {
+      "window": 3392
+    },
+    "positive": {
+      "hit": 3392
+    }
+  },
+  "matched_count": 53,
+  "prefix_stops": {
+    "matched": 53,
+    "no_remaining_active_tag": 75
+  },
+  "reference": {
+    "preserved": {
+      "null": {
+        "censored": 0,
+        "hits": 0,
+        "total": 1696
+      },
+      "positive": {
+        "censored": 0,
+        "hits": 1696,
+        "total": 1696
+      }
+    },
+    "rewired": {
+      "null": {
+        "censored": 0,
+        "hits": 0,
+        "total": 1696
+      },
+      "positive": {
+        "censored": 0,
+        "hits": 1696,
+        "total": 1696
+      }
+    }
+  },
+  "reference_pass": true,
+  "reps_per_arm": 32,
+  "round": "UC3G",
+  "source_sha256": {
+    "Documentation/Program/UC3G_protocol.md": "b83d35f7d10ff101be7e784814a5b32d07853d6b10586769c76c7a9792250884",
+    "Tools/local_change_candidate.py": "c4f63b6fea5835bd06fb25e6586e094508e2e2e006fda91fe2c88bb7eb218c44",
+    "Tools/local_growth_candidate.py": "a8860340714c113f2c58f935ebf09c811a89e122c746679b14f398a3f5c64d9c",
+    "Tools/local_growth_observer.py": "296cca14f66484a72c792bafc45cc4b4a805eaf20a54b2d3edacf9a55e4f8a46",
+    "Tools/observe_uc3_remnants.py": "c4d4b784fbd41be33550db122479f0fc6f0b287d3984ad41ee55c9e979a8e129",
+    "Tools/run_local_change_candidate.py": "d55a2f02332ca5232bf810ed1f3cbc1b5fd989fd7c3158d3b2d1f4d31cf3f586",
+    "Tools/run_local_growth_candidate.py": "6b7eaac053b5be98e2e7ab4126021575de64e62e13c79654b71c90140bd3e74e",
+    "Tools/run_uc3g.py": "fee63790e5aca082d94457a204b8ce073b2d90a7fabdb77fa7243e1ce7342083",
+    "Tools/uc3g_followup.py": "180c20a7cca9a6d0fbc508af75e069080d0a8fcc134e9e41be5823373c425c3c",
+    "Tools/uc3g_match.py": "630ad01bf0e6629c4a3e484c3ab5ef84db18bf7c12c879b7bb6bb942598b6a0f"
+  },
+  "world_count": 128
+}
