@@ -336,6 +336,18 @@ def _render_response(
     prompt_system_path, prompt_answer_path, prompt_system_source, prompt_answer_source = resolve_effective_paths(
         case_id=prompt_case_id
     )
+    if (packed.debug.get("named_report_lead_chunks") and not answer_contract
+            and prompt_answer_path == "prompts/answer_template_universe_project.md"):
+        # The general project template includes status and next steps. A report
+        # question needs only the requested findings unless the user asks for more.
+        answer_contract = (
+            "Svar direkte på akkurat de etterspurte punktene i den navngitte rapporten. "
+            "Bruk ett eller to korte avsnitt for et avgrenset spørsmål. Oppgi hva hvert "
+            "tall teller og behold kildens tidsrekkefølge og tolkningsgrenser. "
+            "Sett [n] rett ved utsagnet som støttes av kilde n. Ta med videre arbeid, "
+            "kode eller andre rapporter bare når spørsmålet ber om det."
+        )
+        extra_query_plan = {**(extra_query_plan or {}), "answer_contract": "named_report_findings"}
     packed.debug["query_plan"] = _build_query_plan(
         plan=plan,
         prompt_profile_case_id=prompt_profile_case_id,

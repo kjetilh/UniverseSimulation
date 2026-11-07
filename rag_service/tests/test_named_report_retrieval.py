@@ -39,16 +39,24 @@ def report_db(monkeypatch):
     db.dispose()
 
 
-def test_normal_query_adds_lead_and_keeps_best_section_within_both_limits(report_db, monkeypatch):
+@pytest.mark.parametrize("template, custom, expects_report_format", [
+    ("prompts/answer_template_universe_project.md", None, True),
+    ("prompts/custom.md", None, False),
+    ("prompts/answer_template_universe_project.md", "A caller-specified format", False),
+])
+def test_normal_query_adds_lead_and_keeps_best_section_within_both_limits(
+    report_db, monkeypatch, template, custom, expects_report_format
+):
     original = "Hva fant EX7?"
     candidates = [chunk("incidental", "Previous study", 4, 10),
                   chunk("result", "EX7_report", 2, 3), chunk("result", "EX7_report", 1, 2)]
     monkeypatch.setattr(pipeline, "_retrieve_candidates", lambda **_: (candidates, "rewritten text"))
-    monkeypatch.setattr(pipeline, "resolve_effective_paths", lambda **_: ("p", "a", "p", "a"))
+    monkeypatch.setattr(pipeline, "resolve_effective_paths", lambda **_: ("p", template, "p", "a"))
     captured = {}
 
     def compose(question, packed, **options):
         captured.update(question=question, context=packed.context_text, instruction=options["router_instruction"])
+        captured["contract"] = options["answer_contract"]
         return "Resultatet i rapporten [1]."
 
     monkeypatch.setattr(pipeline, "compose_answer", compose)
@@ -57,12 +65,18 @@ def test_normal_query_adds_lead_and_keeps_best_section_within_both_limits(report
                       trace={}, prompt_instruction=None, case_id=None, evaluation=None)
     result = pipeline._run_planned_single_pass(
         message=original, plan=plan, top_k=3, model_profile=None, prompt_profile_case_id=None,
+        answer_contract=custom,
     )
     assert [c.chunk_id for c in result.citations] == ["result-0", "result-2", "incidental-4"]
     assert captured["question"] == original
     assert captured["context"].startswith("[1] [result::result-0]\nWhole-study summary")
     assert result.retrieval_debug["named_report_lead_chunks"] == ["result-0"]
     assert result.citations[0].score == 0  # Additional context has no hybrid retrieval score.
+    if expects_report_format:
+        assert "etterspurte punktene" in captured["contract"]
+        assert result.retrieval_debug["query_plan"]["answer_contract"] == "named_report_findings"
+    else:
+        assert captured["contract"] == custom
 
 
 def test_lookup_respects_case_year_source_doc_id_active_state_and_candidates(report_db):
