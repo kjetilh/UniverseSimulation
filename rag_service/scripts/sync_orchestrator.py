@@ -97,7 +97,7 @@ def _join_rel_posix(*parts: str) -> str:
     return "/".join(cleaned)
 
 
-def load_config(config_path: str | Path) -> OrchestratorConfig:
+def load_config(config_path: str | Path, *, repo_override: Path | None = None) -> OrchestratorConfig:
     path = Path(config_path).expanduser().resolve(strict=False)
     if not path.is_file():
         raise FileNotFoundError(f"Config file not found: {path}")
@@ -139,6 +139,7 @@ def load_config(config_path: str | Path) -> OrchestratorConfig:
 
     sources: list[SourceSpec] = []
     names: set[str] = set()
+    configured_repos: set[str] = set()
     for idx, src_raw in enumerate(sources_raw):
         if not isinstance(src_raw, dict):
             raise ValueError(f"source[{idx}] must be a table")
@@ -153,8 +154,14 @@ def load_config(config_path: str | Path) -> OrchestratorConfig:
         repo_path_value = str(src_raw.get("repo_path", "")).strip()
         if not repo_path_value:
             raise ValueError(f"source[{idx}] missing repo_path")
+        if repo_override is not None:
+            configured_repos.add(repo_path_value)
+            if len(configured_repos) != 1:
+                raise ValueError("One pinned release cannot replace multiple source repositories.")
         repo_subpath = str(src_raw.get("repo_subpath", "")).strip()
-        repo_root = Path(repo_path_value).expanduser().resolve(strict=False)
+        repo_root = (repo_override or Path(repo_path_value)).expanduser().resolve(strict=False)
+        if repo_override is not None:
+            repo_subpath = _normalize_rel_posix(repo_subpath, field_name="repo_subpath", allow_empty=True)
         repo_path = (repo_root / repo_subpath).resolve(strict=False) if repo_subpath else repo_root
 
         source_type = str(src_raw.get("source_type", "")).strip()

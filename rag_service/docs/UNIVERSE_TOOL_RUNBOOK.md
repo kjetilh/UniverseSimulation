@@ -301,6 +301,45 @@ positive control,
 prior law or underlying effect is discussed. `--skip-query` is not sufficient for freshness
 verification.
 
+### Revalidate unchanged sources against a published revision
+
+On 2026-11-07 the UC3R endpoint returned HTTP 503 with `corpus_stale`.
+The documents had last been updated 188240 seconds earlier. A sync found
+the three UC3R sources unchanged and retained their original timestamps.
+The deployed age limit was 86400 seconds.
+
+Run the following from the deployed runtime's `rag_service` directory.
+Set `release` to the clean checkout of the published scientific revision,
+`revision` to its full Git hash, and supply the existing admin credential
+through the configured environment variable. Inspect the plan before running
+the second command.
+
+```sh
+python -B -m scripts.revalidate_sources --release "$release" --revision "$revision" \
+  --config "$release/rag_service/config/sync_orchestrator.example.toml" --plan-only
+python -B -m scripts.revalidate_sources --release "$release" --revision "$revision" \
+  --config "$release/rag_service/config/sync_orchestrator.example.toml"
+```
+
+The plan checks the tracked configuration, release blobs and mirror inventory.
+The admin operation checks each mirror's raw SHA-256 and reconstructs the
+indexed document and chunks. It checks lexical index content and embedding
+presence, then writes the document attestations together. Shared source files
+can have several mirror paths. Each mirror is checked and its indexed document
+is counted once. A normal sync continues to preserve `documents.updated_at`
+for unchanged sources.
+
+The research endpoint can use the oldest verification time when every active
+document in the case has a matching attestation from the same revision. Its
+audit reports the age basis, coverage, source revision and oldest verification
+time. The configured age limit and pending-tombstone check apply. A failed
+or expired check requires a new verification against the published sources.
+
+For the final token-scoped query, require the round name in a returned
+citation identity and check the answer's numbered references against the
+corresponding citation objects and the cited passages. Record the generated
+answer, the control results and the source revision in the round receipt.
+
 ## Production instance boundary
 
 The dedicated server instance uses

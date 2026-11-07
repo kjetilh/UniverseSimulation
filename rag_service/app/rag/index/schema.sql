@@ -63,6 +63,20 @@ CREATE INDEX IF NOT EXISTS idx_documents_state ON documents(doc_state);
 CREATE INDEX IF NOT EXISTS idx_documents_source_state ON documents(source_type, doc_state);
 CREATE INDEX IF NOT EXISTS idx_documents_file_state ON documents(file_path, source_type, doc_state);
 
+CREATE TABLE IF NOT EXISTS document_source_revalidations (
+  doc_id TEXT PRIMARY KEY REFERENCES documents(doc_id) ON DELETE CASCADE,
+  doc_version INT NOT NULL,
+  doc_updated_at TIMESTAMPTZ NOT NULL,
+  content_hash TEXT NOT NULL,
+  source_type TEXT NOT NULL,
+  file_path TEXT NOT NULL,
+  source_path TEXT NOT NULL,
+  source_sha256 TEXT NOT NULL CHECK (source_sha256 ~ '^[0-9a-f]{64}$'),
+  source_revision TEXT NOT NULL CHECK (source_revision ~ '^([0-9a-f]{40}|[0-9a-f]{64})$'),
+  chunk_count INT NOT NULL CHECK (chunk_count >= 0),
+  verified_at TIMESTAMPTZ NOT NULL
+);
+
 -- Runtime prompt config (singleton, migration-safe)
 CREATE TABLE IF NOT EXISTS prompt_runtime_config (
   id SMALLINT PRIMARY KEY DEFAULT 1 CHECK (id = 1),

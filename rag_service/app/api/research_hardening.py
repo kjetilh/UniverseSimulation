@@ -7,7 +7,7 @@ import time
 from typing import Any, Protocol
 
 from fastapi import HTTPException, status
-from sqlalchemy import text
+from sqlalchemy import DateTime, bindparam, text
 
 from app.api.case_browse import _case_source_types
 from app.models.schemas import Citation, QueryResponse
@@ -262,13 +262,27 @@ def corpus_freshness(case_id: str) -> dict[str, Any]:
     sql = text(
         """
         SELECT
-          COUNT(*) FILTER (WHERE COALESCE(doc_state, 'active') = 'active') AS active_docs,
-          COUNT(*) FILTER (WHERE doc_state = 'tombstone_pending') AS tombstone_pending_docs,
-          MAX(updated_at) AS newest_updated_at,
-          MIN(updated_at) AS oldest_updated_at
-        FROM documents
-        WHERE source_type = ANY(:source_types)
+          COUNT(*) FILTER (WHERE COALESCE(d.doc_state, 'active') = 'active') AS active_docs,
+          COUNT(*) FILTER (WHERE d.doc_state = 'tombstone_pending') AS tombstone_pending_docs,
+          MAX(d.updated_at) AS newest_updated_at,
+          MIN(d.updated_at) AS oldest_updated_at,
+          COUNT(r.doc_id) AS revalidated_docs,
+          COUNT(DISTINCT r.source_revision) AS revision_count,
+          MIN(r.source_revision) AS source_revision,
+          MIN(r.verified_at) AS oldest_verified_at
+        FROM documents AS d
+        LEFT JOIN document_source_revalidations AS r
+          ON r.doc_id = d.doc_id AND r.content_hash = d.content_hash
+          AND r.source_type = d.source_type AND r.file_path = d.file_path
+          AND r.doc_version = d.doc_version AND r.doc_updated_at = d.updated_at
+          AND r.verified_at <= CURRENT_TIMESTAMP
+          AND COALESCE(d.doc_state, 'active') = 'active'
+        WHERE d.source_type IN :source_types
         """
+    ).bindparams(bindparam("source_types", expanding=True)).columns(
+        newest_updated_at=DateTime(timezone=True),
+        oldest_updated_at=DateTime(timezone=True),
+        oldest_verified_at=DateTime(timezone=True),
     )
     with engine().begin() as conn:
         row = dict(conn.execute(sql, {"source_types": source_types}).mappings().one())
@@ -276,10 +290,24 @@ def corpus_freshness(case_id: str) -> dict[str, Any]:
     active_docs = int(row.get("active_docs") or 0)
     tombstone_pending_docs = int(row.get("tombstone_pending_docs") or 0)
     newest = row.get("newest_updated_at")
+    revalidated_docs = int(row["revalidated_docs"])
+    oldest_verified = row["oldest_verified_at"]
+    revalidation_complete = (
+        active_docs > 0 and revalidated_docs == active_docs and row["revision_count"] == 1
+    )
+    freshness_time = newest
+    age_basis = "newest_document_update"
+    if (
+        revalidation_complete
+        and oldest_verified is not None
+        and (newest is None or oldest_verified > newest)
+    ):
+        freshness_time = oldest_verified
+        age_basis = "oldest_complete_source_revalidation"
     age_seconds: int | None = None
-    if newest is not None:
+    if freshness_time is not None:
         try:
-            age_seconds = max(0, int(time.time() - newest.timestamp()))
+            age_seconds = max(0, int(time.time() - freshness_time.timestamp()))
         except Exception:
             age_seconds = None
 
@@ -308,6 +336,11 @@ def corpus_freshness(case_id: str) -> dict[str, Any]:
         "source_types": source_types,
         "active_docs": active_docs,
         "tombstone_pending_docs": tombstone_pending_docs,
+        "revalidated_docs": revalidated_docs,
+        "revalidation_complete": revalidation_complete,
+        "revalidation_source_revision": row["source_revision"] if revalidation_complete else None,
+        "oldest_source_verified_at": oldest_verified.isoformat() if oldest_verified is not None else None,
+        "age_basis": age_basis,
         "newest_updated_at": newest.isoformat() if hasattr(newest, "isoformat") else None,
         "oldest_updated_at": (
             row.get("oldest_updated_at").isoformat()

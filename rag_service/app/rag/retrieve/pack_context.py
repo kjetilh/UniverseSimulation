@@ -48,7 +48,9 @@ def pack_context(candidates, top_k: int, max_chunks_per_doc: int = 4) -> PackedC
         chunk_id = getattr(c, "chunk_id", "")
         doc_id = getattr(c, "doc_id", "")
         content = getattr(c, "content", "") or ""
-        parts.append(f"[{doc_id}::{chunk_id}]\n{content}")
+        # compose_answer requests [n] citations. Number the final selection
+        # in the same order as the citation objects returned to the caller.
+        parts.append(f"[{len(citations) + 1}] [{doc_id}::{chunk_id}]\n{content}")
 
         citations.append(Citation(
             doc_id=doc_id,

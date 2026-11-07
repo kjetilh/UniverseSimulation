@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Any, Literal
 
 from fastapi import APIRouter, Depends, Header, HTTPException, status
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.rag.audit.coverage_report import build_coverage_actions, build_coverage_report
@@ -24,6 +24,7 @@ from app.rag.generate.prompt_config_store import (
     resolve_prompt_path,
     upsert_runtime_config,
 )
+from app.rag.index.source_revalidation import RevalidationError, revalidate_sources
 from app.scripts_adapter import rebuild_index, ingest_folder, sync_folder
 from app.settings import settings
 
@@ -121,6 +122,38 @@ def admin_sync(req: SyncRequest):
         anti_thrash_batch_size=req.anti_thrash_batch_size,
     )
     return {"ok": len(summary.get("errors", [])) == 0, "summary": summary}
+
+
+class RevalidationFile(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    path: str = Field(min_length=1)
+    source_path: str = Field(min_length=1)
+    source_type: str = Field(min_length=1)
+    raw_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+
+
+class RevalidationRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    source_revision: str = Field(pattern=r"^(?:[0-9a-f]{40}|[0-9a-f]{64})$")
+    files: list[RevalidationFile] = Field(min_length=1, max_length=10000)
+
+
+@router.post("/v1/admin/revalidate", dependencies=[Depends(_require_admin_api_key)])
+def admin_revalidate(req: RevalidationRequest):
+    files = []
+    for item in req.files:
+        for rel in (item.path, item.source_path):
+            if Path(rel).is_absolute() or ".." in Path(rel).parts or Path(rel).as_posix() != rel:
+                raise HTTPException(status_code=400, detail="Expected a canonical relative file path.")
+        path = _validated_ingest_path(item.path)
+        if Path(path) != Path(settings.ingest_root).resolve() / item.path:
+            raise HTTPException(status_code=400, detail="Revalidation paths cannot traverse symlinks.")
+        files.append({**item.model_dump(), "path": path})
+    try:
+        summary = revalidate_sources(files, req.source_revision)
+    except RevalidationError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    return {"ok": True, "summary": summary}
 
 
 class CatalogChunkRequest(BaseModel):
