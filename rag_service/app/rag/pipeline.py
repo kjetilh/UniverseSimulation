@@ -16,6 +16,7 @@ from app.rag.planner.answer_modes import sanitize_text_without_citations, trim_e
 from app.rag.planner.deterministic import PlanResult, plan_query
 from app.rag.retrieve.rerank import default_reranker
 from app.rag.retrieve.pack_context import pack_context
+from app.rag.retrieve.named_report import named_report_leads
 from app.rag.generate.composer import compose_answer, rewrite_query_if_enabled
 from app.rag.generate.llm_provider import LLMMessage, default_provider
 from app.rag.generate.prompt_config_store import resolve_effective_paths
@@ -311,13 +312,25 @@ def _render_response(
     extra_query_plan: dict[str, Any] | None = None,
 ) -> ChatResponse:
     effective_top_k = _effective_top_k(top_k, plan.retrieval)
+    filters = (extra_query_plan or {}).get("effective_filters", plan.filters)
+    leads = named_report_leads(
+        message, candidates, _map_filters(filters), filters.get("rag_case_id") or plan.case_id,
+    )
     packed = pack_context(
         candidates,
         effective_top_k,
         max_chunks_per_doc=int(plan.retrieval.get("max_chunks_per_doc", settings.max_chunks_per_doc)),
+        report_leads=leads,
     )
     if packed.debug is None:
         packed.debug = {}
+    if packed.debug.get("named_report_lead_chunks"):
+        router_instruction = _merge_instruction(
+            router_instruction,
+            "Besvar de etterspurte punktene fra den navngitte rapportens innledning og relevante "
+            "rapportsitater. Oppgi hva hvert tall teller, og skill totaler fra undergrupper. "
+            "Sett riktig kildehenvisning ved hvert funn og hver tolkningsgrense.",
+        )
 
     prompt_case_id = _prompt_case_id(plan, prompt_profile_case_id)
     prompt_system_path, prompt_answer_path, prompt_system_source, prompt_answer_source = resolve_effective_paths(

@@ -14,21 +14,25 @@ class PackedContext:
     debug: Optional[Dict[str, Any]] = None
 
 
-def pack_context(candidates, top_k: int, max_chunks_per_doc: int = 4) -> PackedContext:
+def pack_context(candidates, top_k: int, max_chunks_per_doc: int = 4, *, report_leads=()) -> PackedContext:
     # candidates: list[RetrievedChunk] (fra hybrid_retrieve / reranker)
     # Vi gjør en enkel, robust default-selection:
     selected = []
     per_doc: Dict[str, int] = {}
+    named_docs = {c.doc_id for c in report_leads}
+    lead_ids = {c.chunk_id for c in report_leads}
 
     def _sort_key(x):
         return (
+            getattr(x, "doc_id", "") not in named_docs,
             -float(getattr(x, "score", 0.0)),
             str(getattr(x, "doc_id", "")),
             int(getattr(x, "ordinal", 0)),
             str(getattr(x, "chunk_id", "")),
         )
 
-    for c in sorted(candidates, key=_sort_key):
+    ranked = sorted((c for c in candidates if c.chunk_id not in lead_ids), key=_sort_key)
+    for c in [*report_leads, *ranked]:
         if len(selected) >= top_k:
             break
         doc_id = getattr(c, "doc_id", None)
@@ -74,6 +78,8 @@ def pack_context(candidates, top_k: int, max_chunks_per_doc: int = 4) -> PackedC
         "max_chunks_per_doc": max_chunks_per_doc,
         "docs": len(per_doc),
     }
+    if lead_ids:
+        debug["named_report_lead_chunks"] = [c.chunk_id for c in selected if c.chunk_id in lead_ids]
 
     return PackedContext(
         context_text="\n\n".join(parts),
