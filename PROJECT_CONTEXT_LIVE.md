@@ -2,6 +2,10 @@
 
 Dette dokumentet er den korteste operative inngangen til dagens repo-state i `UniverseSimulation`.
 
+## UC3I — samme gamle forbindelser gjennom to tap
+
+I 32 av 512 nye verdener hadde begge armene samme gamle kanter å følge og like umiddelbare vekstmuligheter. Minst én uavbrutt forbindelse fra den tidligere toppen var i kjernen ved tre påfølgende vekstepisoder med to tap mellom i 430/1024 fortsettelser med bevart rest og 446/1024 med lovlig omkoblet rest. Verdensvis forskjell var −1,56 prosentpoeng (95 % intervall −5,47 til +2,64). Kantarv forekom i begge armer i alle 32 verdener. Ingen påvist fordel av å bevare restens organisering. Kantens betydning for selve veksttrekket står åpen. [Rapport](Documentation/Program/UC3I_report.md) · [Protokoll](Documentation/Program/UC3I_protocol.md).
+
 ## UC3M — sammenhengende rester gjennom gjentatt vekst og tap
 
 54 av 512 nye verdener ga en lovlig matchet kontroll. Tredje kjernevekst etter to fall i samme enhetslinje forekom i 1099/1728 fortsettelser med bevart blokk mot 1108/1728 med to omkoblede blokkkanter. Verdensvis forskjell var −0,52 prosentpoeng (95 % intervall −3,30 til +2,26). Ingen påvist fordel i 96 lokale endringer. [Rapport](Documentation/Program/UC3M_report.md) · [Protokoll](Documentation/Program/UC3M_protocol.md).

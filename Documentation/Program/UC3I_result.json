@@ -1,0 +1,163 @@
+{
+  "analysis": {
+    "contrasts": {
+      "32": {
+        "denominator_per_arm": 288,
+        "difference": -0.0625,
+        "hits": {
+          "preserved": 100,
+          "rewired": 118
+        },
+        "worlds": 9
+      },
+      "96": {
+        "denominator_per_arm": 736,
+        "difference": 0.002717391304347826,
+        "hits": {
+          "preserved": 330,
+          "rewired": 328
+        },
+        "worlds": 23
+      },
+      "all": {
+        "denominator_per_arm": 1024,
+        "difference": -0.015625,
+        "hits": {
+          "preserved": 430,
+          "rewired": 446
+        },
+        "worlds": 32
+      }
+    },
+    "interval_95": [
+      -0.0546875,
+      0.0263671875
+    ],
+    "natural_censored": 0,
+    "negative": 18,
+    "one_sided_sign_p": 0.956420723348856,
+    "positive": 10,
+    "tied": 4,
+    "verdict": "preserved_advantage_not_demonstrated"
+  },
+  "details": {
+    "preserved": {
+      "complete": 729,
+      "stops": {
+        "absorbed": 284,
+        "complete": 729,
+        "window": 11
+      },
+      "strict": 404,
+      "witnesses": {
+        "0": 299,
+        "1": 102,
+        "2": 96,
+        "3": 65,
+        "4": 37,
+        "5": 31,
+        "6": 34,
+        "7": 18,
+        "8": 13,
+        "9": 7,
+        "10": 9,
+        "11": 3,
+        "12": 4,
+        "13": 3,
+        "14": 7,
+        "15": 1
+      }
+    },
+    "rewired": {
+      "complete": 723,
+      "stops": {
+        "absorbed": 292,
+        "complete": 723,
+        "window": 9
+      },
+      "strict": 420,
+      "witnesses": {
+        "0": 277,
+        "1": 154,
+        "2": 89,
+        "3": 58,
+        "4": 29,
+        "5": 22,
+        "6": 28,
+        "7": 24,
+        "8": 7,
+        "9": 9,
+        "10": 7,
+        "11": 3,
+        "12": 3,
+        "13": 5,
+        "14": 2,
+        "15": 1,
+        "16": 2,
+        "17": 3
+      }
+    }
+  },
+  "evidence_sha256": {
+    "UC3I_followups.csv.gz": "81ca15c10c44bbfc67b67b6a079f393017a6c8e15fc24201ce494ca45ca8f843",
+    "UC3I_pairs.jsonl": "7b4e57d9bc92c0d6ad978df4df6b08dedfc307a678505fcfa38ffa7b63523118",
+    "UC3I_worlds.csv": "9133427d4ff7590336b10518591e22fbdeb36eb4f4cab55e31f807b971fc5d2e"
+  },
+  "matched_count": 32,
+  "prefix_stops": {
+    "empty_common_cohort": 11,
+    "matched": 32,
+    "no_remaining_active_tag": 469
+  },
+  "reference": {
+    "preserved": {
+      "null": {
+        "censored": 0,
+        "hits": 0,
+        "total": 1024
+      },
+      "positive": {
+        "censored": 0,
+        "hits": 1024,
+        "total": 1024
+      }
+    },
+    "rewired": {
+      "null": {
+        "censored": 0,
+        "hits": 0,
+        "total": 1024
+      },
+      "positive": {
+        "censored": 0,
+        "hits": 1024,
+        "total": 1024
+      }
+    }
+  },
+  "reference_cycles": {
+    "preserved/null": 1024,
+    "preserved/positive": 1024,
+    "rewired/null": 1024,
+    "rewired/positive": 1024
+  },
+  "reference_pass": true,
+  "source_sha256": {
+    "Documentation/Program/UC3I_protocol.md": "65f04a88ed3c48ce96f130a07fc36d919bd9964579e1d697c7dcf9d2167990fe",
+    "Documentation/Program/UC3M_protocol.md": "842fb3fa35b16dc0c7b45925d66723e4f9e85614fc60a0704c0fd5ff8a24736c",
+    "Tools/local_change_candidate.py": "c4f63b6fea5835bd06fb25e6586e094508e2e2e006fda91fe2c88bb7eb218c44",
+    "Tools/local_growth_candidate.py": "a8860340714c113f2c58f935ebf09c811a89e122c746679b14f398a3f5c64d9c",
+    "Tools/local_growth_observer.py": "296cca14f66484a72c792bafc45cc4b4a805eaf20a54b2d3edacf9a55e4f8a46",
+    "Tools/observe_uc3_remnants.py": "c4d4b784fbd41be33550db122479f0fc6f0b287d3984ad41ee55c9e979a8e129",
+    "Tools/run_local_change_candidate.py": "d55a2f02332ca5232bf810ed1f3cbc1b5fd989fd7c3158d3b2d1f4d31cf3f586",
+    "Tools/run_local_growth_candidate.py": "6b7eaac053b5be98e2e7ab4126021575de64e62e13c79654b71c90140bd3e74e",
+    "Tools/run_uc3g.py": "fee63790e5aca082d94457a204b8ce073b2d90a7fabdb77fa7243e1ce7342083",
+    "Tools/run_uc3i.py": "73d3db9a51191a56e6bd402a7153a1b2edfa569c306c969fc6794172dcb65afb",
+    "Tools/run_uc3m.py": "6606e7fe1c1bfaebf4d7731bcdab8d28c761d6eb660e0471aec2537d784d543f",
+    "Tools/uc3g_followup.py": "180c20a7cca9a6d0fbc508af75e069080d0a8fcc134e9e41be5823373c425c3c",
+    "Tools/uc3g_match.py": "630ad01bf0e6629c4a3e484c3ab5ef84db18bf7c12c879b7bb6bb942598b6a0f",
+    "Tools/uc3i_inheritance.py": "9237c84a374a23fb1f2c3bc84740b92b38827d30caa796195f15753199148b3b",
+    "Tools/uc3m_cycles.py": "38319470160ec05339e023da4ff78e63f81628d92b55d10486643ad02504ac27"
+  },
+  "world_count": 512
+}

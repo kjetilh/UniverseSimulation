@@ -26,6 +26,19 @@ ROOT = Path(__file__).resolve().parents[1]
 DATASET_SPECS: list[dict[str, str]] = [
     *[
         {"source": "Documentation/Program/" + name,
+         "category": "uc3i_edge_inheritance", "title": title,
+         "description": "UC3I paired test of uninterrupted edge inheritance across repeated core growth and loss."}
+        for name, title in (
+            ("UC3I_report.md", "UC3I findings on inherited core edges"),
+            ("UC3I_protocol.md", "UC3I preregistered comparison and decisions"),
+            ("UC3I_result.json", "UC3I aggregate outcomes and gate results"),
+            ("UC3I_worlds.csv", "UC3I observations by world"),
+            ("UC3I_pairs.jsonl", "UC3I paired starting states and intervention records"),
+            ("UC3I_followups.csv.gz", "UC3I follow-up outcomes (compressed CSV)"),
+        )
+    ],
+    *[
+        {"source": "Documentation/Program/" + name,
          "category": "uc3m_connected_cycles", "title": title,
          "description": "UC3M paired test of regrowth across two local cycles after a loss in fresh worlds."}
         for name, title in (
@@ -2863,9 +2876,13 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">This archive examines whether local graph edits can produce higher-level organization. UC3M follows connected remnants through repeated core growth and loss in the same lineage.</p>
+    <p class="lead">This archive examines whether local graph edits can produce higher-level organization. UC3I follows individual edges through two losses and three episodes of core growth in the same lineage.</p>
   </header>
   <main>
+    <section>
+      <h2>UC3I — which edges survive repeated core loss?</h2>
+      <p><a href="data/uc3i_edge_inheritance/UC3I_report.md">Findings on inherited edges</a> · <a href="data/uc3i_edge_inheritance/UC3I_protocol.md">Preregistered protocol</a> · <a href="data/uc3i_edge_inheritance/UC3I_result.json">Measured outcomes</a>.</p>
+    </section>
     <section>
       <h2>UC3M — connected remnants across repeated cycles</h2>
       <p><a href="data/uc3m_connected_cycles/UC3M_report.md">Findings and limits</a> · <a href="data/uc3m_connected_cycles/UC3M_protocol.md">Preregistered protocol</a> · <a href="data/uc3m_connected_cycles/UC3M_result.json">Measured outcomes</a>.</p>
