@@ -370,3 +370,14 @@ include = [
   "Documentation/Program/UC3G_report.md",
   "Documentation/Program/UC3G_protocol.md",
 ]
+
+[[source]]
+name = "UniverseSimulationUC3M"
+repo_path = "/srv/ops/repos/UniverseSimulation"
+source_type = "universe_experiments"
+target_subdir = "UniverseSimulation/uc3m"
+year = 2026
+include = [
+  "Documentation/Program/UC3M_report.md",
+  "Documentation/Program/UC3M_protocol.md",
+]

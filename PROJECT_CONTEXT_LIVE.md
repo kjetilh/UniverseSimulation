@@ -2,6 +2,10 @@
 
 Dette dokumentet er den korteste operative inngangen til dagens repo-state i `UniverseSimulation`.
 
+## UC3M — sammenhengende rester gjennom gjentatt vekst og tap
+
+54 av 512 nye verdener ga en lovlig matchet kontroll. Tredje kjernevekst etter to fall i samme enhetslinje forekom i 1099/1728 fortsettelser med bevart blokk mot 1108/1728 med to omkoblede blokkkanter. Verdensvis forskjell var −0,52 prosentpoeng (95 % intervall −3,30 til +2,26). Ingen påvist fordel i 96 lokale endringer. [Rapport](Documentation/Program/UC3M_report.md) · [Protokoll](Documentation/Program/UC3M_protocol.md).
+
 ## UC3G — matchet forsøk på ny lokal kjernevekst (2026-11-07)
 
 53 av 128 nye verdener ga to lovlige oppsett med samme umiddelbare vekstmuligheter. Ved å bevare alle restkantene fikk vi 1263/1696 fortsettelser med ny lokal kjernevekst, mot 1286/1696 når ett endepunkt på én overlevende kant ble flyttet. Forskjellen var −1,36 prosentpoeng (95 % verdensvist bootstrapintervall −3,83 til +1,18). Begge armene skilte de målte referansene. Ingen vekstfordel ble påvist ved ett slikt hopp over 16 lokale endringer. Akkumulering over flere vekstsykluser står åpen. [Rapport](Documentation/Program/UC3G_report.md) · [Protokoll](Documentation/Program/UC3G_protocol.md) · [Råresultat](Documentation/Program/UC3G_result.json).

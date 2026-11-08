@@ -26,6 +26,19 @@ ROOT = Path(__file__).resolve().parents[1]
 DATASET_SPECS: list[dict[str, str]] = [
     *[
         {"source": "Documentation/Program/" + name,
+         "category": "uc3m_connected_cycles", "title": title,
+         "description": "UC3M paired test of regrowth across two local cycles after a loss in fresh worlds."}
+        for name, title in (
+            ("UC3M_report.md", "UC3M findings on regrowth across two local cycles"),
+            ("UC3M_protocol.md", "UC3M preregistered comparison and decisions"),
+            ("UC3M_result.json", "UC3M aggregate outcomes and gate results"),
+            ("UC3M_worlds.csv", "UC3M observations by world"),
+            ("UC3M_pairs.jsonl", "UC3M paired starting states and intervention records"),
+            ("UC3M_followups.csv.gz", "UC3M follow-up outcomes (compressed CSV)"),
+        )
+    ],
+    *[
+        {"source": "Documentation/Program/" + name,
          "category": "uc3g_matched_regrowth", "title": title,
          "description": "UC3G paired test of local core regrowth after a loss in fresh worlds."}
         for name, title in (
@@ -2850,9 +2863,13 @@ def write_site(
   <header>
     <div class="eyebrow">Public research archive - generated {html.escape(generated_at)} - revision {html.escape(source_revision[:12])}</div>
     <h1>Emergent Universe Simulation</h1>
-    <p class="lead">This archive examines whether local graph edits can produce higher-level organization. UC3G asks whether the surviving structure of a shrunken core changes its chance of growing again.</p>
+    <p class="lead">This archive examines whether local graph edits can produce higher-level organization. UC3M follows connected remnants through repeated core growth and loss in the same lineage.</p>
   </header>
   <main>
+    <section>
+      <h2>UC3M — connected remnants across repeated cycles</h2>
+      <p><a href="data/uc3m_connected_cycles/UC3M_report.md">Findings and limits</a> · <a href="data/uc3m_connected_cycles/UC3M_protocol.md">Preregistered protocol</a> · <a href="data/uc3m_connected_cycles/UC3M_result.json">Measured outcomes</a>.</p>
+    </section>
     <section>
       <h2>UC3G — local core regrowth in fresh worlds</h2>
       <p>The experiment compares a preserved remnant with a legally rewired remnant matched for local growth opportunities. The report gives the number of eligible worlds, the paired growth outcomes and the limits of the comparison.</p>

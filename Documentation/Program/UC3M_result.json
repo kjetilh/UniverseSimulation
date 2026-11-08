@@ -1,0 +1,110 @@
+{
+  "analysis": {
+    "contrasts": {
+      "32": {
+        "denominator_per_arm": 480,
+        "difference": 0.029166666666666667,
+        "hits": {
+          "preserved": 302,
+          "rewired": 288
+        },
+        "worlds": 15
+      },
+      "96": {
+        "denominator_per_arm": 1248,
+        "difference": -0.01842948717948718,
+        "hits": {
+          "preserved": 797,
+          "rewired": 820
+        },
+        "worlds": 39
+      },
+      "all": {
+        "denominator_per_arm": 1728,
+        "difference": -0.005208333333333333,
+        "hits": {
+          "preserved": 1099,
+          "rewired": 1108
+        },
+        "worlds": 54
+      }
+    },
+    "interval_95": [
+      -0.03298611111111111,
+      0.022569444444444444
+    ],
+    "natural_censored": 0,
+    "negative": 27,
+    "one_sided_sign_p": 0.8041985447262547,
+    "positive": 22,
+    "tied": 5,
+    "verdict": "preserved_advantage_not_demonstrated"
+  },
+  "evidence_sha256": {
+    "UC3M_followups.csv.gz": "59716053b4d67ac2151c4b70abbff18026e133285750a91a4c72d4dfbcd855be",
+    "UC3M_pairs.jsonl": "7001158bef64a649e5ef848844c91489c0be8b356616b1da2316f802091c40d7",
+    "UC3M_worlds.csv": "c7ed2305ab1b13136d5efac7ebeefd7dce2a009daec653c0e03e6ea799bd983d"
+  },
+  "followup_stops": {
+    "natural": {
+      "absorbed": 1219,
+      "hit": 2207,
+      "window": 30
+    },
+    "null": {
+      "window": 3456
+    },
+    "positive": {
+      "hit": 3456
+    }
+  },
+  "matched_count": 54,
+  "prefix_stops": {
+    "matched": 54,
+    "no_remaining_active_tag": 458
+  },
+  "reference": {
+    "preserved": {
+      "null": {
+        "censored": 0,
+        "hits": 0,
+        "total": 1728
+      },
+      "positive": {
+        "censored": 0,
+        "hits": 1728,
+        "total": 1728
+      }
+    },
+    "rewired": {
+      "null": {
+        "censored": 0,
+        "hits": 0,
+        "total": 1728
+      },
+      "positive": {
+        "censored": 0,
+        "hits": 1728,
+        "total": 1728
+      }
+    }
+  },
+  "reference_pass": true,
+  "reps_per_arm": 32,
+  "round": "UC3M",
+  "source_sha256": {
+    "Documentation/Program/UC3M_protocol.md": "842fb3fa35b16dc0c7b45925d66723e4f9e85614fc60a0704c0fd5ff8a24736c",
+    "Tools/local_change_candidate.py": "c4f63b6fea5835bd06fb25e6586e094508e2e2e006fda91fe2c88bb7eb218c44",
+    "Tools/local_growth_candidate.py": "a8860340714c113f2c58f935ebf09c811a89e122c746679b14f398a3f5c64d9c",
+    "Tools/local_growth_observer.py": "296cca14f66484a72c792bafc45cc4b4a805eaf20a54b2d3edacf9a55e4f8a46",
+    "Tools/observe_uc3_remnants.py": "c4d4b784fbd41be33550db122479f0fc6f0b287d3984ad41ee55c9e979a8e129",
+    "Tools/run_local_change_candidate.py": "d55a2f02332ca5232bf810ed1f3cbc1b5fd989fd7c3158d3b2d1f4d31cf3f586",
+    "Tools/run_local_growth_candidate.py": "6b7eaac053b5be98e2e7ab4126021575de64e62e13c79654b71c90140bd3e74e",
+    "Tools/run_uc3g.py": "fee63790e5aca082d94457a204b8ce073b2d90a7fabdb77fa7243e1ce7342083",
+    "Tools/run_uc3m.py": "6606e7fe1c1bfaebf4d7731bcdab8d28c761d6eb660e0471aec2537d784d543f",
+    "Tools/uc3g_followup.py": "180c20a7cca9a6d0fbc508af75e069080d0a8fcc134e9e41be5823373c425c3c",
+    "Tools/uc3g_match.py": "630ad01bf0e6629c4a3e484c3ab5ef84db18bf7c12c879b7bb6bb942598b6a0f",
+    "Tools/uc3m_cycles.py": "38319470160ec05339e023da4ff78e63f81628d92b55d10486643ad02504ac27"
+  },
+  "world_count": 512
+}
